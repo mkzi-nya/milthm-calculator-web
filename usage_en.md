@@ -1,8 +1,4 @@
-Here is the English translation of your document:
-
 ---
-
-# Table of Contents
 
 0. [User Guide](#0-user-guide)
    - 01. [Uploading Save Files](#01-uploading-save-files)
