@@ -164,10 +164,13 @@ $HOME/.config/unity3d/Morizero/Milthm/
 
 Reality的计算通过游玩分数与谱面定数获得
 userReality计算方式为单曲Reality排行最高的20首成绩除20
+
 $$
 rlt = \sum_{i=1}^{20} single.rlt(i)/20
 $$
+
 单曲Reality公式如下(s为分数，c为定数)
+
 $$
 \text{Reality}(s, c) =
 \begin{cases} 
@@ -178,6 +181,7 @@ $$
 0 & (s < 700000)
 \end{cases}
 $$
+
 (代码)
 ```JavaScript
 function reality(score,constant) {
