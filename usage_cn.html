@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Viewer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #0d1117;
-            display: flex;
-            justify-content: center;
-        }
-        .markdown-body {
-            width: 100%;
-            max-width: 900px;
-            overflow-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Viewer</title>
+  <!-- 样式和脚本同原先，可按需保留或更改版本号 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <style>
+      body {
+          margin: 0;
+          padding: 20px;
+          box-sizing: border-box;
+          background-color: #0d1117;
+          display: flex;
+          justify-content: center;
+      }
+      .markdown-body {
+          width: 100%;
+          max-width: 900px;
+          overflow-wrap: break-word;
+      }
+  </style>
 </head>
 <body>
-    <article id="content" class="markdown-body"></article>
+  <article id="content" class="markdown-body"></article>
 
-    <script>
-        marked.use(markedKatex({ throwOnError: false }));
+  <script>
+    // 启用 KaTeX 拓展
+    marked.use(markedKatex({ throwOnError: false }));
 
-        fetch('./usage_cn.md').then(res => res.text()).then(md => {
-            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
-            document.getElementById('content').innerHTML = sanitized;
-        });
-    </script>
+    // 也可在这里显式配置 marked 以确保生成头部 id
+    // marked.setOptions({ headerIds: true, mangle: false });
+
+    fetch('./usage_.md')
+      .then(res => res.text())
+      .then(md => {
+        // 设置 DOMPurify 配置，允许保留 id 属性
+        const purifyConfig = {
+          ALLOWED_ATTR: [
+            // 默认允许的一些属性（这里也可以用 ...DOMPurify.DEFAULTS.ALLOWED_ATTR）
+            'href', 'align', 'alt', 'center', 'bgcolor', 
+            // 重点：确保 id 在列表里
+            'id'
+          ]
+        };
+        // 使用 DOMPurify 进行安全过滤
+        const html = DOMPurify.sanitize(
+          marked.parse(md, { headerIds: true, mangle: false }),
+          purifyConfig
+        );
+        document.getElementById('content').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
