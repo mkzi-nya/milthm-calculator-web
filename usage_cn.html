@@ -38,18 +38,38 @@
     <article id="content" class="markdown-body"></article>
 
     <script>
+        // 配置 marked，确保 ID 生成规则一致
+        marked.setOptions({
+            headerIds: true,
+            headerPrefix: "toc-",
+            mangle: false
+        });
+
         marked.use(markedKatex({ throwOnError: false }));
 
         fetch('./usage_cn.md').then(res => res.text()).then(md => {
             // 生成目录
-            const tocHTML = marked.parse(markedToc(md, { maxDepth: 3 }));
+            const tocMarkdown = markedToc(md, { maxDepth: 3 });
+            const tocHTML = DOMPurify.sanitize(marked.parse(tocMarkdown));
             document.getElementById('toc').innerHTML = tocHTML;
 
             // 渲染 Markdown 内容
-            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }), {
+            const sanitized = DOMPurify.sanitize(marked.parse(md), {
                 ALLOWED_ATTR: ['id', 'href', 'class']
             });
             document.getElementById('content').innerHTML = sanitized;
+
+            // 确保目录内的链接可以正确跳转
+            document.querySelectorAll("#toc a").forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href").replace("#", "toc-");
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
         });
     </script>
 </body>
