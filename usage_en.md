@@ -27,12 +27,14 @@ Click **"Upload File"** on the homepage, then select and upload a save file (`sa
 
 > **Note:** `data.db` only contains play records after the **3.2 update** (if not lost).
 
+[Milthm Wik Data_Filei](https://milthm.fandom.com/wiki/Data_File)
+
 #### **Android Users**
 - Use [MT Manager](https://mt2.cn/) to access `/sdcard/Android/data/`
-- If restricted (Android 13+), use **ADB** via PC or **[Shizuku](https://shizuku.rikka.app/zh-hans/)** (Android 14+) for wireless ADB access.
+- If restricted (Android 13+), use **ADB** via PC or **[Shizuku](https://shizuku.rikka.app/)** (Android 14+) for wireless ADB access.
 
 #### **iOS Users**
-- Open **Files App** and locate the **Milthm** folder.
+- Open **[Files App](https://support.apple.com/en-us/102570)** and locate the **Milthm** folder.
 
 #### **Windows Users**
 - In **File Explorer**, enter:
