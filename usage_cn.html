@@ -32,7 +32,7 @@
     <script>
         marked.use(markedKatex({ throwOnError: false }));
 
-        fetch('./usage_cn.md').then(res => res.text()).then(md => {
+        fetch('./usage_en.md').then(res => res.text()).then(md => {
             const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
             document.getElementById('content').innerHTML = sanitized;
         });
