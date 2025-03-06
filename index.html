@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milthm 查分器（原Reality计算器）</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="new_UI.css">
+    <link href="./layui/css/layui.css" rel="stylesheet">
+
+    <input type="file" id="fileupLoad" style="display:none;" />
+    <script src="./js/cha_newui.js"></script>
+    <!-- Chunk: sql_wasm -->
+    <script src="./js/plistjs/plist.js"></script>
+    <script src="./js/sql-wasm.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./js/sw.js')
+                .then(reg => console.log("Service Worker 注册成功:", reg.scope))
+                .catch(err => console.log("Service Worker 注册失败:", err));
+        }
+    </script>
+    <script>
+        function checkForUpdate() {
+            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage("checkForUpdate");
+            }
+        }
+        
+        // 每次刷新时检查更新
+        window.addEventListener("load", checkForUpdate);
+    </script>        
+    <!-- End Chunk: sql_wasm -->
+</head>
+<body>
+    <script src="./layui/layui.js"></script>
+    <script src="./new_ui.js"></script>
+    <div class="layui-header">
+        <div class="layui-logo layui-bg-black" style="padding: 16px;">
+            <h1>MilthmCalc</h1>
+        </div>
+    </div>
+
+    <div style="padding: 30px; text-align:center;display:flex;">
+        <div class="" style="text-align: left;max-width:1200px;margin:auto;">
+
+            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
+                <div class="layui-card-header">测试版新UI说明</div>
+                <div class="layui-card-body">
+                    <h3>本网站的新UI仍然处于测试阶段！如有BUG请反馈！</h3>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header"><h2>Welcome</h2></div>
+                <div class="layui-card-body">
+                    你好，欢迎来到MilthmCalc！(Reality计算器) (http://k9.lv/c)<br>
+                    这是一个用于计算Milthm Reality分数的网站，你可以在这里导入存档并解析。<br><hr>
+                    使用说明：<span class="superlink" onclick="javascript:show_usage();">查看使用说明</span><hr>
+                    <b>QQ交流群：</b><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span class="superlink">Milthm#-1洨巟羣</span></a>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header">网站信息</div>
+                <div class="layui-card-body">
+                    <!-- 网站作者：<button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:show_author_info();">查看</button><br> -->
+                    网站作者：<span onclick="javascript:show_author_info();" class="superlink">查看</span><br>
+                    本站访问数量：<span id="accessCount"></span><br>
+                    <div class="layui-collapse">
+                        <div class="layui-colla-item">
+                            <div class="layui-colla-title rccc">服务器信息</div>
+                            <div class="layui-colla-content">
+                                <?php
+                                    echo '运行在 '.shell_exec('uname -p')." 的 ".shell_exec('uname -s')." 上，";
+                                    echo 'PHP版本：'.phpversion().'<br>';
+                                    echo '距离上次页面更新：'.(time()-filemtime(__FILE__)).'秒<br>';
+                                    echo '服务器负载：'.implode(' ', sys_getloadavg()).'<br>';
+                                    echo '服务器CPU核心数：'.shell_exec('nproc').'<br>';
+                                    echo '服务器CPU型号：'.shell_exec('cat /proc/cpuinfo | grep "model name" | uniq | awk -F : \'{print $2}\' | sed \'s/^[ \t]*//\'').'<br>';
+                                    // echo '服务器内存剩余：'.shell_exec('free -m | grep 内存 | awk \'{print $7}\'').'MB<br>';
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <script>
+                if (accessCount != null){
+                    document.getElementById("accessCount").innerHTML = accessCount;
+                }else{
+                    document.getElementById("accessCount").innerHTML = "DevMode";
+                }
+            </script>
+
+            <div class="layui-card rccc">
+                <div class="layui-card-header">数据处理</div>
+                <div class="layui-card-body">
+                    <textarea id="inputData" placeholder="粘贴数据在此处..." class="layui-textarea"></textarea>
+                    <hr/>
+                    <!-- chunk: data processing operations -->
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">QQ Bot选项</button>
+                    <hr/>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">解析</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">上传文件</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:downloadImage();">生成图像</button>
+                    <br>
+                    <div id="picgen" style="display: none";>
+                        <br>
+                        <span class="layui-badge layui-bg-black">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。</span>
+                    </div>
+                    
+                    <!-- end chunk: data processing operations -->
+                </div>
+            </div>
+
+            <!-- chunk result show -->
+            <div class="layui-card rccc" id="usercontainer" style="display: none;">
+                <!-- usercontainer 默认隐藏，在数据处理完成后会有js调起显示 -->
+                <div class="layui-card-header">数据处理结果</div>
+                <div class="layui-card-body">
+                    <h3>用户信息：</h3>
+                    <!-- chunk: userinfo -->
+                     <h4 id="userInfo"></h3>
+                    <!-- end chunk: userinfo -->
+                    <hr/>
+                    <h3>图表：</h3>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);">增加列</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);">减少列</button>
+                    <br>
+                    <hr>
+                    <!-- chunk: res container -->
+                    <div class="container" id="output"></div>
+                    <!-- end chunk: res container -->
+                </div>
+            </div>
+            <!-- end chunk result show-->
+        </div>
+    </div>
+</body>
+</html>
