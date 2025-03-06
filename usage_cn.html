@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Markdown Viewer</title>
-  <!-- 样式和脚本同原先，可按需保留或更改版本号 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+
+  <!-- GitHub Markdown 黑色主题 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css"/>
+
+  <!-- Marked -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- DOMPurify -->
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  
+  <!-- KaTeX -->
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+  
+  <!-- Marked KaTeX 插件 -->
   <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+
   <style>
-      body {
-          margin: 0;
-          padding: 20px;
-          box-sizing: border-box;
-          background-color: #0d1117;
-          display: flex;
-          justify-content: center;
-      }
-      .markdown-body {
-          width: 100%;
-          max-width: 900px;
-          overflow-wrap: break-word;
-      }
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #0d1117;
+      display: flex;
+      justify-content: center;
+    }
+    .markdown-body {
+      width: 100%;
+      max-width: 900px;
+      overflow-wrap: break-word;
+    }
   </style>
 </head>
 <body>
   <article id="content" class="markdown-body"></article>
 
   <script>
-    // 启用 KaTeX 拓展
+    // 第一步：设置 Marked 的相关选项
+    marked.setOptions({
+      gfm: true,           // 启用 GFM
+      headerIds: true,     // 为标题自动生成 id
+      mangle: false        // 不要对标题文本进行“混淆”，防止中文被转换
+    });
+
+    // 第二步：启用 KaTeX 插件（可选，看你需求）
     marked.use(markedKatex({ throwOnError: false }));
 
-    // 也可在这里显式配置 marked 以确保生成头部 id
-    // marked.setOptions({ headerIds: true, mangle: false });
-
+    // 第三步：请求 .md 文件并渲染
     fetch('./usage_.md')
       .then(res => res.text())
       .then(md => {
-        // 设置 DOMPurify 配置，允许保留 id 属性
-        const purifyConfig = {
-          ALLOWED_ATTR: [
-            // 默认允许的一些属性（这里也可以用 ...DOMPurify.DEFAULTS.ALLOWED_ATTR）
-            'href', 'align', 'alt', 'center', 'bgcolor', 
-            // 重点：确保 id 在列表里
-            'id'
-          ]
-        };
-        // 使用 DOMPurify 进行安全过滤
-        const html = DOMPurify.sanitize(
-          marked.parse(md, { headerIds: true, mangle: false }),
-          purifyConfig
-        );
-        document.getElementById('content').innerHTML = html;
+        // 1）先用 Marked 把 md 转成 HTML
+        const rawHtml = marked.parse(md);
+        
+        // 2）再通过 DOMPurify 对 HTML 进行安全过滤
+        const sanitizedHtml = DOMPurify.sanitize(rawHtml);
+        
+        // 3）最后插入到页面中
+        document.getElementById('content').innerHTML = sanitizedHtml;
       });
   </script>
 </body>
