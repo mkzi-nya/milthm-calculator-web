@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markdown Viewer</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-      background-color: #0d1117;
-      display: flex;
-      justify-content: center;
-    }
-    .markdown-body {
-      width: 100%;
-      max-width: 900px;
-      overflow-wrap: break-word;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #0d1117;
+            display: flex;
+            justify-content: center;
+        }
+        .markdown-body {
+            width: 100%;
+            max-width: 900px;
+            overflow-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
-  <article id="content" class="markdown-body"></article>
+    <article id="content" class="markdown-body"></article>
 
-  <script>
-    // 使用 marked-katex 扩展
-    marked.use(markedKatex({ throwOnError: false }));
+    <script>
+        marked.use(markedKatex({ throwOnError: false }));
 
-    // 自定义渲染器，保证生成标题时带上 id
-    const renderer = new marked.Renderer();
-    renderer.heading = function(text, level, raw, slugger) {
-      const slug = slugger.slug(raw);
-      return `<h${level} id="${slug}">${text}</h${level}>`;
-    };
-
-    fetch('./usage_.md')
-      .then(res => res.text())
-      .then(md => {
-        // 使用自定义渲染器解析 Markdown
-        const html = marked.parse(md, { renderer: renderer });
-        // 进行安全过滤
-        const sanitized = DOMPurify.sanitize(html);
-        document.getElementById('content').innerHTML = sanitized;
-      });
-  </script>
+        fetch('./usage_cn.md').then(res => res.text()).then(md => {
+            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
+            document.getElementById('content').innerHTML = sanitized;
+        });
+    </script>
 </body>
 </html>
