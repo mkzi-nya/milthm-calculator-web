@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markdown Viewer</title>
-
-  <!-- GitHub Markdown 黑色主题 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css"/>
-
-  <!-- Marked -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
-  <!-- DOMPurify -->
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  
-  <!-- KaTeX -->
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
-  
-  <!-- Marked KaTeX 插件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
-
   <style>
     body {
       margin: 0;
@@ -41,28 +30,24 @@
   <article id="content" class="markdown-body"></article>
 
   <script>
-    // 第一步：设置 Marked 的相关选项
-    marked.setOptions({
-      gfm: true,           // 启用 GFM
-      headerIds: true,     // 为标题自动生成 id
-      mangle: false        // 不要对标题文本进行“混淆”，防止中文被转换
-    });
-
-    // 第二步：启用 KaTeX 插件（可选，看你需求）
+    // 使用 marked-katex 扩展
     marked.use(markedKatex({ throwOnError: false }));
 
-    // 第三步：请求 .md 文件并渲染
+    // 自定义渲染器，保证生成标题时带上 id
+    const renderer = new marked.Renderer();
+    renderer.heading = function(text, level, raw, slugger) {
+      const slug = slugger.slug(raw);
+      return `<h${level} id="${slug}">${text}</h${level}>`;
+    };
+
     fetch('./usage_.md')
       .then(res => res.text())
       .then(md => {
-        // 1）先用 Marked 把 md 转成 HTML
-        const rawHtml = marked.parse(md);
-        
-        // 2）再通过 DOMPurify 对 HTML 进行安全过滤
-        const sanitizedHtml = DOMPurify.sanitize(rawHtml);
-        
-        // 3）最后插入到页面中
-        document.getElementById('content').innerHTML = sanitizedHtml;
+        // 使用自定义渲染器解析 Markdown
+        const html = marked.parse(md, { renderer: renderer });
+        // 进行安全过滤
+        const sanitized = DOMPurify.sanitize(html);
+        document.getElementById('content').innerHTML = sanitized;
       });
   </script>
 </body>
