@@ -8,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-toc@0.1.2/lib/index.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -18,22 +18,37 @@
             background-color: #0d1117;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
         .markdown-body {
             width: 100%;
             max-width: 900px;
             overflow-wrap: break-word;
         }
+        nav {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 <body>
+    <nav id="toc" class="markdown-body"></nav>
     <article id="content" class="markdown-body"></article>
 
     <script>
         marked.use(markedKatex({ throwOnError: false }));
 
         fetch('./usage_cn.md').then(res => res.text()).then(md => {
-            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
+            // 生成目录
+            const tocHTML = marked.parse(markedToc(md, { maxDepth: 3 }));
+            document.getElementById('toc').innerHTML = tocHTML;
+
+            // 渲染 Markdown 内容
+            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }), {
+                ALLOWED_ATTR: ['id', 'href', 'class']
+            });
             document.getElementById('content').innerHTML = sanitized;
         });
     </script>
