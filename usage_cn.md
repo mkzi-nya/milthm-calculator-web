@@ -141,18 +141,17 @@ $$
 单曲 Reality 计算公式如下（s 为分数，c 为定数）：
 
 $$
-
-\[
 \text{Reality}(s, c) =
 \begin{cases} 
-1 + c, & \quad s \geq 1\,005\,000 \\[8pt]
-\dfrac{1.4}{e^{-3.65 \cdot \left( \frac{s}{10\,000} - 99.5 \right)} + 1} - 0.4 + c, & \quad s \geq 995\,000 \\[10pt]
-\dfrac{e^{3.1 \cdot \frac{s - 980\,000}{15\,000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, & \quad s \geq 980\,000 \\[10pt]
-\dfrac{s}{280\,000} - 4 + c, & \quad s \geq 700\,000 \\[8pt]
-0, & \quad s < 700\,000
+\mathbf{1 + c}, & \quad s \in [1005000, +\infty) \\[10pt]
+\displaystyle \frac{1.4}{e^{-3.65 \cdot \left(\frac{s}{10000} - 99.5\right)} + 1} - 0.4 + c, 
+& \quad s \in [995000, 1005000) \\[10pt]
+\displaystyle \frac{e^{3.1 \cdot \frac{s - 980000}{15000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, 
+& \quad s \in [980000, 995000) \\[10pt]
+\displaystyle \frac{s}{280000} - 4 + c, 
+& \quad s \in [700000, 980000) \\[10pt]
+0, & \quad s \in (-\infty, 700000)
 \end{cases}
-\]
-
 $$
 
 #### 代码实现：
