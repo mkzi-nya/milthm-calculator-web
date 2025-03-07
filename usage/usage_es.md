@@ -1,6 +1,6 @@
 
 # Índice
-
+- [sitio web](#sitio-web)
 - [Instrucciones de uso](#instrucciones-de-uso)
   - [Subir archivo de guardado](#subir-archivo-de-guardado)
   - [Introducir datos analizados](#introducir-datos-analizados)
@@ -12,6 +12,10 @@
 - [Contáctanos](#contáctanos)
 
 ---
+
+## sitio web
+  - [k9.lv/c/](http://k9.lv/c/)
+  - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index_en.html)
 
 ## Instrucciones de uso
 

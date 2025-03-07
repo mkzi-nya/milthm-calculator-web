@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Viewer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #0d1117;
-            display: flex;
-            justify-content: center;
-        }
-        .markdown-body {
-            width: 100%;
-            max-width: 900px;
-            overflow-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Markdown Viewer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      margin:0; padding:20px; box-sizing:border-box; background:#0d1117;
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .container { width:100%; max-width:900px; }
+    .markdown-body { width:100%; overflow-wrap:break-word; }
+    .katex-display { display:block!important; text-align:center; margin:10px 0; font-size:1em; }
+    .toc { display:none; }
+    pre, code { user-select:text; }
+  </style>
 </head>
 <body>
+  <div class="container">
     <article id="content" class="markdown-body"></article>
+  </div>
 
-    <script>
-        marked.use(markedKatex({ throwOnError: false }));
-
-        fetch('./usage_es.md').then(res => res.text()).then(md => {
-            const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
-            document.getElementById('content').innerHTML = sanitized;
+  <script>
+    marked.use(markedKatex());
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, {language: lang}).value;
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    
+    fetch('./usage_es.md')
+      .then(res => res.text())
+      .then(md => {
+        content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+        // 为 h2、h3、h4 添加 id（用作目录锚点）
+        content.querySelectorAll('h2,h3,h4').forEach(h=>{
+          h.id = h.innerText.toLowerCase().replace(/\s+/g,'-');
         });
-    </script>
+        hljs.highlightAll();
+        resizeKatex();
+      });
+    function resizeKatex(){
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e=>{
+        e.style.fontSize = ''; // 先还原默认大小
+        const actual = e.scrollWidth;
+        if(actual > w){
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+    window.addEventListener('resize', resizeKatex);
+  </script>
 </body>
 </html>

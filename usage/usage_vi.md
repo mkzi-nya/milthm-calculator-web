@@ -1,6 +1,6 @@
 
 # Mục lục
-
+- [trang web](#trang-web)
 - [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
   - [Tải lên tệp lưu trữ](#tải-lên-tệp-lưu-trữ)
   - [Nhập dữ liệu đã phân tích](#nhập-dữ-liệu-đã-phân-tích)
@@ -12,6 +12,10 @@
 - [Liên hệ chúng tôi](#liên-hệ-chúng-tôi)
 
 ---
+
+## trang web
+  - [k9.lv/c/](http://k9.lv/c/)
+  - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index_en.html)
 
 ## Hướng dẫn sử dụng
 
