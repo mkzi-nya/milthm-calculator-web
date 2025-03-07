@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="zh" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <title>Milthm 查分器（原Reality计算器）</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="new_UI.css">
+
     <link href="./layui/css/layui.css" rel="stylesheet">
 
     <input type="file" id="fileupLoad" style="display:none;" />
-    <script src="./js/cha_newui.js"></script>
+    
     <!-- Chunk: sql_wasm -->
     <script src="./js/plistjs/plist.js"></script>
     <script src="./js/sql-wasm.js"></script>
@@ -36,21 +38,16 @@
 <body>
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
-    <div class="layui-header">
-        <div class="layui-logo layui-bg-black" style="padding: 16px;">
-            <h1>MilthmCalc</h1>
+    <div class="layui-header header-opa">
+        <div class="layui-logo header-opa-bg2" style="padding: 16px;">
+            <h1 style="color:turquoise; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap;">
+                MilthmCalc <span style="font-size: medium;color:gold;">Ultra</span>
+            </h1>            
         </div>
     </div>
-
     <div style="padding: 30px; text-align:center;display:flex;">
         <div class="" style="text-align: left;max-width:1200px;margin:auto;">
 
-            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
-                <div class="layui-card-header">测试版新UI说明</div>
-                <div class="layui-card-body">
-                    <h3>本网站的新UI仍然处于测试阶段！如有BUG请反馈！</h3>
-                </div>
-            </div>
             <div class="layui-card rccc">
                 <div class="layui-card-header"><h2>Welcome</h2></div>
                 <div class="layui-card-body">
@@ -67,7 +64,7 @@
                 <div class="layui-card-body">
                     <!-- 网站作者：<button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:show_author_info();">查看</button><br> -->
                     网站作者：<span onclick="javascript:show_author_info();" class="superlink">查看</span><br>                    
-                    上次更新：3.7_18:35<br>
+                    上次更新：3.7_23:00<br>
                     更新内容：<br>
                     创建本站 https://mkzi-nya.github.io/<br>
                     新增多语言界面<br>
@@ -91,11 +88,11 @@
                     <textarea id="inputData" placeholder="粘贴数据在此处..." class="layui-textarea"></textarea>
                     <hr/>
                     <!-- chunk: data processing operations -->
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">QQ Bot选项</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled>QQ Bot选项 (不可用)</button>
                     <hr/>
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">解析</button>
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">上传文件</button>
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:downloadImage();">生成图像</button>
+                    <button class="layui-btn layui-btn-primary" onclick="javascript:processData();">解析</button>
+                    <button class="layui-btn layui-btn-primary" onclick="javascript:upl();">上传文件</button>
+                    <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage();">生成图像</button>
                     <br>
                     <div id="picgen" style="display: none";>
                         <br>
@@ -129,5 +126,6 @@
             <!-- end chunk result show-->
         </div>
     </div>
+    <script src="./js/cha_newui.js"></script>
 </body>
 </html>
