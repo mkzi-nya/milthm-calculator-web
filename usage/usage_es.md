@@ -185,6 +185,8 @@ El método de cálculo ha sido proporcionado por `PanyiAme`. Para más detalles,
 
 ## Contáctanos
 
-- **[Grupo oficial de Milthm#-1](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
 
-- **[Grupo comunitario de Milthm#Φ](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
+- **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)

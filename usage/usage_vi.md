@@ -185,6 +185,8 @@ Phương pháp tính toán liên quan do `PanyiAme` cung cấp, xem thêm tại 
 
 ## Liên hệ chúng tôi
 
-- **[Milthm#-1 Nhóm chính thức](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
 
-- **[Milthm#Φ Nhóm cộng đồng](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
+- **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)

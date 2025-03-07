@@ -184,6 +184,8 @@ function reality(score, constant) {
 
 ## Свяжитесь с нами
 
-- **[Milthm#-1 Группа общения](https://qm.qq.com/q/Utb6sNDvki)**: 375882310
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
 
-- **[Milthm#Φ Группа общения](https://qm.qq.com/q/fIErsKKz3a)**: 678471942
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
+- **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
