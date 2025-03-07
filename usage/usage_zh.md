@@ -147,10 +147,12 @@ $$
 $$
 \text{Reality}(s, c) =
 \begin{cases} 
-\mathbf{1 + c}, & s \in [1005000, 1010000) \\[8pt]
-\displaystyle \frac{1.4}{e^{-3.65 \cdot \left(\frac{s}{10000} - 99.5\right)} + 1} - 0.4 + c, & s \in [995000, 1005000) \\[8pt]
-\displaystyle \frac{e^{3.1 \cdot \frac{s - 980000}{15000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, & s \in [980000, 995000) \\[8pt]
-\displaystyle \frac{s}{280000} - 4 + c, & s \in [700000, 980000) \\[8pt]
+\mathbf{1 + c}, & s \in [1005000, 1010000] \\
+\displaystyle \frac{1.4}{e^{-3.65 \cdot \left(\frac{s}{10000} - 99.5\right)} + 1} - 0.4 + c, 
+& s \in [995000, 1005000) \\
+\displaystyle \frac{e^{3.1 \cdot \frac{s - 980000}{15000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, 
+& s \in [980000, 995000) \\
+\displaystyle \frac{s}{280000} - 4 + c, & s \in [700000, 980000) \\
 0, & s \in (-\infty, 700000)
 \end{cases}
 $$
