@@ -1,19 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="zh" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milthm calculator(Original Reality Calc)</title>
+    <title>Milthm 查分器（原Reality计算器）</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="new_UI.css">
+
     <link href="./layui/css/layui.css" rel="stylesheet">
 
     <input type="file" id="fileupLoad" style="display:none;" />
-    <script src="./js/cha_newui.js"></script>
+    
     <!-- Chunk: sql_wasm -->
     <script src="./js/plistjs/plist.js"></script>
     <script src="./js/sql-wasm.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./js/sw.js')
+                .then(reg => console.log("Service Worker 注册成功:", reg.scope))
+                .catch(err => console.log("Service Worker 注册失败:", err));
+        }
+    </script>
     <script>
         function checkForUpdate() {
             if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -29,12 +38,13 @@
 <body>
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
-    <div class="layui-header">
-        <div class="layui-logo layui-bg-black" style="padding: 16px;">
-            <h1>MilthmCalc</h1>
+    <div class="layui-header header-opa">
+        <div class="layui-logo header-opa-bg2" style="padding: 16px;">
+            <h1 style="color:turquoise; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap;">
+                MilthmCalc <span style="font-size: medium;color:gold;">Ultra</span>
+            </h1>            
         </div>
     </div>
-
     <div style="padding: 30px; text-align:center;display:flex;">
         <div class="" style="text-align: left;max-width:1200px;margin:auto;">
 
@@ -75,7 +85,7 @@
                     <textarea id="inputData" placeholder="Paste data here..." class="layui-textarea"></textarea>
                     <hr/>
                     <!-- chunk: data processing operations -->
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">QQ Bot Options</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled>QQ Bot Options</button>
                     <hr/>
                     <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">Parse</button>
                     <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">Upload File</button>
