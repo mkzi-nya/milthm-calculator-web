@@ -1,4 +1,4 @@
-console.log("Updated at 2025.03.07")
+console.log("Updated at 2025.02.15")
 console.log("已更新data.db文件解析")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -511,7 +511,10 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
               // 使用 data.db 的解析方式
               const scores = extractScores(db);
               processHistoryRecords(scores);
-              alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
+              window.onload = function () {
+                alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
+            };
+            
           } else {
               console.error("数据库不包含 'kv' 或 'scores' 表，无法解析\nThe database does not contain the 'kv' or 'scores' table and cannot be parsed.");
           }
