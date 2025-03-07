@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milthm 계산기(Original Reality Calc)</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="new_UI.css">
+    <link href="./layui/css/layui.css" rel="stylesheet">
+
+    <input type="file" id="fileupLoad" style="display:none;" />
+    <script src="./js/cha_newui.js"></script>
+    <script src="./js/plistjs/plist.js"></script>
+    <script src="./js/sql-wasm.js"></script>
+    <script>
+        function checkForUpdate() {
+            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage("checkForUpdate");
+            }
+        }
+        
+        window.addEventListener("load", checkForUpdate);
+    </script>        
+</head>
+<body>
+    <script src="./layui/layui.js"></script>
+    <script src="./new_ui.js"></script>
+    <div class="layui-header">
+        <div class="layui-logo layui-bg-black" style="padding: 16px;">
+            <h1>MilthmCalc</h1>
+        </div>
+    </div>
+
+    <div style="padding: 30px; text-align:center;display:flex;">
+        <div class="" style="text-align: left;max-width:1200px;margin:auto;">
+
+            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
+                <div class="layui-card-header">베타 버전 새 UI 가이드</div>
+                <div class="layui-card-body">
+                    <h3>이 웹사이트의 새로운 UI는 아직 테스트 중입니다! 버그를 보고해 주세요!</h3>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header"><h2>환영합니다</h2></div>
+                <div class="layui-card-body">
+                    MilthmCalc에 오신 것을 환영합니다! (원본 주소: [http://k9.lv/c](http://k9.lv/c))<br>
+                    이 사이트는 Milthm Reality 점수를 계산하는 사이트입니다. 여기에서 저장 파일을 가져오고 분석할 수 있습니다.<br><hr>
+                    사용자 가이드:<a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage_ko.html" target="_blank"><span class="superlink">사용자 가이드 보기</span></a><hr>
+                    <b>QQ 그룹 채팅:</b><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span class="superlink">Milthm#-1洨巟羣</span></a><hr>
+                    <b>다른 언어:</b><a href="https://mkzi-nya.github.io/milthm-calculator-web/index.html" target="_blank"><span class="superlink">中文</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_en.html" target="_blank"><span class="superlink">English</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ja.html" target="_blank"><span class="superlink">日本語</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ko.html" target="_blank"><span class="superlink">한국어</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ru.html" target="_blank"><span class="superlink">Русский</span></a> <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_es.html" target="_blank"><span class="superlink">Español</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_vi.html" target="_blank"><span class="superlink">Tiếng Việt</span></a><hr>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header">웹사이트 정보</div>
+                <div class="layui-card-body">
+                    웹사이트 제작자:<span onclick="javascript:show_author_info();" class="superlink">보기</span><br>                    
+                </div>
+            </div>
+            <script>
+                if (accessCount != null){
+                    document.getElementById("accessCount").innerHTML = accessCount;
+                }else{
+                    document.getElementById("accessCount").innerHTML = "DevMode";
+                }
+            </script>
+
+            <div class="layui-card rccc">
+                <div class="layui-card-header">데이터 처리</div>
+                <div class="layui-card-body">
+                    <textarea id="inputData" placeholder="여기에 데이터를 붙여넣으세요..." class="layui-textarea"></textarea>
+                    <hr/>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">QQ 봇 옵션</button>
+                    <hr/>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">파싱</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">파일 업로드</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:downloadImage();">이미지 생성</button>
+                    <br>
+                    <div id="picgen" style="display: none;">
+                        <br>
+                        <span class="layui-badge layui-bg-black">이미지를 생성하는 중입니다... 이미지 리소스를 다운로드해야 하므로 시간이 걸릴 수 있습니다. 반응이 없을 경우 여러 번 시도해 주세요.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card rccc" id="usercontainer" style="display: none;">
+                <div class="layui-card-header">데이터 처리 결과</div>
+                <div class="layui-card-body">
+                    <h3>사용자 정보:</h3>
+                    <h4 id="userInfo"></h4>
+                    <hr/>
+                    <h3>차트:</h3>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);">열 추가</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);">열 제거</button>
+                    <br>
+                    <hr>
+                    <div class="container" id="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

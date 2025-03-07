@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -33,7 +32,7 @@
     <script>
         marked.use(markedKatex({ throwOnError: false }));
 
-        fetch('./usage/usage_zh.md').then(res => res.text()).then(md => {
+        fetch('./usage_es.md').then(res => res.text()).then(md => {
             const sanitized = DOMPurify.sanitize(marked.parse(md, { headerIds: true, mangle: false }));
             document.getElementById('content').innerHTML = sanitized;
         });

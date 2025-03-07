@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milthm計算機 (オリジナルReality Calc)</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="new_UI.css">
+    <link href="./layui/css/layui.css" rel="stylesheet">
+
+    <input type="file" id="fileupLoad" style="display:none;" />
+    <script src="./js/cha_newui.js"></script>
+    <script src="./js/plistjs/plist.js"></script>
+    <script src="./js/sql-wasm.js"></script>
+    <script>
+        function checkForUpdate() {
+            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage("checkForUpdate");
+            }
+        }
+        window.addEventListener("load", checkForUpdate);
+    </script>        
+</head>
+<body>
+    <script src="./layui/layui.js"></script>
+    <script src="./new_ui.js"></script>
+    <div class="layui-header">
+        <div class="layui-logo layui-bg-black" style="padding: 16px;">
+            <h1>Milthm計算機</h1>
+        </div>
+    </div>
+
+    <div style="padding: 30px; text-align:center;display:flex;">
+        <div class="" style="text-align: left;max-width:1200px;margin:auto;">
+
+            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
+                <div class="layui-card-header">ベータ版新UIガイド</div>
+                <div class="layui-card-body">
+                    <h3>このウェブサイトの新しいUIはまだテスト段階です！バグを報告してください！</h3>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header"><h2>ようこそ</h2></div>
+                <div class="layui-card-body">
+                    Milthm計算機へようこそ！ (オリジナルURL: [http://k9.lv/c](http://k9.lv/c))<br>
+                    これはMilthm Realityスコアを計算するためのサイトです。セーブファイルをインポートして解析できます。<br><hr>
+                    ユーザーガイド:<a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage_ja.html" target="_blank"><span class="superlink">ユーザーガイドを見る</span></a><hr>
+                    <b>QQグループチャット:</b><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span class="superlink">Milthm#-1洨巟羣</span></a><hr>
+                    <b>他の言語:</b><a href="https://mkzi-nya.github.io/milthm-calculator-web/index.html" target="_blank"><span class="superlink">中文</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_en.html" target="_blank"><span class="superlink">English</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ja.html" target="_blank"><span class="superlink">日本語</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ko.html" target="_blank"><span class="superlink">한국어</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ru.html" target="_blank"><span class="superlink">Русский</span></a> <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_es.html" target="_blank"><span class="superlink">Español</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_vi.html" target="_blank"><span class="superlink">Tiếng Việt</span></a><hr>
+                </div>
+            </div>
+            <div class="layui-card rccc">
+                <div class="layui-card-header">ウェブサイト情報</div>
+                <div class="layui-card-body">
+                    ウェブサイトの作者:<span onclick="javascript:show_author_info();" class="superlink">表示</span><br>                    
+                </div>
+            </div>
+            <script>
+                if (accessCount != null){
+                    document.getElementById("accessCount").innerHTML = accessCount;
+                }else{
+                    document.getElementById("accessCount").innerHTML = "開発モード";
+                }
+            </script>
+
+            <div class="layui-card rccc">
+                <div class="layui-card-header">データ処理</div>
+                <div class="layui-card-body">
+                    <textarea id="inputData" placeholder="ここにデータを貼り付けてください..." class="layui-textarea"></textarea>
+                    <hr/>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">QQ Botオプション</button>
+                    <hr/>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">解析</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">ファイルアップロード</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:downloadImage();">画像生成</button>
+                    <br>
+                    <div id="picgen" style="display: none";>
+                        <br>
+                        <span class="layui-badge layui-bg-black">画像を生成中... 画像リソースのダウンロードが必要なため、時間がかかる場合があります。反応がない場合は、何度か試してください。</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card rccc" id="usercontainer" style="display: none;">
+                <div class="layui-card-header">データ処理結果</div>
+                <div class="layui-card-body">
+                    <h3>ユーザー情報:</h3>
+                     <h4 id="userInfo"></h3>
+                    <hr/>
+                    <h3>チャート:</h3>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);">列を追加</button>
+                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);">列を削除</button>
+                    <br>
+                    <hr>
+                    <div class="container" id="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
