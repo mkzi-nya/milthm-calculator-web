@@ -13,33 +13,19 @@
     <script src="./js/cha_newui.js"></script>
     <script src="./js/plistjs/plist.js"></script>
     <script src="./js/sql-wasm.js"></script>
-    <script>
-        function checkForUpdate() {
-            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-                navigator.serviceWorker.controller.postMessage("checkForUpdate");
-            }
-        }
-        window.addEventListener("load", checkForUpdate);
-    </script>
 </head>
 <body>
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
-    <div class="layui-header">
-        <div class="layui-logo layui-bg-black" style="padding: 16px;">
-            <h1>MilthmCalc</h1>
+    <div class="layui-header header-opa">
+        <div class="layui-logo header-opa-bg2" style="padding: 16px;">
+            <h1 style="color:turquoise; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap;">
+                MilthmCalc <span style="font-size: medium;color:gold;">Ultra</span>
+            </h1>            
         </div>
     </div>
-
     <div style="padding: 30px; text-align:center;display:flex;">
         <div class="" style="text-align: left;max-width:1200px;margin:auto;">
-
-            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
-                <div class="layui-card-header">Бета-версия нового интерфейса</div>
-                <div class="layui-card-body">
-                    <h3>Новый интерфейс этого сайта все еще находится в стадии тестирования! Сообщайте об ошибках!</h3>
-                </div>
-            </div>
             <div class="layui-card rccc">
                 <div class="layui-card-header"><h2>Добро пожаловать</h2></div>
                 <div class="layui-card-body">
@@ -69,7 +55,7 @@
                 <div class="layui-card-body">
                     <textarea id="inputData" placeholder="Вставьте данные сюда..." class="layui-textarea"></textarea>
                     <hr/>
-                    <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:qqbot_ua();">Опции QQ бота</button>
+                    <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled>Опции QQ бота</button>
                     <hr/>
                     <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:processData();">Анализ</button>
                     <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:upl();">Загрузить файл</button>

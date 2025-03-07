@@ -15,25 +15,7 @@
     
     <!-- Chunk: sql_wasm -->
     <script src="./js/plistjs/plist.js"></script>
-    <script src="./js/sql-wasm.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./js/sw.js')
-                .then(reg => console.log("Service Worker 注册成功:", reg.scope))
-                .catch(err => console.log("Service Worker 注册失败:", err));
-        }
-    </script>
-    <script>
-        function checkForUpdate() {
-            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-                navigator.serviceWorker.controller.postMessage("checkForUpdate");
-            }
-        }
-        
-        // 每次刷新时检查更新
-        window.addEventListener("load", checkForUpdate);
-    </script>        
-    <!-- End Chunk: sql_wasm -->
+    <script src="./js/sql-wasm.js"></script>  
 </head>
 <body>
     <script src="./layui/layui.js"></script>
@@ -47,13 +29,6 @@
     </div>
     <div style="padding: 30px; text-align:center;display:flex;">
         <div class="" style="text-align: left;max-width:1200px;margin:auto;">
-
-            <div class="layui-card layui-bg-black" style="background-color: rgba(84, 105, 0, 0.34) !important;border-radius: 10px;border: 1px solid rgba(122, 122, 122, 0.42);">
-                <div class="layui-card-header">Beta Version New UI Guide</div>
-                <div class="layui-card-body">
-                    <h3>The new UI of this website is still in the testing phase! Please report any bugs!</h3>
-                </div>
-            </div>
             <div class="layui-card rccc">
                 <div class="layui-card-header"><h2>Welcome</h2></div>
                 <div class="layui-card-body">
