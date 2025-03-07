@@ -511,9 +511,9 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
               // 使用 data.db 的解析方式
               const scores = extractScores(db);
               processHistoryRecords(scores);
-              alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db");
+              alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
           } else {
-              console.error("数据库不包含 'kv' 或 'scores' 表，无法解析");
+              console.error("数据库不包含 'kv' 或 'scores' 表，无法解析\nThe database does not contain the 'kv' or 'scores' table and cannot be parsed.");
           }
       };
       reader.readAsArrayBuffer(file);
@@ -521,7 +521,7 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
       // 如果不是 .db 文件，执行第3种操作
       const reader = new FileReader();
       reader.onload = () => handleFile(reader.result, fileName);
-      reader.onerror = () => alert("读取文件失败");
+      reader.onerror = () => alert("读取文件失败\nFailed to read the file.");
       reader.readAsText(file);
   }
   
@@ -536,7 +536,7 @@ function getAllTables(db) {
       stmt.free();
       return tables;
   } catch (error) {
-      console.error("无法获取数据库表:", error);
+      console.error("无法获取数据库表:", error, "\nFailed to retrieve database tables:", error);
       return [];
   }
 }
@@ -551,7 +551,7 @@ function extractScores(db) {
       }
       stmt.free();
   } catch (error) {
-      console.error("提取 scores 失败:", error);
+      console.error("提取 scores 失败:", error, "\nFailed to extract scores:", error);
   }
   return scores;
 }
@@ -1047,10 +1047,10 @@ async function processDBFile(arrayBuffer, SQL) {
           document.getElementById('inputData').value = extracted;
           processData();
       } else {
-          alert("数据库存档解析失败！");
+          alert("数据库存档解析失败！\nDatabase save parsing failed!");
       }
   } catch (error) {
-      alert(`解析数据库失败: ${error.message}`);
+      alert(`解析数据库失败: ${error.message}\nFailed to parse database: ${error.message}`);
   }
 }
 
@@ -1063,7 +1063,7 @@ function handleFile(content, fileName) {
       inputDataElem.value = extracted;
             processData();
         } else {
-            alert("提取 JSON 数据失败！");
+            alert("提取 JSON 数据失败！\nFailed to extract JSON data!");
         }
     } else if (fileName.endsWith('.xml')) {
         processXMLFile(content);
@@ -1077,7 +1077,7 @@ function handleFile(content, fileName) {
     inputDataElem.value = content;
     processData();
     } else {
-        alert("不支持的文件类型！");
+        alert("不支持的文件类型！\nUnsupported file type!");
     }
 }
 
@@ -1251,7 +1251,7 @@ function downloadImage() {
       ctx.fillText(`Date: ${dateStr}`, 660, 200);
 
       ctx.font = '50px Arial';
-      ctx.fillText('Reality查分器v3.3', 100, 130);
+      ctx.fillText('Reality-calculator v3.4', 100, 130);
       ctx.font = '30px Arial';
       ctx.fillText('http://k9.lv/c/', 100, 180);
 
