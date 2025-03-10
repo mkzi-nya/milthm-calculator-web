@@ -14,6 +14,32 @@
     <script src="./js/plistjs/plist.js"></script>
     <script src="./js/sql-wasm.js"></script>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof navigator !== "undefined" && typeof navigator.language !== "undefined") {
+            let userLang = navigator.language.toLowerCase();
+            let langMap = {
+                "zh": "index.html",
+                "zh-cn": "index.html",
+                "zh-tw": "index.html",
+                "en": "index_en.html",
+                "es": "index_es.html",
+                "ja": "index_ja.html",
+                "ko": "index_ko.html",
+                "ru": "index_ru.html",
+                "vi": "index_vi.html"
+            };
+
+            // 获取当前页面 URL
+            let currentPage = window.location.pathname.split("/").pop();
+
+            // 检查是否已在正确的语言页面
+            if (langMap[userLang] && langMap[userLang] !== currentPage) {
+                window.location.href = langMap[userLang];
+            }
+        }
+    });
+</script>
 <body>
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
@@ -31,7 +57,7 @@
                 <div class="layui-card-body">
                     Chào mừng đến với MilthmCalc! (Địa chỉ gốc: [http://k9.lv/c](http://k9.lv/c))<br>
                     Đây là trang web tính toán điểm Milthm Reality. Bạn có thể nhập và phân tích tập tin lưu trữ tại đây.<br><hr>
-                    Hướng dẫn sử dụng:<a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage_vi.html" target="_blank"><span class="superlink">Xem hướng dẫn sử dụng.</span></a><hr>
+                    Hướng dẫn sử dụng:<a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage.html" target="_blank"><span class="superlink">Xem hướng dẫn sử dụng.</span></a><hr>
                     <b>Nhóm QQ:</b><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span class="superlink">Milthm#-1洨巟羣</span></a><hr>
                     <b>Ngôn ngữ khác:</b><a href="https://mkzi-nya.github.io/milthm-calculator-web/index.html" target="_blank"><span class="superlink">中文</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_en.html" target="_blank"><span class="superlink">English</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ja.html" target="_blank"><span class="superlink">日本語</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ko.html" target="_blank"><span class="superlink">한국어</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_ru.html" target="_blank"><span class="superlink">Русский</span></a> <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_es.html" target="_blank"><span class="superlink">Español</span></a>  <a href="https://mkzi-nya.github.io/milthm-calculator-web/index_vi.html" target="_blank"><span class="superlink">Tiếng Việt</span></a><hr>
                 </div>
