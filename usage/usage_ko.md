@@ -15,7 +15,7 @@
 
 ## 웹사이트
   - [k9.lv/c/](http://k9.lv/c/)
-  - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index_en.html)
+  - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
 ## 사용 설명
 
