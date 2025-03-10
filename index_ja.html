@@ -14,32 +14,6 @@
     <script src="./js/plistjs/plist.js"></script>
     <script src="./js/sql-wasm.js"></script>
 </head>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (typeof navigator !== "undefined" && typeof navigator.language !== "undefined") {
-            let userLang = navigator.language.toLowerCase();
-            let langMap = {
-                "zh": "index.html",
-                "zh-cn": "index.html",
-                "zh-tw": "index.html",
-                "en": "index_en.html",
-                "es": "index_es.html",
-                "ja": "index_ja.html",
-                "ko": "index_ko.html",
-                "ru": "index_ru.html",
-                "vi": "index_vi.html"
-            };
-
-            // 获取当前页面 URL
-            let currentPage = window.location.pathname.split("/").pop();
-
-            // 检查是否已在正确的语言页面
-            if (langMap[userLang] && langMap[userLang] !== currentPage) {
-                window.location.href = langMap[userLang];
-            }
-        }
-    });
-</script>
 <body>
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
