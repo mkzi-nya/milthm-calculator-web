@@ -20,11 +20,15 @@
             // 获取当前页面 URL
             let currentPage = window.location.pathname.split("/").pop();
 
-            // 检查是否已在正确的语言页面
-            if (langMap[userLang] && langMap[userLang] !== currentPage) {
-                window.location.href = langMap[userLang];
+            // 选择合适的语言页面，默认英文
+            let targetPage = langMap[userLang] || "index_en.html";
+
+            // 如果当前页面不是目标语言页面，则跳转
+            if (currentPage !== targetPage) {
+                window.location.href = targetPage;
             }
         }
     });
 </script>
 </head>
+</html>
