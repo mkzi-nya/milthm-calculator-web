@@ -1,16 +1,15 @@
-
 # Mục Lục
 - [Trang Web](#trang-web)
-- [Hướng Dẫn Sử Dụng](#h%E1%BB%AF%E1%BB%9Ng-d%E1%BA%ADn-s%E1%BB%AD-d%E1%BB%A5ng)
-  - [Tải Lên Tệp Lưu Trữ](#t%E1%BA%A3i-l%C3%AAn-t%E1%BA%AFp-l%E1%BB%ABu-tr%E1%BB%A3)
-  - [Nhập Dữ Liệu Đã Phân Tích](#nh%E1%BA%ADp-d%E1%BB%A5-li%E1%BB%87u-%C4%91%C3%A3-ph%C3%A2n-t%C3%ADch)
-  - [Lưu Trữ Phiên Bản Cũ](#l%E1%BB%ABu-tr%E1%BB%A3-phi%C3%AAn-b%E1%BA%A3n-c%C5%A9)
-  - [Các Đường Dẫn Lưu Trữ Khác](#c%C3%A1c-%C4%91%C6%B0%C6%A1ng-d%E1%BA%A1n-l%E1%BB%ABu-tr%E1%BB%A3-kh%C3%A1c)
-- [Nguyên Lý Hoạt Động](#nguy%C3%AAn-l%C3%BD-ho%E1%BA%A1t-%C4%91%E1%BB%93ng)
-  - [Công Thức Tính Reality](#c%C3%B4ng-th%E1%BB%A7c-t%C3%ADnh-reality)
-  - [Biểu Đồ Radar](#bi%E1%BB%83u-%C4%91%E1%BB%93-radar)
-- [Bảng Hằng Số](#b%E1%BA%A3ng-h%E1%BA%A1ng-s%E1%BB%91)
-- [Liên Hệ Với Chúng Tôi](#li%C3%AAn-h%E1%BB%87-v%E1%BB%9Bi-ch%C3%B9ng-t%C3%B4i)
+- [Hướng Dẫn Sử Dụng](#hướng-dẫn-sử-dụng)
+  - [Tải Lên Tệp Lưu Trữ](#tải-lên-tệp-lưu-trữ)
+  - [Nhập Dữ Liệu Đã Phân Tích](#nhập-dữ-liệu-đã-phân-tích)
+  - [Lưu Trữ Phiên Bản Cũ](#lưu-trữ-phiên-bản-cũ)
+  - [Các Đường Dẫn Lưu Trữ Khác](#các-đường-dẫn-lưu-trữ-khác)
+- [Nguyên Lý Hoạt Động](#nguyên-lý-hoạt-động)
+  - [Công Thức Tính Reality](#công-thức-tính-reality)
+  - [Biểu Đồ Radar](#biểu-đồ-radar)
+- [Bảng Hằng Số](#bảng-hằng-số)
+- [Liên Hệ Với Chúng Tôi](#liên-hệ-với-chúng-tôi)
 
 ---
 
