@@ -186,6 +186,8 @@ function reality(score, constant) {
 
 ---
 
+注：所有SP和非常规谱面均不参与Reality计算
+
 
 ## 介绍 - 天气预报
 
@@ -201,12 +203,12 @@ function reality(score, constant) {
 
 | 标题           | DZ   | SK   | CB   | CL   |
 |---------------|------|------|------|------|
-| 雨之城        | 1.0  | -    | 7.5  | -    |
+| 雨之城        | 1.0  | 4.0  | 7.5  | -    |
 | Jump out?     | 2.0  | 7.9  | 9.7  | -    |
 | Moving On     | 2.0  | 6.3  | 10.8 | -    |
 | Blueface      | 4.0  | 8.0  | 10.1 | -    |
-| イコラト      | 3.0  | -    | 11.2 | -    |
-| 雨女          | -    | 6.5  | 9.5  | 10.5 |
+| イコラト      | 3.0  | 8.7  | 11.2 | -    |
+| 雨女          | 3.0 | 6.5  | 9.5  | 10.5 |
 | 命日          | 3.0  | 8.7  | 11.1 | 12.2 |
 
 ## 主线章节一 - 甜与苦的一体两面
@@ -258,8 +260,7 @@ function reality(score, constant) {
 | Dogbite                     | 3.0  | 7.6  | 10.3 | SP   |
 | Hikari                      | 3.0  | 8.4  | 10.7 | -    |
 | Moonflutter                 | 3.0  | 7.9  | 11.4 | 11.7 |
-| Fly To Meteor (Milthm Edit) | 3.0  | 6.5  | 10.5 | -    |
-| Fly To Meteor feat.兔柒     | -    | -    | -    | 11.7 |
+| Fly To Meteor              | 3.0  | 6.5  | 10.5 | 11.7 |
 | 樱落繁花                    | 3.0  | 8.8  | 10.9 | -    |
 | Agnostic                    | 3.0  | 7.4  | 10.0 | -    |
 | Psyched Fevereiro           | 3.5  | 7.3  | 10.0 | -    |
@@ -271,10 +272,10 @@ function reality(score, constant) {
 | サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
 | 参宿四~Betelgeuse~          | 2.0  | 6.4  | 11.2 | -    |
 | slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | -    | -    |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | -    |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
-| Broken Conviction           | -    | 4.5  | 11.5 | 11.9 |
+| Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
 
 
 ---
