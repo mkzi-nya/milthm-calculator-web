@@ -176,25 +176,48 @@ function reality(score, constant) {
 
 ---
 
-# 雷达图
+## 雷达图
 
 相关计算方式由 `PanyiAme` 提供，详见 [Milthm 查分表说明](https://wwp.lanzoup.com/iZ59A2j8nbpe)。
 
 ---
 
-# 定数表
+## 定数表
 
----
 
 注：所有SP和非常规谱面均不参与Reality计算
 
+当前版本定数最高的20首曲目为
+
+| 排行 | 标题  | 难度 | 定数 |
+|---|---------------------|------|----|
+| 1 | Contrasty Angeles | CL | 12.3 |
+| 2 | 命日 | CL | 12.2 |
+| 3 | Moonfall／大月墜落狂想 | CB | 12.2 |
+| 4 | Regnaissance | CL | 12.1 |
+| 5 | Innocent white | CB | 12.1 |
+| 6 | Broken Conviction | CL | 11.9 |
+| 7 | Meltovt Necrosys | CB | 11.9 |
+| 8 | Moonflutter | CL | 11.7 |
+| 9 | Fly To Meteor feat.兔柒 | CL | 11.7 |
+| 10 | HYPER MEMORIES | CB | 11.7 |
+| 11 | Broken Conviction | CB | 11.5 |
+| 12 | Threat - Metropolis | CB | 11.5 |
+| 13 | Contrasty Angeles | CB | 11.5 |
+| 14 | slic.hertz #GdbG | CB | 11.4 |
+| 15 | Moonflutter | CB | 11.4 |
+| 16 | Algebra | CB | 11.4 |
+| 17 | Fragment of Memories | CB | 11.3 |
+| 18 | IN | CB | 11.2 |
+| 19 | イコラト | CB | 11.2 |
+| 20 | 参宿四~Betelgeuse~ | CB | 11.2 |
 
 ## 介绍 - 天气预报
 
 | 标题                | DZ   | SK   | CB   | CL   |
 |---------------------|------|------|------|------|
 | Welcome to Milthm  | 1.0  | -    | -    | -    |
-| 时落之雨           | 1.0  | -    | 8.5  | -    |
+| 时落之雨           | 1.0  | 4.5  | 8.5  | -    |
 | 夜风               | 3.0  | 7.3  | 10.1 | -    |
 | 花月               | 2.0  | 8.2  | 9.3  | -    |
 | 暮予星光           | 2.0  | 7.5  | 9.1  | -    |
