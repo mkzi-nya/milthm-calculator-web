@@ -124,9 +124,9 @@ const constants = {
   "8e72dab7-e72f-4842-a499-559659279e2c": { constant: 5.5, category: "SK", name: "Threat - Superstructure", ad: 0, ae: 1, af: 1, ag: 0 },
   "37a9f1a0-32d4-4f78-acae-1be9ca7ea42f": { constant: 5.5, category: "SK", name: "INFP.mp3", ad: 0, ae: 1, af: 1, ag: 0 },
   "54ea2f8f-ae05-4aba-a117-8d187bf08074": { constant: 4.5, category: "SK", name: "时落之雨", ad: 0, ae: 1, af: 1, ag: 0 },
-  "7c30226f-0ea5-4b71-aab7-7fefca1070dd": { constant: 4.5, category: "SK", name: "Broken Conviction", ad: 0, ae: 1, af: 1, ag: 0 },
   "62c1cdc7-57c2-4a5f-809b-bcfb6c6a0469": { constant: 4.0, category: "SK", name: "粗线条的雨", ad: 0, ae: 1, af: 1, ag: 0 },
   "acdab435-5aa3-45de-a815-9dbb7cd13130": { constant: 4.0, category: "SK", name: "雨之城", ad: 0, ae: 1, af: 1, ag: 0 },
+  "7c30226f-0ea5-4b71-aab7-7fefca1070dd": { constant: 4.5, category: "SK", name: "Broken Conviction", ad: 0, ae: 1, af: 1, ag: 0 },
   "4144b702-77bd-4ff4-9ba0-aa7c70b2bab5": { constant: 4.5, category: "DZ", name: "Regnaissance", ad: 0, ae: 1, af: 1, ag: 0 },
   "ac138fef-ad0b-4d0d-883c-453e6fe11d37": { constant: 4.0, category: "DZ", name: "Contrasty Angeles", ad: 0, ae: 1, af: 1, ag: 0 },
   "cea79b8c-23fd-4fbd-b2a9-6f080ef15b44": { constant: 4.0, category: "DZ", name: "cybernetic blazar", ad: 0, ae: 1, af: 1, ag: 0 },
@@ -1214,7 +1214,22 @@ function openContributionDialog() {
 
 /* ========== 下载图片 (含背景、卡片等) ========== */
 function downloadImage() {
+  const items = window.processedItems || [];
+  let star = '';
+    let maxConstant = -Infinity;
+    items.forEach(item => {
+      if ((item.bestLevel === 0 || item.bestLevel === 1) && item.constant > maxConstant) {
+        maxConstant = item.constant;
+      }
+    });
 
+    if (maxConstant > 12) {
+      star = '☆☆☆';
+    } else if (maxConstant > 9) {
+      star = '☆☆';
+    } else if (maxConstant > 6) {
+      star = '☆';
+    }
   genPicDialog();
   console.log("opening genPicDialog")
   const canvas = document.createElement('canvas');
@@ -1244,6 +1259,7 @@ function downloadImage() {
 
       ctx.font = '25px Arial';
       ctx.fillStyle = '#ffffff';
+      ctx.fillText(star, 740, 75);
       ctx.fillText(`Player: ${window.username}`, 660, 100);
       ctx.fillText(`Reality: ${window.average}`, 660, 150);
       const now = new Date();
@@ -1277,7 +1293,8 @@ function downloadImage() {
     Promise.all(imagePromises).then(images => drawCards(ctx, canvas, items, images));
   }
 
-  function drawCards(ctx, canvas, items, images) {
+  
+function drawCards(ctx, canvas, items, images) {
     const scale = 1.3;
     const cardWidth = 340 * scale;
     const cardHeight = 100 * scale;
