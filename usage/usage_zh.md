@@ -5,10 +5,10 @@
   - [输入已解析的数据](#输入已解析的数据)
   - [旧版本存档](#旧版本存档)
   - [其他存档路径](#其他存档路径)
-- [工作原理](#工作原理)
-  - [Reality 计算公式](#reality-计算公式)
   - [雷达图](#雷达图)
-- [定数表](#定数表)
+- [关于Milthm](#关于milthm)
+  - [Reality 计算公式](#reality-计算公式)
+  - [定数表](#定数表)
 - [联系我们](#联系我们)
 
 ---
@@ -132,7 +132,15 @@ done
 
 ---
 
-## 工作原理
+
+## 雷达图
+
+相关计算方式由 `PanyiAme` 提供，详见 [Milthm 查分表说明](https://wwp.lanzoup.com/iZ59A2j8nbpe)。
+
+---
+## 关于Milthm
+
+- [返回主目录](#目录)
 
 ### Reality 计算公式
 
@@ -176,13 +184,21 @@ function reality(score, constant) {
 
 ---
 
-## 雷达图
-
-相关计算方式由 `PanyiAme` 提供，详见 [Milthm 查分表说明](https://wwp.lanzoup.com/iZ59A2j8nbpe)。
-
----
-
 ## 定数表
+
+- [说明](#说明)
+- [介绍](#介绍---天气预报)
+  - [天气预报](#介绍---天气预报)
+- [主线章节](#序章---雨的声音)
+  - [雨的声音](#序章---雨的声音)
+  - [甜与苦的一体两面](#主线章节一---甜与苦的一体两面)
+- [联动章节](#联动---雨世界)
+  - [雨世界](#联动---雨世界)
+  - [Notanote](#联动---notanote)
+- [单曲](#单曲---梦境磁带)
+  - [梦境磁带](#单曲---梦境磁带)
+  
+## 说明
 
 > - 所有`SP`和非常规谱面均不参与Reality计算
 > - 因精度原因当前版本的所有定数为11.9的曲目定数都不满11.9。比如若某版本的理论Reality为`13.005`，在游戏内将显示为`13.00`而非`13.01`
@@ -215,8 +231,6 @@ function reality(score, constant) {
 | 18 | IN | CB | 11.2 |
 | 19 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
-
-
 
 
 ## 介绍 - 天气预报
@@ -310,6 +324,7 @@ function reality(score, constant) {
 
 ---
 
+
 ## 联系我们
 
 - **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
@@ -317,5 +332,8 @@ function reality(score, constant) {
 - **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
 
 - **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
+
+
+##
 
 
