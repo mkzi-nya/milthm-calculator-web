@@ -23,6 +23,10 @@
 
 > This guide has been translated by ChatGPT, please refer to the Simplified Chinese version for reference if there are any issues.
 
+
+Last updated on 2025.3.14
+
+
 ## Website
   - [k9.lv/c/](http://k9.lv/c/)
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
@@ -255,16 +259,16 @@ After the gameplay, the displayed evaluation in the song:
 
 - [Back to Table of Contents](#table-of-contents)
 - [Description](#description)
-- [Introduction](#introduction---weather-forecast)
-  - [Weather Forecast](#introduction---weather-forecast)
-- [Main Chapter](#prologue---sound-of-rain)
-  - [Sound of Rain](#prologue---sound-of-rain)
-  - [The Sweet and Bitter Duality](#main-chapter-one---the-sweet-and-bitter-duality)
-- [Collaborative Chapters](#collaboration---rain-world)
+- [Main Chapter](#introduction---weather-report)
+  - [Weather Report](#introduction---weather-report)
+  - [Rainfall Sounds](#prologue---rainfall-sounds)
+  - [The Sides of Bitter and Sweet](#chapter1---the-sides-of-bitter-and-sweet)
+- [Collaboration](#collaboration---rain-world)
   - [Rain World](#collaboration---rain-world)
   - [Notanote](#collaboration---notanote)
-- [Singles](#singles---dream-tape)
-  - [Dream Tape](#singles---dream-tape)
+- [Single](#single---dream-tape)
+  - [Dream Tape](#single---dream-tape)
+  - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
   
 ## Description
 
@@ -299,7 +303,7 @@ Here are the top 20 songs with the highest constants in the current version:
 
 ---
 
-## Introduction - Weather Forecast
+## Introduction - Weather Report
 
 | Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
@@ -311,7 +315,7 @@ Here are the top 20 songs with the highest constants in the current version:
 
 ---
 
-## Prologue - Sound of Rain
+## Prologue - Rainfall Sounds
 
 | Title        | DZ   | SK   | CB   | CL   |
 |--------------|------|------|------|------|
@@ -325,11 +329,11 @@ Here are the top 20 songs with the highest constants in the current version:
 
 ---
 
-## Main Chapter One - The Sweet and Bitter Duality
+## Chapter1 - The Sides of Bitter and Sweet
 
 | Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| 粗線條的雨           | 1.0  | 4.0  | 8.3  | -    |
+| 粗线条的雨           | 1.0  | 4.0  | 8.3  | -    |
 | Aconsma              | 1.0  | 6.0  | 9.3  | -    |
 | OverRain             | 2.0  | 7.6  | 10.0 | -    |
 | Fragment of Memories | 2.0  | 8.4  | 11.3 | -    |
@@ -368,9 +372,10 @@ Here are the top 20 songs with the highest constants in the current version:
 
 ---
 
-## Singles - Dream Tape
+## Single - Dream Tape
 
 | Title                          | DZ   | SK   | CB   | CL   |
+|-|-|-|-|-|
 | ネオン色のまち feat. Mai    | 3.5  | 8.0  | 9.7  | -    |
 | INFP.mp3                    | 2.0  | 5.5  | 9.2  | -    |
 | Oniichan                    | 3.0  | 8.0  | 9.8  | -    |
@@ -395,7 +400,10 @@ Here are the top 20 songs with the highest constants in the current version:
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
+
 ---
+
+## Single - Gathering Blossoms Under Rain
 
 | Title                        | DZ   | SK   | CB   | CL   |
 |------------------------------|------|------|------|------|
