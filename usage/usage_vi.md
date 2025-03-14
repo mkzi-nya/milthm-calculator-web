@@ -23,7 +23,7 @@
 
 > Hướng dẫn này được dịch bởi ChatGPT, nếu có vấn đề, vui lòng tham khảo phiên bản Trung Quốc giản thể.
 
-Last updated on 2025.3.14_2:40(UTC)
+Last updated on 2025.3.14_2:55(UTC)
 
 ## Trang web
   - [k9.lv/c/](http://k9.lv/c/)
@@ -255,7 +255,7 @@ Có 8 loại xếp hạng cuối cùng:
 
 ## Bảng hằng số
 
-- [Back to Table of Contents](#table-of-contents)
+- [Back to Table of Contents](#ục-lục)
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#---weather-report)
