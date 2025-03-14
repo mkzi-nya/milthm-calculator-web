@@ -22,7 +22,7 @@
 
 > Estas instrucciones han sido traducidas por ChatGPT, si hay algún problema, por favor consulta la versión en chino simplificado.
 
-Last updated on 2025.3.14_2:45(UTC)
+Last updated on 2025.3.14_2:55(UTC)
 
 ## Sitios web
   - [k9.lv/c/](http://k9.lv/c/)
@@ -152,7 +152,7 @@ El método de cálculo está proporcionado por `PanyiAme`, consulta los detalles
 
 ## Sobre Milthm
 
-- [Volver al índice](#índice)
+- [Back to Tabla de contenido](#tabla-de-contenido)
 
 ### Fórmula de cálculo de Reality
 
@@ -252,9 +252,9 @@ Las evaluaciones mostradas al finalizar la canción:
 
 ---
 
-## Constant Table
+## Tabla de constantes
 
-- [Back to Table of Contents](#table-of-contents)
+- [Back to Tabla de contenido](#tabla-de-contenido)
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#introduction---weather-report)
