@@ -1,4 +1,3 @@
-继续翻译内容到越南语，并且略微缩减Reality对照表的部分：
 
 ---
 
@@ -23,6 +22,8 @@
 ---
 
 > Hướng dẫn này được dịch bởi ChatGPT, nếu có vấn đề, vui lòng tham khảo phiên bản Trung Quốc giản thể.
+
+Last updated on 2025.3.14_2:40(UTC)
 
 ## Trang web
   - [k9.lv/c/](http://k9.lv/c/)
@@ -254,108 +255,162 @@ Có 8 loại xếp hạng cuối cùng:
 
 ## Bảng hằng số
 
-- [Quay lại Mục lục](#mục-lục)
-- [Giới thiệu](#giới-thiệu---dự-báo-thời-tiết)
-  - [Dự báo thời tiết](#giới-thiệu---dự-báo-thời-tiết)
-- [Chương chính](#chương-mở---tiếng-mưa)
-  - [Tiếng mưa](#chương-mở---tiếng-mưa)
-  - [Hai mặt ngọt ngào và đắng](#chương-1---hai-mặt-ngọt-ngào-và-đắng)
-- [Chương liên kết](#liên-kết---thế-giới-mưa)
-  - [Thế giới mưa](#liên-kết---thế-giới-mưa)
-  - [Notanote](#liên-kết---notanote)
-- [Đơn bài](#đơn-bài---băng-tape-mộng)
-  - [Băng tape mộng](#đơn-bài---băng-tape-mộng) 
-
+- [Back to Table of Contents](#table-of-contents)
+- [Description](#description)
+- [Main Chapter](#introduction---weather-report)
+  - [Weather Report](#---weather-report)
+  - [Rainfall Sounds](#prologue---rainfall-sounds)
+  - [The Sides of Bitter and Sweet](#chapter1---the-sides-of-bitter-and-sweet)
+- [Collaboration](#collaboration---rain-world)
+  - [Rain World](#collaboration---rain-world)
+  - [Notanote](#collaboration---notanote)
+- [Single](#single---dream-tape)
+  - [Dream Tape](#single---dream-tape)
+  - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
 
 ---
 
-## Giới thiệu - Dự báo thời tiết
+# Description
 
-| Tiêu đề              | DZ   | SK   | CB   | CL   |
+- Tất cả các **SP** và chart phi tiêu chuẩn đều không được tính vào Reality.  
+- Do giới hạn độ chính xác, tất cả các bài có hằng số **11.9** trong phiên bản hiện tại đều không đạt đủ **11.9**. Ví dụ, nếu Reality lý thuyết của một phiên bản là **13.005**, trong game sẽ hiển thị là **13.00** thay vì **13.01**.  
+
+Reality lý thuyết của phiên bản hiện tại là `12.675` (hiển thị là 12.67).  
+Dưới đây là 20 bài có hằng số cao nhất trong phiên bản hiện tại:
+
+| Rank | Title                   | Difficulty | Constant |
+|------|-------------------------|------------|----------|
+| 1 | Contrasty Angeles | CL | 12.3 |
+| 2 | 命日 | CL | 12.2 |
+| 3 | Moonfall／大月墜落狂想 | CB | 12.2 |
+| 4 | Regnaissance | CL | 12.1 |
+| 5 | Innocent white | CB | 12.1 |
+| 6 | Broken Conviction | CL | 11.9 |
+| 7 | Meltovt Necrosys | CB | 11.9 |
+| 8 | Moonflutter | CL | 11.7 |
+| 9 | Fly To Meteor feat.兔柒 | CL | 11.7 |
+| 10 | HYPER MEMORIES | CB | 11.7 |
+| 11 | Broken Conviction | CB | 11.5 |
+| 12 | Threat - Metropolis | CB | 11.5 |
+| 13 | Contrasty Angeles | CB | 11.5 |
+| 14 | slic.hertz #GdbG | CB | 11.4 |
+| 15 | Moonflutter | CB | 11.4 |
+| 16 | Algebra | CB | 11.4 |
+| 17 | Fragment of Memories | CB | 11.3 |
+| 18 | cafe in 6412l731V | CB | 11.3 |
+| 19 | IN | CB | 11.2 |
+| 20 | イコラト | CB | 11.2 |
+| 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
+
+---
+
+## Introduction - Weather Report
+
+| Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| Welcome to Milthm     | 1.0  | -    | -    | -    |
-| Mưa rơi              | 1.0  | 4.5  | 8.5  | -    |
-| Gió đêm               | 3.0  | 7.3  | 10.1 | -    |
-| Hoa nguyệt            | 2.0  | 8.2  | 9.3  | -    |
-| Ánh sáng chiều tối    | 2.0  | 7.5  | 9.1  | -    |
+| Welcome to Milthm    | 1.0  | -    | -    | -    |
+| 時落之雨             | 1.0  | 4.5  | 8.5  | -    |
+| 夜風                 | 3.0  | 7.3  | 10.1 | -    |
+| 花月                 | 2.0  | 8.2  | 9.3  | -    |
+| 暮予星光             | 2.0  | 7.5  | 9.1  | -    |
 
-## Chương mở - Tiếng mưa
+---
 
-| Tiêu đề           | DZ   | SK   | CB   | CL   |
-|-------------------|------|------|------|------|
-| Thành phố mưa     | 1.0  | 4.0  | 7.5  | -    |
-| Jump out?         | 2.0  | 7.9  | 9.7  | -    |
-| Moving On         | 2.0  | 6.3  | 10.8 | -    |
-| Blueface          | 4.0  | 8.0  | 10.1 | -    |
-| Ikorato           | 3.0  | 8.7  | 11.2 | -    |
-| Mưa nữ            | 3.0  | 6.5  | 9.5  | 10.5 |
-| Ngày chết         | 3.0  | 8.7  | 11.1 | 12.2 |
+## Prologue - Rainfall Sounds
 
-## Chương 1 - Hai mặt ngọt ngào và đắng
+| Title        | DZ   | SK   | CB   | CL   |
+|--------------|------|------|------|------|
+| 雨之城        | 1.0  | 4.0  | 7.5  | -    |
+| Jump out?     | 2.0  | 7.9  | 9.7  | -    |
+| Moving On     | 2.0  | 6.3  | 10.8 | -    |
+| Blueface      | 4.0  | 8.0  | 10.1 | -    |
+| イコラト      | 3.0  | 8.7  | 11.2 | -    |
+| 雨女          | 3.0  | 6.5  | 9.5  | 10.5 |
+| 命日          | 3.0  | 8.7  | 11.1 | 12.2 |
 
-| Tiêu đề                | DZ   | SK   | CB   | CL   |
-|------------------------|------|------|------|------|
-| Mưa với nét thô         | 1.0  | 4.0  | 8.3  | -    |
-| Aconsma                | 1.0  | 6.0  | 9.3  | -    |
-| OverRain               | 2.0  | 7.6  | 10.0 | -    |
-| Những mảnh ký ức       | 2.0  | 8.4  | 11.3 | -    |
-| HYPER MEMORIES         | 1.0  | 8.9  | 11.7 | -    |
-| Regnaissance           | 4.5  | 8.5  | 11.1 | 12.1 |
-| Contrasty Angeles      | 4.0  | 9.0  | 11.5 | 12.3 |
+---
 
-## Liên kết - Thế giới mưa
+## Chapter1 - The Sides of Bitter and Sweet
 
-| Tiêu đề                    | DZ   | SK   | CB   | CL   |
-|----------------------------|------|------|------|------|
-| Sundown                    | 1.0  | -    | -    | -    |
-| Bio-Engineering            | 2.0  | 8.3  | 9.6  | -    |
-| Threat - Sky Islands       | 2.0  | 6.9  | 10.6 | -    |
-| Threat - Superstructure    | 2.0  | 5.5  | 10.3 | -    |
-| White Lizard               | -    | 4.0  | -    | -    |
-| Threat - Waterfront Complex| 2.0  | 7.6  | 10.6 | -    |
-| Kayava                     | 3.0  | 5.5  | 10.4 | -    |
-| Threat - Metropolis        | 2.0  | 6.6  | 11.5 | -    |
-| Sheer Ice Torrent          | 2.0  | 7.8  | 11.1 | -    |
-| Moonfall / Đại tháng rơi   | 2.0  | 8.0  | 12.2 | -    |
+| Title                | DZ   | SK   | CB   | CL   |
+|----------------------|------|------|------|------|
+| 粗线条的雨           | 1.0  | 4.0  | 8.3  | -    |
+| Aconsma              | 1.0  | 6.0  | 9.3  | -    |
+| OverRain             | 2.0  | 7.6  | 10.0 | -    |
+| Fragment of Memories | 2.0  | 8.4  | 11.3 | -    |
+| HYPER MEMORIES       | 1.0  | 8.9  | 11.7 | -    |
+| Regnaissance         | 4.5  | 8.5  | 11.1 | 12.1 |
+| Contrasty Angeles    | 4.0  | 9.0  | 11.5 | 12.3 |
 
-## Liên kết - Notanote
+---
 
-| Tiêu đề              | DZ   | SK   | CB   | CL   |
-|---------------------|------|------|------|------|
-| Shining Rain        | 2.0  | 7.0  | 9.4  | -    |
-| cybernetic blazar   | 4.0  | 7.8  | 10.2 | -    |
-| Innocent white      | 2.0  | 8.2  | 12.1 | -    |
-| Elsorhg             | 2.0  | 7.5  | 9.8  | -    |
-| Meltovt Necrosys    | 2.0  | 7.8  | 11.9 | -    |
+## Collaboration - Rain World
 
-## Đơn bài - Băng tape mộng
+| Title                       | DZ   | SK   | CB   | CL   |
+|-----------------------------|------|------|------|------|
+| Sundown                     | 1.0  | -    | -    | -    |
+| Bio-Engineering             | 2.0  | 8.3  | 9.6  | -    |
+| Threat - Sky Islands        | 2.0  | 6.9  | 10.6 | -    |
+| Threat - Superstructure     | 2.0  | 5.5  | 10.3 | -    |
+| White Lizard                | -    | 4.0  | -    | -    |
+| Threat - Waterfront Complex | 2.0  | 7.6  | 10.6 | -    |
+| Kayava                      | 3.0  | 5.5  | 10.4 | -    |
+| Threat - Metropolis         | 2.0  | 6.6  | 11.5 | -    |
+| Sheer Ice Torrent           | 2.0  | 7.8  | 11.1 | -    |
+| Moonfall／大月墜落狂想       | 2.0  | 8.0  | 12.2 | -    |
 
-| Tiêu đề                         | DZ   | SK   | CB   | CL   |
-|----------------------------------|------|------|------|------|
-| Thành phố neons với Mai feat.    | 3.5  | 8.0  | 9.7  | -    |
-| INFP.mp3                         | 2.0  | 5.5  | 9.2  | -    |
-| Oniichan                         | 3.0  | 8.0  | 9.8  | -    |
-| Oiiaioooooiai                    | -    | -    | -    | SP   |
-| WATER                            | 3.0  | 7.3  | 10.6 | -    |
-| Dogbite                          | 3.0  | 7.6  | 10.3 | SP   |
-| Hikari                           | 3.0  | 8.4  | 10.7 | -    |
-| Moonflutter                      | 3.0  | 7.9  | 11.4 | 11.7 |
-| Fly To Meteor                    | 3.0  | 6.5  | 10.5 | 11.7 |
-| Hoa anh đào rơi                  | 3.0  | 8.8  | 10.9 | -    |
-| Agnostic                         | 3.0  | 7.4  | 10.0 | -    |
-| Psyched Fevereiro                | 3.5  | 7.3  | 10.0 | -    |
-| Future Unbound (Game Edit)       | 3.0  | 7.5  | 10.5 | -    |
-| Algebra                          | 2.0  | 8.1  | 11.4 | -    |
-| Words                            | 2.0  | 6.5  | 9.3  | -    |
-| Ngày mai giả lập                  | 3.5  | 6.6  | 3.5  | -    |
-| Hoa sen hổ trắng                  | 3.0  | 6.5  | 9.6  | -    |
-| Mảnh vỡ của chu kỳ               | 1.0  | 7.8  | 8.6  | -    |
-| Betelgeuse~ 参宿四                | 2.0  | 6.4  | 11.2 | -    |
-| slic.hertz #GdbG                 | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!                  | 2.0  | 7.5  | 9.8  | -    |
-| IN                               | 1.0  | 7.9  | 11.2 | -    |
-| Cơn mưa đột ngột                 | -    | -    | -    | Ø    |
-| Broken Conviction                | 4.5  | 4.5  | 11.5 | 11.9 |
+---
+
+## Collaboration - Notanote
+
+| Title                | DZ   | SK   | CB   | CL   |
+|----------------------|------|------|------|------|
+| 烁雨                 | 2.0  | 7.0  | 9.4  | -    |
+| cybernetic blazar    | 4.0  | 7.8  | 10.2 | -    |
+| Innocent white       | 2.0  | 8.2  | 12.1 | -    |
+| Elsorhg              | 2.0  | 7.5  | 9.8  | -    |
+| Meltovt Necrosys     | 2.0  | 7.8  | 11.9 | -    |
+
+---
+
+## Single - Dream Tape
+
+| Title                          | DZ   | SK   | CB   | CL   |
+|-|-|-|-|-|
+| ネオン色のまち feat. Mai    | 3.5  | 8.0  | 9.7  | -    |
+| INFP.mp3                    | 2.0  | 5.5  | 9.2  | -    |
+| Oniichan                    | 3.0  | 8.0  | 9.8  | -    |
+| Oiiaioooooiai               | -    | -    | -    | SP   |
+| WATER                       | 3.0  | 7.3  | 10.6 | -    |
+| Dogbite                     | 3.0  | 7.6  | 10.3 | SP   |
+| Hikari                      | 3.0  | 8.4  | 10.7 | -    |
+| Moonflutter                 | 3.0  | 7.9  | 11.4 | 11.7 |
+| Fly To Meteor              | 3.0  | 6.5  | 10.5 | 11.7 |
+| 樱落繁花                    | 3.0  | 8.8  | 10.9 | -    |
+| Agnostic                    | 3.0  | 7.4  | 10.0 | -    |
+| Psyched Fevereiro           | 3.5  | 7.3  | 10.0 | -    |
+| Future Unbound (Game Edit)  | 3.0  | 7.5  | 10.5 | -    |
+| Algebra                     | 2.0  | 8.1  | 11.4 | -    |
+| Words                       | 2.0  | 6.5  | 9.3  | -    |
+| 仮想明日                    | 3.5  | 6.6  | 3.5  | -    |
+| 白虎蓮華                    | 3.0  | 6.5  | 9.6  | -    |
+| サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
+| 参宿四\~Betelgeuse\~          | 2.0  | 6.4  | 11.2 | -    |
+| slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | -    |
+| IN                           | 1.0  | 7.9  | 11.2 | -    |
+| 驟雨の狭間                  | -    | -    | -    | Ø    |
+| Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
+
+---
+
+## Single - Gathering Blossoms Under Rain
+
+| Title                        | DZ   | SK   | CB   | CL   |
+|------------------------------|------|------|------|------|
+| FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
+| cafe in 6412l731V                    | 2.0  | 7.0  | 11.3  | -    |
+
 
 ---
 
@@ -528,7 +583,7 @@ y	x (score)
 0.95	1004029.7
 0.96	1004661.3
 0.965	1004999.0
-1.0	1105000.0
+1.0	1005000.0
 ```
 
 
