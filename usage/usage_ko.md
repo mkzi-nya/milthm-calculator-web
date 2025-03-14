@@ -23,7 +23,7 @@
 
 > 이 설명은 ChatGPT로 번역되었으며, 문제가 있을 경우 간체中文版을 기준으로 참조하십시오.
 
-Last updated on 2025.3.14_2:50(UTC)
+Last updated on 2025.3.14_03:00(UTC)
 
 ## 웹사이트
   - [k9.lv/c/](http://k9.lv/c/)
@@ -252,9 +252,9 @@ function reality(score, constant) {
 
 ---
 
-## Constant Table
+## 정수표
 
-- [Back to Table of Contents](#table-of-contents)
+- [Back to Table of Contents](#목차)
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#introduction---weather-report)
