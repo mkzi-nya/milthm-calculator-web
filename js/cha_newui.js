@@ -192,7 +192,12 @@ const constants = {
   "a8d6dfa7-b879-4eef-a10a-dbbd46519583": { constant: 12.2, category: "CB", name: "Moonfall／大月墜落狂想", ad: 3, ae: 2, af: 2, ag: 2 },
   "9eb53fd3-a91c-45c6-8608-f3a76eecf9f7": { constant: 8.0, category: "SK", name: "Moonfall／大月墜落狂想", ad: 0, ae: 1, af: 1, ag: 0 },
   "ca751a94-f71e-4556-9d54-76de325ca29c": { constant: 2.0, category: "DZ", name: "Moonfall／大月墜落狂想", ad: 0, ae: 1, af: 1, ag: 0 },
-
+"addba2e9-ad45-4770-b850-717ab2e0e17d": { constant: 10.6, category: "CB", name: "FULi AUTO SHOOTER", ad: 0, ae: 1, af: 1, ag: 0 },
+"423e7ae7-97e9-4c87-a778-36af2020a59d": { constant: 7.2, category: "SK", name: "FULi AUTO SHOOTER", ad: 0, ae: 1, af: 1, ag: 0 },
+"54c60c83-9a80-458d-bf11-b04be1af1977": { constant: 3.0, category: "DZ", name: "FULi AUTO SHOOTER", ad: 0, ae: 1, af: 1, ag: 0 },
+"825405cb-d262-4f10-9e98-4d967e4e33f4": { constant: 11.3, category: "CB", name: "cafe in 6412l731V", ad: 0, ae: 1, af: 1, ag: 0 },
+"faf0dc82-df37-456a-b726-283e27df9c31": { constant: 7.0, category: "SK", name: "cafe in 6412l731V", ad: 0, ae: 1, af: 1, ag: 0 },
+"54c60c83-9a80-458d-bf11-b04be1af1977": { constant: 2.0, category: "DZ", name: "cafe in 6412l731V", ad: 0, ae: 1, af: 1, ag: 0 },
   //特殊谱面
   //剧情谱面，显示定数为3
   "eb802d90-72c0-4b95-856a-b2951a57c0ec": { constant: -1, category: "CB*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 },
