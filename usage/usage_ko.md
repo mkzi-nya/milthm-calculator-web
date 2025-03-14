@@ -1,4 +1,3 @@
-Here is the translated version of the file you provided into Korean, with no other modifications:
 
 ---
 
@@ -23,6 +22,8 @@ Here is the translated version of the file you provided into Korean, with no oth
 ---
 
 > 이 설명은 ChatGPT로 번역되었으며, 문제가 있을 경우 간체中文版을 기준으로 참조하십시오.
+
+Last updated on 2025.3.14_2:50(UTC)
 
 ## 웹사이트
   - [k9.lv/c/](http://k9.lv/c/)
@@ -251,32 +252,31 @@ function reality(score, constant) {
 
 ---
 
-## 정수표
+## Constant Table
 
-- [목차로 돌아가기](#목차)
-- [설명](#설명)
-- [소개](#소개---기상 예보)
-  - [기상 예보](#소개---기상 예보)
-- [주요 챕터](#序章---비의 소리)
-  - [비의 소리](#序章---비의 소리)
-  - [달콤함과 쓴맛의 두 얼굴](#주요 챕터 1---달콤함과 쓴맛의 두 얼굴)
-- [연동 챕터](#연동---비의 세계)
-  - [비의 세계](#연동---비의 세계)
-  - [Notanote](#연동---notanote)
-- [단곡](#단곡---꿈의 테이프)
-  - [꿈의 테이프](#단곡---꿈의 테이프)
+- [Back to Table of Contents](#table-of-contents)
+- [Description](#description)
+- [Main Chapter](#introduction---weather-report)
+  - [Weather Report](#introduction---weather-report)
+  - [Rainfall Sounds](#prologue---rainfall-sounds)
+  - [The Sides of Bitter and Sweet](#chapter1---the-sides-of-bitter-and-sweet)
+- [Collaboration](#collaboration---rain-world)
+  - [Rain World](#collaboration---rain-world)
+  - [Notanote](#collaboration---notanote)
+- [Single](#single---dream-tape)
+  - [Dream Tape](#single---dream-tape)
+  - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
   
-## 설명
+## Description
 
 > - 모든 `SP`와 비정상 곡은 Reality 계산에 포함되지 않습니다
 > - 현재 버전에서의 모든 정수는 11.9 곡에 대한 정수들이 미세하게 모자랄 수 있습니다. 예를 들어, 어떤 버전에서의 이론 Reality 값이 `13.005`라면, 게임 내에서는 `13.00`으로 표시됩니다.
 
-현재 버전의 이론 Reality 값은 `12.670`
+현재 버전의 이론 Reality 값은 `12.675`
 현재 버전에서 정수 값이 가장 높은 20곡은 다음과 같습니다:
 
-
-| 순위 | 제목  | 난이도 | 정수 |
-|---|---------------------|------|----|
+| Rank | Title                   | Difficulty | Constant |
+|------|-------------------------|------------|----------|
 | 1 | Contrasty Angeles | CL | 12.3 |
 | 2 | 命日 | CL | 12.2 |
 | 3 | Moonfall／大月墜落狂想 | CB | 12.2 |
@@ -294,101 +294,120 @@ function reality(score, constant) {
 | 15 | Moonflutter | CB | 11.4 |
 | 16 | Algebra | CB | 11.4 |
 | 17 | Fragment of Memories | CB | 11.3 |
-| 18 | IN | CB | 11.2 |
-| 19 | イコラト | CB | 11.2 |
+| 18 | cafe in 6412l731V | CB | 11.3 |
+| 19 | IN | CB | 11.2 |
+| 20 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
 
 ---
 
-## 소개 - 기상 예보
+## Introduction - Weather Report
 
-| 제목                | DZ   | SK   | CB   | CL   |
-|---------------------|------|------|------|------|
-| Welcome to Milthm  | 1.0  | -    | -    | -    |
-| 時落之雨           | 1.0  | 4.5  | 8.5  | -    |
-| 夜风               | 3.0  | 7.3  | 10.1 | -    |
-| 花月               | 2.0  | 8.2  | 9.3  | -    |
-| 暮予星光           | 2.0  | 7.5  | 9.1  | -    |
+| Title                | DZ   | SK   | CB   | CL   |
+|----------------------|------|------|------|------|
+| Welcome to Milthm    | 1.0  | -    | -    | -    |
+| 時落之雨             | 1.0  | 4.5  | 8.5  | -    |
+| 夜風                 | 3.0  | 7.3  | 10.1 | -    |
+| 花月                 | 2.0  | 8.2  | 9.3  | -    |
+| 暮予星光             | 2.0  | 7.5  | 9.1  | -    |
 
-## 서막 - 비의 소리
+---
 
-| 제목           | DZ   | SK   | CB   | CL   |
-|---------------|------|------|------|------|
-| 비의 도시      | 1.0  | 4.0  | 7.5  | -    |
+## Prologue - Rainfall Sounds
+
+| Title        | DZ   | SK   | CB   | CL   |
+|--------------|------|------|------|------|
+| 雨之城        | 1.0  | 4.0  | 7.5  | -    |
 | Jump out?     | 2.0  | 7.9  | 9.7  | -    |
 | Moving On     | 2.0  | 6.3  | 10.8 | -    |
 | Blueface      | 4.0  | 8.0  | 10.1 | -    |
 | イコラト      | 3.0  | 8.7  | 11.2 | -    |
-| 雨女          | 3.0 | 6.5  | 9.5  | 10.5 |
+| 雨女          | 3.0  | 6.5  | 9.5  | 10.5 |
 | 命日          | 3.0  | 8.7  | 11.1 | 12.2 |
 
 ---
 
-## 주요 챕터 1 - 달콤함과 쓴맛의 두 얼굴
+## Chapter1 - The Sides of Bitter and Sweet
 
-| 제목                | DZ   | SK   | CB   | CL   |
-|---------------------|------|------|------|------|
-| 거친 선의 비         | 1.0  | 4.0  | 8.3  | -    |
-| Aconsma             | 1.0  | 6.0  | 9.3  | -    |
-| OverRain            | 2.0  | 7.6  | 10.0 | -    |
-| Memories의 조각    | 2.0  | 8.4  | 11.3 | -    |
-| HYPER MEMORIES     | 1.0  | 8.9  | 11.7 | -    |
-| Regnaissance       | 4.5  | 8.5  | 11.1 | 12.1 |
-| Contrasty Angeles  | 4.0  | 9.0  | 11.5 | 12.3 |
+| Title                | DZ   | SK   | CB   | CL   |
+|----------------------|------|------|------|------|
+| 粗线条的雨           | 1.0  | 4.0  | 8.3  | -    |
+| Aconsma              | 1.0  | 6.0  | 9.3  | -    |
+| OverRain             | 2.0  | 7.6  | 10.0 | -    |
+| Fragment of Memories | 2.0  | 8.4  | 11.3 | -    |
+| HYPER MEMORIES       | 1.0  | 8.9  | 11.7 | -    |
+| Regnaissance         | 4.5  | 8.5  | 11.1 | 12.1 |
+| Contrasty Angeles    | 4.0  | 9.0  | 11.5 | 12.3 |
 
-## 연동 - 비의 세계
+---
 
-| 제목                    | DZ   | SK   | CB   | CL   |
-|-------------------------|------|------|------|------|
-| Sundown                | 1.0  | -    | -    | -    |
-| Bio-Engineering        | 2.0  | 8.3  | 9.6  | -    |
-| Threat - Sky Islands   | 2.0  | 6.9  | 10.6 | -    |
-| Threat - Superstructure | 2.0  | 5.5  | 10.3 | -    |
-| White Lizard           | -    | 4.0  | -    | -    |
+## Collaboration - Rain World
+
+| Title                       | DZ   | SK   | CB   | CL   |
+|-----------------------------|------|------|------|------|
+| Sundown                     | 1.0  | -    | -    | -    |
+| Bio-Engineering             | 2.0  | 8.3  | 9.6  | -    |
+| Threat - Sky Islands        | 2.0  | 6.9  | 10.6 | -    |
+| Threat - Superstructure     | 2.0  | 5.5  | 10.3 | -    |
+| White Lizard                | -    | 4.0  | -    | -    |
 | Threat - Waterfront Complex | 2.0  | 7.6  | 10.6 | -    |
-| Kayava                 | 3.0  | 5.5  | 10.4 | -    |
-| Threat - Metropolis    | 2.0  | 6.6  | 11.5 | -    |
-| Sheer Ice Torrent      | 2.0  | 7.8  | 11.1 | -    |
-| Moonfall／대월추락광상 | 2.0  | 8.0  | 12.2 | -    |
+| Kayava                      | 3.0  | 5.5  | 10.4 | -    |
+| Threat - Metropolis         | 2.0  | 6.6  | 11.5 | -    |
+| Sheer Ice Torrent           | 2.0  | 7.8  | 11.1 | -    |
+| Moonfall／大月墜落狂想       | 2.0  | 8.0  | 12.2 | -    |
 
-## 연동 - Notanote
+---
 
-| 제목              | DZ   | SK   | CB   | CL   |
-|-------------------|------|------|------|------|
-| Shining Rain      | 2.0  | 7.0  | 9.4  | -    |
-| cybernetic blazar | 4.0  | 7.8  | 10.2 | -    |
-| Innocent white    | 2.0  | 8.2  | 12.1 | -    |
-| Elsorhg           | 2.0  | 7.5  | 9.8  | -    |
-| Meltovt Necrosys  | 2.0  | 7.8  | 11.9 | -    |
+## Collaboration - Notanote
 
-## 단곡 - 꿈의 테이프
+| Title                | DZ   | SK   | CB   | CL   |
+|----------------------|------|------|------|------|
+| 烁雨                 | 2.0  | 7.0  | 9.4  | -    |
+| cybernetic blazar    | 4.0  | 7.8  | 10.2 | -    |
+| Innocent white       | 2.0  | 8.2  | 12.1 | -    |
+| Elsorhg              | 2.0  | 7.5  | 9.8  | -    |
+| Meltovt Necrosys     | 2.0  | 7.8  | 11.9 | -    |
 
-| 제목                         | DZ   | SK   | CB   | CL   |
-|------------------------------|------|------|------|------|
-| 네온색의 마을 feat. Mai    | 3.5  | 8.0  | 9.7  | -    |
-| INFP.mp3                     | 2.0  | 5.5  | 9.2  | -    |
-| Oniichan                     | 3.0  | 8.0  | 9.8  | -    |
-| Oiiaioooooiai                | -    | -    | -    | SP   |
-| WATER                        | 3.0  | 7.3  | 10.6 | -    |
-| Dogbite                      | 3.0  | 7.6  | 10.3 | SP   |
-| Hikari                       | 3.0  | 8.4  | 10.7 | -    |
-| Moonflutter                  | 3.0  | 7.9  | 11.4 | 11.7 |
-| Fly To Meteor                | 3.0  | 6.5  | 10.5 | 11.7 |
-| Sakura Falling Flowers       | 3.0  | 8.8  | 10.9 | -    |
-| Agnostic                     | 3.0  | 7.4  | 10.0 | -    |
-| Psyched Fevereiro            | 3.5  | 7.3  | 10.0 | -    |
-| Future Unbound (Game Edit)   | 3.0  | 7.5  | 10.5 | -    |
-| Algebra                      | 2.0  | 8.1  | 11.4 | -    |
-| Words                        | 2.0  | 6.5  | 9.3  | -    |
-| 가상 내일                    | 3.5  | 6.6  | 3.5  | -    |
-| White Tiger Lotus            | 3.0  | 6.5  | 9.6  | -    |
-| 조각의 사이클                | 1.0  | 7.8  | 8.6  | -    |
-| 참숙사사~Betelgeuse~          | 2.0  | 6.4  | 11.2 | -    |
-| slic.hertz #GdbG             | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!              | 2.0  | 7.5  | 9.8  | -    |
+---
+
+## Single - Dream Tape
+
+| Title                          | DZ   | SK   | CB   | CL   |
+|-|-|-|-|-|
+| ネオン色のまち feat. Mai    | 3.5  | 8.0  | 9.7  | -    |
+| INFP.mp3                    | 2.0  | 5.5  | 9.2  | -    |
+| Oniichan                    | 3.0  | 8.0  | 9.8  | -    |
+| Oiiaioooooiai               | -    | -    | -    | SP   |
+| WATER                       | 3.0  | 7.3  | 10.6 | -    |
+| Dogbite                     | 3.0  | 7.6  | 10.3 | SP   |
+| Hikari                      | 3.0  | 8.4  | 10.7 | -    |
+| Moonflutter                 | 3.0  | 7.9  | 11.4 | 11.7 |
+| Fly To Meteor              | 3.0  | 6.5  | 10.5 | 11.7 |
+| 樱落繁花                    | 3.0  | 8.8  | 10.9 | -    |
+| Agnostic                    | 3.0  | 7.4  | 10.0 | -    |
+| Psyched Fevereiro           | 3.5  | 7.3  | 10.0 | -    |
+| Future Unbound (Game Edit)  | 3.0  | 7.5  | 10.5 | -    |
+| Algebra                     | 2.0  | 8.1  | 11.4 | -    |
+| Words                       | 2.0  | 6.5  | 9.3  | -    |
+| 仮想明日                    | 3.5  | 6.6  | 3.5  | -    |
+| 白虎蓮華                    | 3.0  | 6.5  | 9.6  | -    |
+| サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
+| 参宿四\~Betelgeuse\~          | 2.0  | 6.4  | 11.2 | -    |
+| slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | -    |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
-| 갑작스러운 비의 틈새        | -    | -    | -    | Ø    |
-| Broken Conviction            | 4.5  | 4.5  | 11.5 | 11.9 |
+| 驟雨の狭間                  | -    | -    | -    | Ø    |
+| Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
+
+---
+
+## Single - Gathering Blossoms Under Rain
+
+| Title                        | DZ   | SK   | CB   | CL   |
+|------------------------------|------|------|------|------|
+| FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
+| cafe in 6412l731V                    | 2.0  | 7.0  | 11.3  | -    |
+
 
 ---
 
@@ -561,5 +580,5 @@ y	x (score)
 0.95	1004029.7
 0.96	1004661.3
 0.965	1004999.0
-1.0	1105000.0
+1.0	1005000.0
 ```
