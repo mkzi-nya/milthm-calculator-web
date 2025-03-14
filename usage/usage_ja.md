@@ -25,6 +25,8 @@
 
 > このガイドはChatGPTにより翻訳されました。問題があれば簡体字中国語版を参照してください。
 
+Last updated on 2025.3.14_2:25(UTC)
+
 ## ウェブサイト
   - [k9.lv/c/](http://k9.lv/c/)
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
@@ -261,19 +263,20 @@ function reality(score, constant) {
   - [天気予報](#紹介---天気予報)
 - [主な章](#序章---雨の音)
   - [雨の音](#序章---雨の音)
-  - [甘さと苦さの二重性](#主な章一---甘さと苦さの二重性)
-- [コラボ章](#コラボ---雨の世界)
-  - [雨の世界](#コラボ---雨の世界)
-  - [Notanote](#コラボ---Notanote)
+  - [甘さと苦さの両面](#主な章一---甘さと苦さの両面)
+- [コラボレーション](#コラボレーション---rain-world)
+  - [Rain World](#コラボレーション---rain-world)
+  - [Notanote](#コラボレーション---Notanote)
 - [シングル](#シングル---夢のテープ)
   - [夢のテープ](#シングル---夢のテープ)
+  - [Gathering Blossoms Under Rain](#シングル---gathering-blossoms-under-rain)
   
 ## 説明
 
 > - 全ての`SP`と非標準の譜面はReality計算に含まれません
 > - 精度の問題により、現在のバージョンでは、全ての定数が11.9の曲目の定数は実際に11.9には達していません。例えば、あるバージョンの理論Realityが`13.005`であっても、ゲーム内では`13.00`として表示され、`13.01`とは表示されません。
 
-現在のバージョンの理論Realityは`12.670`です。  
+現在のバージョンの理論Realityは`12.675`です。  
 現在のバージョンで定数が最も高い20曲は以下の通りです：
 
 | ランク | タイトル                  | 難易度 | 定数 |
@@ -287,17 +290,18 @@ function reality(score, constant) {
 | 7    | Meltovt Necrosys         | CB     | 11.9 |
 | 8    | Moonflutter              | CL     | 11.7 |
 | 9    | Fly To Meteor feat.兔柒   | CL     | 11.7 |
-| 10   | HYPER MEMORIES           | CB     | 11.7 |
-| 11   | Broken Conviction        | CB     | 11.5 |
-| 12   | Threat - Metropolis      | CB     | 11.5 |
-| 13   | Contrasty Angeles        | CB     | 11.5 |
-| 14   | slic.hertz #GdbG         | CB     | 11.4 |
-| 15   | Moonflutter              | CB     | 11.4 |
-| 16   | Algebra                  | CB     | 11.4 |
-| 17   | Fragment of Memories     | CB     | 11.3 |
-| 18   | IN                       | CB     | 11.2 |
-| 19   | イコラト                   | CB     | 11.2 |
-| 20   | 参宿四\~Betelgeuse\~      | CB     | 11.2 |
+| 10 | HYPER MEMORIES | CB | 11.7 |
+| 11 | Broken Conviction | CB | 11.5 |
+| 12 | Threat - Metropolis | CB | 11.5 |
+| 13 | Contrasty Angeles | CB | 11.5 |
+| 14 | slic.hertz #GdbG | CB | 11.4 |
+| 15 | Moonflutter | CB | 11.4 |
+| 16 | Algebra | CB | 11.4 |
+| 17 | Fragment of Memories | CB | 11.3 |
+| 18 | cafe in 6412l731V | CB | 11.3 |
+| 19 | IN | CB | 11.2 |
+| 20 | イコラト | CB | 11.2 |
+| 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
 
 ---
 
@@ -328,7 +332,7 @@ function reality(score, constant) {
 
 ---
 
-## 主な章一 - 甘さと苦さの二重性
+## 主な章一 - 甘さと苦さの両面
 
 | タイトル                | DZ   | SK   | CB   | CL   |
 |-------------------------|------|------|------|------|
@@ -342,7 +346,7 @@ function reality(score, constant) {
 
 ---
 
-## コラボレーション - 雨の世界
+## コラボレーション - Rain World
 
 | タイトル                 | DZ   | SK   | CB   | CL   |
 |--------------------------|------|------|------|------|
@@ -399,6 +403,15 @@ function reality(score, constant) {
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
+
+---
+
+## シングル - Gathering Blossoms Under Rain
+
+| Title                        | DZ   | SK   | CB   | CL   |
+|------------------------------|------|------|------|------|
+| FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
+| cafe in 6412l731V                    | 2.0  | 7.0  | 11.3  | -    |
 
 ---
 
