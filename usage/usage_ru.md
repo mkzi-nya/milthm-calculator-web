@@ -251,7 +251,7 @@ function reality(score, constant) {
 
 ---
 
-## Constant Table
+## таблица констант
 
 - [Back to Table of Contents](#содержание)
 - [Description](#description)
