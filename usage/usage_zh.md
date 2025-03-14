@@ -1,3 +1,4 @@
+
 ## 目录
 - [网站](#网站)
 - [使用说明](#使用说明)
@@ -17,6 +18,9 @@
   - [Milthm Wiki](#milthm-wiki)
   - [Reality对照表](#reality对照表)
 ---
+
+> 此说明由ChatGPT翻译，如果存在问题以简体中文版为准
+
 ## 网站
   - [k9.lv/c/](http://k9.lv/c/)
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
@@ -267,7 +271,7 @@ function reality(score, constant) {
 
 
 
-当前版本的理论Reality为`12.670`
+当前版本的理论Reality为`12.675`（显示为12.67）
 当前版本定数最高的20首曲目如下
 
 
@@ -290,8 +294,9 @@ function reality(score, constant) {
 | 15 | Moonflutter | CB | 11.4 |
 | 16 | Algebra | CB | 11.4 |
 | 17 | Fragment of Memories | CB | 11.3 |
-| 18 | IN | CB | 11.2 |
-| 19 | イコラト | CB | 11.2 |
+| 18 | cafe in 6412l731V | CB | 11.3 |
+| 19 | IN | CB | 11.2 |
+| 20 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
 
 
@@ -383,6 +388,12 @@ function reality(score, constant) {
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
 
+## 单曲 - 露晓卉庭
+
+| 标题                         | DZ   | SK   | CB   | CL   |
+|------------------------------|------|------|------|------|
+| FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
+| cafe in 6412l731V                    | 2.0  | 7.0  | 11.3  | -    |
 
 ---
 
