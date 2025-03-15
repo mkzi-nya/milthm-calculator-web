@@ -297,7 +297,7 @@ Dưới đây là 20 bài có hằng số cao nhất trong phiên bản hiện t
 | 15 | Moonflutter | CB | 11.4 |
 | 16 | Algebra | CB | 11.4 |
 | 17 | Fragment of Memories | CB | 11.3 |
-| 18 | cafe in 6412l731V | CB | 11.3 |
+| 18 | cafe in 6412I731V | CB | 11.3 |
 | 19 | IN | CB | 11.2 |
 | 20 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
@@ -409,7 +409,7 @@ Dưới đây là 20 bài có hằng số cao nhất trong phiên bản hiện t
 | Title                        | DZ   | SK   | CB   | CL   |
 |------------------------------|------|------|------|------|
 | FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
-| cafe in 6412l731V                    | 2.0  | 7.0  | 11.3  | -    |
+| cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
 
 
 ---
