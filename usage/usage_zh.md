@@ -20,8 +20,9 @@
   - [Reality对照表](#reality对照表)
 ---
 
-Last updated on 2025.3.16_11:25(UTC)
+Last updated on 2025.3.16_11:30(UTC)
 
+如果界面渲染出现问题可以[在Github中访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 ## 网站
   - [k9.lv/c/](http://k9.lv/c/)
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
