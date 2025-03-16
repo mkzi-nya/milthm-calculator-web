@@ -98,7 +98,7 @@
           </p>
           <hr>
           <p>
-            <span data-i18n="originalSite">原地址： </span>
+            <span data-i18n="originalSite">原地址：</span>
             <a href="http://k9.lv/c/" target="_blank">
               <span class="superlink">k9.lv/c/</span>
             </a>
@@ -110,15 +110,12 @@
         <div class="layui-card-header" data-i18n="siteInfo">网站信息</div>
         <div class="layui-card-body">
           <p data-i18n="siteAuthor">
-            网站作者：<span onclick="javascript:show_author_info();" class="superlink" data-i18n="viewAuthor">查看</span>
+            网站作者：
+            <span onclick="javascript:show_author_info();" class="superlink" data-i18n="viewAuthor">查看</span>
           </p>
           <p data-i18n="lastUpdate">上次更新：3.14_11:03(UTC+8)</p>
-          <p data-i18n="updateContent">更新内容：</p>
-          <p data-i18n="updateAutoLang">自动选择多语言</p>
-          <p data-i18n="updateInstructions">更新使用说明，添加定数表等大量内容</p>
-          <p data-i18n="updateChart">查分图增加星星☆</p>
-          <p data-i18n="updateFix">修改说明中的一些问题</p>
-          <p data-i18n="updateNew">已更新3.4版本新曲和曲绘</p>
+          <!-- 合并后的更新信息 -->
+          <p data-i18n="updateCombined" style="white-space: pre-line;"></p>
         </div>
       </div>
 
@@ -165,6 +162,16 @@
       </div>
     </div>
   </div>
+
+  <!-- 模拟部分操作函数，仅供演示 -->
+  <script>
+    function processData() { alert("执行解析操作"); }
+    function upl() { alert("执行上传文件操作"); }
+    function downloadImage() { alert("执行生成图像操作"); }
+    function qqbot_ua() { alert("QQ Bot选项 - 测试"); }
+    function changeColumns(num) { alert("改变列：" + num); }
+    function show_author_info() { alert("作者信息"); }
+  </script>
 
   <!-- 多语言切换逻辑 -->
   <script>
@@ -231,6 +238,6 @@
       loadTranslations();
     });
   </script>
-   <script src="./js/cha_newui.js"></script>
+  <script src="./js/cha_newui.js"></script>
 </body>
 </html>
