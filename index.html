@@ -1,34 +1,236 @@
 <!DOCTYPE html>
 <html lang="zh" class="dark">
 <head>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (typeof navigator !== "undefined" && typeof navigator.language !== "undefined") {
-            let userLang = navigator.language.toLowerCase();
-            let langMap = {
-                "zh": "index_zh.html",
-                "zh-cn": "index_zh.html",
-                "zh-tw": "index_zh-tw.html",
-                "en": "index_en.html",
-                "es": "index_es.html",
-                "ja": "index_ja.html",
-                "ko": "index_ko.html",
-                "ru": "index_ru.html",
-                "vi": "index_vi.html"
-            };
-
-            // 获取当前页面 URL
-            let currentPage = window.location.pathname.split("/").pop();
-
-            // 选择合适的语言页面，默认英文
-            let targetPage = langMap[userLang] || "index_en.html";
-
-            // 如果当前页面不是目标语言页面，则跳转
-            if (currentPage !== targetPage) {
-                window.location.href = targetPage;
-            }
-        }
-    });
-</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 标题会根据语言更新 -->
+  <title data-i18n="title">Milthm 查分器（原Reality计算器）</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="new_UI.css">
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <input type="file" id="fileupLoad" style="display:none;" />
+  <!-- Chunk: sql_wasm -->
+  <script src="./js/plistjs/plist.js"></script>
+  <script src="./js/sql-wasm.js"></script>
+  <style>
+    /* 暗色风格的语言菜单样式 */
+    #languageMenu {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      display: none;
+      background-color: #333;
+      color: #eee;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 5px;
+      min-width: 100px;
+      z-index: 9999;
+    }
+    #languageMenu div {
+      margin: 5px;
+      cursor: pointer;
+      padding: 3px 5px;
+    }
+    #languageMenu div:hover {
+      background-color: #444;
+    }
+  </style>
 </head>
+<body>
+  <script src="./layui/layui.js"></script>
+  <script src="./new_ui.js"></script>
+
+  <!-- 语言切换按钮与菜单 -->
+  <div style="position: absolute; right: 20px; top: 20px; z-index: 9999;">
+    <button 
+      id="languageButton" 
+      style="background: transparent; border: none; cursor: pointer; font-size: 20px; z-index: 9999;"
+      title="Language">
+      🌐
+    </button>
+    <!-- 语言菜单 -->
+    <div id="languageMenu">
+      <div id="langZh">简体中文</div>
+      <div id="langZhTw">繁體中文</div>
+      <div id="langEn">English</div>
+      <div id="langJa">日本語</div>
+      <div id="langKo">한국어</div>
+      <div id="langRu">Русский</div>
+      <div id="langEs">Español</div>
+      <div id="langVi">Tiếng Việt</div>
+    </div>
+  </div>
+
+  <!-- 页面头部 -->
+  <div class="layui-header header-opa">
+    <div class="layui-logo header-opa-bg2" style="padding: 16px;">
+      <h1 style="color:turquoise; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap;">
+        MilthmCalc <span style="font-size: medium;color:gold;">Ultra</span>
+      </h1>            
+    </div>
+  </div>
+
+  <!-- 页面主体内容 -->
+  <div style="padding: 30px; text-align:center;display:flex;">
+    <div style="text-align: left;max-width:1200px;margin:auto;">
+      <div class="layui-card rccc">
+        <div class="layui-card-header">
+          <h2 data-i18n="welcome">Welcome</h2>
+        </div>
+        <div class="layui-card-body">
+          <p data-i18n="greeting">你好，欢迎来到MilthmCalc！(Reality计算器)</p>
+          <p data-i18n="description">这是一个用于计算Milthm Reality分数的网站，你可以在这里导入存档并解析。</p>
+          <hr>
+          <p>
+            <span data-i18n="usage">使用说明：</span>
+            <a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage.html" target="_blank">
+              <span class="superlink" data-i18n="viewUsage">查看使用说明</span>
+            </a>
+          </p>
+          <hr>
+          <p>
+            <span data-i18n="qqGroup">QQ交流群：</span>
+            <a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank">
+              <span class="superlink" data-i18n="viewQQGroup">Milthm#-1洨巟羣</span>
+            </a>
+          </p>
+          <hr>
+          <p>
+            <span data-i18n="originalSite">原地址： </span>
+            <a href="http://k9.lv/c/" target="_blank">
+              <span class="superlink">k9.lv/c/</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="layui-card rccc">
+        <div class="layui-card-header" data-i18n="siteInfo">网站信息</div>
+        <div class="layui-card-body">
+          <p data-i18n="siteAuthor">
+            网站作者：<span onclick="javascript:show_author_info();" class="superlink" data-i18n="viewAuthor">查看</span>
+          </p>
+          <p data-i18n="lastUpdate">上次更新：3.14_11:03(UTC+8)</p>
+          <p data-i18n="updateContent">更新内容：</p>
+          <p data-i18n="updateAutoLang">自动选择多语言</p>
+          <p data-i18n="updateInstructions">更新使用说明，添加定数表等大量内容</p>
+          <p data-i18n="updateChart">查分图增加星星☆</p>
+          <p data-i18n="updateFix">修改说明中的一些问题</p>
+          <p data-i18n="updateNew">已更新3.4版本新曲和曲绘</p>
+        </div>
+      </div>
+
+      <script>
+        if (typeof accessCount !== 'undefined' && accessCount != null) {
+          document.getElementById("accessCount").innerHTML = accessCount;
+        } else if (document.getElementById("accessCount")) {
+          document.getElementById("accessCount").innerHTML = "DevMode";
+        }
+      </script>
+
+      <div class="layui-card rccc">
+        <div class="layui-card-header" data-i18n="dataProcessing">数据处理</div>
+        <div class="layui-card-body">
+          <textarea id="inputData" class="layui-textarea" data-i18n-placeholder="inputDataPlaceholder">粘贴数据在此处...</textarea>
+          <hr/>
+          <!-- 数据处理操作 -->
+          <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled data-i18n="qqBotOption">QQ Bot选项 (不可用)</button>
+          <hr/>
+          <button class="layui-btn layui-btn-primary" onclick="javascript:processData();" data-i18n="parse">解析</button>
+          <button class="layui-btn layui-btn-primary" onclick="javascript:upl();" data-i18n="uploadFile">上传文件</button>
+          <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage();" data-i18n="generateImage">生成图像</button>
+          <br>
+          <div id="picgen" style="display: none;">
+            <br>
+            <span class="layui-badge layui-bg-black" data-i18n="generatingImage">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-card rccc" id="usercontainer" style="display: none;">
+        <div class="layui-card-header" data-i18n="dataResult">数据处理结果</div>
+        <div class="layui-card-body">
+          <h3 data-i18n="userInfo">用户信息：</h3>
+          <h4 id="userInfo"></h4>
+          <hr/>
+          <h3 data-i18n="charts">图表：</h3>
+          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);" data-i18n="increaseColumn">增加列</button>
+          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);" data-i18n="decreaseColumn">减少列</button>
+          <br>
+          <hr>
+          <div class="container" id="output"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 多语言切换逻辑 -->
+  <script>
+    let translations = {};
+    let currentLang = 'zh';
+    let menuVisible = false;
+
+    function loadTranslations() {
+      fetch('lang.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          let detected = (navigator.language || navigator.userLanguage).toLowerCase();
+          if (detected.startsWith('zh')) {
+            if (detected.includes('tw') || detected.includes('hk') || detected.includes('mo')) {
+              detected = 'zh-tw';
+            } else {
+              detected = 'zh';
+            }
+          }
+          currentLang = translations[detected] ? detected : 'en';
+          setLanguage(currentLang);
+        })
+        .catch(error => {
+          console.error('加载翻译文件失败:', error);
+          setLanguage('en');
+        });
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+      menuVisible = false;
+      document.getElementById('languageMenu').style.display = 'none';
+    }
+
+    function toggleLangMenu() {
+      menuVisible = !menuVisible;
+      document.getElementById('languageMenu').style.display = menuVisible ? 'block' : 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('languageButton').addEventListener('click', toggleLangMenu);
+      document.getElementById('langZh').addEventListener('click', () => setLanguage('zh'));
+      document.getElementById('langZhTw').addEventListener('click', () => setLanguage('zh-tw'));
+      document.getElementById('langEn').addEventListener('click', () => setLanguage('en'));
+      document.getElementById('langJa').addEventListener('click', () => setLanguage('ja'));
+      document.getElementById('langKo').addEventListener('click', () => setLanguage('ko'));
+      document.getElementById('langRu').addEventListener('click', () => setLanguage('ru'));
+      document.getElementById('langEs').addEventListener('click', () => setLanguage('es'));
+      document.getElementById('langVi').addEventListener('click', () => setLanguage('vi'));
+      loadTranslations();
+    });
+  </script>
+   <script src="./js/cha_newui.js"></script>
+</body>
 </html>
