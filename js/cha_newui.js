@@ -1,4 +1,4 @@
-console.log("Updated at 2025.02.15")
+console.log("Updated at 2025.03.17")
 console.log("已更新data.db文件解析")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -1272,7 +1272,7 @@ function downloadImage() {
       ctx.fillText(`Date: ${dateStr}`, 660, 200);
 
       ctx.font = '50px Arial';
-      ctx.fillText('Reality-calculator v3.4', 100, 130);
+      ctx.fillText('Reality-calculator', 100, 130);
       ctx.font = '30px Arial';
       ctx.fillText('http://k9.lv/c/', 100, 180);
 
