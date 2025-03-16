@@ -19,7 +19,7 @@
   - [Reality对照表](#reality对照表)
 ---
 
-Last updated on 2025.3.14_2:20(UTC)
+Last updated on 2025.3.16_11:25(UTC)
 
 ## 网站
   - [k9.lv/c/](http://k9.lv/c/)
@@ -37,6 +37,7 @@ Last updated on 2025.3.14_2:20(UTC)
 
 #### **文件路径（详见 [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File)）**
 
+[什么是文件路径](#什么是文件路径)
 - **Android (TapTap)**
   ```text
   /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
@@ -418,6 +419,30 @@ function reality(score, constant) {
 - **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
 
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
+
+### 什么是文件路径
+
+路径（英语：path）是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树分层结构，首个部分表示文件系统位置，之后以分隔字符分开的各部分路径表示各级目录，最后是该文件/文件夹。分隔字符最常采用斜线（/）、反斜线（\ ）或冒号（:）字符，不同操作系统与环境可能采用不同的字符。路径在计算机科学中被广泛采用，用以表示现代操作系统中常见的文件夹/文件关系，在构建统一资源定位符（URL）时也必不可少。资源可以采用绝对路径表示，也可采用相对路径表示。
+
+#### 安卓文件路径
+
+- 外部存储
+
+外部存储是指在`/storage/emulated/用户标识(默认主用户为0)/`(或`/sdcard/`)下的文件，这部分文件才是暴露给用户的文件分区，也就是平时文件管理器能看到的文件.
+系统文件管理器一般显示的也是这个目录
+
+- 应用数据目录
+
+应用数据目录通常指`/storage/emulated/0/Android/data/package name/`目录
+
+比如`/storage/emulated/0/Android/data/game.taptap.morizero.milthm/`就是Milthm(taptap版)的应用数据目录
+
+而Milthm的存档目录位于`/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/`
+
+有时系统可能会阻止您访问这个目录，可以尝试连接电脑访问 或 授予文件管理器adb权限 来访问
+
+访问目录的方式就是对照着路径找到一个个文件夹点进去(如果这都看不懂就别查了)
+
 
 ### Reality对照表
 
