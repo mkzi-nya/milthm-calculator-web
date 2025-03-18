@@ -15,12 +15,13 @@
   - [定数表](#定数表)
 - [联系我们](#联系我们)
 - [其他内容](#其他内容)
-  - [什么是文件路径](#什么是文件路径)
   - [Milthm Wiki](#milthm-wiki)
+  - [隐藏曲解锁方式](#隐藏曲解锁方式)
+  - [什么是文件路径](#什么是文件路径)
   - [Reality对照表](#reality对照表)
 ---
 
-Last updated on 2025.3.16_11:30(UTC)
+Last updated on 2025.3.18_9:50(UTC)
 
 如果界面渲染出现问题可以[在Github中访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 ## 网站
@@ -421,6 +422,24 @@ function reality(score, constant) {
 - **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
 
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
+
+### 隐藏曲解锁方式
+
+- Regnaissance
+
+解锁并游玩HYPER MEMORIES；
+在游玩过程中背景会出现黑白色的苏珊，此时不要击打任何音符；
+之后分数变为负数，同时苏珊变为彩色，此时继续游玩并使分数>0，结算后进入本曲的游玩，游玩一次后解锁。
+
+- Contrasty Angeles
+
+解锁Regnaissance后，阅读主线章节一剧情第6话；
+游玩HYPER MEMORIES；
+在游玩过程中背景会出现黑白色的苏珊，此时需要保持全连；
+之后分数骤减，同时苏珊变为彩色，此时不要击打任何音符并使分数>0，结算后进入本曲的游玩，游玩一次后解锁。
+
+
+(取自萌娘百科)
 
 ### 什么是文件路径
 
