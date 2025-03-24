@@ -1,45 +1,55 @@
 
----
+## Mục Lục
 
-## Mục lục
-- [Trang web](#trang-web)
-- [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
-  - [Tải lên tệp lưu trữ](#tải-lên-tệp-lưu-trữ)
-  - [Nhập dữ liệu đã phân tích](#nhập-dữ-liệu-đã-phân-tích)
-  - [Lưu trữ phiên bản cũ](#lưu-trữ-phiên-bản-cũ)
-  - [Các đường dẫn lưu trữ khác](#các-đường-dẫn-lưu-trữ-khác)
-  - [Biểu đồ radar](#biểu-đồ-radar)
+- [Trang Web](#trang-web)
+- [Hướng Dẫn Sử Dụng](#hướng-dẫn-sử-dụng)
+  - [Tải Lên Tệp Lưu Trữ](#tải-lên-tệp-lưu-trữ)
+  - [Nhập Dữ Liệu Đã Phân Tích](#nhập-dữ-liệu-đã-phân-tích)
+  - [Lưu Trữ Phiên Bản Cũ](#lưu-trữ-phiên-bản-cũ)
+  - [Đường Dẫn Lưu Trữ Khác](#đường-dẫn-lưu-trữ-khác)
+  - [Biểu Đồ Radar](#biểu-đồ-radar)
 - [Về Milthm](#về-milthm)
-  - [Công thức tính Reality](#công-thức-tính-reality)
-  - [Phán đoán nốt nhạc](#phán-đoán-nốt-nhạc)
-  - [Xếp hạng cuối cùng](#xếp-hạng-cuối-cùng)
-  - [Trạng thái hoàn thành](#trạng-thái-hoàn-thành)
-  - [Bảng hằng số](#bảng-hằng-số)
-- [Liên hệ](#liên-hệ)
-- [Khác](#khác)
-  - [Wiki Milthm](#wiki-milthm)
-  - [Bảng đối chiếu Reality](#bảng-đối-chiếu-reality)
+  - [Công Thức Tính Reality](#công-thức-tính-reality)
+  - [Phán Đoán Nốt Nhạc](#phán-đoán-nốt-nhạc)
+  - [Xếp Hạng Kết Quả](#xếp-hạng-kết-quả)
+  - [Trạng Thái Hoàn Thành](#trạng-thái-hoàn-thành)
+  - [Bảng Hằng Số](#bảng-hằng-số)
+- [Liên Hệ](#liên-hệ)
+- [Nội Dung Khác](#nội-dung-khác)
+  - [Milthm Wiki](#milthm-wiki)
+  - [Phương Pháp Mở Khóa Bài Hát Ẩn](#phương-pháp-mở-khóa-bài-hát-ẩn)
+  - [Đường Dẫn Tệp Là Gì?](#đường-dẫn-tệp-là-gì)
+  - [Bảng So Sánh Reality](#bảng-so-sánh-reality)
+
 ---
 
-> Hướng dẫn này được dịch bởi ChatGPT, nếu có vấn đề, vui lòng tham khảo phiên bản Trung Quốc giản thể.
+_Last updated on 2025.3.24 17:35 (UTC)_
 
-Last updated on 2025.3.14_2:55(UTC)
+> Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 
-## Trang web
-  - [k9.lv/c/](http://k9.lv/c/)
+---
+
+## Trang Web
+
+- [k9.lv/c/](http://k9.lv/c/)
+  
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
-## Hướng dẫn sử dụng
+---
 
-### Tải lên tệp lưu trữ
+## Hướng Dẫn Sử Dụng
 
-Nhấp vào **「Tải lên tệp」** trên trang chủ và chọn tệp lưu trữ `saves.db` hoặc tệp ghi điểm `data.db` để tải lên.
+### Tải Lên Tệp Lưu Trữ
 
-> **Lưu ý**:
-> - `data.db` chỉ chứa dữ liệu chơi từ bản cập nhật `3.2` trở đi (nếu không bị mất).
-> - Đối với Android, khuyến nghị sử dụng [MT Manager](https://mt2.cn/) để truy cập thư mục `sdcard/Android/data`.
+Nhấn vào tùy chọn **"Upload File"** trên trang chủ để chọn và tải lên tệp lưu trữ `saves.db` hoặc tệp ghi điểm `data.db`.
 
-#### **Đường dẫn tệp (Xem chi tiết [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))**
+> **Lưu Ý:**
+> - `data.db` chỉ chứa các bản ghi chơi game được cập nhật sau phiên bản `3.2` (nếu không bị mất).
+> - Người dùng Android được khuyến nghị sử dụng [MT Manager](https://mt2.cn/) để truy cập thư mục `sdcard/Android/data`.
+
+#### Đường Dẫn Tệp (xem [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
+
+[Đường Dẫn Tệp Là Gì?](#đường-dẫn-tệp-là-gì)
 
 - **Android (TapTap)**
   ```text
@@ -50,12 +60,17 @@ Nhấp vào **「Tải lên tệp」** trên trang chủ và chọn tệp lưu t
   /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
   ```
 - **iOS**
-  Sử dụng ứng dụng [Tệp](https://support.apple.com/vi-vn/102570) để mở thư mục Milthm:
-  ```text
-  /data/
-  ```
-- **Windows**
-  Nhập vào thanh địa chỉ của File Explorer:
+
+Mở thư mục Milthm bằng ứng dụng [Files](https://support.apple.com/zh-cn/102570):
+
+```text
+/data/
+```
+
+> Nếu không tìm thấy tệp cục bộ: vào menu ba chấm ở góc trên bên phải của trang Files và bật hiển thị tệp cục bộ (xem [chi tiết](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+
+- **Đối với người dùng Windows:**  
+  Nhập vào thanh địa chỉ của File Explorer:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -70,9 +85,9 @@ Nhấp vào **「Tải lên tệp」** trên trang chủ và chọn tệp lưu t
 
 ---
 
-### Nhập dữ liệu đã phân tích
+### Nhập Dữ Liệu Đã Phân Tích
 
-Nhập dữ liệu vào ô nhập trên trang chủ, định dạng như sau:
+Nhập dữ liệu vào ô nhập trên trang chủ theo định dạng sau:
 
 ```text
 [name],{
@@ -81,7 +96,9 @@ Nhập dữ liệu vào ô nhập trên trang chủ, định dạng như sau:
 }
 ```
 
-`acc` là giá trị thập phân, `level` là cấp độ, định nghĩa như sau:
+Trong đó:
+- `acc` là số thập phân biểu thị độ chính xác;
+- `level` biểu thị xếp hạng, được định nghĩa như sau:
 
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
@@ -89,9 +106,9 @@ level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 
 ---
 
-### Lưu trữ phiên bản cũ
+### Lưu Trữ Phiên Bản Cũ
 
-Lưu trữ từ `Milthm 3.2` trở về trước không thể trích xuất trực tiếp trên thiết bị di động, bạn có thể thử cách sau:
+Các bản lưu từ trước phiên bản `Milthm 3.2` không thể trích xuất trực tiếp trên thiết bị di động. Bạn có thể thử các phương pháp sau:
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -102,10 +119,10 @@ while true; do
     if [ -f "$SOURCE_DIR$FILE_NAME" ]; then
         cp "$SOURCE_DIR$FILE_NAME" "$DEST_DIR"
         if [ $? -eq 0 ]; then
-            echo "Tệp $FILE_NAME đã được sao chép thành công vào /sdcard/"
+            echo "文件 $FILE_NAME 已成功复制到 /sdcard/"
             break
         else
-            echo "Sao chép tệp thất bại, vui lòng kiểm tra quyền truy cập!"
+            echo "复制文件失败，请检查权限！"
         fi
     fi
 done
@@ -113,9 +130,9 @@ done
 
 ---
 
-### Các đường dẫn lưu trữ khác
+### Đường Dẫn Lưu Trữ Khác
 
-Nếu không thể phân tích sau khi tải lên, bạn có thể thử trích xuất dữ liệu JSON thủ công và tải lên:
+Nếu việc tải lên không phân tích được, bạn có thể thử trích xuất thủ công dữ liệu JSON và tải lên:
 
 - **Android (TapTap)**
   ```text
@@ -127,10 +144,10 @@ Nếu không thể phân tích sau khi tải lên, bạn có thể thử trích 
   ```
 - **iOS**
   ```text
-  Dữ liệu ứng dụng Milthm/Data/Library/Preferences
+  milthm file/Data/Library/Preferences
   ```
 - **Windows**
-  Trong registry:
+  regedit:
   ```text
   HKEY_CURRENT_USER\Software\Morizero\Milthm\
   ```
@@ -145,25 +162,25 @@ Nếu không thể phân tích sau khi tải lên, bạn có thể thử trích 
 
 ---
 
-## Biểu đồ radar
+## Biểu Đồ Radar
 
-Phương pháp tính toán liên quan được cung cấp bởi `PanyiAme`, xem chi tiết trong [Hướng dẫn Bảng tra cứu Milthm](https://wwp.lanzoup.com/iZ59A2j8nbpe).
+Phương pháp tính được cung cấp bởi `PanyiAme`. Chi tiết, vui lòng xem [Giải Thích Biểu Đồ Điểm Milthm](https://wwp.lanzoup.com/iZ59A2j8nbpe).
 
 ---
 
 ## Về Milthm
 
-- [Quay lại Mục lục](#mục-lục)
+[Quay lại Mục Lục](#mục-lục)
 
-### Công thức tính Reality
+### Công Thức Tính Reality
 
-Reality được tính dựa trên điểm chơi và hằng số của bài hát:
+Reality được tính dựa trên điểm số chơi game và hằng số của bài hát:
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-Công thức tính Reality của từng bài hát như sau (s là điểm, c là hằng số):
+Công thức tính Reality cho một bài hát (trong đó s là điểm số và c là hằng số) như sau:
 
 $$
 \text{Reality}(s, c) =
@@ -178,9 +195,10 @@ $$
 \end{cases}
 $$
 
-[Reality bảng đối chiếu](#reality-đối-chiếu)
+[Bảng So Sánh Reality](#bảng-so-sánh-reality)
 
-#### Triển khai mã:
+#### Cài Đặt Mã Lệnh:
+
 ```js
 function reality(score, constant) {
     if (score >= 1005000)
@@ -197,19 +215,17 @@ function reality(score, constant) {
 
 ---
 
-## Phán đoán nốt nhạc
+## Phán Đoán Nốt Nhạc
 
-Trong trò chơi, có 5 loại phán đoán cho mỗi nốt nhạc:
+Trong trò chơi, có năm loại phán đoán cho từng nốt nhạc:
 
-- `Perfect`: Nhận 101% điểm và 100% ACC.
-- `perfect`: Nhận điểm và ACC từ 75%-101% dựa trên độ chính xác.
-- `Good`: Nhận điểm và ACC từ 30%-15% dựa trên độ chính xác.
-- `Bad`: Gián đoạn combo, nhận điểm từ 0%-30%, không có ACC.
-- `Miss`: Gián đoạn combo, không nhận điểm và ACC.
+- **Perfect:** Đạt được 101% điểm và 100% ACC.
+- **perfect:** Đạt được từ 75% đến 101% điểm và 100% ACC tùy theo độ chính xác.
+- **Good:** Đạt được từ 30% đến 15% điểm và 50% ACC tùy theo độ chính xác.
+- **Bad:** Combo bị gián đoạn, nhận được từ 0% đến 30% điểm và 10% ACC.
+- **Miss:** Combo bị gián đoạn, không nhận điểm cũng như ACC.
 
-Điểm và độ chính xác trong mỗi khoảng đều có tỷ lệ với nhau.
-
-Các phạm vi tương ứng của 5 loại phán đoán như bảng sau:
+Trong mỗi khoảng, điểm số và độ chính xác tỷ lệ thuận. Các khoảng chi tiết được trình bày trong bảng dưới đây:
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -217,48 +233,49 @@ Các phạm vi tương ứng của 5 loại phán đoán như bảng sau:
 
 ---
 
-## Xếp hạng cuối cùng
+## Xếp Hạng Kết Quả
 
-Có 8 loại xếp hạng cuối cùng:
+Có tám xếp hạng kết quả:
 
-- R: Đạt điểm lý thuyết 1010000 (RHYTHM of RAIN, tất cả các nốt nhạc đều là Perfect)
-- S tím: Đạt All Perfect (Tất cả các nốt nhạc đều là Perfect và chưa đạt xếp hạng R, 1000000-1009999)
-- S xanh: Đạt Full Combo (Tất cả các nốt nhạc đều không có Bad/Miss và chưa đạt S tím, không quan tâm đến điểm dưới đây)
-- S: 950000-1009999
-- A: 900000-949999
-- B: 850000-899999
-- C: 800000-849999
-- F: 0-799999
+- **R:** Rain – đạt được điểm lý thuyết 1010000 (RHYTHM of RAIN, khi tất cả các nốt đều là Perfect).
+- **Purple S:** Đạt được All Perfect (tất cả các nốt đều là Perfect nhưng không đạt xếp hạng R, với điểm từ 1000000 đến 1009999).
+- **Blue S:** Đạt được Full Combo (tất cả các nốt được đánh mà không có Bad/Miss, không xét các yêu cầu về điểm bên dưới).
+- **S:** 950000-1009999.
+- **A:** 900000-949999.
+- **B:** 850000-899999.
+- **C:** 800000-849999.
+- **F:** 0-799999.
 
 ---
 
-## Trạng thái hoàn thành
+## Trạng Thái Hoàn Thành
 
-Đánh giá hiển thị sau khi kết thúc trò chơi:
+Sau khi bài hát kết thúc, đánh giá hiệu suất hiển thị trên biểu đồ bao gồm:
 
-- Crash:
+- **Crash:**  
   - ACC < 80%
-- Complete:
-  - ACC > 80% và có ít nhất một Bad/Miss
-- Full Combo:
-  - Tất cả các nốt nhạc đều được đánh trong khoảng ±140ms, và có ít nhất một Good
-- All Perfect:
-  - Tất cả các nốt nhạc đều được đánh trong khoảng ±70ms và có ít nhất một Perfect nhỏ
-- Rhythm of Rain:
-  - Tất cả các nốt nhạc đều được đánh trong khoảng ±35ms, tức là điểm lý thuyết
-- AutoPlay is Awesome:
-  - Được chơi qua AutoPlay
-- Overloaded:
-  - Điểm trên 1010000 (Sử dụng mưa lớn).
+- **Complete:**  
+  - ACC > 80%, với ít nhất một Bad/Miss.
+- **Full Combo:**  
+  - Tất cả các nốt được đánh trong vòng ±140ms, với ít nhất một Good.
+- **All Perfect:**  
+  - Tất cả các nốt được đánh trong vòng ±70ms, với ít nhất một small perfect.
+- **Rhythm of Rain:**  
+  - Tất cả các nốt được đánh trong vòng ±35ms, tức là giá trị lý thuyết.
+- **AutoPlay is Awesome:**  
+  - Hoàn thành bằng cách sử dụng AutoPlay.
+- **Overloaded:**  
+  - Điểm số vượt quá 1010000 (sử dụng mưa lớn).
 
 ---
 
-## Bảng hằng số
+## Bảng Hằng Số
 
-- [Back to Table of Contents](#ục-lục)
+[Quay lại Mục Lục](#mục-lục)
+
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
-  - [Weather Report](#---weather-report)
+  - [Weather Report](#introduction---weather-report)
   - [Rainfall Sounds](#prologue---rainfall-sounds)
   - [The Sides of Bitter and Sweet](#chapter1---the-sides-of-bitter-and-sweet)
 - [Collaboration](#collaboration---rain-world)
@@ -270,13 +287,13 @@ Có 8 loại xếp hạng cuối cùng:
 
 ---
 
-# Description
+## Giải Thích
 
-- Tất cả các **SP** và chart phi tiêu chuẩn đều không được tính vào Reality.  
-- Do giới hạn độ chính xác, tất cả các bài có hằng số **11.9** trong phiên bản hiện tại đều không đạt đủ **11.9**. Ví dụ, nếu Reality lý thuyết của một phiên bản là **13.005**, trong game sẽ hiển thị là **13.00** thay vì **13.01**.  
+> - Tất cả các bảng SP và các bản nhạc không tiêu chuẩn không được tính vào công thức Reality.  
+> - Do vấn đề về độ chính xác, trong phiên bản hiện tại, tất cả các hằng số của bài hát được cho là 11.9 thực tế đều thấp hơn 11.9. Ví dụ, nếu Reality lý thuyết là `13.005`, trong trò chơi sẽ hiển thị là `13.00` thay vì `13.01`, và tính toán thực tế là `13.004999…`.
 
-Reality lý thuyết của phiên bản hiện tại là `12.675` (hiển thị là 12.67).  
-Dưới đây là 20 bài có hằng số cao nhất trong phiên bản hiện tại:
+Reality lý thuyết hiện tại là `12.675` (hiển thị là 12.67).  
+20 bài hát có hằng số cao nhất trong phiên bản hiện tại như sau:
 
 | Rank | Title                   | Difficulty | Constant |
 |------|-------------------------|------------|----------|
@@ -411,27 +428,67 @@ Dưới đây là 20 bài có hằng số cao nhất trong phiên bản hiện t
 | FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
 | cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
 
-
 ---
 
-## Liên hệ
+## Liên Hệ
 
-- **[QQ Milthm#-1 Nhóm chat](https://qm.qq.com/q/Utb6sNDvki)**: 375882310
-- **[QQ Milthm#Φ Nhóm cộng đồng](https://qm.qq.com/q/fIErsKKz3a)**: 678471942
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
 - **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
 
 ---
 
-## Khác
-- [Quay lại Mục lục](#mục-lục)
+## Nội Dung Khác
 
-### Wiki Milthm
+[Quay lại Mục Lục](#mục-lục)
+
+### Milthm Wiki
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
-- **[Moegirl Wiki](https://mzh.moegirl.org.cn/Milthm)**
+
+- **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
+
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Bảng đối chiếu Reality
+### Phương Pháp Mở Khóa Bài Hát Ẩn
+
+- **Regnaissance**
+
+  Mở khóa và chơi HYPER MEMORIES;  
+  Trong khi chơi, nền sẽ chuyển sang đen trắng và Susan xuất hiện. Lúc đó, không được đánh nốt nào;  
+  Sau đó, điểm số sẽ âm, đồng thời Susan chuyển sang màu sắc. Tiếp tục chơi cho đến khi điểm số > 0, bài hát sẽ được mở khóa sau khi đánh giá.
+
+- **Contrasty Angeles**
+
+  Sau khi mở khóa Regnaissance, đọc Tập 6 của chương 1 trong cốt truyện chính;  
+  Chơi HYPER MEMORIES;  
+  Trong khi chơi, nền sẽ chuyển sang đen trắng và Susan xuất hiện, bạn phải duy trì full combo;  
+  Sau đó, điểm số giảm mạnh, đồng thời Susan chuyển sang màu sắc. Tiếp tục chơi cho đến khi điểm số > 0, bài hát sẽ được mở khóa sau khi đánh giá.
+
+### Đường Dẫn Tệp Là Gì?
+
+Đường dẫn tệp là biểu diễn dạng chuỗi chỉ định vị trí duy nhất trong hệ thống tệp, thường sử dụng cấu trúc cây thư mục. Các hệ điều hành khác nhau sử dụng các ký tự phân tách khác nhau như `/`, `\` hoặc `:`, và đường dẫn có thể là tuyệt đối hoặc tương đối, rất quan trọng trong việc xây dựng URL.
+
+#### Đường Dẫn Tệp trên Android
+
+- **Bộ Nhớ Ngoại Bộ:**  
+  Nằm trong `/storage/emulated/[ID người dùng]` (người dùng chính mặc định là 0) hoặc `/sdcard/`, các tệp này hiển thị cho người dùng.
+- **Thư Mục Dữ Liệu Ứng Dụng:**  
+  Thông thường nằm ở `/storage/emulated/0/Android/data/[tên gói]/`, ví dụ:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
+  ```  
+  Thư mục lưu trữ của Milthm nằm tại:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  Nếu không thể truy cập, hãy thử kết nối với máy tính hoặc cấp quyền ADB cho trình quản lý tệp.
+
+---
+
+### Bảng So Sánh Reality
 
 ```text
 y	x (score)
@@ -585,6 +642,3 @@ y	x (score)
 0.965	1004999.0
 1.0	1005000.0
 ```
-
-
-

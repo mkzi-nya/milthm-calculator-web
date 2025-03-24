@@ -1,47 +1,55 @@
 
-
-## Japanese Translation
-
 ## 目次
+
 - [ウェブサイト](#ウェブサイト)
 - [使用方法](#使用方法)
   - [セーブファイルのアップロード](#セーブファイルのアップロード)
   - [解析済みデータの入力](#解析済みデータの入力)
-  - [旧バージョンのセーブファイル](#旧バージョンのセーブファイル)
+  - [旧バージョンのセーブ](#旧バージョンのセーブ)
   - [その他のセーブパス](#その他のセーブパス)
   - [レーダーチャート](#レーダーチャート)
-- [Milthmについて](#Milthmについて)
-  - [Reality計算式](#Reality計算式)
+- [Milthmについて](#milthmについて)
+  - [Reality計算式](#reality計算式)
   - [ノート判定](#ノート判定)
-  - [結果評価](#結果評価)
-  - [コンプリート状態](#コンプリート状態)
+  - [評価結果](#評価結果)
+  - [完了状態](#完了状態)
   - [定数表](#定数表)
 - [お問い合わせ](#お問い合わせ)
-- [その他のコンテンツ](#その他のコンテンツ)
-  - [Milthm Wiki](#Milthm-Wiki)
-  - [Reality表](#Reality表)
+- [その他の内容](#その他の内容)
+  - [Milthm Wiki](#milthm-wiki)
+  - [隠し曲のアンロック方法](#隠し曲のアンロック方法)
+  - [ファイルパスとは？](#ファイルパスとは)
+  - [Reality比較表](#reality比較表)
 
 ---
 
-> このガイドはChatGPTにより翻訳されました。問題があれば簡体字中国語版を参照してください。
+_最終更新: 2025.3.24 17:35 (UTC)_
 
-Last updated on 2025.3.14_2:25(UTC)
+> インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+
+---
 
 ## ウェブサイト
-  - [k9.lv/c/](http://k9.lv/c/)
+
+- [k9.lv/c/](http://k9.lv/c/)
+  
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
+
+---
 
 ## 使用方法
 
 ### セーブファイルのアップロード
 
-ホームページの **「ファイルをアップロード」** オプションをクリックし、`saves.db` または `data.db` を選択してアップロードします。
+ホームページ上の **"Upload File"** オプションをクリックし、セーブファイル `saves.db` またはスコア記録ファイル `data.db` を選択してアップロードしてください。
 
-> **注意**：
-> - `data.db` は、`3.2` 以降のゲームデータのみを含みます（データが失われていなければ）。
-> - Androidでは、[MT Manager](https://mt2.cn/) を使って `sdcard/Android/data` ディレクトリにアクセスすることを推奨します。
+> **注意:**
+> - `data.db` にはバージョン `3.2` 以降のプレイ記録のみが含まれます（紛失していない場合）。
+> - Android ユーザーは、`sdcard/Android/data` ディレクトリにアクセスするために [MT Manager](https://mt2.cn/) の使用を推奨します。
 
-#### **ファイルパス（[Milthm Wiki](https://milthm.fandom.com/wiki/Data_File) を参照）**
+#### ファイルパス (詳細は [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File) を参照)
+
+[ファイルパスとは？](#ファイルパスとは)
 
 - **Android (TapTap)**
   ```text
@@ -52,12 +60,17 @@ Last updated on 2025.3.14_2:25(UTC)
   /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
   ```
 - **iOS**
-  [ファイル](https://support.apple.com/ja-jp/102570) アプリを使用してMilthmフォルダを開きます：
-  ```text
-  /data/
-  ```
-- **Windows**
-  ファイルエクスプローラーのアドレスバーに入力：
+
+[Files](https://support.apple.com/zh-cn/102570) アプリを使って Milthm フォルダを開きます:
+
+```text
+/data/
+```
+
+> ローカルファイルが見つからない場合は、Files ホーム画面右上の三点メニューからローカルファイルの表示を有効にしてください（[詳細はこちら](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+
+- **Windows ユーザー:**  
+  エクスプローラーのアドレスバーに以下を入力してください:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -74,7 +87,7 @@ Last updated on 2025.3.14_2:25(UTC)
 
 ### 解析済みデータの入力
 
-ホームページの入力ボックスに以下の形式でデータを入力します：
+ホームページの入力ボックスに以下の形式でデータを入力してください:
 
 ```text
 [name],{
@@ -83,7 +96,9 @@ Last updated on 2025.3.14_2:25(UTC)
 }
 ```
 
-`acc` は小数で、`level` は評価を示します。定義は以下の通りです：
+ここで：
+- `acc` は精度を示す小数です；
+- `level` は評価を示し、以下のように定義されます:
 
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
@@ -91,9 +106,9 @@ level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 
 ---
 
-### 旧バージョンのセーブファイル
+### 旧バージョンのセーブ
 
-`Milthm 3.2` より前のセーブファイルはモバイル端末では直接抽出できませんが、以下の方法を試してみてください：
+`Milthm 3.2` より前のセーブはモバイル端末では直接抽出できません。以下の方法をお試しください:
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -104,10 +119,10 @@ while true; do
     if [ -f "$SOURCE_DIR$FILE_NAME" ]; then
         cp "$SOURCE_DIR$FILE_NAME" "$DEST_DIR"
         if [ $? -eq 0 ]; then
-            echo "ファイル $FILE_NAME は /sdcard/ に正常にコピーされました"
+            echo "文件 $FILE_NAME 已成功复制到 /sdcard/"
             break
         else
-            echo "ファイルのコピーに失敗しました。アクセス権限を確認してください。"
+            echo "复制文件失败，请检查权限！"
         fi
     fi
 done
@@ -117,7 +132,7 @@ done
 
 ### その他のセーブパス
 
-アップロードに問題がある場合、手動でJSONデータを抽出してアップロードしてみてください：
+アップロード後に解析できない場合は、JSON データを手動で抽出してアップロードしてください:
 
 - **Android (TapTap)**
   ```text
@@ -129,10 +144,10 @@ done
   ```
 - **iOS**
   ```text
-  milthmアプリデータ/Data/Library/Preferences
+  milthm file/Data/Library/Preferences
   ```
 - **Windows**
-  レジストリにあります：
+  regedit:
   ```text
   HKEY_CURRENT_USER\Software\Morizero\Milthm\
   ```
@@ -149,23 +164,23 @@ done
 
 ## レーダーチャート
 
-この計算方法は `PanyiAme` によって提供されています。詳細は [Milthmスコア表説明](https://wwp.lanzoup.com/iZ59A2j8nbpe) をご覧ください。
+計算方法は `PanyiAme` により提供されています。詳細は [Milthm スコアチャート説明](https://wwp.lanzoup.com/iZ59A2j8nbpe) をご参照ください。
 
 ---
 
 ## Milthmについて
 
-- [目次へ戻る](#目次)
+[目次に戻る](#目次)
 
 ### Reality計算式
 
-Realityの計算は、ゲームのスコアと曲の定数に基づいています：
+Reality はプレイスコアと譜面定数に基づいて計算されます:
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-単曲のReality計算式は以下の通りです（sはスコア、cは定数）：
+1 曲の Reality 計算式（ここで s はスコア、c は定数）は以下の通りです:
 
 $$
 \text{Reality}(s, c) =
@@ -180,9 +195,10 @@ $$
 \end{cases}
 $$
 
-[Reality表](#Reality表)
+[Reality比較表](#reality比較表)
 
-#### コード実装：
+#### コード実装:
+
 ```js
 function reality(score, constant) {
     if (score >= 1005000)
@@ -201,17 +217,15 @@ function reality(score, constant) {
 
 ## ノート判定
 
-ゲーム内の1つのノートには5種類の判定があります：
+ゲーム内の各ノートの判定は以下の 5 種類に分類されます:
 
-- `Perfect`：101%のスコアと100%のACCを達成。
-- `perfect`：精度に基づき、75%-101%のスコアと100%のACCを達成。
-- `Good`：精度に基づき、30%-15%のスコアと50%のACCを達成。
-- `Bad`：コンボ中断、0%-30%のスコア、ACCなし。
-- `Miss`：コンボ中断、スコアとACCなし。
+- **Perfect:** 101% のスコアと 100% の ACC を達成。
+- **perfect:** 精度に応じて 75%-101% のスコアと 100% の ACC を達成。
+- **Good:** 精度に応じて 30%-15% のスコアと 50% の ACC を達成。
+- **Bad:** コンボが途切れ、0%-30% のスコアと 10% の ACC を獲得。
+- **Miss:** コンボが途切れ、スコアと ACC が得られません。
 
-これらの範囲内でのスコアとACCは比例します。
-
-5種類の判定に対応する範囲は以下の通りです：
+各範囲内でスコアと精度は比例関係にあります。詳細な範囲は下記の表をご覧ください:
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -219,64 +233,67 @@ function reality(score, constant) {
 
 ---
 
-## 結果評価
+## 評価結果
 
-結果の評価は8種類に分けられます：
+評価結果は全部で 8 種類あります:
 
-- R：Rain、理論値1010000点（全てのノートが大Perfect）
-- 紫S：All Perfect達成（全てのノートがPerfectで、R評価には達しない、1000000-1009999）
-- 青S：Full Combo達成（全てのノートにBad/Miss判定が無く、紫S評価には達しない）
-- S：950000-1009999
-- A：900000-949999
-- B：850000-899999
-- C：800000-849999
-- F：0-799999
+- **R:** Rain – 理論値 1010000 点を達成（RHYTHM of RAIN、全てのノートが Perfect）。
+- **Purple S:** All Perfect を達成（全てのノートが Perfect だが R 評価には届かず、スコアは 1000000-1009999 の間）。
+- **Blue S:** Full Combo を達成（全てのノートをミスなくヒット、以下のスコア要件は無視）。
+- **S:** 950000-1009999 点。
+- **A:** 900000-949999 点。
+- **B:** 850000-899999 点。
+- **C:** 800000-849999 点。
+- **F:** 0-799999 点。
 
 ---
 
-## コンプリート状態
+## 完了状態
 
-ゲーム終了後、譜面に表示される評価：
+曲終了後、譜面に表示される評価は以下の通りです:
 
-- Crash：
+- **Crash:**  
   - ACC < 80%
-- Complete：
-  - ACC > 80%で、Bad/Missが1つ以上存在する
-- Full Combo：
-  - 全てのノートが±140ms以内にヒット、かつGoodが1つ以上存在する
-- All Perfect：
-  - 全てのノートが±70ms以内にヒット、かつ小perfectが1つ以上存在する
-- Rhythm of Rain：
-  - 全てのノートが±35ms以内にヒット、理論値
-- AutoPlay is Awesome：
-  - AutoPlayを使ってクリア
-- Overloaded：
-  - スコアが1010000を超える（豪雨使用）。
+- **Complete:**  
+  - ACC > 80%、かつ最低 1 つの Bad/Miss がある。
+- **Full Combo:**  
+  - 全てのノートが ±140ms 内にヒットし、最低 1 つの Good がある。
+- **All Perfect:**  
+  - 全てのノートが ±70ms 内にヒットし、最低 1 つの small perfect がある。
+- **Rhythm of Rain:**  
+  - 全てのノートが ±35ms 内にヒット（理論値）。
+- **AutoPlay is Awesome:**  
+  - AutoPlay を使用してクリア。
+- **Overloaded:**  
+  - スコアが 1010000 を超える（激しい雨を使用）。
 
 ---
 
 ## 定数表
 
-- [目次へ戻る](#目次)
+[目次に戻る](#目次)
+
 - [説明](#説明)
-- [主な章](#紹介---天気予報)
-  - [天気予報](#紹介---天気予報)
+- [主な章](#イントロダクション---天気予報)
+  - [天気予報](#イントロダクション---天気予報)
   - [雨の音](#序章---雨の音)
   - [甘さと苦さの両面](#主な章一---甘さと苦さの両面)
 - [コラボレーション](#コラボレーション---rain-world)
   - [Rain World](#コラボレーション---rain-world)
-  - [Notanote](#コラボレーション---Notanote)
+  - [Notanote](#コラボレーション---notanote)
 - [シングル](#シングル---夢のテープ)
   - [夢のテープ](#シングル---夢のテープ)
   - [Gathering Blossoms Under Rain](#シングル---gathering-blossoms-under-rain)
-  
+
+---
+
 ## 説明
 
-> - 全ての`SP`と非標準の譜面はReality計算に含まれません
-> - 精度の問題により、現在のバージョンでは、全ての定数が11.9の曲目の定数は実際に11.9には達していません。例えば、あるバージョンの理論Realityが`13.005`であっても、ゲーム内では`13.00`として表示され、`13.01`とは表示されません。
+> - 全ての `SP` および非標準譜面は Reality 計算に含まれません。  
+> - 精度の問題により、現行バージョンでは本来 11.9 であるべき曲の定数が実際には 11.9 未満となっています。例えば、理論上の Reality が `13.005` の場合、ゲーム内では `13.00` と表示され、実際の計算値は `13.004999…` となります。
 
-現在のバージョンの理論Realityは`12.675`です。  
-現在のバージョンで定数が最も高い20曲は以下の通りです：
+現行の理論上の Reality は `12.675`（表示は 12.67）です。  
+現行バージョンで定数が最も高い上位 20 曲は以下の通りです:
 
 | ランク | タイトル                  | 難易度 | 定数 |
 |------|-------------------------|--------|------|
@@ -416,23 +433,63 @@ function reality(score, constant) {
 
 ## お問い合わせ
 
-- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**: 375882310
-- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**: 678471942
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
 - **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
 
 ---
 
-## その他のコンテンツ
+## その他の内容
 
-- [目次へ戻る](#目次)
+[目次に戻る](#目次)
 
 ### Milthm Wiki
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
+
 - **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
+
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Reality表
+### 隠し曲のアンロック方法
+
+- **Regnaissance**
+
+  HYPER MEMORIES をアンロックしプレイします;  
+  プレイ中、背景が白黒に変わり Susan が表示されます。その際、ノートを叩かないでください;  
+  その後、スコアがマイナスになり、Susan がカラフルに変わります。スコアが > 0 になるまでプレイし、評価後に曲がアンロックされます。
+
+- **Contrasty Angeles**
+
+  Regnaissance をアンロック後、メインストーリー第1章のエピソード6を読んでください;  
+  HYPER MEMORIES をプレイします;  
+  プレイ中、背景が白黒に変わり Susan が表示され、フルコンボを維持する必要があります;  
+  その後、スコアが急落し、Susan がカラフルに変わります。スコアが > 0 になるまでプレイし、評価後に曲がアンロックされます。
+
+### ファイルパスとは？
+
+ファイルパスとは、ファイルシステム内の一意の位置を示す文字列表現であり、通常はディレクトリツリー構造を用います。異なるOSでは、`/`、`\`、または `:` などの区切り文字が使用されます。パスは絶対パスまたは相対パスとなり、フォルダとファイルの関係を表し、URL作成に必須です。
+
+#### Android ファイルパス
+
+- **外部ストレージ:**  
+  `/storage/emulated/[ユーザーID]`（デフォルトの主ユーザーは 0）または `/sdcard/` に位置し、これらのファイルはユーザーに表示されます。
+- **アプリケーションデータディレクトリ:**  
+  通常、`/storage/emulated/0/Android/data/[パッケージ名]/` にあり、例えば:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
+  ```  
+  Milthm のセーブディレクトリは次の場所にあります:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  アクセスがブロックされた場合は、PCに接続するか、ファイルマネージャーにADB権限を付与してください。
+
+---
+
+### Reality比較表
 
 ```text
 y	x (score)
@@ -586,6 +643,3 @@ y	x (score)
 0.965	1004999.0
 1.0	1005000.0
 ```
-
-
-

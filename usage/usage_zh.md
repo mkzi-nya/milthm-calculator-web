@@ -1,5 +1,6 @@
 
 ## 目录
+
 - [网站](#网站)
 - [使用说明](#使用说明)
   - [上传存档文件](#上传存档文件)
@@ -7,7 +8,7 @@
   - [旧版本存档](#旧版本存档)
   - [其他存档路径](#其他存档路径)
   - [雷达图](#雷达图)
-- [关于Milthm](#关于milthm)
+- [关于 Milthm](#关于-milthm)
   - [Reality 计算公式](#reality-计算公式)
   - [音符判定](#音符判定)
   - [结算评级](#结算评级)
@@ -18,29 +19,38 @@
   - [Milthm Wiki](#milthm-wiki)
   - [隐藏曲解锁方式](#隐藏曲解锁方式)
   - [什么是文件路径](#什么是文件路径)
-  - [Reality对照表](#reality对照表)
+  - [Reality 对照表](#reality-对照表)
+
 ---
 
-Last updated on 2025.3.18_9:50(UTC)
+_Last updated on 2025.3.24 17:35 (UTC)_
 
-如果界面渲染出现问题可以[在Github中访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> 如果界面渲染出现问题，请[在 GitHub 上访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+
+---
+
 ## 网站
-  - [k9.lv/c/](http://k9.lv/c/)
+
+- [k9.lv/c/](http://k9.lv/c/)
+  
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
+
+---
 
 ## 使用说明
 
 ### 上传存档文件
 
-点击主页中的 **「上传文件」** 选项，选中存档文件`saves.db`或推分记录文件`data.db`上传即可。
+点击主页中的 **「上传文件」** 选项，选择存档文件 `saves.db` 或推分记录文件 `data.db` 上传即可。
 
-> **注意**：
-> - `data.db` 只包含 `3.2` 更新后的游玩记录（如果没有丢失）。
+> **注意：**
+> - `data.db` 只包含 `3.2` 更新后的游玩记录（如果未丢失）。
 > - 安卓端推荐使用 [MT 管理器](https://mt2.cn/) 访问 `sdcard/Android/data` 目录。
 
-#### **文件路径（详见 [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File)）**
+#### 文件路径（详见 [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File)）
 
 [什么是文件路径](#什么是文件路径)
+
 - **Android (TapTap)**
   ```text
   /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
@@ -50,12 +60,17 @@ Last updated on 2025.3.18_9:50(UTC)
   /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
   ```
 - **iOS**
-  使用 [文件](https://support.apple.com/zh-cn/102570) 应用打开 Milthm 文件夹：
-  ```text
-  /data/
-  ```
-- **Windows**
-  资源管理器地址栏输入：
+
+使用 [文件](https://support.apple.com/zh-cn/102570) 应用打开 Milthm 文件夹：
+
+```text
+/data/
+```
+
+> 如果找不到本地文件：进入“文件”主页右上角的三点菜单，将本地文件取消隐藏（[详见](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+
+- **Windows 用户：**  
+  在资源管理器地址栏输入：  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -81,7 +96,9 @@ Last updated on 2025.3.18_9:50(UTC)
 }
 ```
 
-`acc` 取小数，`level` 代表评级，定义如下：
+其中：
+- `acc` 为小数表示准确度；
+- `level` 代表评级，其定义如下：
 
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
@@ -115,7 +132,7 @@ done
 
 ### 其他存档路径
 
-如果上传后无法解析，可尝试手动提取 JSON 数据并上传：
+若上传后无法解析，可尝试手动提取 JSON 数据并上传：
 
 - **Android (TapTap)**
   ```text
@@ -127,10 +144,10 @@ done
   ```
 - **iOS**
   ```text
-  milthm应用数据/Data/Library/Preferences
+  milthm file/Data/Library/Preferences
   ```
 - **Windows**
-  位于注册表：
+  regedit:
   ```text
   HKEY_CURRENT_USER\Software\Morizero\Milthm\
   ```
@@ -145,15 +162,15 @@ done
 
 ---
 
-
 ## 雷达图
 
 相关计算方式由 `PanyiAme` 提供，详见 [Milthm 查分表说明](https://wwp.lanzoup.com/iZ59A2j8nbpe)。
 
 ---
-## 关于Milthm
 
-- [返回主目录](#目录)
+## 关于 Milthm
+
+[返回目录](#目录)
 
 ### Reality 计算公式
 
@@ -163,8 +180,7 @@ $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-单曲 Reality 计算公式如下（s 为分数，c 为定数）：
-
+单曲 Reality 计算公式如下（其中 s 为分数，c 为定数）：
 
 $$
 \text{Reality}(s, c) =
@@ -179,8 +195,10 @@ $$
 \end{cases}
 $$
 
-[Reality对照表](#reality对照表)
+[Reality 对照表](#reality-对照表)
+
 #### 代码实现：
+
 ```js
 function reality(score, constant) {
     if (score >= 1005000)
@@ -199,18 +217,15 @@ function reality(score, constant) {
 
 ## 音符判定
 
+游戏中单个音符的判定共分为五种，分别为：
 
-游戏中单个音符的判定共有五种，分别为：
+- **Perfect**：获得 101% 分数及 100% ACC。
+- **perfect**：依据精准度获得 75%-101% 分数及 100% ACC。
+- **Good**：依据精准度获得 30%-15% 分数及 50% ACC。
+- **Bad**：Combo 中断，获得 0%-30% 分数及 10% ACC。
+- **Miss**：Combo 中断，不获得分数与 ACC。
 
-- `Perfect`：获得101%的分数和100%的ACC。
-- `perfect`：视精准度获得75%-101%的分数和100%的ACC。
-- `Good`：视精准度获得30%-15%的分数和50%的ACC。
-- `Bad`：Combo中断,获得0%-30%的分数，无ACC。
-- `Miss`：Combo中断，不获得分数与ACC。
-
-在每个区间内获得的分数与精准度成正比例关系
-
-五种判定的对应范围如下表所示：
+各区间内的分数与精准度成正比例关系，详细判定范围如下表所示：
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -220,42 +235,44 @@ function reality(score, constant) {
 
 ## 结算评级
 
-结算评级可分为八种：
+结算评级分为八种：
 
-- R：即Rain，达成理论值1010000分（RHYTHM of RAIN，所有音符均为大Perfect）
-- 紫S：达成All Perfect（所有音符均为Perfect且未达成R评，1000000-1009999）
-- 青S：达成Full Combo（所有音符均无Bad/Miss判定且未达成紫S评，此时无视下列分数要求）
-- S：950000-1009999
-- A：900000-949999
-- B：850000-899999
-- C：800000-849999
-- F：0-799999
+- **R**：即 Rain，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为大 Perfect）。
+- **紫S**：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，分数在 1000000-1009999 之间）。
+- **青S**：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成紫S评，此时不考虑下列分数要求）。
+- **S**：950000-1009999 分。
+- **A**：900000-949999 分。
+- **B**：850000-899999 分。
+- **C**：800000-849999 分。
+- **F**：0-799999 分。
 
 ---
 
 ## 完成状态
 
-游玩结束后在谱面中展示的评价
+游玩结束后在谱面中展示的评价包括：
 
-- Crash:
+- **Crash:**  
   - ACC < 80%
-- Complete:
-  - ACC > 80%且至少存在一个Bad/Miss
-- Full Combo:
-  - 所有音符均在±140ms内击中，且存在至少一个Good
-- All Perfect:
-  - 所有音符均在±70ms内击中，且存在至少一个小perfect
-- Rhythm of Rain:
-  - 所有音符均在±35ms内击中，即理论值
-- AutoPlay is Awesome:
-  - 使用AutoPlay通关
-- Overloaded:
-  - 分数大于1010000 (使用倾盆大雨).
+- **Complete:**  
+  - ACC > 80%，且至少存在一个 Bad/Miss 判定。
+- **Full Combo:**  
+  - 所有音符均在 ±140ms 内击中，且至少存在一个 Good 判定。
+- **All Perfect:**  
+  - 所有音符均在 ±70ms 内击中，且至少存在一个 small perfect 判定。
+- **Rhythm of Rain:**  
+  - 所有音符均在 ±35ms 内击中，即理论值。
+- **AutoPlay is Awesome:**  
+  - 使用 AutoPlay 通关。
+- **Overloaded:**  
+  - 分数大于 1010000（使用倾盆大雨）。
 
+---
 
 ## 定数表
 
-- [返回主目录](#目录)
+[返回目录](#目录)
+
 - [说明](#说明)
 - [主线章节](#介绍---天气预报)
   - [天气预报](#介绍---天气预报)
@@ -267,17 +284,16 @@ function reality(score, constant) {
 - [单曲](#单曲---梦境磁带)
   - [梦境磁带](#单曲---梦境磁带)
   - [露晓卉庭](#单曲---露晓卉庭)
-  
+
+---
+
 ## 说明
 
-> - 所有`SP`和非常规谱面均不参与Reality计算
-> - 因精度原因当前版本的所有定数为11.9的曲目定数都不满11.9。比如若某版本的理论Reality为`13.005`，在游戏内将显示为`13.00`而非`13.01`，实际计算为`13.004999…`
+> - 所有 `SP` 和非常规谱面均不参与 Reality 计算。  
+> - 因精度原因，当前版本所有定数为 11.9 的曲目定数均低于 11.9。例如，若某版本的理论 Reality 为 `13.005`，在游戏内将显示为 `13.00` 而非 `13.01`，实际计算为 `13.004999…`。
 
-
-
-当前版本的理论Reality为`12.675`（显示为12.67）
-当前版本定数最高的20首曲目如下
-
+当前版本的理论 Reality 为 `12.675`（显示为 12.67）  
+当前版本定数最高的 20 首曲目如下：
 
 | 排行 | 标题  | 难度 | 定数 |
 |---|---------------------|------|----|
@@ -401,7 +417,6 @@ function reality(score, constant) {
 
 ---
 
-
 ## 联系我们
 
 - **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
@@ -413,9 +428,10 @@ function reality(score, constant) {
 ---
 
 ## 其他内容
-- [返回主目录](#目录)
 
-### Milthm wiki
+[返回目录](#目录)
+
+### Milthm Wiki
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
 
@@ -425,47 +441,41 @@ function reality(score, constant) {
 
 ### 隐藏曲解锁方式
 
-- Regnaissance
+- **Regnaissance**
 
-解锁并游玩HYPER MEMORIES；
-在游玩过程中背景会出现黑白色的苏珊，此时不要击打任何音符；
-之后分数变为负数，同时苏珊变为彩色，此时继续游玩并使分数>0，结算后进入本曲的游玩，游玩一次后解锁。
+  解锁并游玩 HYPER MEMORIES；  
+  游玩过程中背景会出现黑白色的苏珊，此时请勿击打任何音符；  
+  之后分数变为负数，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
 
-- Contrasty Angeles
+- **Contrasty Angeles**
 
-解锁Regnaissance后，阅读主线章节一剧情第6话；
-游玩HYPER MEMORIES；
-在游玩过程中背景会出现黑白色的苏珊，此时需要保持全连；
-之后分数骤减，同时苏珊变为彩色，此时不要击打任何音符并使分数>0，结算后进入本曲的游玩，游玩一次后解锁。
-
-
-(取自萌娘百科)
+  解锁 Regnaissance 后，阅读主线章节一剧情第 6 话；  
+  游玩 HYPER MEMORIES；  
+  游玩过程中背景会出现黑白色的苏珊，此时需保持全连；  
+  之后分数骤减，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
 
 ### 什么是文件路径
 
-路径（英语：path）是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树分层结构，首个部分表示文件系统位置，之后以分隔字符分开的各部分路径表示各级目录，最后是该文件/文件夹。分隔字符最常采用斜线（/）、反斜线（\ ）或冒号（:）字符，不同操作系统与环境可能采用不同的字符。路径在计算机科学中被广泛采用，用以表示现代操作系统中常见的文件夹/文件关系，在构建统一资源定位符（URL）时也必不可少。资源可以采用绝对路径表示，也可采用相对路径表示。
+文件路径是指向文件系统中某个唯一位置的字符串表示形式，通常采用目录树结构。不同操作系统使用不同的分隔符，如 `/`、`\` 或 `:`。路径可以为绝对路径或相对路径，用以表示文件夹与文件间的关系，在构建 URL 时也十分重要。
 
 #### 安卓文件路径
 
-- 外部存储
+- **外部存储：**  
+  位于 `/storage/emulated/用户标识（默认主用户为 0）/` 或 `/sdcard/` 下，此部分文件为用户可见。
+- **应用数据目录：**  
+  通常位于 `/storage/emulated/0/Android/data/包名/`，例如：  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
+  ```  
+  Milthm 的存档目录在：  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  若系统阻止访问，请尝试连接电脑或授予文件管理器 ADB 权限。
 
-外部存储是指在`/storage/emulated/用户标识(默认主用户为0)/`(或`/sdcard/`)下的文件，这部分文件才是暴露给用户的文件分区，也就是平时文件管理器能看到的文件.
-系统文件管理器一般显示的也是这个目录
+---
 
-- 应用数据目录
-
-应用数据目录通常指`/storage/emulated/0/Android/data/package name/`目录
-
-比如`/storage/emulated/0/Android/data/game.taptap.morizero.milthm/`就是Milthm(taptap版)的应用数据目录
-
-而Milthm的存档目录位于`/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/`
-
-有时系统可能会阻止您访问这个目录，可以尝试连接电脑访问 或 授予文件管理器adb权限 来访问
-
-访问目录的方式就是对照着路径找到一个个文件夹点进去(如果这都看不懂就别查了)
-
-
-### Reality对照表
+### Reality 对照表
 
 ```text
 y	x (score)
@@ -619,6 +629,3 @@ y	x (score)
 0.965	1004999.0
 1.0	1005000.0
 ```
-
-
-

@@ -1,45 +1,55 @@
 
----
-
 ## 목차
+
 - [웹사이트](#웹사이트)
-- [사용 설명](#사용-설명)
+- [사용 안내](#사용-안내)
   - [저장 파일 업로드](#저장-파일-업로드)
-  - [파싱된 데이터 입력](#파싱된-데이터-입력)
-  - [구버전 저장](#구버전-저장)
+  - [분석된 데이터 입력](#분석된-데이터-입력)
+  - [구버전 저장 파일](#구버전-저장-파일)
   - [기타 저장 경로](#기타-저장-경로)
   - [레이더 차트](#레이더-차트)
-- [Milthm에 대해](#milthm에-대해)
+- [Milthm 소개](#milthm-소개)
   - [Reality 계산 공식](#reality-계산-공식)
-  - [음표 판정](#음표-판정)
-  - [결산 등급](#결산-등급)
+  - [노트 판정](#노트-판정)
+  - [결과 등급](#결과-등급)
   - [완료 상태](#완료-상태)
-  - [정수표](#정수표)
-- [연락처](#연락처)
-- [기타](#기타)
-  - [Milthm 위키](#milthm-위키)
-  - [Reality 대조표](#reality-대조표)
+  - [상수 표](#상수-표)
+- [문의하기](#문의하기)
+- [기타 내용](#기타-내용)
+  - [Milthm Wiki](#milthm-wiki)
+  - [숨겨진 곡 잠금 해제 방법](#숨겨진-곡-잠금-해제-방법)
+  - [파일 경로란 무엇인가?](#파일-경로란-무엇인가)
+  - [Reality 비교 표](#reality-비교-표)
+
 ---
 
-> 이 설명은 ChatGPT로 번역되었으며, 문제가 있을 경우 간체中文版을 기준으로 참조하십시오.
+_마지막 업데이트: 2025.3.24 17:35 (UTC)_
 
-Last updated on 2025.3.14_03:00(UTC)
+> 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+
+---
 
 ## 웹사이트
-  - [k9.lv/c/](http://k9.lv/c/)
+
+- [k9.lv/c/](http://k9.lv/c/)
+  
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
-## 사용 설명
+---
+
+## 사용 안내
 
 ### 저장 파일 업로드
 
-홈페이지에서 **「파일 업로드」** 옵션을 클릭하고 저장 파일 `saves.db` 또는 점수 기록 파일 `data.db`를 선택하여 업로드하면 됩니다.
+홈페이지에서 **"파일 업로드"** 옵션을 클릭하여 `saves.db` 저장 파일 또는 `data.db` 점수 기록 파일을 선택하여 업로드하세요.
 
-> **주의**:
-> - `data.db`는 `3.2` 업데이트 이후의 게임 기록만 포함되어 있습니다(분실된 경우 제외).
-> - 안드로이드에서는 [MT 관리 도구](https://mt2.cn/)를 사용하여 `sdcard/Android/data` 디렉토리를 확인하는 것이 좋습니다.
+> **주의:**
+> - `data.db`는 버전 `3.2` 이후의 게임 기록만 포함합니다 (분실되지 않은 경우).
+> - Android 사용자는 `sdcard/Android/data` 디렉터리에 접근하기 위해 [MT Manager](https://mt2.cn/) 사용을 권장합니다.
 
-#### **파일 경로 (자세한 내용은 [Milthm 위키](https://milthm.fandom.com/wiki/Data_File) 참조)**
+#### 파일 경로 (자세한 내용은 [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File) 참조)
+
+[파일 경로란 무엇인가?](#파일-경로란-무엇인가)
 
 - **Android (TapTap)**
   ```text
@@ -50,12 +60,17 @@ Last updated on 2025.3.14_03:00(UTC)
   /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
   ```
 - **iOS**
-  [파일](https://support.apple.com/ko-kr/102570) 앱을 사용하여 Milthm 폴더를 열어주세요:
-  ```text
-  /data/
-  ```
-- **Windows**
-  파일 탐색기의 주소창에 다음을 입력:
+
+[Files](https://support.apple.com/zh-cn/102570) 앱을 사용하여 Milthm 폴더를 엽니다:
+
+```text
+/data/
+```
+
+> 로컬 파일을 찾을 수 없는 경우: Files 홈 화면 오른쪽 상단의 점 세 개 메뉴에서 로컬 파일 표시를 활성화하세요 (자세한 내용은 [여기](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html) 참조).
+
+- **Windows 사용자:**  
+  파일 탐색기 주소창에 다음을 입력하세요:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -70,9 +85,9 @@ Last updated on 2025.3.14_03:00(UTC)
 
 ---
 
-### 파싱된 데이터 입력
+### 분석된 데이터 입력
 
-홈페이지 입력란에 데이터를 입력합니다. 형식은 아래와 같습니다:
+홈페이지 입력 상자에 아래 형식으로 데이터를 입력하세요:
 
 ```text
 [name],{
@@ -81,7 +96,9 @@ Last updated on 2025.3.14_03:00(UTC)
 }
 ```
 
-`acc`는 소수값으로, `level`은 등급을 나타냅니다. 정의는 다음과 같습니다:
+여기서:
+- `acc`는 정확도를 나타내는 소수입니다;
+- `level`은 평가를 나타내며, 아래와 같이 정의됩니다:
 
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
@@ -89,9 +106,9 @@ level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 
 ---
 
-### 구버전 저장
+### 구버전 저장 파일
 
-`Milthm 3.2` 이전의 저장 파일은 모바일에서 직접 추출할 수 없으며, 다음 방법을 시도해 보세요:
+`Milthm 3.2` 이전의 저장 파일은 모바일 기기에서 직접 추출할 수 없습니다. 다음 방법들을 시도해 보세요:
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -102,10 +119,10 @@ while true; do
     if [ -f "$SOURCE_DIR$FILE_NAME" ]; then
         cp "$SOURCE_DIR$FILE_NAME" "$DEST_DIR"
         if [ $? -eq 0 ]; then
-            echo "파일 $FILE_NAME이 /sdcard/에 성공적으로 복사되었습니다."
+            echo "文件 $FILE_NAME 已成功复制到 /sdcard/"
             break
         else
-            echo "파일 복사 실패, 권한을 확인하세요!"
+            echo "复制文件失败，请检查权限！"
         fi
     fi
 done
@@ -115,7 +132,7 @@ done
 
 ### 기타 저장 경로
 
-업로드 후 데이터가 파싱되지 않으면, JSON 데이터를 수동으로 추출하여 업로드를 시도해보세요:
+업로드 후 데이터가 파싱되지 않을 경우, JSON 데이터를 수동으로 추출하여 업로드할 수 있습니다:
 
 - **Android (TapTap)**
   ```text
@@ -127,10 +144,10 @@ done
   ```
 - **iOS**
   ```text
-  milthm 응용 데이터/Data/Library/Preferences
+  milthm file/Data/Library/Preferences
   ```
 - **Windows**
-  레지스트리에서:
+  regedit:
   ```text
   HKEY_CURRENT_USER\Software\Morizero\Milthm\
   ```
@@ -147,23 +164,23 @@ done
 
 ## 레이더 차트
 
-관련 계산 방식은 `PanyiAme`에 의해 제공되며, 자세한 내용은 [Milthm 점수 확인 표](https://wwp.lanzoup.com/iZ59A2j8nbpe)를 참조하십시오.
+계산 방법은 `PanyiAme`가 제공합니다. 자세한 내용은 [Milthm 점수 차트 설명](https://wwp.lanzoup.com/iZ59A2j8nbpe)을 참조하세요.
 
 ---
 
-## Milthm에 대해
+## Milthm 소개
 
-- [목차로 돌아가기](#목차)
+[목차로 돌아가기](#목차)
 
 ### Reality 계산 공식
 
-Reality의 계산은 게임 점수와 곡의 상수를 기반으로 합니다:
+Reality는 게임 점수와 곡의 상수를 기반으로 계산됩니다:
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-개별 곡의 Reality 계산 공식은 다음과 같습니다(s는 점수, c는 상수):
+단일 곡의 Reality 계산 공식 (여기서 s는 점수, c는 상수)은 다음과 같습니다:
 
 $$
 \text{Reality}(s, c) =
@@ -178,8 +195,10 @@ $$
 \end{cases}
 $$
 
-[Reality 대조표](#reality-대조표)
+[Reality 비교 표](#reality-비교-표)
+
 #### 코드 구현:
+
 ```js
 function reality(score, constant) {
     if (score >= 1005000)
@@ -196,19 +215,17 @@ function reality(score, constant) {
 
 ---
 
-## 음표 판정
+## 노트 판정
 
-게임에서 음표는 다섯 가지 판정 방식으로 나뉩니다:
+게임 내 각 노트의 판정은 다섯 가지로 분류됩니다:
 
-- `Perfect`: 101% 점수와 100% ACC 획득.
-- `perfect`: 정확도에 따라 75%-101% 점수와 100% ACC 획득.
-- `Good`: 정확도에 따라 30%-15% 점수와 50% ACC 획득.
-- `Bad`: 콤보 중단, 0%-30% 점수, ACC 없음.
-- `Miss`: 콤보 중단, 점수와 ACC 없음.
+- **Perfect:** 101% 점수와 100% ACC를 달성.
+- **perfect:** 정밀도에 따라 75%-101% 점수와 100% ACC를 달성.
+- **Good:** 정밀도에 따라 30%-15% 점수와 50% ACC를 달성.
+- **Bad:** 콤보가 끊겨 0%-30% 점수와 10% ACC를 획득.
+- **Miss:** 콤보가 끊겨 점수와 ACC를 받지 못함.
 
-각 구간 내에서 획득한 점수와 정확도는 비례 관계에 있습니다.
-
-다섯 가지 판정의 범위는 다음 표와 같습니다:
+각 범위 내에서 점수와 정확도는 비례합니다. 자세한 범위는 아래 표에 나와 있습니다:
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -216,45 +233,46 @@ function reality(score, constant) {
 
 ---
 
-## 결산 등급
+## 결과 등급
 
-결산 등급은 총 8가지로 나뉩니다:
+결과 등급은 총 여덟 가지입니다:
 
-- R: 이론적 1010000점 달성 (RHYTHM of RAIN, 모든 음표는 Perfect)
-- 보라색 S: All Perfect 달성 (모든 음표가 Perfect이고 R 평가에 도달하지 않음, 1000000-1009999)
-- 청색 S: Full Combo 달성 (모든 음표가 Bad/Miss 판정을 받지 않고 보라색 S에 도달하지 않음, 이때 아래의 점수 요구를 무시함)
-- S: 950000-1009999
-- A: 900000-949999
-- B: 850000-899999
-- C: 800000-849999
-- F: 0-799999
+- **R:** Rain – 이론 점수 1010000 달성 (RHYTHM of RAIN, 모든 노트가 Perfect).
+- **Purple S:** All Perfect 달성 (모든 노트가 Perfect이나 R 등급 미달, 점수가 1000000-1009999 범위).
+- **Blue S:** Full Combo 달성 (모든 노트를 적중, Bad/Miss 없이, 아래 점수 요구 무시).
+- **S:** 950000-1009999.
+- **A:** 900000-949999.
+- **B:** 850000-899999.
+- **C:** 800000-849999.
+- **F:** 0-799999.
 
 ---
 
 ## 완료 상태
 
-게임 종료 후 곡에 표시된 평가 상태:
+노래가 끝난 후, 차트에 표시되는 평가는 다음과 같습니다:
 
-- Crash:
+- **Crash:**  
   - ACC < 80%
-- Complete:
-  - ACC > 80%이면서 적어도 하나의 Bad/Miss 있음
-- Full Combo:
-  - 모든 음표가 ±140ms 이내에 맞고 적어도 하나의 Good 있음
-- All Perfect:
-  - 모든 음표가 ±70ms 이내에 맞고 적어도 하나의 작은 perfect 있음
-- Rhythm of Rain:
-  - 모든 음표가 ±35ms 이내에 맞음, 즉 이론적 값
-- AutoPlay is Awesome:
-  - AutoPlay를 사용하여 클리어
-- Overloaded:
-  - 점수가 1010000 이상 (기상 현상)
+- **Complete:**  
+  - ACC > 80% 및 최소 하나의 Bad/Miss.
+- **Full Combo:**  
+  - 모든 노트가 ±140ms 내 적중, 최소 하나의 Good.
+- **All Perfect:**  
+  - 모든 노트가 ±70ms 내 적중, 최소 하나의 small perfect.
+- **Rhythm of Rain:**  
+  - 모든 노트가 ±35ms 내 적중 (이론값).
+- **AutoPlay is Awesome:**  
+  - AutoPlay 사용으로 클리어.
+- **Overloaded:**  
+  - 점수가 1010000 초과 (격렬한 폭우 사용).
 
 ---
 
-## 정수표
+## 상수 표
 
-- [Back to Table of Contents](#목차)
+[목차로 돌아가기](#목차)
+
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#introduction---weather-report)
@@ -266,14 +284,16 @@ function reality(score, constant) {
 - [Single](#single---dream-tape)
   - [Dream Tape](#single---dream-tape)
   - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
-  
-## Description
 
-> - 모든 `SP`와 비정상 곡은 Reality 계산에 포함되지 않습니다
-> - 현재 버전에서의 모든 정수는 11.9 곡에 대한 정수들이 미세하게 모자랄 수 있습니다. 예를 들어, 어떤 버전에서의 이론 Reality 값이 `13.005`라면, 게임 내에서는 `13.00`으로 표시됩니다.
+---
 
-현재 버전의 이론 Reality 값은 `12.675`
-현재 버전에서 정수 값이 가장 높은 20곡은 다음과 같습니다:
+## 설명
+
+> - 모든 `SP` 및 비표준 차트는 Reality 계산에 포함되지 않습니다.  
+> - 정밀도 문제로 인해, 현재 버전에서는 11.9로 표시되어야 할 곡 상수가 실제로는 11.9 미만입니다. 예를 들어, 이론상 Reality가 `13.005`인 경우, 게임에서는 `13.00`으로 표시되며 실제 계산은 `13.004999…`입니다.
+
+현재 이론상 Reality는 `12.675` (표시: 12.67)입니다.  
+현재 버전에서 상수가 가장 높은 상위 20곡은 다음과 같습니다:
 
 | Rank | Title                   | Difficulty | Constant |
 |------|-------------------------|------------|----------|
@@ -408,27 +428,67 @@ function reality(score, constant) {
 | FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
 | cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
 
-
 ---
 
-## 연락처
+## 문의하기
 
-- **[QQ Milthm#-1 씼쎩 그룹](https://qm.qq.com/q/Utb6sNDvki)**：375882310
-- **[QQ Milthm#Φ 대화 그룹](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
 - **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
 
 ---
 
-## 기타
-- [목차로 돌아가기](#목차)
+## 기타 내용
 
-### Milthm 위키
+[목차로 돌아가기](#목차)
+
+### Milthm Wiki
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
-- **[모에걸백과](https://mzh.moegirl.org.cn/Milthm)**
+
+- **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
+
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Reality 대조표
+### 숨겨진 곡 잠금 해제 방법
+
+- **Regnaissance**
+
+  HYPER MEMORIES를 잠금 해제하고 플레이합니다;  
+  플레이 도중 배경이 흑백으로 변하며 Susan이 나타납니다. 그 순간에는 노트를 치지 마세요;  
+  이후 점수가 음수로 변하고 Susan이 컬러로 변합니다. 점수가 > 0이 될 때까지 플레이하면 곡이 잠금 해제됩니다.
+
+- **Contrasty Angeles**
+
+  Regnaissance 잠금 해제 후, 메인 스토리 1장의 에피소드 6을 읽습니다;  
+  HYPER MEMORIES를 플레이합니다;  
+  플레이 도중 배경이 흑백으로 변하며 Susan이 나타나고, 풀 콤보를 유지해야 합니다;  
+  이후 점수가 급락하며 Susan이 컬러로 변합니다. 점수가 > 0이 될 때까지 플레이하면 곡이 잠금 해제됩니다.
+
+### 파일 경로란 무엇인가?
+
+파일 경로는 파일 시스템 내의 고유 위치를 가리키는 문자열 표현입니다. 일반적으로 디렉터리 트리 구조를 사용하며, 운영체제마다 `/`, `\`, 또는 `:` 등의 구분자를 사용합니다. 경로는 절대 경로나 상대 경로가 될 수 있으며, URL 구성에 필수적입니다.
+
+#### Android 파일 경로
+
+- **외부 저장소:**  
+  `/storage/emulated/[사용자 ID]` (기본 사용자 0) 또는 `/sdcard/` 아래에 위치하며, 이 파일들은 사용자에게 표시됩니다.
+- **애플리케이션 데이터 디렉터리:**  
+  일반적으로 `/storage/emulated/0/Android/data/[패키지 이름]/`에 위치합니다. 예를 들어:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
+  ```  
+  Milthm 저장 디렉터리는:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  접근이 차단될 경우, 컴퓨터에 연결하거나 파일 관리자에 ADB 권한을 부여해 보세요.
+
+---
+
+### Reality 비교 표
 
 ```text
 y	x (score)

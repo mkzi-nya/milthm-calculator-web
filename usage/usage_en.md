@@ -1,47 +1,55 @@
 
-
 ## Table of Contents
+
 - [Website](#website)
-- [Usage Instructions](#usage-instructions)
-  - [Upload Save File](#upload-save-file)
-  - [Enter Parsed Data](#enter-parsed-data)
-  - [Old Version Save Files](#old-version-save-files)
+- [Instructions](#instructions)
+  - [Uploading Save Files](#uploading-save-files)
+  - [Inputting Parsed Data](#inputting-parsed-data)
+  - [Old Version Saves](#old-version-saves)
   - [Other Save Paths](#other-save-paths)
   - [Radar Chart](#radar-chart)
 - [About Milthm](#about-milthm)
   - [Reality Calculation Formula](#reality-calculation-formula)
   - [Note Judgment](#note-judgment)
-  - [Result Rating](#result-rating)
+  - [Result Ratings](#result-ratings)
   - [Completion Status](#completion-status)
   - [Constant Table](#constant-table)
 - [Contact Us](#contact-us)
 - [Other Content](#other-content)
   - [Milthm Wiki](#milthm-wiki)
-  - [Reality Table](#reality-table)
+  - [Hidden Song Unlock Methods](#hidden-song-unlock-methods)
+  - [What is a File Path?](#what-is-a-file-path)
+  - [Reality Comparison Table](#reality-comparison-table)
 
 ---
 
-> This guide has been translated by ChatGPT, please refer to the Simplified Chinese version for reference if there are any issues.
+_Last updated on 2025.3.24 17:35 (UTC)_
 
+> If the interface does not render correctly, please [visit on GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 
-Last updated on 2025.3.14_2:15(UTC)
-
+---
 
 ## Website
-  - [k9.lv/c/](http://k9.lv/c/)
+
+- [k9.lv/c/](http://k9.lv/c/)
+  
   - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
-## Usage Instructions
+---
 
-### Upload Save File
+## Instructions
 
-Click on the **"Upload File"** option on the homepage, select the save file `saves.db` or the score log file `data.db` to upload.
+### Uploading Save Files
 
-> **Note**:
-> - `data.db` only contains the game records updated after version `3.2` (if not lost).
-> - On Android, it is recommended to use [MT Manager](https://mt2.cn/) to access the `sdcard/Android/data` directory.
+Click the **"Upload File"** option on the homepage to select and upload the save file `saves.db` or the score record file `data.db`.
 
-#### **File Paths (See [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))**
+> **Note:**
+> - `data.db` only contains gameplay records updated after version `3.2` (if not lost).
+> - Android users are recommended to use [MT Manager](https://mt2.cn/) to access the `sdcard/Android/data` directory.
+
+#### File Path (see [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
+
+[What is a File Path?](#what-is-a-file-path)
 
 - **Android (TapTap)**
   ```text
@@ -52,12 +60,17 @@ Click on the **"Upload File"** option on the homepage, select the save file `sav
   /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
   ```
 - **iOS**
-  Use the [Files](https://support.apple.com/en-us/102570) app to open the Milthm folder:
-  ```text
-  /data/
-  ```
-- **Windows**
-  Enter in the address bar of File Explorer:
+
+Open the Milthm folder using the [Files](https://support.apple.com/zh-cn/102570) app:
+
+```text
+/data/
+```
+
+> If local files cannot be found: go to the three-dot menu at the top right of the Files homepage and unhide local files (see [details](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+
+- **For Windows Users:**  
+  Enter the following in the File Explorer address bar:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -72,9 +85,9 @@ Click on the **"Upload File"** option on the homepage, select the save file `sav
 
 ---
 
-### Enter Parsed Data
+### Inputting Parsed Data
 
-Enter the data in the input box on the homepage in the following format:
+Enter the data in the input box on the homepage, in the following format:
 
 ```text
 [name],{
@@ -83,7 +96,9 @@ Enter the data in the input box on the homepage in the following format:
 }
 ```
 
-`acc` is a decimal, and `level` represents the rating, defined as follows:
+Where:
+- `acc` is a decimal representing accuracy;
+- `level` indicates the rating, defined as follows:
 
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
@@ -91,9 +106,9 @@ level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 
 ---
 
-### Old Version Save Files
+### Old Version Saves
 
-Save files prior to `Milthm 3.2` cannot be extracted directly on mobile devices, but you can try the following method:
+Saves from before `Milthm 3.2` cannot be directly extracted on mobile devices. You may try the following methods:
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -104,10 +119,10 @@ while true; do
     if [ -f "$SOURCE_DIR$FILE_NAME" ]; then
         cp "$SOURCE_DIR$FILE_NAME" "$DEST_DIR"
         if [ $? -eq 0 ]; then
-            echo "File $FILE_NAME has been successfully copied to /sdcard/"
+            echo "文件 $FILE_NAME 已成功复制到 /sdcard/"
             break
         else
-            echo "Failed to copy the file, please check the permissions!"
+            echo "复制文件失败，请检查权限！"
         fi
     fi
 done
@@ -117,7 +132,7 @@ done
 
 ### Other Save Paths
 
-If uploading does not work, try extracting the JSON data manually and uploading it:
+If the upload fails to parse, you can try manually extracting JSON data and uploading it:
 
 - **Android (TapTap)**
   ```text
@@ -129,10 +144,10 @@ If uploading does not work, try extracting the JSON data manually and uploading 
   ```
 - **iOS**
   ```text
-  milthm app data/Data/Library/Preferences
+  milthm file/Data/Library/Preferences
   ```
 - **Windows**
-  Located in the registry:
+  regedit:
   ```text
   HKEY_CURRENT_USER\Software\Morizero\Milthm\
   ```
@@ -149,23 +164,23 @@ If uploading does not work, try extracting the JSON data manually and uploading 
 
 ## Radar Chart
 
-The calculation method related to this is provided by `PanyiAme`, see [Milthm Score Table Description](https://wwp.lanzoup.com/iZ59A2j8nbpe).
+The calculation method is provided by `PanyiAme`. For details, please see [Milthm Score Chart Explanation](https://wwp.lanzoup.com/iZ59A2j8nbpe).
 
 ---
 
 ## About Milthm
 
-- [Back to Table of Contents](#table-of-contents)
+[Back to Contents](#table-of-contents)
 
 ### Reality Calculation Formula
 
-The calculation of Reality is based on the game score and the constant of the song:
+Reality is calculated based on the gameplay score and the song constant:
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-The Reality formula for a single song is as follows (where s is the score and c is the constant):
+The formula for calculating the Reality of a single song (where s is the score and c is the constant) is as follows:
 
 $$
 \text{Reality}(s, c) =
@@ -180,9 +195,10 @@ $$
 \end{cases}
 $$
 
-[Reality Table](#reality-table)
+[Reality Comparison Table](#reality-comparison-table)
 
 #### Code Implementation:
+
 ```js
 function reality(score, constant) {
     if (score >= 1005000)
@@ -201,17 +217,15 @@ function reality(score, constant) {
 
 ## Note Judgment
 
-There are five types of judgments for a single note in the game:
+There are five types of judgments for individual notes in the game:
 
-- `Perfect`: Achieve 101% score and 100% accuracy.
-- `perfect`: Score between 75%-101% and 100% accuracy based on the accuracy.
-- `Good`: Score between 30%-15% and 50% accuracy based on the accuracy.
-- `Bad`: Combo interrupted, score 0%-30%, no accuracy.
-- `Miss`: Combo interrupted, no score and accuracy.
+- **Perfect:** Achieves 101% score and 100% ACC.
+- **perfect:** Achieves a score between 75%-101% and 100% ACC based on precision.
+- **Good:** Achieves a score between 30%-15% and 50% ACC based on precision.
+- **Bad:** Combo breaks, resulting in a score between 0%-30% and 10% ACC.
+- **Miss:** Combo breaks, and no score or ACC is awarded.
 
-The scores and accuracy within each range are proportional.
-
-The ranges for the five judgments are shown in the table below:
+Within each range, the score and accuracy are proportional. The detailed ranges are shown in the table below:
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -219,45 +233,46 @@ The ranges for the five judgments are shown in the table below:
 
 ---
 
-## Result Rating
+## Result Ratings
 
-Result ratings can be divided into eight types:
+There are eight result ratings:
 
-- R: Rhythm of Rain, achieved theoretical value of 1010000 points (all notes are large Perfect).
-- Purple S: Achieved All Perfect (all notes are Perfect, not achieving R rating, 1000000-1009999).
-- Blue S: Achieved Full Combo (all notes are without Bad/Miss judgment and do not achieve Purple S, ignoring the following score requirements).
-- S: 950000-1009999
-- A: 900000-949999
-- B: 850000-899999
-- C: 800000-849999
-- F: 0-799999
+- **R:** Rain, achieving the theoretical score of 1010000 (RHYTHM of RAIN, where all notes are Perfect).
+- **Purple S:** Achieving All Perfect (all notes are Perfect but not reaching an R rating, score between 1000000-1009999).
+- **Blue S:** Achieving Full Combo (all notes hit without any Bad/Miss, regardless of the score requirements below).
+- **S:** 950000-1009999.
+- **A:** 900000-949999.
+- **B:** 850000-899999.
+- **C:** 800000-849999.
+- **F:** 0-799999.
 
 ---
 
 ## Completion Status
 
-After the gameplay, the displayed evaluation in the song:
+After the song ends, the performance evaluation displayed on the chart includes:
 
-- Crash:
+- **Crash:**  
   - ACC < 80%
-- Complete:
-  - ACC > 80% and at least one Bad/Miss
-- Full Combo:
-  - All notes hit within ±140ms, and at least one Good
-- All Perfect:
-  - All notes hit within ±70ms, and at least one small perfect
-- Rhythm of Rain:
-  - All notes hit within ±35ms, i.e., the theoretical value
-- AutoPlay is Awesome:
-  - Completed using AutoPlay
-- Overloaded:
-  - Score greater than 1010000 (using heavy rain).
+- **Complete:**  
+  - ACC > 80%, with at least one Bad/Miss.
+- **Full Combo:**  
+  - All notes are hit within ±140ms, with at least one Good.
+- **All Perfect:**  
+  - All notes are hit within ±70ms, with at least one small perfect.
+- **Rhythm of Rain:**  
+  - All notes are hit within ±35ms, i.e., the theoretical value.
+- **AutoPlay is Awesome:**  
+  - Completed using AutoPlay.
+- **Overloaded:**  
+  - Score exceeds 1010000 (using a heavy downpour).
 
 ---
 
 ## Constant Table
 
-- [Back to Table of Contents](#table-of-contents)
+[Back to Contents](#table-of-contents)
+
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#introduction---weather-report)
@@ -269,14 +284,16 @@ After the gameplay, the displayed evaluation in the song:
 - [Single](#single---dream-tape)
   - [Dream Tape](#single---dream-tape)
   - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
-  
-## Description
 
-> - All `SP` and non-conventional songs are excluded from Reality calculation
-> - Due to accuracy issues, in the current version, all songs with a constant of 11.9 do not actually reach 11.9. For example, if the theoretical Reality for a version is `13.005`, it will display as `13.00` in the game instead of `13.01`.
+---
 
-The theoretical Reality in the current version is `12.675`.  
-Here are the top 20 songs with the highest constants in the current version:
+## Explanation
+
+> - All `SP` and non-standard charts are not included in the Reality calculation.  
+> - Due to precision issues, in the current version, all song constants that are supposed to be 11.9 are actually below 11.9. For example, if the theoretical Reality is `13.005`, it will display as `13.00` in the game instead of `13.01`, and the actual calculation is `13.004999…`.
+
+The current theoretical Reality is `12.675` (displayed as 12.67).  
+The top 20 songs with the highest constants in the current version are as follows:
 
 | Rank | Title                   | Difficulty | Constant |
 |------|-------------------------|------------|----------|
@@ -411,28 +428,67 @@ Here are the top 20 songs with the highest constants in the current version:
 | FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
 | cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
 
-
 ---
 
 ## Contact Us
 
-- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**: 375882310
-- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**: 678471942
+- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
+
+- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
+
 - **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
 
 ---
 
 ## Other Content
 
-- [Back to Table of Contents](#table-of-contents)
+[Back to Contents](#table-of-contents)
 
-### Milthm wiki
+### Milthm Wiki
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
-- **[Moe Girl Encyclopedia](https://mzh.moegirl.org.cn/Milthm)**
+
+- **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
+
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Reality Table
+### Hidden Song Unlock Methods
+
+- **Regnaissance**
+
+  Unlock and play HYPER MEMORIES;  
+  During gameplay, the background will turn black and white with Susan appearing. At that moment, do not hit any notes;  
+  Afterwards, the score becomes negative while Susan turns colorful. Continue playing until the score is > 0, then the song unlocks after evaluation.
+
+- **Contrasty Angeles**
+
+  After unlocking Regnaissance, read Episode 6 of the main storyline chapter 1;  
+  Play HYPER MEMORIES;  
+  During gameplay, the background will turn black and white with Susan appearing, and you must maintain a full combo;  
+  Afterwards, the score drops sharply while Susan turns colorful. Continue playing until the score is > 0, then the song unlocks after evaluation.
+
+### What is a File Path?
+
+A file path is a string representation that points to a unique location in a file system, typically using a directory tree structure. Different operating systems use different separators such as `/`, `\`, or `:`. Paths can be absolute or relative, representing the relationship between folders and files, and are essential in constructing URLs.
+
+#### Android File Paths
+
+- **External Storage:**  
+  Located under `/storage/emulated/[user ID]` (default primary user is 0) or `/sdcard/`, these files are visible to the user.
+- **Application Data Directory:**  
+  Typically located under `/storage/emulated/0/Android/data/[package name]/`, for example:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
+  ```  
+  The Milthm save directory is at:  
+  ```
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  If access is blocked, try connecting to a computer or granting the file manager ADB permissions.
+
+---
+
+### Reality Comparison Table
 
 ```text
 y	x (score)
@@ -586,6 +642,3 @@ y	x (score)
 0.965	1004999.0
 1.0	1005000.0
 ```
-
-
-
