@@ -25,7 +25,7 @@
 
 _마지막 업데이트: 2025.3.24 17:35 (UTC)_
 
-> 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ _마지막 업데이트: 2025.3.24 17:35 (UTC)_
   ```
 - **iOS**
 
-[Files](https://support.apple.com/zh-cn/102570) 앱을 사용하여 Milthm 폴더를 엽니다:
+[Files](https://support.apple.com//102570) 앱을 사용하여 Milthm 폴더를 엽니다:
 
 ```text
 /data/

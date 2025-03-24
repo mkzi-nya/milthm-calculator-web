@@ -25,7 +25,7 @@
 
 _Последнее обновление: 2025.3.24 17:35 (UTC)_
 
-> Если интерфейс отображается некорректно, пожалуйста, [посетите GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> Если интерфейс отображается некорректно, пожалуйста, [посетите GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ _Последнее обновление: 2025.3.24 17:35 (UTC)_
   ```
 - **iOS**
 
-Откройте папку Milthm с помощью приложения [Files](https://support.apple.com/zh-cn/102570):
+Откройте папку Milthm с помощью приложения [Files](https://support.apple.com//102570):
 
 ```text
 /data/

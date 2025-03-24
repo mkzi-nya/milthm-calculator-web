@@ -60,7 +60,7 @@ _Last updated on 2025.3.24 17:35 (UTC)_
   ```
 - **iOS**
 
-使用 [文件](https://support.apple.com/zh-cn/102570) 应用打开 Milthm 文件夹：
+使用 [文件](https://support.apple.com//102570) 应用打开 Milthm 文件夹：
 
 ```text
 /data/

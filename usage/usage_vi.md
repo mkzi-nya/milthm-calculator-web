@@ -25,7 +25,7 @@
 
 _Last updated on 2025.3.24 17:35 (UTC)_
 
-> Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ Nhấn vào tùy chọn **"Upload File"** trên trang chủ để chọn và t�
   ```
 - **iOS**
 
-Mở thư mục Milthm bằng ứng dụng [Files](https://support.apple.com/zh-cn/102570):
+Mở thư mục Milthm bằng ứng dụng [Files](https://support.apple.com//102570):
 
 ```text
 /data/

@@ -25,7 +25,7 @@
 
 _最後更新於 2025.3.24 17:35 (UTC)_
 
-> 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ _最後更新於 2025.3.24 17:35 (UTC)_
   ```
 - **iOS**
 
-使用 [文件](https://support.apple.com/zh-cn/102570) 應用打開 Milthm 文件夾：
+使用 [文件](https://support.apple.com//102570) 應用打開 Milthm 文件夾：
 
 ```text
 /data/

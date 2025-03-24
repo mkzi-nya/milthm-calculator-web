@@ -25,7 +25,7 @@
 
 _Última actualización el 2025.3.24 17:35 (UTC)_
 
-> Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ Haz clic en la opción **"Subir Archivo"** en la página principal para seleccio
   ```
 - **iOS**
 
-Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com/zh-cn/102570):
+Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com//102570):
 
 ```text
 /data/

@@ -25,7 +25,7 @@
 
 _最終更新: 2025.3.24 17:35 (UTC)_
 
-> インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -60,7 +60,7 @@ _最終更新: 2025.3.24 17:35 (UTC)_
   ```
 - **iOS**
 
-[Files](https://support.apple.com/zh-cn/102570) アプリを使って Milthm フォルダを開きます:
+[Files](https://support.apple.com//102570) アプリを使って Milthm フォルダを開きます:
 
 ```text
 /data/
