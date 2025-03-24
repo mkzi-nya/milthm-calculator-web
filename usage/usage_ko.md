@@ -32,8 +32,7 @@ _마지막 업데이트: 2025.3.24 17:35 (UTC)_
 ## 웹사이트
 
 - [k9.lv/c/](http://k9.lv/c/)
-  
-  - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
+- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
 ---
 
