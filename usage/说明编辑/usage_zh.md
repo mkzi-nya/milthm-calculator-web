@@ -10,6 +10,7 @@
   - [雷达图](#雷达图)
 - [关于 Milthm](#关于-milthm)
   - [Reality 计算公式](#reality-计算公式)
+  - [关于存档文件](#关于存档文件)
   - [音符判定](#音符判定)
   - [结算评级](#结算评级)
   - [完成状态](#完成状态)
@@ -51,7 +52,7 @@ _Last updated on 2025.3.24 17:35 (UTC)_
 
 {{11}}
 
-使用 [文件](https://support.apple.com/zh-cn/102570) 应用打开 Milthm 文件夹：
+使用 [文件](https://support.apple.com//102570) 应用打开 Milthm 文件夹：
 
 ```text
 /data/
@@ -120,6 +121,27 @@ Reality 的计算基于游玩分数和谱面定数：
 #### 代码实现：
 
 {{公式js}}
+
+---
+
+## 关于存档文件
+
+在以下部分中，路径将被简写为 `MilthmDataDirectory`。
+
+### 游戏存档  
+该文件位于 `MilthmDataDirectory/saves.db`。
+
+其中包含与玩家游戏进度及相关游戏记录相关的数据。 
+
+数据在kv表中以json格式存储（json格式与旧版本的存档数据格式一致）
+
+### 数据存档  
+该文件位于 `MilthmDataDirectory/data.db`。
+
+它用于存储每一次成功提交的分数数据。
+
+该文件中的数据是本地排行榜的数据来源。
+
 
 ---
 
