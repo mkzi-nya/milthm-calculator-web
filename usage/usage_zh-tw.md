@@ -220,7 +220,7 @@ function reality(score, constant) {
 
 - **Perfect**：獲得 101% 分數及 100% ACC。
 - **perfect**：依據準確度獲得 75%-101% 分數及 100% ACC。
-- **Good**：依據準確度獲得 30%-15% 分數及 50% ACC。
+- **Good**：依據準確度獲得 30%-75% 分數及 50% ACC。
 - **Bad**：Combo 中斷，獲得 0%-30% 分數及 10% ACC。
 - **Miss**：Combo 中斷，不獲得分數與 ACC。
 

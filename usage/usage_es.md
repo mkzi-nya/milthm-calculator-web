@@ -220,7 +220,7 @@ El juego evalúa cada nota individual en cinco categorías:
 
 - **Perfect:** Logra una puntuación del 101% y 100% de ACC.
 - **perfect:** Logra una puntuación entre el 75% y el 101% y 100% de ACC según la precisión.
-- **Good:** Logra una puntuación entre el 30% y el 15% y 50% de ACC según la precisión.
+- **Good:** Logra una puntuación entre el 30% y el 75% y 50% de ACC según la precisión.
 - **Bad:** Se rompe el combo, obteniendo una puntuación entre el 0% y el 30% y 10% de ACC.
 - **Miss:** Se rompe el combo, sin obtener puntuación ni ACC.
 

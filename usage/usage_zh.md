@@ -236,14 +236,13 @@ function reality(score, constant) {
 
 ---
 
-
 ## 音符判定
 
 游戏中单个音符的判定共分为五种，分别为：
 
 - **Perfect**：获得 101% 分数及 100% ACC。
 - **perfect**：依据精准度获得 75%-101% 分数及 100% ACC。
-- **Good**：依据精准度获得 30%-15% 分数及 50% ACC。
+- **Good**：依据精准度获得 30%-75% 分数及 50% ACC。
 - **Bad**：Combo 中断，获得 0%-30% 分数及 10% ACC。
 - **Miss**：Combo 中断，不获得分数与 ACC。
 

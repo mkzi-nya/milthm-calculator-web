@@ -220,7 +220,7 @@ Trong trò chơi, có năm loại phán đoán cho từng nốt nhạc:
 
 - **Perfect:** Đạt được 101% điểm và 100% ACC.
 - **perfect:** Đạt được từ 75% đến 101% điểm và 100% ACC tùy theo độ chính xác.
-- **Good:** Đạt được từ 30% đến 15% điểm và 50% ACC tùy theo độ chính xác.
+- **Good:** Đạt được từ 30% đến 75% điểm và 50% ACC tùy theo độ chính xác.
 - **Bad:** Combo bị gián đoạn, nhận được từ 0% đến 30% điểm và 10% ACC.
 - **Miss:** Combo bị gián đoạn, không nhận điểm cũng như ACC.
 

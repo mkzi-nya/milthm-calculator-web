@@ -220,7 +220,7 @@ There are five types of judgments for individual notes in the game:
 
 - **Perfect:** Achieves 101% score and 100% ACC.
 - **perfect:** Achieves a score between 75%-101% and 100% ACC based on precision.
-- **Good:** Achieves a score between 30%-15% and 50% ACC based on precision.
+- **Good:** Achieves a score between 30%-75% and 50% ACC based on precision.
 - **Bad:** Combo breaks, resulting in a score between 0%-30% and 10% ACC.
 - **Miss:** Combo breaks, and no score or ACC is awarded.
 
