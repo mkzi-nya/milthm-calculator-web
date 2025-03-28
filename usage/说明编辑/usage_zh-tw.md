@@ -25,7 +25,7 @@
 
 _最後更新於 2025.3.24 17:35 (UTC)_
 
-> 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -51,7 +51,7 @@ _最後更新於 2025.3.24 17:35 (UTC)_
 
 {{11}}
 
-使用 [文件](https://support.apple.com/zh-cn/102570) 應用打開 Milthm 文件夾：
+使用 [文件](https://support.apple.com//102570) 應用打開 Milthm 文件夾：
 
 ```text
 /data/
@@ -129,7 +129,7 @@ Reality 的計算基於遊玩分數和譜面定數：
 
 - **Perfect**：獲得 101% 分數及 100% ACC。
 - **perfect**：依據準確度獲得 75%-101% 分數及 100% ACC。
-- **Good**：依據準確度獲得 30%-15% 分數及 50% ACC。
+- **Good**：依據準確度獲得 30%-75% 分數及 50% ACC。
 - **Bad**：Combo 中斷，獲得 0%-30% 分數及 10% ACC。
 - **Miss**：Combo 中斷，不獲得分數與 ACC。
 

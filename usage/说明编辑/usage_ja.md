@@ -25,7 +25,7 @@
 
 _最終更新: 2025.3.24 17:35 (UTC)_
 
-> インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -51,7 +51,7 @@ _最終更新: 2025.3.24 17:35 (UTC)_
 
 {{11}}
 
-[Files](https://support.apple.com/zh-cn/102570) アプリを使って Milthm フォルダを開きます:
+[Files](https://support.apple.com//102570) アプリを使って Milthm フォルダを開きます:
 
 ```text
 /data/
@@ -129,7 +129,7 @@ Reality はプレイスコアと譜面定数に基づいて計算されます:
 
 - **Perfect:** 101% のスコアと 100% の ACC を達成。
 - **perfect:** 精度に応じて 75%-101% のスコアと 100% の ACC を達成。
-- **Good:** 精度に応じて 30%-15% のスコアと 50% の ACC を達成。
+- **Good:** 精度に応じて 30%-75% のスコアと 50% の ACC を達成。
 - **Bad:** コンボが途切れ、0%-30% のスコアと 10% の ACC を獲得。
 - **Miss:** コンボが途切れ、スコアと ACC が得られません。
 

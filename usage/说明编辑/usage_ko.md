@@ -25,7 +25,7 @@
 
 _마지막 업데이트: 2025.3.24 17:35 (UTC)_
 
-> 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -51,7 +51,7 @@ _마지막 업데이트: 2025.3.24 17:35 (UTC)_
 
 {{11}}
 
-[Files](https://support.apple.com/zh-cn/102570) 앱을 사용하여 Milthm 폴더를 엽니다:
+[Files](https://support.apple.com//102570) 앱을 사용하여 Milthm 폴더를 엽니다:
 
 ```text
 /data/
@@ -129,7 +129,7 @@ Reality는 게임 점수와 곡의 상수를 기반으로 계산됩니다:
 
 - **Perfect:** 101% 점수와 100% ACC를 달성.
 - **perfect:** 정밀도에 따라 75%-101% 점수와 100% ACC를 달성.
-- **Good:** 정밀도에 따라 30%-15% 점수와 50% ACC를 달성.
+- **Good:** 정밀도에 따라 30%-75% 점수와 50% ACC를 달성.
 - **Bad:** 콤보가 끊겨 0%-30% 점수와 10% ACC를 획득.
 - **Miss:** 콤보가 끊겨 점수와 ACC를 받지 못함.
 

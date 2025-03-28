@@ -25,7 +25,7 @@
 
 _Última actualización el 2025.3.24 17:35 (UTC)_
 
-> Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
+> Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
 ---
 
@@ -51,7 +51,7 @@ Haz clic en la opción **"Subir Archivo"** en la página principal para seleccio
 
 {{11}}
 
-Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com/zh-cn/102570):
+Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com//102570):
 
 ```text
 /data/
@@ -129,7 +129,7 @@ El juego evalúa cada nota individual en cinco categorías:
 
 - **Perfect:** Logra una puntuación del 101% y 100% de ACC.
 - **perfect:** Logra una puntuación entre el 75% y el 101% y 100% de ACC según la precisión.
-- **Good:** Logra una puntuación entre el 30% y el 15% y 50% de ACC según la precisión.
+- **Good:** Logra una puntuación entre el 30% y el 75% y 50% de ACC según la precisión.
 - **Bad:** Se rompe el combo, obteniendo una puntuación entre el 0% y el 30% y 10% de ACC.
 - **Miss:** Se rompe el combo, sin obtener puntuación ni ACC.
 
