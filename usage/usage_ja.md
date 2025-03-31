@@ -23,7 +23,7 @@
 
 ---
 
-_最終更新: 2025.3.24 17:35 (UTC)_
+_Last updated on 2025.04.01 02:00 (UTC)_
 
 > インターフェースが正しく表示されない場合は、[GitHubでご確認ください](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 

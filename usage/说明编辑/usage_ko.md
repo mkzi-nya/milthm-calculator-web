@@ -23,7 +23,7 @@
 
 ---
 
-_마지막 업데이트: 2025.3.24 17:35 (UTC)_
+{{updata}}
 
 > 인터페이스가 올바르게 표시되지 않을 경우, [GitHub에서 확인](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 

@@ -1,3 +1,6 @@
+"updata":{
+_Last updated on 2025.04.01 02:00 (UTC)_
+}
 "reality表":{
 ```text
 y	x (score)
@@ -760,8 +763,6 @@ $$
 | cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
 | KASANE | 3.0  | 7.8  | 11.6  | -    |
 | KAEDE | -  | -  | -  | SP  |
-}
-"":{
 }
 "":{
 }

@@ -23,7 +23,7 @@
 
 ---
 
-_最後更新於 2025.3.24 17:35 (UTC)_
+_Last updated on 2025.04.01 02:00 (UTC)_
 
 > 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 

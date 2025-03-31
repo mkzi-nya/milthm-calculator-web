@@ -23,7 +23,7 @@
 
 ---
 
-_Last updated on 2025.3.24 17:35 (UTC)_
+{{updata}}
 
 > If the interface does not render correctly, please [visit on GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
