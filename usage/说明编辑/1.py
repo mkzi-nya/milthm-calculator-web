@@ -39,7 +39,8 @@ def process_md_file(md_path, inserts):
 
     result = re.sub(r'{{([^{}]+)}}', replace, content)
 
-    output_path = f"output_{os.path.basename(md_path)}"
+    # 输出路径修改为上一级目录的同名文件
+    output_path = os.path.join('..', os.path.basename(md_path))  # 使用上一级目录
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(result)
 

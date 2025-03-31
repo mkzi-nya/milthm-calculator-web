@@ -1,5 +1,4 @@
-console.log("Updated at 2025.03.17")
-console.log("已更新data.db文件解析")
+console.log("Updated at 2025.04.1")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
  ███▒▒███                               \n\
@@ -33,7 +32,7 @@ const constants = {
   "ed40cd1b-2741-415a-be81-6fcc63db4044": { constant: 11.7, category: "CB", name: "HYPER MEMORIES", ad: 4.137, ae: 1.5, af: 2, ag: 0 },
   "ef55520f-c913-449f-bf26-ab947384127e": { constant: 11.5, category: "CB", name: "Broken Conviction", ad: 2.986, af: 1, ae: 1, ag: 0 },
   "269efa5f-8b69-4a71-be24-7abe57372b3f": { constant: 11.5, category: "CB", name: "Contrasty Angeles", ad: 3.568, ae: 3, af: 3.5, ag: 0 },
-  "e0162d0e-0727-49c2-80fa-f611621650ea": { constant: 11.4, category: "CB", name: "slic.hertz #GdbG", ae: 2.5, af: 3.5, ad: 0, ag: 0 },
+  "e0162d0e-0727-49c2-80fa-f611621650ea": { constant: 11.4, category: "CB", name: "slic.hertz", ae: 2.5, af: 3.5, ad: 0, ag: 0 },
   "61f5e310-d45b-40dc-a934-e3a849382729": { constant: 11.4, category: "CB", name: "Moonflutter", ad: 2.838, ae: 3, af: 2.5, ag: 0 },
   "14080c32-a16c-464c-b24a-880f1a7e657d": { constant: 11.4, category: "CB", name: "Algebra", ad: 2.945, ae: 4, af: 3.5, ag: 0 },
   "6b478cca-035d-4297-b34a-ae75658d81bd": { constant: 11.3, category: "CB", name: "Fragment of Memories", ad: 2.719, ae: 3, af: 3, ag: 0 },
@@ -99,7 +98,7 @@ const constants = {
   "e75e2d80-86a0-464f-8d29-8dd0bb68328b": { constant: 7.8, category: "SK", name: "サイクルの欠片", ad: 0, ae: 1, af: 1, ag: 0 },
   "b1361177-1426-47cc-b036-afd09cad775b": { constant: 7.8, category: "SK", name: "cybernetic blazar", ad: 0, ae: 1, af: 1, ag: 0 },
   "fccd5960-dbdc-4127-8b0b-58c1fb521354": { constant: 7.6, category: "SK", name: "OverRain", ad: 0, ae: 1, af: 1, ag: 0 },
-  "26a76638-ec89-4809-bd40-5d6afe403c40": { constant: 7.6, category: "SK", name: "slic.hertz #GdbG", ad: 0, ae: 1, af: 1, ag: 0 },
+  "26a76638-ec89-4809-bd40-5d6afe403c40": { constant: 7.6, category: "SK", name: "slic.hertz", ad: 0, ae: 1, af: 1, ag: 0 },
   "640cea92-0024-4ba5-aa16-8a38f77743ac": { constant: 7.5, category: "SK", name: "Elsorhg", ad: 0, ae: 1, af: 1, ag: 0 },
   "ac9308f8-b896-43af-879a-b65bcfcaa874": { constant: 7.5, category: "SK", name: "Rainbow Flavor!", ad: 0, ae: 1, af: 1, ag: 0 },
   "bdf2975e-8b19-4af8-9b1c-dc6f62587e7c": { constant: 7.5, category: "SK", name: "暮予星光", ad: 0, ae: 1, af: 1, ag: 0 },
@@ -146,7 +145,7 @@ const constants = {
   "75fbb0ef-08fa-47cb-8c6f-acf361f7a081": { constant: 3.0, category: "DZ", name: "Future Unbound (Game Edit)", ad: 0, ae: 1, af: 1, ag: 0 },
   "d8074d7e-dc36-4190-9377-0c62c3775dac": { constant: 3.0, category: "DZ", name: "Dogbite", ad: 0, ae: 1, af: 1, ag: 0 },
   "cfa1c1fd-432e-4313-ae23-fbd6f731ae46": { constant: 3.0, category: "DZ", name: "白虎蓮華", ad: 0, ae: 1, af: 1, ag: 0 },
-  "6eac0020-b9a1-480e-9539-633c0e502f9c": { constant: 3.0, category: "DZ", name: "slic.hertz #GdbG", ad: 0, ae: 1, af: 1, ag: 0 },
+  "6eac0020-b9a1-480e-9539-633c0e502f9c": { constant: 3.0, category: "DZ", name: "slic.hertz", ad: 0, ae: 1, af: 1, ag: 0 },
   "e27a66da-19c5-4d3a-85f4-5defdf5b7b88": { constant: 2.0, category: "CB", name: "Elsorhg", ad: 0, ae: 1, af: 1, ag: 0 },
   "c55ac81b-f00d-4031-8f54-a7735ce84cd3": { constant: 2.0, category: "DZ", name: "Meltovt Necrosys", ad: 0, ae: 1, af: 1, ag: 0 },
   "5b104c2e-94ad-4156-ab25-d1b11be487f3": { constant: 2.0, category: "DZ", name: "Rainbow Flavor!", ad: 0, ae: 1, af: 1, ag: 0 },
@@ -762,7 +761,7 @@ ctx.stroke();
           let y = scaleY(reality);
           ctx.fillText(reality.toFixed(2), chartX - 10, y);
       }
-      console.log("数据1", items);
+      console.log("数据", items);
       
       // 分析图
       const calculateMetric = (items, key, multiplier, divisor) => {
@@ -779,7 +778,6 @@ ctx.stroke();
       const f = calculateMetric(items, 'f', 2.5, 1);
       const g = calculateMetric(items, 'g', 7, 1);
       const h = calculateMetric(items, 'h', 80.5, 15.38);
-      console.log("数据", { d, e, f, g, h });
       // 添加标题
       ctx.textAlign = "center";
       ctx.fillText("User Reality 变化趋势", chartX + chartWidth / 2, chartY - 10);
@@ -961,11 +959,15 @@ function loadImage(src) {
 
 // **初始化 SQL.js**
 async function initSQL() {
+  const response = await fetch('./js/sql-wasm.wasm');
+  const wasmBinary = await response.arrayBuffer();
   const SQL = await initSqlJs({
-      locateFile: filename => `./js/${filename}`  // 自动找到 sql-wasm.wasm
+    locateFile: filename => `./js/${filename}`,
+    wasmBinary // 使用 ArrayBuffer 而不是 wasm streaming
   });
   return SQL;
 }
+
 
 // **处理 SQLite 数据库文件**
 async function processDBFile(arrayBuffer, SQL) {
@@ -1006,8 +1008,6 @@ function handleFile(content, fileName) {
         processXMLFile(content);
     } else if (fileName === 'prefs') {
         processPrefsFile(content);
-    } else if (fileName.endsWith('.plist')) {
-        processPlistFile(content);
     } else if (fileName.endsWith('.reg')) {
         processRegFile(content);
     } else if (fileName.endsWith('.txt')) {
@@ -1035,20 +1035,6 @@ function hexToString(hexData) {
   return res.join('');
 }
 
-function processPlistFile(binaryString) {
-    try {
-    const parsed = plist.parse(binaryString);
-    const playerFile = parsed.PlayerFile;
-        if (playerFile) {
-            document.getElementById('inputData').value = atob(playerFile);
-            processData();
-        } else {
-            alert('未找到 PlayerFile 标签');
-        }
-    } catch (e) {
-        alert("plist 文件格式错误！");
-    }
-}
 
 function processXMLFile(xmlContent) {
   const doc = new DOMParser().parseFromString(xmlContent, "application/xml");
@@ -1086,7 +1072,7 @@ function tryParseJSON(str) {
   }
 }
 
-/* ========== QQ 上传逻辑 & 其他 UI  ========== */
+/* ========== QQ 上传逻辑 & 其他 UI  ========== 
 const qqEntry = document.getElementById("qqEntry");
 const qqBotResultDialog = new mdui.Dialog("#qqBotResultDialog", { modal: true, closeOnEsc: false });
 const inputData1 = document.getElementById("inputData");
@@ -1144,19 +1130,20 @@ function upload() {
 function openContributionDialog() {
   new mdui.Dialog('#contributionDialog').open();
 }
-
+*/
 /* ========== 下载图片 (含背景、卡片等) ========== */
 function downloadImage() {
-  console.log("Generating image with new settings...");
   // 获取用户输入的卡片数量
   const cardCount = parseInt(document.getElementById('cardCount').value, 10);
   const maxItems = Math.max(1, cardCount); // 确保至少有1个卡片
   // 获取数据中实际的卡片数量
   const items = window.processedItems || [];
+  const excludeReality = document.getElementById('excludeReality').value;
+      window.norlt = (excludeReality == "true") ? items.filter(item => item.constant == -1) : [];    
   const actualCardCount = Math.min(maxItems, items.length); // 实际绘制卡片数量，不能超过数据中的数量
   // 动态调整画布高度，保持宽度不变，最小高度为当前代码中的高度
   const baseHeight = 2200;
-  const newHeight = 600 + Math.ceil((actualCardCount / 2) * 165); // 每2个卡片增加165像素的高度
+  const newHeight = 400 + Math.ceil(((actualCardCount+(window.norlt?.length || 0)) / 2) * 165); // 每2个卡片增加165像素的高度
   const canvasHeight = Math.max(baseHeight, newHeight); // 确保总高度不少于2200px
   const canvas = document.createElement('canvas');
   canvas.width = 1200;  // 固定宽度
@@ -1169,7 +1156,7 @@ function downloadImage() {
   if (bgImageFile) {
     bgImagePromise = loadImage(URL.createObjectURL(bgImageFile));
   } else {
-    bgImagePromise = loadImage('./jpgs/查分图.jpg'); // 默认背景图
+    bgImagePromise = loadImage(`./jpgs/background/${Math.floor(Math.random() * 1)}.jpg`);
   }
   bgImagePromise
     .then(bgImage => {
@@ -1197,10 +1184,7 @@ function downloadImage() {
       ctx.font = '50px Arial';
       ctx.fillText('Reality-calculator', 100, 130);
       ctx.font = '30px Arial';
-      ctx.fillText('http://k9.lv/c/', 100, 180);
-      const excludeReality = document.getElementById('excludeReality').value;
-      window.norlt = (excludeReality == "true") ? window.processedItems.filter(item => item.constant == -1) : [];      
-      
+      ctx.fillText('http://k9.lv/c/', 100, 180);      
       preloadImages(ctx, canvas, actualCardCount, window.norlt);
     });
 }

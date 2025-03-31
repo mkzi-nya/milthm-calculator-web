@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="title">Milthm 查分器（原Reality计算器）</title>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <script src="./js/sql-wasm.js"></script>
   <link rel="stylesheet" href="new_UI.css">
   <link href="./layui/css/layui.css" rel="stylesheet">
   <input type="file" id="fileupLoad" style="display:none;" />
-  <script src="./js/plistjs/plist.js"></script>
-  <script src="./js/sql-wasm.js"></script>
   <style>
     #languageMenu{position:absolute;right:0;top:40px;display:none;background-color:#333;color:#eee;border:1px solid #444;border-radius:4px;padding:5px;min-width:100px;z-index:9999}#languageMenu div{margin:5px;cursor:pointer;padding:3px 5px}#languageMenu div:hover{background-color:#444}
     #settingsModal { 
@@ -165,11 +164,11 @@
   <div id="overlay" onclick="closeSettings()"></div>
   <div id="settingsModal">
     <h3 data-i18n="settingsTitle">查分图设置</h3>
-    <label for="cardCount" data-i18n="cardCountLabel">绘制卡片数量:</label>
+    <label for="cardCount" data-i18n="cardCountLabel" style="font-size: 18px;">卡片数量:</label>
     <input type="number" id="cardCount" value="22" min="1" data-i18n-placeholder="cardCountPlaceholder"><br>
-    <label for="bgImage" data-i18n="bgImageLabel">更换背景图:</label>
+    <label for="bgImage" data-i18n="bgImageLabel" style="font-size: 18px;">更换背景图:</label>
     <input type="file" id="bgImage" accept="image/*" data-i18n-placeholder="bgImagePlaceholder"><br>
-    <label for="excludeReality" data-i18n="excludeRealityLabel" style="font-size: 18px;">绘制不记入Reality的曲目:</label>
+    <label for="excludeReality" data-i18n="excludeRealityLabel" style="font-size: 18px;">绘制不记入Reality的曲目:</label>    
     <select id="excludeReality" style="font-size: 16px;">
       <option value="false">false</option>
       <option value="true" >true</option>
@@ -228,7 +227,6 @@
       document.getElementById('langVi').addEventListener('click', () => setLanguage('vi'));
       loadTranslations();
     });
-    
     </script>
   <script src="./js/cha_newui.js"></script>
 </body>
