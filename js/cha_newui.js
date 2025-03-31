@@ -12,12 +12,10 @@ console.log(" ███  ███                               \n\
  ██    ██  ███  ███  ███  ███           \n\
  ██    ██  ░██████░  ░██████░           \n\
  ██    ██   ░████░    ░████░      ")
-
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
 });
-
 
 const constants = {
   "5aaafcea-684f-4310-936d-67ae35956c48": { constant: -1, category: "Ø", name: "驟雨の狭間", ad: 4.334, ae: 1, af: 1, ag: 1 },
@@ -207,13 +205,11 @@ const constants = {
        
 /* ========== 全局变量 ========== */
 let columns = 3; //默认三列布局
-
 /* ========== DOMContentLoaded 事件 ========== */
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container');
   container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
 });
-
 /* ========== Reality 计算相关 ========== */
 function reality(score,c) {
     if (score >= 1005000) return Math.max(1+c,0);
@@ -228,16 +224,12 @@ function processData() {
     const inputData = cleanInputData(document.getElementById('inputData').value);
     const format = isNewFormat(inputData) ? 'new' : 'old';
     const { username, items } = processDataByFormat(inputData, format);
-
   // 全局保存
   window.processedItems = items;
-
   // 清空输出区域以避免多次解析时内容堆叠
   document.getElementById('output').innerHTML = '';
-
   // 根据单曲 Reality 原始值排序
   items.sort((a, b) => b.singleRealityRaw - a.singleRealityRaw);
-
   // 显示用户信息
     drawUserInfo(username, items);
   // 绘制所有卡片
@@ -264,7 +256,6 @@ function processDataByFormat(data, format) {
 function processNewFormat(data) {
   const [, username, songDataStr] = data.match(/^\[(.*?)\],\{(.*)\}$/);
   const songData = songDataStr.split('],[');
-
   const items = songData.map(processSong);
   return { username, items };
 }
@@ -279,7 +270,6 @@ function processOldFormat(data) {
         alert_invalid();
         return { username: "", items: [] };
     }
-
   const items = parsed.SongRecords
     .map(processSongFromOldFormat)
     .filter(Boolean);
@@ -360,13 +350,11 @@ function drawCard(result, index) {
     const outputDiv = document.getElementById('output');
     const card = document.createElement('div');
     card.classList.add('card');
-
   // 背景
     card.style.background = result.bestLevel === 0
         ? 'linear-gradient(135deg, #8400C3,#3030B0,#2e61ef)'
         : 'linear-gradient(45deg, #4028d7, #8839fe)';
     card.style.color = '#DDA0DD';
-
   // 计算基础字号
     let baseFontSize = (window.innerWidth * window.innerHeight) / 50000; //60000
     if (baseFontSize >=10){
@@ -374,25 +362,21 @@ function drawCard(result, index) {
     }
     let fontSize = (baseFontSize * 4) / columns;
   const marginBottom = (baseFontSize * 4) / columns;
-
   // 标题
     const title = document.createElement('div');
     title.classList.add('title');
     title.innerText = result.name;
     card.appendChild(title);
-
     const maxCardWidth = card.offsetWidth * 0.7;
     title.style.fontSize = `${fontSize * 1.3}px`;
     title.style.whiteSpace = 'nowrap';
     title.style.overflow = 'hidden';
     title.style.textOverflow = 'ellipsis';
-
   // 若标题过长就减小字号
     while (title.offsetWidth > maxCardWidth && fontSize > 2) {
     fontSize--;
         title.style.fontSize = `${fontSize}px`;
     }
-
   // Info 行
     const info = document.createElement('div');
     info.classList.add('info');
@@ -406,11 +390,9 @@ function drawCard(result, index) {
     fontSize: `${fontSize}px`,
     marginBottom: `${marginBottom}px`
   });
-
   const constantText = `${parseFloat(result.constant).toFixed(1)}->&nbsp`;
     const singleRealitySpan = document.createElement('span');
     singleRealitySpan.innerHTML = parseFloat(result.singleReality).toFixed(2);
-
   // 根据分数变色
     if (result.bestScore >= 1005000) {
         singleRealitySpan.style.color = '#1cd3b4';
@@ -419,10 +401,8 @@ function drawCard(result, index) {
     } else if (result.singleReality < 0) {
         singleRealitySpan.style.color = '#ff4040';
     }
-
     info.innerHTML = `${result.category} ${constantText}`;
     info.appendChild(singleRealitySpan);
-
   // 准度
     const accuracySpan = document.createElement('span');
     accuracySpan.classList.add('accuracy');
@@ -433,9 +413,7 @@ function drawCard(result, index) {
     overflow: 'visible'
   });
     info.appendChild(accuracySpan);
-
     card.appendChild(info);
-
   // 分数
     const score = document.createElement('div');
     score.classList.add('score');
@@ -444,7 +422,6 @@ function drawCard(result, index) {
     score.style.marginBottom = `${marginBottom}px`;
     score.style.whiteSpace = 'nowrap';
     score.style.overflow = 'hidden';
-
   // 根据等级分数渐变
 if (result.bestLevel < 2) {
     Object.assign(score.style, {
@@ -465,7 +442,6 @@ if (result.bestLevel < 2) {
 }
 
     card.appendChild(score);
-
   // 序号
     const indexElem = document.createElement('div');
     indexElem.classList.add('index');
@@ -478,7 +454,6 @@ if (result.bestLevel < 2) {
     textOverflow: 'ellipsis'
   });
     card.appendChild(indexElem);
-
   // 加入到输出
     outputDiv.appendChild(card);
 }
@@ -560,6 +535,7 @@ function extractScores(db) {
   }
   return scores;
 }
+
 function processHistoryRecords(scores) {
   for (let i = 0; i < scores.length; i++) {
       const scoreData = scores[i];
@@ -567,7 +543,6 @@ function processHistoryRecords(scores) {
       const score = scoreData.score;
       const constantData = constants[chartid];
       const score_accuracy = scoreData.score_accuracy*100
-
       if (constantData) {
           const { constant, category, name,ad,ae,af,ag } = constantData;
           const singleReality = reality(score,constant);
@@ -589,7 +564,6 @@ function processHistoryRecords(scores) {
       }
   }
 
-
   // 计算 r30 和 r10
   const { r30, r10 } = calculateRecentScores(scores);
   console.log("r30 (最近30条成绩):", r30.sort((a, b) => b.singleReality - a.singleReality));
@@ -605,23 +579,18 @@ function calculateRecentScores(scores) {
   scores = scores.filter(item => item.constant >= 0);
   // 先按游玩时间升序排列，确保 r30 维护最近的成绩
   scores.sort((a, b) => new Date(a.played_at) - new Date(b.played_at));
-
   let r30 = [];
   let seenCharts = new Set();
-
   scores.forEach(scoreData => {
       const { chart_id, score} = scoreData;
-
       // 是否是新曲面
       const isNewChart = !seenCharts.has(chart_id);
-
       // 条件写入规则
       const shouldInsert = 
           score >= 1000000 ||                  // 分数大于等于 1000000
           isNewChart ||                        // 第一次游玩该谱面
           score > getBestScore(chart_id, r30) || // 分数高于历史最佳
           causesChartReduction(r30);  // 写入会导致不同谱面数小于 10
-
       if (shouldInsert) {
           // 直接写入（如果已满则踢掉最早的成绩）
           if (r30.length >= 30) {
@@ -633,18 +602,16 @@ function calculateRecentScores(scores) {
   });
   const r10 = [];
   const usedCharts = new Set();
-
   r30.sort((a, b) => b.singleReality - a.singleReality);
-
   for (let i = 0; i < r30.length && r10.length < 10; i++) {
       if (!usedCharts.has(r30[i].chart_id)) {
           r10.push(r30[i]);
           usedCharts.add(r30[i].chart_id);
       }
   }
-
   return { r30, r10 };
 }
+
 // 获取某个 chart_id 在 r30 中的最高分
 function getBestScore(chart_id, r30) {
   let bestScore = 0;
@@ -661,14 +628,13 @@ function causesChartReduction(r30) {
   let uniqueCharts = new Set(r30.map(record => record.chart_id));
   return uniqueCharts.size <= 10;
 }
+
 function calculateUserReality(scores) {
   let b20_lg = new Map(); // 存储所有不同谱面的最高得分记录 (chart_id -> scoreData)
   let userrealityHistory = []; // 记录 userreality 变化历史
   let lastUserReality = null; // 记录上一次的 userreality
-
   scores.forEach(scoreData => {
       const { chart_id, score,played_at } = scoreData;
-
       // **修改点：b20_lg 存储所有曲目的最高分**
       if (!b20_lg.has(chart_id) || b20_lg.get(chart_id).score < score) {
           b20_lg.set(chart_id, scoreData);
@@ -679,7 +645,6 @@ function calculateUserReality(scores) {
 let filteredReality = b20.slice(0, 20).filter(data => data.singleReality > 0);
 let sumReality = filteredReality.reduce((sum, data) => sum + data.singleReality, 0);
       let userreality = sumReality / 20;
-
       // 检测 userreality 是否发生变化
       if (lastUserReality === null || userreality !== lastUserReality) {
           userrealityHistory.push({ userreality, played_at });
@@ -687,7 +652,6 @@ let sumReality = filteredReality.reduce((sum, data) => sum + data.singleReality,
       }
   });
   const gradeMap = { R: 0, AP: 1, FC: 2, S: 3, A: 4, B: 5, C: 6, F: 7 };
-
   window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, ...rest }) => ({
       ...rest,
       bestScore: score,
@@ -698,33 +662,28 @@ let sumReality = filteredReality.reduce((sum, data) => sum + data.singleReality,
   }));  
   return userrealityHistory;
 }
+
 function drawAndDownloadUserRealityChart(userrealityHistory, r10, scores) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 2000;
   canvas.height = 1500;
-
   // 加载背景图片
   const bgImage = new Image();
   bgImage.src = "./jpgs/背景.jpg";
-
   bgImage.onload = function () {
       // 绘制背景图（不会覆盖其他元素）
       ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-
       // 折线图区域：右上 1/4，留 10px 间距，表格高度减少 30px
       const chartX = 1050, chartY = 50, chartWidth = 900, chartHeight = 500;
-
       // 解析用户现实历史数据
       const times = userrealityHistory.map(data => new Date(data.played_at).getTime());
       const realities = userrealityHistory.map(data => data.userreality);
       const [minTime, maxTime] = [Math.min(...times), Math.max(...times)];
       const [minReality, maxReality] = [Math.min(...realities), Math.max(...realities)];
-
       // 设置时间坐标轴的刻度
       const scaleX = (time) => chartX + ((time - minTime) / (maxTime - minTime)) * chartWidth;
       const scaleY = (reality) => chartY + chartHeight - ((reality - minReality) / (maxReality - minReality)) * chartHeight;
-
       // 绘制表格
       ctx.strokeStyle = "#444";
       ctx.lineWidth = 1;
@@ -735,7 +694,6 @@ function drawAndDownloadUserRealityChart(userrealityHistory, r10, scores) {
           ctx.lineTo(chartX + chartWidth, y);
           ctx.stroke();
       }
-
       for (let i = 0; i <= 6; i++) {
           let x = chartX + (chartWidth / 6) * i;
           ctx.beginPath();
@@ -743,28 +701,22 @@ function drawAndDownloadUserRealityChart(userrealityHistory, r10, scores) {
           ctx.lineTo(x, chartY + chartHeight);
           ctx.stroke();
       }
-
       // 绘制折线趋势，并填充折线以下的区域
 ctx.fillStyle = "rgba(206, 238, 249, 0.5)"; // 半透明淡蓝色
 ctx.beginPath();
-
 // 起始点（第一个数据点）
 ctx.moveTo(scaleX(times[0]), scaleY(realities[0]));
-
 // 连接所有数据点
 userrealityHistory.forEach((data, i) => {
     let x = scaleX(times[i]), y = scaleY(realities[i]);
     ctx.lineTo(x, y);
 });
-
 // 连接到底部封闭区域
 ctx.lineTo(scaleX(times[times.length - 1]), chartY + chartHeight); // 右下角
 ctx.lineTo(scaleX(times[0]), chartY + chartHeight); // 左下角
 ctx.closePath();
-
 // 填充颜色
 ctx.fill();
-
 // 重新绘制折线，避免被填充色覆盖
 ctx.strokeStyle = "rgba(200, 237, 249, 0.9)";
 ctx.lineWidth = 3;
@@ -775,7 +727,6 @@ userrealityHistory.forEach((data, i) => {
 });
 ctx.stroke();
 
-
       // 时间坐标：显示基于当前时间的时间差
       const now = new Date();
       const totalTime = now.getTime() - minTime;
@@ -783,7 +734,6 @@ ctx.stroke();
       ctx.fillStyle = "white";
       ctx.font = "20px Arial";
       ctx.textAlign = "center";
-
       for (let i = 0; i < 5; i++) {
           let x = chartX + (i * chartWidth) / 5;
           let time = minTime + i * interval;
@@ -794,7 +744,6 @@ ctx.stroke();
       
       // 右下角显示“now”
       ctx.fillText("now", chartX + chartWidth, chartY + chartHeight + 30);
-
       // userreality 刻度
       ctx.textAlign = "right";
       for (let i = 0; i < 5; i++) {
@@ -802,7 +751,6 @@ ctx.stroke();
           let y = scaleY(reality);
           ctx.fillText(reality.toFixed(2), chartX - 10, y);
       }
-
       console.log("数据1", items);
       
       // 分析图
@@ -815,15 +763,12 @@ ctx.stroke();
                   .reduce((sum, value) => sum + value, 0) / 7 || 0
           ) / divisor;
       };
-
       const d = calculateMetric(items, 'd', 70, 22.5);
       const e = calculateMetric(items, 'e', 70, 30.5);
       const f = calculateMetric(items, 'f', 2.5, 1);
       const g = calculateMetric(items, 'g', 7, 1);
       const h = calculateMetric(items, 'h', 80.5, 15.38);
-
       console.log("数据", { d, e, f, g, h });
-
       // 添加标题
       ctx.textAlign = "center";
       ctx.fillText("User Reality 变化趋势", chartX + chartWidth / 2, chartY - 10);
@@ -831,10 +776,8 @@ ctx.stroke();
       ctx.font = "40px Arial";
       ctx.fillText("最近游玩", 400, 110);
       ctx.fillText("r10记录(测试,无实际用途)", 400, 760);
-
       // 绘制雷达图
       drawRadarChart(ctx, [d, e, f, g, h], 1150, 680, 700, 700);
-
       // 绘制最近 10 次的分数卡片
       lg_drawCards(ctx, scores.slice(-10).reverse(), 50, 150).then(() => {
           // 绘制 r10 记录
@@ -853,20 +796,15 @@ ctx.stroke();
 function drawRadarChart(ctx, data, x, y, width, height) {
   const labels = ['底力', '手法', '读谱', '多指', '准度']; // 按指定顺序绘制
   const maxDataValue = Math.max(...data); // 计算数据中的最大值
-
   // 计算 maxVal，使其比 maxDataValue 大，并且是 0.5 的倍数
   const maxVal = Math.ceil(maxDataValue * 2) / 2;
-
   const numScales = 8; // 8个刻度
   const scaleStep = maxVal / (numScales - 1); // 计算刻度间距，确保是0.1的倍数
-
   const centerX = x + width / 2;
   const centerY = y + height / 2;
   const radius = Math.min(width, height) / 2;
-
   ctx.strokeStyle = "#ccc";
   ctx.fillStyle = "rgba(219, 245, 255, 0.5)";
-
   // 绘制刻度线
   for (let i = 0; i < numScales; i++) {
       const scaleRadius = (i / (numScales - 1)) * radius;
@@ -880,7 +818,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
       ctx.closePath();
       ctx.stroke();
   }
-
   // 绘制刻度值
   ctx.fillStyle = "white";
   ctx.font = "12px Arial";
@@ -889,7 +826,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
       const scaleRadius = (i / (numScales - 1)) * radius;
       ctx.fillText(scaleValue, centerX, centerY - scaleRadius);
   }
-
   // 画雷达数据区域
   ctx.beginPath();
   ctx.fillStyle = "rgba(210, 244, 255, 0.5)";
@@ -903,7 +839,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
-
   // 绘制标签（白色字体）
   ctx.fillStyle = "white";
   ctx.font = "16px Arial";
@@ -937,28 +872,22 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
   const cardHeight = 100 * scale;
   const imgWidth = 110 * scale;
   const imgHeight = 70;
-
   const columnSpacing = 360 * scale;
   const rowSpacing = 110 * scale;
-
   const imagePromises = items.map((item, i) => {
       const x = xOffset + (i % 2) * columnSpacing;
       const y = yOffset + Math.floor(i / 2) * rowSpacing;
-
       // 卡片背景
       ctx.fillStyle = 'rgba(104, 118, 122, 0.4)';
       ctx.fillRect(x, y, cardWidth, cardHeight);
-
       // 编号
       ctx.font = `${13 * scale}px Arial`;
       ctx.textAlign = 'right';
       ctx.textBaseline = 'top';
       ctx.fillStyle = (i < 10) ? '#FAFAFA' : '#C9C9C9';
       ctx.fillText(`#${i + 1}`, x + cardWidth - 10, y + 5);
-
       // 分数：不足7位前补0
       let strScore = item.score.toString().padStart(7, '0');
-
       // 分数颜色
       let scoreColor;
       if (item.bestLevel < 2) {
@@ -971,12 +900,10 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
       } else {
           scoreColor = '#FFFFFF';
       }
-
       ctx.font = `${28 * scale}px Arial`;
       ctx.textAlign = 'left';
       ctx.fillStyle = scoreColor;
       ctx.fillText(strScore, x + 128, y + 42 * scale);
-
       ctx.font = `${15 * scale}px Arial`;
       ctx.textAlign = 'left';
       ctx.fillStyle = '#FFFFFF';
@@ -993,12 +920,10 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
       }
       ctx.fillStyle = '#FFFFFF';
       ctx.fillText(item.name, x + 130, y + 18);
-
       // Reality + Accuracy
       ctx.font = `${15 * scale}px Arial`;
       ctx.fillStyle = '#FFFFFF';
       ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality.toFixed(2)}`, x + 130, y + 75 * scale);
-
       // 曲绘图
       const imgPath = `./jpgs/${encodeURIComponent(item.name)}.jpg`;
       return loadImage(imgPath).then(img => {
@@ -1010,7 +935,6 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
           });
       });
   });
-
   // 等待所有图片加载完成
   return Promise.all(imagePromises);
 }
@@ -1036,18 +960,15 @@ async function initSQL() {
 async function processDBFile(arrayBuffer, SQL) {
   try {
       const db = new SQL.Database(new Uint8Array(arrayBuffer));
-
       // 查询 `kv` 表中的 `PlayerFile`
       const results = db.exec("SELECT value FROM kv WHERE key='PlayerFile'");
       if (results.length === 0 || results[0].values.length === 0) {
           alert("未找到 PlayerFile 存档");
           return;
       }
-
       // 提取 JSON 并解析
       const playerFileJSON = results[0].values[0][0]; 
       const extracted = extractJSON(playerFileJSON);
-
       if (extracted) {
           document.getElementById('inputData').value = extracted;
           processData();
@@ -1161,7 +1082,6 @@ const inputData1 = document.getElementById("inputData");
 const qqBotResultCloseBtn = document.getElementById("qqBotResultCloseBtn");
 const qqBotResultText = document.getElementById("qqBotResultText");
 const uploadButton = document.getElementById("uploadButton");
-
 function upload() {
   qqBotResultCloseBtn.disabled = true;
   const userdata = qqEntry.value.trim();
@@ -1174,10 +1094,8 @@ function upload() {
     qqBotResultDialog.open();
     qqBotResultText.innerHTML = "正在获取数据...";
     document.getElementById("qqBotResultContent").value = '';
-
   const data2 = inputData1.value;
   const data_param = { nqid: userdata, data: data2, type: "milthm" };
-
   const xhr = new XMLHttpRequest();
     xhr.open("POST", "http://175.27.145.108:7155", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -1196,7 +1114,6 @@ function upload() {
       }
     };
     xhr.send(JSON.stringify(data_param));
-
   // 发送第二个请求
     try {
     const xhr2 = new XMLHttpRequest();
@@ -1219,31 +1136,31 @@ function openContributionDialog() {
 
 /* ========== 下载图片 (含背景、卡片等) ========== */
 function downloadImage() {
+  console.log("Generating image with new settings...");
+  // 获取用户输入的卡片数量
+  const cardCount = parseInt(document.getElementById('cardCount').value, 10);
+  const maxItems = Math.max(1, cardCount); // 确保至少有1个卡片
+  // 获取数据中实际的卡片数量
   const items = window.processedItems || [];
-  let star = '';
-    let maxConstant = -Infinity;
-    items.forEach(item => {
-      if ((item.bestLevel === 0 || item.bestLevel === 1) && item.constant > maxConstant) {
-        maxConstant = item.constant;
-      }
-    });
-
-    if (maxConstant > 12) {
-      star = '☆☆☆';
-    } else if (maxConstant > 9) {
-      star = '☆☆';
-    } else if (maxConstant > 6) {
-      star = '☆';
-    }
-  genPicDialog();
-  console.log("opening genPicDialog")
+  const actualCardCount = Math.min(maxItems, items.length); // 实际绘制卡片数量，不能超过数据中的数量
+  // 动态调整画布高度，保持宽度不变，最小高度为当前代码中的高度
+  const baseHeight = 2200;
+  const newHeight = 600 + Math.ceil((actualCardCount / 2) * 165); // 每2个卡片增加165像素的高度
+  const canvasHeight = Math.max(baseHeight, newHeight); // 确保总高度不少于2200px
   const canvas = document.createElement('canvas');
-  canvas.width = 1200;
-  canvas.height = 2200;
+  canvas.width = 1200;  // 固定宽度
+  canvas.height = canvasHeight;  // 根据卡片数量调整高度
   const ctx = canvas.getContext('2d');
-
-  loadImage('./jpgs/查分图.jpg')
-    .catch(() => null)
+  // 获取背景图设置
+  const bgImageFile = document.getElementById('bgImage').files[0];
+  let bgImagePromise = Promise.resolve(null);
+  // 如果选择了背景图文件，加载它
+  if (bgImageFile) {
+    bgImagePromise = loadImage(URL.createObjectURL(bgImageFile));
+  } else {
+    bgImagePromise = loadImage('./jpgs/查分图.jpg'); // 默认背景图
+  }
+  bgImagePromise
     .then(bgImage => {
       if (bgImage) {
         ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
@@ -1251,140 +1168,124 @@ function downloadImage() {
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
-
       ctx.fillStyle = 'rgba(128, 128, 128, 0.3)';
       ctx.fillRect(0, 50, canvas.width, 200);
-
       ctx.beginPath();
       ctx.strokeStyle = 'rgba(255,255,255,0.8)';
       ctx.lineWidth = 3;
       ctx.moveTo(550, 250);
       ctx.lineTo(650, 50);
       ctx.stroke();
-
       ctx.font = '25px Arial';
       ctx.fillStyle = '#ffffff';
-      ctx.fillText(star, 740, 75);
       ctx.fillText(`Player: ${window.username}`, 660, 100);
-      ctx.fillText(`Reality: ${window.average}`, 660, 150);
+      ctx.fillText(`Nrk: ${window.average}`, 660, 150);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
       ctx.fillText(`Date: ${dateStr}`, 660, 200);
-
       ctx.font = '50px Arial';
       ctx.fillText('Reality-calculator', 100, 130);
       ctx.font = '30px Arial';
       ctx.fillText('http://k9.lv/c/', 100, 180);
-
-      preloadImages(ctx, canvas);
+      const excludeReality = document.getElementById('excludeReality').value;
+      window.norlt = (excludeReality == "true") ? window.processedItems.filter(item => item.constant == -1) : [];      
+      
+      preloadImages(ctx, canvas, actualCardCount, window.norlt);
     });
+}
 
-  function preloadImages(ctx, canvas) {
-    const items = window.processedItems || [];
-    const maxItems = Math.min(22, items.length);
-    const imagePromises = [];
-
-    for (let i = 0; i < maxItems; i++) {
-      const encodedName = encodeURIComponent(items[i].name);
-      const imgPath = `./jpgs/${encodedName}.jpg`;
-      const rankImgPath = `./jpgs/${items[i].bestLevel}.png`;
-      
-      const songImgPromise = loadImage(imgPath).catch(() => loadImage('./jpgs/NYA.jpg'));
-      const rankImgPromise = loadImage(rankImgPath).catch(() => null);
-      
-      imagePromises.push(Promise.all([songImgPromise, rankImgPromise]));
-    }
-
-    Promise.all(imagePromises).then(images => drawCards(ctx, canvas, items, images));
-  }
-
+function preloadImages(ctx, canvas, actualCardCount, norlt) {
+  const items = [
+    ...window.processedItems.slice(0, actualCardCount), // 获取前 actualCardCount 项
+    ...norlt // 合并上 norlt 的所有项
+  ];
   
-function drawCards(ctx, canvas, items, images) {
-    const scale = 1.3;
-    const cardWidth = 340 * scale;
-    const cardHeight = 100 * scale;
-    const imgWidth = 142 * scale;
-    const imgHeight = 80 * scale;
-    const rankIconSize = 70 * scale;
+  const imagePromises = items.map(item => {
+    const encodedName = encodeURIComponent(item.name);
+    const imgPath = `./jpgs/${encodedName}.jpg`;
+    const rankImgPath = `./jpgs/${item.bestLevel}.png`;
+    const songImgPromise = loadImage(imgPath).catch(() => loadImage('./jpgs/NYA.jpg'));
+    const rankImgPromise = loadImage(rankImgPath).catch(() => null);
+    return Promise.all([songImgPromise, rankImgPromise]);
+  });
+  Promise.all(imagePromises)
+    .then(images => drawCards(ctx, canvas, items, images, actualCardCount));
+}
 
-    const xOffset = 110;
-    const yOffset = 350;
-    const columnSpacing = 400 * scale;
-    const rowSpacing = 125 * scale;
-
-    items.slice(0, 22).forEach((item, i) => {
-      const x = xOffset + (i % 2) * columnSpacing;
-      const y = yOffset + Math.floor(i / 2) * rowSpacing - ((i % 2 === 0) ? 50 : 0);
-
-      ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-      ctx.fillRect(x, y, cardWidth, cardHeight);
-
-      ctx.font = `${13 * scale}px Arial`;
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle = (i < 20) ? '#FAFAFA' : '#C9C9C9';
-      ctx.fillText(`#${i + 1}`, x + cardWidth - 10, y + 5 * scale);
-
-      let strScore = item.bestScore.toString().padStart(7, '0');
-
-      let scoreColor = item.bestLevel < 2 ? 
-        ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale) :
-        (item.bestLevel === 2 ? '#90CAEF' : '#FFFFFF');
-      
-      if (typeof scoreColor !== 'string') {
-        scoreColor.addColorStop(0, '#99C5FB');
-        scoreColor.addColorStop(1, '#D8C3FA');
-      }
-
-      ctx.font = `${30 * scale}px Arial`;
-      ctx.textAlign = 'left';
-      ctx.fillStyle = scoreColor;
-      ctx.fillText(strScore, x + 160 * scale, y + 40 * scale);
-
-      const maxTextWidth = 200;
-      let currentFontSize = 19 * scale;
+function drawCards(ctx, canvas, items, images, actualCardCount) {
+  const scale = 1.3;
+  const cardWidth = 340 * scale;
+  const cardHeight = 100 * scale;
+  const imgWidth = 142 * scale;
+  const imgHeight = 80 * scale;
+  const rankIconSize = 70 * scale;
+  const xOffset = 110;
+  const yOffset = 350;
+  const columnSpacing = 400 * scale;
+  const rowSpacing = 125 * scale;
+  items.forEach((item, i) => {
+    const x = xOffset + (i % 2) * columnSpacing;
+    const y = yOffset + Math.floor(i / 2) * rowSpacing - ((i % 2 === 0) ? 50 : 0);
+    ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+    ctx.fillRect(x, y, cardWidth, cardHeight);
+    ctx.font = `${13 * scale}px Arial`;
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'top';
+    ctx.fillStyle = (i < 20) ? '#FAFAFA' : '#C9C9C9';
+    ctx.fillText(`#${i + 1}`, x + cardWidth - 10, y + 5 * scale);
+    let strScore = item.bestScore.toString().padStart(7, '0');
+    let scoreColor = item.bestLevel < 2 ? 
+      ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale) :
+      (item.bestLevel === 2 ? '#90CAEF' : '#FFFFFF');
+    
+    if (typeof scoreColor !== 'string') {
+      scoreColor.addColorStop(0, '#99C5FB');
+      scoreColor.addColorStop(1, '#D8C3FA');
+    }
+    ctx.font = `${30 * scale}px Arial`;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = scoreColor;
+    ctx.fillText(strScore, x + 160 * scale, y + 40 * scale);
+    const maxTextWidth = 200;
+    let currentFontSize = 19 * scale;
+    ctx.font = `${currentFontSize}px Arial`;
+    let textWidth = ctx.measureText(item.name).width;
+    while (textWidth > maxTextWidth && currentFontSize > 10) {
+      currentFontSize--;
       ctx.font = `${currentFontSize}px Arial`;
-      let textWidth = ctx.measureText(item.name).width;
-      while (textWidth > maxTextWidth && currentFontSize > 10) {
-        currentFontSize--;
-        ctx.font = `${currentFontSize}px Arial`;
-        textWidth = ctx.measureText(item.name).width;
-      }
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillText(item.name, x + 163 * scale, y + 18 * scale);
-
-      ctx.font = `${15 * scale}px Arial`;
-      ctx.fillStyle = '#FFFFFF';
-      const accText = `${(item.bestAccuracy * 100).toFixed(2)}%`;
-      ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
-
-      ctx.drawImage(images[i][0], x + 10 * scale, y + 10 * scale, imgWidth, imgHeight);
-
-      if (images[i][1]) {
-        ctx.drawImage(images[i][1], x + 270 * scale, y + 20 * scale, rankIconSize, rankIconSize);
-      }
-    });
-
-    exportImage(canvas);
-  }
-
-  function exportImage(canvas) {
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
-    const now = new Date();
-    const timestamp = now.toISOString().replace(/[:\-T]/g, '_').split('.')[0];
-    link.download = `output_${timestamp}.png`;
-    link.click();
-    document.getElementById('picgen').style.display='none';
+      textWidth = ctx.measureText(item.name).width;
+    }
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(item.name, x + 163 * scale, y + 18 * scale);
+    ctx.font = `${15 * scale}px Arial`;
+    ctx.fillStyle = '#FFFFFF';
+    const accText = `${(item.bestAccuracy * 100).toFixed(2)}%`;
+    ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
+    ctx.drawImage(images[i][0], x + 10 * scale, y + 10 * scale, imgWidth, imgHeight);
+    if (images[i][1]) {
+      ctx.drawImage(images[i][1], x + 270 * scale, y + 20 * scale, rankIconSize, rankIconSize);
+    }
+  });
+  exportImage(canvas);
 }
 
-  function loadImage(src) {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = src;
-    });
-  }
+function exportImage(canvas) {
+  const link = document.createElement('a');
+  link.href = canvas.toDataURL('image/png');
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/[:\-T]/g, '_').split('.')[0];
+  link.download = `output_${timestamp}.png`;
+  link.click();
+  document.getElementById('picgen').style.display = 'none';
 }
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
 
