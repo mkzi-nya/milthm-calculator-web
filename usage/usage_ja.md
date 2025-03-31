@@ -296,25 +296,26 @@ function reality(score, constant) {
 
 | ランク | タイトル                  | 難易度 | 定数 |
 |------|-------------------------|--------|------|
-| 1    | Contrasty Angeles        | CL     | 12.3 |
-| 2    | 命日                      | CL     | 12.2 |
-| 3    | Moonfall／大月墜落狂想      | CB     | 12.2 |
-| 4    | Regnaissance             | CL     | 12.1 |
-| 5    | Innocent white           | CB     | 12.1 |
-| 6    | Broken Conviction        | CL     | 11.9 |
-| 7    | Meltovt Necrosys         | CB     | 11.9 |
-| 8    | Moonflutter              | CL     | 11.7 |
-| 9    | Fly To Meteor feat.兔柒   | CL     | 11.7 |
+| 1 | Contrasty Angeles | CL | 12.3 |
+| 2 | 命日 | CL | 12.2 |
+| 3 | Moonfall／大月墜落狂想 | CB | 12.2 |
+| 4 | Regnaissance | CL | 12.1 |
+| 5 | Innocent white | CB | 12.1 |
+| 6 | Broken Conviction | CL | 11.9 |
+| 7 | Meltovt Necrosys | CB | 11.9 |
+| 8 | Moonflutter | CL | 11.7 |
+| 9 | Fly To Meteor feat.兔柒 | CL | 11.7 |
 | 10 | HYPER MEMORIES | CB | 11.7 |
-| 11 | Broken Conviction | CB | 11.5 |
-| 12 | Threat - Metropolis | CB | 11.5 |
-| 13 | Contrasty Angeles | CB | 11.5 |
-| 14 | slic.hertz #GdbG | CB | 11.4 |
-| 15 | Moonflutter | CB | 11.4 |
-| 16 | Algebra | CB | 11.4 |
-| 17 | Fragment of Memories | CB | 11.3 |
-| 18 | cafe in 6412I731V | CB | 11.3 |
-| 19 | IN | CB | 11.2 |
+| 11 | KASANE | CB | 11.6 |
+| 12 | Broken Conviction | CB | 11.5 |
+| 13 | Threat - Metropolis | CB | 11.5 |
+| 14 | Contrasty Angeles | CB | 11.5 |
+| 15 | slic.hertz #GdbG | CB | 11.4 |
+| 16 | Moonflutter | CB | 11.4 |
+| 17 | Algebra | CB | 11.4 |
+| 18 | Fragment of Memories | CB | 11.3 |
+| 19 | cafe in 6412I731V | CB | 11.3 |
+| 20 | IN | CB | 11.2 |
 | 20 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
 
@@ -324,7 +325,7 @@ function reality(score, constant) {
 
 | タイトル              | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| Welcome to Milthm    | 1.0  | -    | -    | -    |
+| Welcome to Milthm  | 1.0  | -    | -    | SP |
 | 時落之雨             | 1.0  | 4.5  | 8.5  | -    |
 | 夜風                 | 3.0  | 7.3  | 10.1 | -    |
 | 花月                 | 2.0  | 8.2  | 9.3  | -    |
@@ -407,17 +408,18 @@ function reality(score, constant) {
 | Agnostic                    | 3.0  | 7.4  | 10.0 | -    |
 | Psyched Fevereiro           | 3.5  | 7.3  | 10.0 | -    |
 | Future Unbound (Game Edit)  | 3.0  | 7.5  | 10.5 | -    |
-| Algebra                     | 2.0  | 8.1  | 11.4 | -    |
+| Algebra                     | 2.0  | 8.1  | 11.4 | SP  |
 | Words                       | 2.0  | 6.5  | 9.3  | -    |
 | 仮想明日                    | 3.5  | 6.6  | 10.0  | -    |
 | 白虎蓮華                    | 3.0  | 6.5  | 9.6  | -    |
 | サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
 | 参宿四\~Betelgeuse\~         | 2.0  | 6.4  | 11.2 | -    |
 | slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | 9.8  | -    |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | SP |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
+| 选择你的宽带 | - | - | - | SP |
 
 ---
 
@@ -427,6 +429,8 @@ function reality(score, constant) {
 |------------------------------|------|------|------|------|
 | FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
 | cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
+| KASANE | 3.0  | 7.8  | 11.6  | -    |
+| KAEDE | -  | -  | -  | SP  |
 
 ---
 
