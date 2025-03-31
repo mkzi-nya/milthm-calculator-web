@@ -303,7 +303,7 @@ function reality(score, constant) {
 | サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
 | 参宿四\~Betelgeuse\~          | 2.0  | 6.4  | 11.2 | -    |
 | slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | SP |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | -    |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
@@ -583,7 +583,7 @@ $$
 | サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
 | 参宿四\~Betelgeuse\~          | 2.0  | 6.4  | 11.2 | -    |
 | slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | SP |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | -    |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
@@ -744,7 +744,7 @@ $$
 | サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
 | 参宿四\~Betelgeuse\~         | 2.0  | 6.4  | 11.2 | -    |
 | slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | SP |
+| Rainbow Flavor!             | 2.0  | 7.5  | 9.8  | -    |
 | IN                           | 1.0  | 7.9  | 11.2 | -    |
 | 驟雨の狭間                  | -    | -    | -    | Ø    |
 | Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |

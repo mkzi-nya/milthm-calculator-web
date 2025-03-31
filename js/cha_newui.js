@@ -196,11 +196,22 @@ const constants = {
 "825405cb-d262-4f10-9e98-4d967e4e33f4": { constant: 11.3, category: "CB", name: "cafe in 6412I731V", ad: 0, ae: 1, af: 1, ag: 0 },
 "faf0dc82-df37-456a-b726-283e27df9c31": { constant: 7.0, category: "SK", name: "cafe in 6412I731V", ad: 0, ae: 1, af: 1, ag: 0 },
 "54c60c83-9a80-458d-bf11-b04be1af1977": { constant: 2.0, category: "DZ", name: "cafe in 6412I731V", ad: 0, ae: 1, af: 1, ag: 0 },
+"5c0778d6-b2db-444f-a911-7892ffdf3ba5": { constant: 11.6, category: "CB", name: "KASANE", ad: 0, ae: 1, af: 1, ag: 0 },
+"3b11fea9-a2e3-40f7-bbe2-196cfcf25a1c": { constant: 7.8, category: "SK", name: "KASANE", ad: 0, ae: 1, af: 1, ag: 0 },
+"76aebcf6-d55d-4490-b48a-1fc3162a974a": { constant: 3.0, category: "DZ", name: "KASANE", ad: 0, ae: 1, af: 1, ag: 0 },
   //特殊谱面
   //剧情谱面，显示定数为3
   "eb802d90-72c0-4b95-856a-b2951a57c0ec": { constant: -1, category: "CB*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 },
   "d3ddf678-adb0-4158-ae10-21c2667c7ba8": { constant: -1, category: "SK*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 },
-  "e23637e8-fe16-4d9a-b3c9-9e059745ad3c": { constant: -1, category: "DZ*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 }
+  "e23637e8-fe16-4d9a-b3c9-9e059745ad3c": { constant: -1, category: "DZ*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 },
+  //愚人节
+  "eade667e-610b-419c-bc3d-503d7946d1ea": { constant: -1, category: "SP", name: "Welcome to Milthm", ad: 0, ae: 1, af: 1, ag: 0 },
+  "1ccef645-09b6-400d-a438-b2f2fdc0debc": { constant: -1, category: "SP", name: "选择你的宽带", ad: 0, ae: 1, af: 1, ag: 0 },
+  "cc508ca6-5d5f-4222-a4a9-3a8cfbaac03e": { constant: -1, category: "SP", name: "Algebra", ad: 0, ae: 1, af: 1, ag: 0 },
+  "242edead-e9cd-428d-9799-f8a603109fc6": { constant: -1, category: "SP", name: "Rainbow Flavor!", ad: 0, ae: 1, af: 1, ag: 0 },
+  "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a": { constant: -1, category: "SP", name: "KAEDE", ad: 0, ae: 1, af: 1, ag: 0 },
+  "242edead-e9cd-428d-9799-f8a603109fc6": { constant: -1, category: "SP", name: "Dogbite", ad: 0, ae: 1, af: 1, ag: 0 },
+  
 };
        
 /* ========== 全局变量 ========== */
