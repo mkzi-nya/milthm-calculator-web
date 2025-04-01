@@ -1134,7 +1134,7 @@ function openContributionDialog() {
 function downloadImage() {
   // 获取用户输入的卡片数量
   const cardCount = parseInt(document.getElementById('cardCount').value, 10);
-  const maxItems = Math.max(1, cardCount); // 确保至少有1个卡片
+  const maxItems = Math.max(0, cardCount);
   // 获取数据中实际的卡片数量
   const items = window.processedItems || [];
   const excludeReality = document.getElementById('excludeReality').value;
