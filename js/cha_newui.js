@@ -1156,7 +1156,7 @@ function downloadImage() {
   if (bgImageFile) {
     bgImagePromise = loadImage(URL.createObjectURL(bgImageFile));
   } else {
-    bgImagePromise = loadImage(`./jpgs/background/${Math.floor(Math.random() * 1)}.jpg`);
+    bgImagePromise = loadImage(`./jpgs/background/${Math.floor(Math.random() * 3)}.jpg`);
   }
   bgImagePromise
     .then(bgImage => {
