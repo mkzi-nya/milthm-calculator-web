@@ -209,7 +209,6 @@ const constants = {
   "cc508ca6-5d5f-4222-a4a9-3a8cfbaac03e": { constant: -1, category: "SP", name: "Algebra", ad: 0, ae: 1, af: 1, ag: 0 },
   "242edead-e9cd-428d-9799-f8a603109fc6": { constant: -1, category: "SP", name: "Rainbow Flavor!", ad: 0, ae: 1, af: 1, ag: 0 },
   "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a": { constant: -1, category: "SP", name: "KAEDE", ad: 0, ae: 1, af: 1, ag: 0 },
-  "242edead-e9cd-428d-9799-f8a603109fc6": { constant: -1, category: "SP", name: "Dogbite", ad: 0, ae: 1, af: 1, ag: 0 },
   
 };
        
