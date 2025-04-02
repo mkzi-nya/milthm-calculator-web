@@ -291,7 +291,7 @@ Al terminar la canción, la evaluación del rendimiento mostrada en el gráfico 
 > - Todas las gráficas SP y las partituras no estándar no se incluyen en el cálculo de Reality.  
 > - Debido a cuestiones de precisión, en la versión actual todas las constantes de canciones que deberían ser 11.9 son en realidad inferiores a 11.9. Por ejemplo, si la Reality teórica es `13.005`, en el juego se mostrará como `13.00` en lugar de `13.01`, y el cálculo real es `13.004999…`.
 
-La Reality teórica actual es `12.675` (mostrada como 12.67).  
+La Reality teórica actual es `12.695` (mostrada como 12.69).  
 Las 20 canciones con las constantes más altas en la versión actual son las siguientes:
 
 | Rank | Title                   | Difficulty | Constant |

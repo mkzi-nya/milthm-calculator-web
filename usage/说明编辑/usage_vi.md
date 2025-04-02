@@ -188,7 +188,7 @@ Sau khi bài hát kết thúc, đánh giá hiệu suất hiển thị trên bi�
 > - Tất cả các bảng SP và các bản nhạc không tiêu chuẩn không được tính vào công thức Reality.  
 > - Do vấn đề về độ chính xác, trong phiên bản hiện tại, tất cả các hằng số của bài hát được cho là 11.9 thực tế đều thấp hơn 11.9. Ví dụ, nếu Reality lý thuyết là `13.005`, trong trò chơi sẽ hiển thị là `13.00` thay vì `13.01`, và tính toán thực tế là `13.004999…`.
 
-Reality lý thuyết hiện tại là `12.675` (hiển thị là 12.67).  
+Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).  
 20 bài hát có hằng số cao nhất trong phiên bản hiện tại như sau:
 
 {{章节en1}}
