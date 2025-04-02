@@ -1149,6 +1149,21 @@ function downloadImage() {
   canvas.width = 1200;  // 固定宽度
   canvas.height = canvasHeight;  // 根据卡片数量调整高度
   const ctx = canvas.getContext('2d');
+  let star = '';
+    let maxConstant = -Infinity;
+    items.forEach(item => {
+      if ((item.bestLevel === 0 || item.bestLevel === 1) && item.constant > maxConstant) {
+        maxConstant = item.constant;
+      }
+    });
+
+    if (maxConstant > 12) {
+      star = '☆☆☆';
+    } else if (maxConstant > 9) {
+      star = '☆☆';
+    } else if (maxConstant > 6) {
+      star = '☆';
+    }
   // 获取背景图设置
   const bgImageFile = document.getElementById('bgImage').files[0];
   let bgImagePromise = Promise.resolve(null);
@@ -1166,6 +1181,7 @@ function downloadImage() {
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
+      const yrjds = document.getElementById('yrjds').value;//愚人节
       ctx.fillStyle = 'rgba(128, 128, 128, 0.3)';
       ctx.fillRect(0, 50, canvas.width, 200);
       ctx.beginPath();
@@ -1176,8 +1192,17 @@ function downloadImage() {
       ctx.stroke();
       ctx.font = '25px Arial';
       ctx.fillStyle = '#ffffff';
+      if (yrjds == "true"){
+      ctx.font = '23px Arial';
+      ctx.fillText("☆", 719, 15);
+      ctx.fillText("☆☆☆", 696, 35);
+      ctx.fillText("☆☆☆☆☆", 673, 55);
+      ctx.fillText("☆☆☆☆☆☆☆", 650, 75);
+      ctx.font = '25px Arial';
+      }else{
+      ctx.fillText(star, 660, 75);
+      }
       ctx.fillText(`Player: ${window.username}`, 660, 100);
-     const yrjds = document.getElementById('yrjds').value;
     if (yrjds == "true"){
     ctx.fillText(`Reality: ${(window.average*20).toFixed(4)}`, 660, 150);
     }else{
