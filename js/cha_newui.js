@@ -1262,7 +1262,7 @@ function drawCards(ctx, canvas, items, images, actualCardCount) {
     const accText = `${(item.bestAccuracy * 100).toFixed(2)}%`;
     const yrjds = document.getElementById('yrjds').value;
     if (yrjds == "true"){
-    ctx.fillText(`${item.category} ${item.yct} > ${(item.singleRealityRaw * 20).toFixed(1)}   ${accText}`, x + 160 * scale, y + 75 * scale);
+    ctx.fillText(`${item.category} ${item.yct || item.constant} > ${(item.singleRealityRaw * 20).toFixed(1)}   ${accText}`, x + 160 * scale, y + 75 * scale);
     }else{
     ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
    }

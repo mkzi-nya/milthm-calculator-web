@@ -31,7 +31,8 @@
     "bgImageLabel": "更换背景图",
     "excludeRealityLabel": "绘制不记入Reality的曲目:",
     "cancel": "取消",
-    "apply": "应用"
+    "apply": "应用",
+    "yrjds":"愚人节定数"
   },
   "zh-tw": {
     "title": "Milthm 查分器（原Reality計算器）",
@@ -65,7 +66,8 @@
     "bgImageLabel": "更換背景圖",
     "excludeRealityLabel": "繪製不計入Reality的曲目:",
     "cancel": "取消",
-    "apply": "應用"
+    "apply": "應用",
+    "yrjds": "愚人節定數"
   },
   "en": {
     "title": "Milthm Score Checker (Formerly Reality Calculator)",
@@ -99,7 +101,8 @@
     "bgImageLabel": "Change background image",
     "excludeRealityLabel": "Include tracks not counted in Reality:",
     "cancel": "Cancel",
-    "apply": "Apply"
+    "apply": "Apply",
+    "yrjds": "April Fools' Day constant"
   },
   "es": {
     "title": "Milthm Verificador de Puntajes (Anteriormente Calculadora Reality)",
@@ -133,7 +136,8 @@
     "bgImageLabel": "Cambiar imagen de fondo",
     "excludeRealityLabel": "Incluir canciones no contadas en Reality:",
     "cancel": "Cancelar",
-    "apply": "Aplicar"
+    "apply": "Aplicar",
+    "yrjds": "constante del Día de los Inocentes"
   },
   "ko": {
     "title": "Milthm 점수 확인기 (구 Reality 계산기)",
@@ -167,7 +171,8 @@
     "bgImageLabel": "배경 이미지 변경",
     "excludeRealityLabel": "Reality에 포함되지 않은 트랙 포함:",
     "cancel": "취소",
-    "apply": "적용"
+    "apply": "적용",
+    "yrjds": "만우절 상수"
   },
   "ru": {
     "title": "Milthm Проверка баллов (Ранее Reality Calculator)",
@@ -201,7 +206,8 @@
     "bgImageLabel": "Сменить фоновое изображение",
     "excludeRealityLabel": "Включить треки, не учитываемые в Reality:",
     "cancel": "Отмена",
-    "apply": "Применить"
+    "apply": "Применить",
+    "yrjds": "константа Дня дурака"
   },
   "ja": {
     "title": "Milthm スコアチェッカー (旧Reality計算機)",
@@ -235,7 +241,8 @@
     "bgImageLabel": "背景画像を変更",
     "excludeRealityLabel": "Realityに含まれないトラックを含める：",
     "cancel": "キャンセル",
-    "apply": "適用"
+    "apply": "適用",
+    "yrjds": "エイプリルフールの定数"
   },
   "vi": {
     "title": "Milthm Kiểm Tra Điểm (Trước đây là Máy Tính Reality)",
@@ -269,6 +276,7 @@
     "bgImageLabel": "Thay đổi hình nền",
     "excludeRealityLabel": "Bao gồm bài hát không tính vào Reality:",
     "cancel": "Hủy",
-    "apply": "Áp dụng"
+    "apply": "Áp dụng",
+    "yrjds": "hằng số ngày Cá tháng Tư"
   }
 }
