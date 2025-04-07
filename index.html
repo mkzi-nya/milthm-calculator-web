@@ -39,7 +39,7 @@
         background-color: #444;
         color: #fff;
         border: 1px solid #555;
-        border-radius: 10px;
+        border-radius: 12px;
         font-size: 16px;
     }
     #settingsModal input:focus, 
@@ -142,7 +142,7 @@
           <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage();" data-i18n="generateImage">生成图像</button>
           <button class="layui-btn layui-btn-primary" onclick="showSettings();" data-i18n="settings">查分图设置</button>
           <div id="picgen" style="display:none;">
-            <span class="layui-badge layui-bg-black" data-i18n="generatingImage">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。</span>
+            <span class="layui-badge layui-bg-black" data-i18n="generatingImage">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。资源不会超过4MB</span>
           </div>
         </div>
       </div>

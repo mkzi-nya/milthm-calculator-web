@@ -20,7 +20,7 @@
     "parse": "解析",
     "uploadFile": "上传文件",
     "generateImage": "生成图像",
-    "generatingImage": "正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。",
+    "generatingImage": "正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。资源不会超过4MB",
     "dataResult": "数据处理结果",
     "userInfo": "用户信息：",
     "charts": "图表：",

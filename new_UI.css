@@ -64,13 +64,43 @@ body{
 }
 .rccc{
     /* 设置半透明背景最高优先级,覆盖layui的设置 */
-    background-color: rgba(33, 33, 33, 0.8) !important;
+    background-color: rgba(33, 33, 33, 0.6) !important;
     border-radius: 10px !important; /* 圆角边框 */
     border: 1px solid #aaaaaa2a !important;
 }
-.layui-btn{
-    border-radius: 12px !important;
+.layui-collapse{
+    border: 0px !important;
 }
 .layui-layer{
     border-radius: 12px !important;
+}
+/* .header-opa{
+    background-color: #233078aa !important;
+} */
+#inputData{
+    border-radius: 12px !important;
+}
+#inputData:focus{
+    border-color: #5FB878 !important;
+    border-radius: 4px !important;
+}
+#inputData:hover{
+    border-color: #5FB878 !important;
+}
+.layui-btn{
+    border-radius: 12px !important;
+    border-color: #5FB878 !important;
+    background-color: #1e5e3052 !important;
+}
+.layui-btn:hover{
+    border-color: #ffffff !important;
+    border-radius: 8px !important;
+    background-color: #22914152 !important;
+    color: #ffffff !important;
+}
+.header-opa-bg2{
+    /* background-color: #11223a80 !important; */
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
 }
