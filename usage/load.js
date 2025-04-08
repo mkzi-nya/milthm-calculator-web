@@ -38,13 +38,14 @@ function info(title) {
     modal.style.fontSize = '11px';
     modal.style.lineHeight = '0.8';
 
-    // 查找包含传入 title 的元素
-    const elements = document.querySelectorAll('*');
+    // 只查找 a 标签中的元素
+    const links = document.querySelectorAll('a'); // 获取所有 a 标签
     let targetElement = null;
 
-    elements.forEach(element => {
-      if (element.textContent && element.textContent.includes(title)) {
-        targetElement = element;
+    // 查找包含传入 title 的 a 标签元素
+    links.forEach(link => {
+      if (link.textContent && link.textContent.includes(title)) {
+        targetElement = link;  // 找到匹配的 a 标签
       }
     });
 
@@ -53,12 +54,12 @@ function info(title) {
       return;
     }
 
-    // 获取目标元素的位置
-    const targetRect = targetElement.getBoundingClientRect();
+    // 获取找到的元素的位置
+    const linkRect = targetElement.getBoundingClientRect();
 
-    // 计算弹窗的位置（与提供的代码类似）
-    const modalTop = targetRect.top + window.scrollY + targetRect.height + 5; // 在元素下方显示
-    const modalLeft = targetRect.left + window.scrollX;
+    // 计算弹窗的位置
+    const modalTop = linkRect.bottom + window.scrollY + 5;
+    const modalLeft = linkRect.left + window.scrollX;
 
     modal.style.top = `${modalTop}px`;
     modal.style.left = `${modalLeft}px`;
@@ -88,10 +89,9 @@ beatsPerBar: ${item.bpmInfo[0].beatsPerBar}`;
     modal.appendChild(illustratorElement);
     modal.appendChild(bpmInfoElement);
 
-    // 将弹窗添加到页面
     document.body.appendChild(modal);
 
-    // 立即添加点击事件监听器来关闭弹窗
+    // 立即添加点击事件监听器
     const closeModal = (event) => {
       if (!modal.contains(event.target) && event.target !== targetElement) {
         modal.remove();
@@ -102,6 +102,7 @@ beatsPerBar: ${item.bpmInfo[0].beatsPerBar}`;
     document.addEventListener('click', closeModal);
   });
 }
+
 
 function chart(title, difficulty) {
   song(title).then(data => {
