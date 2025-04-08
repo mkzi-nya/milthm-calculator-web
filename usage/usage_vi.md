@@ -23,7 +23,7 @@
 
 ---
 
-_Last updated on 2025.04.01 02:00 (UTC)_
+_Last updated on 2025.04.08 11:00 (UTC)_
 
 > Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
@@ -298,7 +298,7 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 |------|-------------------------|------------|----------|
 | 1 | Contrasty Angeles | CL | 12.3 |
 | 2 | 命日 | CL | 12.2 |
-| 3 | Moonfall／大月墜落狂想 | CB | 12.2 |
+| 3 | 大月墜落狂想 | CB | 12.2 |
 | 4 | Regnaissance | CL | 12.1 |
 | 5 | Innocent white | CB | 12.1 |
 | 6 | Broken Conviction | CL | 11.9 |
@@ -310,7 +310,7 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 | 12 | Broken Conviction | CB | 11.5 |
 | 13 | Threat - Metropolis | CB | 11.5 |
 | 14 | Contrasty Angeles | CB | 11.5 |
-| 15 | slic.hertz #GdbG | CB | 11.4 |
+| 15 | slic.hertz | CB | 11.4 |
 | 16 | Moonflutter | CB | 11.4 |
 | 17 | Algebra | CB | 11.4 |
 | 18 | Fragment of Memories | CB | 11.3 |
@@ -325,11 +325,11 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| Welcome to Milthm  | 1.0  | -    | -    | SP |
-| 時落之雨             | 1.0  | 4.5  | 8.5  | -    |
-| 夜風                 | 3.0  | 7.3  | 10.1 | -    |
-| 花月                 | 2.0  | 8.2  | 9.3  | -    |
-| 暮予星光             | 2.0  | 7.5  | 9.1  | -    |
+| [Welcome to Milthm](javascript:info("Welcome to Milthm"))  | [1.0](javascript:chart("Welcome to Milthm", "Drizzle"))  | -    | -    | [SP](javascript:chart("Welcome to Milthm", "Special")) |
+| [时落之雨](javascript:info("时落之雨"))           | [1.0](javascript:chart("时落之雨", "Drizzle"))  | [4.5](javascript:chart("时落之雨", "Sprinkle"))  | [8.5](javascript:chart("时落之雨", "Cloudburst"))  | -    |
+| [夜風](javascript:info("夜風"))               | [3.0](javascript:chart("夜風","Drizzle"))  | [7.3](javascript:chart("夜風", "Sprinkle"))  | [10.1](javascript:chart("夜風", "Cloudburst")) | -    |
+| [花月](javascript:info("花月"))               | [2.0](javascript:chart("花月", "Drizzle"))  | [8.2](javascript:chart("花月", "Sprinkle"))  | [9.3](javascript:chart("花月", "Cloudburst"))  | -    |
+| [暮予星光](javascript:info("暮予星光"))           | [2.0](javascript:chart("暮予星光", "Drizzle"))  | [7.5](javascript:chart("暮予星光", "Sprinkle"))  | [9.1](javascript:chart("暮予星光", "Cloudburst")) | -    |
 
 ---
 
@@ -337,13 +337,13 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title        | DZ   | SK   | CB   | CL   |
 |--------------|------|------|------|------|
-| 雨之城        | 1.0  | 4.0  | 7.5  | -    |
-| Jump out?     | 2.0  | 7.9  | 9.7  | -    |
-| Moving On     | 2.0  | 6.3  | 10.8 | -    |
-| Blueface      | 4.0  | 8.0  | 10.1 | -    |
-| イコラト      | 3.0  | 8.7  | 11.2 | -    |
-| 雨女          | 3.0  | 6.5  | 9.5  | 10.5 |
-| 命日          | 3.0  | 8.7  | 11.1 | 12.2 |
+| [雨之城](javascript:info("雨之城"))        | [1.0](javascript:chart("雨之城", "Drizzle"))  | [4.0](javascript:chart("雨之城", "Sprinkle"))  | [7.5](javascript:chart("雨之城", "Cloudburst"))  | -    |
+| [Jump out?](javascript:info("Jump out?"))     | [2.0](javascript:chart("Jump out?", "Drizzle"))  | [7.9](javascript:chart("Jump out?", "Sprinkle"))  | [9.7](javascript:chart("Jump out?", "Cloudburst"))  | -    |
+| [Moving On](javascript:info("Moving On"))     | [2.0](javascript:chart("Moving On", "Drizzle"))  | [6.3](javascript:chart("Moving On", "Sprinkle"))  | [10.8](javascript:chart("Moving On", "Cloudburst")) | -    |
+| [☹](javascript:info("☹"))      | [4.0](javascript:chart("☹", "Drizzle"))  | [8.0](javascript:chart("☹", "Sprinkle"))  | [10.1](javascript:chart("☹", "Cloudburst")) | -    |
+| [イコラト](javascript:info("イコラト"))      | [3.0](javascript:chart("イコラト", "Drizzle"))  | [8.7](javascript:chart("イコラト", "Sprinkle"))  | [11.2](javascript:chart("イコラト", "Cloudburst")) | -    |
+| [雨女](javascript:info("雨女"))          | [3.0](javascript:chart("雨女", "Drizzle")) | [6.5](javascript:chart("雨女", "Sprinkle")) | [9.5](javascript:chart("雨女", "Cloudburst")) | [10.5](javascript:chart("雨女", "Clear")) |
+| [命日](javascript:info("命日"))          | [3.0](javascript:chart("命日", "Drizzle"))  | [8.7](javascript:chart("命日", "Sprinkle"))  | [11.1](javascript:chart("命日", "Cloudburst")) | [12.2](javascript:chart("命日", "Clear")) |
 
 ---
 
@@ -351,13 +351,13 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| 粗线条的雨           | 1.0  | 4.0  | 8.3  | -    |
-| Aconsma              | 1.0  | 6.0  | 9.3  | -    |
-| OverRain             | 2.0  | 7.6  | 10.0 | -    |
-| Fragment of Memories | 2.0  | 8.4  | 11.3 | -    |
-| HYPER MEMORIES       | 1.0  | 8.9  | 11.7 | -    |
-| Regnaissance         | 4.5  | 8.5  | 11.1 | 12.1 |
-| Contrasty Angeles    | 4.0  | 9.0  | 11.5 | 12.3 |
+| [粗线条的雨](javascript:info("粗线条的雨"))         | [1.0](javascript:chart("粗线条的雨", "Drizzle"))  | [4.0](javascript:chart("粗线条的雨", "Sprinkle"))  | [8.3](javascript:chart("粗线条的雨", "Cloudburst"))  | -    |
+| [Aconsma](javascript:info("Aconsma"))            | [1.0](javascript:chart("Aconsma", "Drizzle"))  | [6.0](javascript:chart("Aconsma", "Sprinkle"))  | [9.3](javascript:chart("Aconsma", "Cloudburst"))  | -    |
+| [OverRain](javascript:info("OverRain"))           | [2.0](javascript:chart("OverRain", "Drizzle"))  | [7.6](javascript:chart("OverRain", "Sprinkle"))  | [10.0](javascript:chart("OverRain", "Cloudburst")) | -    |
+| [Fragment of Memories](javascript:info("Fragment of Memories")) | [2.0](javascript:chart("Fragment of Memories", "Drizzle"))  | [8.4](javascript:chart("Fragment of Memories", "Sprinkle"))  | [11.3](javascript:chart("Fragment of Memories", "Cloudburst")) | -    |
+| [HYPER MEMORIES](javascript:info("HYPER MEMORIES"))     | [1.0](javascript:chart("HYPER MEMORIES", "Drizzle"))  | [8.9](javascript:chart("HYPER MEMORIES", "Sprinkle"))  | [11.7](javascript:chart("HYPER MEMORIES", "Cloudburst")) | -    |
+| [Regnaissance](javascript:info("Regnaissance"))       | [4.5](javascript:chart("Regnaissance", "Drizzle"))  | [8.5](javascript:chart("Regnaissance", "Sprinkle"))  | [11.1](javascript:chart("Regnaissance", "Cloudburst")) | [12.1](javascript:chart("Regnaissance", "Clear")) |
+| [Contrasty Angeles](javascript:info("Contrasty Angeles"))  | [4.0](javascript:chart("Contrasty Angeles", "Drizzle"))  | [9.0](javascript:chart("Contrasty Angeles", "Sprinkle"))  | [11.5](javascript:chart("Contrasty Angeles", "Cloudburst")) | [12.3](javascript:chart("Contrasty Angeles", "Clear")) |
 
 ---
 
@@ -365,16 +365,16 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                       | DZ   | SK   | CB   | CL   |
 |-----------------------------|------|------|------|------|
-| Sundown                     | 1.0  | -    | -    | -    |
-| Bio-Engineering             | 2.0  | 8.3  | 9.6  | -    |
-| Threat - Sky Islands        | 2.0  | 6.9  | 10.6 | -    |
-| Threat - Superstructure     | 2.0  | 5.5  | 10.3 | -    |
-| White Lizard                | -    | 4.0  | -    | -    |
-| Threat - Waterfront Complex | 2.0  | 7.6  | 10.6 | -    |
-| Kayava                      | 3.0  | 5.5  | 10.4 | -    |
-| Threat - Metropolis         | 2.0  | 6.6  | 11.5 | -    |
-| Sheer Ice Torrent           | 2.0  | 7.8  | 11.1 | -    |
-| Moonfall／大月墜落狂想       | 2.0  | 8.0  | 12.2 | -    |
+| [Sundown](javascript:info("Sundown"))                | [1.0](javascript:chart("Sundown", "Drizzle"))  | -    | -    | -    |
+| [Bio-Engineering](javascript:info("Bio-Engineering"))        | [2.0](javascript:chart("Bio-Engineering", "Drizzle"))  | [8.3](javascript:chart("Bio-Engineering", "Sprinkle"))  | [9.6](javascript:chart("Bio-Engineering", "Cloudburst"))  | -    |
+| [Threat - Sky Islands](javascript:info("Threat - Sky Islands"))   | [2.0](javascript:chart("Threat - Sky Islands", "Drizzle"))  | [6.9](javascript:chart("Threat - Sky Islands", "Sprinkle"))  | [10.6](javascript:chart("Threat - Sky Islands", "Cloudburst"))  | -    |
+| [Threat - Superstructure](javascript:info("Threat - Superstructure")) | [2.0](javascript:chart("Threat - Superstructure", "Drizzle"))  | [5.5](javascript:chart("Threat - Superstructure", "Sprinkle"))  | [10.3](javascript:chart("Threat - Superstructure", "Cloudburst")) | -    |
+| [White Lizard](javascript:info("White Lizard"))           | -    | [4.0](javascript:chart("White Lizard", "Sprinkle"))  | -    | -    |
+| [Threat - Waterfront Complex](javascript:info("Threat - Waterfront Complex")) | [2.0](javascript:chart("Threat - Waterfront Complex", "Drizzle"))  | [7.6](javascript:chart("Threat - Waterfront Complex", "Sprinkle"))  | [10.6](javascript:chart("Threat - Waterfront Complex", "Cloudburst"))  | -    |
+| [Kayava](javascript:info("Kayava"))                 | [3.0](javascript:chart("Kayava", "Drizzle"))  | [5.5](javascript:chart("Kayava", "Sprinkle"))  | [10.4](javascript:chart("Kayava", "Cloudburst"))  | -    |
+| [Threat - Metropolis](javascript:info("Threat - Metropolis"))    | [2.0](javascript:chart("Threat - Metropolis", "Drizzle"))  | [6.6](javascript:chart("Threat - Metropolis", "Sprinkle"))  | [11.5](javascript:chart("Threat - Metropolis", "Cloudburst"))  | -    |
+| [Sheer Ice Torrent](javascript:info("Sheer Ice Torrent"))      | [2.0](javascript:chart("Sheer Ice Torrent", "Drizzle"))  | [7.8](javascript:chart("Sheer Ice Torrent", "Sprinkle"))  | [11.1](javascript:chart("Sheer Ice Torrent", "Cloudburst"))  | -    |
+| [大月墜落狂想](javascript:info("大月墜落狂想")) | [2.0](javascript:chart("大月墜落狂想", "Drizzle"))  | [8.0](javascript:chart("大月墜落狂想", "Sprinkle"))  | [12.2](javascript:chart("大月墜落狂想", "Cloudburst")) | -    |
 
 ---
 
@@ -382,11 +382,11 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                | DZ   | SK   | CB   | CL   |
 |----------------------|------|------|------|------|
-| 烁雨                 | 2.0  | 7.0  | 9.4  | -    |
-| cybernetic blazar    | 4.0  | 7.8  | 10.2 | -    |
-| Innocent white       | 2.0  | 8.2  | 12.1 | -    |
-| Elsorhg              | 2.0  | 7.5  | 9.8  | -    |
-| Meltovt Necrosys     | 2.0  | 7.8  | 11.9 | -    |
+| [烁雨](javascript:info("烁雨"))             | [2.0](javascript:chart("烁雨", "Drizzle"))  | [7.0](javascript:chart("烁雨", "Sprinkle"))  | [9.4](javascript:chart("烁雨", "Cloudburst"))  | -    |
+| [cybernetic blazar](javascript:info("cybernetic blazar")) | [4.0](javascript:chart("cybernetic blazar", "Drizzle"))  | [7.8](javascript:chart("cybernetic blazar", "Sprinkle"))  | [10.2](javascript:chart("cybernetic blazar", "Cloudburst"))  | -    |
+| [Innocent white](javascript:info("Innocent white"))    | [2.0](javascript:chart("Innocent white", "Drizzle"))  | [8.2](javascript:chart("Innocent white", "Sprinkle"))  | [12.1](javascript:chart("Innocent white", "Cloudburst")) | -    |
+| [Elsorhg](javascript:info("Elsorhg"))           | [2.0](javascript:chart("Elsorhg", "Drizzle"))  | [7.5](javascript:chart("Elsorhg", "Sprinkle"))  | [9.8](javascript:chart("Elsorhg", "Cloudburst"))  | -    |
+| [Meltovt Necrosys](javascript:info("Meltovt Necrosys"))  | [2.0](javascript:chart("Meltovt Necrosys", "Drizzle"))  | [7.8](javascript:chart("Meltovt Necrosys", "Sprinkle"))  | [11.9](javascript:chart("Meltovt Necrosys", "Cloudburst"))  | -    |
 
 ---
 
@@ -394,31 +394,31 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                          | DZ   | SK   | CB   | CL   |
 |-|-|-|-|-|
-| ネオン色のまち feat. Mai    | 3.5  | 8.0  | 9.7  | -    |
-| INFP.mp3                    | 2.0  | 5.5  | 9.2  | -    |
-| Oniichan                    | 3.0  | 8.0  | 9.8  | -    |
-| Oiiaioooooiai               | -    | -    | -    | SP   |
-| WATER                       | 3.0  | 7.3  | 10.6 | -    |
-| Dogbite                     | 3.0  | 7.6  | 10.3 | SP   |
-| Hikari                      | 3.0  | 8.4  | 10.7 | -    |
-| Moonflutter                 | 3.0  | 7.9  | 11.4 | 11.7 |
-| Fly To Meteor              | 3.0  | 6.5  | 10.5 | 11.7 |
-| 樱落繁花                    | 3.0  | 8.8  | 10.9 | -    |
-| Agnostic                    | 3.0  | 7.4  | 10.0 | -    |
-| Psyched Fevereiro           | 3.5  | 7.3  | 10.0 | -    |
-| Future Unbound (Game Edit)  | 3.0  | 7.5  | 10.5 | -    |
-| Algebra                     | 2.0  | 8.1  | 11.4 | SP  |
-| Words                       | 2.0  | 6.5  | 9.3  | -    |
-| 仮想明日                    | 3.5  | 6.6  | 10.0  | -    |
-| 白虎蓮華                    | 3.0  | 6.5  | 9.6  | -    |
-| サイクルの欠片              | 1.0  | 7.8  | 8.6  | -    |
-| 参宿四\~Betelgeuse\~          | 2.0  | 6.4  | 11.2 | -    |
-| slic.hertz #GdbG            | 3.0  | 7.6  | 11.4 | -    |
-| Rainbow Flavor!             | 2.0  | 7.5  | 9.8 | SP |
-| IN                           | 1.0  | 7.9  | 11.2 | -    |
-| 驟雨の狭間                  | -    | -    | -    | Ø    |
-| Broken Conviction           | 4.5  | 4.5  | 11.5 | 11.9 |
-| 选择你的宽带 | - | - | - | SP |
+| [ネオン色のまち feat. Mai](javascript:info("ネオン色のまち feat. Mai"))    | [3.5](javascript:chart("ネオン色のまち feat. Mai", "Drizzle"))  | [8.0](javascript:chart("ネオン色のまち feat. Mai", "Sprinkle"))  | [9.7](javascript:chart("ネオン色のまち feat. Mai", "Cloudburst"))  | -    |
+| [INFP.mp3](javascript:info("INFP.mp3"))                    | [2.0](javascript:chart("INFP.mp3", "Drizzle"))  | [5.5](javascript:chart("INFP.mp3", "Sprinkle"))  | [9.2](javascript:chart("INFP.mp3", "Cloudburst"))  | -    |
+| [Oniichan](javascript:info("Oniichan"))                    | [3.0](javascript:chart("Oniichan", "Drizzle"))  | [8.0](javascript:chart("Oniichan", "Sprinkle"))  | [9.8](javascript:chart("Oniichan", "Cloudburst"))  | -    |
+| [Oiiaioooooiai](javascript:info("Oiiaioooooiai"))               | -    | -    | -    | [SP](javascript:chart("Oiiaioooooiai", "Special")) |
+| [WATER](javascript:info("WATER"))                       | [3.0](javascript:chart("WATER", "Drizzle"))  | [7.3](javascript:chart("WATER", "Sprinkle"))  | [10.6](javascript:chart("WATER", "Cloudburst")) | -    |
+| [Dogbite](javascript:info("Dogbite"))                     | [3.0](javascript:chart("Dogbite", "Drizzle"))  | [7.6](javascript:chart("Dogbite", "Sprinkle"))  | [10.3](javascript:chart("Dogbite", "Cloudburst")) | [SP](javascript:chart("Dogbite", "Special")) |
+| [Hikari](javascript:info("Hikari"))                      | [3.0](javascript:chart("Hikari", "Drizzle"))  | [8.4](javascript:chart("Hikari", "Sprinkle"))  | [10.7](javascript:chart("Hikari", "Cloudburst")) | -    |
+| [Moonflutter](javascript:info("Moonflutter"))                 | [3.0](javascript:chart("Moonflutter", "Drizzle"))  | [7.9](javascript:chart("Moonflutter", "Sprinkle"))  | [11.4](javascript:chart("Moonflutter", "Cloudburst")) | [11.7](javascript:chart("Moonflutter", "Clear")) |
+| [Fly To Meteor](javascript:info("Fly To Meteor"))              | [3.0](javascript:chart("Fly To Meteor", "Drizzle"))  | [6.5](javascript:chart("Fly To Meteor", "Sprinkle"))  | [10.5](javascript:chart("Fly To Meteor", "Cloudburst")) | [11.7](javascript:chart("Fly To Meteor", "Clear")) |
+| [樱落繁花](javascript:info("樱落繁花"))                    | [3.0](javascript:chart("樱落繁花", "Drizzle"))  | [8.8](javascript:chart("樱落繁花", "Sprinkle"))  | [10.9](javascript:chart("樱落繁花", "Cloudburst")) | -    |
+| [Agnostic](javascript:info("Agnostic"))                    | [3.0](javascript:chart("Agnostic", "Drizzle"))  | [7.4](javascript:chart("Agnostic", "Sprinkle"))  | [10.0](javascript:chart("Agnostic", "Cloudburst")) | -    |
+| [Psyched Fevereiro](javascript:info("Psyched Fevereiro"))           | [3.5](javascript:chart("Psyched Fevereiro", "Drizzle"))  | [7.3](javascript:chart("Psyched Fevereiro", "Sprinkle"))  | [10.0](javascript:chart("Psyched Fevereiro", "Cloudburst")) | -    |
+| [Future Unbound (Game Edit)](javascript:info("Future Unbound (Game Edit)"))  | [3.0](javascript:chart("Future Unbound (Game Edit)","Drizzle"))  | [7.5](javascript:chart("Future Unbound (Game Edit)","Sprinkle"))  | [10.5](javascript:chart("Future Unbound (Game Edit)","Cloudburst")) | -    |
+| [Algebra](javascript:info("Algebra"))                     | [2.0](javascript:chart("Algebra", "Drizzle"))  | [8.1](javascript:chart("Algebra", "Sprinkle"))  | [11.4](javascript:chart("Algebra", "Cloudburst")) | [SP](javascript:chart("Algebra", "Special")) |
+| [Words](javascript:info("Words"))                       | [2.0](javascript:chart("Words", "Drizzle"))  | [6.5](javascript:chart("Words", "Sprinkle"))  | [9.3](javascript:chart("Words", "Cloudburst"))  | -    |
+| [仮想明日](javascript:info("仮想明日"))                    | [3.5](javascript:chart("仮想明日", "Drizzle"))  | [6.6](javascript:chart("仮想明日", "Sprinkle"))  | [10.0](javascript:chart("仮想明日", "Cloudburst"))  | -    |
+| [白虎蓮華](javascript:info("白虎蓮華"))                    | [3.0](javascript:chart("白虎蓮華", "Drizzle"))  | [6.5](javascript:chart("白虎蓮華", "Sprinkle"))  | [9.6](javascript:chart("白虎蓮華", "Cloudburst"))  | -    |
+| [サイクルの欠片](javascript:info("サイクルの欠片"))              | [1.0](javascript:chart("サイクルの欠片", "Drizzle"))  | [7.8](javascript:chart("サイクルの欠片", "Sprinkle"))  | [8.6](javascript:chart("サイクルの欠片", "Cloudburst"))  | -    |
+| [参宿四\~Betelgeuse\~](javascript:info("参宿四~Betelgeuse~"))          | [2.0](javascript:chart("参宿四~Betelgeuse~", "Drizzle"))  | [6.4](javascript:chart("参宿四~Betelgeuse~", "Sprinkle"))  | [11.2](javascript:chart("参宿四~Betelgeuse~", "Cloudburst"))  | -    |
+| [slic.hertz](javascript:info("slic.hertz"))            | [3.0](javascript:chart("slic.hertz", "Drizzle"))  | [7.6](javascript:chart("slic.hertz", "Sprinkle"))  | [11.4](javascript:chart("slic.hertz", "Cloudburst"))  | -    |
+| [Rainbow Flavor!](javascript:info("Rainbow Flavor!"))             | [2.0](javascript:chart("Rainbow Flavor!", "Drizzle"))  | [7.5](javascript:chart("Rainbow Flavor!", "Sprinkle"))  | [9.8](javascript:chart("Rainbow Flavor!", "Cloudburst")) | [SP](javascript:chart("Rainbow Flavor!", "Special")) |
+| [IN](javascript:info("IN"))                           | [1.0](javascript:chart("IN", "Drizzle"))  | [7.9](javascript:chart("IN", "Sprinkle"))  | [11.2](javascript:chart("IN", "Cloudburst")) | -    |
+| [驟雨の狭間](javascript:info("驟雨の狭間"))                  | -    | -    | -    | Ø    |
+| [Broken Conviction](javascript:info("Broken Conviction"))           | [4.5](javascript:chart("Broken Conviction", "Drizzle"))  | [4.5](javascript:chart("Broken Conviction", "Sprinkle"))  | [11.5](javascript:chart("Broken Conviction", "Cloudburst")) | [11.9](javascript:chart("Broken Conviction", "Clear")) |
+| [选择你的宽带](javascript:info("选择你的宽带")) | - | - | - | [SP](javascript:chart("选择你的宽带", "Special")) |
 
 ---
 
@@ -426,10 +426,10 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 | Title                        | DZ   | SK   | CB   | CL   |
 |------------------------------|------|------|------|------|
-| FULi AUTO SHOOTER | 3.0  | 7.2  | 10.6  | -    |
-| cafe in 6412I731V                    | 2.0  | 7.0  | 11.3  | -    |
-| KASANE | 3.0  | 7.8  | 11.6  | -    |
-| KAEDE | -  | -  | -  | SP  |
+| [FULi AUTO SHOOTER](javascript:info("FULi AUTO SHOOTER")) | [3.0](javascript:chart("FULi AUTO SHOOTER", "Drizzle"))  | [7.2](javascript:chart("FULi AUTO SHOOTER", "Sprinkle"))  | [10.6](javascript:chart("FULi AUTO SHOOTER", "Cloudburst"))  | -    |
+| [cafe in 6412I731V](javascript:info("cafe in 6412I731V"))                    | [2.0](javascript:chart("cafe in 6412I731V", "Drizzle"))  | [7.0](javascript:chart("cafe in 6412I731V", "Sprinkle"))  | [11.3](javascript:chart("cafe in 6412I731V", "Cloudburst"))  | -    |
+| [KASANE](javascript:info("KASANE")) | [3.0](javascript:chart("KASANE", "Drizzle"))  | [7.8](javascript:chart("KASANE", "Sprinkle"))  | [11.6](javascript:chart("KASANE", "Cloudburst"))  | -    |
+| [KAEDE](javascript:info("KAEDE")) | -  | -  | -  | [SP](javascript:chart("KAEDE", "Special")) |
 
 ---
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Usage</title>
+  <script src="./load.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -107,6 +108,27 @@
       fetch(`./usage_${lang}.md`)
         .then(res => res.text())
         .then(md => {
+          // 在这里进行链接的自动转义处理
+md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(match, p1, p2) {
+  // 如果链接以 # 开头，则不进行转换
+  if (p2.startsWith('#')) {
+    return `[${p1}](${p2})`;
+  }
+
+  // 如果链接包含冒号，则转换除冒号外的其他部分
+  if (p2.includes(':')) {
+    const [protocol, rest] = p2.split(':', 2);  // 分离协议和剩余部分
+    const encodedRest = encodeURIComponent(rest);  // 对剩余部分进行编码
+    return `[${p1}](${protocol}:${encodedRest})`;  // 保持冒号不变
+  }
+
+  // 默认情况下，对整个 URL 进行编码
+  const encodedUrl = encodeURIComponent(p2);
+  return `[${p1}](${encodedUrl})`;
+});
+
+
+
           content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
           content.querySelectorAll('h2,h3,h4').forEach(h=>{
             h.id = h.innerText.toLowerCase().replace(/\s+/g,'-');
