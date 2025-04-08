@@ -23,7 +23,7 @@
 
 ---
 
-_Last updated on 2025.04.08 11:00 (UTC)_
+_Last updated on 2025.04.09 00:30 (UTC)_
 
 > 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
@@ -318,6 +318,8 @@ function reality(score, constant) {
 | 20 | IN | CB | 11.2 |
 | 20 | イコラト | CB | 11.2 |
 | 20 | 参宿四\~Betelgeuse\~ | CB | 11.2 |
+
+> 点击链接可以查看 曲目/谱面 的详情信息
 
 ## 介绍 - 天气预报
 
