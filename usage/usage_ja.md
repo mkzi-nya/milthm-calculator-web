@@ -416,7 +416,7 @@ function reality(score, constant) {
 | [slic.hertz](javascript:info("slic.hertz"))            | [3.0](javascript:chart("slic.hertz", "Drizzle"))  | [7.6](javascript:chart("slic.hertz", "Sprinkle"))  | [11.4](javascript:chart("slic.hertz", "Cloudburst"))  | -    |
 | [Rainbow Flavor!](javascript:info("Rainbow Flavor!"))             | [2.0](javascript:chart("Rainbow Flavor!", "Drizzle"))  | [7.5](javascript:chart("Rainbow Flavor!", "Sprinkle"))  | [9.8](javascript:chart("Rainbow Flavor!", "Cloudburst")) | [SP](javascript:chart("Rainbow Flavor!", "Special")) |
 | [IN](javascript:info("IN"))                           | [1.0](javascript:chart("IN", "Drizzle"))  | [7.9](javascript:chart("IN", "Sprinkle"))  | [11.2](javascript:chart("IN", "Cloudburst")) | -    |
-| [驟雨の狭間](javascript:info("驟雨の狭間"))                  | -    | -    | -    | [Ø](javascript:chart("驟雨の狭間", "Cloudburst"))    |
+| [驟雨の狭間](javascript:info("驟雨の狭間"))                  | -    | -    | [Ø](javascript:chart("驟雨の狭間", "Cloudburst"))    | - |
 | [Broken Conviction](javascript:info("Broken Conviction"))           | [4.5](javascript:chart("Broken Conviction", "Drizzle"))  | [4.5](javascript:chart("Broken Conviction", "Sprinkle"))  | [11.5](javascript:chart("Broken Conviction", "Cloudburst")) | [11.9](javascript:chart("Broken Conviction", "Clear")) |
 | [选择你的宽带](javascript:info("选择你的宽带")) | - | - | - | [SP](javascript:chart("选择你的宽带", "Special")) |
 
