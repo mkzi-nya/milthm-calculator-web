@@ -110,6 +110,7 @@ function chart(title, difficulty) {
       alert("没有找到包含标题 \"" + title + "\" 的歌曲");
       return;
     }
+    console.log(data);
 
     // 查找包含对应标题的表格行，避免多次 DOM 查询
     const rows = document.querySelectorAll('table tr');
@@ -158,7 +159,7 @@ function chart(title, difficulty) {
       const songData = data.find(item => item.difficulty === difficulty);
 
       if (songData) {
-        const { id, charter, tags } = songData;
+        const { id, charter, chartersList, tags } = songData;
 
         // 创建弹窗并显示
         const modal = document.createElement('div');
@@ -179,7 +180,9 @@ function chart(title, difficulty) {
         idElement.innerText = `ID: ${id}`;
 
         const charterElement = document.createElement('p');
-        charterElement.innerText = `Charter: ${charter.join(', ')}`;
+        charterElement.innerText = `charter: ${charter}`;
+        const charterslistElement = document.createElement('p');
+        charterslistElement.innerText = `chartersList: ${chartersList.join(', ')}`;
 
         const tagsElement = document.createElement('p');
         tagsElement.innerText = `Tags: [${tags.join('],   [')}]`;
@@ -187,6 +190,7 @@ function chart(title, difficulty) {
         // 将弹窗内容添加到弹窗中
         modal.appendChild(idElement);
         modal.appendChild(charterElement);
+        modal.appendChild(charterslistElement);
         modal.appendChild(tagsElement);
 
         // 获取该列的位置以显示弹窗
