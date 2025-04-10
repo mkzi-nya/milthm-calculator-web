@@ -1,13 +1,11 @@
 [ {
   "id" : "c9a9bc45-8695-4fb9-babe-d2027a6d9ed7",
-  "songId" : "song_a_reincarnation_of_a_scattering_spring",
   "title" : "樱落繁花",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "A Reincarnation of a Scattering Spring",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 183.76,
-    "beatsPerBar" : 0
+    "bpm" : 183.76
   } ],
   "artist" : "SJQ音福",
   "artistsList" : [ "SJQ音福" ],
@@ -20,14 +18,12 @@
   "tags" : [ "blush", "character", "female", "feminine", "floral", "flower petals", "night", "pastel colors", "pink flowers", "pink kimono", "serene", "smiling", "starry sky", "white hair" ]
 }, {
   "id" : "22bd5632-25cc-412f-9299-bcf2cdd64aed",
-  "songId" : "song_a_reincarnation_of_a_scattering_spring",
   "title" : "樱落繁花",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "A Reincarnation of a Scattering Spring",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 183.76,
-    "beatsPerBar" : 0
+    "bpm" : 183.76
   } ],
   "artist" : "SJQ音福",
   "artistsList" : [ "SJQ音福" ],
@@ -40,14 +36,12 @@
   "tags" : [ "blush", "character", "female", "feminine", "floral", "flower petals", "night", "pastel colors", "pink flowers", "pink kimono", "serene", "smiling", "starry sky", "white hair" ]
 }, {
   "id" : "8442e9aa-ea0a-4d9e-8592-cfd9228eb14c",
-  "songId" : "song_a_reincarnation_of_a_scattering_spring",
   "title" : "樱落繁花",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "A Reincarnation of a Scattering Spring",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 183.76,
-    "beatsPerBar" : 0
+    "bpm" : 183.76
   } ],
   "artist" : "SJQ音福",
   "artistsList" : [ "SJQ音福" ],
@@ -60,14 +54,12 @@
   "tags" : [ "blush", "character", "female", "feminine", "floral", "flower petals", "night", "pastel colors", "pink flowers", "pink kimono", "serene", "smiling", "starry sky", "white hair" ]
 }, {
   "id" : "c3769378-d595-4119-b93c-e0db2b3ea8e2",
-  "songId" : "song_aconsma",
   "title" : "Aconsma",
   "titleCulture" : "en",
   "latinTitle" : "Aconsma",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -80,14 +72,12 @@
   "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere" ]
 }, {
   "id" : "8f75c6ff-a5ac-4738-b5e9-2549fa838084",
-  "songId" : "song_aconsma",
   "title" : "Aconsma",
   "titleCulture" : "en",
   "latinTitle" : "Aconsma",
   "bpmInfo" : [ {
     "start" : -0.004,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -100,14 +90,12 @@
   "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere" ]
 }, {
   "id" : "8b329704-9ce5-4361-abd5-b89c68b61286",
-  "songId" : "song_aconsma",
   "title" : "Aconsma",
   "titleCulture" : "en",
   "latinTitle" : "Aconsma",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -120,18 +108,15 @@
   "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere" ]
 }, {
   "id" : "9a75cbb5-f9ad-4557-b3ed-5553a16023d7",
-  "songId" : "song_agnostic",
   "title" : "Agnostic",
   "titleCulture" : "en",
   "latinTitle" : "Agnostic",
   "bpmInfo" : [ {
     "start" : 0.063,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   }, {
     "start" : 0.053,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   } ],
   "artist" : "AiSS",
   "artistsList" : [ "AiSS" ],
@@ -144,18 +129,15 @@
   "tags" : [ "Abit", "character", "dreamy atmosphere", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing fabric", "long hair", "luvia", "magical", "outfit", "pastel colors", "serene expression", "soft lighting", "wind", "wings" ]
 }, {
   "id" : "74bf4e17-c246-4871-9b2b-0dd0d0e6ee28",
-  "songId" : "song_agnostic",
   "title" : "Agnostic",
   "titleCulture" : "en",
   "latinTitle" : "Agnostic",
   "bpmInfo" : [ {
     "start" : 0.063,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   }, {
     "start" : 0.053,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   } ],
   "artist" : "AiSS",
   "artistsList" : [ "AiSS" ],
@@ -168,18 +150,15 @@
   "tags" : [ "Abit", "character", "dreamy atmosphere", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing fabric", "long hair", "luvia", "magical", "outfit", "pastel colors", "serene expression", "soft lighting", "wind", "wings" ]
 }, {
   "id" : "b60f0788-f9af-4a41-8c73-2b72151d309f",
-  "songId" : "song_agnostic",
   "title" : "Agnostic",
   "titleCulture" : "en",
   "latinTitle" : "Agnostic",
   "bpmInfo" : [ {
     "start" : 0.063,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   }, {
     "start" : 0.053,
-    "bpm" : 167.0,
-    "beatsPerBar" : 0
+    "bpm" : 167.0
   } ],
   "artist" : "AiSS",
   "artistsList" : [ "AiSS" ],
@@ -192,14 +171,12 @@
   "tags" : [ "Abit", "character", "dreamy atmosphere", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing fabric", "long hair", "luvia", "magical", "outfit", "pastel colors", "serene expression", "soft lighting", "wind", "wings" ]
 }, {
   "id" : "962ec79e-489c-43ea-bd72-6dc3448e3983",
-  "songId" : "song_algebra",
   "title" : "Algebra",
   "titleCulture" : "en",
   "latinTitle" : "Algebra",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "Function Phantom",
   "artistsList" : [ "凛" ],
@@ -212,14 +189,12 @@
   "tags" : [ "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "achievement", "alexander", "blue-glasses", "casual-relaxed", "character", "creative", "dark-background", "futuresci-fi", "geometric-shapes", "lab-coat", "night-sky", "rinx2musixxx", "tablet-reader", "technology", "trophy", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
 }, {
   "id" : "cc508ca6-5d5f-4222-a4a9-3a8cfbaac03e",
-  "songId" : "song_algebra",
   "title" : "Algebra",
   "titleCulture" : "en",
   "latinTitle" : "Algebra",
   "bpmInfo" : [ {
     "start" : 1.355,
-    "bpm" : 177.0,
-    "beatsPerBar" : 4
+    "bpm" : 177.0
   } ],
   "artist" : "Function Phantom",
   "artistsList" : [ "凛" ],
@@ -232,14 +207,12 @@
   "tags" : [ "April Fool 2024", "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "achievement", "alexander", "blue-glasses", "casual-relaxed", "character", "creative", "dark-background", "futuresci-fi", "geometric-shapes", "lab-coat", "night-sky", "rinx2musixxx", "tablet-reader", "technology", "trophy", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
 }, {
   "id" : "14080c32-a16c-464c-b24a-880f1a7e657d",
-  "songId" : "song_algebra",
   "title" : "Algebra",
   "titleCulture" : "en",
   "latinTitle" : "Algebra",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "Function Phantom",
   "artistsList" : [ "凛" ],
@@ -252,14 +225,12 @@
   "tags" : [ "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "achievement", "alexander", "blue-glasses", "casual-relaxed", "character", "creative", "dark-background", "futuresci-fi", "geometric-shapes", "lab-coat", "night-sky", "rinx2musixxx", "tablet-reader", "technology", "trophy", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
 }, {
   "id" : "e09a8896-ad87-4cee-8f2a-40b8d4439f26",
-  "songId" : "song_algebra",
   "title" : "Algebra",
   "titleCulture" : "en",
   "latinTitle" : "Algebra",
   "bpmInfo" : [ {
     "start" : 1.355,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "Function Phantom",
   "artistsList" : [ "凛" ],
@@ -272,14 +243,12 @@
   "tags" : [ "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "achievement", "alexander", "blue-glasses", "casual-relaxed", "character", "creative", "dark-background", "futuresci-fi", "geometric-shapes", "lab-coat", "night-sky", "rinx2musixxx", "tablet-reader", "technology", "trophy", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
 }, {
   "id" : "9a55b865-0860-41b9-9f78-bc5209bc9f44",
-  "songId" : "song_ameonna",
   "title" : "雨女",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Ameonna",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -292,14 +261,12 @@
   "tags" : [ "blue eyes", "calm", "character", "dreamy", "dress", "fantasy, ethereal", "female", "gentle expression", "light blue", "long hair", "luvia", "pastel colors", "pink", "prolog", "serene", "sitting", "soft lighting", "watercolor style" ]
 }, {
   "id" : "9953eae4-4f60-4cfe-a8c3-9ada13a4b1ca",
-  "songId" : "song_ameonna",
   "title" : "雨女",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Ameonna",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -312,14 +279,12 @@
   "tags" : [ "blue eyes", "calm", "character", "dreamy", "dress", "fantasy, ethereal", "female", "gentle expression", "light blue", "long hair", "luvia", "pastel colors", "pink", "prolog", "serene", "sitting", "soft lighting", "watercolor style" ]
 }, {
   "id" : "217898b1-4806-401f-adf5-740e9d72b66e",
-  "songId" : "song_ameonna",
   "title" : "雨女",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Ameonna",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -332,14 +297,12 @@
   "tags" : [ "blue eyes", "calm", "character", "dreamy", "dress", "fantasy, ethereal", "female", "gentle expression", "light blue", "long hair", "luvia", "pastel colors", "pink", "prolog", "serene", "sitting", "soft lighting", "watercolor style" ]
 }, {
   "id" : "375f0d93-82e2-4350-9b46-98c3dd836305",
-  "songId" : "song_ameonna",
   "title" : "雨女",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Ameonna",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -352,14 +315,12 @@
   "tags" : [ "blue eyes", "calm", "character", "dreamy", "dress", "fantasy, ethereal", "female", "gentle expression", "light blue", "long hair", "luvia", "pastel colors", "pink", "prolog", "serene", "sitting", "sm", "soft lighting", "watercolor style" ]
 }, {
   "id" : "a4ac4167-5934-4157-90e7-675c994b4451",
-  "songId" : "song_betelgeuse",
   "title" : "参宿四~Betelgeuse~",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Betelgeuse",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 105.0,
-    "beatsPerBar" : 0
+    "bpm" : 105.0
   } ],
   "artist" : "Villax vs. Amberry",
   "artistsList" : [ "Amberry", "Villax" ],
@@ -372,14 +333,12 @@
   "tags" : [ ]
 }, {
   "id" : "81daeec2-c1ae-4218-97fa-f9796504dba9",
-  "songId" : "song_betelgeuse",
   "title" : "参宿四~Betelgeuse~",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Betelgeuse",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 105.0,
-    "beatsPerBar" : 0
+    "bpm" : 105.0
   } ],
   "artist" : "Villax vs. Amberry",
   "artistsList" : [ "Amberry", "Villax" ],
@@ -392,14 +351,12 @@
   "tags" : [ ]
 }, {
   "id" : "01929c36-e7ba-40d5-8123-ca3d4c2da4fb",
-  "songId" : "song_betelgeuse",
   "title" : "参宿四~Betelgeuse~",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Betelgeuse",
   "bpmInfo" : [ {
     "start" : 0.0085,
-    "bpm" : 105.0,
-    "beatsPerBar" : 0
+    "bpm" : 105.0
   } ],
   "artist" : "Villax vs. Amberry",
   "artistsList" : [ "Amberry", "Villax" ],
@@ -412,14 +369,12 @@
   "tags" : [ ]
 }, {
   "id" : "9953c1b3-f92a-406c-8ea6-78dbee1b8f71",
-  "songId" : "song_bio_engineering",
   "title" : "Bio-Engineering",
   "titleCulture" : "en",
   "latinTitle" : "Bio-Engineering",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 166.0,
-    "beatsPerBar" : 0
+    "bpm" : 166.0
   } ],
   "artist" : "James Primate & Lydia Esrig",
   "artistsList" : [ "James Primate", "Lydia Esrig" ],
@@ -432,14 +387,12 @@
   "tags" : [ "RainWorld", "dim lighting", "eerie atmosphere", "industrial setting", "metal surface", "minimalistic", "sci-fi", "shadow", "slug cat" ]
 }, {
   "id" : "a5ba0b3b-1eb5-4b43-8d12-9e82b6d0afaa",
-  "songId" : "song_bio_engineering",
   "title" : "Bio-Engineering",
   "titleCulture" : "en",
   "latinTitle" : "Bio-Engineering",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 166.0,
-    "beatsPerBar" : 0
+    "bpm" : 166.0
   } ],
   "artist" : "James Primate & Lydia Esrig",
   "artistsList" : [ "James Primate", "Lydia Esrig" ],
@@ -452,14 +405,12 @@
   "tags" : [ "ExerciseBook", "RainWorld", "dim lighting", "eerie atmosphere", "industrial setting", "metal surface", "minimalistic", "sci-fi", "shadow", "slug cat", "超级练习册" ]
 }, {
   "id" : "df4ff6fe-a8da-4b63-b0bd-b69ac8d80ace",
-  "songId" : "song_bio_engineering",
   "title" : "Bio-Engineering",
   "titleCulture" : "en",
   "latinTitle" : "Bio-Engineering",
   "bpmInfo" : [ {
     "start" : 0.05,
-    "bpm" : 166.0,
-    "beatsPerBar" : 0
+    "bpm" : 166.0
   } ],
   "artist" : "James Primate & Lydia Esrig",
   "artistsList" : [ "James Primate", "Lydia Esrig" ],
@@ -472,14 +423,12 @@
   "tags" : [ "NintyKeven", "RainWorld", "dim lighting", "eerie atmosphere", "industrial setting", "lei", "lei motife", "metal surface", "minimalistic", "sci-fi", "shadow", "slug cat", "莫提泪" ]
 }, {
   "id" : "d89765a7-05a1-44a1-8ed3-f23f5f15741a",
-  "songId" : "song_blueface",
   "title" : "☹",
   "titleCulture" : "und-ZZ",
   "latinTitle" : "Blueface",
   "bpmInfo" : [ {
     "start" : 0.08,
-    "bpm" : 125.0,
-    "beatsPerBar" : 0
+    "bpm" : 125.0
   } ],
   "artist" : "Gray Planet",
   "artistsList" : [ "Gray Planet" ],
@@ -492,14 +441,12 @@
   "tags" : [ "prolog" ]
 }, {
   "id" : "2d6e3256-818b-434e-9980-ee6fcf14a8c7",
-  "songId" : "song_blueface",
   "title" : "☹",
   "titleCulture" : "und-ZZ",
   "latinTitle" : "Blueface",
   "bpmInfo" : [ {
     "start" : 0.08,
-    "bpm" : 125.0,
-    "beatsPerBar" : 0
+    "bpm" : 125.0
   } ],
   "artist" : "Gray Planet",
   "artistsList" : [ "Gray Planet" ],
@@ -512,14 +459,12 @@
   "tags" : [ "prolog" ]
 }, {
   "id" : "130d1d7d-ba20-467c-b5f5-eafc51882809",
-  "songId" : "song_blueface",
   "title" : "☹",
   "titleCulture" : "und-ZZ",
   "latinTitle" : "Blueface",
   "bpmInfo" : [ {
     "start" : 0.08,
-    "bpm" : 125.0,
-    "beatsPerBar" : 0
+    "bpm" : 125.0
   } ],
   "artist" : "Gray Planet",
   "artistsList" : [ "Gray Planet" ],
@@ -532,14 +477,12 @@
   "tags" : [ "prolog" ]
 }, {
   "id" : "ef55520f-c913-449f-bf26-ab947384127e",
-  "songId" : "song_broken_conviction",
   "title" : "Broken Conviction",
   "titleCulture" : "en",
   "latinTitle" : "Broken Conviction",
   "bpmInfo" : [ {
     "start" : 0.07,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Cansol",
   "artistsList" : [ "Cansol" ],
@@ -552,14 +495,12 @@
   "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "lei", "lei motife", "long white hair", "luvia", "莫提泪" ]
 }, {
   "id" : "de2327c7-0d63-496f-9974-dbb70bfcbed8",
-  "songId" : "song_broken_conviction",
   "title" : "Broken Conviction",
   "titleCulture" : "en",
   "latinTitle" : "Broken Conviction",
   "bpmInfo" : [ {
     "start" : 0.07,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Cansol",
   "artistsList" : [ "Cansol" ],
@@ -572,14 +513,12 @@
   "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "long white hair", "luvia" ]
 }, {
   "id" : "a19a54b6-363e-49ae-9cd2-633a2db8ae4f",
-  "songId" : "song_broken_conviction",
   "title" : "Broken Conviction",
   "titleCulture" : "en",
   "latinTitle" : "Broken Conviction",
   "bpmInfo" : [ {
     "start" : 0.07,
-    "bpm" : 180.0,
-    "beatsPerBar" : 4
+    "bpm" : 180.0
   } ],
   "artist" : "Cansol",
   "artistsList" : [ "Cansol" ],
@@ -592,14 +531,12 @@
   "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "long white hair", "luvia" ]
 }, {
   "id" : "7c30226f-0ea5-4b71-aab7-7fefca1070dd",
-  "songId" : "song_broken_conviction",
   "title" : "Broken Conviction",
   "titleCulture" : "en",
   "latinTitle" : "Broken Conviction",
   "bpmInfo" : [ {
     "start" : 0.07,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Cansol",
   "artistsList" : [ "Cansol" ],
@@ -612,14 +549,12 @@
   "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "long white hair", "luvia" ]
 }, {
   "id" : "858f698c-4bd9-40f0-aa8b-793021e0c550",
-  "songId" : "song_castle_in_the_rain",
   "title" : "雨之城",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Castle in the Rain",
   "bpmInfo" : [ {
     "start" : -0.003,
-    "bpm" : 102.0,
-    "beatsPerBar" : 0
+    "bpm" : 102.0
   } ],
   "artist" : "CsLrisEto",
   "artistsList" : [ "CsLrisEto" ],
@@ -632,14 +567,12 @@
   "tags" : [ "atmospheric", "black coat", "blue eyes", "character", "cityscape", "dark sky", "female", "futuristic city", "gray scarf", "long hair", "luvia", "melancholic", "moody", "overcast", "prolog", "rain", "rainy day", "reflective mood", "side profile", "skyscrapers", "solitude", "urban" ]
 }, {
   "id" : "acdab435-5aa3-45de-a815-9dbb7cd13130",
-  "songId" : "song_castle_in_the_rain",
   "title" : "雨之城",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Castle in the Rain",
   "bpmInfo" : [ {
     "start" : -0.003,
-    "bpm" : 102.0,
-    "beatsPerBar" : 0
+    "bpm" : 102.0
   } ],
   "artist" : "CsLrisEto",
   "artistsList" : [ "CsLrisEto" ],
@@ -652,14 +585,12 @@
   "tags" : [ "atmospheric", "black coat", "blue eyes", "character", "cityscape", "dark sky", "female", "futuristic city", "gray scarf", "long hair", "luvia", "melancholic", "moody", "overcast", "prolog", "rain", "rainy day", "reflective mood", "side profile", "skyscrapers", "solitude", "urban" ]
 }, {
   "id" : "e69b4e77-ccb2-4694-ba88-7209ed097783",
-  "songId" : "song_castle_in_the_rain",
   "title" : "雨之城",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Castle in the Rain",
   "bpmInfo" : [ {
     "start" : -0.003,
-    "bpm" : 102.0,
-    "beatsPerBar" : 0
+    "bpm" : 102.0
   } ],
   "artist" : "CsLrisEto",
   "artistsList" : [ "CsLrisEto" ],
@@ -672,14 +603,12 @@
   "tags" : [ "atmospheric", "black coat", "blue eyes", "character", "cityscape", "dark sky", "female", "futuristic city", "gray scarf", "long hair", "luvia", "melancholic", "moody", "overcast", "prolog", "rain", "rainy day", "reflective mood", "side profile", "skyscrapers", "solitude", "urban" ]
 }, {
   "id" : "ac138fef-ad0b-4d0d-883c-453e6fe11d37",
-  "songId" : "song_contrasty_angeles",
   "title" : "Contrasty Angeles",
   "titleCulture" : "en",
   "latinTitle" : "Contrasty Angeles",
   "bpmInfo" : [ {
     "start" : 1.18,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "HLxQ.v.M",
   "artistsList" : [ "HLxQ.v.M" ],
@@ -692,14 +621,12 @@
   "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
 }, {
   "id" : "6252f7c4-8eae-4b59-a22f-9f142f904029",
-  "songId" : "song_contrasty_angeles",
   "title" : "Contrasty Angeles",
   "titleCulture" : "en",
   "latinTitle" : "Contrasty Angeles",
   "bpmInfo" : [ {
     "start" : 1.18,
-    "bpm" : 210.0,
-    "beatsPerBar" : 0
+    "bpm" : 210.0
   } ],
   "artist" : "HLxQ.v.M",
   "artistsList" : [ "HLxQ.v.M" ],
@@ -712,14 +639,12 @@
   "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
 }, {
   "id" : "269efa5f-8b69-4a71-be24-7abe57372b3f",
-  "songId" : "song_contrasty_angeles",
   "title" : "Contrasty Angeles",
   "titleCulture" : "en",
   "latinTitle" : "Contrasty Angeles",
   "bpmInfo" : [ {
     "start" : 1.18,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "HLxQ.v.M",
   "artistsList" : [ "HLxQ.v.M" ],
@@ -732,14 +657,12 @@
   "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
 }, {
   "id" : "c18f27b6-2d4e-4631-82b1-4ede237874df",
-  "songId" : "song_contrasty_angeles",
   "title" : "Contrasty Angeles",
   "titleCulture" : "en",
   "latinTitle" : "Contrasty Angeles",
   "bpmInfo" : [ {
     "start" : 1.18,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "HLxQ.v.M",
   "artistsList" : [ "HLxQ.v.M" ],
@@ -752,14 +675,12 @@
   "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
 }, {
   "id" : "5aac139b-ab96-486d-a081-6bfebe382932",
-  "songId" : "song_dogbite",
   "title" : "Dogbite",
   "titleCulture" : "en",
   "latinTitle" : "Dogbite",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 195.0,
-    "beatsPerBar" : 0
+    "bpm" : 195.0
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -772,14 +693,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "7cdb8a2c-e133-4a91-a29f-4e21ba4e442a",
-  "songId" : "song_dogbite",
   "title" : "Dogbite",
   "titleCulture" : "en",
   "latinTitle" : "Dogbite",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 97.5,
-    "beatsPerBar" : 0
+    "bpm" : 97.5
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -792,14 +711,12 @@
   "tags" : [ "ExerciseBook", "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title", "超级练习册" ]
 }, {
   "id" : "e543f4a5-5f55-45e5-9c41-ebe1c155c12e",
-  "songId" : "song_dogbite",
   "title" : "Dogbite",
   "titleCulture" : "en",
   "latinTitle" : "Dogbite",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 97.5,
-    "beatsPerBar" : 0
+    "bpm" : 97.5
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -812,14 +729,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "d8074d7e-dc36-4190-9377-0c62c3775dac",
-  "songId" : "song_dogbite",
   "title" : "Dogbite",
   "titleCulture" : "en",
   "latinTitle" : "Dogbite",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 195.0,
-    "beatsPerBar" : 0
+    "bpm" : 195.0
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -832,14 +747,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "640cea92-0024-4ba5-aa16-8a38f77743ac",
-  "songId" : "song_elsorhg",
   "title" : "Elsorhg",
   "titleCulture" : "en",
   "latinTitle" : "Elsorhg",
   "bpmInfo" : [ {
     "start" : -0.003538462,
-    "bpm" : 195.0,
-    "beatsPerBar" : 4
+    "bpm" : 195.0
   } ],
   "artist" : "Fl00t",
   "artistsList" : [ "Fl00t" ],
@@ -852,14 +765,12 @@
   "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
 }, {
   "id" : "f7b864bc-72a3-4c9d-ab7c-b57946fb77ec",
-  "songId" : "song_elsorhg",
   "title" : "Elsorhg",
   "titleCulture" : "en",
   "latinTitle" : "Elsorhg",
   "bpmInfo" : [ {
     "start" : -0.003538462,
-    "bpm" : 195.0,
-    "beatsPerBar" : 4
+    "bpm" : 195.0
   } ],
   "artist" : "Fl00t",
   "artistsList" : [ "Fl00t" ],
@@ -872,14 +783,12 @@
   "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
 }, {
   "id" : "e27a66da-19c5-4d3a-85f4-5defdf5b7b88",
-  "songId" : "song_elsorhg",
   "title" : "Elsorhg",
   "titleCulture" : "en",
   "latinTitle" : "Elsorhg",
   "bpmInfo" : [ {
     "start" : -0.003538462,
-    "bpm" : 195.0,
-    "beatsPerBar" : 4
+    "bpm" : 195.0
   } ],
   "artist" : "Fl00t",
   "artistsList" : [ "Fl00t" ],
@@ -892,14 +801,12 @@
   "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
 }, {
   "id" : "b2594118-dcf5-4750-9e57-e4eeef6142fe",
-  "songId" : "song_episodic_rain",
   "title" : "时落之雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Episodic Rain",
   "bpmInfo" : [ {
     "start" : -0.024,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "Delos",
   "artistsList" : [ "Delos" ],
@@ -912,14 +819,12 @@
   "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
 }, {
   "id" : "64cc8f3b-7bed-48a3-80ca-f281c57c0916",
-  "songId" : "song_episodic_rain",
   "title" : "时落之雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Episodic Rain",
   "bpmInfo" : [ {
     "start" : -0.024,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "Delos",
   "artistsList" : [ "Delos" ],
@@ -932,14 +837,12 @@
   "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
 }, {
   "id" : "54ea2f8f-ae05-4aba-a117-8d187bf08074",
-  "songId" : "song_episodic_rain",
   "title" : "时落之雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Episodic Rain",
   "bpmInfo" : [ {
     "start" : -0.024,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "Delos",
   "artistsList" : [ "Delos" ],
@@ -952,14 +855,12 @@
   "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
 }, {
   "id" : "1ccef645-09b6-400d-a438-b2f2fdc0debc",
-  "songId" : "song_excellent_broadband_which_makes_my_internet_speed_spin",
   "title" : "选择你的宽带",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Excellent broadband, which makes my internet speed spin",
   "bpmInfo" : [ {
     "start" : 0.005,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "MoryueCi",
   "artistsList" : [ "MoryueCi" ],
@@ -972,14 +873,12 @@
   "tags" : [ "2024", "April Fool 2024", "Z_IQinG．†A†7324†", "bold", "comment section", "design", "dynamic", "energetic", "futuristic", "gradient", "interactive", "likes", "red", "shares", "social media", "text", "vibrant", "year", "ziqing" ]
 }, {
   "id" : "423e7ae7-97e9-4c87-a778-36af2020a59d",
-  "songId" : "song_fuli_auto_shooter",
   "title" : "FULi AUTO SHOOTER",
   "titleCulture" : "en",
   "latinTitle" : "FULi AUTO SHOOTER",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   } ],
   "artist" : "MYUKKE.",
   "artistsList" : [ "MYUKKE." ],
@@ -992,14 +891,12 @@
   "tags" : [ "action", "background pattern", "blonde hair", "character", "digital art", "dynamic pose", "energetic", "gloves", "headphones", "orange eyes", "playful", "red and white outfit", "text overlay", "vibrant colors" ]
 }, {
   "id" : "addba2e9-ad45-4770-b850-717ab2e0e17d",
-  "songId" : "song_fuli_auto_shooter",
   "title" : "FULi AUTO SHOOTER",
   "titleCulture" : "en",
   "latinTitle" : "FULi AUTO SHOOTER",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   } ],
   "artist" : "MYUKKE.",
   "artistsList" : [ "MYUKKE." ],
@@ -1012,14 +909,12 @@
   "tags" : [ "action", "background pattern", "blonde hair", "character", "digital art", "dynamic pose", "energetic", "gloves", "headphones", "orange eyes", "playful", "red and white outfit", "text overlay", "vibrant colors" ]
 }, {
   "id" : "d93cfe14-d3b1-4934-98a4-77b89e1f1304",
-  "songId" : "song_fuli_auto_shooter",
   "title" : "FULi AUTO SHOOTER",
   "titleCulture" : "en",
   "latinTitle" : "FULi AUTO SHOOTER",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   } ],
   "artist" : "MYUKKE.",
   "artistsList" : [ "MYUKKE." ],
@@ -1032,14 +927,12 @@
   "tags" : [ "action", "background pattern", "blonde hair", "character", "digital art", "dynamic pose", "energetic", "gloves", "headphones", "orange eyes", "playful", "red and white outfit", "text overlay", "vibrant colors" ]
 }, {
   "id" : "508fff6a-32dc-4f6b-88c7-bbd86e639085",
-  "songId" : "song_fly_to_meteor_milthm_edit",
   "title" : "Fly To Meteor (Milthm Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Fly To Meteor (Milthm Edit)",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "ShooTinGStaR + xzadudu179 + Cyberspace",
   "artistsList" : [ "ShooTinGStaR", "xzadudu179", "Cyberspace" ],
@@ -1052,14 +945,12 @@
   "tags" : [ "celestial", "cello", "character", "delicate", "dreamy", "ethereal", "fantasy", "female", "floating", "golden accents", "long white hair", "luvia", "magical atmosphere", "musical instrument", "pastel colors", "sheet music", "soft lighting", "stars", "white dress", "射星" ]
 }, {
   "id" : "35ab3fba-928d-4b08-be7f-2fc67a77a838",
-  "songId" : "song_fly_to_meteor_milthm_edit",
   "title" : "Fly To Meteor (Milthm Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Fly To Meteor (Milthm Edit)",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "ShooTinGStaR + xzadudu179 + Cyberspace",
   "artistsList" : [ "ShooTinGStaR", "xzadudu179", "Cyberspace" ],
@@ -1072,14 +963,12 @@
   "tags" : [ "celestial", "cello", "character", "delicate", "dreamy", "ethereal", "fantasy", "female", "floating", "golden accents", "long white hair", "luvia", "magical atmosphere", "musical instrument", "pastel colors", "sheet music", "soft lighting", "stars", "white dress", "射星" ]
 }, {
   "id" : "adcc6c11-2986-4f3c-ae7e-4b52fe75dc83",
-  "songId" : "song_fly_to_meteor_milthm_edit",
   "title" : "Fly To Meteor (Milthm Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Fly To Meteor (Milthm Edit)",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "ShooTinGStaR + xzadudu179 + Cyberspace",
   "artistsList" : [ "ShooTinGStaR", "xzadudu179", "Cyberspace" ],
@@ -1092,14 +981,12 @@
   "tags" : [ "celestial", "cello", "character", "delicate", "dreamy", "ethereal", "fantasy", "female", "floating", "golden accents", "long white hair", "luvia", "magical atmosphere", "musical instrument", "pastel colors", "sheet music", "soft lighting", "stars", "white dress", "射星" ]
 }, {
   "id" : "ead657f6-f0f2-4a21-acfd-4322892a0562",
-  "songId" : "song_fly_to_meteor_feat_tuqi",
   "title" : "Fly To Meteor feat.兔柒 (Milthm Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Fly To Meteor feat.兔柒 (Milthm Edit)",
   "bpmInfo" : [ {
     "start" : 0.03,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "ShooTinGStaR + MoryueCi + Cyberspace",
   "artistsList" : [ "ShooTinGStaR", "MoryueCi", "Cyberspace" ],
@@ -1112,14 +999,12 @@
   "tags" : [ "celestial", "cello", "character", "delicate", "dreamy", "ethereal", "fantasy", "female", "floating", "golden accents", "long white hair", "luvia", "magical atmosphere", "musical instrument", "pastel colors", "sheet music", "soft lighting", "stars", "white dress", "射星" ]
 }, {
   "id" : "6b478cca-035d-4297-b34a-ae75658d81bd",
-  "songId" : "song_fragment_of_memories",
   "title" : "Fragment of Memories",
   "titleCulture" : "en",
   "latinTitle" : "Fragment of Memories",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 154.0,
-    "beatsPerBar" : 4
+    "bpm" : 154.0
   } ],
   "artist" : "U-Ruri",
   "artistsList" : [ "U-Ruri" ],
@@ -1132,14 +1017,12 @@
   "tags" : [ "atmospheric", "background elements", "chapter1", "character", "crystal", "detailed art style", "dramatic lighting", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing dress", "glowing particles", "intricate details", "long white hair", "luvia", "magical", "serene", "soft colors", "母鸡Sama" ]
 }, {
   "id" : "de74f367-3a91-4421-a657-f0e8268083a3",
-  "songId" : "song_fragment_of_memories",
   "title" : "Fragment of Memories",
   "titleCulture" : "en",
   "latinTitle" : "Fragment of Memories",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 154.0,
-    "beatsPerBar" : 0
+    "bpm" : 154.0
   } ],
   "artist" : "U-Ruri",
   "artistsList" : [ "U-Ruri" ],
@@ -1152,14 +1035,12 @@
   "tags" : [ "atmospheric", "background elements", "chapter1", "character", "crystal", "detailed art style", "dramatic lighting", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing dress", "glowing particles", "intricate details", "long white hair", "luvia", "magical", "serene", "soft colors" ]
 }, {
   "id" : "a5000e56-b917-40ce-9ebb-12cc2c4a2e70",
-  "songId" : "song_fragment_of_memories",
   "title" : "Fragment of Memories",
   "titleCulture" : "en",
   "latinTitle" : "Fragment of Memories",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 154.0,
-    "beatsPerBar" : 0
+    "bpm" : 154.0
   } ],
   "artist" : "U-Ruri",
   "artistsList" : [ "U-Ruri" ],
@@ -1172,14 +1053,12 @@
   "tags" : [ "atmospheric", "background elements", "chapter1", "character", "crystal", "detailed art style", "dramatic lighting", "dynamic pose", "ethereal", "fantasy", "female", "floating", "flowing dress", "glowing particles", "intricate details", "long white hair", "luvia", "magical", "serene", "soft colors" ]
 }, {
   "id" : "3442183b-cf7d-4842-9ddf-04243914916a",
-  "songId" : "song_future_unbound",
   "title" : "Future Unbound (Game Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Future Unbound (Game Edit)",
   "bpmInfo" : [ {
     "start" : 0.011,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -1192,14 +1071,12 @@
   "tags" : [ "anime", "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons" ]
 }, {
   "id" : "7131ad7b-1602-4acd-bfc1-1ff712d054f0",
-  "songId" : "song_future_unbound",
   "title" : "Future Unbound (Game Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Future Unbound (Game Edit)",
   "bpmInfo" : [ {
     "start" : 0.011,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -1212,14 +1089,12 @@
   "tags" : [ "anime", "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons" ]
 }, {
   "id" : "75fbb0ef-08fa-47cb-8c6f-acf361f7a081",
-  "songId" : "song_future_unbound",
   "title" : "Future Unbound (Game Edit)",
   "titleCulture" : "en",
   "latinTitle" : "Future Unbound (Game Edit)",
   "bpmInfo" : [ {
     "start" : 0.011,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -1232,14 +1107,12 @@
   "tags" : [ "anime", "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons" ]
 }, {
   "id" : "ed40cd1b-2741-415a-be81-6fcc63db4044",
-  "songId" : "song_hyper_memories",
   "title" : "HYPER MEMORIES",
   "titleCulture" : "en",
   "latinTitle" : "HYPER MEMORIES",
   "bpmInfo" : [ {
     "start" : -0.002,
-    "bpm" : 250.0,
-    "beatsPerBar" : 0
+    "bpm" : 250.0
   } ],
   "artist" : "Wooden, Salty Salt",
   "artistsList" : [ "Salty Salt", "Wooden" ],
@@ -1252,14 +1125,12 @@
   "tags" : [ "candle", "chair", "chapter1", "contemplation", "cozy_setting", "dark_curtain", "enchanting", "fantasy", "female_character", "flowers", "gold_accent", "goth", "indoor", "intimacy", "intricate_decorations", "kniting_tools", "lily", "long_hair", "luxury", "magical", "mystery", "purple_flower", "red_dress", "room", "serenity", "spinning_wheel", "susan", "table" ]
 }, {
   "id" : "68fbf0eb-f43a-4497-afb1-8282176aed97",
-  "songId" : "song_hyper_memories",
   "title" : "HYPER MEMORIES",
   "titleCulture" : "en",
   "latinTitle" : "HYPER MEMORIES",
   "bpmInfo" : [ {
     "start" : -0.002,
-    "bpm" : 250.0,
-    "beatsPerBar" : 4
+    "bpm" : 250.0
   } ],
   "artist" : "Wooden, Salty Salt",
   "artistsList" : [ "Salty Salt", "Wooden" ],
@@ -1272,14 +1143,12 @@
   "tags" : [ "ExerciseBook", "candle", "chair", "chapter1", "contemplation", "cozy_setting", "dark_curtain", "enchanting", "fantasy", "female_character", "flowers", "gold_accent", "goth", "indoor", "intimacy", "intricate_decorations", "kniting_tools", "lily", "long_hair", "luxury", "magical", "mystery", "purple_flower", "red_dress", "room", "serenity", "spinning_wheel", "susan", "table", "超级练习册" ]
 }, {
   "id" : "0785d07e-50e1-4e3f-b1aa-01fa43d0c2f6",
-  "songId" : "song_hyper_memories",
   "title" : "HYPER MEMORIES",
   "titleCulture" : "en",
   "latinTitle" : "HYPER MEMORIES",
   "bpmInfo" : [ {
     "start" : -0.002,
-    "bpm" : 250.0,
-    "beatsPerBar" : 4
+    "bpm" : 250.0
   } ],
   "artist" : "Wooden, Salty Salt",
   "artistsList" : [ "Salty Salt", "Wooden" ],
@@ -1292,14 +1161,12 @@
   "tags" : [ "ExerciseBook", "candle", "chair", "chapter1", "contemplation", "cozy_setting", "dark_curtain", "enchanting", "fantasy", "female_character", "flowers", "gold_accent", "goth", "indoor", "intimacy", "intricate_decorations", "kniting_tools", "lily", "long_hair", "luxury", "magical", "mystery", "purple_flower", "red_dress", "room", "serenity", "spinning_wheel", "susan", "table", "超级练习册" ]
 }, {
   "id" : "1ab3b5cf-b6af-48ec-99e8-2d3a4e9edc72",
-  "songId" : "song_hikari",
   "title" : "Hikari",
   "titleCulture" : "en",
   "latinTitle" : "Hikari",
   "bpmInfo" : [ {
     "start" : 0.007,
-    "bpm" : 175.0,
-    "beatsPerBar" : 0
+    "bpm" : 175.0
   } ],
   "artist" : "Kuroe",
   "artistsList" : [ "Kuroe" ],
@@ -1312,14 +1179,12 @@
   "tags" : [ "anime", "blue dress", "character", "cityscape", "clear blue sky", "dynamic pose", "fantasy", "female", "floral field", "joyful atmosphere", "long white hair", "luvia", "sunny day", "trumpet", "vibrant colors", "wind", "yellow flowers" ]
 }, {
   "id" : "a6ef2d0a-057b-4ada-be88-23dcde06ada5",
-  "songId" : "song_hikari",
   "title" : "Hikari",
   "titleCulture" : "en",
   "latinTitle" : "Hikari",
   "bpmInfo" : [ {
     "start" : 0.001,
-    "bpm" : 175.0,
-    "beatsPerBar" : 0
+    "bpm" : 175.0
   } ],
   "artist" : "Kuroe",
   "artistsList" : [ "Kuroe" ],
@@ -1332,14 +1197,12 @@
   "tags" : [ "anime", "blue dress", "character", "cityscape", "clear blue sky", "dynamic pose", "fantasy", "female", "floral field", "joyful atmosphere", "long white hair", "luvia", "sunny day", "trumpet", "vibrant colors", "wind", "yellow flowers" ]
 }, {
   "id" : "2022fd8f-3210-4151-8636-8ec888236214",
-  "songId" : "song_hikari",
   "title" : "Hikari",
   "titleCulture" : "en",
   "latinTitle" : "Hikari",
   "bpmInfo" : [ {
     "start" : 0.001,
-    "bpm" : 175.0,
-    "beatsPerBar" : 0
+    "bpm" : 175.0
   } ],
   "artist" : "Kuroe",
   "artistsList" : [ "Kuroe" ],
@@ -1352,14 +1215,12 @@
   "tags" : [ "anime", "blue dress", "character", "cityscape", "clear blue sky", "dynamic pose", "fantasy", "female", "floral field", "joyful atmosphere", "long white hair", "luvia", "sunny day", "trumpet", "vibrant colors", "wind", "yellow flowers" ]
 }, {
   "id" : "f425914c-db82-413c-aca9-96ff151b8605",
-  "songId" : "song_in",
   "title" : "IN",
   "titleCulture" : "en",
   "latinTitle" : "IN",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 133.0,
-    "beatsPerBar" : 0
+    "bpm" : 133.0
   } ],
   "artist" : "Zris feat. Katie",
   "artistsList" : [ "Zris", "Katie" ],
@@ -1372,14 +1233,12 @@
   "tags" : [ "IN", "Katie", "Zris", "anime", "art", "character", "computer", "dark", "dj", "fantasy", "female", "flow", "ghost", "hand", "luvia", "modern", "music", "notes", "purple", "ribbon", "维生素b" ]
 }, {
   "id" : "e7cd8b7f-a19c-488d-b9b6-127524586ed3",
-  "songId" : "song_in",
   "title" : "IN",
   "titleCulture" : "en",
   "latinTitle" : "IN",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 133.0,
-    "beatsPerBar" : 0
+    "bpm" : 133.0
   } ],
   "artist" : "Zris feat. Katie",
   "artistsList" : [ "Zris", "Katie" ],
@@ -1392,14 +1251,12 @@
   "tags" : [ "IN", "Katie", "Zris", "anime", "art", "character", "computer", "dark", "dj", "fantasy", "female", "flow", "ghost", "hand", "luvia", "modern", "music", "notes", "purple", "ribbon" ]
 }, {
   "id" : "e663eb53-66d4-4a76-b533-445ef08ee18e",
-  "songId" : "song_in",
   "title" : "IN",
   "titleCulture" : "en",
   "latinTitle" : "IN",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 133.0,
-    "beatsPerBar" : 1000
+    "bpm" : 133.0
   } ],
   "artist" : "Zris feat. Katie",
   "artistsList" : [ "Zris", "Katie" ],
@@ -1412,14 +1269,12 @@
   "tags" : [ "IN", "Katie", "Zris", "anime", "art", "character", "computer", "dark", "dj", "fantasy", "female", "flow", "ghost", "hand", "luvia", "modern", "music", "notes", "purple", "ribbon" ]
 }, {
   "id" : "d70bc3b4-752a-45b9-bd31-c6ab8b9a7c9e",
-  "songId" : "song_infp_mp3",
   "title" : "INFP.mp3",
   "titleCulture" : "en",
   "latinTitle" : "INFP.mp3",
   "bpmInfo" : [ {
     "start" : 0.01,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -1432,14 +1287,12 @@
   "tags" : [ "anime character", "art supplies", "blonde hair", "books", "coffee cup", "comfortable", "cozy", "creative space", "indoor", "lay", "living room", "nature view", "orange couch", "peaceful atmosphere", "potted plant", "relaxed", "study area", "sunlight", "warm tones", "window", "wooden desk", "yellow ribbon" ]
 }, {
   "id" : "37a9f1a0-32d4-4f78-acae-1be9ca7ea42f",
-  "songId" : "song_infp_mp3",
   "title" : "INFP.mp3",
   "titleCulture" : "en",
   "latinTitle" : "INFP.mp3",
   "bpmInfo" : [ {
     "start" : 0.01,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -1452,14 +1305,12 @@
   "tags" : [ "anime character", "art supplies", "blonde hair", "books", "coffee cup", "comfortable", "cozy", "creative space", "indoor", "lay", "living room", "nature view", "orange couch", "peaceful atmosphere", "potted plant", "relaxed", "study area", "sunlight", "warm tones", "window", "wooden desk", "yellow ribbon" ]
 }, {
   "id" : "3ebe1bbe-5d13-4175-ad91-dcf85c7bfd19",
-  "songId" : "song_infp_mp3",
   "title" : "INFP.mp3",
   "titleCulture" : "en",
   "latinTitle" : "INFP.mp3",
   "bpmInfo" : [ {
     "start" : 0.01,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -1472,14 +1323,12 @@
   "tags" : [ "anime character", "art supplies", "blonde hair", "books", "coffee cup", "comfortable", "cozy", "creative space", "indoor", "lay", "living room", "nature view", "orange couch", "peaceful atmosphere", "potted plant", "relaxed", "study area", "sunlight", "warm tones", "window", "wooden desk", "yellow ribbon" ]
 }, {
   "id" : "c902851b-fa01-44f4-97a8-ab6d317fccd4",
-  "songId" : "song_imaginary_tomorrow",
   "title" : "仮想明日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Imaginary Tomorrow",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 135.0,
-    "beatsPerBar" : 0
+    "bpm" : 135.0
   } ],
   "artist" : "如月青藍 feat. 双葉湊音",
   "artistsList" : [ "如月青藍", "双葉湊音" ],
@@ -1492,14 +1341,12 @@
   "tags" : [ "anime", "anime art style", "background blur", "blue hat", "character", "cheerful expression", "digital illustration", "dynamic pose", "energetic", "female", "flying papers", "light blue sky", "long white hair", "motion", "school uniform", "soft colors", "wind", "youthful" ]
 }, {
   "id" : "5d23aa36-a3df-406f-980f-b6cd0cec5385",
-  "songId" : "song_imaginary_tomorrow",
   "title" : "仮想明日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Imaginary Tomorrow",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 135.0,
-    "beatsPerBar" : 0
+    "bpm" : 135.0
   } ],
   "artist" : "如月青藍 feat. 双葉湊音",
   "artistsList" : [ "如月青藍", "双葉湊音" ],
@@ -1512,14 +1359,12 @@
   "tags" : [ "anime", "anime art style", "background blur", "blue hat", "character", "cheerful expression", "digital illustration", "dynamic pose", "energetic", "female", "flying papers", "light blue sky", "long white hair", "motion", "school uniform", "soft colors", "wind", "youthful" ]
 }, {
   "id" : "1ec80826-e11e-43af-acd3-c154212443b9",
-  "songId" : "song_imaginary_tomorrow",
   "title" : "仮想明日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Imaginary Tomorrow",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 135.0,
-    "beatsPerBar" : 0
+    "bpm" : 135.0
   } ],
   "artist" : "如月青藍 feat. 双葉湊音",
   "artistsList" : [ "如月青藍", "双葉湊音" ],
@@ -1532,14 +1377,12 @@
   "tags" : [ "anime", "anime art style", "background blur", "blue hat", "character", "cheerful expression", "digital illustration", "dynamic pose", "energetic", "female", "flying papers", "light blue sky", "long white hair", "motion", "school uniform", "soft colors", "wind", "youthful" ]
 }, {
   "id" : "14700dda-b3c7-429d-a5ce-8a65f2fe4846",
-  "songId" : "song_innocent_white",
   "title" : "Innocent white",
   "titleCulture" : "en",
   "latinTitle" : "Innocent white",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "影虎。",
   "artistsList" : [ "影虎。" ],
@@ -1552,14 +1395,12 @@
   "tags" : [ "Kagetora.", "anime", "blue and white", "calm", "character", "confident", "dress", "dynamic", "elaborate outfit", "elegant", "fantasy", "female", "formal", "hair flow", "luvia", "night", "nota", "notanote", "serenity", "snowflake", "stars", "twirl", "winter" ]
 }, {
   "id" : "cc75ce1c-dbed-4bc7-94eb-728bf36bb1ec",
-  "songId" : "song_innocent_white",
   "title" : "Innocent white",
   "titleCulture" : "en",
   "latinTitle" : "Innocent white",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "影虎。",
   "artistsList" : [ "影虎。" ],
@@ -1572,14 +1413,12 @@
   "tags" : [ "Kagetora.", "anime", "blue and white", "calm", "character", "confident", "dress", "dynamic", "elaborate outfit", "elegant", "fantasy", "female", "formal", "hair flow", "luvia", "night", "nota", "notanote", "serenity", "snowflake", "stars", "twirl", "winter" ]
 }, {
   "id" : "7072a099-a482-484d-84a5-945ac94807e1",
-  "songId" : "song_innocent_white",
   "title" : "Innocent white",
   "titleCulture" : "en",
   "latinTitle" : "Innocent white",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "影虎。",
   "artistsList" : [ "影虎。" ],
@@ -1592,14 +1431,12 @@
   "tags" : [ "Kagetora.", "anime", "blue and white", "calm", "character", "confident", "dress", "dynamic", "elaborate outfit", "elegant", "fantasy", "female", "formal", "hair flow", "luvia", "night", "nota", "notanote", "serenity", "snowflake", "stars", "twirl", "winter" ]
 }, {
   "id" : "213a40e1-d945-464c-aa6e-9ae82db8fc50",
-  "songId" : "song_jump_out",
   "title" : "Jump out?",
   "titleCulture" : "en",
   "latinTitle" : "Jump out?",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "B.R.I",
   "artistsList" : [ "B.R.I" ],
@@ -1612,14 +1449,12 @@
   "tags" : [ "abstract background", "action", "anime", "blue glow", "character", "dark clothing", "energy", "female", "futuristic", "intense", "mysterious", "prolog", "supernatural", "white hair" ]
 }, {
   "id" : "9e083951-188f-4998-951a-58d08b4b4f45",
-  "songId" : "song_jump_out",
   "title" : "Jump out?",
   "titleCulture" : "en",
   "latinTitle" : "Jump out?",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "B.R.I",
   "artistsList" : [ "B.R.I" ],
@@ -1632,14 +1467,12 @@
   "tags" : [ "abstract background", "action", "anime", "blue glow", "character", "dark clothing", "energy", "female", "futuristic", "intense", "mysterious", "prolog", "supernatural", "white hair" ]
 }, {
   "id" : "38b25a54-afa9-4369-b286-90ba2e29df0b",
-  "songId" : "song_jump_out",
   "title" : "Jump out?",
   "titleCulture" : "en",
   "latinTitle" : "Jump out?",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "B.R.I",
   "artistsList" : [ "B.R.I" ],
@@ -1652,14 +1485,12 @@
   "tags" : [ "abstract background", "action", "anime", "blue glow", "character", "dark clothing", "energy", "female", "futuristic", "intense", "mysterious", "prolog", "supernatural", "white hair" ]
 }, {
   "id" : "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a",
-  "songId" : "song_kaede",
   "title" : "KAEDE",
   "titleCulture" : "en",
   "latinTitle" : "KAEDE",
   "bpmInfo" : [ {
     "start" : 2.233,
-    "bpm" : 177.0,
-    "beatsPerBar" : 4
+    "bpm" : 177.0
   } ],
   "artist" : "Ocelot",
   "artistsList" : [ "凛" ],
@@ -1669,17 +1500,15 @@
   "difficultyValue" : 0.0,
   "charter" : "Milthm Team",
   "chartersList" : [ "Milthm Team" ],
-  "tags" : [ "April Fool 2025", "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "action", "anime", "black and red outfit", "character", "dark background", "dramatic lighting", "dynamic pose", "fantasy", "intense", "katana", "pink", "red eyes", "rinx2musixxx", "samurai", "swordplay", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
+  "tags" : [ "April Fool 2025", "Diverse System", "Function Phantom", "Ginsuke", "I/O Plasm", "Ideal Ideal", "JAPAN", "LOTH", "Margay", "Ocelot", "Psytech Factory", "Rin", "SiSTEMA", "Thinktec", "action", "anime", "black and red outfit", "character", "dark background", "dramatic lighting", "dynamic pose", "fantasy", "intense", "katana", "pink", "red eyes", "rinx2musixxx", "samurai", "swordplay", "ぎんすけ", "アイディアル・アイデアル", "バーチャルねこ", "凛" ]
 }, {
   "id" : "3b11fea9-a2e3-40f7-bbe2-196cfcf25a1c",
-  "songId" : "song_kasane",
   "title" : "KASANE",
   "titleCulture" : "en",
   "latinTitle" : "KASANE",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 190.0,
-    "beatsPerBar" : 0
+    "bpm" : 190.0
   } ],
   "artist" : "Kaede Hiyama",
   "artistsList" : [ "Kaede Hiyama" ],
@@ -1692,14 +1521,12 @@
   "tags" : [ "advanced technology", "alexander", "anime", "black and blue outfit", "blue lighting", "cables", "character", "control panel", "dark hair", "futuristic", "industrial structure", "serious mood", "space setting", "starry background", "母鸡Sama" ]
 }, {
   "id" : "76aebcf6-d55d-4490-b48a-1fc3162a974a",
-  "songId" : "song_kasane",
   "title" : "KASANE",
   "titleCulture" : "en",
   "latinTitle" : "KASANE",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 190.0,
-    "beatsPerBar" : 0
+    "bpm" : 190.0
   } ],
   "artist" : "Kaede Hiyama",
   "artistsList" : [ "Kaede Hiyama" ],
@@ -1712,14 +1539,12 @@
   "tags" : [ "advanced technology", "alexander", "anime", "black and blue outfit", "blue lighting", "cables", "character", "control panel", "dark hair", "futuristic", "industrial structure", "serious mood", "space setting", "starry background", "母鸡Sama" ]
 }, {
   "id" : "5c0778d6-b2db-444f-a911-7892ffdf3ba5",
-  "songId" : "song_kasane",
   "title" : "KASANE",
   "titleCulture" : "en",
   "latinTitle" : "KASANE",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 190.0,
-    "beatsPerBar" : 4
+    "bpm" : 190.0
   } ],
   "artist" : "Kaede Hiyama",
   "artistsList" : [ "Kaede Hiyama" ],
@@ -1732,14 +1557,12 @@
   "tags" : [ "advanced technology", "alexander", "anime", "black and blue outfit", "blue lighting", "cables", "character", "control panel", "dark hair", "futuristic", "industrial structure", "serious mood", "space setting", "starry background", "维生素b" ]
 }, {
   "id" : "8c794275-de29-4beb-87a1-af024fe94e1e",
-  "songId" : "song_kagetsu",
   "title" : "花月",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Kagetsu",
   "bpmInfo" : [ {
     "start" : -0.015,
-    "bpm" : 128.0,
-    "beatsPerBar" : 0
+    "bpm" : 128.0
   } ],
   "artist" : "Kirara Magic",
   "artistsList" : [ "Kirara Magic" ],
@@ -1752,14 +1575,12 @@
   "tags" : [ "anime", "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water" ]
 }, {
   "id" : "d6514d67-18d3-4d8e-8492-890061efb6f7",
-  "songId" : "song_kagetsu",
   "title" : "花月",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Kagetsu",
   "bpmInfo" : [ {
     "start" : -0.015,
-    "bpm" : 128.0,
-    "beatsPerBar" : 4
+    "bpm" : 128.0
   } ],
   "artist" : "Kirara Magic",
   "artistsList" : [ "Kirara Magic" ],
@@ -1772,14 +1593,12 @@
   "tags" : [ "anime", "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water" ]
 }, {
   "id" : "cdacaee4-2866-4109-93a8-5bbbf0dc6207",
-  "songId" : "song_kagetsu",
   "title" : "花月",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Kagetsu",
   "bpmInfo" : [ {
     "start" : -0.015,
-    "bpm" : 128.0,
-    "beatsPerBar" : 4
+    "bpm" : 128.0
   } ],
   "artist" : "Kirara Magic",
   "artistsList" : [ "Kirara Magic" ],
@@ -1792,14 +1611,12 @@
   "tags" : [ "anime", "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water" ]
 }, {
   "id" : "1a3167ae-9105-4545-9aa7-3cab60874e9c",
-  "songId" : "song_kayava",
   "title" : "Kayava",
   "titleCulture" : "en",
   "latinTitle" : "Kayava",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 120.0,
-    "beatsPerBar" : 0
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -1812,14 +1629,12 @@
   "tags" : [ "RainWorld", "abstract", "atmospheric", "cityscape", "dark", "flying object", "futuristic", "modern", "moody", "orange", "palm tree", "red", "silhouette", "skyscrapers", "sunset", "urban" ]
 }, {
   "id" : "1ae6231b-d165-4f09-a138-9ec0d29431a7",
-  "songId" : "song_kayava",
   "title" : "Kayava",
   "titleCulture" : "en",
   "latinTitle" : "Kayava",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 120.0,
-    "beatsPerBar" : 0
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -1832,14 +1647,12 @@
   "tags" : [ "RainWorld", "abstract", "atmospheric", "cityscape", "dark", "flying object", "futuristic", "modern", "moody", "orange", "palm tree", "red", "silhouette", "skyscrapers", "sunset", "urban" ]
 }, {
   "id" : "85a6566f-d9df-408e-a812-0b13a80362cc",
-  "songId" : "song_kayava",
   "title" : "Kayava",
   "titleCulture" : "en",
   "latinTitle" : "Kayava",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 120.0,
-    "beatsPerBar" : 0
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -1852,14 +1665,12 @@
   "tags" : [ "RainWorld", "abstract", "atmospheric", "cityscape", "dark", "flying object", "futuristic", "modern", "moody", "orange", "palm tree", "red", "silhouette", "skyscrapers", "sunset", "urban" ]
 }, {
   "id" : "04d821ff-493a-421d-83a5-a61a59b2d3d3",
-  "songId" : "song_meinichi",
   "title" : "命日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Meinichi",
   "bpmInfo" : [ {
     "start" : 0.004,
-    "bpm" : 248.0,
-    "beatsPerBar" : 0
+    "bpm" : 248.0
   } ],
   "artist" : "LeaF",
   "artistsList" : [ "LeaF" ],
@@ -1872,14 +1683,12 @@
   "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets" ]
 }, {
   "id" : "4144b702-77bd-4ff4-9ba0-aa7c70b2bab5",
-  "songId" : "song_meinichi",
   "title" : "命日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Meinichi",
   "bpmInfo" : [ {
     "start" : 0.002,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "LeaF",
   "artistsList" : [ "LeaF" ],
@@ -1892,14 +1701,12 @@
   "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets" ]
 }, {
   "id" : "63b8512d-ac16-4026-bfee-1317d860ab82",
-  "songId" : "song_meinichi",
   "title" : "命日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Meinichi",
   "bpmInfo" : [ {
     "start" : 0.002,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "LeaF",
   "artistsList" : [ "LeaF" ],
@@ -1912,14 +1719,12 @@
   "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets" ]
 }, {
   "id" : "d742e989-92c4-4474-87ef-57b218d0fc41",
-  "songId" : "song_meinichi",
   "title" : "命日",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Meinichi",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 248.0,
-    "beatsPerBar" : 0
+    "bpm" : 248.0
   } ],
   "artist" : "LeaF",
   "artistsList" : [ "LeaF" ],
@@ -1932,14 +1737,12 @@
   "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets" ]
 }, {
   "id" : "97ef94ce-df45-4a92-9645-2456f606e0fa",
-  "songId" : "song_meltovt_necrosys",
   "title" : "Meltovt Necrosys",
   "titleCulture" : "en",
   "latinTitle" : "Meltovt Necrosys",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "Halv",
   "artistsList" : [ "Halv" ],
@@ -1952,14 +1755,12 @@
   "tags" : [ "anime", "buildings", "cityscape", "couple", "dynamic pose", "flowing hair", "intimate", "light blue", "luvia", "modern setting", "nota", "notanote", "short skirt", "silver hair", "soft lighting" ]
 }, {
   "id" : "c55ac81b-f00d-4031-8f54-a7735ce84cd3",
-  "songId" : "song_meltovt_necrosys",
   "title" : "Meltovt Necrosys",
   "titleCulture" : "en",
   "latinTitle" : "Meltovt Necrosys",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "Halv",
   "artistsList" : [ "Halv" ],
@@ -1972,14 +1773,12 @@
   "tags" : [ "anime", "buildings", "cityscape", "couple", "dynamic pose", "flowing hair", "intimate", "light blue", "luvia", "modern setting", "nota", "notanote", "short skirt", "silver hair", "soft lighting" ]
 }, {
   "id" : "e7ec6340-be44-44ab-8545-d5b7cf326fd4",
-  "songId" : "song_meltovt_necrosys",
   "title" : "Meltovt Necrosys",
   "titleCulture" : "en",
   "latinTitle" : "Meltovt Necrosys",
   "bpmInfo" : [ {
     "start" : 0.2857143,
-    "bpm" : 210.0,
-    "beatsPerBar" : 4
+    "bpm" : 210.0
   } ],
   "artist" : "Halv",
   "artistsList" : [ "Halv" ],
@@ -1992,14 +1791,12 @@
   "tags" : [ "anime", "buildings", "cityscape", "couple", "dynamic pose", "flowing hair", "intimate", "light blue", "luvia", "modern setting", "nota", "notanote", "short skirt", "silver hair", "soft lighting" ]
 }, {
   "id" : "ca751a94-f71e-4556-9d54-76de325ca29c",
-  "songId" : "song_moonfall",
   "title" : "大月墜落狂想",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Moonfall",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 196.0,
-    "beatsPerBar" : 4
+    "bpm" : 196.0
   } ],
   "artist" : "10lulu",
   "artistsList" : [ "10lulu" ],
@@ -2012,14 +1809,12 @@
   "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology" ]
 }, {
   "id" : "9eb53fd3-a91c-45c6-8608-f3a76eecf9f7",
-  "songId" : "song_moonfall",
   "title" : "大月墜落狂想",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Moonfall",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 196.0,
-    "beatsPerBar" : 4
+    "bpm" : 196.0
   } ],
   "artist" : "10lulu",
   "artistsList" : [ "10lulu" ],
@@ -2032,14 +1827,12 @@
   "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology" ]
 }, {
   "id" : "a8d6dfa7-b879-4eef-a10a-dbbd46519583",
-  "songId" : "song_moonfall",
   "title" : "大月墜落狂想",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Moonfall",
   "bpmInfo" : [ {
     "start" : -0.011,
-    "bpm" : 196.0,
-    "beatsPerBar" : 0
+    "bpm" : 196.0
   } ],
   "artist" : "10lulu",
   "artistsList" : [ "10lulu" ],
@@ -2052,14 +1845,12 @@
   "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology" ]
 }, {
   "id" : "eab07c23-395d-47f3-be33-15c7c566f694",
-  "songId" : "song_moonflutter",
   "title" : "Moonflutter",
   "titleCulture" : "en",
   "latinTitle" : "Moonflutter",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 87.0,
-    "beatsPerBar" : 0
+    "bpm" : 87.0
   } ],
   "artist" : "Reku Mochizuki",
   "artistsList" : [ "Reku Mochizuki" ],
@@ -2072,14 +1863,12 @@
   "tags" : [ "anime", "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman" ]
 }, {
   "id" : "794c0460-7a5e-4ffb-bfcc-2800f1d5bfb2",
-  "songId" : "song_moonflutter",
   "title" : "Moonflutter",
   "titleCulture" : "en",
   "latinTitle" : "Moonflutter",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "Reku Mochizuki",
   "artistsList" : [ "Reku Mochizuki" ],
@@ -2092,14 +1881,12 @@
   "tags" : [ "anime", "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman" ]
 }, {
   "id" : "61f5e310-d45b-40dc-a934-e3a849382729",
-  "songId" : "song_moonflutter",
   "title" : "Moonflutter",
   "titleCulture" : "en",
   "latinTitle" : "Moonflutter",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "Reku Mochizuki",
   "artistsList" : [ "Reku Mochizuki" ],
@@ -2112,14 +1899,12 @@
   "tags" : [ "anime", "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman" ]
 }, {
   "id" : "dae03da2-2ff0-4ed1-9624-945c2b9d3118",
-  "songId" : "song_moonflutter",
   "title" : "Moonflutter",
   "titleCulture" : "en",
   "latinTitle" : "Moonflutter",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 174.0,
-    "beatsPerBar" : 0
+    "bpm" : 174.0
   } ],
   "artist" : "Reku Mochizuki",
   "artistsList" : [ "Reku Mochizuki" ],
@@ -2132,14 +1917,12 @@
   "tags" : [ "anime", "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman" ]
 }, {
   "id" : "6d4c9a21-2ed4-4892-9b38-fd53840de04f",
-  "songId" : "song_moving_on",
   "title" : "Moving On",
   "titleCulture" : "en",
   "latinTitle" : "Moving On",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Nastram",
   "artistsList" : [ "Nastram" ],
@@ -2152,14 +1935,12 @@
   "tags" : [ "anime", "blue eyes", "character", "clouds", "female", "female character", "long white hair", "luvia", "origami", "paper cranes", "pastel colors", "prolog", "rainbow", "sky", "white gown" ]
 }, {
   "id" : "aafec4af-3479-445b-9b30-b6822b9f5e19",
-  "songId" : "song_moving_on",
   "title" : "Moving On",
   "titleCulture" : "en",
   "latinTitle" : "Moving On",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Nastram",
   "artistsList" : [ "Nastram" ],
@@ -2172,14 +1953,12 @@
   "tags" : [ "anime", "blue eyes", "character", "clouds", "female", "female character", "long white hair", "luvia", "origami", "paper cranes", "pastel colors", "prolog", "rainbow", "sky", "white gown" ]
 }, {
   "id" : "7d5df9f6-080f-4da0-974a-d2b8cb86e7e6",
-  "songId" : "song_moving_on",
   "title" : "Moving On",
   "titleCulture" : "en",
   "latinTitle" : "Moving On",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "Nastram",
   "artistsList" : [ "Nastram" ],
@@ -2192,14 +1971,12 @@
   "tags" : [ "anime", "blue eyes", "character", "clouds", "female", "female character", "lei", "lei motife", "long white hair", "luvia", "origami", "paper cranes", "pastel colors", "prolog", "rainbow", "sky", "white gown", "莫提泪" ]
 }, {
   "id" : "fa97e341-3a72-47bc-927e-b9cf87980b37",
-  "songId" : "song_neon_iro_no_machi",
   "title" : "ネオン色のまち feat. Mai",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Neon Iro no Machi feat. Mai",
   "bpmInfo" : [ {
     "start" : 0.005,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "Reo、ヒトリ (lyric: 霉霉杏)",
   "artistsList" : [ "Reo", "ヒトリ", "霉霉杏" ],
@@ -2212,14 +1989,12 @@
   "tags" : [ "Hitori", "anime", "blue", "character", "cityscape", "close-up", "cyberpunk", "dreamy", "female", "futuristic", "glowing", "illustration", "long hair", "neon lights", "night", "pastel colors", "peaceful", "portrait", "purple", "serene", "soft lighting", "technology", "urban", "vibrant" ]
 }, {
   "id" : "5ab2ddde-5f3e-42ec-b626-1296680093d1",
-  "songId" : "song_neon_iro_no_machi",
   "title" : "ネオン色のまち feat. Mai",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Neon Iro no Machi feat. Mai",
   "bpmInfo" : [ {
     "start" : 0.005,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "Reo、ヒトリ (lyric: 霉霉杏)",
   "artistsList" : [ "Reo", "ヒトリ", "霉霉杏" ],
@@ -2232,14 +2007,12 @@
   "tags" : [ "Hitori", "anime", "blue", "character", "cityscape", "close-up", "cyberpunk", "dreamy", "female", "futuristic", "glowing", "illustration", "long hair", "neon lights", "night", "pastel colors", "peaceful", "portrait", "purple", "serene", "soft lighting", "technology", "urban", "vibrant" ]
 }, {
   "id" : "4001a2b3-374d-438e-8e2b-2bd6d3651805",
-  "songId" : "song_neon_iro_no_machi",
   "title" : "ネオン色のまち feat. Mai",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Neon Iro no Machi feat. Mai",
   "bpmInfo" : [ {
     "start" : 0.005,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "Reo、ヒトリ (lyric: 霉霉杏)",
   "artistsList" : [ "Reo", "ヒトリ", "霉霉杏" ],
@@ -2252,22 +2025,18 @@
   "tags" : [ "Hitori", "anime", "blue", "character", "cityscape", "close-up", "cyberpunk", "dreamy", "female", "futuristic", "glowing", "illustration", "long hair", "neon lights", "night", "pastel colors", "peaceful", "portrait", "purple", "serene", "soft lighting", "technology", "urban", "vibrant" ]
 }, {
   "id" : "1104f25d-2493-4bc7-9172-b262d36488ac",
-  "songId" : "song_oiiaioooooiai",
   "title" : "Oiiaioooooiai",
   "titleCulture" : "en",
   "latinTitle" : "Oiiaioooooiai",
   "bpmInfo" : [ {
     "start" : -0.12483784,
-    "bpm" : 150.0,
-    "beatsPerBar" : 4
+    "bpm" : 150.0
   }, {
     "start" : 0.263,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   }, {
     "start" : 3.1008377,
-    "bpm" : 110.0,
-    "beatsPerBar" : 4
+    "bpm" : 110.0
   } ],
   "artist" : "黑瘦的鱼头",
   "artistsList" : [ "黑瘦的鱼头" ],
@@ -2280,14 +2049,12 @@
   "tags" : [ "anime", "bed", "bedroom", "blue top", "brown hair", "cartoonish style", "casual outfit", "cat ears", "cozy", "energetic pose", "female character", "nature view", "pink pillows", "relaxed atmosphere", "sunlight", "window" ]
 }, {
   "id" : "f728706a-e40a-421d-aaba-dde4bc35e8e3",
-  "songId" : "song_oniichan",
   "title" : "Oniichan",
   "titleCulture" : "en",
   "latinTitle" : "Oniichan",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "MoryueCi",
   "artistsList" : [ "MoryueCi" ],
@@ -2300,14 +2067,12 @@
   "tags" : [ "anime", "characters", "confident_smile", "confrontation", "dark_urban", "dystopia", "futuristic", "gun", "long_white_hair", "mystery", "neon_lights", "nighttime", "scaffold", "school_uniform", "serious_expression", "tension", "top_hat", "vending_machine", "video_game_style" ]
 }, {
   "id" : "a8f6451b-eeb3-4cb4-898b-4a8c4233567f",
-  "songId" : "song_oniichan",
   "title" : "Oniichan",
   "titleCulture" : "en",
   "latinTitle" : "Oniichan",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "MoryueCi",
   "artistsList" : [ "MoryueCi" ],
@@ -2320,14 +2085,12 @@
   "tags" : [ "anime", "characters", "confident_smile", "confrontation", "dark_urban", "dystopia", "futuristic", "gun", "long_white_hair", "mystery", "neon_lights", "nighttime", "scaffold", "school_uniform", "serious_expression", "tension", "top_hat", "vending_machine", "video_game_style" ]
 }, {
   "id" : "44405d3d-4162-4fb8-9e86-fc7c965d4d2d",
-  "songId" : "song_oniichan",
   "title" : "Oniichan",
   "titleCulture" : "en",
   "latinTitle" : "Oniichan",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 110.0,
-    "beatsPerBar" : 0
+    "bpm" : 110.0
   } ],
   "artist" : "MoryueCi",
   "artistsList" : [ "MoryueCi" ],
@@ -2340,14 +2103,12 @@
   "tags" : [ "anime", "characters", "confident_smile", "confrontation", "dark_urban", "dystopia", "futuristic", "gun", "long_white_hair", "mystery", "neon_lights", "nighttime", "scaffold", "school_uniform", "serious_expression", "tension", "top_hat", "vending_machine", "video_game_style" ]
 }, {
   "id" : "c5032ab4-c03c-42c3-b132-445b94165e8d",
-  "songId" : "song_overrain",
   "title" : "OverRain",
   "titleCulture" : "en",
   "latinTitle" : "OverRain",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 80.0,
-    "beatsPerBar" : 0
+    "bpm" : 80.0
   } ],
   "artist" : "SharK",
   "artistsList" : [ "Catalpa" ],
@@ -2360,14 +2121,12 @@
   "tags" : [ "SharK", "anime", "black and white outfit", "chapter1", "character", "cityscape", "contemplative mood", "dark tones", "dramatic lighting", "female", "indoor setting", "introspection", "large window", "long white hair", "luvia", "modern architecture", "moody atmosphere", "rainy weather", "solitude", "urban environment" ]
 }, {
   "id" : "fccd5960-dbdc-4127-8b0b-58c1fb521354",
-  "songId" : "song_overrain",
   "title" : "OverRain",
   "titleCulture" : "en",
   "latinTitle" : "OverRain",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 80.0,
-    "beatsPerBar" : 0
+    "bpm" : 80.0
   } ],
   "artist" : "SharK",
   "artistsList" : [ "Catalpa" ],
@@ -2380,14 +2139,12 @@
   "tags" : [ "SharK", "anime", "black and white outfit", "chapter1", "character", "cityscape", "contemplative mood", "dark tones", "dramatic lighting", "female", "indoor setting", "introspection", "large window", "long white hair", "luvia", "modern architecture", "moody atmosphere", "rainy weather", "solitude", "urban environment" ]
 }, {
   "id" : "fc40c7fc-e62a-4fa8-891e-430444191e26",
-  "songId" : "song_overrain",
   "title" : "OverRain",
   "titleCulture" : "en",
   "latinTitle" : "OverRain",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 80.0,
-    "beatsPerBar" : 0
+    "bpm" : 80.0
   } ],
   "artist" : "SharK",
   "artistsList" : [ "Catalpa" ],
@@ -2400,14 +2157,12 @@
   "tags" : [ "NintyKeven", "SharK", "anime", "black and white outfit", "chapter1", "character", "cityscape", "contemplative mood", "dark tones", "dramatic lighting", "female", "indoor setting", "introspection", "large window", "long white hair", "luvia", "modern architecture", "moody atmosphere", "rainy weather", "solitude", "urban environment" ]
 }, {
   "id" : "4fa17ebf-6a8e-47c1-8d8b-bd1344ccd559",
-  "songId" : "song_pieces_of_the_cycle",
   "title" : "サイクルの欠片",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Pieces of the Cycle",
   "bpmInfo" : [ {
     "start" : -0.3,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -2420,14 +2175,12 @@
   "tags" : [ "1st anniversary", "blue sky", "character", "clouds", "dreamy", "dress", "ethereal", "fantasy", "female", "floating", "flowers", "long hair", "luvia", "motion", "pastel colors", "petal", "ribbon", "serene", "springtime", "vibrant" ]
 }, {
   "id" : "e75e2d80-86a0-464f-8d29-8dd0bb68328b",
-  "songId" : "song_pieces_of_the_cycle",
   "title" : "サイクルの欠片",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Pieces of the Cycle",
   "bpmInfo" : [ {
     "start" : -0.3,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -2440,14 +2193,12 @@
   "tags" : [ "1st anniversary", "blue sky", "character", "clouds", "dreamy", "dress", "ethereal", "fantasy", "female", "floating", "flowers", "long hair", "luvia", "motion", "pastel colors", "petal", "ribbon", "serene", "springtime", "vibrant" ]
 }, {
   "id" : "bb5b7628-87b1-4e1c-8e07-8bacadf6f2b1",
-  "songId" : "song_pieces_of_the_cycle",
   "title" : "サイクルの欠片",
   "titleCulture" : "ja-JP",
   "latinTitle" : "Pieces of the Cycle",
   "bpmInfo" : [ {
     "start" : -0.3,
-    "bpm" : 100.0,
-    "beatsPerBar" : 0
+    "bpm" : 100.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -2460,14 +2211,12 @@
   "tags" : [ "1st anniversary", "blue sky", "character", "clouds", "dreamy", "dress", "ethereal", "fantasy", "female", "floating", "flowers", "long hair", "luvia", "motion", "pastel colors", "petal", "ribbon", "serene", "springtime", "vibrant" ]
 }, {
   "id" : "2484331f-4345-4f97-98ac-edda4be3f723",
-  "songId" : "song_psyched_fevereiro",
   "title" : "Psyched Fevereiro",
   "titleCulture" : "en",
   "latinTitle" : "Psyched Fevereiro",
   "bpmInfo" : [ {
     "start" : -0.04,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -2480,14 +2229,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "03b883cf-f28b-4e33-8f67-d3bcb1a74719",
-  "songId" : "song_psyched_fevereiro",
   "title" : "Psyched Fevereiro",
   "titleCulture" : "en",
   "latinTitle" : "Psyched Fevereiro",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -2500,14 +2247,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "9a8d5198-664a-418a-868b-b28d992c9b9e",
-  "songId" : "song_psyched_fevereiro",
   "title" : "Psyched Fevereiro",
   "titleCulture" : "en",
   "latinTitle" : "Psyched Fevereiro",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "t+pazolite",
   "artistsList" : [ "t+pazolite" ],
@@ -2520,14 +2265,12 @@
   "tags" : [ "artist name", "contrast", "dark", "dim lighting", "exit sign", "focus", "gesture", "hallway", "intense", "light", "minimal lighting", "mysterious", "panda", "pointing", "red curtain", "shadows", "surreal", "text", "title" ]
 }, {
   "id" : "242edead-e9cd-428d-9799-f8a603109fc6",
-  "songId" : "song_rainbow_flavor",
   "title" : "Rainbow Flavor!",
   "titleCulture" : "en",
   "latinTitle" : "Rainbow Flavor!",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 128.0,
-    "beatsPerBar" : 0
+    "bpm" : 128.0
   } ],
   "artist" : "SuggestedCopy7 & 亚述",
   "artistsList" : [ "SuggestedCopy7", "亚述" ],
@@ -2540,14 +2283,12 @@
   "tags" : [ "April Fool 2025" ]
 }, {
   "id" : "8d787646-a290-4f14-a831-d7d43bc9f534",
-  "songId" : "song_rainbow_flavor",
   "title" : "Rainbow Flavor!",
   "titleCulture" : "en",
   "latinTitle" : "Rainbow Flavor!",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 128.0,
-    "beatsPerBar" : 0
+    "bpm" : 128.0
   } ],
   "artist" : "SuggestedCopy7 & 亚述",
   "artistsList" : [ "SuggestedCopy7", "亚述" ],
@@ -2560,14 +2301,12 @@
   "tags" : [ ]
 }, {
   "id" : "5b104c2e-94ad-4156-ab25-d1b11be487f3",
-  "songId" : "song_rainbow_flavor",
   "title" : "Rainbow Flavor!",
   "titleCulture" : "en",
   "latinTitle" : "Rainbow Flavor!",
   "bpmInfo" : [ {
     "start" : -0.04,
-    "bpm" : 128.0,
-    "beatsPerBar" : 0
+    "bpm" : 128.0
   } ],
   "artist" : "SuggestedCopy7 & 亚述",
   "artistsList" : [ "SuggestedCopy7", "亚述" ],
@@ -2580,14 +2319,12 @@
   "tags" : [ ]
 }, {
   "id" : "ac9308f8-b896-43af-879a-b65bcfcaa874",
-  "songId" : "song_rainbow_flavor",
   "title" : "Rainbow Flavor!",
   "titleCulture" : "en",
   "latinTitle" : "Rainbow Flavor!",
   "bpmInfo" : [ {
     "start" : -0.04,
-    "bpm" : 128.0,
-    "beatsPerBar" : 0
+    "bpm" : 128.0
   } ],
   "artist" : "SuggestedCopy7 & 亚述",
   "artistsList" : [ "SuggestedCopy7", "亚述" ],
@@ -2600,14 +2337,12 @@
   "tags" : [ ]
 }, {
   "id" : "5aaafcea-684f-4310-936d-67ae35956c48",
-  "songId" : "song_rainshower",
   "title" : "驟雨の狭間",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Rainshower",
   "bpmInfo" : [ {
     "start" : 0.927138,
-    "bpm" : 174.0,
-    "beatsPerBar" : 4
+    "bpm" : 174.0
   } ],
   "artist" : "Silentroom",
   "artistsList" : [ "Silentroom" ],
@@ -2620,14 +2355,12 @@
   "tags" : [ "abstract", "artistic", "black", "blue", "chaos", "chaotic", "contrast", "dark", "design", "face", "fragmentation", "geometric", "glitch", "horror", "japanese", "light", "logo", "minimal", "modern", "monochromatic", "pattern", "splatter", "surreal", "tension", "text", "texture" ]
 }, {
   "id" : "dd163ba4-a1fa-4fc7-ba45-91561c824cc8",
-  "songId" : "song_regnaissance",
   "title" : "Regnaissance",
   "titleCulture" : "en",
   "latinTitle" : "Regnaissance",
   "bpmInfo" : [ {
     "start" : 0.003,
-    "bpm" : 174.17,
-    "beatsPerBar" : 0
+    "bpm" : 174.17
   } ],
   "artist" : "AiSS vs. Abit",
   "artistsList" : [ "AiSS" ],
@@ -2640,14 +2373,12 @@
   "tags" : [ "Abit", "anime", "bubbles", "chapter1", "character", "dress", "fairy", "fantasy", "female", "floating", "glow", "light", "luvia", "magic", "night", "orbs", "serene" ]
 }, {
   "id" : "9acd5289-bc81-49fb-afc8-7b0631e60e60",
-  "songId" : "song_regnaissance",
   "title" : "Regnaissance",
   "titleCulture" : "en",
   "latinTitle" : "Regnaissance",
   "bpmInfo" : [ {
     "start" : 0.003,
-    "bpm" : 174.17,
-    "beatsPerBar" : 0
+    "bpm" : 174.17
   } ],
   "artist" : "AiSS vs. Abit",
   "artistsList" : [ "AiSS" ],
@@ -2660,14 +2391,12 @@
   "tags" : [ "Abit", "anime", "bubbles", "chapter1", "character", "dress", "fairy", "fantasy", "female", "floating", "glow", "light", "luvia", "magic", "night", "orbs", "serene" ]
 }, {
   "id" : "80df6e22-69c3-4983-a712-adeebb47fb2b",
-  "songId" : "song_regnaissance",
   "title" : "Regnaissance",
   "titleCulture" : "en",
   "latinTitle" : "Regnaissance",
   "bpmInfo" : [ {
     "start" : -0.01,
-    "bpm" : 174.17,
-    "beatsPerBar" : 0
+    "bpm" : 174.17
   } ],
   "artist" : "AiSS vs. Abit",
   "artistsList" : [ "AiSS" ],
@@ -2680,14 +2409,12 @@
   "tags" : [ "Abit", "anime", "bubbles", "chapter1", "character", "dress", "fairy", "fantasy", "female", "floating", "glow", "light", "luvia", "magic", "night", "orbs", "serene" ]
 }, {
   "id" : "a5a9a7e4-3030-4bb3-9eef-04e58a0fbdb4",
-  "songId" : "song_regnaissance",
   "title" : "Regnaissance",
   "titleCulture" : "en",
   "latinTitle" : "Regnaissance",
   "bpmInfo" : [ {
     "start" : 0.003,
-    "bpm" : 174.17,
-    "beatsPerBar" : 0
+    "bpm" : 174.17
   } ],
   "artist" : "AiSS vs. Abit",
   "artistsList" : [ "AiSS" ],
@@ -2700,14 +2427,12 @@
   "tags" : [ "Abit", "ExerciseBook", "anime", "bubbles", "chapter1", "character", "dress", "fairy", "fantasy", "female", "floating", "glow", "light", "luvia", "magic", "night", "orbs", "serene", "超级练习册" ]
 }, {
   "id" : "b75e195e-7991-4e4a-8afc-7372b4ae95fd",
-  "songId" : "song_reminiscence_in_starlight",
   "title" : "暮予星光",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Reminiscence in Starlight",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "RyosU feat. 茶茶",
   "artistsList" : [ "茶茶", "RyosU" ],
@@ -2720,14 +2445,12 @@
   "tags" : [ "anime", "building", "calm", "character", "city", "elegance", "female", "lightsource", "melancholic", "moon", "nightime", "solitude", "umbrella lady", "weeds", "window" ]
 }, {
   "id" : "725abac1-5de5-463f-870d-a99a41cae61e",
-  "songId" : "song_reminiscence_in_starlight",
   "title" : "暮予星光",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Reminiscence in Starlight",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "RyosU feat. 茶茶",
   "artistsList" : [ "茶茶", "RyosU" ],
@@ -2740,14 +2463,12 @@
   "tags" : [ "anime", "building", "calm", "character", "city", "elegance", "female", "lightsource", "melancholic", "moon", "nightime", "solitude", "umbrella lady", "weeds", "window" ]
 }, {
   "id" : "bdf2975e-8b19-4af8-9b1c-dc6f62587e7c",
-  "songId" : "song_reminiscence_in_starlight",
   "title" : "暮予星光",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Reminiscence in Starlight",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "RyosU feat. 茶茶",
   "artistsList" : [ "茶茶", "RyosU" ],
@@ -2760,14 +2481,12 @@
   "tags" : [ "anime", "building", "calm", "character", "city", "elegance", "female", "lightsource", "melancholic", "moon", "nightime", "solitude", "umbrella lady", "weeds", "window" ]
 }, {
   "id" : "6add3ab9-52c0-4c13-abc9-506dfa89faa6",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2780,14 +2499,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "eb802d90-72c0-4b95-856a-b2951a57c0ec",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2800,14 +2517,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "d3ddf678-adb0-4158-ae10-21c2667c7ba8",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2820,14 +2535,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "d3ddf678-adb0-4157-ae10-21c2667c7ba8",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2840,14 +2553,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "e23637e8-fe16-4d9a-b3c9-9e059745ad3c",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2860,14 +2571,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "e23637e8-fe15-4d9a-b3c9-9e059745ad3c",
-  "songId" : "song_sheer_ice_torrent",
   "title" : "Sheer Ice Torrent",
   "titleCulture" : "en",
   "latinTitle" : "Sheer Ice Torrent",
   "bpmInfo" : [ {
     "start" : -0.012,
-    "bpm" : 116.0,
-    "beatsPerBar" : 0
+    "bpm" : 116.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -2880,14 +2589,12 @@
   "tags" : [ "RainWorld", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter" ]
 }, {
   "id" : "eceaaf9e-3754-4054-9c17-2d87644de96e",
-  "songId" : "song_sparkrain",
   "title" : "烁雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Sparkrain",
   "bpmInfo" : [ {
     "start" : 0.13,
-    "bpm" : 166.0,
-    "beatsPerBar" : 3
+    "bpm" : 166.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -2900,14 +2607,12 @@
   "tags" : [ "ExerciseBook", "anime", "atmospheric", "background figures", "blue", "character", "cityscape", "dark clothing", "dynamic pose", "emotional expression", "fantasy", "female", "fireworks", "long hair", "luvia", "night", "nota", "notanote", "purple", "rooftop", "soft lighting", "two characters", "urban setting", "vibrant colors", "超级练习册" ]
 }, {
   "id" : "9476c969-d02d-40ca-b64f-eb3efae43ee7",
-  "songId" : "song_sparkrain",
   "title" : "烁雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Sparkrain",
   "bpmInfo" : [ {
     "start" : 0.13,
-    "bpm" : 166.0,
-    "beatsPerBar" : 3
+    "bpm" : 166.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -2920,14 +2625,12 @@
   "tags" : [ "anime", "atmospheric", "background figures", "blue", "character", "cityscape", "dark clothing", "dynamic pose", "emotional expression", "fantasy", "female", "fireworks", "long hair", "luvia", "night", "nota", "notanote", "purple", "rooftop", "soft lighting", "two characters", "urban setting", "vibrant colors" ]
 }, {
   "id" : "ca4c79a7-709a-40c5-b0e0-c04b6deff431",
-  "songId" : "song_sparkrain",
   "title" : "烁雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Sparkrain",
   "bpmInfo" : [ {
     "start" : 0.13,
-    "bpm" : 166.0,
-    "beatsPerBar" : 0
+    "bpm" : 166.0
   } ],
   "artist" : "ILusMin",
   "artistsList" : [ "ILusMin" ],
@@ -2940,14 +2643,12 @@
   "tags" : [ "anime", "atmospheric", "background figures", "blue", "character", "cityscape", "dark clothing", "dynamic pose", "emotional expression", "fantasy", "female", "fireworks", "long hair", "luvia", "night", "nota", "notanote", "purple", "rooftop", "soft lighting", "two characters", "urban setting", "vibrant colors" ]
 }, {
   "id" : "606be389-ad01-41e3-a1ba-e7b355d16948",
-  "songId" : "song_sundown",
   "title" : "Sundown",
   "titleCulture" : "en",
   "latinTitle" : "Sundown",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 109.0,
-    "beatsPerBar" : 0
+    "bpm" : 109.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -2960,14 +2661,12 @@
   "tags" : [ "RainWorld", "adventure", "art", "calm", "clouds", "desert", "exploration", "fantasy", "horizon", "landscape", "minimalistic", "nature", "orange sky", "peaceful", "rabbit", "rocks", "sand", "serene", "slug cat", "solitude", "sunset", "warm colors", "whimsical" ]
 }, {
   "id" : "6df0b462-dded-46db-8505-3ff86fc46c26",
-  "songId" : "song_thick_rain",
   "title" : "粗线条的雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Thick Rain",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "有棵里里",
   "artistsList" : [ "有棵里里" ],
@@ -2980,14 +2679,12 @@
   "tags" : [ "angel", "anime", "birds", "blue eyes", "chapter1", "character", "cityscape", "dreamy", "ethereal", "fantasy", "female", "floating", "gentle", "light blue", "long hair", "luvia", "pastel colors", "peaceful", "serene", "sky", "soft lighting", "urban background", "wings" ]
 }, {
   "id" : "62c1cdc7-57c2-4a5f-809b-bcfb6c6a0469",
-  "songId" : "song_thick_rain",
   "title" : "粗线条的雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Thick Rain",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "有棵里里",
   "artistsList" : [ "有棵里里" ],
@@ -3000,14 +2697,12 @@
   "tags" : [ "angel", "anime", "birds", "blue eyes", "chapter1", "character", "cityscape", "dreamy", "ethereal", "fantasy", "female", "floating", "gentle", "light blue", "long hair", "luvia", "pastel colors", "peaceful", "serene", "sky", "soft lighting", "urban background", "wings" ]
 }, {
   "id" : "7687d948-dbe1-48c4-a786-fbe669ec7b0c",
-  "songId" : "song_thick_rain",
   "title" : "粗线条的雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
   "latinTitle" : "Thick Rain",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 140.0,
-    "beatsPerBar" : 0
+    "bpm" : 140.0
   } ],
   "artist" : "有棵里里",
   "artistsList" : [ "有棵里里" ],
@@ -3020,14 +2715,12 @@
   "tags" : [ "angel", "anime", "birds", "blue eyes", "chapter1", "character", "cityscape", "dreamy", "ethereal", "fantasy", "female", "floating", "gentle", "light blue", "long hair", "luvia", "pastel colors", "peaceful", "serene", "sky", "soft lighting", "urban background", "wings" ]
 }, {
   "id" : "c292f47e-d8ff-483f-bfd7-aa43937f0e2e",
-  "songId" : "song_threat_metropolis",
   "title" : "Threat - Metropolis",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Metropolis",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -3040,14 +2733,12 @@
   "tags" : [ "RainWorld", "blue eyes", "calm", "cartoon", "cat", "cityscape", "hanging rope", "light blue fur", "magical atmosphere", "modern buildings", "peaceful", "rainbow", "rooftop", "sky", "slug cat", "soft lighting", "tail", "urban", "wooden surface" ]
 }, {
   "id" : "975a9b31-3f04-4587-b77e-2282dec95188",
-  "songId" : "song_threat_metropolis",
   "title" : "Threat - Metropolis",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Metropolis",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 124.0,
-    "beatsPerBar" : 0
+    "bpm" : 124.0
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -3060,14 +2751,12 @@
   "tags" : [ "RainWorld", "blue eyes", "calm", "cartoon", "cat", "cityscape", "hanging rope", "light blue fur", "magical atmosphere", "modern buildings", "peaceful", "rainbow", "rooftop", "sky", "slug cat", "soft lighting", "tail", "urban", "wooden surface" ]
 }, {
   "id" : "abefe6c9-2b30-45ef-b5b0-8edb5fc18195",
-  "songId" : "song_threat_metropolis",
   "title" : "Threat - Metropolis",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Metropolis",
   "bpmInfo" : [ {
     "start" : 0.057,
-    "bpm" : 108.106,
-    "beatsPerBar" : 4
+    "bpm" : 108.106
   } ],
   "artist" : "Connor \"12LBS\" Skidmore",
   "artistsList" : [ "Connor \"12LBS\" Skidmore" ],
@@ -3080,14 +2769,12 @@
   "tags" : [ "RainWorld", "blue eyes", "calm", "cartoon", "cat", "cityscape", "dark buildings", "eerie atmosphere", "ghost cat", "glitch", "glowing tail", "hanging rope", "light blue fur", "magical atmosphere", "modern buildings", "mysterious", "night sky", "peaceful", "rainbow", "rooftop", "sky", "slug cat", "soft lighting", "spooky", "supernatural", "tail", "translucent", "urban", "urban rooftop", "wooden surface" ]
 }, {
   "id" : "0af38afb-fe05-403c-90b6-2876bb18616e",
-  "songId" : "song_threat_sky_islands",
   "title" : "Threat - Sky Islands",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Sky Islands",
   "bpmInfo" : [ {
     "start" : 0.047,
-    "bpm" : 120.0,
-    "beatsPerBar" : 4
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3100,14 +2787,12 @@
   "tags" : [ "ExerciseBook", "RainWorld", "atmospheric", "city", "dystopia", "futuristic", "purple hues", "ship", "smoke", "warm tones", "waterway", "超级练习册" ]
 }, {
   "id" : "13fda58e-3091-4b3d-8eb9-4ac8346ce61a",
-  "songId" : "song_threat_sky_islands",
   "title" : "Threat - Sky Islands",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Sky Islands",
   "bpmInfo" : [ {
     "start" : 0.047,
-    "bpm" : 120.0,
-    "beatsPerBar" : 0
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3120,14 +2805,12 @@
   "tags" : [ "RainWorld", "Random", "atmospheric", "city", "dystopia", "futuristic", "purple hues", "ship", "smoke", "warm tones", "waterway" ]
 }, {
   "id" : "eb7a9055-b56f-46ba-9c30-0f9380d2f5b5",
-  "songId" : "song_threat_sky_islands",
   "title" : "Threat - Sky Islands",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Sky Islands",
   "bpmInfo" : [ {
     "start" : 0.047,
-    "bpm" : 120.0,
-    "beatsPerBar" : 0
+    "bpm" : 120.0
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3140,14 +2823,12 @@
   "tags" : [ "RainWorld", "atmospheric", "city", "dystopia", "futuristic", "purple hues", "ship", "smoke", "warm tones", "waterway" ]
 }, {
   "id" : "8e72dab7-e72f-4842-a499-559659279e2c",
-  "songId" : "song_threat_superstructure",
   "title" : "Threat - Superstructure",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Superstructure",
   "bpmInfo" : [ {
     "start" : 0.057,
-    "bpm" : 108.106,
-    "beatsPerBar" : 4
+    "bpm" : 108.106
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3160,14 +2841,12 @@
   "tags" : [ "Five Pebbles", "RainWorld", "blood", "circle", "dark", "eerie", "futuristic", "glow", "horror", "machine", "pathway", "red", "slug cat", "splattered", "vein" ]
 }, {
   "id" : "7c0cdf77-fcfa-4f96-9897-24ca10582c32",
-  "songId" : "song_threat_superstructure",
   "title" : "Threat - Superstructure",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Superstructure",
   "bpmInfo" : [ {
     "start" : 0.057,
-    "bpm" : 108.106,
-    "beatsPerBar" : 4
+    "bpm" : 108.106
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3180,14 +2859,12 @@
   "tags" : [ "Five Pebbles", "RainWorld", "Random", "blood", "circle", "dark", "eerie", "futuristic", "glow", "horror", "machine", "pathway", "red", "slug cat", "splattered", "vein" ]
 }, {
   "id" : "98913dff-7257-44aa-a0f2-abcd58d11fcd",
-  "songId" : "song_threat_superstructure",
   "title" : "Threat - Superstructure",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Superstructure",
   "bpmInfo" : [ {
     "start" : 0.1,
-    "bpm" : 108.106,
-    "beatsPerBar" : 4
+    "bpm" : 108.106
   } ],
   "artist" : "James Primate",
   "artistsList" : [ "James Primate" ],
@@ -3200,14 +2877,12 @@
   "tags" : [ "ExerciseBook", "Five Pebbles", "RainWorld", "blood", "circle", "dark", "eerie", "futuristic", "glow", "horror", "machine", "pathway", "red", "slug cat", "splattered", "vein", "超级练习册" ]
 }, {
   "id" : "2103d16c-9a07-4001-be01-155ef305118e",
-  "songId" : "song_threat_waterfront_complex",
   "title" : "Threat - Waterfront Complex",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Waterfront Complex",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 122.0,
-    "beatsPerBar" : 0
+    "bpm" : 122.0
   } ],
   "artist" : "James Primate, Lydia Esrig, Connor \"12LBS\" Skidmore",
   "artistsList" : [ "James Primate", "Lydia Esrig", "Connor \"12LBS\" Skidmore" ],
@@ -3220,14 +2895,12 @@
   "tags" : [ "RainWorld", "aquatic", "bioluminescence", "creature", "dark blue", "digital art", "eerie atmosphere", "fantasy", "glowing eyes", "intricate details", "mysterious", "otherworldly", "pink and purple", "sharp teeth", "slug cat", "surreal", "tentacles", "underwater" ]
 }, {
   "id" : "c1d143f6-ad6b-46cc-b3e0-f136e4accb01",
-  "songId" : "song_threat_waterfront_complex",
   "title" : "Threat - Waterfront Complex",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Waterfront Complex",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 122.0,
-    "beatsPerBar" : 0
+    "bpm" : 122.0
   } ],
   "artist" : "James Primate, Lydia Esrig, Connor \"12LBS\" Skidmore",
   "artistsList" : [ "James Primate", "Lydia Esrig", "Connor \"12LBS\" Skidmore" ],
@@ -3240,14 +2913,12 @@
   "tags" : [ "RainWorld", "aquatic", "bioluminescence", "creature", "dark blue", "digital art", "eerie atmosphere", "fantasy", "glowing eyes", "intricate details", "mysterious", "otherworldly", "pink and purple", "sharp teeth", "slug cat", "surreal", "tentacles", "underwater" ]
 }, {
   "id" : "9c28aeec-247e-4b9d-9edc-a92d0bd06303",
-  "songId" : "song_threat_waterfront_complex",
   "title" : "Threat - Waterfront Complex",
   "titleCulture" : "en",
   "latinTitle" : "Threat - Waterfront Complex",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 122.0,
-    "beatsPerBar" : 0
+    "bpm" : 122.0
   } ],
   "artist" : "James Primate, Lydia Esrig, Connor \"12LBS\" Skidmore",
   "artistsList" : [ "James Primate", "Lydia Esrig", "Connor \"12LBS\" Skidmore" ],
@@ -3260,14 +2931,12 @@
   "tags" : [ "RainWorld", "aquatic", "bioluminescence", "creature", "dark blue", "digital art", "eerie atmosphere", "fantasy", "glowing eyes", "intricate details", "mysterious", "otherworldly", "pink and purple", "sharp teeth", "slug cat", "surreal", "tentacles", "underwater" ]
 }, {
   "id" : "00e3e0b6-fbdd-4a7d-bcab-ba6540f4225d",
-  "songId" : "song_tiger_lotus",
   "title" : "白虎蓮華",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Tiger Lotus",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "PYKAMIA",
   "artistsList" : [ "PYKAMIA" ],
@@ -3280,14 +2949,12 @@
   "tags" : [ "anime", "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
 }, {
   "id" : "cfa1c1fd-432e-4313-ae23-fbd6f731ae46",
-  "songId" : "song_tiger_lotus",
   "title" : "白虎蓮華",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Tiger Lotus",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "PYKAMIA",
   "artistsList" : [ "PYKAMIA" ],
@@ -3300,14 +2967,12 @@
   "tags" : [ "anime", "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
 }, {
   "id" : "f28a654d-a2c4-4ff2-88f0-592ba52cd4fd",
-  "songId" : "song_tiger_lotus",
   "title" : "白虎蓮華",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Tiger Lotus",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 177.0,
-    "beatsPerBar" : 0
+    "bpm" : 177.0
   } ],
   "artist" : "PYKAMIA",
   "artistsList" : [ "PYKAMIA" ],
@@ -3320,14 +2985,12 @@
   "tags" : [ "anime", "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
 }, {
   "id" : "c6629820-510f-4575-969e-dc6a9d3fe479",
-  "songId" : "song_water",
   "title" : "WATER",
   "titleCulture" : "en",
   "latinTitle" : "WATER",
   "bpmInfo" : [ {
     "start" : 0.04,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "A-39 & 沙包P",
   "artistsList" : [ "A-39", "沙包P" ],
@@ -3340,14 +3003,12 @@
   "tags" : [ "anime", "blue hair", "bubbles", "dreamy", "glowing", "light", "lying down", "pink dress", "purple", "serene", "sparkles", "underwater", "water", "woman" ]
 }, {
   "id" : "b87796c3-a64e-4cfd-a57f-a35484a951e2",
-  "songId" : "song_water",
   "title" : "WATER",
   "titleCulture" : "en",
   "latinTitle" : "WATER",
   "bpmInfo" : [ {
     "start" : 0.04,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "A-39 & 沙包P",
   "artistsList" : [ "A-39", "沙包P" ],
@@ -3360,14 +3021,12 @@
   "tags" : [ "anime", "blue hair", "bubbles", "dreamy", "glowing", "light", "lying down", "pink dress", "purple", "serene", "sparkles", "underwater", "water", "woman" ]
 }, {
   "id" : "6db4cb9b-adec-4ce5-bb0a-71d4761e88f8",
-  "songId" : "song_water",
   "title" : "WATER",
   "titleCulture" : "en",
   "latinTitle" : "WATER",
   "bpmInfo" : [ {
     "start" : 0.04,
-    "bpm" : 170.0,
-    "beatsPerBar" : 0
+    "bpm" : 170.0
   } ],
   "artist" : "A-39 & 沙包P",
   "artistsList" : [ "A-39", "沙包P" ],
@@ -3380,14 +3039,12 @@
   "tags" : [ "anime", "blue hair", "bubbles", "dreamy", "glowing", "light", "lying down", "pink dress", "purple", "serene", "sparkles", "underwater", "water", "woman" ]
 }, {
   "id" : "364be32e-f685-4efb-80b5-64281c93939d",
-  "songId" : "song_welcome_to_milthm",
   "title" : "Welcome to Milthm",
   "titleCulture" : "en",
   "latinTitle" : "Welcome to Milthm",
   "bpmInfo" : [ {
     "start" : -0.015,
-    "bpm" : 150.0,
-    "beatsPerBar" : 1
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -3400,14 +3057,12 @@
   "tags" : [ "anime", "brown coat", "character", "cityscape", "cloudy sky", "dark", "decay", "female", "hands", "joy", "light", "long hair", "luvia", "moss", "movement", "mystery", "rain", "tall buildings", "urban", "water reflection" ]
 }, {
   "id" : "eade667e-610b-419c-bc3d-503d7946d1ea",
-  "songId" : "song_welcome_to_milthm",
   "title" : "Welcome to Milthm",
   "titleCulture" : "en",
   "latinTitle" : "Welcome to Milthm",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "TsukiP",
   "artistsList" : [ "TsukiP" ],
@@ -3420,14 +3075,12 @@
   "tags" : [ "April Fool 2024", "anime", "brown coat", "character", "cityscape", "cloudy sky", "dark", "decay", "female", "hands", "joy", "light", "long hair", "luvia", "moss", "movement", "mystery", "rain", "tall buildings", "urban", "water reflection" ]
 }, {
   "id" : "6a647130-01de-4cf2-ba7a-a6065f043465",
-  "songId" : "song_white_lizard",
   "title" : "White Lizard",
   "titleCulture" : "en",
   "latinTitle" : "White Lizard",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 97.0,
-    "beatsPerBar" : 0
+    "bpm" : 97.0
   } ],
   "artist" : "Lydia Esrig",
   "artistsList" : [ "Lydia Esrig" ],
@@ -3440,14 +3093,12 @@
   "tags" : [ "RainWorld", "dark corridor", "dim lighting", "eerie", "futuristic", "mysterious", "red and green glow", "reflective floor", "rough walls", "scattered lights", "sci fi", "slug cat", "suspense", "tunnel", "underground" ]
 }, {
   "id" : "9884d239-3007-4e78-a655-297f000bcf50",
-  "songId" : "song_words",
   "title" : "Words",
   "titleCulture" : "en",
   "latinTitle" : "Words",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "X3ll3n",
   "artistsList" : [ "X3ll3n" ],
@@ -3460,14 +3111,12 @@
   "tags" : [ "anime", "blue", "cathedral", "characters", "contrast", "dark", "detailed", "fantasy", "floor", "gothic", "gray", "horns", "intricate", "light", "mood", "sitting", "stained glass", "two girls", "veil", "wedding dress", "wings" ]
 }, {
   "id" : "296e3be3-1bdc-4568-a9d2-33ce9e0da9d4",
-  "songId" : "song_words",
   "title" : "Words",
   "titleCulture" : "en",
   "latinTitle" : "Words",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "X3ll3n",
   "artistsList" : [ "X3ll3n" ],
@@ -3480,14 +3129,12 @@
   "tags" : [ "anime", "blue", "cathedral", "characters", "contrast", "dark", "detailed", "fantasy", "floor", "gothic", "gray", "horns", "intricate", "light", "mood", "sitting", "stained glass", "two girls", "veil", "wedding dress", "wings" ]
 }, {
   "id" : "35b424f8-d0de-41ab-9512-f365a154c328",
-  "songId" : "song_words",
   "title" : "Words",
   "titleCulture" : "en",
   "latinTitle" : "Words",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 150.0,
-    "beatsPerBar" : 0
+    "bpm" : 150.0
   } ],
   "artist" : "X3ll3n",
   "artistsList" : [ "X3ll3n" ],
@@ -3500,14 +3147,12 @@
   "tags" : [ "anime", "blue", "cathedral", "characters", "contrast", "dark", "detailed", "fantasy", "floor", "gothic", "gray", "horns", "intricate", "light", "mood", "sitting", "stained glass", "two girls", "veil", "wedding dress", "wings" ]
 }, {
   "id" : "887157ea-fe1a-480b-b7e9-e6a4f9e27ae4",
-  "songId" : "song_yokaze",
   "title" : "夜風",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Yokaze",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 132.0,
-    "beatsPerBar" : 0
+    "bpm" : 132.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -3520,14 +3165,12 @@
   "tags" : [ "anime", "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "umbrella", "urban background", "watercolor style" ]
 }, {
   "id" : "fe111534-c651-4896-9538-2dd100131a7d",
-  "songId" : "song_yokaze",
   "title" : "夜風",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Yokaze",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 132.0,
-    "beatsPerBar" : 0
+    "bpm" : 132.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -3540,14 +3183,12 @@
   "tags" : [ "anime", "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "umbrella", "urban background", "watercolor style" ]
 }, {
   "id" : "d83fd3e1-a609-4b73-b1f1-348ee1dca71d",
-  "songId" : "song_yokaze",
   "title" : "夜風",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
   "latinTitle" : "Yokaze",
   "bpmInfo" : [ {
     "start" : -0.02,
-    "bpm" : 132.0,
-    "beatsPerBar" : 0
+    "bpm" : 132.0
   } ],
   "artist" : "Joulez",
   "artistsList" : [ "Joulez" ],
@@ -3560,14 +3201,12 @@
   "tags" : [ "anime", "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "umbrella", "urban background", "watercolor style" ]
 }, {
   "id" : "54c60c83-9a80-458d-bf11-b04be1af1977",
-  "songId" : "song_cafe_in_6412i731v",
   "title" : "cafe in 6412I731V",
   "titleCulture" : "en",
   "latinTitle" : "cafe in 6412I731V",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 234.0,
-    "beatsPerBar" : 4
+    "bpm" : 234.0
   } ],
   "artist" : "むさぬりゆ",
   "artistsList" : [ "むさぬりゆ" ],
@@ -3580,14 +3219,12 @@
   "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy" ]
 }, {
   "id" : "faf0dc82-df37-456a-b726-283e27df9c31",
-  "songId" : "song_cafe_in_6412i731v",
   "title" : "cafe in 6412I731V",
   "titleCulture" : "en",
   "latinTitle" : "cafe in 6412I731V",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 234.0,
-    "beatsPerBar" : 4
+    "bpm" : 234.0
   } ],
   "artist" : "むさぬりゆ",
   "artistsList" : [ "むさぬりゆ" ],
@@ -3600,14 +3237,12 @@
   "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy" ]
 }, {
   "id" : "825405cb-d262-4f10-9e98-4d967e4e33f4",
-  "songId" : "song_cafe_in_6412i731v",
   "title" : "cafe in 6412I731V",
   "titleCulture" : "en",
   "latinTitle" : "cafe in 6412I731V",
   "bpmInfo" : [ {
     "start" : 0.0,
-    "bpm" : 234.0,
-    "beatsPerBar" : 4
+    "bpm" : 234.0
   } ],
   "artist" : "むさぬりゆ",
   "artistsList" : [ "むさぬりゆ" ],
@@ -3620,38 +3255,30 @@
   "tags" : [ "ExerciseBook", "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy", "超级练习册" ]
 }, {
   "id" : "b1361177-1426-47cc-b036-afd09cad775b",
-  "songId" : "song_cybernetic_blazar",
   "title" : "cybernetic blazar",
   "titleCulture" : "en",
   "latinTitle" : "cybernetic blazar",
   "bpmInfo" : [ {
     "start" : 0.009,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   }, {
     "start" : 40.543,
-    "bpm" : 220.0,
-    "beatsPerBar" : 3
+    "bpm" : 220.0
   }, {
     "start" : 47.088,
-    "bpm" : 230.0,
-    "beatsPerBar" : 3
+    "bpm" : 230.0
   }, {
     "start" : 50.218,
-    "bpm" : 210.0,
-    "beatsPerBar" : 3
+    "bpm" : 210.0
   }, {
     "start" : 51.932,
-    "bpm" : 156.0,
-    "beatsPerBar" : 4
+    "bpm" : 156.0
   }, {
     "start" : 58.085,
-    "bpm" : 150.0,
-    "beatsPerBar" : 4
+    "bpm" : 150.0
   }, {
     "start" : 61.285,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   } ],
   "artist" : "ああああ",
   "artistsList" : [ "ああああ" ],
@@ -3664,38 +3291,30 @@
   "tags" : [ "accessories", "blue hair", "celebratory", "character", "cityscape", "confetti", "dress", "dynamic pose", "elegant", "fantasy", "festive", "glowing effect", "microphone", "night", "notanote", "performance", "red carpet", "skyscrapers", "spotlight", "stage", "urban setting", "vibrant colors" ]
 }, {
   "id" : "3a908e2d-8a39-4220-a6b8-4817bd1cea4a",
-  "songId" : "song_cybernetic_blazar",
   "title" : "cybernetic blazar",
   "titleCulture" : "en",
   "latinTitle" : "cybernetic blazar",
   "bpmInfo" : [ {
     "start" : 1.625,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   }, {
     "start" : 40.543,
-    "bpm" : 220.0,
-    "beatsPerBar" : 3
+    "bpm" : 220.0
   }, {
     "start" : 47.088,
-    "bpm" : 230.0,
-    "beatsPerBar" : 3
+    "bpm" : 230.0
   }, {
     "start" : 50.218,
-    "bpm" : 210.0,
-    "beatsPerBar" : 3
+    "bpm" : 210.0
   }, {
     "start" : 51.932,
-    "bpm" : 156.0,
-    "beatsPerBar" : 4
+    "bpm" : 156.0
   }, {
     "start" : 58.085,
-    "bpm" : 150.0,
-    "beatsPerBar" : 4
+    "bpm" : 150.0
   }, {
     "start" : 61.285,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   } ],
   "artist" : "ああああ",
   "artistsList" : [ "ああああ" ],
@@ -3708,38 +3327,30 @@
   "tags" : [ "accessories", "blue hair", "celebratory", "character", "cityscape", "confetti", "dress", "dynamic pose", "elegant", "fantasy", "festive", "glowing effect", "lei", "lei motife", "microphone", "night", "notanote", "performance", "red carpet", "skyscrapers", "spotlight", "stage", "urban setting", "vibrant colors", "莫提泪" ]
 }, {
   "id" : "cea79b8c-23fd-4fbd-b2a9-6f080ef15b44",
-  "songId" : "song_cybernetic_blazar",
   "title" : "cybernetic blazar",
   "titleCulture" : "en",
   "latinTitle" : "cybernetic blazar",
   "bpmInfo" : [ {
     "start" : 1.625,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   }, {
     "start" : 40.543,
-    "bpm" : 220.0,
-    "beatsPerBar" : 3
+    "bpm" : 220.0
   }, {
     "start" : 47.088,
-    "bpm" : 230.0,
-    "beatsPerBar" : 3
+    "bpm" : 230.0
   }, {
     "start" : 50.218,
-    "bpm" : 210.0,
-    "beatsPerBar" : 3
+    "bpm" : 210.0
   }, {
     "start" : 51.932,
-    "bpm" : 156.0,
-    "beatsPerBar" : 4
+    "bpm" : 156.0
   }, {
     "start" : 58.085,
-    "bpm" : 150.0,
-    "beatsPerBar" : 4
+    "bpm" : 150.0
   }, {
     "start" : 61.285,
-    "bpm" : 148.0,
-    "beatsPerBar" : 4
+    "bpm" : 148.0
   } ],
   "artist" : "ああああ",
   "artistsList" : [ "ああああ" ],
@@ -3752,14 +3363,12 @@
   "tags" : [ "accessories", "blue hair", "celebratory", "character", "cityscape", "confetti", "dress", "dynamic pose", "elegant", "fantasy", "festive", "glowing effect", "microphone", "night", "notanote", "performance", "red carpet", "skyscrapers", "spotlight", "stage", "urban setting", "vibrant colors" ]
 }, {
   "id" : "da07cabf-7c7b-4083-a41a-879be13c8c94",
-  "songId" : "song_eclat",
   "title" : "イコラト",
   "titleCulture" : "ja-JP",
   "latinTitle" : "eclat",
   "bpmInfo" : [ {
     "start" : 0.02,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "people_tsuki_p",
   "artistsList" : [ ],
@@ -3772,14 +3381,12 @@
   "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat" ]
 }, {
   "id" : "2cfa74ee-7e6d-4ebf-8f0a-e7cfb3a7e94c",
-  "songId" : "song_eclat",
   "title" : "イコラト",
   "titleCulture" : "ja-JP",
   "latinTitle" : "eclat",
   "bpmInfo" : [ {
     "start" : 0.02,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "people_tsuki_p",
   "artistsList" : [ ],
@@ -3792,14 +3399,12 @@
   "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat" ]
 }, {
   "id" : "520361a1-805b-4332-b53e-1da11a94de1b",
-  "songId" : "song_eclat",
   "title" : "イコラト",
   "titleCulture" : "ja-JP",
   "latinTitle" : "eclat",
   "bpmInfo" : [ {
     "start" : 0.02,
-    "bpm" : 180.0,
-    "beatsPerBar" : 0
+    "bpm" : 180.0
   } ],
   "artist" : "people_tsuki_p",
   "artistsList" : [ ],
@@ -3812,22 +3417,18 @@
   "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat" ]
 }, {
   "id" : "e0162d0e-0727-49c2-80fa-f611621650ea",
-  "songId" : "song_slic_hertz",
-  "title" : "slic.hertz",
+  "title" : "slic.hertz #GdbG",
   "titleCulture" : "en",
-  "latinTitle" : "slic.hertz",
+  "latinTitle" : "slic.hertz #GdbG",
   "bpmInfo" : [ {
     "start" : -1.137931,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   }, {
     "start" : 154.44827,
-    "bpm" : 116.0,
-    "beatsPerBar" : 4
+    "bpm" : 116.0
   }, {
     "start" : 156.51724,
-    "bpm" : 145.0,
-    "beatsPerBar" : 4
+    "bpm" : 145.0
   } ],
   "artist" : "Sobrem",
   "artistsList" : [ "Sobrem" ],
@@ -3840,18 +3441,15 @@
   "tags" : [ "adventurous mood", "anime", "bold lines", "bounty hunter", "character interaction", "clouds", "colorful background", "cowboy hat", "desert landscape", "detailed costumes", "determined expressions", "digital art", "dramatic lighting", "dynamic composition", "fantasy elements", "modern anime aesthetic", "rich color palette", "rock formations", "sky", "stylized illustration", "teamwork", "vibrant art style", "western" ]
 }, {
   "id" : "6eac0020-b9a1-480e-9539-633c0e502f9c",
-  "songId" : "song_slic_hertz",
-  "title" : "slic.hertz",
+  "title" : "slic.hertz #GdbG",
   "titleCulture" : "en",
-  "latinTitle" : "slic.hertz",
+  "latinTitle" : "slic.hertz #GdbG",
   "bpmInfo" : [ {
     "start" : -1.137931,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   }, {
     "start" : 154.44827,
-    "bpm" : 116.0,
-    "beatsPerBar" : 4
+    "bpm" : 116.0
   } ],
   "artist" : "Sobrem",
   "artistsList" : [ "Sobrem" ],
@@ -3864,18 +3462,15 @@
   "tags" : [ "adventurous mood", "anime", "bold lines", "bounty hunter", "character interaction", "clouds", "colorful background", "cowboy hat", "desert landscape", "detailed costumes", "determined expressions", "digital art", "dramatic lighting", "dynamic composition", "fantasy elements", "modern anime aesthetic", "rich color palette", "rock formations", "sky", "stylized illustration", "teamwork", "vibrant art style", "western" ]
 }, {
   "id" : "26a76638-ec89-4809-bd40-5d6afe403c40",
-  "songId" : "song_slic_hertz",
-  "title" : "slic.hertz",
+  "title" : "slic.hertz #GdbG",
   "titleCulture" : "en",
-  "latinTitle" : "slic.hertz",
+  "latinTitle" : "slic.hertz #GdbG",
   "bpmInfo" : [ {
     "start" : -1.137931,
-    "bpm" : 145.0,
-    "beatsPerBar" : 0
+    "bpm" : 145.0
   }, {
     "start" : 154.44827,
-    "bpm" : 116.0,
-    "beatsPerBar" : 4
+    "bpm" : 116.0
   } ],
   "artist" : "Sobrem",
   "artistsList" : [ "Sobrem" ],
