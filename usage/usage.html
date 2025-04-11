@@ -22,7 +22,6 @@
     .katex-display { display: block !important; text-align: center; margin: 10px 0; font-size: 1em; }
     .toc { display: none; }
     pre, code { user-select: text; }
-
 .language-selector {
   position: absolute;
   top: 10px;
@@ -44,6 +43,20 @@
     .language-menu li:hover {
       background: #444;
     }
+
+    /* 隐藏aaa标签的弹窗并允许点击 */
+    div[aaa] {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    }
+
+    /* 显示时的样式 */
+    div[aaa].visible {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
@@ -51,12 +64,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-L5K3QVRHFZ');
 </script>
 </head>
 <body>
-
   <!-- 语言选择按钮 -->
   <div class="language-selector" onclick="toggleLanguageMenu()">🌐</div>
   <ul class="language-menu" id="language-menu">
@@ -69,11 +80,9 @@
     <li onclick="changeLanguage('es')">Español</li>
     <li onclick="changeLanguage('vi')">Tiếng Việt</li>
   </ul>
-
   <div class="container">
     <article id="content" class="markdown-body"></article>
   </div>
-
   <script>
     marked.use(markedKatex());
     marked.setOptions({
@@ -82,7 +91,6 @@
         return hljs.highlightAuto(code).value;
       }
     });
-
     function getUserLanguage() {
       const langMap = {
         "zh": "zh",
@@ -95,14 +103,11 @@
         "es": "es",
         "vi": "vi"
       };
-
       // 读取URL参数中的 `lang`（如果存在）
       const urlParams = new URLSearchParams(window.location.search);
       let lang = urlParams.get('lang') || navigator.language.toLowerCase();
-      
       return langMap[lang] || "en"; // 默认英文
     }
-
     function loadMarkdown() {
       const lang = getUserLanguage();
       fetch(`./usage_${lang}.md`)
@@ -110,34 +115,37 @@
         .then(md => {
           // 在这里进行链接的自动转义处理
 md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(match, p1, p2) {
-
-if (p2.startsWith('#')) {
-    return `[${p1}](${p2})`;
-}
-
 // 只处理包含 'javascript:' 的链接
 if (p2.startsWith('javascript:')) {
     const [protocol, rest] = p2.split(':', 2);  // 分离协议和剩余部分
     const encodedRest = encodeURIComponent(rest);  // 对剩余部分进行编码
     return `[${p1}](${protocol}:${encodedRest})`;  // 保持 'javascript:' 协议不变
 }
-
   const encodedUrl = p2;
   return `[${p1}](${encodedUrl})`;
 });
-
-
-
           content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
           content.querySelectorAll('h2,h3,h4').forEach(h=>{
             h.id = h.innerText.toLowerCase().replace(/\s+/g,'-');
           });
           hljs.highlightAll();
           resizeKatex();
+          // 自动运行所有包含 javascript:info 和 javascript:chart 的链接
+          runJavascriptLinks();
         })
         .catch(() => {
           content.innerHTML = `<p style="color: red;">未找到 <b>usage_${lang}.md</b> 文件</p>`;
         });
+    }
+    
+    function runJavascriptLinks() {
+      const links = document.querySelectorAll('a[href^="javascript:info"], a[href^="javascript:chart"]');
+      links.forEach(link => {
+        link.click(); // 自动触发点击事件
+        link.addEventListener('click', function(event) {
+          event.preventDefault(); // 阻止默认的链接跳转
+        });
+      });
     }
 
     function resizeKatex() {
@@ -156,16 +164,72 @@ if (p2.startsWith('javascript:')) {
       const menu = document.getElementById("language-menu");
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
-
     function changeLanguage(lang) {
       // 刷新页面并加上 `?lang=xx` 参数
       window.location.search = `?lang=${lang}`;
     }
-
     // 初始化
     window.addEventListener('resize', resizeKatex);
     window.addEventListener('load', loadMarkdown);
-  </script>
+function checkMouseOnLink(event) {
+  const target = event.target;
 
+  // 确保鼠标停留在一个链接上
+  if (target.tagName === 'A') {
+    const url = decodeURIComponent(target.href); // 解码链接URL
+
+    // 使用正则表达式查找 info() 或 chart() 中的值
+    const regex = /(info|chart)\(([^)]*)\)/;
+    const match = url.match(regex);
+
+    if (match) {
+      const funcName = match[1];
+      const params = match[2].split(',').map(param => param.trim().replace(/['"]/g, ''));  // 获取函数参数并去除引号
+
+      // 检查是否有两个参数
+      if (params.length === 2) {
+        // 如果有两个参数，将aaa设置为显示状态，并显示为 "a,b"
+        const [param1, param2] = params;
+        const aaaElement = document.querySelector(`div[aaa="${param1},${param2}"]`);
+        if (aaaElement) {
+          aaaElement.classList.add('visible');
+          console.log(`Found and displayed aaa="${param1},${param2}" for link: ${target.href}`);
+        }
+      } 
+      // 检查是否只有一个参数
+      else if (params.length === 1 && params[0]) {
+        // 如果有一个参数，将aaa设置为显示状态，并显示为 "a"
+        const [param] = params;
+        const aaaElement = document.querySelector(`div[aaa="${param}"]`);
+        if (aaaElement) {
+          aaaElement.classList.add('visible');
+          console.log(`Found and displayed aaa="${param}" for link: ${target.href}`);
+        }
+      }
+
+      // 鼠标移开时将 aaa 元素隐藏
+      target.addEventListener('mouseleave', () => {
+        if (params.length === 2) {
+          const aaaElement = document.querySelector(`div[aaa="${params.join(',')}"]`);
+          if (aaaElement) {
+            aaaElement.classList.remove('visible');
+            console.log(`Hidden aaa="${params.join(',')}" after mouse leave.`);
+          }
+        } else if (params.length === 1 && params[0]) {
+          const aaaElement = document.querySelector(`div[aaa="${params[0]}"]`);
+          if (aaaElement) {
+            aaaElement.classList.remove('visible');
+            console.log(`Hidden aaa="${params[0]}" after mouse leave.`);
+          }
+        }
+      });
+    }
+  }
+}
+
+// 在文档上监听鼠标移动事件
+document.addEventListener('mousemove', checkMouseOnLink);
+
+  </script>
 </body>
 </html>

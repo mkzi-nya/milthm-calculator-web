@@ -37,6 +37,7 @@ function info(title) {
     modal.style.color = '#fff';
     modal.style.fontSize = '11px';
     modal.style.lineHeight = '0.8';
+    modal.setAttribute("aaa", title);
 
     // 只查找 a 标签中的元素
     const links = document.querySelectorAll('a'); // 获取所有 a 标签
@@ -91,15 +92,6 @@ beatsPerBar: ${item.bpmInfo[0].beatsPerBar}`;
 
     document.body.appendChild(modal);
 
-    // 立即添加点击事件监听器
-    const closeModal = (event) => {
-      if (!modal.contains(event.target) && event.target !== targetElement) {
-        modal.remove();
-        document.removeEventListener('click', closeModal);
-      }
-    };
-
-    document.addEventListener('click', closeModal);
   });
 }
 
@@ -110,12 +102,11 @@ function chart(title, difficulty) {
       alert("没有找到包含标题 \"" + title + "\" 的歌曲");
       return;
     }
-    console.log(data);
 
     // 查找包含对应标题的表格行，避免多次 DOM 查询
     const rows = document.querySelectorAll('table tr');
     let targetRow = null;
-    
+
     // 查找对应标题的表格行，仅一次遍历
     for (const row of rows) {
       const cells = row.querySelectorAll('td');
@@ -174,6 +165,8 @@ function chart(title, difficulty) {
         modal.style.fontSize = '11px';
         modal.style.lineHeight = '1.4'; // 增加行高
         modal.style.width = '250px'; // 固定宽度
+        modal.setAttribute("aaa", [title, difficulty]);
+
 
         // 设置弹窗内容
         const idElement = document.createElement('p');
@@ -181,6 +174,7 @@ function chart(title, difficulty) {
 
         const charterElement = document.createElement('p');
         charterElement.innerText = `charter: ${charter}`;
+        
         const charterslistElement = document.createElement('p');
         charterslistElement.innerText = `chartersList: ${chartersList.join(', ')}`;
 
@@ -211,18 +205,6 @@ function chart(title, difficulty) {
 
         // 将弹窗添加到页面
         document.body.appendChild(modal);
-
-        // 监听点击事件来关闭弹窗（仅绑定一次）
-        const closeModal = () => {
-          modal.remove();
-          document.removeEventListener('click', closeModal);
-        };
-
-        document.addEventListener('click', function handler(event) {
-          if (!modal.contains(event.target)) {
-            closeModal();
-          }
-        });
       }
     }
   });
