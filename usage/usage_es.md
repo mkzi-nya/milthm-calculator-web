@@ -304,7 +304,7 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 | 6 | Broken Conviction | CL | 11.9 |
 | 7 | Meltovt Necrosys | CB | 11.9 |
 | 8 | Moonflutter | CL | 11.7 |
-| 9 | Fly To Meteor (Milthm Edit) feat.兔柒 | CL | 11.7 |
+| 9 | Fly To Meteor （Milthm Edit） feat.兔柒 | CL | 11.7 |
 | 10 | HYPER MEMORIES | CB | 11.7 |
 | 11 | KASANE | CB | 11.6 |
 | 12 | Broken Conviction | CB | 11.5 |
@@ -402,12 +402,12 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 | [Dogbite](javascript:info("Dogbite"))                     | [3.0](javascript:chart("Dogbite", "Drizzle"))  | [7.6](javascript:chart("Dogbite", "Sprinkle"))  | [10.3](javascript:chart("Dogbite", "Cloudburst")) | [SP](javascript:chart("Dogbite", "Special")) |
 | [Hikari](javascript:info("Hikari"))                      | [3.0](javascript:chart("Hikari", "Drizzle"))  | [8.4](javascript:chart("Hikari", "Sprinkle"))  | [10.7](javascript:chart("Hikari", "Cloudburst")) | -    |
 | [Moonflutter](javascript:info("Moonflutter"))                 | [3.0](javascript:chart("Moonflutter", "Drizzle"))  | [7.9](javascript:chart("Moonflutter", "Sprinkle"))  | [11.4](javascript:chart("Moonflutter", "Cloudburst")) | [11.7](javascript:chart("Moonflutter", "Clear")) |
-| [Fly To Meteor (Milthm Edit)](javascript:info("Fly To Meteor (Milthm Edit)")              | [3.0](javascript:chart("Fly To Meteor (Milthm Edit)", "Drizzle")  | [6.5](javascript:chart("Fly To Meteor (Milthm Edit)", "Sprinkle")  | [10.5](javascript:chart("Fly To Meteor (Milthm Edit)", "Cloudburst") | - |
+| [Fly To Meteor （Milthm Edit）](javascript:info("Fly To Meteor （Milthm Edit）")              | [3.0](javascript:chart("Fly To Meteor （Milthm Edit）", "Drizzle")  | [6.5](javascript:chart("Fly To Meteor （Milthm Edit）", "Sprinkle")  | [10.5](javascript:chart("Fly To Meteor （Milthm Edit）", "Cloudburst") | - |
 | [Fly To Meteor feat.兔柒 (Milthm Edit)](javascript:info("Fly To Meteor feat.兔柒 (Milthm Edit)"))              | - | - | - | [11.7](javascript:chart("Fly To Meteor feat.兔柒 (Milthm Edit)", "Clear")) |
 | [樱落繁花](javascript:info("樱落繁花"))                    | [3.0](javascript:chart("樱落繁花", "Drizzle"))  | [8.8](javascript:chart("樱落繁花", "Sprinkle"))  | [10.9](javascript:chart("樱落繁花", "Cloudburst")) | -    |
 | [Agnostic](javascript:info("Agnostic"))                    | [3.0](javascript:chart("Agnostic", "Drizzle"))  | [7.4](javascript:chart("Agnostic", "Sprinkle"))  | [10.0](javascript:chart("Agnostic", "Cloudburst")) | -    |
 | [Psyched Fevereiro](javascript:info("Psyched Fevereiro"))           | [3.5](javascript:chart("Psyched Fevereiro", "Drizzle"))  | [7.3](javascript:chart("Psyched Fevereiro", "Sprinkle"))  | [10.0](javascript:chart("Psyched Fevereiro", "Cloudburst")) | -    |
-| [Future Unbound (Game Edit)](javascript:info("Future Unbound (Game Edit)"))  | [3.0](javascript:chart("Future Unbound (Game Edit)","Drizzle"))  | [7.5](javascript:chart("Future Unbound (Game Edit)","Sprinkle"))  | [10.5](javascript:chart("Future Unbound (Game Edit)","Cloudburst")) | -    |
+| [Future Unbound （Game Edit）](javascript:info("Future Unbound （Game Edit）"))  | [3.0](javascript:chart("Future Unbound （Game Edit）","Drizzle"))  | [7.5](javascript:chart("Future Unbound （Game Edit）","Sprinkle"))  | [10.5](javascript:chart("Future Unbound （Game Edit）","Cloudburst")) | -    |
 | [Algebra](javascript:info("Algebra"))                     | [2.0](javascript:chart("Algebra", "Drizzle"))  | [8.1](javascript:chart("Algebra", "Sprinkle"))  | [11.4](javascript:chart("Algebra", "Cloudburst")) | [SP](javascript:chart("Algebra", "Special")) |
 | [Words](javascript:info("Words"))                       | [2.0](javascript:chart("Words", "Drizzle"))  | [6.5](javascript:chart("Words", "Sprinkle"))  | [9.3](javascript:chart("Words", "Cloudburst"))  | -    |
 | [仮想明日](javascript:info("仮想明日"))                    | [3.5](javascript:chart("仮想明日", "Drizzle"))  | [6.6](javascript:chart("仮想明日", "Sprinkle"))  | [10.0](javascript:chart("仮想明日", "Cloudburst"))  | -    |
