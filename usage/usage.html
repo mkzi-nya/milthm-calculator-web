@@ -48,7 +48,7 @@
     div[aaa] {
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      transition: opacity 0.2s ease-in-out, visibility 0.3s ease-in-out;
 
     }
 
@@ -130,8 +130,8 @@ if (p2.startsWith('javascript:')) {
           });
           hljs.highlightAll();
           resizeKatex();
-          // 自动运行所有包含 javascript:info 和 javascript:chart 的链接
           runJavascriptLinks();
+          loaddiv()
         })
         .catch(() => {
           content.innerHTML = `<p style="color: red;">未找到 <b>usage_${lang}.md</b> 文件</p>`;
@@ -141,7 +141,6 @@ if (p2.startsWith('javascript:')) {
     function runJavascriptLinks() {
       const links = document.querySelectorAll('a[href^="javascript:info"], a[href^="javascript:chart"]');
       links.forEach(link => {
-        link.click(); // 自动触发点击事件
         link.addEventListener('click', function(event) {
           event.preventDefault(); // 阻止默认的链接跳转
         });

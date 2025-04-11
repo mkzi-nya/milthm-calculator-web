@@ -304,13 +304,13 @@ function reality(score, constant) {
 | 6 | Broken Conviction | CL | 11.9 |
 | 7 | Meltovt Necrosys | CB | 11.9 |
 | 8 | Moonflutter | CL | 11.7 |
-| 9 | Fly To Meteor feat.兔柒 | CL | 11.7 |
+| 9 | Fly To Meteor (Milthm Edit) feat.兔柒 | CL | 11.7 |
 | 10 | HYPER MEMORIES | CB | 11.7 |
 | 11 | KASANE | CB | 11.6 |
 | 12 | Broken Conviction | CB | 11.5 |
 | 13 | Threat - Metropolis | CB | 11.5 |
 | 14 | Contrasty Angeles | CB | 11.5 |
-| 15 | slic.hertz | CB | 11.4 |
+| 15 | slic.hertz #GdbG | CB | 11.4 |
 | 16 | Moonflutter | CB | 11.4 |
 | 17 | Algebra | CB | 11.4 |
 | 18 | Fragment of Memories | CB | 11.3 |
@@ -392,7 +392,8 @@ function reality(score, constant) {
 | [Dogbite](javascript:info("Dogbite"))                     | [3.0](javascript:chart("Dogbite", "Drizzle"))  | [7.6](javascript:chart("Dogbite", "Sprinkle"))  | [10.3](javascript:chart("Dogbite", "Cloudburst")) | [SP](javascript:chart("Dogbite", "Special")) |
 | [Hikari](javascript:info("Hikari"))                      | [3.0](javascript:chart("Hikari", "Drizzle"))  | [8.4](javascript:chart("Hikari", "Sprinkle"))  | [10.7](javascript:chart("Hikari", "Cloudburst")) | -    |
 | [Moonflutter](javascript:info("Moonflutter"))                 | [3.0](javascript:chart("Moonflutter", "Drizzle"))  | [7.9](javascript:chart("Moonflutter", "Sprinkle"))  | [11.4](javascript:chart("Moonflutter", "Cloudburst")) | [11.7](javascript:chart("Moonflutter", "Clear")) |
-| [Fly To Meteor](javascript:info("Fly To Meteor"))              | [3.0](javascript:chart("Fly To Meteor", "Drizzle"))  | [6.5](javascript:chart("Fly To Meteor", "Sprinkle"))  | [10.5](javascript:chart("Fly To Meteor", "Cloudburst")) | [11.7](javascript:chart("Fly To Meteor", "Clear")) |
+| [Fly To Meteor (Milthm Edit)](javascript:info("Fly To Meteor (Milthm Edit)"))              | [3.0](javascript:chart("Fly To Meteor (Milthm Edit)", "Drizzle"))  | [6.5](javascript:chart("Fly To Meteor (Milthm Edit)", "Sprinkle"))  | [10.5](javascript:chart("Fly To Meteor (Milthm Edit)", "Cloudburst")) | - |
+| [Fly To Meteor feat.兔柒 (Milthm Edit)](javascript:info("Fly To Meteor feat.兔柒 (Milthm Edit)"))              | - | - | - | [11.7](javascript:chart("Fly To Meteor feat.兔柒 (Milthm Edit)", "Clear")) |
 | [樱落繁花](javascript:info("樱落繁花"))                    | [3.0](javascript:chart("樱落繁花", "Drizzle"))  | [8.8](javascript:chart("樱落繁花", "Sprinkle"))  | [10.9](javascript:chart("樱落繁花", "Cloudburst")) | -    |
 | [Agnostic](javascript:info("Agnostic"))                    | [3.0](javascript:chart("Agnostic", "Drizzle"))  | [7.4](javascript:chart("Agnostic", "Sprinkle"))  | [10.0](javascript:chart("Agnostic", "Cloudburst")) | -    |
 | [Psyched Fevereiro](javascript:info("Psyched Fevereiro"))           | [3.5](javascript:chart("Psyched Fevereiro", "Drizzle"))  | [7.3](javascript:chart("Psyched Fevereiro", "Sprinkle"))  | [10.0](javascript:chart("Psyched Fevereiro", "Cloudburst")) | -    |
@@ -403,7 +404,7 @@ function reality(score, constant) {
 | [白虎蓮華](javascript:info("白虎蓮華"))                    | [3.0](javascript:chart("白虎蓮華", "Drizzle"))  | [6.5](javascript:chart("白虎蓮華", "Sprinkle"))  | [9.6](javascript:chart("白虎蓮華", "Cloudburst"))  | -    |
 | [サイクルの欠片](javascript:info("サイクルの欠片"))              | [1.0](javascript:chart("サイクルの欠片", "Drizzle"))  | [7.8](javascript:chart("サイクルの欠片", "Sprinkle"))  | [8.6](javascript:chart("サイクルの欠片", "Cloudburst"))  | -    |
 | [参宿四\~Betelgeuse\~](javascript:info("参宿四~Betelgeuse~"))          | [2.0](javascript:chart("参宿四~Betelgeuse~", "Drizzle"))  | [6.4](javascript:chart("参宿四~Betelgeuse~", "Sprinkle"))  | [11.2](javascript:chart("参宿四~Betelgeuse~", "Cloudburst"))  | -    |
-| [slic.hertz](javascript:info("slic.hertz"))            | [3.0](javascript:chart("slic.hertz", "Drizzle"))  | [7.6](javascript:chart("slic.hertz", "Sprinkle"))  | [11.4](javascript:chart("slic.hertz", "Cloudburst"))  | -    |
+| [slic.hertz #GdbG](javascript:info("slic.hertz #GdbG"))            | [3.0](javascript:chart("slic.hertz #GdbG", "Drizzle"))  | [7.6](javascript:chart("slic.hertz #GdbG", "Sprinkle"))  | [11.4](javascript:chart("slic.hertz #GdbG", "Cloudburst"))  | -    |
 | [Rainbow Flavor!](javascript:info("Rainbow Flavor!"))             | [2.0](javascript:chart("Rainbow Flavor!", "Drizzle"))  | [7.5](javascript:chart("Rainbow Flavor!", "Sprinkle"))  | [9.8](javascript:chart("Rainbow Flavor!", "Cloudburst")) | [SP](javascript:chart("Rainbow Flavor!", "Special")) |
 | [IN](javascript:info("IN"))                           | [1.0](javascript:chart("IN", "Drizzle"))  | [7.9](javascript:chart("IN", "Sprinkle"))  | [11.2](javascript:chart("IN", "Cloudburst")) | -    |
 | [驟雨の狭間](javascript:info("驟雨の狭間"))                  | -    | -    | [Ø](javascript:chart("驟雨の狭間", "Cloudburst"))    | - |
