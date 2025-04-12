@@ -330,6 +330,7 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 | [夜風](javascript:info("夜風"))               | [3.0](javascript:chart("夜風","Drizzle"))  | [7.3](javascript:chart("夜風", "Sprinkle"))  | [10.1](javascript:chart("夜風", "Cloudburst")) | -    |
 | [花月](javascript:info("花月"))               | [2.0](javascript:chart("花月", "Drizzle"))  | [8.2](javascript:chart("花月", "Sprinkle"))  | [9.3](javascript:chart("花月", "Cloudburst"))  | -    |
 | [暮予星光](javascript:info("暮予星光"))           | [2.0](javascript:chart("暮予星光", "Drizzle"))  | [7.5](javascript:chart("暮予星光", "Sprinkle"))  | [9.1](javascript:chart("暮予星光", "Cloudburst")) | -    |
+| [Fantasia Sonata Sky Syndrome](javascript:info("Fantasia Sonata Sky Syndrome"))           | [2.5](javascript:chart("Fantasia Sonata Sky Syndrome", "Drizzle"))  | [7.0](javascript:chart("Fantasia Sonata Sky Syndrome", "Sprinkle"))  | [10.5](javascript:chart("Fantasia Sonata Sky Syndrome", "Cloudburst")) | -    |
 
 ---
 
@@ -431,6 +432,7 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 | [cafe in 6412I731V](javascript:info("cafe in 6412I731V"))                    | [2.0](javascript:chart("cafe in 6412I731V", "Drizzle"))  | [7.0](javascript:chart("cafe in 6412I731V", "Sprinkle"))  | [11.3](javascript:chart("cafe in 6412I731V", "Cloudburst"))  | -    |
 | [KASANE](javascript:info("KASANE")) | [3.0](javascript:chart("KASANE", "Drizzle"))  | [7.8](javascript:chart("KASANE", "Sprinkle"))  | [11.6](javascript:chart("KASANE", "Cloudburst"))  | -    |
 | [KAEDE](javascript:info("KAEDE")) | -  | -  | -  | [SP](javascript:chart("KAEDE", "Special")) |
+| [Fantasia Sonata Stars](javascript:info("Fantasia Sonata Stars"))           | [2.0](javascript:chart("Fantasia Sonata Stars", "Drizzle"))  | [6.8](javascript:chart("Fantasia Sonata Stars", "Sprinkle"))  | [10.4](javascript:chart("Fantasia Sonata Stars", "Cloudburst")) | -    |
 
 ---
 

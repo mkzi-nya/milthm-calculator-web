@@ -198,6 +198,12 @@ const constants = {
 "5c0778d6-b2db-444f-a911-7892ffdf3ba5": { constant: 11.6, category: "CB", name: "KASANE", yct: 223, ad: 0, ae: 1, af: 1, ag: 0 },
 "3b11fea9-a2e3-40f7-bbe2-196cfcf25a1c": { constant: 7.8, category: "SK", name: "KASANE", yct: 145, ad: 0, ae: 1, af: 1, ag: 0 },
 "76aebcf6-d55d-4490-b48a-1fc3162a974a": { constant: 3.0, category: "DZ", name: "KASANE", yct: 53, ad: 0, ae: 1, af: 1, ag: 0 },
+  "bab866eb-1919-4133-9ea5-0d780e17aa48": { constant: 10.4, category: "CB", name: "Fantasia Sonata Stars", ad: 0, ae: 1, af: 1, ag: 0 },
+  "fa7c3e3f-29c3-4a27-a656-7696cbcd975e": { constant: 6.8, category: "SK", name: "Fantasia Sonata Stars", ad: 0, ae: 1, af: 1, ag: 0 },
+  "c4670dbb-6bad-4ae5-baef-4f2400b3ba41": { constant: 2.0, category: "DZ", name: "Fantasia Sonata Stars", ad: 0, ae: 1, af: 1, ag: 0 },
+  "4e844cd0-d532-486a-bf46-3fcf77dc3914": { constant: 10.5, category: "CB", name: "Fantasia Sonata Sky Syndrome", ad: 0, ae: 1, af: 1, ag: 0 },
+  "9a53b7e0-fc48-4203-ace2-872a12fe7ec4": { constant: 7.0, category: "SK", name: "Fantasia Sonata Sky Syndrome", ad: 0, ae: 1, af: 1, ag: 0 },
+  "dd3934f9-5a39-4086-b859-03c164db27ef": { constant: 2.5, category: "DZ", name: "Fantasia Sonata Sky Syndrome", ad: 0, ae: 1, af: 1, ag: 0 },
   //特殊谱面
   //剧情谱面，显示定数为3
   "eb802d90-72c0-4b95-856a-b2951a57c0ec": { constant: -1, category: "CB*", name: "Sheer Ice Torrent", ad: 0, ae: 1, af: 1, ag: 0 },
