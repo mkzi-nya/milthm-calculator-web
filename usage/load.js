@@ -145,9 +145,7 @@ function info(title,item) {
 illustrator: ${item.illustrator.join(', ')}`;
 
     const bpmInfoElement = document.createElement('p');
-    bpmInfoElement.innerText = `BPM: ${item.bpmInfo[0].bpm}
-    
-beatsPerBar: ${item.bpmInfo[0].beatsPerBar}`;
+    bpmInfoElement.innerText = `BPM: ${item.bpmInfo[0].bpm}`;
 
     modal.appendChild(titleElement);
 
