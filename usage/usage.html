@@ -214,7 +214,6 @@ function checkMouseOnLink(event) {
           aaaElement.style.top = `${topPosition}px`;
           aaaElement.style.left = `${leftPosition}px`;
 
-          console.log(`Found and displayed aaa="${param1},${param2}" for link: ${target.href}`);
         }
       } 
       // 检查是否只有一个参数
@@ -243,7 +242,6 @@ function checkMouseOnLink(event) {
           aaaElement.style.top = `${topPosition}px`;
           aaaElement.style.left = `${leftPosition}px`;
 
-          console.log(`Found and displayed aaa="${param}" for link: ${target.href}`);
         }
       }
 
@@ -253,13 +251,11 @@ function checkMouseOnLink(event) {
           const aaaElement = document.querySelector(`div[aaa="${params.join(',')}"]`);
           if (aaaElement) {
             aaaElement.classList.remove('visible');
-            console.log(`Hidden aaa="${params.join(',')}" after mouse leave.`);
           }
         } else if (params.length === 1 && params[0]) {
           const aaaElement = document.querySelector(`div[aaa="${params[0]}"]`);
           if (aaaElement) {
             aaaElement.classList.remove('visible');
-            console.log(`Hidden aaa="${params[0]}" after mouse leave.`);
           }
         }
       });

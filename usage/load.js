@@ -29,7 +29,7 @@ function chart(data) {
     }
 
     if (!targetRow) {
-      alert(`未找到对应的歌曲行 ${title}`);
+      //alert(`未找到对应的歌曲行 ${title}`);
       return;
     }
 
