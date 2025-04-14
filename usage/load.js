@@ -92,21 +92,6 @@ function chart(data) {
         modal.appendChild(charterslistElement);
         modal.appendChild(tagsElement);
 
-        // 获取该列的位置以显示弹窗
-        const cellRect = cells[targetColumnIndex].getBoundingClientRect();
-        const modalTop = cellRect.top + window.scrollY + cellRect.height + 5; // 在列的下方显示
-        let modalLeft = cellRect.left + window.scrollX;
-
-        // 如果弹窗超出屏幕右边缘，调整位置
-        const modalWidth = 250; // 弹窗的宽度
-        const windowWidth = window.innerWidth;
-
-        if (modalLeft + modalWidth > windowWidth) {
-          modalLeft = windowWidth - modalWidth - 10; // 将弹窗移动到屏幕的右侧
-        }
-
-        modal.style.top = `${modalTop}px`;
-        modal.style.left = `${modalLeft}px`;
 
         // 将弹窗添加到页面
         document.body.appendChild(modal);
@@ -149,12 +134,6 @@ function info(title,item) {
     // 获取找到的元素的位置
     const linkRect = targetElement.getBoundingClientRect();
 
-    // 计算弹窗的位置
-    const modalTop = linkRect.bottom + window.scrollY + 5;
-    const modalLeft = linkRect.left + window.scrollX;
-
-    modal.style.top = `${modalTop}px`;
-    modal.style.left = `${modalLeft}px`;
 
     // 格式化显示数据
     const titleElement = document.createElement('h2');
