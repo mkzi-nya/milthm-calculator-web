@@ -115,11 +115,11 @@
         .then(md => {
           // 在这里进行链接的自动转义处理
 md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(match, p1, p2) {
-// 只处理包含 'javascript:' 的链接
-if (p2.startsWith('javascript:')) {
+// 只处理包含 'info:' 的链接
+if (p2.startsWith('info:')) {
     const [protocol, rest] = p2.split(':', 2);  // 分离协议和剩余部分
     const encodedRest = encodeURIComponent(rest);  // 对剩余部分进行编码
-    return `[${p1}](${protocol}:${encodedRest})`;  // 保持 'javascript:' 协议不变
+    return `[${p1}](${protocol}:${encodedRest})`;  // 保持 'info:' 协议不变
 }
   const encodedUrl = p2;
   return `[${p1}](${encodedUrl})`;
@@ -139,7 +139,7 @@ if (p2.startsWith('javascript:')) {
     }
     
     function runJavascriptLinks() {
-      const links = document.querySelectorAll('a[href^="javascript:info"], a[href^="javascript:chart"]');
+      const links = document.querySelectorAll('a[href^="info:info"], a[href^="info:info"]');
       links.forEach(link => {
         link.addEventListener('click', function(event) {
           event.preventDefault(); // 阻止默认的链接跳转
@@ -177,8 +177,7 @@ function checkMouseOnLink(event) {
   if (target.tagName === 'A') {
     const url = decodeURIComponent(target.href); // 解码链接URL
 
-    // 使用正则表达式查找 info() 或 chart() 中的值
-    const regex = /(info|chart)\(([^)]*)\)/;
+    const regex = /(info)\(([^)]*)\)/;
     const match = url.match(regex);
 
     if (match) {
