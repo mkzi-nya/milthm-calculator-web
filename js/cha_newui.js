@@ -1232,7 +1232,7 @@ function preloadImages(ctx, canvas, actualCardCount, norlt) {
   ];
   
   const imagePromises = items.map(item => {
-    const encodedName = encodeURIComponent(item.name.replace(/#/g, ''));
+    const encodedName = encodeURIComponent(item.name.replace(/[#?]/g, ''));
     const imgPath = `./jpgs/${encodedName}.jpg`;
     const rankImgPath = `./jpgs/${item.bestLevel}.png`;
     const songImgPromise = loadImage(imgPath).catch(() => loadImage('./jpgs/NYA.jpg'));
