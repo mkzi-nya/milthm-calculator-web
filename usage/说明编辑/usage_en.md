@@ -14,6 +14,7 @@
   - [Result Ratings](#result-ratings)
   - [Completion Status](#completion-status)
   - [Constant Table](#constant-table)
+  - [Chater info](#Charter-info)
 - [Contact Us](#contact-us)
 - [Other Content](#other-content)
   - [Milthm Wiki](#milthm-wiki)
@@ -192,6 +193,12 @@ The current theoretical Reality is `12.695` (displayed as 12.69).
 The top 20 songs with the highest constants in the current version are as follows:
 
 {{章节en1}}
+
+---
+
+## Charter info
+
+{{charter}}
 
 ---
 

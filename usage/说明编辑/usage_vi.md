@@ -14,6 +14,7 @@
   - [Xếp Hạng Kết Quả](#xếp-hạng-kết-quả)
   - [Trạng Thái Hoàn Thành](#trạng-thái-hoàn-thành)
   - [Bảng Hằng Số](#bảng-hằng-số)
+  - [Chater info](#Charter-info)
 - [Liên Hệ](#liên-hệ)
 - [Nội Dung Khác](#nội-dung-khác)
   - [Milthm Wiki](#milthm-wiki)
@@ -192,6 +193,12 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 20 bài hát có hằng số cao nhất trong phiên bản hiện tại như sau:
 
 {{章节en1}}
+
+---
+
+## Charter info
+
+{{charter}}
 
 ---
 

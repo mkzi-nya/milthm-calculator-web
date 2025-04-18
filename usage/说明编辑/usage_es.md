@@ -14,6 +14,7 @@
   - [Calificaciones de Resultados](#calificaciones-de-resultados)
   - [Estado de Finalización](#estado-de-finalización)
   - [Tabla de Constantes](#tabla-de-constantes)
+  - [Chater info](#Charter-info)
 - [Contáctanos](#contáctanos)
 - [Otro Contenido](#otro-contenido)
   - [Milthm Wiki](#milthm-wiki)
@@ -192,6 +193,12 @@ La Reality teórica actual es `12.695` (mostrada como 12.69).
 Las 20 canciones con las constantes más altas en la versión actual son las siguientes:
 
 {{章节en1}}
+
+---
+
+## Charter info
+
+{{charter}}
 
 ---
 
