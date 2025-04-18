@@ -239,7 +239,7 @@ function findScore(constant, target) {
     console.log(target);
     // 根据目标值选择搜索区间
     if (target <= constant-1.5) return 700000;
-    if (target > 1 + constant) return "无法推分"; 
+    if (target > 1 + constant) return "Unable to deduce points"; 
     if (target == (1 + constant)) return 1005000;
     console.log(1);
 
