@@ -13,7 +13,7 @@
     "siteAuthor": "网站作者：",
     "viewAuthor": "查看",
     "lastUpdate": "上次更新：04.18 15:40 (UTC+8)",
-    "updateCombined": "更新内容：\n增加查分图设置及愚人节定数\nTips:\n帮助信息中不仅限于查分器说明\n有较全的常见问题解答与各种公式及定数表\n查分图内能计算推分需要的分数了",
+    "updateCombined": "更新内容：\n增加查分图设置及愚人节定数\n查分图内增加推分所需分数\nTips:\n帮助信息中不仅限于查分器说明\n有较全的常见问题解答与各种公式及定数表",
     "inputDataPlaceholder": "粘贴数据在此处...",
     "qqBotOption": "QQ Bot选项 (不可用)",
     "parse": "解析",
