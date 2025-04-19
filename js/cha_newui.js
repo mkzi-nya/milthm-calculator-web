@@ -1,4 +1,4 @@
-console.log("Updated at 2025.04.1")
+console.log("Updated at 2025.04.19")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
  ███▒▒███                               \n\
@@ -1018,27 +1018,44 @@ async function processDBFile(arrayBuffer, SQL) {
 
 function handleFile(content, fileName) {
   const inputDataElem = document.getElementById('inputData');
-  
-    if (fileName.endsWith('.json')) {
+
+  if (fileName.endsWith('.json')) {
     const extracted = extractJSON(content);
     if (extracted) {
       inputDataElem.value = extracted;
-            processData();
-        } else {
-            alert("提取 JSON 数据失败！\nFailed to extract JSON data!");
-        }
-    } else if (fileName.endsWith('.xml')) {
-        processXMLFile(content);
-    } else if (fileName === 'prefs') {
-        processPrefsFile(content);
-    } else if (fileName.endsWith('.reg')) {
-        processRegFile(content);
-    } else if (fileName.endsWith('.txt')) {
+      processData();
+    } else {
+      alert("提取 JSON 数据失败！\nFailed to extract JSON data!");
+    }
+  } else if (fileName.endsWith('.xml')) {
+    processXMLFile(content);
+  } else if (fileName === 'prefs') {
+    processPrefsFile(content);
+  } else if (fileName.endsWith('.reg')) {
+    processRegFile(content);
+  } else if (fileName.endsWith('.txt')) {
     inputDataElem.value = content;
     processData();
-    } else {
-        alert("不支持的文件类型！\nUnsupported file type!");
-    }
+  } else if (fileName.endsWith('.png')) {
+    parsePNGFile(content);
+  } else {
+    alert("不支持的文件类型！\nUnsupported file type!");
+  }
+}
+
+function parsePNGFile(content) {
+  // 使用正则表达式查找userdata:部分
+  const userdataMatch = content.match(/userdata:([\s\S]+)/);
+
+  if (userdataMatch && userdataMatch[1]) {
+    // 提取userdata后的文本内容
+    const userdataText = userdataMatch[1].trim();
+    // 将提取的文本放入输入框
+    document.getElementById('inputData').value = userdataText;
+    processData();
+  } else {
+    alert("未找到 userdata 数据！\nCould not find userdata data!");
+  }
 }
 
 function processRegFile(regContent) {
@@ -1237,7 +1254,9 @@ function downloadImage() {
       ctx.font = '50px Arial';
       ctx.fillText('Milthm-calculator', 100, 130);
       ctx.font = '30px Arial';
-      ctx.fillText('http://k9.lv/c/', 100, 180);      
+      ctx.fillText('http://k9.lv/c/', 100, 180);
+      ctx.font = '20px Arial';
+      ctx.fillText('updata at 24.4.19 7:00', 100, 210);
       preloadImages(ctx, canvas, actualCardCount, window.norlt);
     });
 }
@@ -1325,14 +1344,47 @@ function drawCards(ctx, canvas, items, images, actualCardCount) {
 }
 
 function exportImage(canvas) {
+  const inputData = document.getElementById('inputData').value;
+
+  // 1. 生成PNG图像的Base64编码数据
+  const imgData = canvas.toDataURL('image/png');
+
+  // 2. 去掉Base64数据的前缀 "data:image/png;base64,"
+  const base64Data = imgData.replace(/^data:image\/png;base64,/, '');
+
+  // 3. 将输入数据转换为字节数组
+  const textData = 'userdata:' + inputData; // 将输入数据格式化为字符串
+  const textDataBytes = new TextEncoder().encode(textData); // 编码为字节数组
+
+  // 4. 解码Base64 PNG数据并创建ArrayBuffer
+  const binaryData = atob(base64Data); // 解码Base64
+  const pngBuffer = new ArrayBuffer(binaryData.length + textDataBytes.length);
+  const uint8Array = new Uint8Array(pngBuffer);
+
+  // 5. 将原始PNG图像数据放入新的ArrayBuffer中
+  for (let i = 0; i < binaryData.length; i++) {
+    uint8Array[i] = binaryData.charCodeAt(i);
+  }
+
+  // 6. 将文本数据附加到PNG图像的后面
+  for (let i = 0; i < textDataBytes.length; i++) {
+    uint8Array[binaryData.length + i] = textDataBytes[i];
+  }
+
+  // 7. 创建一个Blob对象来存储PNG图像和附加数据
+  const blob = new Blob([uint8Array], { type: 'image/png' });
+
+  // 8. 创建下载链接并触发下载
   const link = document.createElement('a');
-  link.href = canvas.toDataURL('image/png');
   const now = new Date();
   const timestamp = now.toISOString().replace(/[:\-T]/g, '_').split('.')[0];
   link.download = `output_${timestamp}.png`;
+  link.href = URL.createObjectURL(blob);
   link.click();
+
   document.getElementById('picgen').style.display = 'none';
 }
+
 
 function loadImage(src) {
   return new Promise((resolve, reject) => {
