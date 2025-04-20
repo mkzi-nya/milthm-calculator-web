@@ -199,7 +199,9 @@ Reality는 게임 점수와 곡의 상수를 기반으로 계산됩니다:
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---

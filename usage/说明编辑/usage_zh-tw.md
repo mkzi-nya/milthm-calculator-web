@@ -198,7 +198,11 @@ Reality 的計算基於遊玩分數和譜面定數：
 
 ## 譜師統計
 
+<div style="font-size:10px;">
+
 {{charter}}
+
+</div>
 
 ---
 

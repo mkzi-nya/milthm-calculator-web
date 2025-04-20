@@ -199,7 +199,9 @@ Reality はプレイスコアと譜面定数に基づいて計算されます:
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---

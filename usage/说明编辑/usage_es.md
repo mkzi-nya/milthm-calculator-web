@@ -199,7 +199,9 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---

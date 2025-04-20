@@ -199,7 +199,9 @@ The top 20 songs with the highest constants in the current version are as follow
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---

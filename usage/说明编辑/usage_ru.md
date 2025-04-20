@@ -199,7 +199,9 @@ Reality рассчитывается на основе игрового резу
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---

@@ -199,7 +199,9 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 ## Charter info
 
 <div style="font-size:10px;">
+
 {{charter}}
+
 </div>
 
 ---
