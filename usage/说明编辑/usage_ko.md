@@ -14,7 +14,7 @@
   - [결과 등급](#결과-등급)
   - [완료 상태](#완료-상태)
   - [상수 표](#상수-표)
-  - [Chater info](#Charter-info)
+  - [Chater info](#charter-info)
 - [문의하기](#문의하기)
 - [기타 내용](#기타-내용)
   - [Milthm Wiki](#milthm-wiki)
@@ -198,7 +198,9 @@ Reality는 게임 점수와 곡의 상수를 기반으로 계산됩니다:
 
 ## Charter info
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 

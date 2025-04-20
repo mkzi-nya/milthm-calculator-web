@@ -14,7 +14,7 @@
   - [Xếp Hạng Kết Quả](#xếp-hạng-kết-quả)
   - [Trạng Thái Hoàn Thành](#trạng-thái-hoàn-thành)
   - [Bảng Hằng Số](#bảng-hằng-số)
-  - [Chater info](#Charter-info)
+  - [Chater info](#charter-info)
 - [Liên Hệ](#liên-hệ)
 - [Nội Dung Khác](#nội-dung-khác)
   - [Milthm Wiki](#milthm-wiki)
@@ -198,7 +198,9 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 ## Charter info
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 

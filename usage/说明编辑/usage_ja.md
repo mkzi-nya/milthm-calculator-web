@@ -14,7 +14,7 @@
   - [評価結果](#評価結果)
   - [完了状態](#完了状態)
   - [定数表](#定数表)
-  - [Chater info](#Charter-info)
+  - [Chater info](#charter-info)
 - [お問い合わせ](#お問い合わせ)
 - [その他の内容](#その他の内容)
   - [Milthm Wiki](#milthm-wiki)
@@ -198,7 +198,9 @@ Reality はプレイスコアと譜面定数に基づいて計算されます:
 
 ## Charter info
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 

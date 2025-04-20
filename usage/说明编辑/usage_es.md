@@ -14,7 +14,7 @@
   - [Calificaciones de Resultados](#calificaciones-de-resultados)
   - [Estado de Finalización](#estado-de-finalización)
   - [Tabla de Constantes](#tabla-de-constantes)
-  - [Chater info](#Charter-info)
+  - [Chater info](#charter-info)
 - [Contáctanos](#contáctanos)
 - [Otro Contenido](#otro-contenido)
   - [Milthm Wiki](#milthm-wiki)
@@ -198,7 +198,9 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 
 ## Charter info
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 

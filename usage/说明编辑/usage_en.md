@@ -14,7 +14,7 @@
   - [Result Ratings](#result-ratings)
   - [Completion Status](#completion-status)
   - [Constant Table](#constant-table)
-  - [Chater info](#Charter-info)
+  - [Chater info](#charter-info)
 - [Contact Us](#contact-us)
 - [Other Content](#other-content)
   - [Milthm Wiki](#milthm-wiki)
@@ -198,7 +198,9 @@ The top 20 songs with the highest constants in the current version are as follow
 
 ## Charter info
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 

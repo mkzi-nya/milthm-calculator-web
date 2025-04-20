@@ -17,7 +17,7 @@ for item in data:
     
     for charter in charters_list:
         # 为每个谱师添加 [title_difficulty] 链接，info中的title和difficulty用冒号分隔
-        markdown_link = f"[{title}_{difficulty}](info:info(\"{title}\",\"{difficulty}\"))"
+        markdown_link = f"[{title}](info:info(\"{title}\",\"{difficulty}\"))"
         charters_data[charter].append(markdown_link)
 
 # 对谱师进行排序，中文按拼音首字母排序，日文按假名排序，其他字符按字母排序
@@ -33,13 +33,37 @@ def get_sort_key(name):
 sorted_charters = sorted(charters_data.keys(), key=get_sort_key)
 
 # 创建MD格式的表格
-md_table = "| Charter | Charts |\n"
-md_table += "| ------- | ------------------- |\n"
+md_table = "| Charter | DZ | SK | CB | CL | SP |\n"
+md_table += "|-|-|-|-|-|-|\n"
+
+difficulty_map = {
+    "Drizzle": "DZ",
+    "Sprinkle": "SK",
+    "Cloudburst": "CB",
+    "Clear": "CL",
+    "Special": "SP"
+}
 
 for charter in sorted_charters:
-    # 将每个谱师的所有曲目与难度组合在一起
-    links = " , ".join(charters_data[charter])
-    md_table += f"| {charter} | {links} |\n"
+    # 初始化每个难度的列表
+    difficulty_links = {key: [] for key in difficulty_map.values()}
+    
+    # 遍历谱师的所有曲目链接，根据 difficulty 分类
+    for item in data:
+        title = item['title']
+        difficulty = item['difficulty']
+        if charter in item['chartersList']:
+            link = f"[{title}](info:info(\"{title}\",\"{difficulty}\"))"
+            column = difficulty_map.get(difficulty)
+            if column:
+                difficulty_links[column].append(link)
+    
+    # 拼接每个难度列的内容
+    row = f"| {charter} |"
+    for col in ["DZ", "SK", "CB", "CL", "SP"]:
+        links = " , ".join(difficulty_links[col])
+        row += f" {links} |"
+    md_table += row + "\n"
 
 # 输出结果到文件
 with open('./out.txt', 'w', encoding='utf-8') as out_file:

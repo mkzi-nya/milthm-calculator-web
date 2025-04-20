@@ -258,7 +258,9 @@ Reality 的计算基于游玩分数和谱面定数：
 
 ## 谱师统计
 
+<div style="font-size:10px;">
 {{charter}}
+</div>
 
 ---
 
