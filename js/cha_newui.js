@@ -237,7 +237,7 @@ function reality(score,c) {
 function findScore(constant, target) {
     if (target <= constant-1.5) return 700000;
     if (target > 1 + constant) return "Unable to deduce points"; 
-    if (target == (1 + constant)) return 1005000;找
+    if (target == (1 + constant)) return 1005000;
     if (target > 0.3 + constant) {
         return Math.ceil(10000 * (99.5 + Math.log((1.4 / (target + 0.4 - constant)) - 1) / -3.65));
     } else if (target > -0.5 + constant) {
