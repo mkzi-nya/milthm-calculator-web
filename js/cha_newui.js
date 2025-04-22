@@ -235,9 +235,11 @@ function reality(score,c) {
 }
 
 function findScore(constant, target) {
+    // 根据目标值选择搜索区间
     if (target <= constant-1.5) return 700000;
     if (target > 1 + constant) return "Unable to deduce points"; 
     if (target == (1 + constant)) return 1005000;
+    // 根据目标值确定在哪个分段进行查找
     if (target > 0.3 + constant) {
         return Math.ceil(10000 * (99.5 + Math.log((1.4 / (target + 0.4 - constant)) - 1) / -3.65));
     } else if (target > -0.5 + constant) {
@@ -1331,18 +1333,6 @@ function drawCards(ctx, canvas, items, images, actualCardCount) {
     ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
     }
     ctx.font = `${10 * scale}px Arial`;
-});
-}
-@@ -1334,7 +1334,7 @@ function drawCards(ctx, canvas, items, images, actualCardCount) {
-ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
-}
-ctx.font = `${10 * scale}px Arial`;
-});
-}
-@@ -1334,7 +1334,7 @@ function drawCards(ctx, canvas, items, images, actualCardCount) {
-ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality}   ${accText}`, x + 160 * scale, y + 75 * scale);
-}
-ctx.font = `${10 * scale}px Arial`;
     ctx.fillText(`>>${findScore(item.constant, Math.ceil(window.average * 100-0.5) + 0.5 !== window.average*100 ? ((Math.ceil(window.average * 100-0.5) + 0.5 - window.average * 100) / 5 + item.singleRealityRaw) : 114514)}`, x + 163 * scale, y + 66 * scale);
     ctx.drawImage(images[i][0], x + 10 * scale, y + 10 * scale, imgWidth, imgHeight);
     if (images[i][1]) {
@@ -1403,5 +1393,4 @@ function loadImage(src) {
     img.src = src;
   });
 }
-
 
