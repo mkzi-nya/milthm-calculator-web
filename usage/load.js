@@ -1,5 +1,5 @@
 function loaddiv() {
-  return fetch('./packed-document.json')  // 获取 JSON 文件
+  return fetch('./packed_document.json')  // 获取 JSON 文件
     .then(response => response.json())  // 解析为 JSON 格式
     .then(data => {
       // 遍历每一个元素，将其传递给 chart(data)
@@ -13,52 +13,8 @@ function loaddiv() {
 }
 
 function chart(data) {
-    const title = data.title,difficulty=data.difficulty;
-
-    // 查找包含对应标题的表格行，避免多次 DOM 查询
-    const rows = document.querySelectorAll('table tr');
-    let targetRow = null;
-    
-    // 查找对应标题的表格行，仅一次遍历
-    for (const row of rows) {
-      const cells = row.querySelectorAll('td');
-      if (cells.length > 0 && cells[0].textContent.trim() === title) {
-        targetRow = row;
-        break; // 找到后立即停止遍历
-      }
-    }
-
-    if (!targetRow) {
-      //alert(`未找到对应的歌曲行 ${title}`);
-      return;
-    }
-
-    // 获取该行所有列
-    const cells = targetRow.querySelectorAll('td');
-    let targetColumnIndex = -1;
-
-    // 根据传入的难度确定列位置
-    switch (difficulty) {
-      case "Drizzle":
-        targetColumnIndex = 1; // 第二列
-        break;
-      case "Sprinkle":
-        targetColumnIndex = 2; // 第三列
-        break;
-      case "Cloudburst":
-        targetColumnIndex = 3; // 第四列
-        break;
-      case "Clear":
-      case "Special":
-        targetColumnIndex = 4; // 第五列
-        break;
-      default:
-        return;
-    }
-
-    
-        const { id, charter, chartersList, tags } = data;
-
+        const { id, charter, chartersList, tags,title,difficulty } = data;
+        titles = title.replace(/[()]/g, '');
         // 创建弹窗并显示
         const modal = document.createElement('div');
         modal.style.position = 'absolute';
@@ -72,7 +28,11 @@ function chart(data) {
         modal.style.fontSize = '11px';
         modal.style.lineHeight = '1.4'; // 增加行高
         modal.style.width = '250px'; // 固定宽度
-        modal.setAttribute("aaa", [title, difficulty]);
+        // 替换英文括号()为中文括号（）
+title1 = title.replace(/\(/g, '（').replace(/\)/g, '）');
+
+modal.setAttribute("aaa", [titles, difficulty]);
+
 
         // 设置弹窗内容
         const idElement = document.createElement('p');
@@ -99,7 +59,7 @@ function chart(data) {
 }
 
 function info(title,item) {
-
+title = title.replace(/[()]/g, '');
     // 创建弹窗并设置样式
     const modal = document.createElement('div');
     modal.style.position = 'absolute';
@@ -114,25 +74,6 @@ function info(title,item) {
     modal.style.fontSize = '11px';
     modal.style.lineHeight = '0.8';
     modal.setAttribute("aaa", title);
-
-    // 只查找 a 标签中的元素
-    const links = document.querySelectorAll('a'); // 获取所有 a 标签
-    let targetElement = null;
-
-    // 查找包含传入 title 的 a 标签元素
-    links.forEach(link => {
-      if (link.textContent && link.textContent.includes(title)) {
-        targetElement = link;  // 找到匹配的 a 标签
-      }
-    });
-
-    if (!targetElement) {
-      alert('未找到包含此标题的元素');
-      return;
-    }
-
-    // 获取找到的元素的位置
-    const linkRect = targetElement.getBoundingClientRect();
 
 
     // 格式化显示数据
