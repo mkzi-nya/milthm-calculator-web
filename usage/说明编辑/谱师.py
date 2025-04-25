@@ -3,7 +3,7 @@ from collections import defaultdict
 from pypinyin import lazy_pinyin
 
 # 读取JSON文件
-with open('./packed-document.json', 'r', encoding='utf-8') as f:
+with open('./packed_document.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 # 创建字典用于存储谱师与其曲目及难度
@@ -33,7 +33,7 @@ def get_sort_key(name):
 sorted_charters = sorted(charters_data.keys(), key=get_sort_key)
 
 # 创建MD格式的表格
-md_table = "| Charter | DZ | SK | CB | CL | SP |\n"
+md_table = "| Charter | Drizzle | Sprinkle | Cloudburst | Clear | Special |\n"
 md_table += "|-|-|-|-|-|-|\n"
 
 difficulty_map = {
@@ -53,7 +53,8 @@ for charter in sorted_charters:
         title = item['title']
         difficulty = item['difficulty']
         if charter in item['chartersList']:
-            link = f"[{title}](info:info(\"{title}\",\"{difficulty}\"))"
+            titles = title.replace('(', '').replace(')', '')
+            link = f"[{title}](info:info(\"{titles}\",\"{difficulty}\"))"
             column = difficulty_map.get(difficulty)
             if column:
                 difficulty_links[column].append(link)

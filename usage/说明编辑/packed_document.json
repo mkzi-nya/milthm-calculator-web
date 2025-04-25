@@ -674,6 +674,60 @@
   "chartersList" : [ "Kiyotsuki" ],
   "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
 }, {
+  "id" : "df7a7116-1299-4557-8be4-36603a8da40e",
+  "title" : "Curse of 14",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Curse of 14",
+  "bpmInfo" : [ {
+    "start" : -0.02,
+    "bpm" : 170.0
+  } ],
+  "artist" : "R -TOP",
+  "artistsList" : [ "R -TOP" ],
+  "illustrator" : [ "RAISE-C雲" ],
+  "illustratorsList" : [ "RAISE-C雲" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Curse of Papa&Akko",
+  "chartersList" : [ "爬爬", "Akko" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "5f5490a8-f2e2-4ab6-9800-1db6f3eed344",
+  "title" : "Curse of 14",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Curse of 14",
+  "bpmInfo" : [ {
+    "start" : -0.02,
+    "bpm" : 170.0
+  } ],
+  "artist" : "R -TOP",
+  "artistsList" : [ "R -TOP" ],
+  "illustrator" : [ "RAISE-C雲" ],
+  "illustratorsList" : [ "RAISE-C雲" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Curse of stars",
+  "chartersList" : [ "Curse of stars" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "7b603362-5888-41d1-953b-0e4a7e461b79",
+  "title" : "Curse of 14",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Curse of 14",
+  "bpmInfo" : [ {
+    "start" : -0.02,
+    "bpm" : 170.0
+  } ],
+  "artist" : "R -TOP",
+  "artistsList" : [ "R -TOP" ],
+  "illustrator" : [ "RAISE-C雲" ],
+  "illustratorsList" : [ "RAISE-C雲" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "electrode_core" ]
+}, {
   "id" : "5aac139b-ab96-486d-a081-6bfebe382932",
   "title" : "Dogbite",
   "titleCulture" : "en",
@@ -1091,7 +1145,7 @@
   "id" : "ead657f6-f0f2-4a21-acfd-4322892a0562",
   "title" : "Fly To Meteor feat.兔柒 (Milthm Edit)",
   "titleCulture" : "en",
-  "latinTitle" : "Fly To Meteor feat.兔柒 (Milthm Edit)",
+  "latinTitle" : "Fly To Meteor feat.TuQi (Milthm Edit)",
   "bpmInfo" : [ {
     "start" : 0.03,
     "bpm" : 180.0
@@ -1267,6 +1321,60 @@
   "charter" : "Eric_Lian",
   "chartersList" : [ "Eric_Lian" ],
   "tags" : [ "ExerciseBook", "candle", "chair", "chapter1", "contemplation", "cozy_setting", "dark_curtain", "enchanting", "fantasy", "female_character", "flowers", "gold_accent", "goth", "indoor", "intimacy", "intricate_decorations", "kniting_tools", "lily", "long_hair", "luxury", "magical", "mystery", "purple_flower", "red_dress", "room", "serenity", "spinning_wheel", "susan", "table", "超级练习册" ]
+}, {
+  "id" : "97573233-f735-4432-ad7c-745367c11ffc",
+  "title" : "はんてん",
+  "titleCulture" : "14000000",
+  "latinTitle" : "Hanten",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 96.0
+  } ],
+  "artist" : "ME_DD",
+  "artistsList" : [ "ME_DD" ],
+  "illustrator" : [ "VictorReznov、HX." ],
+  "illustratorsList" : [ "VictorReznov、HX." ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "cdb92390-bb3e-4ec7-bfbd-764c57345058",
+  "title" : "はんてん",
+  "titleCulture" : "14000000",
+  "latinTitle" : "Hanten",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 96.0
+  } ],
+  "artist" : "ME_DD",
+  "artistsList" : [ "ME_DD" ],
+  "illustrator" : [ "VictorReznov、HX." ],
+  "illustratorsList" : [ "VictorReznov、HX." ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "papa but left for 8 months",
+  "chartersList" : [ "爬爬" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "738d7d56-9716-4cf1-8bb4-a54e31c6df61",
+  "title" : "はんてん",
+  "titleCulture" : "14000000",
+  "latinTitle" : "Hanten",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 96.0
+  } ],
+  "artist" : "ME_DD",
+  "artistsList" : [ "ME_DD" ],
+  "illustrator" : [ "VictorReznov、HX." ],
+  "illustratorsList" : [ "VictorReznov、HX." ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "electrode_core" ]
 }, {
   "id" : "1ab3b5cf-b6af-48ec-99e8-2d3a4e9edc72",
   "title" : "Hikari",
@@ -2999,7 +3107,7 @@
   "difficulty" : "Drizzle",
   "difficultyValue" : 0.0,
   "charter" : "Ursulina AS DRIZZLE",
-  "chartersList" : [ "Magazet" ],
+  "chartersList" : [ "Ursulina" ],
   "tags" : [ "Rain World", "RainWorld", "aquatic", "bioluminescence", "creature", "dark blue", "digital art", "eerie atmosphere", "fantasy", "glowing eyes", "intricate details", "mysterious", "otherworldly", "pink and purple", "sharp teeth", "slug cat", "surreal", "tentacles", "underwater" ]
 }, {
   "id" : "c1d143f6-ad6b-46cc-b3e0-f136e4accb01",
@@ -3017,7 +3125,7 @@
   "difficulty" : "Cloudburst",
   "difficultyValue" : 0.0,
   "charter" : "Ursulina As SPRINKLE",
-  "chartersList" : [ "Magazet" ],
+  "chartersList" : [ "Ursulina" ],
   "tags" : [ "Rain World", "RainWorld", "aquatic", "bioluminescence", "creature", "dark blue", "digital art", "eerie atmosphere", "fantasy", "glowing eyes", "intricate details", "mysterious", "otherworldly", "pink and purple", "sharp teeth", "slug cat", "surreal", "tentacles", "underwater" ]
 }, {
   "id" : "9c28aeec-247e-4b9d-9edc-a92d0bd06303",
@@ -3091,6 +3199,60 @@
   "charter" : "十返清月",
   "chartersList" : [ "十返清月" ],
   "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
+}, {
+  "id" : "5d4a26e7-8810-4a97-87b8-26dd3876463f",
+  "title" : "Virtual S0da",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Virtual S0da",
+  "bpmInfo" : [ {
+    "start" : -0.5,
+    "bpm" : 150.0
+  } ],
+  "artist" : "Nerovix",
+  "artistsList" : [ "Nerovix" ],
+  "illustrator" : [ "Shiotya. vs. ExpLorer." ],
+  "illustratorsList" : [ "ExpLorer.", "Shiotya." ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "e9ae00a5-355c-45ff-b099-91cd5455193c",
+  "title" : "Virtual S0da",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Virtual S0da",
+  "bpmInfo" : [ {
+    "start" : -0.5,
+    "bpm" : 150.0
+  } ],
+  "artist" : "Nerovix",
+  "artistsList" : [ "Nerovix" ],
+  "illustrator" : [ "Shiotya. vs. ExpLorer." ],
+  "illustratorsList" : [ "ExpLorer.", "Shiotya." ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "\uD83D\uDC0DUrsulina\uD83D\uDCA7",
+  "chartersList" : [ "Ursulina" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "e9789bd9-bc33-412c-a1c9-d00ded16b324",
+  "title" : "Virtual S0da",
+  "titleCulture" : "00000000",
+  "latinTitle" : "Virtual S0da",
+  "bpmInfo" : [ {
+    "start" : -0.5,
+    "bpm" : 150.0
+  } ],
+  "artist" : "Nerovix",
+  "artistsList" : [ "Nerovix" ],
+  "illustrator" : [ "Shiotya. vs. ExpLorer." ],
+  "illustratorsList" : [ "ExpLorer.", "Shiotya." ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "electrode_core" ]
 }, {
   "id" : "c6629820-510f-4575-969e-dc6a9d3fe479",
   "title" : "WATER",
@@ -3307,6 +3469,60 @@
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
   "tags" : [ "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "urban background", "watercolor style" ]
+}, {
+  "id" : "433e8313-04b8-4abc-aaf0-d4d102bb7f24",
+  "title" : "apOapSis(Edit)",
+  "titleCulture" : "00000000",
+  "latinTitle" : "apOapSis(Edit)",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 180.0
+  } ],
+  "artist" : "Euphem1a.",
+  "artistsList" : [ "Euphem1a." ],
+  "illustrator" : [ "Kista＆7enuous_忒涅尔斯" ],
+  "illustratorsList" : [ "Kista", "7enuous_忒涅尔斯" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Ariayaka",
+  "chartersList" : [ "Ariayaka" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "bf05f32a-9a94-4915-b91c-877a0e7c99a4",
+  "title" : "apOapSis(Edit)",
+  "titleCulture" : "00000000",
+  "latinTitle" : "apOapSis(Edit)",
+  "bpmInfo" : [ {
+    "start" : -0.007,
+    "bpm" : 180.0
+  } ],
+  "artist" : "Euphem1a.",
+  "artistsList" : [ "Euphem1a." ],
+  "illustrator" : [ "Kista＆7enuous_忒涅尔斯" ],
+  "illustratorsList" : [ "Kista", "7enuous_忒涅尔斯" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "electrode_core" ]
+}, {
+  "id" : "575ea000-3a9e-4c68-b20e-73a16b4f044d",
+  "title" : "apOapSis(Edit)",
+  "titleCulture" : "00000000",
+  "latinTitle" : "apOapSis(Edit)",
+  "bpmInfo" : [ {
+    "start" : -0.007,
+    "bpm" : 180.0
+  } ],
+  "artist" : "Euphem1a.",
+  "artistsList" : [ "Euphem1a." ],
+  "illustrator" : [ "Kista＆7enuous_忒涅尔斯" ],
+  "illustratorsList" : [ "Kista", "7enuous_忒涅尔斯" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko feat. xzadudu179",
+  "chartersList" : [ "Akko", "xzadudu179" ],
+  "tags" : [ "electrode_core" ]
 }, {
   "id" : "faf0dc82-df37-456a-b726-283e27df9c31",
   "title" : "cafe in 6412I731V",
