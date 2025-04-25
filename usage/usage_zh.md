@@ -28,7 +28,8 @@
 
 ---
 
-_Last updated on 2025.04.18 17:20 (UTC)_
+_by [mkzi-nya](mkzi-nya.github.io)_
+_Last updated on 2025.04.25 18:20 (UTC)_
 
 > 如果界面渲染出现问题，请[在 GitHub 上访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 

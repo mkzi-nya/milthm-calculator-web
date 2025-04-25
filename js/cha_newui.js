@@ -1,4 +1,4 @@
-const Updated="Updated at 2025.04.25 5:45"
+const Updated="Updated at 2025.04.25 18:20(UTC+8)"
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -265,9 +265,26 @@ function findScore(constant, target) {
 
 /* ========== 核心流程 ========== */
 function processData() {
-    const inputData = cleanInputData(document.getElementById('inputData').value);
-    const format = isNewFormat(inputData) ? 'new' : 'old';
-    const { username, items } = processDataByFormat(inputData, format);
+    const inputData = document.getElementById('inputData').value.replace(/\n/g, '').replace(/  /g, '');
+    const format = /^\[.*\],\{.*\}$/.test(inputData) ? 'new' : 'old';
+const { username, items } = (format === 'new' 
+  ? (() => {
+      const [, username, songDataStr] = inputData.match(/^\[(.*?)\],\{(.*)\}$/);
+      const songData = songDataStr.split('],[');
+      return { username, items: songData.map(processSong) };
+    })() 
+  : (() => {
+      const start = inputData.indexOf('{"UserName":');
+      const end = inputData.indexOf('}]}') + 3;
+      const str = inputData.slice(start, end);
+      const parsed = tryParseJSON(str);
+      if (!(parsed && parsed.SongRecords)) {
+        alert_invalid();
+        return { username: "", items: [] };
+      }
+      return { username: parsed.UserName, items: parsed.SongRecords.map(processSongFromOldFormat).filter(Boolean) };
+    })());
+
   // 全局保存
   window.processedItems = items;
   // 清空输出区域以避免多次解析时内容堆叠
@@ -284,43 +301,6 @@ function processData() {
 }
 
 /* ========== 工具函数 ========== */
-function cleanInputData(data) {
-    return data.replace(/\n/g, '').replace(/  /g, '');
-}
-
-function isNewFormat(data) {
-    return /^\[.*\],\{.*\}$/.test(data);
-}
-
-function processDataByFormat(data, format) {
-  const cleaned = cleanInputData(data);
-  return format === 'new' ? processNewFormat(cleaned) : processOldFormat(cleaned);
-}
-
-function processNewFormat(data) {
-  const [, username, songDataStr] = data.match(/^\[(.*?)\],\{(.*)\}$/);
-  const songData = songDataStr.split('],[');
-  const items = songData.map(processSong);
-  return { username, items };
-}
-
-function processOldFormat(data) {
-  const start = data.indexOf('{"UserName":');
-  const end = data.indexOf('}]}') + 3;
-  const str = data.slice(start, end);
-  
-  const parsed = tryParseJSON(str);
-  if (!(parsed && parsed.SongRecords)) {
-        alert_invalid();
-        return { username: "", items: [] };
-    }
-  const items = parsed.SongRecords
-    .map(processSongFromOldFormat)
-    .filter(Boolean);
-  
-  return { username: parsed.UserName, items };
-}
-
 function processSong(song) {
     const [title, category, constant, score, accuracy, level] = song.replace(/[\[\]]/g, '').split(',');
   const constantVal = parseFloat(constant);
@@ -372,19 +352,149 @@ function formatInput(username, items) {
   document.getElementById('inputData').value = `[${username}],{\n  ${formattedItems}\n}`;
 }
 
-function calculateAverageReality(results) {
-  const filtered = results.filter(item => item.singleRealityRaw > 0);
-  const top = filtered.slice(0, 20);
-  const sum = top.reduce((acc, item) => acc + item.singleRealityRaw, 0);
-  return top.length > 0 ? (sum / 20).toFixed(4) : '0.0000';
+
+// **初始化 SQL.js**
+async function initSQL() {
+  const response = await fetch('./js/sql-wasm.wasm');
+  const wasmBinary = await response.arrayBuffer();
+  const SQL = await initSqlJs({
+    locateFile: filename => `./js/${filename}`,
+    wasmBinary // 使用 ArrayBuffer 而不是 wasm streaming
+  });
+  return SQL;
 }
+
+
+// **处理 SQLite 数据库文件**
+async function processDBFile(arrayBuffer, SQL) {
+  try {
+      const db = new SQL.Database(new Uint8Array(arrayBuffer));
+      // 查询 `kv` 表中的 `PlayerFile`
+      const results = db.exec("SELECT value FROM kv WHERE key='PlayerFile'");
+      if (results.length === 0 || results[0].values.length === 0) {
+          alert("未找到 PlayerFile 存档");
+          return;
+      }
+      // 提取 JSON 并解析
+      const playerFileJSON = results[0].values[0][0]; 
+      const extracted = extractJSON(playerFileJSON);
+      if (extracted) {
+          document.getElementById('inputData').value = extracted;
+          processData();
+      } else {
+          alert("数据库存档解析失败！\nDatabase save parsing failed!");
+      }
+  } catch (error) {
+      alert(`解析数据库失败: ${error.message}\nFailed to parse database: ${error.message}`);
+  }
+}
+
+function handleFile(content, fileName) {
+  const inputDataElem = document.getElementById('inputData');
+
+  if (fileName.endsWith('.json')) {
+    const extracted = extractJSON(content);
+    if (extracted) {
+      inputDataElem.value = extracted;
+      processData();
+    } else {
+      alert("提取 JSON 数据失败！\nFailed to extract JSON data!");
+    }
+  } else if (fileName.endsWith('.xml')) {
+    processXMLFile(content);
+  } else if (fileName === 'prefs') {
+    processPrefsFile(content);
+  } else if (fileName.endsWith('.reg')) {
+    processRegFile(content);
+  } else if (fileName.endsWith('.txt')) {
+    inputDataElem.value = content;
+    processData();
+  } else if (fileName.endsWith('.png')) {
+    parsePNGFile(content);
+  } else {
+    alert("不支持的文件类型！\nUnsupported file type!");
+  }
+}
+
+function parsePNGFile(content) {
+  // 使用正则表达式查找userdata:部分
+  const userdataMatch = content.match(/userdata:([\s\S]+)/);
+
+  if (userdataMatch && userdataMatch[1]) {
+    // 提取userdata后的文本内容
+    const userdataText = userdataMatch[1].trim();
+    // 将提取的文本放入输入框
+    document.getElementById('inputData').value = userdataText;
+    processData();
+  } else {
+    alert("未找到 userdata 数据！\nCould not find userdata data!");
+  }
+}
+
+function processRegFile(regContent) {
+    const match = regContent.match(/"PlayerFile_h\d+"\s*=\s*hex:((?:[0-9a-fA-F]{2},?[\\\n\s]*)+)/);
+    if (match) {
+        const decoded = hexToString(match[1].replace(/[,\\\s\n]/g, ''));
+        document.getElementById('inputData').value = decoded;
+        processData();
+    } else {
+        alert('未找到 PlayerFile 键或值格式不正确');
+    }
+}
+
+function hexToString(hexData) {
+  const arr = hexData.match(/.{2}/g) || [];
+  const res = arr.map(byte => String.fromCharCode(parseInt(byte, 16)));
+  return res.join('');
+}
+
+
+function processXMLFile(xmlContent) {
+  const doc = new DOMParser().parseFromString(xmlContent, "application/xml");
+  const pf = doc.querySelector('string[name="PlayerFile"]');
+  if (pf && pf.textContent) {
+    document.getElementById('inputData').value = decodeURIComponent(pf.textContent);
+        processData();
+    } else {
+        alert('未找到 <string name="PlayerFile"> 标签');
+    }
+}
+
+function processPrefsFile(prefsContent) {
+  const doc = new DOMParser().parseFromString(prefsContent, "application/xml");
+  const pf = doc.querySelector('pref[name="PlayerFile"][type="string"]');
+  if (pf && pf.textContent) {
+    document.getElementById('inputData').value = atob(pf.textContent);
+        processData();
+    } else {
+        alert('未找到 <pref name="PlayerFile" type="string"> 标签');
+    }
+}
+
+function extractJSON(jsonString) {
+    const start = jsonString.indexOf('{"UserName":');
+    const end = jsonString.indexOf(']}]', start);
+  return (start !== -1 && end !== -1) ? `${jsonString.slice(start, end + 3)}}` : null;
+}
+
+function tryParseJSON(str) {
+  try {
+    return JSON.parse(str);
+  } catch (e) {
+    return null;
+  }
+}
+
+
 
 /* ========== 显示用户信息 ========== */
 function drawUserInfo(username, results) {
   const userInfoDiv = document.getElementById('userInfo');
   const usercontainer = document.getElementById('usercontainer');
   usercontainer.style.display = 'block';
-  const avg = calculateAverageReality(results);
+  const avg = (results.filter(item => item.singleRealityRaw > 0)
+  .slice(0, 20)
+  .reduce((acc, item) => acc + item.singleRealityRaw, 0) / 20).toFixed(4) || '0.0000';
   userInfoDiv.innerHTML = `${username} ${avg}`;
   window.username = username;
   window.average = avg;
@@ -992,197 +1102,6 @@ function loadImage(src) {
   });
 }
 
-// **初始化 SQL.js**
-async function initSQL() {
-  const response = await fetch('./js/sql-wasm.wasm');
-  const wasmBinary = await response.arrayBuffer();
-  const SQL = await initSqlJs({
-    locateFile: filename => `./js/${filename}`,
-    wasmBinary // 使用 ArrayBuffer 而不是 wasm streaming
-  });
-  return SQL;
-}
-
-
-// **处理 SQLite 数据库文件**
-async function processDBFile(arrayBuffer, SQL) {
-  try {
-      const db = new SQL.Database(new Uint8Array(arrayBuffer));
-      // 查询 `kv` 表中的 `PlayerFile`
-      const results = db.exec("SELECT value FROM kv WHERE key='PlayerFile'");
-      if (results.length === 0 || results[0].values.length === 0) {
-          alert("未找到 PlayerFile 存档");
-          return;
-      }
-      // 提取 JSON 并解析
-      const playerFileJSON = results[0].values[0][0]; 
-      const extracted = extractJSON(playerFileJSON);
-      if (extracted) {
-          document.getElementById('inputData').value = extracted;
-          processData();
-      } else {
-          alert("数据库存档解析失败！\nDatabase save parsing failed!");
-      }
-  } catch (error) {
-      alert(`解析数据库失败: ${error.message}\nFailed to parse database: ${error.message}`);
-  }
-}
-
-function handleFile(content, fileName) {
-  const inputDataElem = document.getElementById('inputData');
-
-  if (fileName.endsWith('.json')) {
-    const extracted = extractJSON(content);
-    if (extracted) {
-      inputDataElem.value = extracted;
-      processData();
-    } else {
-      alert("提取 JSON 数据失败！\nFailed to extract JSON data!");
-    }
-  } else if (fileName.endsWith('.xml')) {
-    processXMLFile(content);
-  } else if (fileName === 'prefs') {
-    processPrefsFile(content);
-  } else if (fileName.endsWith('.reg')) {
-    processRegFile(content);
-  } else if (fileName.endsWith('.txt')) {
-    inputDataElem.value = content;
-    processData();
-  } else if (fileName.endsWith('.png')) {
-    parsePNGFile(content);
-  } else {
-    alert("不支持的文件类型！\nUnsupported file type!");
-  }
-}
-
-function parsePNGFile(content) {
-  // 使用正则表达式查找userdata:部分
-  const userdataMatch = content.match(/userdata:([\s\S]+)/);
-
-  if (userdataMatch && userdataMatch[1]) {
-    // 提取userdata后的文本内容
-    const userdataText = userdataMatch[1].trim();
-    // 将提取的文本放入输入框
-    document.getElementById('inputData').value = userdataText;
-    processData();
-  } else {
-    alert("未找到 userdata 数据！\nCould not find userdata data!");
-  }
-}
-
-function processRegFile(regContent) {
-    const match = regContent.match(/"PlayerFile_h\d+"\s*=\s*hex:((?:[0-9a-fA-F]{2},?[\\\n\s]*)+)/);
-    if (match) {
-        const decoded = hexToString(match[1].replace(/[,\\\s\n]/g, ''));
-        document.getElementById('inputData').value = decoded;
-        processData();
-    } else {
-        alert('未找到 PlayerFile 键或值格式不正确');
-    }
-}
-
-function hexToString(hexData) {
-  const arr = hexData.match(/.{2}/g) || [];
-  const res = arr.map(byte => String.fromCharCode(parseInt(byte, 16)));
-  return res.join('');
-}
-
-
-function processXMLFile(xmlContent) {
-  const doc = new DOMParser().parseFromString(xmlContent, "application/xml");
-  const pf = doc.querySelector('string[name="PlayerFile"]');
-  if (pf && pf.textContent) {
-    document.getElementById('inputData').value = decodeURIComponent(pf.textContent);
-        processData();
-    } else {
-        alert('未找到 <string name="PlayerFile"> 标签');
-    }
-}
-
-function processPrefsFile(prefsContent) {
-  const doc = new DOMParser().parseFromString(prefsContent, "application/xml");
-  const pf = doc.querySelector('pref[name="PlayerFile"][type="string"]');
-  if (pf && pf.textContent) {
-    document.getElementById('inputData').value = atob(pf.textContent);
-        processData();
-    } else {
-        alert('未找到 <pref name="PlayerFile" type="string"> 标签');
-    }
-}
-
-function extractJSON(jsonString) {
-    const start = jsonString.indexOf('{"UserName":');
-    const end = jsonString.indexOf(']}]', start);
-  return (start !== -1 && end !== -1) ? `${jsonString.slice(start, end + 3)}}` : null;
-}
-
-function tryParseJSON(str) {
-  try {
-    return JSON.parse(str);
-  } catch (e) {
-    return null;
-  }
-}
-
-/* ========== QQ 上传逻辑 & 其他 UI  ========== 
-const qqEntry = document.getElementById("qqEntry");
-const qqBotResultDialog = new mdui.Dialog("#qqBotResultDialog", { modal: true, closeOnEsc: false });
-const inputData1 = document.getElementById("inputData");
-const qqBotResultCloseBtn = document.getElementById("qqBotResultCloseBtn");
-const qqBotResultText = document.getElementById("qqBotResultText");
-const uploadButton = document.getElementById("uploadButton");
-function upload() {
-  qqBotResultCloseBtn.disabled = true;
-  const userdata = qqEntry.value.trim();
-  
-  if (userdata === "") {
-    mdui.alert("请输入QQ号!");
-    return;
-  }
-  
-    qqBotResultDialog.open();
-    qqBotResultText.innerHTML = "正在获取数据...";
-    document.getElementById("qqBotResultContent").value = '';
-  const data2 = inputData1.value;
-  const data_param = { nqid: userdata, data: data2, type: "milthm" };
-  const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://175.27.145.108:7155", true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        const response = xhr.responseText;
-          qqBotResultText.innerHTML = "执行完成。";
-          document.getElementById("qqBotResultContent").value = response;
-          qqBotResultCloseBtn.disabled = false;
-          console.log(response);
-      } else {
-        qqBotResultText.innerHTML = "获取数据失败。";
-        qqBotResultCloseBtn.disabled = false;
-        }
-      }
-    };
-    xhr.send(JSON.stringify(data_param));
-  // 发送第二个请求
-    try {
-    const xhr2 = new XMLHttpRequest();
-      xhr2.open("POST", "submit.php", true);
-      xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr2.onreadystatechange = function() {
-      if (xhr2.readyState === XMLHttpRequest.DONE && xhr2.status === 200) {
-        console.log(xhr2.responseText);
-        }
-      };
-    xhr2.send(JSON.stringify({ qq: userdata, data: data2 }));
-    } catch (error) {
-      console.error('Error request: ', error);
-  }
-}
-
-function openContributionDialog() {
-  new mdui.Dialog('#contributionDialog').open();
-}
-*/
 /* ========== 下载图片 (含背景、卡片等) ========== */
 function downloadImage() {
   // 获取用户输入的卡片数量
@@ -1365,7 +1284,7 @@ function exportImage(canvas) {
   const base64Data = imgData.replace(/^data:image\/png;base64,/, '');
 
   // 3. 将输入数据转换为字节数组
-  const textData = 'userdata:' + inputData; // 将输入数据格式化为字符串
+  const textData = 'userdata:' + (window.data ? window.data : inputData);
   const textDataBytes = new TextEncoder().encode(textData); // 编码为字节数组
 
   // 4. 解码Base64 PNG数据并创建ArrayBuffer
@@ -1407,3 +1326,66 @@ function loadImage(src) {
   });
 }
 
+
+
+
+
+/* ========== QQ 上传逻辑 & 其他 UI  ========== 
+const qqEntry = document.getElementById("qqEntry");
+const qqBotResultDialog = new mdui.Dialog("#qqBotResultDialog", { modal: true, closeOnEsc: false });
+const inputData1 = document.getElementById("inputData");
+const qqBotResultCloseBtn = document.getElementById("qqBotResultCloseBtn");
+const qqBotResultText = document.getElementById("qqBotResultText");
+const uploadButton = document.getElementById("uploadButton");
+function upload() {
+  qqBotResultCloseBtn.disabled = true;
+  const userdata = qqEntry.value.trim();
+  
+  if (userdata === "") {
+    mdui.alert("请输入QQ号!");
+    return;
+  }
+  
+    qqBotResultDialog.open();
+    qqBotResultText.innerHTML = "正在获取数据...";
+    document.getElementById("qqBotResultContent").value = '';
+  const data2 = inputData1.value;
+  const data_param = { nqid: userdata, data: data2, type: "milthm" };
+  const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://175.27.145.108:7155", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const response = xhr.responseText;
+          qqBotResultText.innerHTML = "执行完成。";
+          document.getElementById("qqBotResultContent").value = response;
+          qqBotResultCloseBtn.disabled = false;
+          console.log(response);
+      } else {
+        qqBotResultText.innerHTML = "获取数据失败。";
+        qqBotResultCloseBtn.disabled = false;
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data_param));
+  // 发送第二个请求
+    try {
+    const xhr2 = new XMLHttpRequest();
+      xhr2.open("POST", "submit.php", true);
+      xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr2.onreadystatechange = function() {
+      if (xhr2.readyState === XMLHttpRequest.DONE && xhr2.status === 200) {
+        console.log(xhr2.responseText);
+        }
+      };
+    xhr2.send(JSON.stringify({ qq: userdata, data: data2 }));
+    } catch (error) {
+      console.error('Error request: ', error);
+  }
+}
+
+function openContributionDialog() {
+  new mdui.Dialog('#contributionDialog').open();
+}
+*/
