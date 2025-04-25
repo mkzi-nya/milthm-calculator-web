@@ -24,7 +24,7 @@
 
 ---
 
-_by [mkzi-nya](mkzi-nya.github.io)_  
+_by [mkzi-nya](https://mkzi-nya.github.io)_  
 _Last updated on 2025.04.25 18:20 (UTC)_
 
 > 如果介面渲染出現問題，請[在 GitHub 上訪問](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)

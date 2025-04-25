@@ -24,7 +24,7 @@
 
 ---
 
-_by [mkzi-nya](mkzi-nya.github.io)_  
+_by [mkzi-nya](https://mkzi-nya.github.io)_  
 _Last updated on 2025.04.25 18:20 (UTC)_
 
 > Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
