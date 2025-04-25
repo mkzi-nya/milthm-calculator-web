@@ -1,5 +1,4 @@
-const Updated="Updated at 2025.04.19"
-console.log(Updated)
+console.log("Updated at 2025.04.19")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
  ███▒▒███                               \n\
@@ -1268,7 +1267,7 @@ function downloadImage() {
       ctx.font = '30px Arial';
       ctx.fillText('http://k9.lv/c/', 100, 180);
       ctx.font = '20px Arial';
-      ctx.fillText(Updated, 100, 210);
+      ctx.fillText('updata at 24.4.20 21:00', 100, 210);
       preloadImages(ctx, canvas, actualCardCount, window.norlt);
     });
 }

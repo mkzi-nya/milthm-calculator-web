@@ -281,6 +281,7 @@ Sau khi bài hát kết thúc, đánh giá hiệu suất hiển thị trên bi�
 - [Collaboration](#collaboration---rain-world)
   - [Rain World](#collaboration---rain-world)
   - [Notanote](#collaboration---notanote)
+  - [Electrode Core](#collaboration---electrode-core)
 - [Single](#single---dream-tape)
   - [Dream Tape](#single---dream-tape)
   - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
@@ -392,6 +393,17 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 | [Innocent white](info:info("Innocent white"))    | [2.0](info:info("Innocent white", "Drizzle"))  | [8.2](info:info("Innocent white", "Sprinkle"))  | [12.1](info:info("Innocent white", "Cloudburst")) | -    |
 | [Elsorhg](info:info("Elsorhg"))           | [2.0](info:info("Elsorhg", "Drizzle"))  | [7.5](info:info("Elsorhg", "Sprinkle"))  | [10.8](info:info("Elsorhg", "Cloudburst"))  | -    |
 | [Meltovt Necrosys](info:info("Meltovt Necrosys"))  | [2.0](info:info("Meltovt Necrosys", "Drizzle"))  | [7.8](info:info("Meltovt Necrosys", "Sprinkle"))  | [11.9](info:info("Meltovt Necrosys", "Cloudburst"))  | -    |
+
+---
+
+## Collaboration= - Electrode Core
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [はんてん](info:info("はんてん"))             | [2.0](info:info("はんてん", "Drizzle"))  | [6.0](info:info("はんてん", "Sprinkle"))  | [10.1](info:info("はんてん", "Cloudburst"))  | -    |
+| [Curse of 14](info:info("Curse of 14"))           | [3.0](info:info("Curse of 14", "Drizzle"))  | [7.5](info:info("Curse of 14", "Sprinkle"))  | [10.4](info:info("Curse of 14", "Cloudburst"))  | -    |
+| [Virtual S0da](info:info("Virtual S0da"))           | [3.0](info:info("Virtual S0da", "Drizzle"))  | [6.6](info:info("Virtual S0da", "Sprinkle"))  | [10.6](info:info("Virtual S0da", "Cloudburst"))  | -    |
+| [apOapSis(Edit)](info:info("apOapSisEdit"))           | [3.5](info:info("apOapSisEdit", "Drizzle"))  | [6.4](info:info("apOapSisEdit", "Sprinkle"))  | [10.6](info:info("apOapSisEdit", "Cloudburst"))  | -    |
 
 ---
 
