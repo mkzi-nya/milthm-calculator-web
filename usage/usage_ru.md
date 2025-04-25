@@ -24,7 +24,7 @@
 
 ---
 
-_by [mkzi-nya](mkzi-nya.github.io)_
+_by [mkzi-nya](mkzi-nya.github.io)_  
 _Last updated on 2025.04.25 18:20 (UTC)_
 
 > Если интерфейс отображается некорректно, пожалуйста, [посетите GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
