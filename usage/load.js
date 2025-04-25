@@ -86,7 +86,9 @@ title = title.replace(/[()]/g, '');
 illustrator: ${item.illustrator.join(', ')}`;
 
     const bpmInfoElement = document.createElement('p');
-    bpmInfoElement.innerText = `BPM: ${item.bpmInfo[0].bpm}`;
+    let bpmText = item.bpmInfo.map(info => `[${info.start},${info.bpm}]`).join(',\n\n');
+bpmInfoElement.innerText = `BPM:\n\n${bpmText}`;
+
 
     modal.appendChild(titleElement);
 
