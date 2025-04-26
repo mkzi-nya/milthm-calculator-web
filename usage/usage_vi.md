@@ -25,7 +25,7 @@
 ---
 
 _by [mkzi-nya](https://mkzi-nya.github.io)_  
-_Last updated on 2025.04.25 18:20 (UTC)_
+_Last updated on 2025.04.26 21:00 (UTC)_
 
 > Nếu giao diện không hiển thị đúng, vui lòng [truy cập trên GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
@@ -501,7 +501,7 @@ Reality lý thuyết hiện tại là `12.695` (hiển thị là 12.69).
 
 - **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
 
-- **[Discord](https://discord.gg/66qthKHw)**: [mkzi_nya](https://discord.gg/66qthKHw)
+- **Discord**: [mkzi_nya](https://discordapp.com/users/1135097559891853435)
 
 ---
 
