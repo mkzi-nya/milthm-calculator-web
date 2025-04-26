@@ -53,7 +53,7 @@ for charter in sorted_charters:
         title = item['title']
         difficulty = item['difficulty']
         if charter in item['chartersList']:
-            titles = title.replace('(', '').replace(')', '')
+            titles = title.replace('(', '').replace(')', '').replace('~', r'\~')
             link = f"[{title}](info:info(\"{titles}\",\"{difficulty}\"))"
             column = difficulty_map.get(difficulty)
             if column:
@@ -66,8 +66,18 @@ for charter in sorted_charters:
         row += f" {links} |"
     md_table += row + "\n"
 
-# 输出结果到文件
-with open('./out.txt', 'w', encoding='utf-8') as out_file:
-    out_file.write(md_table)
+# 读取1.txt并更新charter字段
+with open('./1.txt', 'r', encoding='utf-8') as f:
+    content = f.read()
 
-print("Markdown table has been written to './out.txt'.")
+# 替换charter字段内容
+import re
+new_content = re.sub(r'"charter":\{\n.*?\n\}', f'"charter":{{\n{md_table}\n}}', content, flags=re.DOTALL)
+
+# 覆盖写回1.txt
+with open('./1.txt', 'w', encoding='utf-8') as f:
+    f.write(new_content)
+
+# 调用1.py
+import subprocess
+subprocess.run(['python', './1.py'], check=True)
