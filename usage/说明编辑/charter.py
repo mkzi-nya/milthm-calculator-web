@@ -53,8 +53,9 @@ for charter in sorted_charters:
         title = item['title']
         difficulty = item['difficulty']
         if charter in item['chartersList']:
-            titles = title.replace('(', '').replace(')', '').replace('~', r'\~')
-            link = f"[{title}](info:info(\"{titles}\",\"{difficulty}\"))"
+            title2 = title.replace('(', '').replace(')', '')
+            title1 = title.replace('~', r'\~')
+            link = f"[{title1}](info:info(\"{title2}\",\"{difficulty}\"))"
             column = difficulty_map.get(difficulty)
             if column:
                 difficulty_links[column].append(link)
