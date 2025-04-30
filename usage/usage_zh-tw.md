@@ -239,8 +239,8 @@ function reality(score, constant) {
 結算評級分為八種：
 
 - **R**：即 Rain，達成理論值 1010000 分（RHYTHM of RAIN，所有音符均為大 Perfect）。
-- **紫S**：達成 All Perfect（所有音符均為 Perfect 且未達成 R 評，分數在 1000000-1009999 之間）。
-- **青S**：達成 Full Combo（所有音符均無 Bad/Miss 判定且未達成紫S評，此時不考慮下列分數要求）。
+- **紫S**：達成 All Perfect（所有音符均為 Perfect 且未達成 R 評，分數在 750000-1009999 之間）。
+- **青S**：達成 Full Combo（所有音符均無 Bad/Miss 判定且未達成紫S評，300000-1009999 分）。
 - **S**：950000-1009999 分。
 - **A**：900000-949999 分。
 - **B**：850000-899999 分。

@@ -239,8 +239,8 @@ Dentro de cada rango, la puntuación y la precisión son proporcionales. Los ran
 Existen ocho calificaciones de resultado:
 
 - **R:** Rain, alcanzando la puntuación teórica de 1010000 (RHYTHM of RAIN, donde todas las notas son Perfect).
-- **Purple S:** Logra All Perfect (todas las notas son Perfect pero sin alcanzar la calificación R, con una puntuación entre 1000000 y 1009999).
-- **Blue S:** Logra Full Combo (todas las notas se aciertan sin ningún Bad/Miss, sin importar los requisitos de puntuación siguientes).
+- **Purple S:** Logra All Perfect (todas las notas son Perfect pero sin alcanzar la calificación R, con una puntuación entre 750000 y 1009999).
+- **Blue S:** Logra Full Combo (todas las notas se aciertan sin ningún Bad/Miss, 300000-1009999).
 - **S:** 950000-1009999.
 - **A:** 900000-949999.
 - **B:** 850000-899999.

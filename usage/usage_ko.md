@@ -239,8 +239,8 @@ function reality(score, constant) {
 결과 등급은 총 여덟 가지입니다:
 
 - **R:** Rain – 이론 점수 1010000 달성 (RHYTHM of RAIN, 모든 노트가 Perfect).
-- **Purple S:** All Perfect 달성 (모든 노트가 Perfect이나 R 등급 미달, 점수가 1000000-1009999 범위).
-- **Blue S:** Full Combo 달성 (모든 노트를 적중, Bad/Miss 없이, 아래 점수 요구 무시).
+- **Purple S:** All Perfect 달성 (모든 노트가 Perfect이나 R 등급 미달, 점수가 750000-1009999 범위).
+- **Blue S:** Full Combo 달성 (모든 노트를 적중, Bad/Miss 없이, 300000-1009999).
 - **S:** 950000-1009999.
 - **A:** 900000-949999.
 - **B:** 850000-899999.
