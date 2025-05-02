@@ -1,4 +1,4 @@
-const Updated="Updated at 2025.04.26 21:00(UTC+8)"
+const Updated="Updated at 2025.05.2 17:00(UTC+8)"
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -254,7 +254,7 @@ function findScore(constant, target) {
     if (target == (1 + constant)) return 1005000;
     // 根据目标值确定在哪个分段进行查找
     if (target > 0.3 + constant) {
-return (val = Math.ceil(10000 * (99.5 + Math.log((1.4 / (target + 0.4 - constant)) - 1) / -3.65)) ) > 1005000 ? "Unable to deduce points" : val;
+return Math.min(Math.ceil(10000 * (99.5 + Math.log((1.4 / (target + 0.4 - constant)) - 1) / -3.65)),1005000 );
     } else if (target > -0.5 + constant) {
         return Math.ceil(980000 + 15000 * (Math.log(((target + 0.5 - constant) / 0.8) * (Math.exp(3.1) - 1) + 1) / 3.1));
     } else {
