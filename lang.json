@@ -28,7 +28,7 @@
     "settings": "查分图设置",
     "cardCountLabel": "卡片数量",
     "bgImageLabel": "更换背景图",
-    "excludeRealityLabel": "绘制不记入Reality的曲目:",
+    "excludeRealityLabel": "额外绘制不记入Reality的曲目:",
     "cancel": "取消",
     "apply": "应用",
     "yrjds":"愚人节定数"
