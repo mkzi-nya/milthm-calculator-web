@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.05.05 13:25(UTC+8)"
+const Updated = "Updated at 2025.05.08 22:12(UTC+8)"
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -214,7 +214,7 @@ const constantsData = {
   "e9ae00a5-355c-45ff-b099-91cd5455193c": [10.6, "CB", "Virtual S0da", , , , ,],
   "5d4a26e7-8810-4a97-87b8-26dd3876463f": [6.6, "SK", "Virtual S0da", , , , ,],
   "e9789bd9-bc33-412c-a1c9-d00ded16b324": [3.0, "DZ", "Virtual S0da", , , , ,],
-  "575ea000-3a9e-4c68-b20e-73a16b4f044d": [10.6, "CB", "apOapSis(Edit)", , , , ,],
+  "575ea000-3a9e-4c68-b20e-73a16b4f044d": [10.7, "CB", "apOapSis(Edit)", , , , ,],
   "bf05f32a-9a94-4915-b91c-877a0e7c99a4": [6.4, "SK", "apOapSis(Edit)", , , , ,],
   "433e8313-04b8-4abc-aaf0-d4d102bb7f24": [3.5, "DZ", "apOapSis(Edit)", , , , ,],
   "eb802d90-72c0-4b95-856a-b2951a57c0ec": [-1, "CB*", "Sheer Ice Torrent", , , , ,],
