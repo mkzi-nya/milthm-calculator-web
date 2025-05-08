@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,74 +12,105 @@
   <link href="./layui/css/layui.css" rel="stylesheet">
   <input type="file" id="fileupLoad" style="display:none;" />
   <style>
-    #languageMenu{position:absolute;right:0;top:40px;display:none;background-color:#333;color:#eee;border:1px solid #444;border-radius:4px;padding:5px;min-width:100px;z-index:9999}#languageMenu div{margin:5px;cursor:pointer;padding:3px 5px}#languageMenu div:hover{background-color:#444}
-    #settingsModal { 
-        display: none; 
-        position: fixed; 
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        background: #2a2a2a; 
-        color: #fff; 
-        padding: 30px; 
-        border-radius: 15px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.7); 
-        z-index: 10000;
-        width: 300px;
+    #languageMenu {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      display: none;
+      background-color: #333;
+      color: #eee;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 5px;
+      min-width: 100px;
+      z-index: 9999
     }
-    #settingsModal h3 { 
-        text-align: center;
-        font-size: 18px;
-        margin-bottom: 20px;
+
+    #languageMenu div {
+      margin: 5px;
+      cursor: pointer;
+      padding: 3px 5px
     }
-    #settingsModal input, 
-    #settingsModal button { 
-        margin-bottom: 15px;
-        padding: 8px;
-        width: 100%;
-        background-color: #444;
-        color: #fff;
-        border: 1px solid #555;
-        border-radius: 12px;
-        font-size: 16px;
+
+    #languageMenu div:hover {
+      background-color: #444
     }
-    #settingsModal input:focus, 
-    #settingsModal button:focus { 
-        outline: none; 
-        border-color: #888;
+
+    #settingsModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2a2a2a;
+      color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+      z-index: 10000;
+      width: 300px;
     }
+
+    #settingsModal h3 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    #settingsModal input,
     #settingsModal button {
-        width: 48%;
-        display: inline-block;
-        cursor: pointer;
+      margin-bottom: 15px;
+      padding: 8px;
+      width: 100%;
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 12px;
+      font-size: 16px;
     }
+
+    #settingsModal input:focus,
+    #settingsModal button:focus {
+      outline: none;
+      border-color: #888;
+    }
+
+    #settingsModal button {
+      width: 48%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
     #settingsModal .cancel-btn {
-        background-color: #777;
+      background-color: #777;
     }
+
     #settingsModal .apply-btn {
-        background-color: #5cb85c;
+      background-color: #5cb85c;
     }
-    #overlay { 
-        display: none; 
-        position: fixed; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        background-color: rgba(0,0,0,0.7); 
-        z-index: 9999; 
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
     }
   </style>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-L5K3QVRHFZ');
-</script>
+    gtag('config', 'G-L5K3QVRHFZ');
+  </script>
 </head>
+
 <body>
   <script src="./layui/layui.js"></script>
   <script src="./new_ui.js"></script>
@@ -97,54 +129,68 @@
   </div>
   <div class="layui-header header-opa">
     <div class="layui-logo header-opa-bg2" style="padding:16px;">
-      <h1 style="color:turquoise;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;">MilthmCalc <span style="font-size:medium;color:gold;">Ultra</span></h1>
+      <h1 style="color:turquoise;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;">
+        MilthmCalc <span style="font-size:medium;color:gold;">Ultra</span></h1>
     </div>
   </div>
   <div style="padding:30px;text-align:center;display:flex;">
     <div style="text-align:left;max-width:1200px;margin:auto;">
       <div class="layui-card rccc">
-        <div class="layui-card-header"><h2 data-i18n="welcome">Welcome</h2></div>
+        <div class="layui-card-header">
+          <h2 data-i18n="welcome">Welcome</h2>
+        </div>
         <div class="layui-card-body">
           <p data-i18n="greeting">你好，欢迎来到MilthmCalc！(Reality计算器)</p>
           <p data-i18n="description">这是一个用于计算Milthm Reality分数的网站，你可以在这里导入存档并解析。</p>
           <hr>
-          <p><span data-i18n="usage">使用说明：</span><a href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage.html" target="_blank"><span class="superlink" data-i18n="viewUsage">查看使用说明</span></a></p>
+          <p><span data-i18n="usage">使用说明：</span><a
+              href="https://mkzi-nya.github.io/milthm-calculator-web/usage/usage.html" target="_blank"><span
+                class="superlink" data-i18n="viewUsage">查看使用说明</span></a></p>
           <hr>
-          <p><span data-i18n="qqGroup">QQ交流群：</span><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span class="superlink" data-i18n="viewQQGroup">Milthm#√-1洨巟羣</span></a></p>
+          <p><span data-i18n="qqGroup">QQ交流群：</span><a href="https://qm.qq.com/q/Utb6sNDvki" target="_blank"><span
+                class="superlink" data-i18n="viewQQGroup">Milthm#√-1洨巟羣</span></a></p>
           <hr>
-          <p><span data-i18n="originalSite">原地址：</span><a href="http://k9.lv/c/" target="_blank"><span class="superlink">k9.lv/c/</span></a></p>
+          <p><span data-i18n="originalSite">原地址：</span><a href="http://k9.lv/c/" target="_blank"><span
+                class="superlink">k9.lv/c/</span></a></p>
           <hr>
-          <p><span>其他工具：</span><a href="./prefedit.html" target="_blank"><span class="superlink">存档解析器</span></a>  <a href="https://mkzi-nya.github.io/notanote-calculator/" target="_blank"><span class="superlink">Notanote 查分器</span></a></p>
+          <p><span>其他工具：</span><a href="./prefedit.html" target="_blank"><span class="superlink">存档解析器</span></a> <a
+              href="https://mkzi-nya.github.io/notanote-calculator/" target="_blank"><span class="superlink">Notanote
+                查分器</span></a></p>
           <hr>
-          <p><span data-i18n="link">友情链接：</span><a href="http://xuziyao.com/" target="_blank"><span class="superlink">Dason's Page</span></a></p>
+          <p><span data-i18n="link">友情链接：</span><a href="http://xuziyao.com/" target="_blank"><span
+                class="superlink">Dason's Page</span></a></p>
         </div>
       </div>
       <div class="layui-card rccc">
         <div class="layui-card-header" data-i18n="siteInfo">网站信息</div>
         <div class="layui-card-body">
-          <p><span data-i18n="siteAuthor">网站作者：</span><a href="javascript:void(0);" onclick="show_author_info();" style="color:lightblue;text-decoration:none;" data-i18n="viewAuthor">查看</a></p>
+          <p><span data-i18n="siteAuthor">网站作者：</span><a href="javascript:void(0);" onclick="show_author_info();"
+              style="color:lightblue;text-decoration:none;" data-i18n="viewAuthor">查看</a></p>
           <p data-i18n="lastUpdate">上次更新：3.14_11:03(UTC+8)</p>
           <p data-i18n="updateCombined" style="white-space:pre-line;"></p>
         </div>
       </div>
       <script>
-        if (typeof accessCount !== 'undefined' && accessCount != null) {document.getElementById("accessCount").innerHTML = accessCount;} else if (document.getElementById("accessCount")) {document.getElementById("accessCount").innerHTML = "DevMode";}
+        if (typeof accessCount !== 'undefined' && accessCount != null) { document.getElementById("accessCount").innerHTML = accessCount; } else if (document.getElementById("accessCount")) { document.getElementById("accessCount").innerHTML = "DevMode"; }
       </script>
       <div class="layui-card rccc">
         <div class="layui-card-header" data-i18n="dataProcessing">数据处理</div>
         <div class="layui-card-body">
-          <textarea id="inputData" class="layui-textarea" data-i18n-placeholder="inputDataPlaceholder">粘贴数据在此处...</textarea>
-          <hr/>
+          <textarea id="inputData" class="layui-textarea"
+            data-i18n-placeholder="inputDataPlaceholder">粘贴数据在此处...</textarea>
+          <hr />
           <!--
           <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled data-i18n="qqBotOption">QQ Bot选项 (不可用)</button>
           <hr/>
           -->
           <button class="layui-btn layui-btn-primary" onclick="javascript:processData();" data-i18n="parse">解析</button>
           <button class="layui-btn layui-btn-primary" onclick="javascript:upl();" data-i18n="uploadFile">上传文件</button>
-          <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage();" data-i18n="generateImage">生成图像</button>
+          <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage();"
+            data-i18n="generateImage">生成图像</button>
           <button class="layui-btn layui-btn-primary" onclick="showSettings();" data-i18n="settings">查分图设置</button>
           <div id="picgen" style="display:none;">
-            <span class="layui-badge layui-bg-black" data-i18n="generatingImage">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。资源不会超过4MB</span>
+            <span class="layui-badge layui-bg-black"
+              data-i18n="generatingImage">正在生成图片，由于需要下载图片资源，可能需要一些时间。若一直没有反应，可以多次尝试。资源不会超过4MB</span>
           </div>
         </div>
       </div>
@@ -153,10 +199,12 @@
         <div class="layui-card-body">
           <h3 data-i18n="userInfo">用户信息：</h3>
           <h4 id="userInfo"></h4>
-          <hr/>
+          <hr />
           <h3 data-i18n="charts">图表：</h3>
-          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);" data-i18n="increaseColumn">增加列</button>
-          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);" data-i18n="decreaseColumn">减少列</button>
+          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(1);"
+            data-i18n="increaseColumn">增加列</button>
+          <button class="layui-btn layui-btn-primary layui-border-green" onclick="javascript:changeColumns(-1);"
+            data-i18n="decreaseColumn">减少列</button>
           <div class="container" id="output"></div>
         </div>
       </div>
@@ -170,15 +218,15 @@
     <input type="number" id="cardCount" value="22" min="1" data-i18n-placeholder="cardCountPlaceholder"><br>
     <label for="bgImage" data-i18n="bgImageLabel" style="font-size: 18px;">更换背景图:</label>
     <input type="file" id="bgImage" accept="image/*"><br>
-    <label for="excludeReality" data-i18n="excludeRealityLabel" style="font-size: 18px;">绘制不记入Reality的曲目:</label>    
+    <label for="excludeReality" data-i18n="excludeRealityLabel" style="font-size: 18px;">绘制不记入Reality的曲目:</label>
     <select id="excludeReality" style="font-size: 16px;">
       <option value="false">false</option>
-      <option value="true" >true</option>
+      <option value="true">true</option>
     </select><br>
-    <label for="yrjds" data-i18n="yrjds" style="font-size: 18px;">展示愚人节定数:</label>    
+    <label for="yrjds" data-i18n="yrjds" style="font-size: 18px;">展示愚人节定数:</label>
     <select id="yrjds" style="font-size: 16px;">
       <option value="false">false</option>
-      <option value="true" >true</option>
+      <option value="true">true</option>
     </select><br>
     <button onclick="closeSettings()" class="cancel-btn" data-i18n="cancel">取消</button>
     <button onclick="applySettings()" class="apply-btn" data-i18n="apply">应用</button>
@@ -200,28 +248,28 @@
 
       closeSettings();
     }
-     let translations = {}, currentLang = 'zh', menuVisible = false;
+    let translations = {}, currentLang = 'zh', menuVisible = false;
     function loadTranslations() {
       fetch('lang.json').then(response => response.json()).then(data => {
         translations = data;
         let detected = (navigator.language || navigator.userLanguage).toLowerCase();
-        if (detected.startsWith('zh')) {detected = detected.includes('tw') || detected.includes('hk') || detected.includes('mo') ? 'zh-tw' : 'zh';}
+        if (detected.startsWith('zh')) { detected = detected.includes('tw') || detected.includes('hk') || detected.includes('mo') ? 'zh-tw' : 'zh'; }
         currentLang = translations[detected] ? detected : 'en'; setLanguage(currentLang);
-      }).catch(error => {console.error('加载翻译文件失败:', error); setLanguage('en');});
+      }).catch(error => { console.error('加载翻译文件失败:', error); setLanguage('en'); });
     }
     function setLanguage(lang) {
       currentLang = lang; document.documentElement.lang = lang;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {el.innerHTML = translations[lang][key];}
+        if (translations[lang] && translations[lang][key]) { el.innerHTML = translations[lang][key]; }
       });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {el.placeholder = translations[lang][key];}
+        if (translations[lang] && translations[lang][key]) { el.placeholder = translations[lang][key]; }
       });
       menuVisible = false; document.getElementById('languageMenu').style.display = 'none';
     }
-    function toggleLangMenu() {menuVisible = !menuVisible; document.getElementById('languageMenu').style.display = menuVisible ? 'block' : 'none';}
+    function toggleLangMenu() { menuVisible = !menuVisible; document.getElementById('languageMenu').style.display = menuVisible ? 'block' : 'none'; }
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('languageButton').addEventListener('click', toggleLangMenu);
       document.getElementById('langZh').addEventListener('click', () => setLanguage('zh'));
@@ -234,7 +282,8 @@
       document.getElementById('langVi').addEventListener('click', () => setLanguage('vi'));
       loadTranslations();
     });
-    </script>
+  </script>
   <script src="./js/cha_newui.js"></script>
 </body>
+
 </html>
