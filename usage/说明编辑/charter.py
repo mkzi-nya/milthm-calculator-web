@@ -1,6 +1,8 @@
 import json
 from collections import defaultdict
 from pypinyin import lazy_pinyin
+import re
+import subprocess
 
 # 读取JSON文件
 with open('./packed_document.json', 'r', encoding='utf-8') as f:
@@ -9,6 +11,12 @@ with open('./packed_document.json', 'r', encoding='utf-8') as f:
 # 创建字典用于存储谱师与其曲目及难度
 charters_data = defaultdict(list)
 
+# 用于排序的函数
+def get_sort_key(name):
+    if name.isascii():
+        return (0, name.lower())
+    return (1, ''.join(lazy_pinyin(name)))
+
 # 遍历所有项并整理数据
 for item in data:
     title = item['title']
@@ -16,20 +24,10 @@ for item in data:
     charters_list = item['chartersList']
     
     for charter in charters_list:
-        # 为每个谱师添加 [title_difficulty] 链接，info中的title和difficulty用冒号分隔
         markdown_link = f"[{title}](info:info(\"{title}\",\"{difficulty}\"))"
-        charters_data[charter].append(markdown_link)
+        charters_data[charter].append((title, difficulty))  # 改为存储元组以便后续排序
 
-# 对谱师进行排序，中文按拼音首字母排序，日文按假名排序，其他字符按字母排序
-def get_sort_key(name):
-    if name.isascii():  # 英文字符（ASCII字符）直接按字母排序
-        return (0, name.lower())
-    # 对中文字符使用拼音首字母排序，对日文字符使用假名的顺序
-    # 将中文字符转换为拼音，日文字符转换为假名
-    pinyin = ''.join(lazy_pinyin(name))
-    return (1, pinyin)
-
-# 排序：英文字符排在前面，中文和日文排在后面
+# 对谱师进行排序
 sorted_charters = sorted(charters_data.keys(), key=get_sort_key)
 
 # 创建MD格式的表格
@@ -45,21 +43,25 @@ difficulty_map = {
 }
 
 for charter in sorted_charters:
+    # 筛选该谱师的曲目并排序
+    all_songs = [
+        (title, difficulty) for item in data
+        if charter in item['chartersList']
+        for title, difficulty in [(item['title'], item['difficulty'])]
+    ]
+    all_songs.sort(key=lambda x: get_sort_key(x[0]))  # 对曲名排序
+
     # 初始化每个难度的列表
     difficulty_links = {key: [] for key in difficulty_map.values()}
-    
-    # 遍历谱师的所有曲目链接，根据 difficulty 分类
-    for item in data:
-        title = item['title']
-        difficulty = item['difficulty']
-        if charter in item['chartersList']:
-            title2 = title.replace('(', '').replace(')', '')
-            title1 = title.replace('~', r'\~')
-            link = f"[{title1}](info:info(\"{title2}\",\"{difficulty}\"))"
-            column = difficulty_map.get(difficulty)
-            if column:
-                difficulty_links[column].append(link)
-    
+
+    for title, difficulty in all_songs:
+        title2 = title.replace('(', '').replace(')', '')
+        title1 = title.replace('~', r'\~')
+        link = f"[{title1}](info:info(\"{title2}\",\"{difficulty}\"))"
+        column = difficulty_map.get(difficulty)
+        if column:
+            difficulty_links[column].append(link)
+
     # 拼接每个难度列的内容
     row = f"| {charter} |"
     for col in ["DZ", "SK", "CB", "CL", "SP"]:
@@ -71,14 +73,11 @@ for charter in sorted_charters:
 with open('./1.txt', 'r', encoding='utf-8') as f:
     content = f.read()
 
-# 替换charter字段内容
-import re
 new_content = re.sub(r'"charter":\{\n.*?\n\}', f'"charter":{{\n{md_table}\n}}', content, flags=re.DOTALL)
 
-# 覆盖写回1.txt
+# 写回1.txt
 with open('./1.txt', 'w', encoding='utf-8') as f:
     f.write(new_content)
 
 # 调用1.py
-import subprocess
 subprocess.run(['python', './1.py'], check=True)

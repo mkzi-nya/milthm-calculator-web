@@ -32,8 +32,8 @@
   "difficulty" : "Sprinkle",
   "difficultyValue" : 0.0,
   "charter" : "十返清月",
-  "chartersList" : [ "十返清月" ],
-  "tags" : [ "blush", "character", "female", "feminine", "floral", "flower petals", "night", "pastel colors", "pink flowers", "pink kimono", "serene", "smiling", "starry sky", "white hair" ]
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "blush", "character", "female", "feminine", "floral", "flower petals", "night", "pastel colors", "pink flowers", "pink kimono", "serene", "smiling", "starry sky", "white hair", "十返清月" ]
 }, {
   "id" : "8442e9aa-ea0a-4d9e-8592-cfd9228eb14c",
   "title" : "樱落繁花",
@@ -69,7 +69,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere" ]
+  "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere", "十返清月" ]
 }, {
   "id" : "8f75c6ff-a5ac-4738-b5e9-2549fa838084",
   "title" : "Aconsma",
@@ -105,7 +105,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere" ]
+  "tags" : [ "blue eyes", "chapter1", "character", "dark setting", "distressed expression", "emotional", "female", "glitch effect", "hand over mouth", "indoor", "long white hair", "luvia", "monochromatic color scheme", "reflective surface", "surreal atmosphere", "十返清月" ]
 }, {
   "id" : "74bf4e17-c246-4871-9b2b-0dd0d0e6ee28",
   "title" : "Agnostic",
@@ -366,7 +366,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Akko vs. Kiyotsuki",
   "chartersList" : [ "Akko", "Kiyotsuki" ],
-  "tags" : [ "angelic", "anime", "celestial", "contrast", "cosmic", "darkness", "dreamlike", "ethereal", "fantasy", "female character", "floating", "illustration", "light", "nebula", "otherworldly", "planets", "sci-fi", "serene", "space", "starry sky", "wings" ]
+  "tags" : [ "angelic", "anime", "celestial", "contrast", "cosmic", "darkness", "dreamlike", "ethereal", "fantasy", "female character", "floating", "illustration", "light", "nebula", "otherworldly", "planets", "sci-fi", "serene", "space", "starry sky", "wings", "十返清月" ]
 }, {
   "id" : "a5ba0b3b-1eb5-4b43-8d12-9e82b6d0afaa",
   "title" : "Bio-Engineering",
@@ -420,7 +420,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Rain World", "RainWorld", "dim lighting", "eerie atmosphere", "industrial setting", "metal surface", "minimalistic", "sci-fi", "shadow", "slug cat" ]
+  "tags" : [ "Rain World", "RainWorld", "dim lighting", "eerie atmosphere", "industrial setting", "metal surface", "minimalistic", "sci-fi", "shadow", "slug cat", "十返清月" ]
 }, {
   "id" : "d89765a7-05a1-44a1-8ed3-f23f5f15741a",
   "title" : "☹",
@@ -528,7 +528,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "long white hair", "luvia" ]
+  "tags" : [ "abstract background", "black coat", "character", "close-up", "dramatic lighting", "dynamic pose", "emotional expression", "ethereal", "fantasy", "female", "frilly dress", "futuristic", "gothic", "long white hair", "luvia", "十返清月" ]
 }, {
   "id" : "7c30226f-0ea5-4b71-aab7-7fefca1070dd",
   "title" : "Broken Conviction",
@@ -618,7 +618,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
+  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art", "十返清月" ]
 }, {
   "id" : "6252f7c4-8eae-4b59-a22f-9f142f904029",
   "title" : "Contrasty Angeles",
@@ -654,7 +654,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
+  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art", "十返清月" ]
 }, {
   "id" : "c18f27b6-2d4e-4631-82b1-4ede237874df",
   "title" : "Contrasty Angeles",
@@ -672,7 +672,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art" ]
+  "tags" : [ "black and white", "bow tie", "chapter1", "character", "circular frame", "dramatic pose", "ethereal atmosphere", "fantasy", "female", "long hair", "luvia", "monochrome", "night sky", "serious expression", "stars", "stylized art", "十返清月" ]
 }, {
   "id" : "df7a7116-1299-4557-8be4-36603a8da40e",
   "title" : "Curse of 14",
@@ -707,7 +707,7 @@
   "difficulty" : "Cloudburst",
   "difficultyValue" : 0.0,
   "charter" : "Curse of stars",
-  "chartersList" : [ "Curse of stars" ],
+  "chartersList" : [ "点缀星空" ],
   "tags" : [ "electrode_core" ]
 }, {
   "id" : "7b603362-5888-41d1-953b-0e4a7e461b79",
@@ -816,7 +816,7 @@
   "difficultyValue" : 0.0,
   "charter" : "UndefinedViolet",
   "chartersList" : [ "Magazet", "Kiyotsuki" ],
-  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
+  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized", "十返清月" ]
 }, {
   "id" : "e27a66da-19c5-4d3a-85f4-5defdf5b7b88",
   "title" : "Elsorhg",
@@ -834,7 +834,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
+  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized", "十返清月" ]
 }, {
   "id" : "640cea92-0024-4ba5-aa16-8a38f77743ac",
   "title" : "Elsorhg",
@@ -852,7 +852,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Magazet + Kiyotsuki",
   "chartersList" : [ "Magazet", "Kiyotsuki" ],
-  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized" ]
+  "tags" : [ "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "style-digitalart", "text-stylized", "十返清月" ]
 }, {
   "id" : "b2594118-dcf5-4750-9e57-e4eeef6142fe",
   "title" : "时落之雨",
@@ -870,7 +870,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
+  "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "十返清月", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
 }, {
   "id" : "64cc8f3b-7bed-48a3-80ca-f281c57c0916",
   "title" : "时落之雨",
@@ -906,7 +906,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
+  "tags" : [ "Puella Magi Madoka Magica", "SHAFT", "blue", "dark", "fantasy", "female character", "floating", "flowing dress", "glowing", "long hair", "serene", "十返清月", "晓美焰", "魔法少女まどか☆マギカ", "魔法少女小圆", "魔法少女小织" ]
 }, {
   "id" : "1ccef645-09b6-400d-a438-b2f2fdc0debc",
   "title" : "选择你的宽带",
@@ -996,7 +996,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Fantasia Sonata Vol.4 Milthm", "birds", "blue tones", "bright", "character", "dream-like", "elegant", "female", "flowing hair", "interior", "luvia", "magical", "music", "piano", "pykamia", "serene", "sunlight", "violin" ]
+  "tags" : [ "Fantasia Sonata Vol.4 Milthm", "birds", "blue tones", "bright", "character", "dream-like", "elegant", "female", "flowing hair", "interior", "luvia", "magical", "music", "piano", "pykamia", "serene", "sunlight", "violin", "十返清月" ]
 }, {
   "id" : "dd3934f9-5a39-4086-b859-03c164db27ef",
   "title" : "Fantasia Sonata Sky Syndrome",
@@ -1032,7 +1032,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Fantasia Sonata Vol.4 Milthm", "birds", "blue tones", "bright", "character", "dream-like", "elegant", "female", "flowing hair", "interior", "luvia", "magical", "music", "piano", "pykamia", "serene", "sunlight", "violin" ]
+  "tags" : [ "Fantasia Sonata Vol.4 Milthm", "birds", "blue tones", "bright", "character", "dream-like", "elegant", "female", "flowing hair", "interior", "luvia", "magical", "music", "piano", "pykamia", "serene", "sunlight", "violin", "十返清月" ]
 }, {
   "id" : "fa7c3e3f-29c3-4a27-a656-7696cbcd975e",
   "title" : "Fantasia Sonata Stars",
@@ -1230,7 +1230,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons" ]
+  "tags" : [ "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons", "十返清月" ]
 }, {
   "id" : "75fbb0ef-08fa-47cb-8c6f-acf361f7a081",
   "title" : "Future Unbound (Game Edit)",
@@ -1248,7 +1248,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons" ]
+  "tags" : [ "colorful", "cyberpunk", "female", "futuristic", "loading screen", "pink background", "two characters", "vibrant", "weapons", "十返清月" ]
 }, {
   "id" : "7131ad7b-1602-4acd-bfc1-1ff712d054f0",
   "title" : "Future Unbound (Game Edit)",
@@ -1698,7 +1698,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "abstract background", "action", "blue glow", "character", "dark clothing", "energy", "female", "futuristic", "intense", "mysterious", "prolog", "supernatural", "white hair" ]
+  "tags" : [ "abstract background", "action", "blue glow", "character", "dark clothing", "energy", "female", "futuristic", "intense", "mysterious", "prolog", "supernatural", "white hair", "十返清月" ]
 }, {
   "id" : "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a",
   "title" : "KAEDE",
@@ -1788,7 +1788,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water" ]
+  "tags" : [ "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月" ]
 }, {
   "id" : "8c794275-de29-4beb-87a1-af024fe94e1e",
   "title" : "花月",
@@ -1824,7 +1824,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water" ]
+  "tags" : [ "artwork", "blue hair", "bubbles", "character", "digital art", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月" ]
 }, {
   "id" : "1a3167ae-9105-4545-9aa7-3cab60874e9c",
   "title" : "Kayava",
@@ -1932,7 +1932,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets" ]
+  "tags" : [ "blue eyes", "character", "close-up", "dark,", "emotional", "falling petals", "female", "luvia", "melancholy", "petal", "petals", "prolog", "rain", "red", "reflection", "rose", "school uniform", "silver hair", "somber", "water droplets", "十返清月" ]
 }, {
   "id" : "4144b702-77bd-4ff4-9ba0-aa7c70b2bab5",
   "title" : "命日",
@@ -2021,8 +2021,8 @@
   "difficulty" : "Drizzle",
   "difficultyValue" : 0.0,
   "charter" : "十返清月",
-  "chartersList" : [ "十返清月" ],
-  "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology" ]
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology", "十返清月" ]
 }, {
   "id" : "a8d6dfa7-b879-4eef-a10a-dbbd46519583",
   "title" : "大月墜落狂想",
@@ -2057,8 +2057,8 @@
   "difficulty" : "Sprinkle",
   "difficultyValue" : 0.0,
   "charter" : "十返清月",
-  "chartersList" : [ "十返清月" ],
-  "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology" ]
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "Arcaea Rewind 2023", "Earth", "blue sky", "circular structure", "clouds", "cosmic", "debris", "futuristic", "high-tech", "modern design", "orbit", "outer space", "planet view", "satellite", "sci-fi", "solar panels", "space craft", "space station", "technology", "十返清月" ]
 }, {
   "id" : "eab07c23-395d-47f3-be33-15c7c566f694",
   "title" : "Moonflutter",
@@ -2094,7 +2094,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman" ]
+  "tags" : [ "art", "blonde hair", "blue eyes", "celestial", "character", "dance", "dancing", "dreamy", "dynamic pose", "elegant", "ethereal", "fantasy", "female", "flowing dress", "gold accents", "gold stars", "illustration", "light", "light glow", "luvia", "magical", "movement", "night sky", "shadow", "stars", "woman", "十返清月" ]
 }, {
   "id" : "61f5e310-d45b-40dc-a934-e3a849382729",
   "title" : "Moonflutter",
@@ -2280,7 +2280,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "characters", "confident_smile", "confrontation", "dark_urban", "dystopia", "futuristic", "gun", "long_white_hair", "mystery", "neon_lights", "nighttime", "scaffold", "school_uniform", "serious_expression", "tension", "top_hat", "vending_machine", "video_game_style" ]
+  "tags" : [ "characters", "confident_smile", "confrontation", "dark_urban", "dystopia", "futuristic", "gun", "long_white_hair", "mystery", "neon_lights", "nighttime", "scaffold", "school_uniform", "serious_expression", "tension", "top_hat", "vending_machine", "video_game_style", "十返清月" ]
 }, {
   "id" : "44405d3d-4162-4fb8-9e86-fc7c965d4d2d",
   "title" : "Oniichan",
@@ -2694,7 +2694,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "building", "calm", "character", "city", "elegance", "female", "lightsource", "melancholic", "moon", "nightime", "solitude", "umbrella lady", "weeds", "window" ]
+  "tags" : [ "building", "calm", "character", "city", "elegance", "female", "lightsource", "melancholic", "moon", "nightime", "solitude", "umbrella lady", "weeds", "window", "十返清月" ]
 }, {
   "id" : "6add3ab9-52c0-4c13-abc9-506dfa89faa6",
   "title" : "Sheer Ice Torrent",
@@ -2874,7 +2874,7 @@
   "difficultyValue" : 0.0,
   "charter" : "179 綾吟 Kiyotsuki Attuned.",
   "chartersList" : [ "xzadudu179", "Ariayaka", "Kiyotsuki" ],
-  "tags" : [ "Rain World", "RainWorld", "adventure", "art", "calm", "clouds", "desert", "exploration", "fantasy", "horizon", "landscape", "minimalistic", "nature", "orange sky", "peaceful", "rabbit", "rocks", "sand", "serene", "slug cat", "solitude", "sunset", "warm colors", "whimsical" ]
+  "tags" : [ "Rain World", "RainWorld", "adventure", "art", "calm", "clouds", "desert", "exploration", "fantasy", "horizon", "landscape", "minimalistic", "nature", "orange sky", "peaceful", "rabbit", "rocks", "sand", "serene", "slug cat", "solitude", "sunset", "warm colors", "whimsical", "十返清月" ]
 }, {
   "id" : "62c1cdc7-57c2-4a5f-809b-bcfb6c6a0469",
   "title" : "粗线条的雨",
@@ -2982,7 +2982,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Rain World", "RainWorld", "blue eyes", "calm", "cartoon", "cat", "cityscape", "dark buildings", "eerie atmosphere", "ghost cat", "glitch", "glowing tail", "hanging rope", "light blue fur", "magical atmosphere", "modern buildings", "mysterious", "night sky", "peaceful", "rainbow", "rooftop", "sky", "slug cat", "soft lighting", "spooky", "supernatural", "tail", "translucent", "urban", "urban rooftop", "wooden surface" ]
+  "tags" : [ "Rain World", "RainWorld", "blue eyes", "calm", "cartoon", "cat", "cityscape", "dark buildings", "eerie atmosphere", "ghost cat", "glitch", "glowing tail", "hanging rope", "light blue fur", "magical atmosphere", "modern buildings", "mysterious", "night sky", "peaceful", "rainbow", "rooftop", "sky", "slug cat", "soft lighting", "spooky", "supernatural", "tail", "translucent", "urban", "urban rooftop", "wooden surface", "十返清月" ]
 }, {
   "id" : "0af38afb-fe05-403c-90b6-2876bb18616e",
   "title" : "Threat - Sky Islands",
@@ -3036,7 +3036,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki x TCSTWTBHY",
   "chartersList" : [ "Kiyotsuki", "TCSTWTBHY" ],
-  "tags" : [ "Rain World", "RainWorld", "atmospheric", "city", "dystopia", "futuristic", "purple hues", "ship", "smoke", "warm tones", "waterway" ]
+  "tags" : [ "Rain World", "RainWorld", "atmospheric", "city", "dystopia", "futuristic", "purple hues", "ship", "smoke", "warm tones", "waterway", "十返清月" ]
 }, {
   "id" : "8e72dab7-e72f-4842-a499-559659279e2c",
   "title" : "Threat - Superstructure",
@@ -3072,7 +3072,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Five Pebbles", "Rain World", "RainWorld", "Random", "blood", "circle", "dark", "eerie", "futuristic", "glow", "horror", "machine", "pathway", "red", "slug cat", "splattered", "vein" ]
+  "tags" : [ "Five Pebbles", "Rain World", "RainWorld", "Random", "blood", "circle", "dark", "eerie", "futuristic", "glow", "horror", "machine", "pathway", "red", "slug cat", "splattered", "vein", "十返清月" ]
 }, {
   "id" : "98913dff-7257-44aa-a0f2-abcd58d11fcd",
   "title" : "Threat - Superstructure",
@@ -3162,7 +3162,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
+  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two", "十返清月" ]
 }, {
   "id" : "f28a654d-a2c4-4ff2-88f0-592ba52cd4fd",
   "title" : "白虎蓮華",
@@ -3179,8 +3179,8 @@
   "difficulty" : "Sprinkle",
   "difficultyValue" : 0.0,
   "charter" : "十返清月",
-  "chartersList" : [ "十返清月" ],
-  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two", "十返清月" ]
 }, {
   "id" : "00e3e0b6-fbdd-4a7d-bcab-ba6540f4225d",
   "title" : "白虎蓮華",
@@ -3197,8 +3197,8 @@
   "difficulty" : "Cloudburst",
   "difficultyValue" : 0.0,
   "charter" : "十返清月",
-  "chartersList" : [ "十返清月" ],
-  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two" ]
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "art", "black and white", "cat ears", "characters", "dark clothing", "digital illustration", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two", "十返清月" ]
 }, {
   "id" : "5d4a26e7-8810-4a97-87b8-26dd3876463f",
   "title" : "Virtual S0da",
@@ -3270,7 +3270,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blue hair", "bubbles", "dreamy", "glowing", "light", "lying down", "pink dress", "purple", "serene", "sparkles", "underwater", "water", "woman" ]
+  "tags" : [ "blue hair", "bubbles", "dreamy", "glowing", "light", "lying down", "pink dress", "purple", "serene", "sparkles", "underwater", "water", "woman", "十返清月" ]
 }, {
   "id" : "b87796c3-a64e-4cfd-a57f-a35484a951e2",
   "title" : "WATER",
@@ -3360,7 +3360,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Rain World", "RainWorld", "dark corridor", "dim lighting", "eerie", "futuristic", "mysterious", "red and green glow", "reflective floor", "rough walls", "scattered lights", "sci fi", "slug cat", "suspense", "tunnel", "underground" ]
+  "tags" : [ "Rain World", "RainWorld", "dark corridor", "dim lighting", "eerie", "futuristic", "mysterious", "red and green glow", "reflective floor", "rough walls", "scattered lights", "sci fi", "slug cat", "suspense", "tunnel", "underground", "十返清月" ]
 }, {
   "id" : "296e3be3-1bdc-4568-a9d2-33ce9e0da9d4",
   "title" : "Words",
@@ -3432,7 +3432,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "urban background", "watercolor style" ]
+  "tags" : [ "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "urban background", "watercolor style", "十返清月" ]
 }, {
   "id" : "d83fd3e1-a609-4b73-b1f1-348ee1dca71d",
   "title" : "夜風",
@@ -3468,7 +3468,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "urban background", "watercolor style" ]
+  "tags" : [ "blonde hair", "blue eyes", "character", "cityscape", "dreamy", "female", "female character", "luvia", "pastel colors", "rain", "serene", "soft lighting", "urban background", "watercolor style", "十返清月" ]
 }, {
   "id" : "433e8313-04b8-4abc-aaf0-d4d102bb7f24",
   "title" : "apOapSis(Edit)",
@@ -3540,7 +3540,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy" ]
+  "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy", "十返清月" ]
 }, {
   "id" : "825405cb-d262-4f10-9e98-4d967e4e33f4",
   "title" : "cafe in 6412I731V",
@@ -3558,7 +3558,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki + Eric",
   "chartersList" : [ "Kiyotsuki", "Eric_Lian" ],
-  "tags" : [ "ExerciseBook", "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy", "超级练习册" ]
+  "tags" : [ "ExerciseBook", "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy", "十返清月", "超级练习册" ]
 }, {
   "id" : "54c60c83-9a80-458d-bf11-b04be1af1977",
   "title" : "cafe in 6412I731V",
@@ -3576,7 +3576,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy" ]
+  "tags" : [ "Musanuriyu", "arms-extended", "butterfly-motifs", "cafe in garden", "character", "clouds-rainbow", "colorful-flowers", "fantasy", "female", "garden", "gloves", "light-blue-dress", "long-hair", "luvia", "magical-atmosphere", "nature", "sparkling-lights", "spring-time", "sunny-sky", "taiko no tatsujin 2023 music open call", "whimsy", "十返清月" ]
 }, {
   "id" : "b1361177-1426-47cc-b036-afd09cad775b",
   "title" : "cybernetic blazar",
@@ -3702,7 +3702,7 @@
   "difficultyValue" : 0.0,
   "charter" : "GUGU_QwQ x 喵卡 x Kiyotsuki x 云梦",
   "chartersList" : [ "Kiyotsuki", "云梦", "喵卡", "GUGU" ],
-  "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat" ]
+  "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat", "十返清月" ]
 }, {
   "id" : "2cfa74ee-7e6d-4ebf-8f0a-e7cfb3a7e94c",
   "title" : "イコラト",
@@ -3738,7 +3738,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat" ]
+  "tags" : [ "advanced tech", "character", "city", "cool blue tones", "female", "futuristic", "ikorato", "lone person", "night", "platform", "prolog", "raining", "reflection", "signage", "tall buildings", "éclat", "十返清月" ]
 }, {
   "id" : "6eac0020-b9a1-480e-9539-633c0e502f9c",
   "title" : "slic.hertz #GdbG",
@@ -3804,5 +3804,5 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "adventurous mood", "bold lines", "bounty hunter", "character interaction", "clouds", "colorful background", "cowboy hat", "desert landscape", "detailed costumes", "determined expressions", "digital art", "dramatic lighting", "dynamic composition", "fantasy elements", "modern anime aesthetic", "rich color palette", "rock formations", "sky", "stylized illustration", "teamwork", "vibrant art style", "western" ]
+  "tags" : [ "adventurous mood", "bold lines", "bounty hunter", "character interaction", "clouds", "colorful background", "cowboy hat", "desert landscape", "detailed costumes", "determined expressions", "digital art", "dramatic lighting", "dynamic composition", "fantasy elements", "modern anime aesthetic", "rich color palette", "rock formations", "sky", "stylized illustration", "teamwork", "vibrant art style", "western", "十返清月" ]
 } ]
