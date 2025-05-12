@@ -12,237 +12,8 @@ console.log(" ███  ███                               \n\
  ██    ██  ███  ███  ███  ███           \n\
  ██    ██  ░██████░  ░██████░           \n\
  ██    ██   ░████░    ░████░      ")
-document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('.container');
-  container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-});
-
-const constantsData = {
-  "5aaafcea-684f-4310-936d-67ae35956c48": [-1, "Ø", "驟雨の狭間", , 4.334, , , 1],
-  "1104f25d-2493-4bc7-9172-b262d36488ac": [-1, "SP", "Oiiaioooooiai", , , 3.5, 4,],
-  "e543f4a5-5f55-45e5-9c41-ebe1c155c12e": [-1, "SP", "Dogbite", , , 3, 3, 2.5],
-  "6252f7c4-8eae-4b59-a22f-9f142f904029": [12.3, "CL", "Contrasty Angeles", 2, 2.438, 4.5, 3.5, 1],
-  "d742e989-92c4-4474-87ef-57b218d0fc41": [12.2, "CL", "命日", 246, 4.66, 2.5, 3.5, 1],
-  "9acd5289-bc81-49fb-afc8-7b0631e60e60": [12.1, "CL", "Regnaissance", 234, 4.169, 5, 4.5, 1],
-  "a19a54b6-363e-49ae-9cd2-633a2db8ae4f": [11.9, "CL", "Broken Conviction", 215, 2.35, , , 4],
-  "eab07c23-395d-47f3-be33-15c7c566f694": [11.7, "CL", "Moonflutter", 219, 2.232, 3, 3, 3.5],
-  "ead657f6-f0f2-4a21-acfd-4322892a0562": [11.7, "CL", "Fly To Meteor feat.兔柒", 215, 3.583, 3.5, 3.5,],
-  "217898b1-4806-401f-adf5-740e9d72b66e": [10.5, "CL", "雨女", 203, 1.192, 2, 1.5,],
-  "cc75ce1c-dbed-4bc7-94eb-728bf36bb1ec": [12.1, "CB", "Innocent white", 240, 3.121, 4.5, 4,],
-  "97ef94ce-df45-4a92-9645-2456f606e0fa": [11.9, "CB", "Meltovt Necrosys", 211, , , ,],
-  "ed40cd1b-2741-415a-be81-6fcc63db4044": [11.7, "CB", "HYPER MEMORIES", 256, 4.137, 1.5, 2,],
-  "ef55520f-c913-449f-bf26-ab947384127e": [11.5, "CB", "Broken Conviction", 220, 2.986, , ,],
-  "269efa5f-8b69-4a71-be24-7abe57372b3f": [11.5, "CB", "Contrasty Angeles", 217, 3.568, 3, 3.5,],
-  "e0162d0e-0727-49c2-80fa-f611621650ea": [11.4, "CB", "slic.hertz #GdbG", 240, , 2.5, 3.5,],
-  "61f5e310-d45b-40dc-a934-e3a849382729": [11.4, "CB", "Moonflutter", 211, 2.838, 3, 2.5,],
-  "14080c32-a16c-464c-b24a-880f1a7e657d": [11.4, "CB", "Algebra", 220, 2.945, 4, 3.5,],
-  "6b478cca-035d-4297-b34a-ae75658d81bd": [11.3, "CB", "Fragment of Memories", 211, 2.719, 3, 3,],
-  "f425914c-db82-413c-aca9-96ff151b8605": [11.2, "CB", "IN", 225, 2.745, , ,],
-  "da07cabf-7c7b-4083-a41a-879be13c8c94": [11.2, "CB", "イコラト", 219, 2.484, 3.5, 2,],
-  "01929c36-e7ba-40d5-8123-ca3d4c2da4fb": [11.2, "CB", "参宿四~Betelgeuse~", 217, 2.013, 2, 3,],
-  "04d821ff-493a-421d-83a5-a61a59b2d3d3": [11.1, "CB", "命日", 211, 3.118, 2.5, 2,],
-  "80df6e22-69c3-4983-a712-adeebb47fb2b": [11.1, "CB", "Regnaissance", 227, 2.86, 3.5, 4,],
-  "22bd5632-25cc-412f-9299-bcf2cdd64aed": [10.9, "CB", "樱落繁花", 205, 2.789, 4, 3,],
-  "f7b864bc-72a3-4c9d-ab7c-b57946fb77ec": [10.9, "CB", "Elsorhg", 204, , , ,],
-  "aafec4af-3479-445b-9b30-b6822b9f5e19": [10.8, "CB", "Moving on", 206, , 1.5, 1.5,],
-  "a6ef2d0a-057b-4ada-be88-23dcde06ada5": [10.7, "CB", "Hikari", 193, 2.44, , 1.5,],
-  "6db4cb9b-adec-4ce5-bb0a-71d4761e88f8": [10.6, "CB", "WATER", 206, 1.624, 1.5, 2.5,],
-  "13fda58e-3091-4b3d-8eb9-4ac8346ce61a": [10.6, "CB", "Threat - Sky Islands", 199, , 5, 4.5,],
-  "35ab3fba-928d-4b08-be7f-2fc67a77a838": [10.5, "CB", "Fly To Meteor (Milthm Edit)", 191, 3.183, 2.5, 2,],
-  "7131ad7b-1602-4acd-bfc1-1ff712d054f0": [10.5, "CB", "Future Unbound (Game Edit)", 200, 1.556, 2, 2.5,],
-  "7c0cdf77-fcfa-4f96-9897-24ca10582c32": [10.3, "CB", "Threat - Superstructure", 199, , , ,],
-  "7cdb8a2c-e133-4a91-a29f-4e21ba4e442a": [10.3, "CB", "Dogbite", 203, , , ,],
-  "3a908e2d-8a39-4220-a6b8-4817bd1cea4a": [10.2, "CB", "cybernetic blazar", 205, , , ,],
-  "b60f0788-f9af-4a41-8c73-2b72151d309f": [10.2, "CB", "Agnostic", 206, , , ,],
-  "887157ea-fe1a-480b-b7e9-e6a4f9e27ae4": [10.1, "CB", "夜風", 194, , , ,],
-  "130d1d7d-ba20-467c-b5f5-eafc51882809": [10.1, "CB", "☹", 191, , , ,],
-  "c902851b-fa01-44f4-97a8-ab6d317fccd4": [10.0, "CB", "仮想明日", 208, , , ,],
-  "03b883cf-f28b-4e33-8f67-d3bcb1a74719": [10.0, "CB", "Psyched Fevereiro", 196, , , ,],
-  "fc40c7fc-e62a-4fa8-891e-430444191e26": [10.0, "CB", "OverRain", 195, , , ,],
-  "8d787646-a290-4f14-a831-d7d43bc9f534": [9.8, "CB", "Rainbow Flavor!", 185, , , ,],
-  "f728706a-e40a-421d-aaba-dde4bc35e8e3": [9.8, "CB", "Oniichan", 172, , , ,],
-  "fa97e341-3a72-47bc-927e-b9cf87980b37": [9.7, "CB", "ネオン色のまち feat.Mai", 188, , , ,],
-  "9e083951-188f-4998-951a-58d08b4b4f45": [9.7, "CB", "Jump out?", 180, , , ,],
-  "00e3e0b6-fbdd-4a7d-bcab-ba6540f4225d": [9.6, "CB", "白虎蓮華", 189, , , ,],
-  "df4ff6fe-a8da-4b63-b0bd-b69ac8d80ace": [9.6, "CB", "Bio-Engineering", 176, , , ,],
-  "9a55b865-0860-41b9-9f78-bc5209bc9f44": [9.5, "CB", "雨女", 179, , , ,],
-  "ca4c79a7-709a-40c5-b0e0-c04b6deff431": [9.4, "CB", "烁雨", 178, , , ,],
-  "c3769378-d595-4119-b93c-e0db2b3ea8e2": [9.3, "CB", "Aconsma", 175, , , ,],
-  "cdacaee4-2866-4109-93a8-5bbbf0dc6207": [9.3, "CB", "花月", 181, , , ,],
-  "d70bc3b4-752a-45b9-bd31-c6ab8b9a7c9e": [9.2, "CB", "INFP.mp3", 176, , , ,],
-  "725abac1-5de5-463f-870d-a99a41cae61e": [9.1, "CB", "暮予星光", 180, 1.968, , ,],
-  "bb5b7628-87b1-4e1c-8e07-8bacadf6f2b1": [8.6, "CB", "サイクルの欠片", 154, , , ,],
-  "b2594118-dcf5-4750-9e57-e4eeef6142fe": [8.5, "CB", "时落之雨", 160, , , ,],
-  "6df0b462-dded-46db-8505-3ff86fc46c26": [8.3, "CB", "粗线条的雨", 153, , , ,],
-  "35b424f8-d0de-41ab-9512-f365a154c328": [8.3, "CB", "Words", 160, , , ,],
-  "858f698c-4bd9-40f0-aa8b-793021e0c550": [7.5, "CB", "雨之城", 134, , , ,],
-  "c18f27b6-2d4e-4631-82b1-4ede237874df": [9.0, "SK", "Contrasty Angeles", 179, , , ,],
-  "0785d07e-50e1-4e3f-b1aa-01fa43d0c2f6": [8.9, "SK", "HYPER MEMORIES", 169, , , ,],
-  "c9a9bc45-8695-4fb9-babe-d2027a6d9ed7": [8.8, "SK", "樱落繁花", 164, , , ,],
-  "2cfa74ee-7e6d-4ebf-8f0a-e7cfb3a7e94c": [8.7, "SK", "イコラト", 157, , , ,],
-  "63b8512d-ac16-4026-bfee-1317d860ab82": [8.7, "SK", "命日", 156, , , ,],
-  "de2327c7-0d63-496f-9974-dbb70bfcbed8": [8.6, "SK", "Broken Conviction", 154, , , ,],
-  "a5a9a7e4-3030-4bb3-9eef-04e58a0fbdb4": [8.5, "SK", "Regnaissance", 154, , , ,],
-  "2022fd8f-3210-4151-8636-8ec888236214": [8.4, "SK", "Hikari", 135, , , ,],
-  "de74f367-3a91-4421-a657-f0e8268083a3": [8.4, "SK", "Fragment of Memories", 154, , , ,],
-  "9953c1b3-f92a-406c-8ea6-78dbee1b8f71": [8.3, "SK", "Bio-Engineering", 167, , , ,],
-  "d6514d67-18d3-4d8e-8492-890061efb6f7": [8.2, "SK", "花月", 163, , , ,],
-  "14700dda-b3c7-429d-a5ce-8a65f2fe4846": [8.2, "SK", "Innocent white", 160, , , ,],
-  "962ec79e-489c-43ea-bd72-6dc3448e3983": [8.1, "SK", "Algebra", 153, , , ,],
-  "d89765a7-05a1-44a1-8ed3-f23f5f15741a": [8.0, "SK", "☹", 151, , , ,],
-  "4001a2b3-374d-438e-8e2b-2bd6d3651805": [8.0, "SK", "ネオン色のまち feat.Mai", 157, , , ,],
-  "44405d3d-4162-4fb8-9e86-fc7c965d4d2d": [8.0, "SK", "Oniichan", 169, , , ,],
-  "e663eb53-66d4-4a76-b533-445ef08ee18e": [7.9, "SK", "IN", 142, , , ,],
-  "38b25a54-afa9-4369-b286-90ba2e29df0b": [7.9, "SK", "Jump out?", 131, , , ,],
-  "dae03da2-2ff0-4ed1-9624-945c2b9d3118": [7.9, "SK", "Moonflutter", 135, , , ,],
-  "e7ec6340-be44-44ab-8545-d5b7cf326fd4": [7.8, "SK", "Meltovt Necrosys", 132, , , ,],
-  "e75e2d80-86a0-464f-8d29-8dd0bb68328b": [7.8, "SK", "サイクルの欠片", 134, , , ,],
-  "b1361177-1426-47cc-b036-afd09cad775b": [7.8, "SK", "cybernetic blazar", 147, , , ,],
-  "fccd5960-dbdc-4127-8b0b-58c1fb521354": [7.6, "SK", "OverRain", 144, , , ,],
-  "26a76638-ec89-4809-bd40-5d6afe403c40": [7.6, "SK", "slic.hertz #GdbG", 140, , , ,],
-  "640cea92-0024-4ba5-aa16-8a38f77743ac": [7.5, "SK", "Elsorhg", 131, , , ,],
-  "ac9308f8-b896-43af-879a-b65bcfcaa874": [7.5, "SK", "Rainbow Flavor!", 132, , , ,],
-  "bdf2975e-8b19-4af8-9b1c-dc6f62587e7c": [7.5, "SK", "暮予星光", 138, , , ,],
-  "3442183b-cf7d-4842-9ddf-04243914916a": [7.5, "SK", "Future Unbound (Game Edit)", 148, , , ,],
-  "9a75cbb5-f9ad-4557-b3ed-5553a16023d7": [7.4, "SK", "Agnostic", 146, , , ,],
-  "fe111534-c651-4896-9538-2dd100131a7d": [7.3, "SK", "夜風", 140, , , ,],
-  "b87796c3-a64e-4cfd-a57f-a35484a951e2": [7.3, "SK", "WATER", 148, , , ,],
-  "9a8d5198-664a-418a-868b-b28d992c9b9e": [7.3, "SK", "Psyched Fevereiro", 139, , , ,],
-  "9476c969-d02d-40ca-b64f-eb3efae43ee7": [7.0, "SK", "烁雨", 144, , , ,],
-  "eb7a9055-b56f-46ba-9c30-0f9380d2f5b5": [6.9, "SK", "Threat - Sky Islands", 118, , , ,],
-  "1ec80826-e11e-43af-acd3-c154212443b9": [6.6, "SK", "仮想明日", 115, , , ,],
-  "9953eae4-4f60-4cfe-a8c3-9ada13a4b1ca": [6.5, "SK", "雨女", 117, , , ,],
-  "508fff6a-32dc-4f6b-88c7-bbd86e639085": [6.5, "SK", "Fly To Meteor (Milthm Edit)", 128, , , ,],
-  "296e3be3-1bdc-4568-a9d2-33ce9e0da9d4": [6.5, "SK", "Words", 122, , , ,],
-  "5aac139b-ab96-486d-a081-6bfebe382932": [6.5, "SK", "Dogbite", 117, , , ,],
-  "f28a654d-a2c4-4ff2-88f0-592ba52cd4fd": [6.5, "SK", "白虎蓮華", 128, , , ,],
-  "81daeec2-c1ae-4218-97fa-f9796504dba9": [6.4, "SK", "参宿四~Betelgeuse~", 120, , , ,],
-  "7d5df9f6-080f-4da0-974a-d2b8cb86e7e6": [6.3, "SK", "Moving on", 121, , , ,],
-  "8f75c6ff-a5ac-4738-b5e9-2549fa838084": [6.0, "SK", "Aconsma", 124, , , ,],
-  "8e72dab7-e72f-4842-a499-559659279e2c": [5.5, "SK", "Threat - Superstructure", 107, , , ,],
-  "37a9f1a0-32d4-4f78-acae-1be9ca7ea42f": [5.5, "SK", "INFP.mp3", 96, , , ,],
-  "54ea2f8f-ae05-4aba-a117-8d187bf08074": [4.5, "SK", "时落之雨", 84, , , ,],
-  "62c1cdc7-57c2-4a5f-809b-bcfb6c6a0469": [4.0, "SK", "粗线条的雨", 73, , , ,],
-  "acdab435-5aa3-45de-a815-9dbb7cd13130": [4.0, "SK", "雨之城", 84, , , ,],
-  "7c30226f-0ea5-4b71-aab7-7fefca1070dd": [4.5, "SK", "Broken Conviction", 82, , , ,],
-  "4144b702-77bd-4ff4-9ba0-aa7c70b2bab5": [4.5, "DZ", "Regnaissance", 80, , , ,],
-  "ac138fef-ad0b-4d0d-883c-453e6fe11d37": [4.0, "DZ", "Contrasty Angeles", 79, , , ,],
-  "cea79b8c-23fd-4fbd-b2a9-6f080ef15b44": [4.0, "DZ", "cybernetic blazar", 79, , , ,],
-  "2d6e3256-818b-434e-9980-ee6fcf14a8c7": [4.0, "DZ", "☹", 77, , , ,],
-  "5d23aa36-a3df-406f-980f-b6cd0cec5385": [3.5, "DZ", "仮想明日", 63, , , ,],
-  "2484331f-4345-4f97-98ac-edda4be3f723": [3.5, "DZ", "Psyched Fevereiro", 59, , , ,],
-  "5ab2ddde-5f3e-42ec-b626-1296680093d1": [3.5, "DZ", "ネオン色のまち feat.Mai", 64, , , ,],
-  "375f0d93-82e2-4350-9b46-98c3dd836305": [3.0, "DZ", "雨女", 55, , , ,],
-  "a8f6451b-eeb3-4cb4-898b-4a8c4233567f": [3.0, "DZ", "Oniichan", 65, , , ,],
-  "794c0460-7a5e-4ffb-bfcc-2800f1d5bfb2": [3.0, "DZ", "Moonflutter", 58, , , ,],
-  "520361a1-805b-4332-b53e-1da11a94de1b": [3.0, "DZ", "イコラト", 57, , , ,],
-  "dd163ba4-a1fa-4fc7-ba45-91561c824cc8": [3.0, "DZ", "命日", 52, , , ,],
-  "74bf4e17-c246-4871-9b2b-0dd0d0e6ee28": [3.0, "DZ", "Agnostic", 56, , , ,],
-  "d83fd3e1-a609-4b73-b1f1-348ee1dca71d": [3.0, "DZ", "夜風", 60, , , ,],
-  "8442e9aa-ea0a-4d9e-8592-cfd9228eb14c": [3.0, "DZ", "樱落繁花", 67, , , ,],
-  "1ab3b5cf-b6af-48ec-99e8-2d3a4e9edc72": [3.0, "DZ", "Hikari", 65, , , ,],
-  "c6629820-510f-4575-969e-dc6a9d3fe479": [3.0, "DZ", "WATER", 60, , , ,],
-  "adcc6c11-2986-4f3c-ae7e-4b52fe75dc83": [3.0, "DZ", "Fly To Meteor (Milthm Edit)", 61, , , ,],
-  "75fbb0ef-08fa-47cb-8c6f-acf361f7a081": [3.0, "DZ", "Future Unbound (Game Edit)", 64, , , ,],
-  "d8074d7e-dc36-4190-9377-0c62c3775dac": [3.0, "DZ", "Dogbite", 64, , , ,],
-  "cfa1c1fd-432e-4313-ae23-fbd6f731ae46": [3.0, "DZ", "白虎蓮華", 66, , , ,],
-  "6eac0020-b9a1-480e-9539-633c0e502f9c": [3.0, "DZ", "slic.hertz #GdbG", 60, , , ,],
-  "e27a66da-19c5-4d3a-85f4-5defdf5b7b88": [2.0, "DZ", "Elsorhg", 33, , , ,],
-  "c55ac81b-f00d-4031-8f54-a7735ce84cd3": [2.0, "DZ", "Meltovt Necrosys", 49, , , ,],
-  "5b104c2e-94ad-4156-ab25-d1b11be487f3": [2.0, "DZ", "Rainbow Flavor!", 25, , , ,],
-  "0af38afb-fe05-403c-90b6-2876bb18616e": [2.0, "DZ", "Threat - Sky Islands", 47, , , ,],
-  "6d4c9a21-2ed4-4892-9b38-fd53840de04f": [2.0, "DZ", "Moving on", 40, , , ,],
-  "e09a8896-ad87-4cee-8f2a-40b8d4439f26": [2.0, "DZ", "Algebra", 46, , , ,],
-  "a5000e56-b917-40ce-9ebb-12cc2c4a2e70": [2.0, "DZ", "Fragment of Memories", 49, , , ,],
-  "98913dff-7257-44aa-a0f2-abcd58d11fcd": [2.0, "DZ", "Threat - Superstructure", 40, , , ,],
-  "c5032ab4-c03c-42c3-b132-445b94165e8d": [2.0, "DZ", "OverRain", 43, , , ,],
-  "b75e195e-7991-4e4a-8afc-7372b4ae95fd": [2.0, "DZ", "暮予星光", 41, , , ,],
-  "a4ac4167-5934-4157-90e7-675c994b4451": [2.0, "DZ", "参宿四~Betelgeuse~", 32, , , ,],
-  "eceaaf9e-3754-4054-9c17-2d87644de96e": [2.0, "DZ", "烁雨", 40, , , ,],
-  "8c794275-de29-4beb-87a1-af024fe94e1e": [2.0, "DZ", "花月", 83, , , ,],
-  "3ebe1bbe-5d13-4175-ad91-dcf85c7bfd19": [2.0, "DZ", "INFP.mp3", 40, , , ,],
-  "7072a099-a482-484d-84a5-945ac94807e1": [2.0, "DZ", "Innocent white", 36, , , ,],
-  "9884d239-3007-4e78-a655-297f000bcf50": [2.0, "DZ", "Words", 34, , , ,],
-  "213a40e1-d945-464c-aa6e-9ae82db8fc50": [2.0, "DZ", "Jump out?", 37, , , ,],
-  "a5ba0b3b-1eb5-4b43-8d12-9e82b6d0afaa": [2.0, "DZ", "Bio-Engineering", 33, , , ,],
-  "e7cd8b7f-a19c-488d-b9b6-127524586ed3": [1.0, "DZ", "IN", 46, , , ,],
-  "8b329704-9ce5-4361-abd5-b89c68b61286": [1.0, "DZ", "Aconsma", 16, , , ,],
-  "68fbf0eb-f43a-4497-afb1-8282176aed97": [1.0, "DZ", "HYPER MEMORIES", 63, , , ,],
-  "64cc8f3b-7bed-48a3-80ca-f281c57c0916": [1.0, "DZ", "时落之雨", 17, , , ,],
-  "7687d948-dbe1-48c4-a786-fbe669ec7b0c": [1.0, "DZ", "粗线条的雨", 13, , , ,],
-  "e69b4e77-ccb2-4694-ba88-7209ed097783": [1.0, "DZ", "雨之城", 26, , , ,],
-  "606be389-ad01-41e3-a1ba-e7b355d16948": [1.0, "DZ", "Sundown", 14, , , ,],
-  "364be32e-f685-4efb-80b5-64281c93939d": [1.0, "DZ", "Welcome to Milthm", 11, , , ,],
-  "4fa17ebf-6a8e-47c1-8d8b-bd1344ccd559": [1.0, "DZ", "サイクルの欠片", 20, , , ,],
-  "6a647130-01de-4cf2-ba7a-a6065f043465": [4.0, "SK", "White Lizard", 83, , , ,],
-  "c1d143f6-ad6b-46cc-b3e0-f136e4accb01": [10.6, "CB", "Threat - Waterfront Complex", 34, , , ,],
-  "9c28aeec-247e-4b9d-9edc-a92d0bd06303": [7.6, "SK", "Threat - Waterfront Complex", 131, , , ,],
-  "2103d16c-9a07-4001-be01-155ef305118e": [2.0, "DZ", "Threat - Waterfront Complex", 198, , , ,],
-  "1a3167ae-9105-4545-9aa7-3cab60874e9c": [10.4, "CB", "Kayava", 205, , , ,],
-  "1ae6231b-d165-4f09-a138-9ec0d29431a7": [5.5, "SK", "Kayava", 101, , , ,],
-  "85a6566f-d9df-408e-a812-0b13a80362cc": [3.0, "DZ", "Kayava", 60, , , ,],
-  "abefe6c9-2b30-45ef-b5b0-8edb5fc18195": [11.5, "CB", "Threat - Metropolis", 211, , , ,],
-  "975a9b31-3f04-4587-b77e-2282dec95188": [6.6, "SK", "Threat - Metropolis", 120, , , ,],
-  "c292f47e-d8ff-483f-bfd7-aa43937f0e2e": [2.0, "DZ", "Threat - Metropolis", 39, , , ,],
-  "6add3ab9-52c0-4c13-abc9-506dfa89faa6": [11.1, "CB", "Sheer Ice Torrent", 333, , , ,],
-  "d3ddf678-adb0-4157-ae10-21c2667c7ba8": [7.8, "SK", "Sheer Ice Torrent", 333, , , ,],
-  "e23637e8-fe15-4d9a-b3c9-9e059745ad3c": [2.0, "DZ", "Sheer Ice Torrent", 333, , , ,],
-  "a8d6dfa7-b879-4eef-a10a-dbbd46519583": [12.2, "CB", "大月墜落狂想", 231, 3, 2, 2, 2],
-  "9eb53fd3-a91c-45c6-8608-f3a76eecf9f7": [8.0, "SK", "大月墜落狂想", 157, , , ,],
-  "ca751a94-f71e-4556-9d54-76de325ca29c": [2.0, "DZ", "大月墜落狂想", 37, , , ,],
-  "addba2e9-ad45-4770-b850-717ab2e0e17d": [10.6, "CB", "FULi AUTO SHOOTER", 192, , , ,],
-  "423e7ae7-97e9-4c87-a778-36af2020a59d": [7.2, "SK", "FULi AUTO SHOOTER", 145, , , ,],
-  "d93cfe14-d3b1-4934-98a4-77b89e1f1304": [3.0, "DZ", "FULi AUTO SHOOTER", 65, , , ,],
-  "825405cb-d262-4f10-9e98-4d967e4e33f4": [11.3, "CB", "cafe in 6412I731V", 211, , , ,],
-  "faf0dc82-df37-456a-b726-283e27df9c31": [7.0, "SK", "cafe in 6412I731V", 133, , , ,],
-  "54c60c83-9a80-458d-bf11-b04be1af1977": [2.0, "DZ", "cafe in 6412I731V", 49, , , ,],
-  "5c0778d6-b2db-444f-a911-7892ffdf3ba5": [11.6, "CB", "KASANE", 223, , , ,],
-  "3b11fea9-a2e3-40f7-bbe2-196cfcf25a1c": [7.8, "SK", "KASANE", 145, , , ,],
-  "76aebcf6-d55d-4490-b48a-1fc3162a974a": [3.0, "DZ", "KASANE", 53, , , ,],
-  "bab866eb-1919-4133-9ea5-0d780e17aa48": [10.4, "CB", "Fantasia Sonata Stars", , , , ,],
-  "fa7c3e3f-29c3-4a27-a656-7696cbcd975e": [6.8, "SK", "Fantasia Sonata Stars", , , , ,],
-  "c4670dbb-6bad-4ae5-baef-4f2400b3ba41": [2.0, "DZ", "Fantasia Sonata Stars", , , , ,],
-  "4e844cd0-d532-486a-bf46-3fcf77dc3914": [10.5, "CB", "Fantasia Sonata Sky Syndrome", , , , ,],
-  "9a53b7e0-fc48-4203-ace2-872a12fe7ec4": [7.0, "SK", "Fantasia Sonata Sky Syndrome", , , , ,],
-  "dd3934f9-5a39-4086-b859-03c164db27ef": [2.5, "DZ", "Fantasia Sonata Sky Syndrome", , , , ,],
-  "cdb92390-bb3e-4ec7-bfbd-764c57345058": [10.1, "CB", "はんてん", , , , ,],
-  "97573233-f735-4432-ad7c-745367c11ffc": [6.0, "SK", "はんてん", , , , ,],
-  "738d7d56-9716-4cf1-8bb4-a54e31c6df61": [2.0, "DZ", "はんてん", , , , ,],
-  "5f5490a8-f2e2-4ab6-9800-1db6f3eed344": [10.4, "CB", "Curse of 14", , , , ,],
-  "df7a7116-1299-4557-8be4-36603a8da40e": [7.5, "SK", "Curse of 14", , , , ,],
-  "7b603362-5888-41d1-953b-0e4a7e461b79": [3.0, "DZ", "Curse of 14", , , , ,],
-  "e9ae00a5-355c-45ff-b099-91cd5455193c": [10.6, "CB", "Virtual S0da", , , , ,],
-  "5d4a26e7-8810-4a97-87b8-26dd3876463f": [6.6, "SK", "Virtual S0da", , , , ,],
-  "e9789bd9-bc33-412c-a1c9-d00ded16b324": [3.0, "DZ", "Virtual S0da", , , , ,],
-  "575ea000-3a9e-4c68-b20e-73a16b4f044d": [10.7, "CB", "apOapSis(Edit)", , , , ,],
-  "bf05f32a-9a94-4915-b91c-877a0e7c99a4": [6.4, "SK", "apOapSis(Edit)", , , , ,],
-  "433e8313-04b8-4abc-aaf0-d4d102bb7f24": [3.5, "DZ", "apOapSis(Edit)", , , , ,],
-  "eb802d90-72c0-4b95-856a-b2951a57c0ec": [-1, "CB*", "Sheer Ice Torrent", , , , ,],
-  "d3ddf678-adb0-4158-ae10-21c2667c7ba8": [-1, "SK*", "Sheer Ice Torrent", , , , ,],
-  "e23637e8-fe16-4d9a-b3c9-9e059745ad3c": [-1, "DZ*", "Sheer Ice Torrent", , , , ,],
-  "eade667e-610b-419c-bc3d-503d7946d1ea": [-1, "SP", "Welcome to Milthm", , , , ,],
-  "1ccef645-09b6-400d-a438-b2f2fdc0debc": [-1, "SP", "选择你的宽带", , , , ,],
-  "cc508ca6-5d5f-4222-a4a9-3a8cfbaac03e": [-1, "SP", "Algebra", , , , ,],
-  "242edead-e9cd-428d-9799-f8a603109fc6": [-1, "SP", "Rainbow Flavor!", , , , ,],
-  "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a": [-1, "SP", "KAEDE", , , , ,],
-};
-
-//解析出constant
-const constants = {}, fields = ["constant", "category", "name", "yct", "ad", "ae", "af", "ag"];
-for (const id in constantsData) {
-  const arr = constantsData[id], obj = {};
-  fields.forEach((k, i) => {
-    let v = arr[i];
-    if (v === undefined) {
-      if (k === "ad") v = 0;
-      else if (k === "ae" || k === "af") v = 1;
-      else if (k === "ag") v = 0;
-    }
-    if (v !== undefined) obj[k] = v;
-  });
-  constants[id] = obj;
-}
-
+ 
+//constant位于./constant.js
 /* ========== 全局变量 ========== */
 let columns = 3; //默认三列布局
 /* ========== DOMContentLoaded 事件 ========== */
@@ -260,11 +31,9 @@ function reality(score, c) {
 }
 
 function findScore(constant, target) {
-  // 根据目标值选择搜索区间
   if (target <= constant - 1.5) return 700000;
   if (target > 1 + constant) return "Unable to deduce points";
   if (target == (1 + constant)) return 1005000;
-  // 根据目标值确定在哪个分段进行查找
   if (target > 0.3 + constant) {
     return Math.min(Math.ceil(10000 * (99.5 + Math.log((1.4 / (target + 0.4 - constant)) - 1) / -3.65)), 1005000);
   } else if (target > -0.5 + constant) {
@@ -760,7 +529,7 @@ function processHistoryRecords(scores) {
   const userrealityHistory = calculateUserReality(scores);
   const username = scores[0]?.username;
   formatInput(username, items);
-  drawAndDownloadUserRealityChart(userrealityHistory, r10, scores);
+  urltc(userrealityHistory, r10, scores);
   processData()
 }
 
@@ -853,7 +622,7 @@ function calculateUserReality(scores) {
   return userrealityHistory;
 }
 
-function drawAndDownloadUserRealityChart(userrealityHistory, r10, scores) {
+function urltc(userrealityHistory, r10, scores) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 2000;
