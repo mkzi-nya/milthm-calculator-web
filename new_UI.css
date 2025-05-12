@@ -7,6 +7,10 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 卡片最小宽度150px，自动填充列 */
     gap: 5px; /* 卡片间距 */
     width: 100%; 
+    justify-content: space-between;
+    }
+    .card-inside{
+        border-radius: 5px;
     }
     .card {
         min-width: 0;
@@ -62,45 +66,126 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-.rccc{
-    /* 设置半透明背景最高优先级,覆盖layui的设置 */
-    background-color: rgba(33, 33, 33, 0.6) !important;
+#languageButton{
+    background-color: rgba(33, 33, 33, 0.1) !important;
+    backdrop-filter: blur(6px); /* 模糊效果 */
     border-radius: 10px !important; /* 圆角边框 */
     border: 1px solid #aaaaaa2a !important;
+    padding: 3px;
+}
+.rccc{
+    /* 设置半透明背景最高优先级,覆盖layui的设置 */
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    backdrop-filter: blur(32px); /* 模糊效果 */
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.5) !important; 
+}
+#settingsModal{
+    /* 设置半透明背景最高优先级,覆盖layui的设置 */
+    background-color: rgba(50, 50, 50, 0.3) !important;
+    backdrop-filter: blur(6px); /* 模糊效果 */
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+}
+#settingsModal input{
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+}
+#settingsModal input:focus{
+    border-color: #73cb8c !important;
+    background-color: rgba(33, 33, 33, 0.5) !important;
+}
+#settingsModal .apply-btn{
+    border-radius: 16px !important;
+    border-color: #3a8e52 !important;
+    background-color: #2c9f4d2d !important;
+}
+#settingsModal .cancel-btn{
+    border-radius: 16px !important;
+    border-color: #7d7979 !important;
+    background-color: #37373732 !important;
+}
+#settingsModal select{
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+    padding: auto;
 }
 .layui-collapse{
     border: 0px !important;
 }
 .layui-layer{
-    border-radius: 12px !important;
+    /* 设置半透明背景最高优先级,覆盖layui的设置 */
+    background-color: rgba(33, 33, 33, 0.5) !important;
+    backdrop-filter: blur(6px); /* 模糊效果 */
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+}
+#languageMenu{
+    background-color: rgba(33, 33, 33, 0.5) !important;
+    backdrop-filter: blur(6px); /* 模糊效果 */
+    border-radius: 10px !important; /* 圆角边框 */
+    border: 1px solid #aaaaaa2a !important;
+}
+#languageMenu div:hover{
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px;
+}
+.layui-layer-shade{
+    background-color: rgba(0, 0, 0, 0.8) !important;
 }
 /* .header-opa{
     background-color: #233078aa !important;
 } */
 #inputData{
+    border-color: #555555 !important;
     border-radius: 12px !important;
+    background-color: rgba(33, 33, 33, 0.1) !important;
 }
 #inputData:focus{
-    border-color: #5FB878 !important;
-    border-radius: 4px !important;
+    border-color: #73cb8c !important;
+    background-color: rgba(33, 33, 33, 0.5) !important;
 }
 #inputData:hover{
-    border-color: #5FB878 !important;
+    border-color: #73cb8c !important;
 }
 .layui-btn{
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     border-color: #5FB878 !important;
     background-color: #1e5e3052 !important;
 }
 .layui-btn:hover{
     border-color: #ffffff !important;
-    border-radius: 8px !important;
     background-color: #22914152 !important;
     color: #ffffff !important;
 }
 .header-opa-bg2{
-    /* background-color: #11223a80 !important; */
-    padding: 10px;
     color: #ffffff;
     text-align: center;
+
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    backdrop-filter: blur(12px); 
+    border: 1px solid #aaaaaa2a !important;
 }
+/* .header-opa-content{
+    padding: 12px; 
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    backdrop-filter: blur(12px); 
+    border-radius: 10px !important; 
+    border: 1px solid #aaaaaa2a !important;
+} */
+ /* .header-opa-content h1{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+ }
+.header-opa-content h1 div{
+    background-color: rgba(33, 33, 33, 0.3) !important;
+    text-align: center;
+    justify-content: center;
+    backdrop-filter: blur(12px); 
+    border-radius: 10px !important; 
+    border: 1px solid #aaaaaa2a !important;
+} */

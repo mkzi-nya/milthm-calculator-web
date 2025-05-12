@@ -274,7 +274,7 @@ function findScore(constant, target) {
   }
   return 114514;
 }
-
+var shitValue = 0.114514;
 /* ========== 核心流程 ========== */
 function processData() {
   const inputData = document.getElementById('inputData').value.replace(/\n/g, '').replace(/  /g, '');
@@ -306,8 +306,16 @@ function processData() {
   // 显示用户信息
   drawUserInfo(username, items);
   // 绘制所有卡片
+  
+  const outputDiv = document.getElementById('output');
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.classList.add('card-info');
+  card.innerHTML = `1145141919810`;
+  outputDiv.appendChild(card);
+  shitValue = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
+  outputDiv.innerHTML='';
   items.forEach(drawCard);
-
   // 格式化写回 inputData
   formatInput(username, items);
 }
@@ -517,13 +525,23 @@ function drawUserInfo(username, results) {
 /* ========== 绘制单张卡片 ========== */
 function drawCard(result, index) {
   const outputDiv = document.getElementById('output');
+  const maincard = document.createElement('div');
   const card = document.createElement('div');
-  card.classList.add('card');
+  maincard.classList.add('card');
+  card.classList.add('card-inside');
   // 背景
-  card.style.background = result.bestLevel === 0
-    ? 'linear-gradient(135deg, #8400C3,#3030B0,#2e61ef)'
-    : 'linear-gradient(45deg, #4028d7, #8839fe)';
+  // card.style.background = result.bestLevel === 0
+  //   ? 'linear-gradient(135deg, #8400C3,#3030B0,#2e61ef)'
+  //   : 'linear-gradient(45deg, #4028d7, #8839fe)';
+  const opa = 0.114514;
+  const opa_nb = 0.114514;
+  maincard.style.background = result.bestLevel === 0
+    ? `linear-gradient(135deg, rgba(132, 0, 195, ${opa_nb}), rgba(48, 48, 176, ${opa_nb}), rgba(46, 97, 239, ${opa_nb}))`
+    : `linear-gradient(45deg, rgba(64, 40, 215, ${opa}), rgba(136, 57, 254, ${opa}))`;
   card.style.color = '#DDA0DD';
+  
+  // card.style.border = '1px solid';
+  result.bestLevel === 0 ? (()=>{card.style.border = '1.5px solid';card.style.borderColor = 'rgba(255, 255, 255, 0.3)';})() : {};
   // 计算基础字号
   let baseFontSize = (window.innerWidth * window.innerHeight) / 50000; //60000
   if (baseFontSize >= 10) {
@@ -537,16 +555,11 @@ function drawCard(result, index) {
   title.innerText = result.name;
   card.appendChild(title);
   const maxCardWidth = card.offsetWidth * 0.7;
-  title.style.fontSize = `${fontSize * 1.3}px`;
   title.style.whiteSpace = 'nowrap';
   title.style.overflow = 'hidden';
   title.style.textOverflow = 'ellipsis';
-  // 若标题过长就减小字号
-  while (title.offsetWidth > maxCardWidth && fontSize > 2) {
-    fontSize--;
-    title.style.fontSize = `${fontSize}px`;
-  }
-  // Info 行
+  title.style.maxWidth = "90%";
+  
   const info = document.createElement('div');
   info.classList.add('info');
   Object.assign(info.style, {
@@ -571,6 +584,7 @@ function drawCard(result, index) {
     singleRealitySpan.style.color = '#ff4040';
   }
   info.innerHTML = `${result.category} ${constantText}`;
+  info.style.maxWidth="100%"
   info.appendChild(singleRealitySpan);
   // 准度
   const accuracySpan = document.createElement('span');
@@ -587,7 +601,7 @@ function drawCard(result, index) {
   const score = document.createElement('div');
   score.classList.add('score');
   score.innerText = result.bestScore;
-  score.style.fontSize = `${fontSize * 2.5}px`;
+  // score.style.fontSize = `${fontSize * 2.5}px`;
   score.style.marginBottom = `${marginBottom}px`;
   score.style.whiteSpace = 'nowrap';
   score.style.overflow = 'hidden';
@@ -624,7 +638,14 @@ function drawCard(result, index) {
   });
   card.appendChild(indexElem);
   // 加入到输出
-  outputDiv.appendChild(card);
+  maincard.appendChild(card);
+  outputDiv.appendChild(maincard);
+  // 注意：调整大小一定需要在生成完成后！
+  // const fontSize1 = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
+  info.style.fontSize = `${shitValue*1.14514}px`;
+  title.style.fontSize = `${shitValue * 1.2}px`;
+  score.style.fontSize = `${shitValue * 2}px`;
+  // console.log(`Card width: ${card.offsetWidth}px, Font size: ${shitValue}px`);
 }
 
 /* ========== 列数调整 ========== */
