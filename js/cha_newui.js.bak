@@ -1022,10 +1022,10 @@ function downloadImage() {
       } else {
         ctx.fillText(`Reality: ${window.average1}`, 660, 135);
       }
-      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 170);
+      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 180);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
-      ctx.fillText(`Date: ${dateStr}`, 660, 205);
+      ctx.fillText(`Date: ${dateStr}`, 660, 215);
       ctx.font = '50px Arial';
       ctx.fillText('Milthm-calculator', 100, 130);
       ctx.font = '30px Arial';

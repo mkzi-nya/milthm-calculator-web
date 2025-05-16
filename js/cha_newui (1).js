@@ -289,45 +289,6 @@ function drawUserInfo(username, results) {
   userInfoDiv.innerHTML = `${username} ${window.average1}`;
   window.username = username;
   window.average = avg;
-  window.utlr = tlr()
-}
-
-function tlr(){
-let as,ar;
-  if (window.processedItems.length >= 20) {
-    let items = window.processedItems;
-    let aitems = window.processedItems.slice(0, 20);
-
-as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
-    // 初始计算ltlr
-    aitems.forEach(i => {
-      i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
-    });
-    // 遍历items（跳过已有aitems的前20项）
-    for (let i = 20; i < items.length; i++) {
-      let curr = items[i];
-      let ltlr = (curr.singleRealityRaw - ar) / 20 + reality(as + (curr.bestScore - as) / 20, 0);
-      let minLtlrItem = aitems.reduce((min, x) => x.ltlr < min.ltlr ? x : min);
-      if (ltlr > minLtlrItem.ltlr) {
-        // 替换
-        let index = aitems.indexOf(minLtlrItem);
-        curr.ltlr = ltlr;
-        aitems[index] = curr;
-
-        // 更新as, ar并重算aitems中所有的ltlr
-as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
-        aitems.forEach(i => {
-          i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
-        });
-      }
-    }
-
-ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / 20;
-as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / 20;
-return reality(as, ar) - 1;
-  }
 }
 
 /* ========== 绘制单张卡片 ========== */
@@ -1018,14 +979,13 @@ function downloadImage() {
       }
       ctx.fillText(`Player: ${window.username}`, 660, 100);
       if (yrjds == "true") {
-        ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}`, 660, 135);
+        ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}`, 660, 150);
       } else {
-        ctx.fillText(`Reality: ${window.average1}`, 660, 135);
+        ctx.fillText(`Reality: ${window.average1}`, 660, 150);
       }
-      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 170);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
-      ctx.fillText(`Date: ${dateStr}`, 660, 205);
+      ctx.fillText(`Date: ${dateStr}`, 660, 200);
       ctx.font = '50px Arial';
       ctx.fillText('Milthm-calculator', 100, 130);
       ctx.font = '30px Arial';
