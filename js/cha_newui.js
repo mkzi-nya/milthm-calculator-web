@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.05.09 10:35(UTC+8)"
+const Updated = "Updated at 2025.05.16 12:35(UTC+8)"
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -324,8 +324,9 @@ ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
       }
     }
 
-ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / 20;
-as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / 20;
+ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / window.processedItems.slice(0, 20).length;
+as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / window.processedItems.slice(0, 20).length;
+
 return reality(as, ar) - 1;
   }
 }
