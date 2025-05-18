@@ -99,7 +99,7 @@ function processData() {
   formatInput(username, items);
 
   //final for k9.lv 's upload sys
-  initUpload();
+  //initUpload();
 }
 
 /* ========== 工具函数 ========== */
