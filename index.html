@@ -99,6 +99,57 @@
       background-color: rgba(0, 0, 0, 0.7);
       z-index: 9999;
     }
+            body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            /* 设置背景颜色为黑色 */
+            overflow: auto;
+        }
+
+        .rain {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .raindrop {
+            position: absolute;
+            top: -10px;
+            width: 2px;
+            height: 64px;
+            background-color: rgb(126, 137, 207);
+            border-radius: 1px;
+            opacity: 0;
+            animation: fall linear;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-20vh) scale(0.5);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0;
+            }
+        }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
@@ -108,10 +159,28 @@
     gtag('js', new Date());
 
     gtag('config', 'G-L5K3QVRHFZ');
+            document.addEventListener("DOMContentLoaded", function() {
+            const rain = document.querySelector(".rain");
+
+            function createRainDrop() {
+                const drop = document.createElement("div");
+                drop.classList.add("raindrop");
+                drop.style.left = Math.random() * window.innerWidth + "px";
+                drop.style.animationDuration = 0.5 + Math.random() * 1.5 + "s"; // 随机动画时长
+                rain.appendChild(drop);
+
+                setTimeout(() => {
+                    rain.removeChild(drop);
+                }, 2000); // 2秒后移除雨滴
+            }
+
+            setInterval(createRainDrop, 50); // 每50毫秒创建一个雨滴
+        });
   </script>
 </head>
 
 <body>
+<div class="rain"></div>
   <script src="./layui/layui.js"></script>
   <script src="./new_ui.js"></script>
   <div style="position:absolute;right:20px;top:20px;z-index:9999;">

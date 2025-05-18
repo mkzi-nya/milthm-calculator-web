@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.05.16 12:35(UTC+8)"
+const Updated = "Updated at 2025.05.16 22:55(UTC+8)"
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -45,18 +45,11 @@ function findScore(constant, target) {
 }
 function startProcess(){
   var inp=document.getElementById('inputData').value;
+  document.getElementById("upload_info").innerHTML="正在处理数据...";
   if (inp.length>0){
     processData();
   }else{
-    layer.open({
-    type: 1,
-    title: '提示',
-    shadeClose: true,
-    shade: 0.8,
-    area: ['50%', '20%'],
-    content: '<h3 style="padding:12px;">请输入内容！</h3>',
-    offset: ['32px']
-  });
+    layer.msg("请输入内容！");
   }
 }
 var shitValue = 0.114514;
@@ -90,6 +83,7 @@ function processData() {
   items.sort((a, b) => b.singleRealityRaw - a.singleRealityRaw);
   // 显示用户信息
   drawUserInfo(username, items);
+  //username
   // 绘制所有卡片
   
   const outputDiv = document.getElementById('output');
@@ -103,6 +97,9 @@ function processData() {
   items.forEach(drawCard);
   // 格式化写回 inputData
   formatInput(username, items);
+
+  //final for k9.lv 's upload sys
+  initUpload();
 }
 
 /* ========== 工具函数 ========== */
@@ -303,9 +300,11 @@ function drawUserInfo(username, results) {
     .reduce((acc, item) => acc + item.singleRealityRaw, 0) / 20) || '0.0000';
   window.average1 = Math.floor(avg*10000)/10000
   userInfoDiv.innerHTML = `${username} ${window.average1}`;
+  
   window.username = username;
   window.average = avg;
   window.utlr = tlr()
+  // document.getElementById("upload_info").innerHTML=`${username} ${window.average1}`
 }
 
 function tlr(){
