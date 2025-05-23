@@ -1048,7 +1048,7 @@ function downloadImage() {
       ctx.font = '50px Arial';
       ctx.fillText('Milthm-calculator', 100, 130);
       ctx.font = '30px Arial';
-      ctx.fillText('http://k9.lv/c/', 100, 180);
+      ctx.fillText('http://mhtlim.top/', 100, 180);
       ctx.font = '20px Arial';
       ctx.fillText(Updated, 100, 210);
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
