@@ -294,7 +294,7 @@ After the song ends, the performance evaluation displayed on the chart includes:
 > - All `SP` and non-standard charts are not included in the Reality calculation.  
 > - Due to precision issues, in the current version, all song constants that are supposed to be 11.9 are actually below 11.9. For example, if the theoretical Reality is `13.005`, it will display as `13.00` in the game instead of `13.01`, and the actual calculation is `13.004999…`.
 
-The current theoretical Reality is `12.695` (displayed as 12.69).  
+The current theoretical Reality is `12.710` (displayed as 12.69).  
 The top 20 songs with the highest constants in the current version are as follows:
 
 > Click the link to view the detailed information of the track/chart.

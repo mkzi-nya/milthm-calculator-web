@@ -294,7 +294,7 @@ function reality(score, constant) {
 > - 全ての `SP` および非標準譜面は Reality 計算に含まれません。  
 > - 精度の問題により、現行バージョンでは本来 11.9 であるべき曲の定数が実際には 11.9 未満となっています。例えば、理論上の Reality が `13.005` の場合、ゲーム内では `13.00` と表示され、実際の計算値は `13.004999…` となります。
 
-現行の理論上の Reality は `12.695`（表示は 12.69）です。  
+現行の理論上の Reality は `12.710`（表示は 12.69）です。  
 現行バージョンで定数が最も高い上位 20 曲は以下の通りです:
 
 > Click the link to view the detailed information of the track/chart.
