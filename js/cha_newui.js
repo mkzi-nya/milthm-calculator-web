@@ -1,4 +1,5 @@
-const Updated = "Updated at 2025.05.16 22:55(UTC+8)"
+const Updated = "Updated at 2025.05.24 11:15(UTC+8)"
+var cha_newui_js_ver = 3
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -407,8 +408,6 @@ function drawCard(result, index) {
     singleRealitySpan.style.color = '#1cd3b4';
   } else if (result.singleReality == 0) {
     singleRealitySpan.style.color = '#a5a5a5';
-  } else if (result.singleReality < 0) {
-    singleRealitySpan.style.color = '#ff4040';
   }
   info.innerHTML = `${result.category} ${constantText}`;
   info.style.maxWidth="100%"
@@ -433,14 +432,14 @@ function drawCard(result, index) {
   score.style.whiteSpace = 'nowrap';
   score.style.overflow = 'hidden';
   // 根据等级分数渐变
-  if (result.bestLevel < 2) {
+  if (result.bestLevel < 3) {
     Object.assign(score.style, {
       background: 'linear-gradient(to right, #12a9fb, #ee80ff)',
       color: 'transparent',
       backgroundClip: 'text',
       WebkitBackgroundClip: 'text'
     });
-  } else if (result.bestLevel === 2) {
+  } else if (result.bestLevel < 5) {
     Object.assign(score.style, {
       background: 'linear-gradient(to right, #5e94f3, #80b2ff)',
       color: 'transparent',
@@ -668,14 +667,14 @@ function calculateUserReality(scores) {
       lastUserReality = userreality;
     }
   });
-  const gradeMap = { R: 0, AP: 1, FC: 2, S: 3, A: 4, B: 5, C: 6, F: 7 };
+  const gradeMap = { R: 0, APM: 1, AP: 2, FCM: 3, FC: 4, M: 5, S: 6, A: 7, B: 8, C: 9, F: 10 };
   window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, ...rest }) => ({
     ...rest,
     bestScore: score,
     singleRealityRaw: singleReality,
     singleReality: singleReality.toFixed(2),
     bestAccuracy: score_accuracy,
-    bestLevel: gradeMap[grade] ?? 7 // 默认 F 等级
+    bestLevel: gradeMap[grade] ?? 10 // 默认 F 等级
   }));
   return userrealityHistory;
 }
@@ -906,12 +905,12 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
     let strScore = item.score.toString().padStart(7, '0');
     // 分数颜色
     let scoreColor;
-    if (item.bestLevel < 2) {
+    if (item.bestLevel < 3) {
       const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
       gradient.addColorStop(0, '#99C5FB');
       gradient.addColorStop(1, '#D8C3FA');
       scoreColor = gradient;
-    } else if (item.bestLevel === 2) {
+    } else if (item.bestLevel < 5) {
       scoreColor = '#90CAEF';
     } else {
       scoreColor = '#FFFFFF';
@@ -1082,14 +1081,14 @@ function drawCards(ctx, canvas, items, images) {
     // 分数（含渐变颜色）
     const scoreStr = it.bestScore.toString().padStart(7, '0');
     let scoreClr =
-      it.bestLevel < 2
+      it.bestLevel < 3
         ? (() => {
           const g = ctx.createLinearGradient(x, y + 52, x, y + 91);
           g.addColorStop(0, '#99C5FB');
           g.addColorStop(1, '#D8C3FA');
           return g;
         })()
-        : it.bestLevel === 2
+        : it.bestLevel < 5
           ? '#90CAEF'
           : '#FFFFFF';
 
