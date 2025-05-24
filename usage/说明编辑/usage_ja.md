@@ -52,13 +52,13 @@
 
 {{11}}
 
-[Files](https://support.apple.com//102570) アプリを使って Milthm フォルダを開きます:
+  [Files](https://support.apple.com//102570) アプリを使って Milthm フォルダを開きます:
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> ローカルファイルが見つからない場合は、Files ホーム画面右上の三点メニューからローカルファイルの表示を有効にしてください（[詳細はこちら](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+  > ローカルファイルが見つからない場合は、Files ホーム画面右上の三点メニューからローカルファイルの表示を有効にしてください（[詳細はこちら](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
 
 - **Windows ユーザー:**  
   エクスプローラーのアドレスバーに以下を入力してください:  

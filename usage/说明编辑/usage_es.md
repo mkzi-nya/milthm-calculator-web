@@ -52,13 +52,13 @@ Haz clic en la opción **"Subir Archivo"** en la página principal para seleccio
 
 {{11}}
 
-Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com//102570):
+  Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com//102570):
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> Si no se encuentran los archivos locales: ve al menú de tres puntos en la esquina superior derecha de la página de Files y muestra los archivos locales (ver [detalles](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+  > Si no se encuentran los archivos locales: ve al menú de tres puntos en la esquina superior derecha de la página de Files y muestra los archivos locales (ver [detalles](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
 
 - **Para Usuarios de Windows:**  
   Ingresa lo siguiente en la barra de direcciones del Explorador de Archivos:  

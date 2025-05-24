@@ -70,13 +70,13 @@ _Last updated on 2025.05.23 13:00 (UTC)_
   ```
 - **iOS**
 
-使用 [文件](https://support.apple.com//102570) 应用打开 Milthm 文件夹：
+  使用 [文件](https://support.apple.com//102570) 应用打开 Milthm 文件夹：
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> 如果找不到本地文件：进入“文件”主页右上角的三点菜单，将本地文件取消隐藏（[详见](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+  > 如果找不到本地文件：进入“文件”主页右上角的三点菜单，将本地文件取消隐藏（[详见](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
 
 - **Windows 用户：**  
   在资源管理器地址栏输入：  

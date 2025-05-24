@@ -62,13 +62,13 @@ _Last updated on 2025.05.23 13:00 (UTC)_
   ```
 - **iOS**
 
-Откройте папку Milthm с помощью приложения [Files](https://support.apple.com//102570):
+  Откройте папку Milthm с помощью приложения [Files](https://support.apple.com//102570):
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> Если локальные файлы не обнаружены: перейдите в меню с тремя точками в правом верхнем углу страницы Files и включите отображение локальных файлов (см. [подробности](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+  > Если локальные файлы не обнаружены: перейдите в меню с тремя точками в правом верхнем углу страницы Files и включите отображение локальных файлов (см. [подробности](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
 
 - **Для пользователей Windows:**  
   Введите в адресной строке Проводника следующее:  

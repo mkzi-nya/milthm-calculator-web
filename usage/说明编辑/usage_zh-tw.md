@@ -52,13 +52,13 @@
 
 {{11}}
 
-使用 [文件](https://support.apple.com//102570) 應用打開 Milthm 文件夾：
+  使用 [文件](https://support.apple.com//102570) 應用打開 Milthm 文件夾：
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> 若找不到本地文件：進入「文件」主頁右上角的三點選單，將本地文件取消隱藏（[詳見](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+  > 若找不到本地文件：進入「文件」主頁右上角的三點選單，將本地文件取消隱藏（[詳見](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
 
 - **Windows 用戶：**  
   在資源管理器地址欄輸入：  

@@ -62,13 +62,13 @@ Nhấn vào tùy chọn **"Upload File"** trên trang chủ để chọn và t�
   ```
 - **iOS**
 
-Mở thư mục Milthm bằng ứng dụng [Files](https://support.apple.com//102570):
+  Mở thư mục Milthm bằng ứng dụng [Files](https://support.apple.com//102570):
 
-```text
-/data/
-```
+  ```text
+  /data/
+  ```
 
-> Nếu không tìm thấy tệp cục bộ: vào menu ba chấm ở góc trên bên phải của trang Files và bật hiển thị tệp cục bộ (xem [chi tiết](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+  > Nếu không tìm thấy tệp cục bộ: vào menu ba chấm ở góc trên bên phải của trang Files và bật hiển thị tệp cục bộ (xem [chi tiết](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
 
 - **Đối với người dùng Windows:**  
   Nhập vào thanh địa chỉ của File Explorer:  
