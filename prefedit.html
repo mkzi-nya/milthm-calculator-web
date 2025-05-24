@@ -246,7 +246,7 @@
       <input type="number" id="editScore">
       <label for="editAccuracy">Best Accuracy:</label>
       <input type="number" step="0.01" id="editAccuracy">
-      <label for="editLevel">BestLevel (0=R,1=AP,2=FC,3=S,4=A,5=B,6=C,7=F):</label>
+      <label for="editLevel">BestLevel (0=R,1=APM,2=AP,3=FCM,4=FC,5=M,6=S,7=A,8=B,9=C,10=F):</label>
       <input type="number" id="editLevel">
       <div style="text-align: right;">
         <button id="cancelEditBtn">取消</button>
@@ -263,7 +263,7 @@
     let currentData = null;
     let sortMode = 'default';
     // level 映射：数字到评级字母
-    const levelMapping = ["R", "AP", "FC", "S", "A", "B", "C", "F"];
+    const levelMapping = ["R", "APM", "AP", "FCM", "FC", "M", "S", "A", "B", "C", "F"];
     // 构造映射：键为 "name|category"，值为 BeatmapID（用于非 JSON 转换时查找）
     let beatmapDict = {};
     if (typeof constants !== 'undefined') {
@@ -353,9 +353,9 @@
         if (beatmapID) {
           rec.BeatmapID = beatmapID;
           // 根据 BestLevel 生成 AchievedStatus（逻辑与 Python 代码一致）
-          if (rec.BestLevel === 0 || rec.BestLevel === 1) {
+          if (rec.BestLevel < 3) {
             rec.AchievedStatus = [3, 4, 5];
-          } else if (rec.BestLevel === 2) {
+          } else if (rec.BestLevel <5 ) {
             rec.AchievedStatus = [3, 4];
           } else {
             rec.AchievedStatus = [3];
