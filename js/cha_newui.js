@@ -1,5 +1,5 @@
-const Updated = "Updated at 2025.05.24 11:15(UTC+8)"
-var cha_newui_js_ver = 3
+const Updated = "Updated at 2025.05.25 9:10(UTC+8)"
+var cha_newui_js_ver = 4
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -984,7 +984,7 @@ function downloadImage() {
   let star = '';
   let maxConstant = -Infinity;
   items.forEach(item => {
-    if ((item.bestLevel === 0 || item.bestLevel === 1) && item.constant > maxConstant) {
+    if ((item.bestLevel < 3) && item.constant > maxConstant) {
       maxConstant = item.constant;
     }
   });
