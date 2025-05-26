@@ -543,14 +543,11 @@
             const db = new SQL.Database(new Uint8Array(buffer));
             // 查询 kv 表中的 value 字段
             const res = db.exec("SELECT value FROM kv");
-if (res.length > 0 && res[0].values.length > 0) {
-  const values = res[0].values;
-  // 判断是否存在第二行，优先使用第二行的 value
-  const jsonText = values.length > 1 ? values[1][0] : values[0][0];
-  document.getElementById('inputArea').value = jsonText;
-  convertData();
-}
- else {
+            if (res.length > 0 && res[0].values.length > 0) {
+              const jsonText = res[0].values[0][0];
+              document.getElementById('inputArea').value = jsonText;
+              convertData();
+            } else {
               alert("无法在.db文件中找到kv表的value项");
             }
           } catch (err) {
