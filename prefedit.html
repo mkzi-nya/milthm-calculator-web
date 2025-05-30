@@ -685,7 +685,7 @@ if (res.length > 0 && res[0].values.length > 0) {
       const res = db.exec("SELECT rowid, value FROM kv");
       if (res.length > 0 && res[0].values.length > 0) {
         // 替换 kv 表中的 value 值
-        const rowId = res[0].values[0][0]; // 获取 rowid
+        const rowId = res[0].values[1][0]; // 获取 rowid
         db.run("UPDATE kv SET value = ? WHERE rowid = ?", [inputText, rowId]);
 
         // 下载更新后的 db 文件
