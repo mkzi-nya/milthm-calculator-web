@@ -219,3 +219,32 @@ const constantsData = {
   "242edead-e9cd-428d-9799-f8a603109fc6": [-1, "SP", "Rainbow Flavor!", , , , , ],
   "9bccf0ee-58d6-41cc-8885-2ab1ba25cc2a": [-1, "SP", "KAEDE", , , , , ],
 };
+//解析出constant
+
+const constants = {}, fields = ["constant", "category", "name", "yct", "ad", "ae", "af", "ag"];
+
+for (const id in constantsData) {
+
+  const arr = constantsData[id], obj = {};
+
+  fields.forEach((k, i) => {
+
+    let v = arr[i];
+
+    if (v === undefined) {
+
+      if (k === "ad") v = 0;
+
+      else if (k === "ae" || k === "af") v = 1;
+
+      else if (k === "ag") v = 0;
+
+    }
+
+    if (v !== undefined) obj[k] = v;
+
+  });
+
+  constants[id] = obj;
+
+}

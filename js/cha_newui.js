@@ -13,7 +13,7 @@ console.log(" ███  ███                               \n\
  ██    ██  ███  ███  ███  ███           \n\
  ██    ██  ░██████░  ░██████░           \n\
  ██    ██   ░████░    ░████░      ")
- 
+
 //constant位于./constant.js
 /* ========== 全局变量 ========== */
 let columns = 3; //默认三列布局
@@ -44,12 +44,12 @@ function findScore(constant, target) {
   }
   return 114514;
 }
-function startProcess(){
-  var inp=document.getElementById('inputData').value;
-  document.getElementById("upload_info").innerHTML="正在处理数据...";
-  if (inp.length>0){
+function startProcess() {
+  var inp = document.getElementById('inputData').value;
+  document.getElementById("upload_info").innerHTML = "正在处理数据...";
+  if (inp.length > 0) {
     processData();
-  }else{
+  } else {
     layer.msg("请输入内容！");
   }
 }
@@ -86,7 +86,7 @@ function processData() {
   drawUserInfo(username, items);
   //username
   // 绘制所有卡片
-  
+
   const outputDiv = document.getElementById('output');
   const card = document.createElement('div');
   card.classList.add('card');
@@ -94,7 +94,7 @@ function processData() {
   card.innerHTML = `1145141919810`;
   outputDiv.appendChild(card);
   shitValue = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
-  outputDiv.innerHTML='';
+  outputDiv.innerHTML = '';
   items.forEach(drawCard);
   // 格式化写回 inputData
   formatInput(username, items);
@@ -174,13 +174,13 @@ async function processDBFile(arrayBuffer, SQL) {
     const db = new SQL.Database(new Uint8Array(arrayBuffer));
     // 查询 `kv` 表中的 `PlayerFile`或V2
     let results = db.exec("SELECT value FROM kv WHERE key='PlayerFileV2'");
-if (results.length === 0 || results[0].values.length === 0) {
-  results = db.exec("SELECT value FROM kv WHERE key='PlayerFile'");
-  if (results.length === 0 || results[0].values.length === 0) {
-    alert("未找到 PlayerFile/PlayerFileV2 存档");
-    return;
-  }
-}
+    if (results.length === 0 || results[0].values.length === 0) {
+      results = db.exec("SELECT value FROM kv WHERE key='PlayerFile'");
+      if (results.length === 0 || results[0].values.length === 0) {
+        alert("未找到 PlayerFile/PlayerFileV2 存档");
+        return;
+      }
+    }
     // 提取 JSON 并解析
     const playerFileJSON = results[0].values[0][0];
     const extracted = extractJSON(playerFileJSON);
@@ -302,23 +302,23 @@ function drawUserInfo(username, results) {
   const avg = (results.filter(item => item.singleRealityRaw > 0)
     .slice(0, 20)
     .reduce((acc, item) => acc + item.singleRealityRaw, 0) / 20) || '0.0000';
-  window.average1 = Math.floor(avg*10000)/10000
+  window.average1 = Math.floor(avg * 10000) / 10000
   userInfoDiv.innerHTML = `${username} ${window.average1}`;
-  
+
   window.username = username;
   window.average = avg;
   window.utlr = tlr()
   // document.getElementById("upload_info").innerHTML=`${username} ${window.average1}`
 }
 
-function tlr(){
-let as,ar;
+function tlr() {
+  let as, ar;
   if (window.processedItems.length >= 20) {
     let items = window.processedItems;
     let aitems = window.processedItems.slice(0, 20);
 
-as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
+    as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
+    ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
     // 初始计算ltlr
     aitems.forEach(i => {
       i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
@@ -335,18 +335,18 @@ ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
         aitems[index] = curr;
 
         // 更新as, ar并重算aitems中所有的ltlr
-as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
+        as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
+        ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
         aitems.forEach(i => {
           i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
         });
       }
     }
 
-ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / window.processedItems.slice(0, 20).length;
-as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / window.processedItems.slice(0, 20).length;
+    ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / window.processedItems.slice(0, 20).length;
+    as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / window.processedItems.slice(0, 20).length;
 
-return reality(as, ar) - 1;
+    return reality(as, ar) - 1;
   }
 }
 
@@ -367,9 +367,9 @@ function drawCard(result, index) {
     ? `linear-gradient(135deg, rgba(132, 0, 195, ${opa_nb}), rgba(48, 48, 176, ${opa_nb}), rgba(46, 97, 239, ${opa_nb}))`
     : `linear-gradient(45deg, rgba(64, 40, 215, ${opa}), rgba(136, 57, 254, ${opa}))`;
   card.style.color = '#DDA0DD';
-  
+
   // card.style.border = '1px solid';
-  result.bestLevel === 0 ? (()=>{card.style.border = '1.5px solid';card.style.borderColor = 'rgba(255, 255, 255, 0.3)';})() : {};
+  result.bestLevel === 0 ? (() => { card.style.border = '1.5px solid'; card.style.borderColor = 'rgba(255, 255, 255, 0.3)'; })() : {};
   // 计算基础字号
   let baseFontSize = (window.innerWidth * window.innerHeight) / 50000; //60000
   if (baseFontSize >= 10) {
@@ -387,7 +387,7 @@ function drawCard(result, index) {
   title.style.overflow = 'hidden';
   title.style.textOverflow = 'ellipsis';
   title.style.maxWidth = "90%";
-  
+
   const info = document.createElement('div');
   info.classList.add('info');
   Object.assign(info.style, {
@@ -398,7 +398,7 @@ function drawCard(result, index) {
     overflow: 'visible',
     textOverflow: 'ellipsis',
     fontSize: `${fontSize}px`,
-    marginBottom: `${marginBottom}px`
+    marginBottom: `${marginBottom*0.5}px`
   });
   const constantText = `${parseFloat(result.constant).toFixed(1)}->&nbsp`;
   const singleRealitySpan = document.createElement('span');
@@ -410,7 +410,7 @@ function drawCard(result, index) {
     singleRealitySpan.style.color = '#a5a5a5';
   }
   info.innerHTML = `${result.category} ${constantText}`;
-  info.style.maxWidth="100%"
+  info.style.maxWidth = "100%"
   info.appendChild(singleRealitySpan);
   // 准度
   const accuracySpan = document.createElement('span');
@@ -430,7 +430,7 @@ function drawCard(result, index) {
   // score.style.fontSize = `${fontSize * 2.5}px`;
   score.style.marginBottom = `${marginBottom}px`;
   score.style.whiteSpace = 'nowrap';
-  score.style.overflow = 'hidden';
+  score.style.overflow = 'ellipsis';
   // 根据等级分数渐变
   if (result.bestLevel < 3) {
     Object.assign(score.style, {
@@ -449,7 +449,7 @@ function drawCard(result, index) {
   } else {
     score.style.color = '#D1D1D1';
   }
-
+  score.style.lineHeight="1.2"
   card.appendChild(score);
   // 序号
   const indexElem = document.createElement('div');
@@ -459,8 +459,9 @@ function drawCard(result, index) {
     fontSize: `${fontSize}px`,
     marginBottom: `${marginBottom}px`,
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    overflow: 'ellipsis',
+    textOverflow: 'ellipsis',
+    top: "0px"
   });
   card.appendChild(indexElem);
   // 加入到输出
@@ -468,9 +469,9 @@ function drawCard(result, index) {
   outputDiv.appendChild(maincard);
   // 注意：调整大小一定需要在生成完成后！
   // const fontSize1 = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
-  info.style.fontSize = `${shitValue*1.14514}px`;
+  info.style.fontSize = `${shitValue * 1.14514}px`;
   title.style.fontSize = `${shitValue * 1.2}px`;
-  score.style.fontSize = `${shitValue * 2}px`;
+  score.style.fontSize = `${shitValue * 2.4}px`;
   // console.log(`Card width: ${card.offsetWidth}px, Font size: ${shitValue}px`);
 }
 
@@ -488,38 +489,48 @@ function upl() {
 }
 
 document.getElementById('fileupLoad').addEventListener("change", async function (e) {
-  const file = e.target.files[0];
-  if (!file) return;
+  layer.load(1, { shade: [0.1, '#fff'] });
+  try {
+    const file = e.target.files[0];
+    if (!file) return;
 
-  const fileName = file.name.toLowerCase();
+    const fileName = file.name.toLowerCase();
 
-  if (fileName.endsWith('.db')) {
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const SQL = await initSQL();  // 加载 SQL.js
-      const db = new SQL.Database(new Uint8Array(reader.result));
-      const tables = getAllTables(db); // 获取数据库中的所有表
+    if (fileName.endsWith('.db')) {
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const SQL = await initSQL();  // 加载 SQL.js
+        const db = new SQL.Database(new Uint8Array(reader.result));
+        const tables = getAllTables(db); // 获取数据库中的所有表
 
-      if (tables.includes("kv")) {
-        // 使用 saves.db 的解析方式
-        processDBFile(reader.result, SQL);
-      } else if (tables.includes("scores")) {
-        // 使用 data.db 的解析方式
-        const scores = extractScores(db);
-        processHistoryRecords(scores);
-        alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
-      } else {
-        console.error("数据库不包含 'kv' 或 'scores' 表，无法解析\nThe database does not contain the 'kv' or 'scores' table and cannot be parsed.");
-      }
-    };
-    reader.readAsArrayBuffer(file);
-  } else {
-    // 如果不是 .db 文件，执行第3种操作
-    const reader = new FileReader();
-    reader.onload = () => handleFile(reader.result, fileName);
-    reader.onerror = () => alert("读取文件失败\nFailed to read the file.");
-    reader.readAsText(file);
+        if (tables.includes("kv")) {
+          // 使用 saves.db 的解析方式
+          processDBFile(reader.result, SQL);
+        } else if (tables.includes("scores")) {
+          // 使用 data.db 的解析方式
+          const scores = extractScores(db);
+          processHistoryRecords(scores);
+          alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
+        } else {
+          console.error("数据库不包含 'kv' 或 'scores' 表，无法解析\nThe database does not contain the 'kv' or 'scores' table and cannot be parsed.");
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    } else {
+      // 如果不是 .db 文件，执行第3种操作
+      const reader = new FileReader();
+      reader.onload = () => handleFile(reader.result, fileName);
+      reader.onerror = () => alert("读取文件失败\nFailed to read the file.");
+      reader.readAsText(file);
+    }
+    console.log("文件处理完成\nFile processing completed.");
+  }catch (error) {
+    console.error("处理文件时出错:", error, "\nAn error occurred while processing the file:", error);
+    layer.msg("处理文件时出错，请检查文件格式是否正确\nAn error occurred while processing the file, please check if the file format is correct.", {icon: 2});
+  }finally {
+    layer.closeAll('loading');
   }
+  
 
 });
 function getAllTables(db) {
@@ -1177,7 +1188,11 @@ function loadImage(src) {
 }
 
 
+function cha_newui_js_debug(){
 
+  document.getElementById("debug_cha_newui_js").innerHTML = "cha_newui.js is running.";
+
+}
 
 
 /* ========== QQ 上传逻辑 & 其他 UI  ========== 
