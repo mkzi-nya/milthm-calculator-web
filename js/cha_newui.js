@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /* ========== Reality 计算相关 ========== */
 function reality(score, c) {
-  if (score >= 1005000) return Math.max(1 + c, 0);
-  if (score >= 995000) return Math.max(1.4 / (Math.exp(-3.65 * (score / 10000 - 99.5)) + 1) - 0.4 + c, 0);
-  if (score >= 980000) return Math.max(((Math.exp(3.1 * (score - 980000) / 15000) - 1) / (Math.exp(3.1) - 1)) * 0.8 - 0.5 + c, 0);
-  if (score >= 700000) return Math.max(score / 280000 - 4 + c, 0);
+  if (c < 0.001) return 0;
+  if (score >= 1005000) return 1 + c;
+  if (score >= 995000) return 1.4 / (Math.exp(363.175 - score * 0.000365) + 1) - 0.4 + c;
+  if (score >= 980000) return ((Math.exp(3.1 * (score - 980000) / 15000) - 1) / (Math.exp(3.1) - 1)) * 0.8 - 0.5 + c;
+  if (score >= 700000) return score / 280000 - 4 + c;
   return 0;
 }
 
