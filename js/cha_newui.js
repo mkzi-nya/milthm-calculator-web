@@ -127,7 +127,7 @@ function processSong(song) {
 }
 
 function processSongFromOldFormat(record) {
-  const { BeatmapID, BestScore, BestAccuracy, BestLevel } = record;
+  const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record;
   const constantObj = constants[BeatmapID];
 
   if (!constantObj) return null;
@@ -135,6 +135,18 @@ function processSongFromOldFormat(record) {
   const { constant, category, name, yct } = constantObj;
   const singleRealityRaw = reality(BestScore, constant);
 
+//适应3.9新格式
+  let bl=0;
+  if (BestLevel==1){
+    if (AchievedStatus.includes(5)){bl=1}
+    else if (AchievedStatus.includes(4)){bl=3}
+    else bl=5
+  }else if(BestLevel==2){
+    if (AchievedStatus.includes(5)){bl=2}
+    else if (AchievedStatus.includes(4)){bl=4}
+    else bl=6
+  }else bl=BestLevel+4;
+  
   return {
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
@@ -144,7 +156,7 @@ function processSongFromOldFormat(record) {
     yct,
     bestScore: BestScore,
     bestAccuracy: BestAccuracy.toFixed(4),
-    bestLevel: BestLevel
+    bestLevel: bl
   };
 }
 
