@@ -212,7 +212,7 @@ const constantsData = {
   "1cd56e36-83a7-49e4-a410-b2cef5339d72": [2, "DZ", "LOUDER!", , , , , ],
   "369b169c-2461-43a2-93e2-1e8bd32726c7": [11.3, "CB", "Fantasia Sonata God Dance", , , , , ],
   "20bc960d-564d-43f6-9ddd-a0b732ef3ae7": [6.9, "SK", "Fantasia Sonata God Dance", , , , , ],
-  "5b5dc4a1-db9c-4736-9bc6-d34517c5d450": [3<, "DZ", "Fantasia Sonata God Dance", , , , , ],
+  "5b5dc4a1-db9c-4736-9bc6-d34517c5d450": [3, "DZ", "Fantasia Sonata God Dance", , , , , ],
   "2f838c27-b4c5-4609-9848-29096e912277": [9.4, "CB", "ホシフルヨルニ", , , , , ],
   "3fee30c3-a5c9-490d-8dda-1c84c56b685f": [4, "SK", "ホシフルヨルニ", , , , , ],
   "4acd540b-21c5-47f8-99b4-f134935721e6": [2, "DZ", "ホシフルヨルニ", , , , , ],
