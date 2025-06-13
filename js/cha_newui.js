@@ -1,5 +1,5 @@
-const Updated = "Updated at 2025.05.26 11:30(UTC+8)"
-var cha_newui_js_ver = 4
+const Updated = "Updated at 2025.06.13 16:30(UTC+8)"
+var cha_newui_js_ver = 5
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
