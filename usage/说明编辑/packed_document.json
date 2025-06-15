@@ -1088,6 +1088,60 @@
   "chartersList" : [ "Akko", "Kiyotsuki" ],
   "tags" : [ "architecture", "chapter1", "character", "chi ling", "ethereal", "fantasy", "female", "floating butterflies", "girl", "glowing", "long hair", "luvia", "magical", "night", "ruins", "white dress", "xiang xiang ji", "十返清月", "赤澪" ]
 }, {
+  "id" : "20bc960d-564d-43f6-9ddd-a0b732ef3ae7",
+  "title" : "Fantasia Sonata God Dance",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata God Dance",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 177.0
+  } ],
+  "artist" : "PYKAMIA vs Sakuzyo",
+  "artistsList" : [ "PYKAMIA", "削除" ],
+  "illustrator" : [ "雨野" ],
+  "illustratorsList" : [ "雨野" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "神と共に舞う「ブルードリーム」",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Sakuzyo", "dance", "dramatic", "elegant", "golden", "luxury", "mysterious", "pykamia", "red tie", "sakuzyo", "silver hair", "suit", "white box", "yu ye", "削除" ]
+}, {
+  "id" : "5b5dc4a1-db9c-4736-9bc6-d34517c5d450",
+  "title" : "Fantasia Sonata God Dance",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata God Dance",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 177.0
+  } ],
+  "artist" : "PYKAMIA vs Sakuzyo",
+  "artistsList" : [ "PYKAMIA", "削除" ],
+  "illustrator" : [ "雨野" ],
+  "illustratorsList" : [ "雨野" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "神と舞うる「ブルードリーム」",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Sakuzyo", "dance", "dramatic", "elegant", "golden", "luxury", "mysterious", "pykamia", "red tie", "sakuzyo", "silver hair", "suit", "white box", "yu ye", "削除" ]
+}, {
+  "id" : "369b169c-2461-43a2-93e2-1e8bd32726c7",
+  "title" : "Fantasia Sonata God Dance",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata God Dance",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 177.0
+  } ],
+  "artist" : "PYKAMIA vs Sakuzyo",
+  "artistsList" : [ "PYKAMIA", "削除" ],
+  "illustrator" : [ "雨野" ],
+  "illustratorsList" : [ "雨野" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "神と共に踊る「マガゼット」",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Sakuzyo", "dance", "dramatic", "elegant", "golden", "luxury", "mysterious", "pykamia", "red tie", "sakuzyo", "silver hair", "suit", "white box", "yu ye", "削除" ]
+}, {
   "id" : "9a53b7e0-fc48-4203-ace2-872a12fe7ec4",
   "title" : "Fantasia Sonata Sky Syndrome",
   "titleCulture" : "en",
@@ -1537,6 +1591,60 @@
   "charter" : "BlueDream0★blingbling~",
   "chartersList" : [ "Magazet" ],
   "tags" : [ "blue dress", "character", "cityscape", "clear blue sky", "dynamic pose", "fantasy", "female", "floral field", "joyful atmosphere", "long white hair", "luvia", "sunny day", "trumpet", "vibrant colors", "wind", "yellow flowers", "zhu she" ]
+}, {
+  "id" : "3fee30c3-a5c9-490d-8dda-1c84c56b685f",
+  "title" : "ホシフルヨルニ",
+  "titleCulture" : "ja-JP",
+  "latinTitle" : "Hoshifuru Yoruni",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 99.0
+  } ],
+  "artist" : "Otokaze",
+  "artistsList" : [ "Otokaze" ],
+  "illustrator" : [ "泠暗思羽" ],
+  "illustratorsList" : [ "泠暗思羽" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "character", "chi ling", "female", "flowing hair", "girl", "luvia", "purple", "silver hair", "赤澪" ]
+}, {
+  "id" : "2f838c27-b4c5-4609-9848-29096e912277",
+  "title" : "ホシフルヨルニ",
+  "titleCulture" : "ja-JP",
+  "latinTitle" : "Hoshifuru Yoruni",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 99.0
+  } ],
+  "artist" : "Otokaze",
+  "artistsList" : [ "Otokaze" ],
+  "illustrator" : [ "泠暗思羽" ],
+  "illustratorsList" : [ "泠暗思羽" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "character", "chi ling", "female", "flowing hair", "girl", "luvia", "purple", "silver hair", "赤澪" ]
+}, {
+  "id" : "4acd540b-21c5-47f8-99b4-f134935721e6",
+  "title" : "ホシフルヨルニ",
+  "titleCulture" : "ja-JP",
+  "latinTitle" : "Hoshifuru Yoruni",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 99.0
+  } ],
+  "artist" : "Otokaze",
+  "artistsList" : [ "Otokaze" ],
+  "illustrator" : [ "泠暗思羽" ],
+  "illustratorsList" : [ "泠暗思羽" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "character", "chi ling", "female", "flowing hair", "girl", "luvia", "purple", "silver hair", "赤澪" ]
 }, {
   "id" : "e7cd8b7f-a19c-488d-b9b6-127524586ed3",
   "title" : "IN",
