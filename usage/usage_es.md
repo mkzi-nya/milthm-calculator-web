@@ -25,7 +25,8 @@
 ---
 
 _by [mkzi-nya](https://mkzi-nya.github.io)_  
-_Last updated on 2025.05.23 13:00 (UTC)_
+_Last updated on 2025.06.20 22:20 (UTC)_  
+_简体中文以外的语言可能无法及时更新_
 
 > Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
 
@@ -104,6 +105,8 @@ Donde:
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 ```
+
+> 沿用了milthm3.8版本中的评级格式，但实际从3.9版本开始存档中就不是这种格式了
 
 ---
 

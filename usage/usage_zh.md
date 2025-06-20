@@ -31,7 +31,8 @@
 ---
 
 _by [mkzi-nya](https://mkzi-nya.github.io)_  
-_Last updated on 2025.05.23 13:00 (UTC)_
+_Last updated on 2025.06.20 22:20 (UTC)_  
+_简体中文以外的语言可能无法及时更新_
 
 > 如果界面渲染出现问题，请[在 GitHub 上访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 
@@ -114,6 +115,8 @@ _Last updated on 2025.05.23 13:00 (UTC)_
 ```text
 level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
 ```
+
+> 沿用了milthm3.8版本中的评级格式，但实际从3.9版本开始存档中就不是这种格式了
 
 ---
 
@@ -273,14 +276,17 @@ function reality(score, c) {
 
 结算评级分为八种：
 
-- **R**：即 Rain，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为大 Perfect）。
-- **紫S**：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，分数在 750000-1009999 之间）。
-- **青S**：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成紫S评，300000-1009999分）。
-- **S**：950000-1009999 分。
-- **A**：900000-949999 分。
-- **B**：850000-899999 分。
-- **C**：800000-849999 分。
-- **F**：0-799999 分。
+- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">：即 Rain，旧版显示为<img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为大 Perfect）。
+- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;">：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，1005000-1009999 分）。
+- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;">：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成AP，1005000-1009999 分）。
+- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;">：即 Milthm, 1005000-1009999 分。
+- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;">：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，分数在 750000-1004999 分）。
+- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;">：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成AP，300000-1004999 分）。
+- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：950000-1004999 分。
+- <img src="../jpgs/7.png" style="height:1.5em;vertical-align:middle;">：900000-949999 分。
+- <img src="../jpgs/8.png" style="height:1.5em;vertical-align:middle;">：850000-899999 分。
+- <img src="../jpgs/9.png" style="height:1.5em;vertical-align:middle;">：800000-849999 分。
+- <img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">：0-799999 分。
 
 ---
 
@@ -288,19 +294,19 @@ function reality(score, c) {
 
 游玩结束后在谱面中展示的评价包括：
 
-- **Crash:**  
+- <img src="../jpgs/crash.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC < 80%
-- **Complete:**  
+- <img src="../jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC > 80%，且至少存在一个 Bad/Miss 判定。
-- **Full Combo:**  
+- <img src="../jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±140ms 内击中，且至少存在一个 Good 判定。
-- **All Perfect:**  
+- <img src="../jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±70ms 内击中，且至少存在一个 small perfect 判定。
-- **Rhythm of Rain:**  
+- <img src="../jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±35ms 内击中，即理论值。
-- **AutoPlay is Awesome:**  
+- <img src="../jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">:  
   - 使用 AutoPlay 通关。
-- **Overloaded:**  
+- <img src="../jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
   - 分数大于 1010000（使用倾盆大雨）。
 
 ---
