@@ -1,5 +1,5 @@
-const Updated = "Updated at 2025.06.13 16:30(UTC+8)"
-var cha_newui_js_ver = 5
+const Updated = "Updated at 2025.06.20 21:30(UTC+8)"
+var cha_newui_js_ver = 6
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -137,6 +137,7 @@ function processSongFromOldFormat(record) {
 
 //适应3.9新格式
   let bl=0;
+  
   if (BestLevel==1){
     if (AchievedStatus.includes(5)){bl=1}
     else if (AchievedStatus.includes(4)){bl=3}
@@ -145,7 +146,8 @@ function processSongFromOldFormat(record) {
     if (AchievedStatus.includes(5)){bl=2}
     else if (AchievedStatus.includes(4)){bl=4}
     else bl=6
-  }else bl=BestLevel+4;
+  }else if(BestLevel!=0){bl=BestLevel+4;}
+  }
   
   return {
     singleRealityRaw,
