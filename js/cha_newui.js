@@ -1,5 +1,6 @@
-const Updated = "Updated at 2025.06.20 21:30(UTC+8)"
-var cha_newui_js_ver = 6
+const Updated = "Updated at 2025.06.28 16:30(UTC+8)"
+var cha_newui_js_ver = 7
+
 console.log(Updated)
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container');
   container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
 });
+
 /* ========== Reality 计算相关 ========== */
 function reality(score, c) {
   if (c < 0.001) return 0;
@@ -147,7 +149,6 @@ function processSongFromOldFormat(record) {
     else if (AchievedStatus.includes(4)){bl=4}
     else bl=6
   }else if(BestLevel!=0){bl=BestLevel+4;}
-  }
   
   return {
     singleRealityRaw,
@@ -173,6 +174,7 @@ function formatInput(username, items) {
 
 // **初始化 SQL.js**
 async function initSQL() {
+  layer.msg('正在加载SQL加载器...')
   const response = await fetch('./js/sql-wasm.wasm');
   const wasmBinary = await response.arrayBuffer();
   const SQL = await initSqlJs({
@@ -363,6 +365,7 @@ function tlr() {
 
     return reality(as, ar) - 1;
   }
+  else return 0;
 }
 
 /* ========== 绘制单张卡片 ========== */
@@ -535,7 +538,7 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
       // 如果不是 .db 文件，执行第3种操作
       const reader = new FileReader();
       reader.onload = () => handleFile(reader.result, fileName);
-      reader.onerror = () => alert("读取文件失败\nFailed to read the file.");
+      reader.onerror = () => layer.msg("读取文件失败\nFailed to read the file.");
       reader.readAsText(file);
     }
     console.log("文件处理完成\nFile processing completed.");
@@ -991,6 +994,7 @@ function loadImage(src) {
 
 /* ========== 下载图片 (含背景、卡片等) ========== */
 function downloadImage() {
+  ol_runner((e)=>{document.getElementById('picgen').style.display = 'block'},[114,514]);
   // 获取用户输入的卡片数量
   const cardCount = parseInt(document.getElementById('cardCount').value, 10);
   const maxItems = Math.max(0, cardCount);
@@ -1029,6 +1033,7 @@ function downloadImage() {
   if (bgImageFile) {
     bgImagePromise = loadImage(URL.createObjectURL(bgImageFile));
   } else {
+    ol_runner(ol_updateImgGenProcess,['正在加载背景图...']);
     bgImagePromise = loadImage(`./jpgs/background/${Math.floor(Math.random() * 3)}.jpg`);
   }
   bgImagePromise
@@ -1079,9 +1084,11 @@ function downloadImage() {
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
       Promise.all(items.map(i => Promise.all([
         loadImage(`./jpgs/${encodeURIComponent(i.name.replace(/[#?]/g, ''))}.jpg`).catch(() => loadImage('./jpgs/NYA.jpg')),
-        loadImage(`./jpgs/${i.bestLevel}.png`).catch(() => null)
+        loadImage(`./jpgs/${i.bestLevel}.png`).catch(() => null),
+        ol_runner(ol_updateImgGenProcess,['正在加载图片 For '+i.name]),
       ]))).then(imgs => drawCards(ctx, canvas, items, imgs));
-
+      ol_runner(ol_updateImgGenProcess,['完成']);
+      
     });
 }
 function drawCards(ctx, canvas, items, images) {
