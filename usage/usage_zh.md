@@ -93,6 +93,8 @@ _简体中文以外的语言可能无法及时更新_
   ~/.config/unity3d/Morizero/Milthm/data/
   ```
 
+[安卓演示视频](/files/android.mp4)  
+[IOS演示视频](/files/ios.mp4)  
 安卓用户[没有访问权限](#没有访问权限)
 
 ---
