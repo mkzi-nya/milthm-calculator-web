@@ -276,13 +276,10 @@ function reality(score, c) {
 
 结算评级分为八种：
 
-- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">：即 Rain，旧版显示为<img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为大 Perfect）。
-- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;">：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，1005000-1009999 分）。
-- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;">：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成AP，1005000-1009999 分）。
-- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;">：即 Milthm, 1005000-1009999 分。
-- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;">：达成 All Perfect（所有音符均为 Perfect 且未达成 R 评，分数在 750000-1004999 分）。
-- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;">：达成 Full Combo（所有音符均无 Bad/Miss 判定且未达成AP，300000-1004999 分）。
-- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：950000-1004999 分。
+- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">：旧版显示为<img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为满分）。
+- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;">：达成 All Perfect，当分数大于1005000时显示为<img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;">（所有音符均为 Perfect 且未达成 R 评，750000-1009999 分）。
+- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;">：达成 Full Combo，当分数大于1005000时显示为<img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;">（所有音符均无 Bad/Miss 判定且未达成AP，300000-1009999 分）。
+- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：当分数大于1005000时显示为<img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;">，950000-1009999 分。
 - <img src="../jpgs/7.png" style="height:1.5em;vertical-align:middle;">：900000-949999 分。
 - <img src="../jpgs/8.png" style="height:1.5em;vertical-align:middle;">：850000-899999 分。
 - <img src="../jpgs/9.png" style="height:1.5em;vertical-align:middle;">：800000-849999 分。
@@ -654,7 +651,8 @@ function reality(score, c) {
 - **IOS**
 
   如果在 `文件` 应用中找不到此 iPhone/iPad 的文件夹，请前往应用主页，在右上角的设置中查看是否隐藏了本地文件。  
-  如果仍未找到 Milthm 的文件夹，检查您是否使用了正确的 Milthm 版本。
+  如果仍未找到 Milthm 的文件夹，检查您是否使用了正确的 Milthm 版本。  
+  [IOS演示视频](./files/ios.mp4)
 
 #### 怎么备份存档
 
