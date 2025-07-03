@@ -714,14 +714,17 @@ function calculateUserReality(scores) {
       lastUserReality = userreality;
     }
   });
-  const gradeMap = { R: 0, APM: 1, AP: 2, FCM: 1, FC: 2, M: 1, S: 2, A: 3, B: 4, C: 5, F: 6 };
-  window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, ...rest }) => ({
+  //从历史记录的分数和详情信息中手动生成存档
+  window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, score_perfect_count, score_good_count, score_bad_count, score_miss_count, 
+  ...rest }) => ({
     ...rest,
     bestScore: score,
     singleRealityRaw: singleReality,
     singleReality: singleReality.toFixed(2),
     bestAccuracy: score_accuracy,
-    bestLevel: gradeMap[grade] ?? 6 // 默认 F 等级
+    bestLevel: score===1010000?0:score>=1005000?1:score>=950000?2:score>=900000?3:score>=850000?4:score>=800000?5:6,
+    achievedStatus: (() => { const a=[3]; score>=800000&&a.push(0); score_good_count+score_bad_count+score_miss_count===0&&a.push(5); score_bad_count+score_miss_count===0&&a.push(4); score<800000&&a.push(6); return a })()
+
   }));
   return userrealityHistory;
 }
