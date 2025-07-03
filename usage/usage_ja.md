@@ -93,8 +93,8 @@ _简体中文以外的语言可能无法及时更新_
 
 ```text
 [name],{
-    [Contrasty Angeles,CL,12.3,1010000,1.0000,0],
-    [name,Difficulty, constant, score, acc, level]
+    [Contrasty Angeles,CL,12.3,1010000,1.0000,0,[0,3,4,5],
+    [name,Difficulty, constant, score, acc, level,achievedStatus]
 }
 ```
 
@@ -103,7 +103,8 @@ _简体中文以外的语言可能无法及时更新_
 - `level` は評価を示し、以下のように定義されます:
 
 ```text
-level: 0=R, 1=AP, 2=FC, 3=S, 4=A, 5=B, 6=C, 7=F
+level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
+achievedStatus: 0=clear, 3=?, 4=fc, 5=ap, 6=false
 ```
 
 > 沿用了milthm3.8版本中的评级格式，但实际从3.9版本开始存档中就不是这种格式了
