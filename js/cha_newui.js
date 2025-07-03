@@ -714,14 +714,14 @@ function calculateUserReality(scores) {
       lastUserReality = userreality;
     }
   });
-  const gradeMap = { R: 0, APM: 1, AP: 2, FCM: 3, FC: 4, M: 5, S: 6, A: 7, B: 8, C: 9, F: 10 };
+  const gradeMap = { R: 0, APM: 1, AP: 2, FCM: 1, FC: 2, M: 1, S: 2, A: 3, B: 4, C: 5, F: 6 };
   window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, ...rest }) => ({
     ...rest,
     bestScore: score,
     singleRealityRaw: singleReality,
     singleReality: singleReality.toFixed(2),
     bestAccuracy: score_accuracy,
-    bestLevel: gradeMap[grade] ?? 10 // 默认 F 等级
+    bestLevel: gradeMap[grade] ?? 6 // 默认 F 等级
   }));
   return userrealityHistory;
 }
@@ -952,16 +952,16 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
     let strScore = item.score.toString().padStart(7, '0');
     // 分数颜色
     let scoreColor;
-if (item.achievedStatus.includes(5)) {
-  const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
-  gradient.addColorStop(0, '#99C5FB');
-  gradient.addColorStop(1, '#D8C3FA');
-  scoreColor = gradient;
-} else if (item.achievedStatus.includes(4)) {
-  scoreColor = '#90CAEF';
-} else {
-  scoreColor = '#FFFFFF';
-}
+    if (item.score_good_count+item.score_bad_count+item.score_miss_count==0) {
+        const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
+        gradient.addColorStop(0, '#99C5FB');
+        gradient.addColorStop(1, '#D8C3FA');
+        scoreColor = gradient;
+    } else if (item.score_bad_count+item.score_miss_count==0) {
+        scoreColor = '#90CAEF';
+    } else {
+        scoreColor = '#FFFFFF';
+    }
 
     ctx.font = `${28 * scale}px Arial`;
     ctx.textAlign = 'left';
