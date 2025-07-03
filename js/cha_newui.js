@@ -64,7 +64,7 @@ function processData() {
   const { username, items } = (format === 'new'
     ? (() => {
       const [, username, songDataStr] = inputData.match(/^\[(.*?)\],\{(.*)\}$/);
-      const songData = songDataStr.split('],[');
+      const songData = songDataStr.match(/\[.*?\]/g);
       return { username, items: songData.map(processSong) };
     })()
     : (() => {
@@ -108,25 +108,53 @@ function processData() {
 
 /* ========== 工具函数 ========== */
 function processSong(song) {
-  const [title, category, constant, score, accuracy, level] = song.replace(/[\[\]]/g, '').split(',');
-  const constantVal = parseFloat(constant);
-  const scoreVal = parseInt(score, 10);
-  const accuracyVal = parseFloat(accuracy);
-  const levelVal = parseInt(level, 10);
+  /* ---------- ① 去掉最外层的方括号 ---------- */
+  const raw = song.trim().slice(1, -1);   // "Contrasty Angeles,CL,12.3,...,[0,3,4]"
+
+  /* ---------- ② 顶层逗号分割 ---------- */
+  const tokens = [];
+  let buf = '';
+  let depth = 0;          // 记录当前处在几层 []
+  for (const ch of raw) {
+    if (ch === '[') depth++;
+    if (ch === ']') depth--;
+    if (ch === ',' && depth === 0) {      // 只有在最外层才真正分割
+      tokens.push(buf);
+      buf = '';
+    } else {
+      buf += ch;
+    }
+  }
+  tokens.push(buf);       // 最后一个片段
+
+  /* ---------- ③ 解构 + 把 achievedStatus 变成数组 ---------- */
+  let [title, category, constant, score, accuracy, level, achievedStatus] = tokens;
+  achievedStatus = achievedStatus                 // "[0,3,4]"
+    .replace(/[\[\]]/g, '')                       // "0,3,4"
+    .split(',')
+    .map(n => parseInt(n, 10));                   // [0, 3, 4]
+
+  /* ---------- ④ 原有逻辑保持不变 ---------- */
+  const constantVal  = parseFloat(constant);
+  const scoreVal     = parseInt(score, 10);
+  const accuracyVal  = parseFloat(accuracy);
+  const levelVal     = parseInt(level, 10);
 
   const singleRealityRaw = reality(scoreVal, constantVal);
 
   return {
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
-    constant: constantVal, // 移除 toFixed(1)
+    constant: constantVal,          // 依旧不 toFixed
     name: title,
     category,
     bestScore: scoreVal,
     bestAccuracy: accuracyVal.toFixed(4),
-    bestLevel: levelVal
+    bestLevel: levelVal,
+    achievedStatus                   // 现在是数组
   };
 }
+
 
 function processSongFromOldFormat(record) {
   const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record;
@@ -137,19 +165,7 @@ function processSongFromOldFormat(record) {
   const { constant, category, name, yct } = constantObj;
   const singleRealityRaw = reality(BestScore, constant);
 
-//适应3.9新格式
-  let bl=0;
-  
-  if (BestLevel==1){
-    if (AchievedStatus.includes(5)){bl=1}
-    else if (AchievedStatus.includes(4)){bl=3}
-    else bl=5
-  }else if(BestLevel==2){
-    if (AchievedStatus.includes(5)){bl=2}
-    else if (AchievedStatus.includes(4)){bl=4}
-    else bl=6
-  }else if(BestLevel!=0){bl=BestLevel+4;}
-  
+
   return {
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
@@ -159,13 +175,14 @@ function processSongFromOldFormat(record) {
     yct,
     bestScore: BestScore,
     bestAccuracy: BestAccuracy.toFixed(4),
-    bestLevel: bl
+    bestLevel: BestLevel, 
+    achievedStatus: AchievedStatus
   };
 }
 
 function formatInput(username, items) {
   const formattedItems = items.map(item =>
-    `[${item.name},${item.category},${item.constant},${item.bestScore},${item.bestAccuracy},${item.bestLevel}]`
+    `[${item.name},${item.category},${item.constant},${item.bestScore},${item.bestAccuracy},${item.bestLevel},[${item.achievedStatus}]]`
   ).join(',\n  ');
 
   document.getElementById('inputData').value = `[${username}],{\n  ${formattedItems}\n}`;
@@ -450,23 +467,24 @@ function drawCard(result, index) {
   score.style.whiteSpace = 'nowrap';
   score.style.overflow = 'ellipsis';
   // 根据等级分数渐变
-  if (result.bestLevel < 3) {
-    Object.assign(score.style, {
-      background: 'linear-gradient(to right, #12a9fb, #ee80ff)',
-      color: 'transparent',
-      backgroundClip: 'text',
-      WebkitBackgroundClip: 'text'
-    });
-  } else if (result.bestLevel < 5) {
-    Object.assign(score.style, {
-      background: 'linear-gradient(to right, #5e94f3, #80b2ff)',
-      color: 'transparent',
-      backgroundClip: 'text',
-      WebkitBackgroundClip: 'text'
-    });
-  } else {
-    score.style.color = '#D1D1D1';
-  }
+if (result.achievedStatus.includes(5)) {
+  Object.assign(score.style, {
+    background: 'linear-gradient(to right, #12a9fb, #ee80ff)',
+    color: 'transparent',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text'
+  });
+} else if (result.achievedStatus.includes(4)) {
+  Object.assign(score.style, {
+    background: 'linear-gradient(to right, #5e94f3, #80b2ff)',
+    color: 'transparent',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text'
+  });
+} else {
+  score.style.color = '#D1D1D1';
+  score.style.background = '';
+}
   score.style.lineHeight="1.2"
   card.appendChild(score);
   // 序号
@@ -934,16 +952,17 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
     let strScore = item.score.toString().padStart(7, '0');
     // 分数颜色
     let scoreColor;
-    if (item.bestLevel < 3) {
-      const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
-      gradient.addColorStop(0, '#99C5FB');
-      gradient.addColorStop(1, '#D8C3FA');
-      scoreColor = gradient;
-    } else if (item.bestLevel < 5) {
-      scoreColor = '#90CAEF';
-    } else {
-      scoreColor = '#FFFFFF';
-    }
+if (item.achievedStatus.includes(5)) {
+  const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
+  gradient.addColorStop(0, '#99C5FB');
+  gradient.addColorStop(1, '#D8C3FA');
+  scoreColor = gradient;
+} else if (item.achievedStatus.includes(4)) {
+  scoreColor = '#90CAEF';
+} else {
+  scoreColor = '#FFFFFF';
+}
+
     ctx.font = `${28 * scale}px Arial`;
     ctx.textAlign = 'left';
     ctx.fillStyle = scoreColor;
@@ -1014,10 +1033,11 @@ function downloadImage() {
   let star = '';
   let maxConstant = -Infinity;
   items.forEach(item => {
-    if ((item.bestLevel < 3) && item.constant > maxConstant) {
+    if (item.achievedStatus.includes(5) && item.constant > maxConstant) {
       maxConstant = item.constant;
     }
   });
+
 
   if (maxConstant > 12) {
     star = '☆☆☆';
@@ -1084,7 +1104,7 @@ function downloadImage() {
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
       Promise.all(items.map(i => Promise.all([
         loadImage(`./jpgs/${encodeURIComponent(i.name.replace(/[#?]/g, ''))}.jpg`).catch(() => loadImage('./jpgs/NYA.jpg')),
-        loadImage(`./jpgs/${i.bestLevel}.png`).catch(() => null),
+        loadImage(`./jpgs/${i.achievedStatus.includes(5) ? i.bestLevel + '0' : i.achievedStatus.includes(4) ? i.bestLevel + '1' : i.bestLevel}.png`).catch(() => null),
         ol_runner(ol_updateImgGenProcess,['正在加载图片 For '+i.name]),
       ]))).then(imgs => drawCards(ctx, canvas, items, imgs));
       ol_runner(ol_updateImgGenProcess,['完成']);
@@ -1113,17 +1133,12 @@ function drawCards(ctx, canvas, items, images) {
 
     // 分数（含渐变颜色）
     const scoreStr = it.bestScore.toString().padStart(7, '0');
-    let scoreClr =
-      it.bestLevel < 3
-        ? (() => {
-          const g = ctx.createLinearGradient(x, y + 52, x, y + 91);
-          g.addColorStop(0, '#99C5FB');
-          g.addColorStop(1, '#D8C3FA');
-          return g;
-        })()
-        : it.bestLevel < 5
-          ? '#90CAEF'
-          : '#FFFFFF';
+    let scoreClr = it.achievedStatus.includes(5)
+      ? (() => { const g = ctx.createLinearGradient(x, y + 52, x, y + 91); g.addColorStop(0, '#99C5FB'); g.addColorStop(1, '#D8C3FA'); return g })()
+      : it.achievedStatus.includes(4)
+        ? '#90CAEF'
+        : '#FFFFFF';
+
 
     ctx.font = '39px Arial';
     ctx.textAlign = 'left';
