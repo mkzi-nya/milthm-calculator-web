@@ -14,8 +14,10 @@ function loaddiv() {
 
 function chart(data) {
   const { id, charter, chartersList, tags, title, difficulty } = data;
-  titles = title.replace(/[()]/g, "");
-  // 创建弹窗并显示
+  const titles = title.replace(/[()]/g, "");
+  const title1 = title.replace(/\(/g, "（").replace(/\)/g, "）");
+
+  // 创建弹窗并设置样式
   const modal = document.createElement("div");
   modal.style.position = "absolute";
   modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
@@ -26,35 +28,80 @@ function chart(data) {
   modal.style.fontFamily = "Arial, sans-serif";
   modal.style.color = "#fff";
   modal.style.fontSize = "11px";
-  modal.style.lineHeight = "1.4"; // 增加行高
-  modal.style.width = "250px"; // 固定宽度
-  // 替换英文括号()为中文括号（）
-  title1 = title.replace(/\(/g, "（").replace(/\)/g, "）");
-
+  modal.style.lineHeight = "1.4";
+  modal.style.width = "250px";
   modal.setAttribute("aaa", [titles, difficulty]);
 
-  // 设置弹窗内容
+  // 基本信息
   const idElement = document.createElement("p");
   idElement.innerText = `ID: ${id}`;
 
   const charterElement = document.createElement("p");
   charterElement.innerText = `charter: ${charter}`;
+
   const charterslistElement = document.createElement("p");
   charterslistElement.innerText = `chartersList: ${chartersList.join(", ")}`;
 
   const tagsElement = document.createElement("p");
   tagsElement.innerText = `Tags: [${tags.join("],   [")}]`;
 
-  // 将弹窗内容添加到弹窗中
+  // 添加基本信息元素
   modal.appendChild(idElement);
   modal.appendChild(charterElement);
   modal.appendChild(charterslistElement);
   modal.appendChild(tagsElement);
 
-  // 将弹窗添加到页面
+  // 异步加载 chartinfo.json
+fetch("./chartinfo.json")
+  .then((response) => response.json())
+  .then((infoData) => {
+    // 构建用于搜索的 key：title + difficulty（去除括号和空格）
+    const cleanTitle = title.replace(/[()\s]/g, "");
+    const difficultyKey = cleanTitle + difficulty;
+
+    let chartInfo = infoData[difficultyKey];
+
+    if (!chartInfo) {
+      chartInfo = infoData[id]; // fallback to id
+    }
+
+    const infoElement = document.createElement("p");
+    infoElement.style.marginTop = "4px";
+
+    if (chartInfo) {
+      infoElement.innerText =
+        `Combo: ${chartInfo.combo}  Tap: ${chartInfo.tap}  Drag: ${chartInfo.drag}  Hold: ${chartInfo.hold}  EX: ${chartInfo.ex}\n` +
+        `有判占分: ${chartInfo["有判占分"]}  有判数: ${chartInfo["有判数"]}  单Tap得分: ${chartInfo["单tap"]}`;
+      modal.insertBefore(infoElement, tagsElement);
+
+      if (chartInfo.error) {
+        const errorElement = document.createElement("p");
+        errorElement.innerText = "!Error: 统计可能不正确";
+        errorElement.style.color = "red";
+        modal.insertBefore(errorElement, tagsElement);
+      }
+    } else {
+      infoElement.innerText = "此谱面详情信息缺失";
+      modal.insertBefore(infoElement, tagsElement);
+    }
+  })
+  .catch((error) => {
+    const errorElement = document.createElement("p");
+    errorElement.innerText = "读取谱面详情信息失败";
+    errorElement.style.color = "orange";
+    modal.insertBefore(errorElement, tagsElement);
+    console.error("加载 chartinfo.json 出错:", error);
+  });
+
+
   document.body.appendChild(modal);
-  if (!document.querySelector(`div[aaa="${title}"]`)) info(title, data);
+
+  // 若不存在相应 info 弹窗则继续显示详细信息
+  if (!document.querySelector(`div[aaa="${title}"]`)) {
+    info(title, data);
+  }
 }
+
 
 function info(title, item) {
   title = title.replace(/[()]/g, "");
