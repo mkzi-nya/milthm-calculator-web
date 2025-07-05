@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Usage</title>
-  <script src="./load.js"></script>
   <link rel="stylesheet" href="./github-markdown-dark.min.css">
   <script src="./marked.min.js"></script>
   <script src="./katex.min.js"></script>
@@ -13,6 +12,14 @@
   <script src="./index.umd.js"></script>
   <link rel="stylesheet" href="./github-dark.min.css">
   <script src="./highlight.min.js"></script>
+  <!-- 替换原先的 load.js 加载方式 -->
+<script>
+  const rand = `rand=${Date.now()}`;
+  const script = document.createElement('script');
+  script.src = `./load.js?${rand}`;
+  document.head.appendChild(script);
+</script>
+
   <style>
     body {
       margin: 0;
@@ -154,7 +161,7 @@
     }
     function loadMarkdown() {
       const lang = getUserLanguage();
-      fetch(`./usage_${lang}.md`)
+      fetch(`./usage_${lang}.md?${Date.now()}`)
         .then(res => res.text())
         .then(md => {
           // 在这里进行链接的自动转义处理

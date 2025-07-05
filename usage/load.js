@@ -1,5 +1,5 @@
 function loaddiv() {
-  return fetch("./packed_document.json") // 获取 JSON 文件
+  return fetch(`./packed_document.json?_=${Date.now()}`); // 获取 JSON 文件
     .then((response) => response.json()) // 解析为 JSON 格式
     .then((data) => {
       // 遍历每一个元素，将其传递给 chart(data)
@@ -52,7 +52,7 @@ function chart(data) {
   modal.appendChild(tagsElement);
 
   // 异步加载 chartinfo.json
-fetch("./chartinfo.json")
+fetch(`./chartinfo.json?_=${Date.now()}`);
   .then((response) => response.json())
   .then((infoData) => {
     // 构建用于搜索的 key：title + difficulty（去除括号和空格）
