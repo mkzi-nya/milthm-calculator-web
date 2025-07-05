@@ -1,26 +1,35 @@
+> Nota: La versión del idioma en la que se encuentra actualmente ya no se mantiene, parte de la información puede estar desactualizada. Se recomienda visitar la versión en [inglés](?lang=en) o [chino simplificado](?lang=zh)  
+  O puede enviar un PR para la versión traducida en este repositorio [aquí](https://github.com/mkzi-nya/milthm-calculator-web/tree/main/usage/%E8%AF%B4%E6%98%8E%E7%BC%96%E8%BE%91)  
+  Última actualización el 5 de julio de 2025  
 
-## Tabla de Contenidos
+## Índice
 
-- [Sitio Web](#sitio-web)
-- [Instrucciones](#instrucciones)
-  - [Subir Archivos de Guardado](#subir-archivos-de-guardado)
-  - [Ingresar Datos Analizados](#ingresar-datos-analizados)
-  - [Guardados de Versiones Antiguas](#guardados-de-versiones-antiguas)
-  - [Otras Rutas de Guardado](#otras-rutas-de-guardado)
-  - [Gráfico de Radar](#gráfico-de-radar)
-- [Acerca de Milthm](#acerca-de-milthm)
-  - [Fórmula de Cálculo de Reality](#fórmula-de-cálculo-de-reality)
-  - [Evaluación de Notas](#evaluación-de-notas)
-  - [Calificaciones de Resultados](#calificaciones-de-resultados)
-  - [Estado de Finalización](#estado-de-finalización)
-  - [Tabla de Constantes](#tabla-de-constantes)
-  - [Chater info](#charter-info)
-- [Contáctanos](#contáctanos)
-- [Otro Contenido](#otro-contenido)
-  - [Milthm Wiki](#milthm-wiki)
-  - [Métodos para Desbloquear Canciones Ocultas](#métodos-para-desbloquear-canciones-ocultas)
-  - [¿Qué es una Ruta de Archivo?](#qué-es-una-ruta-de-archivo)
-  - [Tabla Comparativa de Reality](#tabla-comparativa-de-reality)
+- [Sitio web](#网站)
+- [Instrucciones de uso](#使用说明)
+  - [Subir archivo de guardado](#上传存档文件)
+  - [Ingresar datos ya analizados](#输入已解析的数据)
+  - [Guardados de versiones anteriores](#旧版本存档)
+  - [Otras rutas de guardado](#其他存档路径)
+  - [Gráfico de radar](#雷达图)
+- [Acerca de Milthm](#关于-milthm)
+  - [Fórmula de cálculo de Reality](#reality-计算公式)
+  - [Sobre Ytilaer en el gráfico de puntuación](关于查分图中的ytilaer)
+  - [Acerca de los archivos de guardado](#关于存档文件)
+  - [Determinación de notas](#音符判定)
+  - [Calificación final](#结算评级)
+  - [Estado de finalización](#完成状态)
+  - [Día de los inocentes](#愚人节)
+  - [Método para desbloquear canciones ocultas](#隐藏曲解锁方式)
+  - [Tabla de constantes](#定数表)
+  - [Estadísticas de creadores de mapas](#谱师统计)
+  - [Haz clic para acelerar el desarrollo de Milthm](#点击加速milthm开发进程)
+- [Contáctanos](#联系我们)
+- [Preguntas frecuentes](#常见问题)
+- [Otros contenidos](#其他内容)
+  - [Wiki de Milthm](#milthm-wiki)
+  - [Grupo de Milthm](#milthm交流群)
+  - [Qué es una ruta de archivo](#什么是文件路径)
+  - [Tabla de referencia de Reality](#reality-对照表)
 
 ---
 
@@ -28,30 +37,32 @@ _by [mkzi-nya](https://mkzi-nya.github.io)_
 _Last updated on 2025.07.04 20:50 (UTC)_  
 _简体中文以外的语言可能无法及时更新_
 
-> Si la interfaz no se renderiza correctamente, por favor [visita en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
+> Si hay problemas con la renderización de la interfaz, por favor visite [en GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 
 ---
 
-## Sitio Web
+## Sitio web
 
 - [k9.lv/c/](http://k9.lv/c/)
 - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
 
 ---
 
-## Instrucciones
+## Instrucciones de uso
 
-### Subir Archivos de Guardado
+> El calculador de puntuaciones es creado por jugadores de forma independiente y no está afiliado oficialmente.
 
-Haz clic en la opción **"Subir Archivo"** en la página principal para seleccionar y subir el archivo de guardado `saves.db` o el archivo de registro de puntuaciones `data.db`.
+### Subir archivo de guardado
+
+Haga clic en la opción **"Subir archivo"** en la página principal y seleccione el archivo de guardado `saves.db` o el archivo de registro de puntuaciones `data.db` para subirlo.
 
 > **Nota:**
-> - `data.db` solo contiene los registros de juego actualizados a partir de la versión `3.2` (si no se han perdido).
-> - Se recomienda a los usuarios de Android utilizar [MT Manager](https://mt2.cn/) para acceder al directorio `sdcard/Android/data`.
+> - `data.db` solo contiene registros de juego posteriores a la actualización 3.2 (si no se han perdido).
+> - En Android se recomienda usar [MT Manager](https://mt2.cn/) para acceder al directorio `sdcard/Android/data`.
 
-#### Ruta de Archivo (ver [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
+#### Ruta de archivos (ver [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
 
-[¿Qué es una Ruta de Archivo?](#qué-es-una-ruta-de-archivo)
+[Qué es una ruta de archivo](#什么是文件路径)
 
 - **Android (TapTap)**
   ```text
@@ -63,16 +74,16 @@ Haz clic en la opción **"Subir Archivo"** en la página principal para seleccio
   ```
 - **iOS**
 
-  Abre la carpeta de Milthm usando la aplicación [Files](https://support.apple.com//102570):
+  Abra la carpeta Milthm con la aplicación [Archivos](https://support.apple.com//102570):
 
   ```text
   /data/
   ```
 
-  > Si no se encuentran los archivos locales: ve al menú de tres puntos en la esquina superior derecha de la página de Files y muestra los archivos locales (ver [detalles](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+  > Si no encuentra archivos locales: en la página principal de "Archivos", abra el menú de tres puntos en la esquina superior derecha y desactive la ocultación de archivos locales ([más info](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
 
-- **Para Usuarios de Windows:**  
-  Ingresa lo siguiente en la barra de direcciones del Explorador de Archivos:  
+- **Usuarios de Windows:**  
+  En la barra de direcciones del explorador, ingrese:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -85,11 +96,15 @@ Haz clic en la opción **"Subir Archivo"** en la página principal para seleccio
   ~/.config/unity3d/Morizero/Milthm/data/
   ```
 
+[Video demostrativo para Android](https://mkzi-nya.github.io/milthm-calculator-web/files/android.mp4)  
+[Video demostrativo para iOS](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)  
+Usuarios de Android [sin permiso de acceso](#没有访问权限)
+
 ---
 
-### Ingresar Datos Analizados
+### Ingresar datos ya analizados
 
-Introduce los datos en el recuadro de entrada de la página principal, con el siguiente formato:
+Ingrese los datos en el cuadro de texto de la página principal con el siguiente formato:
 
 ```text
 [name],{
@@ -99,8 +114,8 @@ Introduce los datos en el recuadro de entrada de la página principal, con el si
 ```
 
 Donde:
-- `acc` es un número decimal que representa la precisión;
-- `level` indica la calificación, definida de la siguiente manera:
+- `acc` representa la precisión en decimal;
+- `level` representa la calificación, definida como:
 
 ```text
 level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
@@ -111,9 +126,9 @@ achievedStatus: 0=clear, 3=?, 4=fc, 5=ap, 6=false
 
 ---
 
-### Guardados de Versiones Antiguas
+### Guardados de versiones anteriores
 
-Los archivos guardados anteriores a `Milthm 3.2` no se pueden extraer directamente en dispositivos móviles. Puedes intentar los siguientes métodos:
+Los guardados anteriores a `Milthm 3.2` no pueden extraerse directamente en dispositivos móviles, puede intentar los siguientes métodos:
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -135,9 +150,9 @@ done
 
 ---
 
-### Otras Rutas de Guardado
+### Otras rutas de guardado
 
-Si la subida no se analiza correctamente, puedes intentar extraer manualmente los datos JSON y subirlos:
+Si no se puede analizar tras subir, intente extraer manualmente los datos JSON y subirlos:
 
 - **Android (TapTap)**
   ```text
@@ -167,25 +182,25 @@ Si la subida no se analiza correctamente, puedes intentar extraer manualmente lo
 
 ---
 
-## Gráfico de Radar
+## Gráfico de radar
 
-El método de cálculo es proporcionado por `PanyiAme`. Para más detalles, consulta [Explicación del Gráfico de Puntuaciones de Milthm](https://wwp.lanzoup.com/iZ59A2j8nbpe).
+Los cálculos relacionados son proporcionados por `PanyiAme`, para más detalles vea [Explicación de la tabla de puntuaciones de Milthm](https://wwp.lanzoup.com/iZ59A2j8nbpe).
 
 ---
 
 ## Acerca de Milthm
 
-[Volver a la Tabla de Contenidos](#tabla-de-contenidos)
+[Volver al índice](#目录)
 
-### Fórmula de Cálculo de Reality
+### Fórmula de cálculo de Reality
 
-Reality se calcula en base a la puntuación de juego y la constante de la canción:
+El cálculo de Reality se basa en la puntuación de juego y la constante de la canción:
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-La fórmula para calcular el Reality de una sola canción (donde s es la puntuación y c es la constante) es la siguiente:
+La fórmula para Reality en canciones individuales es (donde s es la puntuación y c la constante):
 
 $$
 \text{Reality}(s, c) =
@@ -201,9 +216,9 @@ $$
 \end{cases}
 $$
 
-[Tabla Comparativa de Reality](#tabla-comparativa-de-reality)
+[Tabla de referencia de Reality](#reality-对照表)
 
-#### Implementación de Código:
+#### Implementación en código:
 
 ```js
 function reality(score, c) {
@@ -218,17 +233,44 @@ function reality(score, c) {
 
 ---
 
-## Evaluación de Notas
+## Sobre Ytilaer en el gráfico de puntuación
 
-El juego evalúa cada nota individual en cinco categorías:
+Este valor no tiene significado real, detalles:
 
-- **Perfect:** Logra una puntuación del 101% y 100% de ACC.
-- **perfect:** Logra una puntuación entre el 75% y el 101% y 100% de ACC según la precisión.
-- **Good:** Logra una puntuación entre el 30% y el 75% y 50% de ACC según la precisión.
-- **Bad:** Se rompe el combo, obteniendo una puntuación entre el 0% y el 30% y 10% de ACC.
-- **Miss:** Se rompe el combo, sin obtener puntuación ni ACC.
+- Cuando la puntuación promedio de b20 es mayor a 1005k, este valor es igual al Reality real.
+- Este valor es el máximo Reality (promedio, Reality individual promedio) de 20 canciones.
 
-Dentro de cada rango, la puntuación y la precisión son proporcionales. Los rangos detallados se muestran en la siguiente tabla:
+## Acerca de los archivos de guardado
+
+En las siguientes secciones, la ruta se abrevia como `MilthmDataDirectory`.
+
+### Guardado del juego  
+Este archivo se encuentra en `MilthmDataDirectory/saves.db`.
+
+Contiene datos relacionados con el progreso del jugador y registros de juego.
+
+Los datos se almacenan en formato JSON en una tabla kv (formato JSON igual al de versiones anteriores).
+
+### Guardado de datos  
+Este archivo se encuentra en `MilthmDataDirectory/data.db`.
+
+Se usa para almacenar cada puntuación enviada con éxito.
+
+Los datos en este archivo son la fuente para la tabla de clasificación local.
+
+---
+
+## Determinación de notas
+
+En el juego, la evaluación de cada nota se divide en cinco tipos:
+
+- **Perfect**: obtiene 101% de la puntuación y 100% de precisión.
+- **perfect**: obtiene entre 75%-101% de la puntuación y 100% de precisión según la exactitud.
+- **Good**: obtiene entre 30%-75% de la puntuación y 50% de precisión según la exactitud.
+- **Bad**: rompe el combo, obtiene entre 0%-30% de la puntuación y 10% de precisión.
+- **Miss**: rompe el combo, no obtiene puntuación ni precisión.
+
+La puntuación y precisión dentro de cada rango son proporcionales, el rango detallado es el siguiente:
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -236,45 +278,79 @@ Dentro de cada rango, la puntuación y la precisión son proporcionales. Los ran
 
 ---
 
-## Calificaciones de Resultados
+## Calificación final
 
-Existen ocho calificaciones de resultado:
-
-- **R:** Rain, alcanzando la puntuación teórica de 1010000 (RHYTHM of RAIN, donde todas las notas son Perfect).
-- **Purple S:** Logra All Perfect (todas las notas son Perfect pero sin alcanzar la calificación R, con una puntuación entre 750000 y 1009999).
-- **Blue S:** Logra Full Combo (todas las notas se aciertan sin ningún Bad/Miss, 300000-1009999).
-- **S:** 950000-1009999.
-- **A:** 900000-949999.
-- **B:** 850000-899999.
-- **C:** 800000-849999.
-- **F:** 0-799999.
+La calificación final tiene ocho niveles:  
+Sin FC (Full Combo) es blanco, FC es azul, AP es morado  
+- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">: En versiones antiguas se mostraba como <img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">, alcanzando la puntuación teórica de 1,010,000 (RHYTHM of RAIN, todas las notas perfectas).
+- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M, es decir Milthm, se obtiene al alcanzar 1,005,000 puntos;
+- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/20.png" style="height:1.5em;vertical-align:middle;">: se obtiene al alcanzar 950,000 puntos;
+- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/30.png" style="height:1.5em;vertical-align:middle;">: se obtiene al alcanzar 900,000 puntos;
+- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/40.png" style="height:1.5em;vertical-align:middle;">: se obtiene al alcanzar 850,000 puntos;
+- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/50.png" style="height:1.5em;vertical-align:middle;">: se obtiene al alcanzar 800,000 puntos;
+- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">: se obtiene al tener menos de 800,000 puntos, no se completó, sin iconos FC/AP.
 
 ---
 
-## Estado de Finalización
+## Estado de finalización
 
-Al terminar la canción, la evaluación del rendimiento mostrada en el gráfico incluye:
+Las evaluaciones mostradas al terminar la partida en la canción incluyen:
 
-- **Crash:**  
+- <img src="../jpgs/crash.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC < 80%
-- **Complete:**  
+- <img src="../jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC > 80% y al menos un Bad/Miss.
-- **Full Combo:**  
-  - Todas las notas se aciertan en ±140ms, con al menos un Good.
-- **All Perfect:**  
-  - Todas las notas se aciertan en ±70ms, con al menos un small perfect.
-- **Rhythm of Rain:**  
-  - Todas las notas se aciertan en ±35ms, es decir, el valor teórico.
-- **AutoPlay is Awesome:**  
-  - Completado usando AutoPlay.
-- **Overloaded:**  
-  - La puntuación supera 1010000 (utilizando una lluvia intensa).
+- <img src="../jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
+  - Todas las notas golpeadas dentro de ±140ms, con al menos un Good.
+- <img src="../jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
+  - Todas las notas golpeadas dentro de ±70ms, con al menos un small perfect.
+- <img src="../jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
+  - Todas las notas golpeadas dentro de ±35ms, valor teórico.
+- <img src="../jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">:  
+  - Completado con AutoPlay.
+- <img src="../jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
+  - Puntuación mayor a 1,010,000 (usando lluvia intensa).
 
 ---
 
-## Tabla de Constantes
+## Día de los inocentes
 
-[Volver a la Tabla de Contenidos](#tabla-de-contenidos)
+### Guía (solo para referencia)
+- Al entrar al juego, juegue cualquier canción en dificultad `CB` en modo pesadilla, la dificultad mostrada cambiará y todas las teclas se convertirán en gotas de lluvia, la puntuación sube muy lentamente.
+- Al terminar, aparecerá un aviso, al confirmar se regresa y el nivel de todas las canciones aumentará aproximadamente 20 veces ([ver](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/js/cha_newui.js#L20-L212)), y UserReality se multiplica por 20 (sin relación con la constante del día de los inocentes).
+- Luego, al jugar cualquier canción nuevamente, aparecerá una ventana emergente y se eliminarán las canciones de nivel superior a 30.
+- Al jugar una canción de nivel mayor a 16 y entrar en la historia, se desbloqueará la canción de día de los inocentes `Rainbow Flavor!`, luego el juego se cerrará.
+- Aparecerá un minijuego de pato en salmuera, al avanzar cierto número de rondas se desbloqueará la segunda canción del día de los inocentes.
+
+---
+
+## Método para desbloquear canciones ocultas
+
+- **Regnaissance**
+
+  Desbloquee y juegue HYPER MEMORIES;  
+  Durante el juego aparecerá Susan en blanco y negro, no toque ninguna nota en ese momento;  
+  Luego la puntuación se volverá negativa y Susan se volverá a color, continúe jugando y haga que la puntuación sea > 0, al finalizar se desbloqueará la canción.
+
+- **Contrasty Angeles**
+
+  Después de desbloquear Regnaissance, lea el capítulo 6 de la historia principal;  
+  Juegue HYPER MEMORIES;  
+  Durante el juego aparecerá Susan en blanco y negro, debe mantener Full Combo;  
+  Luego la puntuación caerá bruscamente y Susan se volverá a color, continúe jugando y haga que la puntuación sea > 0, al finalizar se desbloqueará la canción.
+
+- **Dogbite**
+- Juegue Dogbite en dificultad CB y obtenga al menos calificación A
+- Después, juegue Oiiaioooooiai y mantenga Full Combo cuando las notas se conviertan en gatos (las notas anteriores pueden ser tocadas o no), cada nota tocada emitirá un ladrido.
+- Al cumplir lo anterior, se activará un fenómeno extraño y luego se desbloqueará la canción Dogbite SP (no es necesario pasarla).
+
+- Nota: Puede reducir la dificultad de desbloqueo activando el fenómeno "lluvia intensa".
+
+---
+
+## Tabla de constantes
+
+[Volver al índice](#目录)
 
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
@@ -293,11 +369,11 @@ Al terminar la canción, la evaluación del rendimiento mostrada en el gráfico 
 
 ## Explicación
 
-> - Todas las gráficas SP y las partituras no estándar no se incluyen en el cálculo de Reality.  
-> - Debido a cuestiones de precisión, en la versión actual todas las constantes de canciones que deberían ser 11.9 son en realidad inferiores a 11.9. Por ejemplo, si la Reality teórica es `13.005`, en el juego se mostrará como `13.00` en lugar de `13.01`, y el cálculo real es `13.004999…`.
+> - Todas las canciones `SP` y no convencionales no participan en el cálculo de Reality.  
+> - Por precisión, en esta versión todas las constantes de canciones con valor 11.9 son menores a 11.9. Por ejemplo, si la Reality teórica es `13.005`, en el juego se mostrará como `13.00` y no `13.01`, el cálculo real es `13.004999…`.
 
-La Reality teórica actual es `12.725` (mostrada como 12.72).  
-Las 20 canciones con las constantes más altas en la versión actual son las siguientes:
+La Reality teórica actual es `12.725` (se muestra como 12.72)  
+Las 20 canciones con mayor constante en esta versión son:
 
 > Click the link to view the detailed information of the track/chart.
 > The track/chart details are sourced from Milthm Lang's repository [RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/), with permission granted for use.
@@ -462,7 +538,7 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 
 ---
 
-## Charter info
+## Estadísticas de creadores de mapas
 
 <div style="font-size:10px;">
 
@@ -503,6 +579,14 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 
 ---
 
+## Haz clic para acelerar el desarrollo de Milthm
+
+Haz clic en los enlaces para apoyar el desarrollo de Milthm  
+1, https://github.com/sponsors/morizerodev/  
+2, https://afdian.com/a/morizero
+
+---
+
 ## Contáctanos
 
 - **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
@@ -513,11 +597,79 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 
 ---
 
-## Otro Contenido
+### Preguntas frecuentes
 
-[Volver a la Tabla de Contenidos](#tabla-de-contenidos)
+[Volver al índice](#目录)
 
-### Milthm Wiki
+- [No responde al hacer clic para generar imagen (u otro elemento)](#点击生成图片（或其他元素）没反应)
+- [No se encuentra el archivo o la carpeta no existe](#找不到文件在哪或不存在文件夹)
+- [Cómo respaldar guardados](#怎么备份存档)
+- [Cómo restaurar guardados](#恢复存档)
+- [Fórmula de cálculo de Reality](#reality-计算公式)
+- [Determinación de notas](#音符判定)
+
+> Asegúrese de conocer las operaciones básicas. Si no sabe y no desea aprender, no recomendamos usar este sitio.
+
+---
+
+#### No responde al hacer clic para generar imagen (u otro elemento)
+
+- Verifique la conexión a internet. Si no puede acceder a GitHub, puede visitar [k9.lv/c/](http://k9.lv/c).
+- Intente usar el navegador predeterminado del sistema o navegadores como Chrome, [Edge](https://www.microsoft.com/en-us/edge/?cs=4218728316&form=MA13FJ).  
+  (No se recomienda usar navegadores como Baidu o 360)
+- Si el problema persiste, puede ser por una versión antigua del sistema.
+
+---
+
+#### No se encuentra el archivo o la carpeta no existe
+
+Puede consultar la ruta de guardado en [Subir archivo de guardado](#上传存档文件).  
+
+#### Sin permiso de acceso
+
+Primero confirme la versión de Milthm. Después de actualizar a la versión 3.2 o superior, debe iniciar el juego una vez para generar el guardado en esa ruta.
+
+- **Android**
+
+  Si usa el administrador de archivos del sistema o uno de terceros, intente usar otro administrador.  
+  Se recomienda usar [MT Manager](https://mt2.cn/) y en la barra de direcciones ingresar la ruta directamente (si hay varios usuarios, cambie `0` por el ID de usuario o `/storage/emulated/0/` por `/sdcard/`):
+  ```text
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```
+  También puede agregar un marcador en la esquina superior derecha para acceso rápido.  
+  
+También puede intentar no usar el explorador de archivos del sistema y usar la aplicación nativa de Android `Archivos`.  
+Para abrir `Archivos`:  
+Abra MT Manager  
+Toque en `Extraer paquete de instalación` → seleccione `Aplicaciones del sistema` → busque `Archivos` → toque `Archivos`, seleccione `Más` en la esquina inferior izquierda → inicie la aplicación  
+Después de entrar a la carpeta de guardados de Milthm, puede copiar a almacenamiento interno (`/storage/emulated/0/`, que suele ser la raíz de `Archivos`) y luego acceder desde el navegador.  
+Si hay problemas con el guardado, también puede repararlo de forma similar, vea [Cómo restaurar guardados](#恢复存档).  
+  
+Si aún no puede acceder, debe conectar a una computadora o usar permisos ADB.  
+En versiones recientes de Android, puede ocurrir este problema. Si tiene activada la depuración USB y la depuración inalámbrica en opciones de desarrollador, puede usar [Shizuku](https://shizuku.rikka.app/zh-hans/download/) para depuración ADB inalámbrica sin computadora. Consulte la documentación de Shizuku para más detalles.
+
+- **iOS**
+
+  Si no encuentra la carpeta de este iPhone/iPad en la aplicación `Archivos`, vaya a la página principal de la app y verifique en configuración (esquina superior derecha) si los archivos locales están ocultos.  
+  Si aún no encuentra la carpeta de Milthm, verifique que esté usando la versión correcta de Milthm.  
+  [Video demostrativo para iOS](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)
+
+#### Cómo respaldar guardados
+
+Entre a la carpeta de guardados y copie toda la carpeta data a otra ubicación.
+
+#### Cómo restaurar guardados
+
+Puede sobrescribir directamente los archivos de guardado originales con la copia manual.  
+Para evitar accidentes, al generar el gráfico de puntuación se incrustan los guardados en formato texto dentro de la imagen (~~puede abrir la imagen como texto para ver~~).  
+~~Puede subir el gráfico para consultar puntuaciones~~  
+Puede subir el gráfico a [http://k9.lv/c/prefedit.html](http://k9.lv/c/prefedit.html), luego descargar el archivo de guardado generado (sin progreso de historia, es una copia directa mía (mkzi-nya/归梦)) y reemplazar el guardado original.
+
+## Otros contenidos
+
+[Volver al índice](#目录)
+
+### Wiki de Milthm
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
 
@@ -525,43 +677,50 @@ Las 20 canciones con las constantes más altas en la versión actual son las sig
 
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Métodos para Desbloquear Canciones Ocultas
+### Grupo de Milthm
 
-- **Regnaissance**
+记录于25.6.6 10:00  
+  
+| 群                           | 群号         | 人数  |
+|----------------------------------|--------------|-------|
+| Milthm#1 交流群                 | 372255828    | 1498  |
+| Milthm#3 交流群                 | 910085472    | 1994  |
+| Milthm#5 官方交流群             | 480062123    | 88    |
+| Milthm#6 公开测试               | 915230984    | 6     |
+| Milthm#7 交流群                 | 774927051    | 259   |
+| Milthm#8 交流群                 | 887231011    | 1395  |
+| Milthm#9 开发交流群             | 1047814125   | 23    |
+| Milthm#10 交流群                | 454822146    | 356   |
+| Milthm#11 交流群                | 1042806409    | 81    |
+| 梦见霖音高级中学 高一一部9班     | 850833385    | 55    |
+| 梦见霖音高级中学 高一一部114514班 | 574275806    | 13    |
+| Mhtlim#√-1 洨巟羣               | 375882310    | 203   |
+| Milthm#Φ 交流群                 | 678471942    | 40    |
+| milthm#神金 交流群              | 877854042    | 67    |
+| Milthm及各种🐉🖊交流群           | 981366419    | 54    |
 
-  Desbloquea y juega HYPER MEMORIES;  
-  Durante el juego, el fondo se pondrá en blanco y negro y aparecerá Susan. En ese momento, no golpees ninguna nota;  
-  Luego, la puntuación se vuelve negativa mientras Susan se vuelve colorida. Continúa jugando hasta que la puntuación sea > 0, y la canción se desbloqueará tras la evaluación.
+### Qué es una ruta de archivo
 
-- **Contrasty Angeles**
+Una ruta de archivo es una representación en cadena que apunta a una ubicación única en el sistema de archivos, generalmente en forma de árbol de directorios. Diferentes sistemas operativos usan distintos separadores como `/`, `\` o `:`. Las rutas pueden ser absolutas o relativas y describen la relación entre carpetas y archivos, siendo también importantes para construir URLs.
 
-  Tras desbloquear Regnaissance, lee el Episodio 6 del capítulo 1 de la historia principal;  
-  Juega HYPER MEMORIES;  
-  Durante el juego, el fondo se pondrá en blanco y negro y aparecerá Susan, y deberás mantener un full combo;  
-  Luego, la puntuación caerá bruscamente mientras Susan se vuelve colorida. Continúa jugando hasta que la puntuación sea > 0, y la canción se desbloqueará tras la evaluación.
+#### Ruta de archivos en Android
 
-### ¿Qué es una Ruta de Archivo?
-
-Una ruta de archivo es una representación en forma de cadena que señala una ubicación única en un sistema de archivos, generalmente utilizando una estructura de árbol de directorios. Los distintos sistemas operativos utilizan separadores diferentes como `/`, `\` o `:`. Las rutas pueden ser absolutas o relativas y son esenciales para construir URLs.
-
-#### Rutas de Archivos en Android
-
-- **Almacenamiento Externo:**  
-  Ubicado en `/storage/emulated/[ID de usuario]` (el usuario principal por defecto es 0) o `/sdcard/`, estos archivos son visibles para el usuario.
-- **Directorio de Datos de la Aplicación:**  
-  Normalmente se encuentra en `/storage/emulated/0/Android/data/[nombre del paquete]/`, por ejemplo:  
+- **Almacenamiento externo:**  
+  Ubicado en `/storage/emulated/ID_de_usuario (por defecto el usuario principal es 0)/` o `/sdcard/`, estos archivos son visibles para el usuario.
+- **Directorio de datos de la aplicación:**  
+  Normalmente en `/storage/emulated/0/Android/data/nombre.del.paquete/`, por ejemplo:  
   ```
   /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
   ```  
-  El directorio de guardado de Milthm está en:  
+  La carpeta de guardados de Milthm está en:  
   ```
   /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
   ```  
-  Si se bloquea el acceso, intenta conectar a una computadora o concede permisos ADB al administrador de archivos.
+  Si el sistema bloquea el acceso, intente conectar a una computadora o conceder permisos ADB al administrador de archivos.
 
 ---
 
-### Tabla Comparativa de Reality
+### Tabla de referencia de Reality
 
 ```text
 y	x (score)

@@ -1,26 +1,35 @@
+> Note: The current version is AI-translated and may not be fully accurate. Please visit the [Simplified Chinese](?lang=zh) version  
+> Alternatively, you can submit a PR for this language's translation at [this repository](https://github.com/mkzi-nya/milthm-calculator-web/tree/main/usage/%E8%AF%B4%E6%98%8E%E7%BC%96%E8%BE%91)  
+  Last maintained on July 5, 2025  
 
 ## Table of Contents
 
 - [Website](#website)
-- [Instructions](#instructions)
-  - [Uploading Save Files](#uploading-save-files)
-  - [Inputting Parsed Data](#inputting-parsed-data)
-  - [Old Version Saves](#old-version-saves)
-  - [Other Save Paths](#other-save-paths)
+- [Usage Guide](#usage-guide)
+  - [Upload Save File](#upload-save-file)
+  - [Input Parsed Data](#input-parsed-data)
+  - [Legacy Version Saves](#legacy-version-saves)
+  - [Alternative Save Paths](#alternative-save-paths)
   - [Radar Chart](#radar-chart)
 - [About Milthm](#about-milthm)
   - [Reality Calculation Formula](#reality-calculation-formula)
-  - [Note Judgment](#note-judgment)
+  - [About Ytilaer in Score Graphs](#about-ytilaer-in-score-graphs)
+  - [About Save Files](#about-save-files)
+  - [Note Judgments](#note-judgments)
   - [Result Ratings](#result-ratings)
   - [Completion Status](#completion-status)
-  - [Constant Table](#constant-table)
-  - [Chater info](#charter-info)
-- [Contact Us](#contact-us)
-- [Other Content](#other-content)
-  - [Milthm Wiki](#milthm-wiki)
+  - [April Fools' Event](#april-fools-event)
   - [Hidden Song Unlock Methods](#hidden-song-unlock-methods)
-  - [What is a File Path?](#what-is-a-file-path)
-  - [Reality Comparison Table](#reality-comparison-table)
+  - [Difficulty Table](#difficulty-table)
+  - [Chart Creator Statistics](#chart-creator-stats)
+  - [Click to Accelerate Milthm Development](#click-to-accelerate-milthm-development)
+- [Contact Us](#contact-us)
+- [FAQ](#faq)
+- [Additional Content](#additional-content)
+  - [Milthm Wiki](#milthm-wiki)
+  - [Milthm Community Group](#milthm-community-group)
+  - [What is a File Path](#what-is-a-file-path)
+  - [Reality Reference Table](#reality-reference-table)
 
 ---
 
@@ -28,7 +37,7 @@ _by [mkzi-nya](https://mkzi-nya.github.io)_
 _Last updated on 2025.07.04 20:50 (UTC)_  
 _简体中文以外的语言可能无法及时更新_
 
-> If the interface does not render correctly, please [visit on GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/)
+> If rendering issues occur, please [visit on GitHub](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
 
 ---
 
@@ -39,19 +48,21 @@ _简体中文以外的语言可能无法及时更新_
 
 ---
 
-## Instructions
+## Usage Guide
 
-### Uploading Save Files
+> This score calculator is fan-made and not officially affiliated.
 
-Click the **"Upload File"** option on the homepage to select and upload the save file `saves.db` or the score record file `data.db`.
+### Upload Save File
 
-> **Note:**
-> - `data.db` only contains gameplay records updated after version `3.2` (if not lost).
-> - Android users are recommended to use [MT Manager](https://mt2.cn/) to access the `sdcard/Android/data` directory.
+Click **"Upload File"** on the homepage and select either the save file `saves.db` or score record file `data.db`.
 
-#### File Path (see [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
+> **Note:**  
+> - `data.db` only contains records after the `3.2` update (if not lost).  
+> - Android users are recommended to use [MT Manager](https://mt2.cn/) to access the `sdcard/Android/data` directory.  
 
-[What is a File Path?](#what-is-a-file-path)
+#### File Paths (see [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File))
+
+[What is a file path](#what-is-a-file-path)
 
 - **Android (TapTap)**
   ```text
@@ -63,16 +74,16 @@ Click the **"Upload File"** option on the homepage to select and upload the save
   ```
 - **iOS**
 
-  Open the Milthm folder using the [Files](https://support.apple.com//102570) app:
+  Use the [Files](https://support.apple.com//102570) app to open the Milthm folder:
 
   ```text
   /data/
   ```
 
-  > If local files cannot be found: go to the three-dot menu at the top right of the Files homepage and unhide local files (see [details](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
+  > If local files are missing: Enable "On My iPhone" visibility via the three-dot menu in Files app ([details](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)).
 
-- **For Windows Users:**  
-  Enter the following in the File Explorer address bar:  
+- **Windows Users:**  
+  Enter in File Explorer address bar:  
   ```text
   %AppData%\..\LocalLow\Morizero\Milthm\data\
   ```
@@ -85,11 +96,15 @@ Click the **"Upload File"** option on the homepage to select and upload the save
   ~/.config/unity3d/Morizero/Milthm/data/
   ```
 
+[Android Demo Video](https://mkzi-nya.github.io/milthm-calculator-web/files/android.mp4)  
+[iOS Demo Video](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)  
+Android users [without access permissions](#no-access-permissions)
+
 ---
 
-### Inputting Parsed Data
+### Input Parsed Data
 
-Enter the data in the input box on the homepage, in the following format:
+Enter data in the homepage input box with this format:
 
 ```text
 [name],{
@@ -98,9 +113,9 @@ Enter the data in the input box on the homepage, in the following format:
 }
 ```
 
-Where:
-- `acc` is a decimal representing accuracy;
-- `level` indicates the rating, defined as follows:
+Where:  
+- `acc` is accuracy as a decimal;  
+- `level` represents the rating, defined as:  
 
 ```text
 level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
@@ -111,9 +126,9 @@ achievedStatus: 0=clear, 3=?, 4=fc, 5=ap, 6=false
 
 ---
 
-### Old Version Saves
+### Legacy Version Saves
 
-Saves from before `Milthm 3.2` cannot be directly extracted on mobile devices. You may try the following methods:
+Pre-`Milthm 3.2` saves cannot be directly extracted on mobile. Try:  
 
 ```sh
 SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
@@ -135,9 +150,9 @@ done
 
 ---
 
-### Other Save Paths
+### Alternative Save Paths
 
-If the upload fails to parse, you can try manually extracting JSON data and uploading it:
+If parsing fails after upload, manually extract JSON data and upload:  
 
 - **Android (TapTap)**
   ```text
@@ -169,41 +184,29 @@ If the upload fails to parse, you can try manually extracting JSON data and uplo
 
 ## Radar Chart
 
-The calculation method is provided by `PanyiAme`. For details, please see [Milthm Score Chart Explanation](https://wwp.lanzoup.com/iZ59A2j8nbpe).
+Calculation method provided by `PanyiAme`. See [Milthm Score Calculator Notes](https://wwp.lanzoup.com/iZ59A2j8nbpe).
 
 ---
 
 ## About Milthm
 
-[Back to Contents](#table-of-contents)
+[Back to Top](#table-of-contents)
 
 ### Reality Calculation Formula
 
-Reality is calculated based on the gameplay score and the song constant:
+Reality is calculated based on score and chart difficulty:  
 
 $$
 rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
-The formula for calculating the Reality of a single song (where s is the score and c is the constant) is as follows:
+Single-song Reality formula (where s = score, c = difficulty):  
 
-$$
-\text{Reality}(s, c) =
-\begin{cases} 
-\mathbf{0}, & c \in (-\infty, 0.001) \\
-\mathbf{1 + c}, & s \in [1005000, 1010000] \\
-\displaystyle \frac{1.4}{e^{3.65 \cdot \left(99.5 - \frac{s}{10000}\right)} + 1} - 0.4 + c, 
-& s \in [995000, 1005000) \\
-\displaystyle \frac{e^{3.1 \cdot \frac{s - 980000}{15000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, 
-& s \in [980000, 995000) \\
-\displaystyle \frac{s}{280000} - 4 + c, & s \in [700000, 980000) \\
-0, & s \in (-\infty, 700000)
-\end{cases}
-$$
+{{reality_formula}}
 
-[Reality Comparison Table](#reality-comparison-table)
+[Reality Reference Table](#reality-reference-table)
 
-#### Code Implementation:
+#### Code Implementation:  
 
 ```js
 function reality(score, c) {
@@ -218,17 +221,38 @@ function reality(score, c) {
 
 ---
 
-## Note Judgment
+## About Ytilaer in Score Graphs
 
-There are five types of judgments for individual notes in the game:
+This value has no practical meaning:  
+- Matches actual Reality if b20 average score > 1005k.  
+- Represents the maximum Reality value among 20 songs (average score, average single-song rlt).  
 
-- **Perfect:** Achieves 101% score and 100% ACC.
-- **perfect:** Achieves a score between 75%-101% and 100% ACC based on precision.
-- **Good:** Achieves a score between 30%-75% and 50% ACC based on precision.
-- **Bad:** Combo breaks, resulting in a score between 0%-30% and 10% ACC.
-- **Miss:** Combo breaks, and no score or ACC is awarded.
+## About Save Files
 
-Within each range, the score and accuracy are proportional. The detailed ranges are shown in the table below:
+Paths are abbreviated as `MilthmDataDirectory` below.
+
+### Game Saves  
+Located at `MilthmDataDirectory/saves.db`.  
+
+Contains player progress and game records stored in JSON format within a key-value table.  
+
+### Data Saves  
+Located at `MilthmDataDirectory/data.db`.  
+
+Stores all successfully submitted scores and serves as the source for local leaderboards.  
+
+---
+
+## Note Judgments
+
+Five judgment types per note:  
+- **Perfect**: 101% score, 100% ACC.  
+- **perfect**: 75%-101% score (scaled), 100% ACC.  
+- **Good**: 30%-75% score, 50% ACC.  
+- **Bad**: Breaks combo, 0%-30% score, 10% ACC.  
+- **Miss**: Breaks combo, 0 score/ACC.  
+
+Score/ACC scales linearly within ranges. Full details:  
 
 | Perfect | perfect | Good | Bad | Miss |
 |-|-|-|-|-|
@@ -238,43 +262,55 @@ Within each range, the score and accuracy are proportional. The detailed ranges 
 
 ## Result Ratings
 
-There are eight result ratings:
-
-- **R:** Rain, achieving the theoretical score of 1010000 (RHYTHM of RAIN, where all notes are Perfect).
-- **Purple S:** Achieving All Perfect (all notes are Perfect but not reaching an R rating, score between 750000-1009999).
-- **Blue S:** Achieving Full Combo (all notes hit without any Bad/Miss, 300000-1009999).
-- **S:** 950000-1009999.
-- **A:** 900000-949999.
-- **B:** 850000-899999.
-- **C:** 800000-849999.
-- **F:** 0-799999.
+Eight rating tiers (white without FC, blue for FC, purple for AP):  
+- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">: Legacy display <img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">. Achieved at theoretical 1,010,000 ("RHYTHM of RAIN" full-perfect).  
+- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">: "M" (Milthm) at 1,005,000.  
+- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/20.png" style="height:1.5em;vertical-align:middle;">: Awarded at 950,000.  
+- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/30.png" style="height:1.5em;vertical-align:middle;">: Awarded at 900,000.  
+- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/40.png" style="height:1.5em;vertical-align:middle;">: Awarded at 850,000.  
+- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/50.png" style="height:1.5em;vertical-align:middle;">: Awarded at 800,000.  
+- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">: Below 800,000 (fail).  
 
 ---
 
 ## Completion Status
 
-After the song ends, the performance evaluation displayed on the chart includes:
-
-- **Crash:**  
-  - ACC < 80%
-- **Complete:**  
-  - ACC > 80%, with at least one Bad/Miss.
-- **Full Combo:**  
-  - All notes are hit within ±140ms, with at least one Good.
-- **All Perfect:**  
-  - All notes are hit within ±70ms, with at least one small perfect.
-- **Rhythm of Rain:**  
-  - All notes are hit within ±35ms, i.e., the theoretical value.
-- **AutoPlay is Awesome:**  
-  - Completed using AutoPlay.
-- **Overloaded:**  
-  - Score exceeds 1010000 (using a heavy downpour).
+Post-game evaluations:  
+- <img src="../jpgs/crash.png" style="height:1.5em;vertical-align:middle;">: ACC < 80%.  
+- <img src="../jpgs/complete.png" style="height:1.5em;vertical-align:middle;">: ACC > 80% with Bad/Miss.  
+- <img src="../jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">: All notes hit within ±140ms (with Good).  
+- <img src="../jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">: All notes within ±70ms (with small perfect).  
+- <img src="../jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">: All notes within ±35ms (theoretical max).  
+- <img src="../jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">: AutoPlay clear.  
+- <img src="../jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">: Score > 1,010,000 (via "Downpour").  
 
 ---
 
-## Constant Table
+## April Fools' Event
 
-[Back to Contents](#table-of-contents)
+### Guide (unofficial)  
+- Enable Nightmare mode and play any CB-difficulty chart. Notes turn into raindrops with slow scoring.  
+- Post-game prompt alters all chart levels (~20x multiplier) and UserReality.  
+- Play any chart >16 difficulty to unlock April Fools' chart "Rainbow Flavor!", then game crashes.  
+- Duck-themed minigame unlocks after rounds, granting a second April Fools' chart.  
+
+---
+
+## Hidden Song Unlock Methods
+
+- **Regnaissance**  
+  Play HYPER MEMORIES; ignore black/white Susan visuals until score turns negative, then recover to >0.  
+- **Contrasty Angeles**  
+  After unlocking Regnaissance, play HYPER MEMORIES while maintaining FC during Susan visuals.  
+- **Dogbite**  
+  Achieve A+ on CB difficulty, then play Oiiaioooooiai while hitting all cat-shaped notes (triggers SP chart).  
+  *Tip: Use "Downpour" to reduce difficulty.*  
+
+---
+
+## Difficulty Table
+
+[Back to Top](#table-of-contents)
 
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
@@ -289,15 +325,11 @@ After the song ends, the performance evaluation displayed on the chart includes:
   - [Dream Tape](#single---dream-tape)
   - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
 
----
+> - SP/challenge charts excluded from Reality calculations.  
+> - Due to rounding, displayed Reality may differ (e.g., 13.005 → 13.00).  
 
-## Explanation
-
-> - All `SP` and non-standard charts are not included in the Reality calculation.  
-> - Due to precision issues, in the current version, all song constants that are supposed to be 11.9 are actually below 11.9. For example, if the theoretical Reality is `13.005`, it will display as `13.00` in the game instead of `13.01`, and the actual calculation is `13.004999…`.
-
-The current theoretical Reality is `12.725` (displayed as 12.72).  
-The top 20 songs with the highest constants in the current version are as follows:
+Current theoretical max Reality: `12.725` (displayed as 12.72)  
+Top 20 hardest charts:  
 
 > Click the link to view the detailed information of the track/chart.
 > The track/chart details are sourced from Milthm Lang's repository [RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/), with permission granted for use.
@@ -462,7 +494,7 @@ The top 20 songs with the highest constants in the current version are as follow
 
 ---
 
-## Charter info
+## Chart Creator Stats
 
 <div style="font-size:10px;">
 
@@ -503,6 +535,14 @@ The top 20 songs with the highest constants in the current version are as follow
 
 ---
 
+## Click to Accelerate Milthm Development
+
+Support development via:  
+1. https://github.com/sponsors/morizerodev/  
+2. https://afdian.com/a/morizero  
+
+---
+
 ## Contact Us
 
 - **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
@@ -513,9 +553,62 @@ The top 20 songs with the highest constants in the current version are as follow
 
 ---
 
-## Other Content
+### FAQ
 
-[Back to Contents](#table-of-contents)
+[Back to Top](#table-of-contents)
+
+- [No response when generating images](#no-response-when-generating-images)
+- [Can't locate files or folder missing](#cant-locate-files-or-folder-missing)
+- [How to backup saves](#how-to-backup-saves)
+- [Restore saves](#restore-saves)
+- [Reality calculation](#reality-calculation-formula)
+- [Note judgments](#note-judgments)
+
+> Basic technical literacy required. Unwilling learners should avoid this site.  
+
+---
+
+#### No response when generating images
+
+- Check network. If GitHub is blocked, try [k9.lv/c/](http://k9.lv/c).  
+- Switch to default/system browsers like Chrome or [Edge](https://www.microsoft.com/en-us/edge/).  
+- Older OS versions may cause issues.  
+
+---
+
+#### Can't locate files or folder missing
+
+See paths in [Upload Save File](#upload-save-file).  
+
+#### No access permissions
+
+Confirm Milthm version (3.2+ requires one game launch to generate saves).  
+
+- **Android**  
+  Use [MT Manager](https://mt2.cn/) to navigate to:  
+  ```text
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```  
+  Alternatively, enable ADB debugging via [Shizuku](https://shizuku.rikka.app/).  
+
+- **iOS**  
+  Check "Files" app settings for hidden local files.  
+  [iOS Demo Video](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)  
+
+#### How to backup saves
+
+Copy the entire `data` folder elsewhere.  
+
+#### Restore saves
+
+Overwrite original files with backups.  
+Score images embed save data as text—upload to [http://k9.lv/c/prefedit.html](http://k9.lv/c/prefedit.html) to regenerate files.  
+
+---
+
+## Additional Content
+
+[Back to Top](#table-of-contents)
 
 ### Milthm Wiki
 
@@ -525,43 +618,41 @@ The top 20 songs with the highest constants in the current version are as follow
 
 - **[Wikiwiki](https://wikiwiki.jp/milthm/)**
 
-### Hidden Song Unlock Methods
+### Milthm Community Group
 
-- **Regnaissance**
+记录于25.6.6 10:00  
+  
+| 群                           | 群号         | 人数  |
+|----------------------------------|--------------|-------|
+| Milthm#1 交流群                 | 372255828    | 1498  |
+| Milthm#3 交流群                 | 910085472    | 1994  |
+| Milthm#5 官方交流群             | 480062123    | 88    |
+| Milthm#6 公开测试               | 915230984    | 6     |
+| Milthm#7 交流群                 | 774927051    | 259   |
+| Milthm#8 交流群                 | 887231011    | 1395  |
+| Milthm#9 开发交流群             | 1047814125   | 23    |
+| Milthm#10 交流群                | 454822146    | 356   |
+| Milthm#11 交流群                | 1042806409    | 81    |
+| 梦见霖音高级中学 高一一部9班     | 850833385    | 55    |
+| 梦见霖音高级中学 高一一部114514班 | 574275806    | 13    |
+| Mhtlim#√-1 洨巟羣               | 375882310    | 203   |
+| Milthm#Φ 交流群                 | 678471942    | 40    |
+| milthm#神金 交流群              | 877854042    | 67    |
+| Milthm及各种🐉🖊交流群           | 981366419    | 54    |
 
-  Unlock and play HYPER MEMORIES;  
-  During gameplay, the background will turn black and white with Susan appearing. At that moment, do not hit any notes;  
-  Afterwards, the score becomes negative while Susan turns colorful. Continue playing until the score is > 0, then the song unlocks after evaluation.
+### What is a File Path
 
-- **Contrasty Angeles**
+A string specifying a file's location in a directory tree, using separators like `/`, `\`, or `:`. Used in URLs and system navigation.  
 
-  After unlocking Regnaissance, read Episode 6 of the main storyline chapter 1;  
-  Play HYPER MEMORIES;  
-  During gameplay, the background will turn black and white with Susan appearing, and you must maintain a full combo;  
-  Afterwards, the score drops sharply while Susan turns colorful. Continue playing until the score is > 0, then the song unlocks after evaluation.
+#### Android Paths
 
-### What is a File Path?
-
-A file path is a string representation that points to a unique location in a file system, typically using a directory tree structure. Different operating systems use different separators such as `/`, `\`, or `:`. Paths can be absolute or relative, representing the relationship between folders and files, and are essential in constructing URLs.
-
-#### Android File Paths
-
-- **External Storage:**  
-  Located under `/storage/emulated/[user ID]` (default primary user is 0) or `/sdcard/`, these files are visible to the user.
-- **Application Data Directory:**  
-  Typically located under `/storage/emulated/0/Android/data/[package name]/`, for example:  
-  ```
-  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/
-  ```  
-  The Milthm save directory is at:  
-  ```
-  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
-  ```  
-  If access is blocked, try connecting to a computer or granting the file manager ADB permissions.
+- **External Storage:** `/storage/emulated/0/` or `/sdcard/` (user-accessible).  
+- **App Data:** `/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/`.  
+  ADB access may be required on restricted systems.  
 
 ---
 
-### Reality Comparison Table
+### Reality Reference Table
 
 ```text
 y	x (score)
