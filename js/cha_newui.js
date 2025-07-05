@@ -1106,9 +1106,11 @@ function downloadImage() {
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
       ctx.fillText(`Date: ${dateStr}`, 660, 205);
       ctx.font = '50px Arial';
-      ctx.fillText('Milthm-calculator', 100, 130);
-      ctx.font = '30px Arial';
-      ctx.fillText('http://mhtlim.top/', 100, 180);
+      ctx.fillText('Milthm-calculator', 100, 95);
+      ctx.font = '25px Arial';
+      ctx.fillText('http://mhtlim.top/', 100, 125);
+      ctx.fillText('http://k9.lv/c/', 100, 153);
+      ctx.fillText('https://mkzi-nya.github.io/c/', 100, 181);
       ctx.font = '20px Arial';
       ctx.fillText(Updated, 100, 210);
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
