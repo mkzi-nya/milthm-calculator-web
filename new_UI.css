@@ -73,7 +73,7 @@ body {
     background-size: cover;
 }
 
-#languageButton {
+#languageButton,.lb-style {
     background-color: rgba(33, 33, 33, 0.1) !important;
     backdrop-filter: blur(6px);
     border-radius: 10px !important;
@@ -82,14 +82,16 @@ body {
 }
 
 .rccc {
-    background-color: rgba(33, 33, 33, 0.3) !important;
-    backdrop-filter: blur(16px);
-    border-radius: 16px !important;
+    /* background-color: rgba(33, 33, 33, 0.3) !important; */
+    background-color: rgba(33, 33, 33, 0.38) !important;
+    backdrop-filter: blur(24px);
+    border-radius: 12px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid #aaaaaa16 !important;
 }
 
 .settingsModal {
-    background-color: rgba(50, 50, 50, 0.3) !important;
+    background-color: rgba(50, 50, 50, 0.42) !important;
     backdrop-filter: blur(6px);
     border-radius: 16px !important;
     border: 1px solid #aaaaaa2a !important;
@@ -121,7 +123,7 @@ body {
 }
 
 .settingsModal button {
-    border-radius: 24px !important;
+    border-radius: 14px !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -163,9 +165,9 @@ body {
     background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
-#inputData,.layui-layer-input {
+#inputData,.layui-layer-input,.textareaR {
     border-color: #00000000 !important;
-    border-radius: 16px !important;
+    border-radius: 8px !important;
     background-color: rgba(33, 33, 33, 0.1) !important;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
@@ -180,7 +182,7 @@ body {
 }
 
 .layui-btn,.layui-layer-btn0,.layui-layer-btn1 {
-    border-radius: 24px !important;
+    border-radius: 12px !important;
     background-color: #595d8352 !important;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     border-color: #00000000 !important;
