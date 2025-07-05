@@ -1,6 +1,6 @@
 function loaddiv() {
-  return fetch(`./packed_document.json?_=${Date.now()}`); // 获取 JSON 文件
-    .then((response) => response.json()) // 解析为 JSON 格式
+  return fetch(`./packed_document.json?_=${Date.now()}`) // ← ✅ 不加分号！
+    .then((response) => response.json())
     .then((data) => {
       // 遍历每一个元素，将其传递给 chart(data)
       data.forEach((item) => {
@@ -11,6 +11,7 @@ function loaddiv() {
       console.error("加载或解析 JSON 文件时发生错误:", error);
     });
 }
+
 
 function chart(data) {
   const { id, charter, chartersList, tags, title, difficulty } = data;
@@ -52,7 +53,7 @@ function chart(data) {
   modal.appendChild(tagsElement);
 
   // 异步加载 chartinfo.json
-fetch(`./chartinfo.json?_=${Date.now()}`);
+fetch(`./chartinfo.json?_=${Date.now()}`)
   .then((response) => response.json())
   .then((infoData) => {
     // 构建用于搜索的 key：title + difficulty（去除括号和空格）
@@ -76,7 +77,7 @@ fetch(`./chartinfo.json?_=${Date.now()}`);
 
       if (chartInfo.error) {
         const errorElement = document.createElement("p");
-        errorElement.innerText = "!Error: 统计可能不正确";
+        errorElement.innerText = "Error: 此谱面统计可能有误";
         errorElement.style.color = "red";
         modal.insertBefore(errorElement, tagsElement);
       }

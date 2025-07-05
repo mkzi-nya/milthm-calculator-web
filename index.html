@@ -354,17 +354,9 @@
       loadTranslations();
     });
   </script>
-<script>
-  const rand = Math.random();
-  const script1 = document.createElement('script');
-  script1.src = `./js/constant.js?${rand}`;
-  document.body.appendChild(script1);
-
-  const script2 = document.createElement('script');
-  script2.src = `./js/cha_newui.js?${rand}`;
-  document.body.appendChild(script2);
-</script>
+<script src="./js/constant.js?ver=<?= Date.now() ?>"></script>
+<script src="./js/cha_newui.js?ver=<?= Date.now() ?>"></script>
 
 </body>
-
+<div id="img_gen_process"></div>
 </html>

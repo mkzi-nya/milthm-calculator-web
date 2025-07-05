@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.06.28 16:30(UTC+8)"
+const Updated = "Updated at 2025.07.05 11:40(UTC+8)"
 var cha_newui_js_ver = 7
 
 console.log(Updated)
@@ -387,6 +387,13 @@ function tlr() {
 
 /* ========== 绘制单张卡片 ========== */
 function drawCard(result, index) {
+const container = document.getElementById('output');
+console.log('output exist?', !!container);
+
+if (container) {
+  console.log('computed style of card container:', getComputedStyle(container));
+}
+
   const outputDiv = document.getElementById('output');
   const maincard = document.createElement('div');
   const card = document.createElement('div');

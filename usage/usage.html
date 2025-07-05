@@ -5,13 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Usage</title>
-  <link rel="stylesheet" href="./github-markdown-dark.min.css">
-  <script src="./marked.min.js"></script>
-  <script src="./katex.min.js"></script>
-  <link rel="stylesheet" href="./katex.min.css">
-  <script src="./index.umd.js"></script>
-  <link rel="stylesheet" href="./github-dark.min.css">
-  <script src="./highlight.min.js"></script>
   <!-- 替换原先的 load.js 加载方式 -->
 <script>
   const rand = `rand=${Date.now()}`;
@@ -19,6 +12,13 @@
   script.src = `./load.js?${rand}`;
   document.head.appendChild(script);
 </script>
+  <link rel="stylesheet" href="./github-markdown-dark.min.css">
+  <script src="./marked.min.js"></script>
+  <script src="./katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="./index.umd.js"></script>
+  <link rel="stylesheet" href="./github-dark.min.css">
+  <script src="./highlight.min.js"></script>
 
   <style>
     body {
