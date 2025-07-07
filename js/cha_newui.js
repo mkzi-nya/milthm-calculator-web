@@ -388,7 +388,6 @@ function tlr() {
 /* ========== 绘制单张卡片 ========== */
 function drawCard(result, index) {
 const container = document.getElementById('output');
-console.log('output exist?', !!container);
 
 if (container) {
   console.log('computed style of card container:', getComputedStyle(container));
@@ -1116,7 +1115,7 @@ function downloadImage() {
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
       Promise.all(items.map(i => Promise.all([
         loadImage(`./jpgs/${encodeURIComponent(i.name.replace(/[#?]/g, ''))}.jpg`).catch(() => loadImage('./jpgs/NYA.jpg')),
-        loadImage(`./jpgs/${i.achievedStatus.includes(5) ? i.bestLevel + '0' : i.achievedStatus.includes(4) ? i.bestLevel + '1' : i.bestLevel}.png`).catch(() => null),
+        loadImage(`./jpgs/${i.bestLevel === 0 ? 0 : i.bestLevel === 6 ? 6 : i.achievedStatus.includes(5) ? i.bestLevel + '0' : i.achievedStatus.includes(4) ? i.bestLevel + '1' : i.bestLevel}.png`).catch(() => null),
         ol_runner(ol_updateImgGenProcess,['正在加载图片 For '+i.name]),
       ]))).then(imgs => drawCards(ctx, canvas, items, imgs));
       ol_runner(ol_updateImgGenProcess,['完成']);
