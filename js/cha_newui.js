@@ -35,6 +35,7 @@ function reality(score, c) {
 }
 
 function findScore(constant, target) {
+  //倒观rlt
   if (target <= constant - 1.5) return 700000;
   if (target > 1 + constant) return "Unable to deduce points";
   if (target == (1 + constant)) return 1005000;
@@ -387,11 +388,6 @@ function tlr() {
 
 /* ========== 绘制单张卡片 ========== */
 function drawCard(result, index) {
-const container = document.getElementById('output');
-
-if (container) {
-  console.log('computed style of card container:', getComputedStyle(container));
-}
 
   const outputDiv = document.getElementById('output');
   const maincard = document.createElement('div');
@@ -633,70 +629,14 @@ function processHistoryRecords(scores) {
     }
   }
 
-  // 计算 r30 和 r10
-  const { r30, r10 } = calculateRecentScores(scores);
-  console.log("r30 (最近30条成绩):", r30.sort((a, b) => b.singleReality - a.singleReality));
   const userrealityHistory = calculateUserReality(scores);
   const username = scores[0]?.username;
   formatInput(username, items);
-  urltc(userrealityHistory, r10, scores);
+  urltc(userrealityHistory, scores);
   processData()
 }
 
 
-function calculateRecentScores(scores) {
-  scores = scores.filter(item => item.constant >= 0);
-  // 先按游玩时间升序排列，确保 r30 维护最近的成绩
-  scores.sort((a, b) => new Date(a.played_at) - new Date(b.played_at));
-  let r30 = [];
-  let seenCharts = new Set();
-  scores.forEach(scoreData => {
-    const { chart_id, score } = scoreData;
-    // 是否是新曲面
-    const isNewChart = !seenCharts.has(chart_id);
-    // 条件写入规则
-    const shouldInsert =
-      score >= 1000000 ||                  // 分数大于等于 1000000
-      isNewChart ||                        // 第一次游玩该谱面
-      score > getBestScore(chart_id, r30) || // 分数高于历史最佳
-      causesChartReduction(r30);  // 写入会导致不同谱面数小于 10
-    if (shouldInsert) {
-      // 直接写入（如果已满则踢掉最早的成绩）
-      if (r30.length >= 30) {
-        r30.shift();
-      }
-      r30.push(scoreData);
-      seenCharts.add(chart_id);
-    }
-  });
-  const r10 = [];
-  const usedCharts = new Set();
-  r30.sort((a, b) => b.singleReality - a.singleReality);
-  for (let i = 0; i < r30.length && r10.length < 10; i++) {
-    if (!usedCharts.has(r30[i].chart_id)) {
-      r10.push(r30[i]);
-      usedCharts.add(r30[i].chart_id);
-    }
-  }
-  return { r30, r10 };
-}
-
-// 获取某个 chart_id 在 r30 中的最高分
-function getBestScore(chart_id, r30) {
-  let bestScore = 0;
-  for (let record of r30) {
-    if (record.chart_id === chart_id) {
-      bestScore = Math.max(bestScore, record.score);
-    }
-  }
-  return bestScore;
-}
-
-// 判断写入是否会导致不同谱面数小于 10
-function causesChartReduction(r30) {
-  let uniqueCharts = new Set(r30.map(record => record.chart_id));
-  return uniqueCharts.size <= 10;
-}
 
 function calculateUserReality(scores) {
   let b20_lg = new Map(); // 存储所有不同谱面的最高得分记录 (chart_id -> scoreData)
@@ -735,7 +675,7 @@ function calculateUserReality(scores) {
   return userrealityHistory;
 }
 
-function urltc(userrealityHistory, r10, scores) {
+function urltc(userrealityHistory, scores) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 2000;
@@ -846,19 +786,120 @@ function urltc(userrealityHistory, r10, scores) {
     ctx.fillText("(由Panyi提供计算方式)", 1850, 1380);
     ctx.font = "40px Arial";
     ctx.fillText("最近游玩", 400, 110);
-    ctx.fillText("r10记录(测试,无实际用途)", 400, 760);
+    ctx.fillText("推分建议", 400, 760);
     // 绘制雷达图
     drawRadarChart(ctx, [d, e, f, g, h], 1150, 680, 700, 700);
+    // 绘制推分建议表格
+
+/* ---------- 辅助：把某曲目改成 1010000 时的 Reality 增量 ---------- */
+function realityGainIf1010000(track) {
+  const sim = window.processedItems.map(o => ({ ...o }));   // 深拷贝
+  let found = false;
+
+  for (const it of sim) {
+    if (it.name === track.name && Math.abs(it.constant - track.constant) < 1e-3) {
+      it.bestScore        = 1010000;
+      it.singleRealityRaw = reality(1010000, track.constant);
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    sim.push({
+      name: track.name,
+      constant: track.constant,
+      bestScore: 1010000,
+      singleRealityRaw: reality(1010000, track.constant),
+    });
+  }
+  const newAvg = sim
+    .filter(i => i.singleRealityRaw > 0)
+    .sort((a, b) => b.singleRealityRaw - a.singleRealityRaw)
+    .slice(0, 20)
+    .reduce((s, i) => s + i.singleRealityRaw, 0) / 20;
+
+  return newAvg - window.average;            // 净增量
+}
+
+/* ---------- 取曲目列表 ---------- */
+const thresholdC = (window.items?.[19]?.singleRealityRaw ?? 0) - 1; // 剪枝阈值
+const candidates = [];
+
+Object.values(constants)
+  .sort((a, b) => b.constant - a.constant)
+  .some(info => {                           // some+return true 可提前 break
+    if (info.constant < thresholdC) return true;          // 触发 break
+
+    const gain = realityGainIf1010000(info);
+    candidates.push({ ...info, gain });
+    return false;
+  });
+
+const top25 = candidates
+  .sort((a, b) => b.gain - a.gain)
+  .slice(0, 25);
+
+/* ---------- 绘制表格 ---------- */
+const tableX = 100, tableY = 800;
+const rowH = 25;
+const colW = [60, 260, 100, 150];               // constant | name | gain | scoreNeed
+
+ctx.font = "16px Arial";
+ctx.textAlign = "left";
+ctx.textBaseline = "middle";
+
+/* 表头 */
+["定数", "曲名", "还可推", "推分需"].forEach((t, i) => {
+  const x = tableX + colW.slice(0, i).reduce((a, b) => a + b, 0);
+  ctx.strokeStyle = "rgba(173,216,230,0.7)";
+  ctx.strokeRect(x, tableY, colW[i], rowH);
+  ctx.fillStyle  = "#fff";
+  ctx.fillText(t, x + 6, tableY + rowH / 2);
+});
+
+/* 行 */
+top25.forEach((info, idx) => {
+  const y = tableY + (idx + 1) * rowH;
+
+  // 边框
+  for (let j = 0; j < 4; j++) {
+    ctx.strokeStyle = "rgba(173,216,230,0.7)";
+    ctx.strokeRect(tableX + colW.slice(0, j).reduce((a, b) => a + b, 0), y, colW[j], rowH);
+  }
+
+  ctx.fillStyle = "#fff";
+  ctx.font = "16px Arial";
+  ctx.fillText(info.constant.toFixed(1), tableX + 6, y + rowH / 2);
+  ctx.fillText(info.name,            tableX + colW[0] + 6, y + rowH / 2);
+  ctx.fillText(info.gain.toFixed(4), tableX + colW[0] + colW[1] + 6, y + rowH / 2);
+
+  /* -- 推分需分数 -- */
+  const curRlt  = window.processedItems.find(p => p.name === info.name && Math.abs(p.constant - info.constant) < 1e-3)?.singleRealityRaw ?? 0;
+  const deltaR  = Math.ceil(window.average * 100 - 0.5) + 0.5 !== window.average * 100
+      ? (Math.ceil(window.average * 100 - 0.5) + 0.5 - window.average * 100) / 5 +
+        Math.max(curRlt, window.processedItems?.[19]?.singleRealityRaw ?? 0)
+      : 114514;
+
+  const scoreNeed = findScore(info.constant, deltaR);
+
+  // 若无法推算，字体缩小 2/3
+  if (scoreNeed === "Unable to deduce points") {
+    ctx.font = "11px Arial";                // 16 * 2/3 ≈ 11
+  } else {
+    ctx.font = "16px Arial";
+  }
+  ctx.fillText(String(scoreNeed),
+               tableX + colW[0] + colW[1] + colW[2] + 6,
+               y + rowH / 2);
+});
+
     // 绘制最近 10 次的分数卡片
     lg_drawCards(ctx, scores.slice(-10).reverse(), 50, 150).then(() => {
-      // 绘制 r10 记录
-      lg_drawCards(ctx, r10, 50, 800).then(() => {
         // 生成下载链接
         const link = document.createElement("a");
         link.download = "user_reality_chart.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
-      });
     });
   };
 }
