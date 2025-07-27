@@ -631,9 +631,19 @@ function processHistoryRecords(scores) {
 
   const userrealityHistory = calculateUserReality(scores);
   const username = scores[0]?.username;
+  window.dataurlt=userrealityHistory;
+  window.datas=scores;
   formatInput(username, items);
   urltc(userrealityHistory, scores);
   processData()
+}
+
+function geturltc() {
+    if (window.dataurlt && window.datas) {
+        urltc(window.dataurlt, window.datas);
+    } else {
+        alert("未找到data.db数据");
+    }
 }
 
 
