@@ -113,7 +113,6 @@ function info(title, item) {
   modal.style.padding = "5px";
   modal.style.borderRadius = "4px";
   modal.style.boxShadow = "0 2px 2px rgba(0, 0, 0, 0.1)";
-  modal.style.maxWidth = "200px";
   modal.style.zIndex = "1000";
   modal.style.fontFamily = "Arial, sans-serif";
   modal.style.color = "#fff";
@@ -130,13 +129,28 @@ function info(title, item) {
     
 illustrator: ${item.illustrator.join(", ")}`;
 
-  const bpmInfoElement = document.createElement("p");
-  let bpmText = item.bpmInfo
-    .map((info) => `[${info.start},${info.bpm}]`)
-    .join(",\n\n");
-  bpmInfoElement.innerText = `BPM:\n\n${bpmText}`;
+const bpmInfoElement = document.createElement("p");
 
-  modal.appendChild(titleElement);
+let bpmText = item.bpmInfo
+  .map((info, index) => {
+    // 每个元素格式化
+    let text = `[${info.start},${info.bpm}]`;
+
+    // 每6个后插入两个换行
+    if ((index + 1) % 6 === 0) {
+      text += ",\n\n";
+    } else {
+      text += ", ";
+    }
+
+    return text;
+  })
+  .join("");
+
+
+bpmInfoElement.innerText = `BPM:\n\n${bpmText}`;
+
+modal.appendChild(titleElement);
 
   if (item.latinTitle !== item.title) {
     const latinTitleElement = document.createElement("p");

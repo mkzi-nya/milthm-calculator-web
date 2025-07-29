@@ -246,8 +246,10 @@
       <input type="number" id="editScore">
       <label for="editAccuracy">Best Accuracy:</label>
       <input type="number" step="0.01" id="editAccuracy">
-      <label for="editLevel">BestLevel (0=R,1=APM,2=AP,3=FCM,4=FC,5=M,6=S,7=A,8=B,9=C,10=F):</label>
+      <label for="editLevel">BestLevel:<br>(0=R,1=M,2=S,3=A,4=B,5=C,6=F)</label>
       <input type="number" id="editLevel">
+      <label for="editAchievedStatus">AchievedStatus:<br>(0=通关,3,4=FC,5=AP,6=False)</label>
+      <input type="text" id="editAchievedStatus">
       <div style="text-align: right;">
         <button id="cancelEditBtn">取消</button>
         <button id="saveEditBtn">保存</button>
@@ -263,7 +265,7 @@
     let currentData = null;
     let sortMode = 'default';
     // level 映射：数字到评级字母
-    const levelMapping = ["R", "APM", "AP", "FCM", "FC", "M", "S", "A", "B", "C", "F"];
+    const levelMapping = ["R", "M", "S", "A", "B", "C", "F"];
     // 构造映射：键为 "name|category"，值为 BeatmapID（用于非 JSON 转换时查找）
     let beatmapDict = {};
     if (typeof constants !== 'undefined') {
@@ -336,7 +338,8 @@
       const usernameMatch = text.match(/^\s*\[(.*?)\],\s*\{/);
       if (!usernameMatch) return;
       const username = usernameMatch[1];
-      const recordRegex = /\[([^,\]]+),([^,\]]+),[\d.]+,(\d+),([\d.]+),(\d+)\]/g;
+      const recordRegex = /\[([^\[\],]+),([^\[\],]+),([\d.]+),(\d+),([\d.]+),(\d+)(?:,\[([^\]]*)\])?\]/g;
+
       let records = [];
       let missingSongs = [];
       let match;
@@ -344,25 +347,19 @@
         let rec = {
           name: match[1],
           category: match[2],
-          BestScore: parseInt(match[3]),
-          BestAccuracy: parseFloat(match[4]),
-          BestLevel: parseInt(match[5])
+          BestScore: parseInt(match[4]),
+          BestAccuracy: parseFloat(match[5]),
+          BestLevel: parseInt(match[6])
         };
         const key = rec.name + "|" + rec.category;
         const beatmapID = beatmapDict[key];
         if (beatmapID) {
           rec.BeatmapID = beatmapID;
-          // 根据 BestLevel 生成 AchievedStatus（逻辑与 Python 代码一致）
-          if (rec.BestLevel < 3) {
-            rec.AchievedStatus = [3, 4, 5];
-          } else if (rec.BestLevel <5 ) {
-            rec.AchievedStatus = [3, 4];
-          } else {
-            rec.AchievedStatus = [3];
-          }
+          if (match[7]) {
+            // 直接解析 achievedStatus 字符串为数组
+            rec.AchievedStatus = match[7].split(',').map(s => parseInt(s.trim())).filter(n => !isNaN(n));
+          } else rec.AchievedStatus = [0, 3];
           records.push(rec);
-        } else {
-          missingSongs.push(`${rec.name} (${rec.category})`);
         }
       }
       if (missingSongs.length > 0) {
@@ -631,10 +628,13 @@ if (res.length > 0 && res[0].values.length > 0) {
       document.getElementById('editScore').value = song.BestScore;
       document.getElementById('editAccuracy').value = song.BestAccuracy;
       document.getElementById('editLevel').value = song.BestLevel;
-      document.getElementById('editBeatmapID').textContent = song.BeatmapID ? song.BeatmapID : "未解析";
+      document.getElementById('editBeatmapID').textContent = song.BeatmapID || "未解析";
+      document.getElementById('editAchievedStatus').value =
+        (song.AchievedStatus || []).join(",");
       window.currentEditIndex = origIndex;
       document.getElementById('editModal').style.display = "block";
     }
+
     document.getElementById('cancelEditBtn').addEventListener('click', () => {
       document.getElementById('editModal').style.display = "none";
     });
@@ -652,13 +652,9 @@ if (res.length > 0 && res[0].values.length > 0) {
       currentData.SongRecords[window.currentEditIndex].BestScore = scoreInput;
       currentData.SongRecords[window.currentEditIndex].BestAccuracy = accuracyInput;
       currentData.SongRecords[window.currentEditIndex].BestLevel = levelInput;
-      if (levelInput === 0 || levelInput === 1) {
-        currentData.SongRecords[window.currentEditIndex].AchievedStatus = [3, 4, 5];
-      } else if (levelInput === 2) {
-        currentData.SongRecords[window.currentEditIndex].AchievedStatus = [3, 4];
-      } else {
-        currentData.SongRecords[window.currentEditIndex].AchievedStatus = [3];
-      }
+      const statusInput = document.getElementById('editAchievedStatus').value;
+      const statusArray = statusInput.split(',').map(s => parseInt(s.trim())).filter(n => !isNaN(n));
+      currentData.SongRecords[window.currentEditIndex].AchievedStatus = statusArray;
       updateOutput();
       renderCards();
       document.getElementById('editModal').style.display = "none";
