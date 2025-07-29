@@ -137,7 +137,7 @@ let bpmText = item.bpmInfo
     let text = `[${info.start},${info.bpm}]`;
 
     // 每6个后插入两个换行
-    if ((index + 1) % 6 === 0) {
+    if ((index + 1) % 5 === 0) {
       text += ",\n\n";
     } else {
       text += ", ";
