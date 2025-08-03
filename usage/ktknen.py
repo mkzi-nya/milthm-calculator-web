@@ -4,7 +4,7 @@ import re
 # 假名字体映射表
 katakana_font = {
     'A': 'ㄙ', 'B': 'ㄯ', 'C': 'ㄈ', 'D': 'ワ', 'E': '⋿', 'F': 'チ', 'G': 'Ᏽ', 'H': 'サ',
-    'I': 'エ', 'J': ' 𝙅', 'K': 'ケ', 'L': '㆑', 'M': '巾', 'N': 'ウ', 'O': 'ロ', 'P': 'ア',
+    'I': 'エ', 'J': '𝙅', 'K': 'ケ', 'L': '㆑', 'M': '巾', 'N': 'ウ', 'O': 'ロ', 'P': 'ア',
     'Q': '∅', 'R': 'Ʀ', 'S': 'ㄎ', 'T': 'ナ', 'U': 'ㄩ', 'V': '√', 'W': '山', 'X': 'メ',
     'Y': 'ン', 'Z': 'て', '1':'イ', '2':'ㄹ', '3':'ヨ', '4':'ㄣ', '5': 'ㄎ', '6':'〥', '7':'フ', '8':'ㄖ', '9':'ヌ', '0':'ㇿ'
 }
@@ -49,11 +49,20 @@ def protect_math_blocks(text):
 
 def convert_other_content(text):
     """转换非数学公式的内容"""
-    # 处理代码块
-    text = re.sub(r'```(.*?)```', 
-                 lambda m: f'```{convert_text(m.group(1))}```', 
-                 text, flags=re.DOTALL)
+    lines = text.split('\n')
+    converted_lines = []
     
+    for line in lines:
+        # 跳过以```开头的行
+        if line.startswith('```'):
+            converted_lines.append(line)
+        else:
+            converted_lines.append(convert_line_content(line))
+    
+    return '\n'.join(converted_lines)
+
+def convert_line_content(text):
+    """转换单行内容（不包括以```开头的行）"""
     # 处理三引号块
     text = re.sub(r"'''(.*?)'''", 
                  lambda m: f"'''{convert_text(m.group(1))}'''", 
