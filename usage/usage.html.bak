@@ -154,7 +154,6 @@
         "ru": "ru",
         "es": "es",
         "vi": "vi"
-        "ken": "ken"
       };
       // 读取URL参数中的 `lang`（如果存在）
       const urlParams = new URLSearchParams(window.location.search);
