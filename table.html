@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Phigros Chart Constant Table</title>
+<style>
+body { background:#121212; color:#fff; font-family:sans-serif; margin:0; text-align:center; }
+input { margin:5px; padding:5px; }
+button { padding:8px 16px; margin:5px; }
+#result img { max-width:100%; margin-top:10px; border:1px solid #444; }
+</style>
+</head>
+<body>
+
+<h1>Phigros Chart Constant Table</h1>
+<div>
+  <input id="difficulty" placeholder="难度(如 CL 或 all)" value="all">
+  <input id="minVal" placeholder="起始定数">
+  <input id="maxVal" placeholder="结束定数">
+  <button onclick="generate()">生成</button>
+  <button onclick="downloadImage()">下载</button>
+</div>
+
+<div id="result"></div>
+
+<script type="module">
+import { generateTable } from './pic.js';
+
+window.generate = async function() {
+  const difficulty = document.getElementById('difficulty').value.trim() || 'all';
+  const minVal = document.getElementById('minVal').value.trim();
+  const maxVal = document.getElementById('maxVal').value.trim();
+
+  try {
+    const dataUrl = await generateTable({ difficulty, minVal, maxVal });
+    document.getElementById('result').innerHTML =
+      `<img id="outputImage" src="${dataUrl}" alt="constant table">`;
+  } catch (e) {
+    alert('生成失败: ' + e.message);
+  }
+};
+
+window.downloadImage = function() {
+  const img = document.getElementById('outputImage');
+  if (!img) return alert('请先生成图片');
+  const link = document.createElement('a');
+  link.href = img.src;
+  link.download = 'constant_table.png';
+  link.click();
+};
+</script>
+
+</body>
+</html>
