@@ -1147,18 +1147,63 @@ function downloadImage() {
       }
       ctx.fillText(`Player: ${window.username}`, 660, 100);
 if (yrjds == "true") {
-  ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 135);
+  ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 129);
 } else {
   let text = `Reality: ${window.average1}`;
   if (window.average1 >= 12.5) {
     text += "    🐉👃👈😨";
   }
-  ctx.fillText(text, 660, 135);
+  ctx.fillText(text, 660, 129);
 }
-      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 170);
+      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 160);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
-      ctx.fillText(`Date: ${dateStr}`, 660, 205);
+      ctx.fillText(`Date: ${dateStr}`, 660, 189);
+
+// ------- 每次都重新 fetch tips -------
+fetch('./tips.txt')
+  .then(response => response.text())
+  .then(text => {
+    const lines = text.trim().split('\n').filter(Boolean);
+    const n = 1;
+    let tip;
+
+    if (window.average1 >= 12.7 && Math.random() < 0.75) {
+      tip = lines[Math.floor(Math.random() * Math.min(n, lines.length))];
+    } else {
+      tip = lines[Math.floor(Math.random() * lines.length)];
+    }
+
+    // 替换 {Name} 并添加前缀 "tips: "
+    tip = 'tips: ' + tip.replace(/\{Name\}/g, window.username || "玩家");
+
+    // 自动换行（逐字符）
+    const maxWidth = 500;
+    const lineHeight = 24;
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'white';
+    ctx.textAlign = 'left';
+
+    let line = '', y = 214, x = 660;
+    for (let char of tip) {
+      const testLine = line + char;
+      const testWidth = ctx.measureText(testLine).width;
+      if (testWidth > maxWidth) {
+        ctx.fillText(line, x, y);
+        line = char;
+        y += lineHeight;
+      } else {
+        line = testLine;
+      }
+    }
+    if (line) ctx.fillText(line, x, y);
+  })
+  .catch(err => {
+    console.warn('无法加载 tips.txt', err);
+  });
+
+      
+      
       ctx.font = '50px Arial';
       ctx.fillText('Milthm-calculator', 100, 95);
       ctx.font = '25px Arial';
