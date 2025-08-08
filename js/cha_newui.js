@@ -1146,11 +1146,15 @@ function downloadImage() {
         ctx.fillText(star, 660, 75);
       }
       ctx.fillText(`Player: ${window.username}`, 660, 100);
-      if (yrjds == "true") {
-        ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}`, 660, 135);
-      } else {
-        ctx.fillText(`Reality: ${window.average1}`, 660, 135);
-      }
+if (yrjds == "true") {
+  ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 135);
+} else {
+  let text = `Reality: ${window.average1}`;
+  if (window.average1 >= 12.5) {
+    text += "    🐉👃👈😨";
+  }
+  ctx.fillText(text, 660, 135);
+}
       ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 170);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
@@ -1161,7 +1165,10 @@ function downloadImage() {
       ctx.fillText('http://mhtlim.top/', 100, 125);
       ctx.fillText('http://k9.lv/c/', 100, 153);
       ctx.fillText('https://mkzi-nya.github.io/c/', 100, 181);
+      ctx.font = '30px Arial';
+      ctx.fillText('←查分上这里', 400, 130);
       ctx.font = '20px Arial';
+      ctx.fillText("3个网址都行", 450, 155);
       ctx.fillText(Updated, 100, 210);
       const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
       Promise.all(items.map(i => Promise.all([
