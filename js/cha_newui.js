@@ -1158,49 +1158,58 @@ if (yrjds == "true") {
       ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 160);
       const now = new Date();
       const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
-      ctx.fillText(`Date: ${dateStr}`, 660, 189);
+      ctx.fillText(`Date: ${dateStr}`, 660, 190);
 
-// ------- 每次都重新 fetch tips -------
-fetch('./tips.txt')
-  .then(response => response.text())
-  .then(text => {
-    const lines = text.trim().split('\n').filter(Boolean);
-    const n = 1;
-    let tip;
+// 如果没有缓存过 tips，就加载一次
+if (!window.tipsCache) {
+  fetch('./tips.txt')
+    .then(response => response.text())
+    .then(text => {
+      window.tipsCache = text.trim().split('\n').filter(Boolean);
+      drawTip(window.tipsCache);
+    })
+    .catch(err => {
+      console.warn('无法加载 tips.txt', err);
+    });
+} else {
+  drawTip(window.tipsCache);
+}
 
-    if (window.average1 >= 12.7 && Math.random() < 0.75) {
-      tip = lines[Math.floor(Math.random() * Math.min(n, lines.length))];
+// 绘制 tip 的函数
+function drawTip(lines) {
+  const n = 1;
+  let tip;
+
+  if (window.average1 >= 12.7 && Math.random() < 0.75) {
+    tip = lines[Math.floor(Math.random() * Math.min(n, lines.length))];
+  } else {
+    tip = lines[Math.floor(Math.random() * lines.length)];
+  }
+
+  // 替换 {Name} 并加前缀
+  tip = 'Tip ' + tip.replace(/\{Name\}/g, window.username || "玩家");
+
+  // 自动换行（逐字符）
+  const maxWidth = 500;
+  const lineHeight = 24;
+  ctx.font = '20px Arial';
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'left';
+
+  let line = '', y = 220, x = 660;
+  for (let char of tip) {
+    const testLine = line + char;
+    const testWidth = ctx.measureText(testLine).width;
+    if (testWidth > maxWidth) {
+      ctx.fillText(line, x, y);
+      line = char;
+      y += lineHeight;
     } else {
-      tip = lines[Math.floor(Math.random() * lines.length)];
+      line = testLine;
     }
-
-    // 替换 {Name} 并添加前缀 "tips: "
-    tip = 'tips: ' + tip.replace(/\{Name\}/g, window.username || "玩家");
-
-    // 自动换行（逐字符）
-    const maxWidth = 500;
-    const lineHeight = 24;
-    ctx.font = '20px Arial';
-    ctx.fillStyle = 'white';
-    ctx.textAlign = 'left';
-
-    let line = '', y = 214, x = 660;
-    for (let char of tip) {
-      const testLine = line + char;
-      const testWidth = ctx.measureText(testLine).width;
-      if (testWidth > maxWidth) {
-        ctx.fillText(line, x, y);
-        line = char;
-        y += lineHeight;
-      } else {
-        line = testLine;
-      }
-    }
-    if (line) ctx.fillText(line, x, y);
-  })
-  .catch(err => {
-    console.warn('无法加载 tips.txt', err);
-  });
+  }
+  if (line) ctx.fillText(line, x, y);
+}
 
       
       
