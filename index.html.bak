@@ -383,8 +383,8 @@
       loadTranslations();
     });
   </script>
-    <script src="./js/constant.js?ver=!##b0f6859c16a723c##!"></script>
-    <script src="./js/cha_newui.js?ver=!##c330ee52f8c3c00##!"></script>
+    <script src="./js/constant.js?ver=!##702c2f0a472696b##!"></script>
+    <script src="./js/cha_newui.js?ver=!##baca90d7522894f##!"></script>
 
   </body>
   <div id="img_gen_process"></div>
