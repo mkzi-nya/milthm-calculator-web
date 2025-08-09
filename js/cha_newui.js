@@ -1187,7 +1187,7 @@ function drawTip() {
   }
 
   // 替换 {Name} 并加前缀
-  tip = 'Tip ' + tip.replace(/\{Name\}/g, window.username || "玩家");
+  tip = 'Tip: ' + tip.replace(/\{Name\}/g, window.username || "玩家");
 
   // 自动换行（逐字符）
   const maxWidth = 500;
