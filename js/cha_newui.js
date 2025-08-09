@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.08.09 10:20(UTC+8)"
+const Updated = "Updated at 2025.08.09 20:50(UTC+8)"
 var cha_newui_js_ver = 7
 
 console.log(Updated)
@@ -15,9 +15,85 @@ console.log(" ███  ███                               \n\
  ██    ██  ░██████░  ░██████░           \n\
  ██    ██   ░████░    ░████░      ")
 
-//constant位于./constant.js
 /* ========== 全局变量 ========== */
 let columns = 3; //默认三列布局
+(async function preloadTips() {
+  try {
+    if (!window.tipsCache) {
+      const response = await fetch('./tips.txt');
+      const text = await response.text();
+      window.tipsCache = text.trim().split('\n').filter(Boolean);
+      console.log('Tips 预加载完成');
+    }
+  } catch (err) {
+    console.warn('Tips 预加载失败，使用默认数据', err);
+    window.tipsCache = ['默认提示1', '默认提示2']; // Fallback
+  }
+})();
+/* ========== 工具：从 image.css 读取图片 ========== */
+/** 将曲名转为 image.css 封面类名（与打包脚本保持一致） */
+function songNameToCssClass(name) {
+  // 与 py 中 class_name 的生成方式一致：空格与“-” -> “_”，转小写
+  // 并去掉常见不安全字符（文件名里可能去掉了它们）
+const cleaned = String(name)
+  .replace(/[ \-]/g, '_')   // 替换所有空格和连字符为下划线
+  .replace(/[()?]/g, '')    // 删除所有括号和问号
+  .replace(/\!/g, '')
+  .replace(/\./g, '')
+  .replace(/\#/g, '')
+  .replace(/\~/g, '')
+  .toLowerCase();
+  return cleaned || 'nya';
+}
+
+/** 读取某个 CSS 类上的 background-image 的 dataURL（要求该类在 image.css 中已定义） */
+function getDataUrlFromCssClass(className) {
+  const el = document.createElement('div');
+  el.style.position = 'absolute';
+  el.style.left = '-99999px';
+  el.style.top = '-99999px';
+  el.style.width = '1px';
+  el.style.height = '1px';
+  el.className = className;
+  document.body.appendChild(el);
+  const bg = getComputedStyle(el).backgroundImage;
+  document.body.removeChild(el);
+
+  if (!bg || bg === 'none') return null;
+  const m = bg.match(/url\(["']?(data:image\/[^"')]+)["']?\)/i);
+  return m ? m[1] : null;
+}
+
+/** 用 CSS 类创建可绘制到 Canvas 的 Image 对象 */
+function loadCssImage(className) {
+  return new Promise((resolve, reject) => {
+    const dataURL = getDataUrlFromCssClass(className);
+    if (!dataURL) {
+      reject(new Error(`No dataURL found for CSS class .${className}`));
+      return;
+    }
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error(`Failed to load image from CSS class .${className}`));
+    img.src = dataURL;
+  });
+}
+
+async function tryLoadFirstCssImage(classNames) {
+  for (const cls of classNames) {
+    try {
+      const img = await loadCssImage(cls);
+      return img;
+    } catch (e) {
+      // 如果是第一个类名（即 songNameToCssClass 生成的 cleaned），打印日志
+      if (cls === classNames[0]) {
+        console.log(`生成的类名 "${cls}" 加载失败:`, e.message);
+      }
+      // 继续尝试下一个类名
+    }
+  }
+  throw new Error('No candidate CSS image found: ' + classNames.join(', '));
+}
 /* ========== DOMContentLoaded 事件 ========== */
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container');
@@ -88,8 +164,6 @@ function processData() {
   items.sort((a, b) => b.singleRealityRaw - a.singleRealityRaw);
   // 显示用户信息
   drawUserInfo(username, items);
-  //username
-  // 绘制所有卡片
 
   const outputDiv = document.getElementById('output');
   const card = document.createElement('div');
@@ -109,33 +183,28 @@ function processData() {
 
 /* ========== 工具函数 ========== */
 function processSong(song) {
-  /* ---------- ① 去掉最外层的方括号 ---------- */
-  const raw = song.trim().slice(1, -1);   // "Contrasty Angeles,CL,12.3,...,[0,3,4]"
-
-  /* ---------- ② 顶层逗号分割 ---------- */
+  const raw = song.trim().slice(1, -1);
   const tokens = [];
   let buf = '';
-  let depth = 0;          // 记录当前处在几层 []
+  let depth = 0;
   for (const ch of raw) {
     if (ch === '[') depth++;
     if (ch === ']') depth--;
-    if (ch === ',' && depth === 0) {      // 只有在最外层才真正分割
+    if (ch === ',' && depth === 0) {
       tokens.push(buf);
       buf = '';
     } else {
       buf += ch;
     }
   }
-  tokens.push(buf);       // 最后一个片段
+  tokens.push(buf);
 
-  /* ---------- ③ 解构 + 把 achievedStatus 变成数组 ---------- */
   let [title, category, constant, score, accuracy, level, achievedStatus] = tokens;
-  achievedStatus = achievedStatus                 // "[0,3,4]"
-    .replace(/[\[\]]/g, '')                       // "0,3,4"
+  achievedStatus = achievedStatus
+    .replace(/[\[\]]/g, '')
     .split(',')
-    .map(n => parseInt(n, 10));                   // [0, 3, 4]
+    .map(n => parseInt(n, 10));
 
-  /* ---------- ④ 原有逻辑保持不变 ---------- */
   const constantVal  = parseFloat(constant);
   const scoreVal     = parseInt(score, 10);
   const accuracyVal  = parseFloat(accuracy);
@@ -146,16 +215,15 @@ function processSong(song) {
   return {
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
-    constant: constantVal,          // 依旧不 toFixed
+    constant: constantVal,
     name: title,
     category,
     bestScore: scoreVal,
     bestAccuracy: accuracyVal.toFixed(4),
     bestLevel: levelVal,
-    achievedStatus                   // 现在是数组
+    achievedStatus
   };
 }
-
 
 function processSongFromOldFormat(record) {
   const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record;
@@ -165,7 +233,6 @@ function processSongFromOldFormat(record) {
 
   const { constant, category, name, yct } = constantObj;
   const singleRealityRaw = reality(BestScore, constant);
-
 
   return {
     singleRealityRaw,
@@ -189,7 +256,6 @@ function formatInput(username, items) {
   document.getElementById('inputData').value = `[${username}],{\n  ${formattedItems}\n}`;
 }
 
-
 // **初始化 SQL.js**
 async function initSQL() {
   layer.msg('正在加载SQL加载器...')
@@ -197,11 +263,10 @@ async function initSQL() {
   const wasmBinary = await response.arrayBuffer();
   const SQL = await initSqlJs({
     locateFile: filename => `./js/${filename}`,
-    wasmBinary // 使用 ArrayBuffer 而不是 wasm streaming
+    wasmBinary
   });
   return SQL;
 }
-
 
 // **处理 SQLite 数据库文件**
 async function processDBFile(arrayBuffer, SQL) {
@@ -258,13 +323,9 @@ function handleFile(content, fileName) {
 }
 
 function parsePNGFile(content) {
-  // 使用正则表达式查找userdata:部分
   const userdataMatch = content.match(/userdata:([\s\S]+)/);
-
   if (userdataMatch && userdataMatch[1]) {
-    // 提取userdata后的文本内容
     const userdataText = userdataMatch[1].trim();
-    // 将提取的文本放入输入框
     document.getElementById('inputData').value = userdataText;
     processData();
   } else {
@@ -288,7 +349,6 @@ function hexToString(hexData) {
   const res = arr.map(byte => String.fromCharCode(parseInt(byte, 16)));
   return res.join('');
 }
-
 
 function processXMLFile(xmlContent) {
   const doc = new DOMParser().parseFromString(xmlContent, "application/xml");
@@ -327,8 +387,6 @@ function tryParseJSON(str) {
   }
 }
 
-
-
 /* ========== 显示用户信息 ========== */
 function drawUserInfo(username, results) {
   const userInfoDiv = document.getElementById('userInfo');
@@ -343,7 +401,6 @@ function drawUserInfo(username, results) {
   window.username = username;
   window.average = avg;
   window.utlr = tlr()
-  // document.getElementById("upload_info").innerHTML=`${username} ${window.average1}`
 }
 
 function tlr() {
@@ -354,22 +411,18 @@ function tlr() {
 
     as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
     ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
-    // 初始计算ltlr
     aitems.forEach(i => {
       i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
     });
-    // 遍历items（跳过已有aitems的前20项）
     for (let i = 20; i < items.length; i++) {
       let curr = items[i];
       let ltlr = (curr.singleRealityRaw - ar) / 20 + reality(as + (curr.bestScore - as) / 20, 0);
       let minLtlrItem = aitems.reduce((min, x) => x.ltlr < min.ltlr ? x : min);
       if (ltlr > minLtlrItem.ltlr) {
-        // 替换
         let index = aitems.indexOf(minLtlrItem);
         curr.ltlr = ltlr;
         aitems[index] = curr;
 
-        // 更新as, ar并重算aitems中所有的ltlr
         as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
         ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
         aitems.forEach(i => {
@@ -386,18 +439,14 @@ function tlr() {
   else return 0;
 }
 
-/* ========== 绘制单张卡片 ========== */
+/* ========== 绘制单张卡片（DOM） ========== */
 function drawCard(result, index) {
-
   const outputDiv = document.getElementById('output');
   const maincard = document.createElement('div');
   const card = document.createElement('div');
   maincard.classList.add('card');
   card.classList.add('card-inside');
-  // 背景
-  // card.style.background = result.bestLevel === 0
-  //   ? 'linear-gradient(135deg, #8400C3,#3030B0,#2e61ef)'
-  //   : 'linear-gradient(45deg, #4028d7, #8839fe)';
+
   const opa = 0.114514;
   const opa_nb = 0.114514;
   maincard.style.background = result.bestLevel === 0
@@ -405,21 +454,18 @@ function drawCard(result, index) {
     : `linear-gradient(45deg, rgba(64, 40, 215, ${opa}), rgba(136, 57, 254, ${opa}))`;
   card.style.color = '#DDA0DD';
 
-  // card.style.border = '1px solid';
   result.bestLevel === 0 ? (() => { card.style.border = '1.5px solid'; card.style.borderColor = 'rgba(255, 255, 255, 0.3)'; })() : {};
-  // 计算基础字号
-  let baseFontSize = (window.innerWidth * window.innerHeight) / 50000; //60000
+  let baseFontSize = (window.innerWidth * window.innerHeight) / 50000;
   if (baseFontSize >= 10) {
     baseFontSize = 10;
   }
   let fontSize = (baseFontSize * 4) / columns;
   const marginBottom = (baseFontSize * 4) / columns;
-  // 标题
+
   const title = document.createElement('div');
   title.classList.add('title');
   title.innerText = result.name;
   card.appendChild(title);
-  const maxCardWidth = card.offsetWidth * 0.7;
   title.style.whiteSpace = 'nowrap';
   title.style.overflow = 'hidden';
   title.style.textOverflow = 'ellipsis';
@@ -440,7 +486,6 @@ function drawCard(result, index) {
   const constantText = `${parseFloat(result.constant).toFixed(1)}->&nbsp`;
   const singleRealitySpan = document.createElement('span');
   singleRealitySpan.innerHTML = parseFloat(result.singleReality).toFixed(2);
-  // 根据分数变色
   if (result.bestScore >= 1005000) {
     singleRealitySpan.style.color = '#1cd3b4';
   } else if (result.singleReality == 0) {
@@ -449,7 +494,6 @@ function drawCard(result, index) {
   info.innerHTML = `${result.category} ${constantText}`;
   info.style.maxWidth = "100%"
   info.appendChild(singleRealitySpan);
-  // 准度
   const accuracySpan = document.createElement('span');
   accuracySpan.classList.add('accuracy');
   accuracySpan.innerHTML = `&nbsp&nbsp${(result.bestAccuracy * 100).toFixed(2)}%`;
@@ -460,36 +504,34 @@ function drawCard(result, index) {
   });
   info.appendChild(accuracySpan);
   card.appendChild(info);
-  // 分数
+
   const score = document.createElement('div');
   score.classList.add('score');
   score.innerText = result.bestScore;
-  // score.style.fontSize = `${fontSize * 2.5}px`;
   score.style.marginBottom = `${marginBottom}px`;
   score.style.whiteSpace = 'nowrap';
   score.style.overflow = 'ellipsis';
-  // 根据等级分数渐变
-if (result.achievedStatus.includes(5)) {
-  Object.assign(score.style, {
-    background: 'linear-gradient(to right, #12a9fb, #ee80ff)',
-    color: 'transparent',
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text'
-  });
-} else if (result.achievedStatus.includes(4)) {
-  Object.assign(score.style, {
-    background: 'linear-gradient(to right, #5e94f3, #80b2ff)',
-    color: 'transparent',
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text'
-  });
-} else {
-  score.style.color = '#D1D1D1';
-  score.style.background = '';
-}
+  if (result.achievedStatus.includes(5)) {
+    Object.assign(score.style, {
+      background: 'linear-gradient(to right, #12a9fb, #ee80ff)',
+      color: 'transparent',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text'
+    });
+  } else if (result.achievedStatus.includes(4)) {
+    Object.assign(score.style, {
+      background: 'linear-gradient(to right, #5e94f3, #80b2ff)',
+      color: 'transparent',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text'
+    });
+  } else {
+    score.style.color = '#D1D1D1';
+    score.style.background = '';
+  }
   score.style.lineHeight="1.2"
   card.appendChild(score);
-  // 序号
+
   const indexElem = document.createElement('div');
   indexElem.classList.add('index');
   indexElem.innerText = `#${index + 1}`;
@@ -502,15 +544,13 @@ if (result.achievedStatus.includes(5)) {
     top: "0px"
   });
   card.appendChild(indexElem);
-  // 加入到输出
+
   maincard.appendChild(card);
   outputDiv.appendChild(maincard);
-  // 注意：调整大小一定需要在生成完成后！
-  // const fontSize1 = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
+
   info.style.fontSize = `${shitValue * 1.14514}px`;
   title.style.fontSize = `${shitValue * 1.2}px`;
   score.style.fontSize = `${shitValue * 2.4}px`;
-  // console.log(`Card width: ${card.offsetWidth}px, Font size: ${shitValue}px`);
 }
 
 /* ========== 列数调整 ========== */
@@ -537,15 +577,13 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
     if (fileName.endsWith('.db')) {
       const reader = new FileReader();
       reader.onload = async () => {
-        const SQL = await initSQL();  // 加载 SQL.js
+        const SQL = await initSQL();
         const db = new SQL.Database(new Uint8Array(reader.result));
-        const tables = getAllTables(db); // 获取数据库中的所有表
+        const tables = getAllTables(db);
 
         if (tables.includes("kv")) {
-          // 使用 saves.db 的解析方式
           processDBFile(reader.result, SQL);
         } else if (tables.includes("scores")) {
-          // 使用 data.db 的解析方式
           const scores = extractScores(db);
           processHistoryRecords(scores);
           alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
@@ -555,7 +593,6 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
       };
       reader.readAsArrayBuffer(file);
     } else {
-      // 如果不是 .db 文件，执行第3种操作
       const reader = new FileReader();
       reader.onload = () => handleFile(reader.result, fileName);
       reader.onerror = () => layer.msg("读取文件失败\nFailed to read the file.");
@@ -568,8 +605,6 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
   }finally {
     layer.closeAll('loading');
   }
-  
-
 });
 function getAllTables(db) {
   try {
@@ -615,17 +650,15 @@ function processHistoryRecords(scores) {
       scoreData.category = category;
       scoreData.name = name;
       scoreData.singleReality = singleReality;
-      //分析表相关内容
-      scoreData.h = (score_accuracy < 99 || score < 10000 * score_accuracy) ? 0 : (constant * 0.1 + 1) * Math.pow((score - 5000 * score_accuracy - 500000) / 10000, 2);//准度
-      if (ad) scoreData.d = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ad : ad);//底力
-      if (ae) scoreData.e = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ae : ae);//手法
-      if (af) scoreData.f = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * af : af);//读谱
-      if (ag) scoreData.g = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ag : ag);//多指
+      scoreData.h = (score_accuracy < 99 || score < 10000 * score_accuracy) ? 0 : (constant * 0.1 + 1) * Math.pow((score - 5000 * score_accuracy - 500000) / 10000, 2);
+      if (ad) scoreData.d = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ad : ad);
+      if (ae) scoreData.e = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ae : ae);
+      if (af) scoreData.f = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * af : af);
+      if (ag) scoreData.g = score < 995000 ? 0 : (score < 1005000 ? Math.pow((score - 995000) / 10000, 2) * ag : ag);
     } else {
       console.warn(`未找到对应的 chartid: ${chartid}`);
-      // 删除当前scoreData对象
       scores.splice(i, 1);
-      i--;  // 调整索引以便继续遍历下一个元素
+      i--;
     }
   }
 
@@ -639,38 +672,33 @@ function processHistoryRecords(scores) {
 }
 
 function geturltc() {
-    if (window.dataurlt && window.datas) {
-        urltc(window.dataurlt, window.datas);
-    } else {
-        alert("未找到data.db数据");
-    }
+  if (window.dataurlt && window.datas) {
+    urltc(window.dataurlt, window.datas);
+  } else {
+    alert("未找到data.db数据");
+  }
 }
 
-
-
 function calculateUserReality(scores) {
-  let b20_lg = new Map(); // 存储所有不同谱面的最高得分记录 (chart_id -> scoreData)
-  let userrealityHistory = []; // 记录 userreality 变化历史
-  let lastUserReality = null; // 记录上一次的 userreality
+  let b20_lg = new Map();
+  let userrealityHistory = [];
+  let lastUserReality = null;
   scores.forEach(scoreData => {
     const { chart_id, score, played_at } = scoreData;
-    // **修改点：b20_lg 存储所有曲目的最高分**
     if (!b20_lg.has(chart_id) || b20_lg.get(chart_id).score < score) {
       b20_lg.set(chart_id, scoreData);
     }
     let b20 = Array.from(b20_lg.values())
-      .sort((a, b) => b.singleReality - a.singleReality) // 按 singleReality 降序排序
-      .slice(0, 20); // 取最高的 20 条
+      .sort((a, b) => b.singleReality - a.singleReality)
+      .slice(0, 20);
     let filteredReality = b20.slice(0, 20).filter(data => data.singleReality > 0);
     let sumReality = filteredReality.reduce((sum, data) => sum + data.singleReality, 0);
     let userreality = sumReality / 20;
-    // 检测 userreality 是否发生变化
     if (lastUserReality === null || userreality !== lastUserReality) {
       userrealityHistory.push({ userreality, played_at });
       lastUserReality = userreality;
     }
   });
-  //从历史记录的分数和详情信息中手动生成存档
   window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, score_perfect_count, score_good_count, score_bad_count, score_miss_count, 
   ...rest }) => ({
     ...rest,
@@ -685,28 +713,26 @@ function calculateUserReality(scores) {
   return userrealityHistory;
 }
 
+/* ========== 大图生成（使用 CSS 图片） ========== */
 function urltc(userrealityHistory, scores) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 2000;
   canvas.height = 1500;
-  // 加载背景图片
-  const bgImage = new Image();
-  bgImage.src = "./jpgs/背景.jpg";
-  bgImage.onload = function () {
-    // 绘制背景图（不会覆盖其他元素）
+
+  // 背景：从 .background-image 读取
+  loadCssImage('background-image').then((bgImage) => {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-    // 折线图区域：右上 1/4，留 10px 间距，表格高度减少 30px
+
     const chartX = 1050, chartY = 50, chartWidth = 900, chartHeight = 500;
-    // 解析用户现实历史数据
+
     const times = userrealityHistory.map(data => new Date(data.played_at).getTime());
     const realities = userrealityHistory.map(data => data.userreality);
     const [minTime, maxTime] = [Math.min(...times), Math.max(...times)];
     const [minReality, maxReality] = [Math.min(...realities), Math.max(...realities)];
-    // 设置时间坐标轴的刻度
     const scaleX = (time) => chartX + ((time - minTime) / (maxTime - minTime)) * chartWidth;
     const scaleY = (reality) => chartY + chartHeight - ((reality - minReality) / (maxReality - minReality)) * chartHeight;
-    // 绘制表格
+
     ctx.strokeStyle = "#444";
     ctx.lineWidth = 1;
     for (let i = 0; i <= 5; i++) {
@@ -723,23 +749,19 @@ function urltc(userrealityHistory, scores) {
       ctx.lineTo(x, chartY + chartHeight);
       ctx.stroke();
     }
-    // 绘制折线趋势，并填充折线以下的区域
-    ctx.fillStyle = "rgba(206, 238, 249, 0.5)"; // 半透明淡蓝色
+
+    ctx.fillStyle = "rgba(206, 238, 249, 0.5)";
     ctx.beginPath();
-    // 起始点（第一个数据点）
     ctx.moveTo(scaleX(times[0]), scaleY(realities[0]));
-    // 连接所有数据点
     userrealityHistory.forEach((data, i) => {
       let x = scaleX(times[i]), y = scaleY(realities[i]);
       ctx.lineTo(x, y);
     });
-    // 连接到底部封闭区域
-    ctx.lineTo(scaleX(times[times.length - 1]), chartY + chartHeight); // 右下角
-    ctx.lineTo(scaleX(times[0]), chartY + chartHeight); // 左下角
+    ctx.lineTo(scaleX(times[times.length - 1]), chartY + chartHeight);
+    ctx.lineTo(scaleX(times[0]), chartY + chartHeight);
     ctx.closePath();
-    // 填充颜色
     ctx.fill();
-    // 重新绘制折线，避免被填充色覆盖
+
     ctx.strokeStyle = "rgba(200, 237, 249, 0.9)";
     ctx.lineWidth = 3;
     ctx.beginPath();
@@ -749,7 +771,6 @@ function urltc(userrealityHistory, scores) {
     });
     ctx.stroke();
 
-    // 时间坐标：显示基于当前时间的时间差
     const now = new Date();
     const totalTime = now.getTime() - minTime;
     const interval = totalTime / 5;
@@ -763,10 +784,7 @@ function urltc(userrealityHistory, scores) {
       let timeLabel = formatTimeDiff(timeDiff);
       ctx.fillText(timeLabel, x, chartY + chartHeight + 30);
     }
-
-    // 右下角显示“now”
     ctx.fillText("now", chartX + chartWidth, chartY + chartHeight + 30);
-    // userreality 刻度
     ctx.textAlign = "right";
     for (let i = 0; i < 5; i++) {
       let reality = minReality + (maxReality - minReality) * (i / 4);
@@ -775,7 +793,6 @@ function urltc(userrealityHistory, scores) {
     }
     console.log("数据", items);
 
-    // 分析图
     const calculateMetric = (items, key, multiplier, divisor) => {
       return multiplier * (
         items.map(item => item[key])
@@ -790,144 +807,135 @@ function urltc(userrealityHistory, scores) {
     const f = calculateMetric(items, 'f', 2.5, 1);
     const g = calculateMetric(items, 'g', 7, 1);
     const h = calculateMetric(items, 'h', 80.5, 15.38);
-    // 添加标题
+
     ctx.textAlign = "center";
     ctx.fillText("User Reality 变化趋势", chartX + chartWidth / 2, chartY - 10);
     ctx.fillText("(由Panyi提供计算方式)", 1850, 1380);
     ctx.font = "40px Arial";
     ctx.fillText("最近游玩", 400, 110);
     ctx.fillText("推分建议", 400, 760);
-    // 绘制雷达图
+
     drawRadarChart(ctx, [d, e, f, g, h], 1150, 680, 700, 700);
-    // 绘制推分建议表格
 
-/* ---------- 辅助：把某曲目改成 1010000 时的 Reality 增量 ---------- */
-function realityGainIf1010000(track) {
-  const sim = window.processedItems.map(o => ({ ...o }));   // 深拷贝
-  let found = false;
+    /* ---------- 辅助：把某曲目改成 1010000 时的 Reality 增量 ---------- */
+    function realityGainIf1010000(track) {
+      const sim = window.processedItems.map(o => ({ ...o }));
+      let found = false;
 
-  for (const it of sim) {
-    if (it.name === track.name && Math.abs(it.constant - track.constant) < 1e-3) {
-      it.bestScore        = 1010000;
-      it.singleRealityRaw = reality(1010000, track.constant);
-      found = true;
-      break;
+      for (const it of sim) {
+        if (it.name === track.name && Math.abs(it.constant - track.constant) < 1e-3) {
+          it.bestScore        = 1010000;
+          it.singleRealityRaw = reality(1010000, track.constant);
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        sim.push({
+          name: track.name,
+          constant: track.constant,
+          bestScore: 1010000,
+          singleRealityRaw: reality(1010000, track.constant),
+        });
+      }
+      const newAvg = sim
+        .filter(i => i.singleRealityRaw > 0)
+        .sort((a, b) => b.singleRealityRaw - a.singleRealityRaw)
+        .slice(0, 20)
+        .reduce((s, i) => s + i.singleRealityRaw, 0) / 20;
+
+      return newAvg - window.average;
     }
-  }
-  if (!found) {
-    sim.push({
-      name: track.name,
-      constant: track.constant,
-      bestScore: 1010000,
-      singleRealityRaw: reality(1010000, track.constant),
-    });
-  }
-  const newAvg = sim
-    .filter(i => i.singleRealityRaw > 0)
-    .sort((a, b) => b.singleRealityRaw - a.singleRealityRaw)
-    .slice(0, 20)
-    .reduce((s, i) => s + i.singleRealityRaw, 0) / 20;
 
-  return newAvg - window.average;            // 净增量
-}
+    /* ---------- 取曲目列表 ---------- */
+    const thresholdC = (window.items?.[19]?.singleRealityRaw ?? 0) - 1;
+    const candidates = [];
 
-/* ---------- 取曲目列表 ---------- */
-const thresholdC = (window.items?.[19]?.singleRealityRaw ?? 0) - 1; // 剪枝阈值
-const candidates = [];
+    Object.values(constants)
+      .sort((a, b) => b.constant - a.constant)
+      .some(info => {
+        if (info.constant < thresholdC) return true;
+        const gain = realityGainIf1010000(info);
+        candidates.push({ ...info, gain });
+        return false;
+      });
 
-Object.values(constants)
-  .sort((a, b) => b.constant - a.constant)
-  .some(info => {                           // some+return true 可提前 break
-    if (info.constant < thresholdC) return true;          // 触发 break
+    const top25 = candidates
+      .sort((a, b) => b.gain - a.gain)
+      .slice(0, 25);
 
-    const gain = realityGainIf1010000(info);
-    candidates.push({ ...info, gain });
-    return false;
-  });
+    /* ---------- 绘制表格 ---------- */
+    const tableX = 100, tableY = 800;
+    const rowH = 25;
+    const colW = [60, 260, 100, 150];
 
-const top25 = candidates
-  .sort((a, b) => b.gain - a.gain)
-  .slice(0, 25);
-
-/* ---------- 绘制表格 ---------- */
-const tableX = 100, tableY = 800;
-const rowH = 25;
-const colW = [60, 260, 100, 150];               // constant | name | gain | scoreNeed
-
-ctx.font = "16px Arial";
-ctx.textAlign = "left";
-ctx.textBaseline = "middle";
-
-/* 表头 */
-["定数", "曲名", "还可推", "推分需"].forEach((t, i) => {
-  const x = tableX + colW.slice(0, i).reduce((a, b) => a + b, 0);
-  ctx.strokeStyle = "rgba(173,216,230,0.7)";
-  ctx.strokeRect(x, tableY, colW[i], rowH);
-  ctx.fillStyle  = "#fff";
-  ctx.fillText(t, x + 6, tableY + rowH / 2);
-});
-
-/* 行 */
-top25.forEach((info, idx) => {
-  const y = tableY + (idx + 1) * rowH;
-
-  // 边框
-  for (let j = 0; j < 4; j++) {
-    ctx.strokeStyle = "rgba(173,216,230,0.7)";
-    ctx.strokeRect(tableX + colW.slice(0, j).reduce((a, b) => a + b, 0), y, colW[j], rowH);
-  }
-
-  ctx.fillStyle = "#fff";
-  ctx.font = "16px Arial";
-  ctx.fillText(info.constant.toFixed(1), tableX + 6, y + rowH / 2);
-  ctx.fillText(info.name,            tableX + colW[0] + 6, y + rowH / 2);
-  ctx.fillText(info.gain.toFixed(4), tableX + colW[0] + colW[1] + 6, y + rowH / 2);
-
-  /* -- 推分需分数 -- */
-  const curRlt  = window.processedItems.find(p => p.name === info.name && Math.abs(p.constant - info.constant) < 1e-3)?.singleRealityRaw ?? 0;
-  const deltaR  = Math.ceil(window.average * 100 - 0.5) + 0.5 !== window.average * 100
-      ? (Math.ceil(window.average * 100 - 0.5) + 0.5 - window.average * 100) / 5 +
-        Math.max(curRlt, window.processedItems?.[19]?.singleRealityRaw ?? 0)
-      : 114514;
-
-  const scoreNeed = findScore(info.constant, deltaR);
-
-  // 若无法推算，字体缩小 2/3
-  if (scoreNeed === "Unable to deduce points") {
-    ctx.font = "11px Arial";                // 16 * 2/3 ≈ 11
-  } else {
     ctx.font = "16px Arial";
-  }
-  ctx.fillText(String(scoreNeed),
-               tableX + colW[0] + colW[1] + colW[2] + 6,
-               y + rowH / 2);
-});
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
 
-    // 绘制最近 10 次的分数卡片
-    lg_drawCards(ctx, scores.slice(-10).reverse(), 50, 150).then(() => {
-        // 生成下载链接
-        const link = document.createElement("a");
-        link.download = "user_reality_chart.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
+    ["定数", "曲名", "还可推", "推分需"].forEach((t, i) => {
+      const x = tableX + colW.slice(0, i).reduce((a, b) => a + b, 0);
+      ctx.strokeStyle = "rgba(173,216,230,0.7)";
+      ctx.strokeRect(x, tableY, colW[i], rowH);
+      ctx.fillStyle  = "#fff";
+      ctx.fillText(t, x + 6, tableY + rowH / 2);
     });
-  };
-}
 
+    top25.forEach((info, idx) => {
+      const y = tableY + (idx + 1) * rowH;
+
+      for (let j = 0; j < 4; j++) {
+        ctx.strokeStyle = "rgba(173,216,230,0.7)";
+        ctx.strokeRect(tableX + colW.slice(0, j).reduce((a, b) => a + b, 0), y, colW[j], rowH);
+      }
+
+      ctx.fillStyle = "#fff";
+      ctx.font = "16px Arial";
+      ctx.fillText(info.constant.toFixed(1), tableX + 6, y + rowH / 2);
+      ctx.fillText(info.name,            tableX + colW[0] + 6, y + rowH / 2);
+      ctx.fillText(info.gain.toFixed(4), tableX + colW[0] + colW[1] + 6, y + rowH / 2);
+
+      const curRlt  = window.processedItems.find(p => p.name === info.name && Math.abs(p.constant - info.constant) < 1e-3)?.singleRealityRaw ?? 0;
+      const deltaR  = Math.ceil(window.average * 100 - 0.5) + 0.5 !== window.average * 100
+          ? (Math.ceil(window.average * 100 - 0.5) + 0.5 - window.average * 100) / 5 +
+            Math.max(curRlt, window.processedItems?.[19]?.singleRealityRaw ?? 0)
+          : 114514;
+
+      const scoreNeed = findScore(info.constant, deltaR);
+
+      if (scoreNeed === "Unable to deduce points") {
+        ctx.font = "11px Arial";
+      } else {
+        ctx.font = "16px Arial";
+      }
+      ctx.fillText(String(scoreNeed),
+                  tableX + colW[0] + colW[1] + colW[2] + 6,
+                  y + rowH / 2);
+    });
+
+    // 最近 10 次分数卡（封面 & 图标也从 CSS 取）
+    lg_drawCards(ctx, scores.slice(-10).reverse(), 50, 150).then(() => {
+      const link = document.createElement("a");
+      link.download = "user_reality_chart.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  }).catch(err => {
+    console.error('背景图加载失败(来自 image.css):', err);
+  });
+}
 
 function drawRadarChart(ctx, data, x, y, width, height) {
-  const labels = ['底力', '手法', '读谱', '多指', '准度']; // 按指定顺序绘制
-  const maxDataValue = Math.max(...data); // 计算数据中的最大值
-  // 计算 maxVal，使其比 maxDataValue 大，并且是 0.5 的倍数
+  const labels = ['底力', '手法', '读谱', '多指', '准度'];
+  const maxDataValue = Math.max(...data);
   const maxVal = Math.ceil(maxDataValue * 2) / 2;
-  const numScales = 8; // 8个刻度
-  const scaleStep = maxVal / (numScales - 1); // 计算刻度间距，确保是0.1的倍数
+  const numScales = 8;
+  const scaleStep = maxVal / (numScales - 1);
   const centerX = x + width / 2;
   const centerY = y + height / 2;
   const radius = Math.min(width, height) / 2;
   ctx.strokeStyle = "#ccc";
   ctx.fillStyle = "rgba(219, 245, 255, 0.5)";
-  // 绘制刻度线
   for (let i = 0; i < numScales; i++) {
     const scaleRadius = (i / (numScales - 1)) * radius;
     ctx.beginPath();
@@ -940,7 +948,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
     ctx.closePath();
     ctx.stroke();
   }
-  // 绘制刻度值
   ctx.fillStyle = "white";
   ctx.font = "12px Arial";
   for (let i = 0; i < numScales; i++) {
@@ -948,7 +955,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
     const scaleRadius = (i / (numScales - 1)) * radius;
     ctx.fillText(scaleValue, centerX, centerY - scaleRadius);
   }
-  // 画雷达数据区域
   ctx.beginPath();
   ctx.fillStyle = "rgba(210, 244, 255, 0.5)";
   data.forEach((value, index) => {
@@ -961,7 +967,6 @@ function drawRadarChart(ctx, data, x, y, width, height) {
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
-  // 绘制标签（白色字体）
   ctx.fillStyle = "white";
   ctx.font = "16px Arial";
   labels.forEach((label, index) => {
@@ -972,12 +977,10 @@ function drawRadarChart(ctx, data, x, y, width, height) {
   });
 }
 
-
 function formatTimeDiff(timeDiff) {
   const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-
   if (days > 0) {
     return `-${days}d`;
   } else if (hours > 0) {
@@ -987,7 +990,7 @@ function formatTimeDiff(timeDiff) {
   }
 }
 
-
+/* ========== 最近10次卡片（画布）- 从 image.css 取封面 ========== */
 function lg_drawCards(ctx, items, xOffset, yOffset) {
   const scale = 1;
   const cardWidth = 340 * scale;
@@ -996,31 +999,32 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
   const imgHeight = 70;
   const columnSpacing = 360 * scale;
   const rowSpacing = 110 * scale;
-  const imagePromises = items.map((item, i) => {
+
+  const imagePromises = items.map(async (item, i) => {
     const x = xOffset + (i % 2) * columnSpacing;
     const y = yOffset + Math.floor(i / 2) * rowSpacing;
-    // 卡片背景
+
     ctx.fillStyle = 'rgba(104, 118, 122, 0.4)';
     ctx.fillRect(x, y, cardWidth, cardHeight);
-    // 编号
+
     ctx.font = `${13 * scale}px Arial`;
     ctx.textAlign = 'right';
     ctx.textBaseline = 'top';
     ctx.fillStyle = (i < 10) ? '#FAFAFA' : '#C9C9C9';
     ctx.fillText(`#${i + 1}`, x + cardWidth - 10, y + 5);
-    // 分数：不足7位前补0
+
     let strScore = item.score.toString().padStart(7, '0');
-    // 分数颜色
+
     let scoreColor;
     if (item.score_good_count+item.score_bad_count+item.score_miss_count==0) {
-        const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
-        gradient.addColorStop(0, '#99C5FB');
-        gradient.addColorStop(1, '#D8C3FA');
-        scoreColor = gradient;
+      const gradient = ctx.createLinearGradient(x, y + 40 * scale, x, y + 70 * scale);
+      gradient.addColorStop(0, '#99C5FB');
+      gradient.addColorStop(1, '#D8C3FA');
+      scoreColor = gradient;
     } else if (item.score_bad_count+item.score_miss_count==0) {
-        scoreColor = '#90CAEF';
+      scoreColor = '#90CAEF';
     } else {
-        scoreColor = '#FFFFFF';
+      scoreColor = '#FFFFFF';
     }
 
     ctx.font = `${28 * scale}px Arial`;
@@ -1032,6 +1036,7 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(`P:${(item.score_perfect_count + item.score_exact_count).toString()}(+${item.score_exact_count.toString()})`, x + 240, y + 48 * scale);
     ctx.fillText(`G:${item.score_good_count.toString()}  L:${item.score_bad_count.toString()}/${item.score_miss_count.toString()}`, x + 240, y + 68 * scale);
+
     const maxTextWidth = 200;
     let currentFontSize = 19 * scale;
     ctx.font = `${currentFontSize}px Arial`;
@@ -1043,140 +1048,117 @@ function lg_drawCards(ctx, items, xOffset, yOffset) {
     }
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(item.name, x + 130, y + 18);
-    // Reality + Accuracy
+
     ctx.font = `${15 * scale}px Arial`;
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(`${item.category} ${parseFloat(item.constant).toFixed(1)} > ${item.singleReality.toFixed(2)}`, x + 130, y + 75 * scale);
-    // 曲绘图
-    const imgPath = `./jpgs/${encodeURIComponent(item.name)}.jpg`;
-    return loadImage(imgPath).then(img => {
+
+    // 曲绘图（从 CSS 类）
+    const coverClass = songNameToCssClass(item.name);
+    try {
+      const img = await tryLoadFirstCssImage([coverClass, 'nya']);
       ctx.drawImage(img, x + 10 * scale, y + 13 * scale, imgWidth, imgHeight);
-    }).catch(() => {
-      // Fallback image if specific image fails to load
-      return loadImage('./jpgs/NYA.jpg').then(img => {
-        ctx.drawImage(img, x + 10 * scale, y + 10 * scale, imgWidth, imgHeight);
-      });
-    });
-  });
-  // 等待所有图片加载完成
-  return Promise.all(imagePromises);
-}
-
-function loadImage(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-    img.src = src;
-  });
-}
-
-/* ========== 下载图片 (含背景、卡片等) ========== */
-function downloadImage() {
-  ol_runner((e)=>{document.getElementById('picgen').style.display = 'block'},[114,514]);
-  // 获取用户输入的卡片数量
-  const cardCount = parseInt(document.getElementById('cardCount').value, 10);
-  const maxItems = Math.max(0, cardCount);
-  // 获取数据中实际的卡片数量
-  const items = window.processedItems || [];
-  const excludeReality = document.getElementById('excludeReality').value;
-  window.norlt = (excludeReality == "true") ? items.filter(item => item.constant == -1) : [];
-  const actualCardCount = Math.min(maxItems, items.length); // 实际绘制卡片数量，不能超过数据中的数量
-  // 动态调整画布高度，保持宽度不变，最小高度为当前代码中的高度
-  const baseHeight = 2200;
-  const newHeight = 400 + Math.ceil(((actualCardCount + (window.norlt?.length || 0)) / 2) * 165); // 每2个卡片增加165像素的高度
-  const canvasHeight = Math.max(baseHeight, newHeight); // 确保总高度不少于2200px
-  const canvas = document.createElement('canvas');
-  canvas.width = 1200;  // 固定宽度
-  canvas.height = canvasHeight;  // 根据卡片数量调整高度
-  const ctx = canvas.getContext('2d');
-  let star = '';
-  let maxConstant = -Infinity;
-  items.forEach(item => {
-    if (item.achievedStatus.includes(5) && item.constant > maxConstant) {
-      maxConstant = item.constant;
+    } catch (e) {
+      console.warn('封面加载失败(来自 image.css):', coverClass, e);
     }
   });
 
+  return Promise.all(imagePromises);
+}
 
-  if (maxConstant > 12) {
-    star = '☆☆☆';
-  } else if (maxConstant > 9) {
-    star = '☆☆';
-  } else if (maxConstant > 6) {
-    star = '☆';
+/* ========== 下载图片 (含背景、卡片等，全部从 image.css 取图) ========== */
+function downloadImage() {
+  // 显示生成进度 UI（项目里已有 ol_runner/ol_updateImgGenProcess）
+  if (typeof ol_runner === 'function') {
+    ol_runner((e)=>{document.getElementById('picgen').style.display = 'block'}, [114, 514]);
   }
-  // 获取背景图设置
-  const bgImageFile = document.getElementById('bgImage').files[0];
-  let bgImagePromise = Promise.resolve(null);
-  // 如果选择了背景图文件，加载它
-  if (bgImageFile) {
-    bgImagePromise = loadImage(URL.createObjectURL(bgImageFile));
-  } else {
-    ol_runner(ol_updateImgGenProcess,['正在加载背景图...']);
-    bgImagePromise = loadImage(`./jpgs/background/${Math.floor(Math.random() * 3)}.jpg`);
-  }
-  bgImagePromise
-    .then(bgImage => {
-      if (bgImage) {
-        ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-      } else {
-        ctx.fillStyle = '#000000';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-      const yrjds = document.getElementById('yrjds').value;//愚人节
-      ctx.fillStyle = 'rgba(128, 128, 128, 0.3)';
-      ctx.fillRect(0, 50, canvas.width, 200);
-      ctx.beginPath();
-      ctx.strokeStyle = 'rgba(255,255,255,0.8)';
-      ctx.lineWidth = 3;
-      ctx.moveTo(550, 250);
-      ctx.lineTo(650, 50);
-      ctx.stroke();
+
+  // 读取要导出的卡片数量 & 过滤设置
+  const cardCount = parseInt(document.getElementById('cardCount').value, 10);
+  const maxItems = Math.max(0, cardCount);
+  const items = window.processedItems || [];
+  const excludeReality = document.getElementById('excludeReality')?.value;
+  window.norlt = (excludeReality == "true") ? items.filter(item => item.constant == -1) : [];
+  const actualCardCount = Math.min(maxItems, items.length);
+
+  // 画布尺寸
+  const baseHeight = 2200;
+  const newHeight = 400 + Math.ceil(((actualCardCount + (window.norlt?.length || 0)) / 2) * 165);
+  const canvasHeight = Math.max(baseHeight, newHeight);
+  const canvas = document.createElement('canvas');
+  canvas.width = 1200;
+  canvas.height = canvasHeight;
+  const ctx = canvas.getContext('2d');
+
+  // 星标（看最高定数且PF）
+  let star = '';
+  let maxConstant = -Infinity;
+  items.forEach(item => {
+    if (item.achievedStatus?.includes(5) && item.constant > maxConstant) {
+      maxConstant = item.constant;
+    }
+  });
+  if (maxConstant > 12) star = '☆☆☆';
+  else if (maxConstant > 9) star = '☆☆';
+  else if (maxConstant > 6) star = '☆';
+
+  // 选择背景图：优先文件输入（自定义），否则从 image.css 随机选 .bg-image-1/2/3（若均失败，退回 .background-image）
+  const bgInput = document.getElementById('bgImage');
+  const hasFile = bgInput && bgInput.files && bgInput.files[0];
+
+  const drawHeaderAndProceed = async () => {
+    // 头部半透明底
+    ctx.fillStyle = 'rgba(128, 128, 128, 0.3)';
+    ctx.fillRect(0, 50, canvas.width, 200);
+
+    // 斜线
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+    ctx.lineWidth = 3;
+    ctx.moveTo(550, 250);
+    ctx.lineTo(650, 50);
+    ctx.stroke();
+
+    // 星标 + 玩家信息
+    ctx.font = '25px Arial';
+    ctx.fillStyle = '#ffffff';
+    const yrjds = document.getElementById('yrjds')?.value;
+
+    if (yrjds == "true") {
+      ctx.font = '23px Arial';
+      ctx.fillText("☆", 719, 15);
+      ctx.fillText("☆☆☆", 696, 35);
+      ctx.fillText("☆☆☆☆☆", 673, 55);
+      ctx.fillText("☆☆☆☆☆☆☆", 650, 75);
       ctx.font = '25px Arial';
-      ctx.fillStyle = '#ffffff';
-      if (yrjds == "true") {
-        ctx.font = '23px Arial';
-        ctx.fillText("☆", 719, 15);
-        ctx.fillText("☆☆☆", 696, 35);
-        ctx.fillText("☆☆☆☆☆", 673, 55);
-        ctx.fillText("☆☆☆☆☆☆☆", 650, 75);
-        ctx.font = '25px Arial';
-      } else {
-        ctx.fillText(star, 660, 75);
-      }
-      ctx.fillText(`Player: ${window.username}`, 660, 100);
-if (yrjds == "true") {
-  ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 129);
-} else {
-  let text = `Reality: ${window.average1}`;
-  if (window.average1 >= 12.5) {
-    text += "    🐉👃👈😨";
-  }
-  ctx.fillText(text, 660, 129);
-}
-      ctx.fillText(`Ytilaer: ${(window.utlr).toFixed(4)}`, 660, 160);
-      const now = new Date();
-      const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
-      ctx.fillText(`Date: ${dateStr}`, 660, 190);
+    } else {
+      ctx.fillText(star, 660, 75);
+    }
 
-// 如果没有缓存过 tips，就加载一次
-if (!window.tipsCache) {
-  fetch('./tips.txt')
-    .then(response => response.text())
-    .then(text => {
-      window.tipsCache = text.trim().split('\n').filter(Boolean);
-      drawTip(window.tipsCache);
-    })
-    .catch(err => {
-      console.warn('无法加载 tips.txt', err);
-    });
-} else {
-  drawTip(window.tipsCache);
-}
+    ctx.fillText(`Player: ${window.username || ''}`, 660, 100);
+    if (yrjds == "true") {
+      ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 129);
+    } else {
+      let text = `Reality: ${window.average1 ?? ''}`;
+      if ((window.average1 || 0) >= 12.5) text += "    🐉👃👈😨";
+      ctx.fillText(text, 660, 129);
+    }
+    ctx.fillText(`Ytilaer: ${(window.utlr || 0).toFixed(4)}`, 660, 160);
+
+    // 时间
+    const now = new Date();
+    const dateStr = `${now.toISOString().split('T')[0]} ${now.toTimeString().split(' ')[0]}`;
+    ctx.fillText(`Date: ${dateStr}`, 660, 190);
+    drawTip();
+
 
 // 绘制 tip 的函数
-function drawTip(lines) {
+function drawTip() {
+  if (!window.tipsCache) {
+    console.warn('Tips 尚未加载完成！');
+    return;
+  }
+  let lines=window.tipsCache;
   const n = 1;
   let tip;
 
@@ -1212,36 +1194,150 @@ function drawTip(lines) {
 }
 
       
-      
-      ctx.font = '50px Arial';
-      ctx.fillText('Milthm-calculator', 100, 95);
-      ctx.font = '25px Arial';
-      ctx.fillText('http://mhtlim.top/', 100, 125);
-      ctx.fillText('http://k9.lv/c/', 100, 153);
-      ctx.fillText('https://mkzi-nya.github.io/c/', 100, 181);
-      ctx.font = '30px Arial';
-      ctx.fillText('←查分上这里', 400, 130);
-      ctx.font = '20px Arial';
-      ctx.fillText("3个网址都行", 450, 155);
-      ctx.fillText(Updated, 100, 210);
-      const items = [...window.processedItems.slice(0, actualCardCount), ...window.norlt];
-      Promise.all(items.map(i => Promise.all([
-        loadImage(`./jpgs/${encodeURIComponent(i.name.replace(/[#?]/g, ''))}.jpg`).catch(() => loadImage('./jpgs/NYA.jpg')),
-        loadImage(`./jpgs/${i.bestLevel === 0 ? 0 : i.bestLevel === 6 ? 6 : i.achievedStatus.includes(5) ? i.bestLevel + '0' : i.achievedStatus.includes(4) ? i.bestLevel + '1' : i.bestLevel}.png`).catch(() => null),
-        ol_runner(ol_updateImgGenProcess,['正在加载图片 For '+i.name]),
-      ]))).then(imgs => drawCards(ctx, canvas, items, imgs));
-      ol_runner(ol_updateImgGenProcess,['完成']);
-      
+    // 左侧标题与链接
+    ctx.font = '50px Arial';
+    ctx.fillText('Milthm-calculator', 100, 95);
+    ctx.font = '25px Arial';
+    ctx.fillText('http://mhtlim.top/', 100, 125);
+    ctx.fillText('http://k9.lv/c/', 100, 153);
+    ctx.fillText('https://mkzi-nya.github.io/c/', 100, 181);
+    ctx.font = '30px Arial';
+    ctx.fillText('←查分上这里', 400, 130);
+    ctx.font = '20px Arial';
+    ctx.fillText("3个网址都行", 450, 155);
+    ctx.fillText(Updated, 100, 210);
+
+    // 组装要绘制的项目（含可选的 “排除 Reality” 列表）
+    const exportItems = [...(items.slice(0, actualCardCount)), ...(window.norlt || [])];
+
+    // 预加载每张卡所需的两种图：封面 + 段位/等级icon（都来自 image.css）
+    if (typeof ol_runner === 'function') {
+      ol_runner(ol_updateImgGenProcess, ['正在加载图片...']);
+    }
+
+    const imgPairsPromises = exportItems.map(async (i) => {
+      // 封面
+      const coverClass = songNameToCssClass(i.name);
+      let coverImg = null;
+      try {
+        coverImg = await tryLoadFirstCssImage([coverClass, 'nya']);
+      } catch (e) {
+        console.warn('封面加载失败(来自 image.css):', coverClass, e);
+      }
+
+      // 等级/段位：映射到 .icon-N
+      const iconClass = getLevelIconClass(i);
+      let iconImg = null;
+      if (iconClass) {
+        try {
+          iconImg = await loadCssImage(iconClass);
+        } catch (e) {
+          // 没有对应 icon 也不致命
+          iconImg = null;
+        }
+      }
+      if (typeof ol_runner === 'function') {
+        ol_runner(ol_updateImgGenProcess, ['正在加载图片 For ' + (i.name || '')]);
+      }
+      return [coverImg, iconImg];
     });
+
+    const imgPairs = await Promise.all(imgPairsPromises);
+    if (typeof ol_runner === 'function') {
+      ol_runner(ol_updateImgGenProcess, ['完成']);
+    }
+
+    // 绘制卡片并导出
+    drawCards(ctx, canvas, exportItems, imgPairs);
+  };
+
+  // 先画背景，再画其他
+  const drawWithBg = (bgImg) => {
+    if (bgImg) {
+      ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+    } else {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    drawHeaderAndProceed();
+  };
+
+  // 背景加载分支
+  if (hasFile) {
+    // 用户自选背景文件（本地）
+    const file = bgInput.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => drawWithBg(img);
+      img.onerror = () => {
+        console.warn('自定义背景加载失败，改用 CSS 背景');
+        loadCssImage('background-image')
+          .then(drawWithBg)
+          .catch(() => drawWithBg(null));
+      };
+      img.src = reader.result;
+    };
+    reader.onerror = () => {
+      console.warn('自定义背景读取失败，改用 CSS 背景');
+      loadCssImage('background-image')
+        .then(drawWithBg)
+        .catch(() => drawWithBg(null));
+    };
+    reader.readAsDataURL(file);
+  } else {
+    // 从 CSS 随机取 .bg-image-1/2/3，若都失败，用 .background-image
+    (async () => {
+      const order = [1, 2, 3].sort(() => Math.random() - 0.5);
+      for (const idx of order) {
+        try {
+          const img = await loadCssImage(`bg-image-${idx}`);
+          drawWithBg(img);
+          return;
+        } catch (_) { /* try next */ }
+      }
+      try {
+        const fallback = await loadCssImage('background-image');
+        drawWithBg(fallback);
+      } catch (_) {
+        drawWithBg(null);
+      }
+    })();
+  }
 }
-function drawCards(ctx, canvas, items, images) {
+
+/** 由条目计算段位/等级图标 CSS 类名（映射到 .icon-N） */
+function getLevelIconClass(it) {
+  // 与原先 ./jpgs/?.png 的逻辑一致：
+  //   bestLevel === 0 ? "0"
+  //   : bestLevel === 6 ? "6"
+  //   : achievedStatus includes(5) ? `${bestLevel}0`
+  //   : achievedStatus includes(4) ? `${bestLevel}1`
+  //   : `${bestLevel}`
+  if (it == null) return null;
+  let iconName;
+  if (it.bestLevel === 0) iconName = '0';
+  else if (it.bestLevel === 6) iconName = '6';
+  else if (Array.isArray(it.achievedStatus) && it.achievedStatus.includes(5)) iconName = `${it.bestLevel}0`;
+  else if (Array.isArray(it.achievedStatus) && it.achievedStatus.includes(4)) iconName = `${it.bestLevel}1`;
+  else iconName = `${it.bestLevel}`;
+
+  // 数字类统一映射为 .icon-{N}
+  // 若 iconName 不是纯数字，尝试解析；失败则不显示 icon
+  const n = Number(iconName);
+  if (!Number.isFinite(n)) return null;
+  return `icon-${n}`;
+}
+
+/* 画导出图片里的卡片（封面与 icon 都用上面预加载好的 imgPairs） */
+function drawCards(ctx, canvas, items, imgPairs) {
   // 固定尺寸常量（= 基础尺寸 × 1.3）
   const cardW = 442, cardH = 130, imgW = 185, imgH = 104, icon = 91;
   const x0 = 110, y0 = 350, col = 520, row = 162.5;
 
   items.forEach((it, i) => {
     const x = x0 + (i % 2) * col,
-      y = y0 + Math.floor(i / 2) * row - (i % 2 ? 0 : 50);
+          y = y0 + Math.floor(i / 2) * row - (i % 2 ? 0 : 50);
 
     // 卡底
     ctx.fillStyle = 'rgba(128,128,128,.4)';
@@ -1255,40 +1351,39 @@ function drawCards(ctx, canvas, items, images) {
     ctx.fillText(`#${i + 1}`, x + cardW - 10, y + 7);
 
     // 分数（含渐变颜色）
-    const scoreStr = it.bestScore.toString().padStart(7, '0');
-    let scoreClr = it.achievedStatus.includes(5)
+    const scoreStr = String(it.bestScore ?? 0).padStart(7, '0');
+    let scoreClr = (it.achievedStatus || []).includes(5)
       ? (() => { const g = ctx.createLinearGradient(x, y + 52, x, y + 91); g.addColorStop(0, '#99C5FB'); g.addColorStop(1, '#D8C3FA'); return g })()
-      : it.achievedStatus.includes(4)
+      : (it.achievedStatus || []).includes(4)
         ? '#90CAEF'
         : '#FFFFFF';
-
 
     ctx.font = '39px Arial';
     ctx.textAlign = 'left';
     ctx.fillStyle = scoreClr;
     ctx.fillText(scoreStr, x + 208, y + 52);
 
-    // 歌名（自动缩字）
+    // 歌名（自动缩小）
     let f = 25;
     ctx.font = `${f}px Arial`;
-    while (ctx.measureText(it.name).width > 200 && f > 10) {
+    while (ctx.measureText(it.name || '').width > 200 && f > 10) {
       ctx.font = `${--f}px Arial`;
     }
     ctx.fillStyle = '#FFF';
-    ctx.fillText(it.name, x + 212, y + 23);
+    ctx.fillText(it.name || '', x + 212, y + 23);
 
-    // 评级 / 常数 / 准确率 行
+    // 评级/常数/准确率 行
     ctx.font = '20px Arial';
-    const acc = `${(it.bestAccuracy * 100).toFixed(2)}%`;
-    if (document.getElementById('yrjds').value === 'true') {
+    const acc = `${(((it.bestAccuracy ?? 0) * 100) || 0).toFixed(2)}%`;
+    if (document.getElementById('yrjds')?.value === 'true') {
       ctx.fillText(
-        `${it.category} ${it.yct || it.constant} > ${(it.singleRealityRaw * 20).toFixed(1)}   ${acc}`,
+        `${it.category} ${it.yct || it.constant} > ${((it.singleRealityRaw ?? 0) * 20).toFixed(1)}   ${acc}`,
         x + 208,
         y + 98
       );
     } else {
       ctx.fillText(
-        `${it.category} ${parseFloat(it.constant).toFixed(1)} > ${it.singleReality}   ${acc}`,
+        `${it.category} ${parseFloat(it.constant ?? 0).toFixed(1)} > ${(it.singleReality ?? '0.00')}   ${acc}`,
         x + 208,
         y + 98
       );
@@ -1296,121 +1391,46 @@ function drawCards(ctx, canvas, items, images) {
 
     // 目标分
     ctx.font = '13px Arial';
-    ctx.fillText(
-      `>>${findScore(
-        it.constant,
-        Math.ceil(window.average * 100 - 0.5) + 0.5 !== window.average * 100
-          ? (Math.ceil(window.average * 100 - 0.5) + 0.5 - window.average * 100) / 5 + Math.max(it.singleRealityRaw, items?.[19]?.singleRealityRaw ?? 0)
-          : 114514
-      )}`,
-      x + 212,
-      y + 86
+    const targetScore = findScore(
+      it.constant ?? 0,
+      Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 !== (window.average ?? 0) * 100
+        ? (Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 - (window.average ?? 0) * 100) / 5 +
+          Math.max(it.singleRealityRaw ?? 0, items?.[19]?.singleRealityRaw ?? 0)
+        : 114514
     );
+    ctx.fillText(`>>${targetScore}`, x + 212, y + 86);
 
     // 封面与段位图
-    ctx.drawImage(images[i][0], x + 13, y + 13, imgW, imgH);
-    if (images[i][1]) ctx.drawImage(images[i][1], x + 351, y + 26, icon, icon);
+    const coverImg = imgPairs[i]?.[0] || null;
+    const iconImg  = imgPairs[i]?.[1] || null;
+    if (coverImg) ctx.drawImage(coverImg, x + 13, y + 13, imgW, imgH);
+    if (iconImg)  ctx.drawImage(iconImg,  x + 351, y + 26, icon, icon);
   });
 
   exportImage(canvas);
 }
 
+/* 导出 PNG：把 userdata 也附着到图片末尾（保持原逻辑） */
 function exportImage(canvas) {
-  const input = document.getElementById('inputData').value,
-    data = 'userdata:' + (window.data || input),
-    imgBase64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, ''),
-    imgBin = atob(imgBase64),
-    txtBytes = new TextEncoder().encode(data),
-    len = imgBin.length + txtBytes.length,
-    buf = new Uint8Array(len);
+  const input = document.getElementById('inputData')?.value || '';
+  const data = 'userdata:' + (window.data || input);
+
+  const imgBase64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, '');
+  const imgBin = atob(imgBase64);
+  const txtBytes = new TextEncoder().encode(data);
+  const len = imgBin.length + txtBytes.length;
+  const buf = new Uint8Array(len);
 
   for (let i = 0; i < imgBin.length; i++) buf[i] = imgBin.charCodeAt(i);
   buf.set(txtBytes, imgBin.length);
 
-  const blob = new Blob([buf], { type: 'image/png' }),
-    link = document.createElement('a'),
-    t = new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0];
+  const blob = new Blob([buf], { type: 'image/png' });
+  const link = document.createElement('a');
+  const t = new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0];
   link.download = `output_${t}.png`;
   link.href = URL.createObjectURL(blob);
   link.click();
 
-  document.getElementById('picgen').style.display = 'none';
+  const picgen = document.getElementById('picgen');
+  if (picgen) picgen.style.display = 'none';
 }
-
-
-function loadImage(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-    img.src = src;
-  });
-}
-
-
-function cha_newui_js_debug(){
-
-  document.getElementById("debug_cha_newui_js").innerHTML = "cha_newui.js is running.";
-
-}
-
-
-/* ========== QQ 上传逻辑 & 其他 UI  ========== 
-const qqEntry = document.getElementById("qqEntry");
-const qqBotResultDialog = new mdui.Dialog("#qqBotResultDialog", { modal: true, closeOnEsc: false });
-const inputData1 = document.getElementById("inputData");
-const qqBotResultCloseBtn = document.getElementById("qqBotResultCloseBtn");
-const qqBotResultText = document.getElementById("qqBotResultText");
-const uploadButton = document.getElementById("uploadButton");
-function upload() {
-  qqBotResultCloseBtn.disabled = true;
-  const userdata = qqEntry.value.trim();
-  
-  if (userdata === "") {
-    mdui.alert("请输入QQ号!");
-    return;
-  }
-  
-    qqBotResultDialog.open();
-    qqBotResultText.innerHTML = "正在获取数据...";
-    document.getElementById("qqBotResultContent").value = '';
-  const data2 = inputData1.value;
-  const data_param = { nqid: userdata, data: data2, type: "milthm" };
-  const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://175.27.145.108:7155", true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        const response = xhr.responseText;
-          qqBotResultText.innerHTML = "执行完成。";
-          document.getElementById("qqBotResultContent").value = response;
-          qqBotResultCloseBtn.disabled = false;
-          console.log(response);
-      } else {
-        qqBotResultText.innerHTML = "获取数据失败。";
-        qqBotResultCloseBtn.disabled = false;
-        }
-      }
-    };
-    xhr.send(JSON.stringify(data_param));
-  // 发送第二个请求
-    try {
-    const xhr2 = new XMLHttpRequest();
-      xhr2.open("POST", "submit.php", true);
-      xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr2.onreadystatechange = function() {
-      if (xhr2.readyState === XMLHttpRequest.DONE && xhr2.status === 200) {
-        console.log(xhr2.responseText);
-        }
-      };
-    xhr2.send(JSON.stringify({ qq: userdata, data: data2 }));
-    } catch (error) {
-      console.error('Error request: ', error);
-  }
-}
-
-function openContributionDialog() {
-  new mdui.Dialog('#contributionDialog').open();
-}
-*/
