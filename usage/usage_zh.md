@@ -10,6 +10,7 @@
   - [雷达图](#雷达图)
 - [关于 Milthm](#关于-milthm)
   - [Reality 计算公式](#reality-计算公式)
+  - [Score V3算法](#score-v3算法)
   - [关于查分图中的Ytilaer](关于查分图中的ytilaer)
   - [关于存档文件](#关于存档文件)
   - [音符判定](#音符判定)
@@ -227,6 +228,56 @@ function reality(score, c) {
   return 0;
 }
 ```
+
+---
+
+### Score V3算法
+
+[官方文档](https://www.bilibili.com/opus/1102033370624294920)  
+代码实现  
+```js
+// input为包含判定序列(epgnbm)的字符串
+function calculateScore(input) {
+  const noteAmount = input.length;
+  const bMax = Math.min(192, Math.max(Math.floor(noteAmount * 0.24), 1));
+  const params = {
+    e: { a: 2, b: bMax, d: 0 },
+    p: { a: 1, b: bMax, d: 0 },
+    g: { a: 0, b: Math.min(128, Math.max(Math.floor(noteAmount * 0.16), 1)), d: 0 },
+    n: { a: 0, b: Math.min(96, Math.max(Math.floor(noteAmount * 0.12), 1)), d: 0 },
+    b: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.1), 1)), d: 0 },
+    m: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.08), 1)), d: 0 }
+  };
+  const scoreMap = { e: 100, p: 99, g: 60, n: 30, b: 15, m: 0 };
+  // 初始化变量
+  let totalAccScore = totalComboScore = maxCombo = currentCombo = 0;
+  let currentComboScore = bMax;
+  // 处理每个判定
+  for (let i = 0; i < noteAmount; i++) {
+    const judge = input[i];
+    const n = i + 1; // 当前判定序号
+    // 更新准度分
+    totalAccScore += scoreMap[judge];
+    // 更新连击数
+    currentCombo = (judge !== 'b' && judge !== 'm') ? currentCombo + 1 : 0;
+    maxCombo = Math.max(maxCombo, currentCombo);
+    // 更新连击分
+    const { a, b, d } = params[judge];
+    currentComboScore = Math.max(Math.min(currentComboScore + a, b), d);
+    // 计入连击分累积值
+    totalComboScore += currentComboScore;
+  }
+  if (0 < bMax - currentComboScore) totalComboScore = Math.max(totalComboScore - (bMax - currentComboScore)**2 / 2,0);
+  const apBonus = /^[ep]+$/i.test(input) ? 5000 : 0;
+  const accScore = totalAccScore * 10000 / noteAmount;
+  const comboMult = totalComboScore / noteAmount / bMax;
+  const comboBonus = 5000 * maxCombo / noteAmount;
+  // 最终得分
+  return finalScore = accScore * (0.4 + 0.6 * comboMult) + comboBonus + apBonus;
+}
+```
+
+[score v3网页计算器](https://mkzi-nya.github.io/mil/)  
 
 ---
 
@@ -697,6 +748,7 @@ function reality(score, c) {
 | Milthm#9 开发交流群             | 1047814125   | 23    |
 | Milthm#10 交流群                | 454822146    | 356   |
 | Milthm#11 交流群                | 1042806409    | 81    |
+| Milthm#12 交流群                | 1048470253    | 31    |
 | Milthm#14 开发测试                | -    | 9    |
 | Mhtlim#√-1 洨巟羣               | 375882310    | 234   |
 | milthm#二创群——暮雨回廊               | 771250001    | 147   |

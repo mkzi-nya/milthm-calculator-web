@@ -10,6 +10,7 @@
   - [雷达图](#雷达图)
 - [关于 Milthm](#关于-milthm)
   - [Reality 计算公式](#reality-计算公式)
+  - [Score V3算法](#score-v3算法)
   - [关于查分图中的Ytilaer](关于查分图中的ytilaer)
   - [关于存档文件](#关于存档文件)
   - [音符判定](#音符判定)
@@ -133,6 +134,16 @@ Reality 的计算基于游玩分数和谱面定数：
 #### 代码实现：
 
 {{公式js}}
+
+---
+
+### Score V3算法
+
+[官方文档](https://www.bilibili.com/opus/1102033370624294920)  
+代码实现  
+{{sv3}}
+
+[score v3网页计算器](https://mkzi-nya.github.io/mil/)  
 
 ---
 
