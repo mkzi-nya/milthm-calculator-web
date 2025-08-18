@@ -267,7 +267,8 @@ function calculateScore(input) {
     // 计入连击分累积值
     totalComboScore += currentComboScore;
   }
-  if (0 < bMax - currentComboScore) totalComboScore = Math.max(totalComboScore - (bMax - currentComboScore)**2 / 2,0);
+  // 补差公式(化简)
+  if ( currentComboScore < bMax ) totalComboScore = Math.max(totalComboScore + (1 - (bMax - currentComboScore - 1)**2) / 4, 0);
   const apBonus = /^[ep]+$/i.test(input) ? 5000 : 0;
   const accScore = totalAccScore * 10000 / noteAmount;
   const comboMult = totalComboScore / noteAmount / bMax;
