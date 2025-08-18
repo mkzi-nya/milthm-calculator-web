@@ -273,7 +273,7 @@ function calculateScore(input) {
   const comboMult = totalComboScore / noteAmount / bMax;
   const comboBonus = 5000 * maxCombo / noteAmount;
   // 最终得分
-  return finalScore = accScore * (0.4 + 0.6 * comboMult) + comboBonus + apBonus;
+  return accScore * (0.4 + 0.6 * comboMult) + comboBonus + apBonus;
 }
 ```
 
