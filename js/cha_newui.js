@@ -79,24 +79,25 @@ function loadCssImage(className) {
   });
 }
 function loadImageCSS() {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'images.css';
-  
-  // ✅ 监听 CSS 加载完成事件
-  link.onload = () => {
-    console.log('CSS 加载完成！');
-    downloadImage(); // 确保在这里调用
-  };
-  
-  // ❌ 错误处理（可选）
-  link.onerror = () => {
-    console.error('CSS 加载失败！');
-    downloadImage();
-  };
-  
-  document.head.appendChild(link);
+  return new Promise((resolve, reject) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'images.css';
+
+    link.onload = () => {
+      console.log('CSS 加载完成！');
+      resolve();
+    };
+
+    link.onerror = () => {
+      console.error('CSS 加载失败！');
+      reject();
+    };
+
+    document.head.appendChild(link);
+  });
 }
+
 async function tryLoadFirstCssImage(classNames) {
   for (const cls of classNames) {
     try {
@@ -685,7 +686,7 @@ function processHistoryRecords(scores) {
   window.dataurlt=userrealityHistory;
   window.datas=scores;
   formatInput(username, items);
-  urltc(userrealityHistory, scores);
+  loadImageCSS().then(() => urltc(userrealityHistory, scores));
   processData()
 }
 
@@ -820,7 +821,7 @@ function urltc(userrealityHistory, scores) {
           .reduce((sum, value) => sum + value, 0) / 7 || 0
       ) / divisor;
     };
-    const d = calculateMetric(items, 'd', 70, 22.5);
+    const d = calculateMetric(items, 'd', 1, 1);
     const e = calculateMetric(items, 'e', 70, 30.5);
     const f = calculateMetric(items, 'f', 2.5, 1);
     const g = calculateMetric(items, 'g', 7, 1);
