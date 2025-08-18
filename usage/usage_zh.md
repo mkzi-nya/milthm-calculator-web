@@ -241,12 +241,12 @@ function calculateScore(input) {
   const noteAmount = input.length;
   const bMax = Math.min(192, Math.max(Math.floor(noteAmount * 0.24), 1));
   const params = {
-    e: { a: 2, b: bMax, d: 0 },
-    p: { a: 1, b: bMax, d: 0 },
-    g: { a: 0, b: Math.min(128, Math.max(Math.floor(noteAmount * 0.16), 1)), d: 0 },
-    n: { a: 0, b: Math.min(96, Math.max(Math.floor(noteAmount * 0.12), 1)), d: 0 },
-    b: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.1), 1)), d: 0 },
-    m: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.08), 1)), d: 0 }
+    e: { a: 2, b: bMax},
+    p: { a: 1, b: bMax},
+    g: { a: 0, b: Math.min(128, Math.max(Math.floor(noteAmount * 0.16), 1))},
+    n: { a: 0, b: Math.min(96, Math.max(Math.floor(noteAmount * 0.12), 1))},
+    b: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.1), 1))},
+    m: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.08), 1))}
   };
   const scoreMap = { e: 100, p: 99, g: 60, n: 30, b: 15, m: 0 };
   // 初始化变量
@@ -262,8 +262,8 @@ function calculateScore(input) {
     currentCombo = (judge !== 'b' && judge !== 'm') ? currentCombo + 1 : 0;
     maxCombo = Math.max(maxCombo, currentCombo);
     // 更新连击分
-    const { a, b, d } = params[judge];
-    currentComboScore = Math.max(Math.min(currentComboScore + a, b), d);
+    const { a, b} = params[judge];
+    currentComboScore = Math.max(Math.min(currentComboScore + a, b), 0);
     // 计入连击分累积值
     totalComboScore += currentComboScore;
   }
