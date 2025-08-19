@@ -63,7 +63,7 @@ function getDataUrlFromCssClass(className) {
   const m = bg.match(/url\(["']?(data:image\/[^"')]+)["']?\)/i);
   return m ? m[1] : null;
 }
-
+function loadImage_nya(){loadImageCSS().then(() => downloadImage());}
 /** 用 CSS 类创建可绘制到 Canvas 的 Image 对象 */
 function loadCssImage(className) {
   return new Promise((resolve, reject) => {
