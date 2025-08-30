@@ -880,7 +880,6 @@ $$
 | Milthm#14 开发测试 | 1050419460 | 9 |
 | Mhtlim#√-1 洨巟羣 | 375882310 | 157 |
 | milthm#二创群——暮雨回廊 | 771250001 | 147 |
-| 梦见霖音高级中学 高一一部9班 | 850833385 | 55 |
 | 梦见霖音高级中学 高一一部114514班 | 574275806 | 13 |
 | Milthm#Φ 交流群 | 678471942 | 40 |
 | milthm#神金 交流群 | 877854042 | 67 |
@@ -968,7 +967,7 @@ function calculateScore(input) {
   const comboMult = totalComboScore / noteAmount / bMax;
   const comboBonus = 5000 * maxCombo / noteAmount;
   // 最终得分
-  return accScore * (0.4 + 0.6 * comboMult) + comboBonus + apBonus;
+  return Math.floor(accScore * (0.4 + 0.6 * comboMult)) + Math.floor(comboBonus) + apBonus;
 }
 ```
 }
