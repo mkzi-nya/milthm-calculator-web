@@ -32,7 +32,7 @@
 ---
 
 _by [mkzi-nya](https://mkzi-nya.github.io)_  
-_Last updated on 2025.07.04 20:50 (UTC)_  
+_Last updated on 2025.09.20 23:00 (UTC)_  
 _简体中文以外的语言可能无法及时更新_
 
 > 如果界面渲染出现问题，请[在 GitHub 上访问](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/usage/usage_zh.md)
@@ -41,8 +41,13 @@ _简体中文以外的语言可能无法及时更新_
 
 ## 网站
 
-- [k9.lv/c/](http://k9.lv/c/)
-- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/index.html)
+- [k9.lv/c/](htt://k9.lv/c/)
+- [mhtlim.top](https://mhtlim.top/)
+- [mhtl.im](https://mhtl.im)
+> 以上网站由_4everDimensions托管
+- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/)
+- [milcalc.netlify.app](https://milcalc.netlify.app/)
+> 以上网站由mkzi_nya托管
 
 ---
 

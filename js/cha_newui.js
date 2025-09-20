@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.08.09 20:50(UTC+8)"
+const Updated = "Updated at 2025.09.20 23:00(UTC+8)"
 var cha_newui_js_ver = 7
 
 console.log(Updated)
@@ -1217,14 +1217,15 @@ function drawTip() {
     ctx.font = '50px Arial';
     ctx.fillText('Milthm-calculator', 100, 95);
     ctx.font = '25px Arial';
-    ctx.fillText('http://mhtlim.top/', 100, 125);
+    ctx.fillText('https://mhtlim.top/', 100, 125);
     ctx.fillText('http://k9.lv/c/', 100, 153);
-    ctx.fillText('https://mkzi-nya.github.io/c/', 100, 181);
+    ctx.fillText('https://milcalc.netlify.app/', 100, 181);
+    ctx.fillText('https://mkzi-nya.github.io/c/', 100, 207);
     ctx.font = '30px Arial';
     ctx.fillText('←查分上这里', 400, 130);
     ctx.font = '20px Arial';
-    ctx.fillText("3个网址都行", 450, 155);
-    ctx.fillText(Updated, 100, 210);
+    ctx.fillText("这几个网址都行", 440, 155);
+    ctx.fillText(Updated, 100, 230);
 
     // 组装要绘制的项目（含可选的 “排除 Reality” 列表）
     const exportItems = [...(items.slice(0, actualCardCount)), ...(window.norlt || [])];
