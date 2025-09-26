@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.09.20 23:00(UTC+8)"
+const Updated = "Updated at 2025.09.26 10:30(UTC+8)"
 var cha_newui_js_ver = 7
 
 console.log(Updated)
@@ -129,6 +129,10 @@ function reality(score, c) {
   return 0;
 }
 
+function realityv3(score, c) {
+  return reality(score, c);
+}
+
 function findScore(constant, target) {
   //倒观rlt
   if (target <= constant - 1.5) return 700000;
@@ -145,7 +149,6 @@ function findScore(constant, target) {
 }
 function startProcess() {
   var inp = document.getElementById('inputData').value;
-  document.getElementById("upload_info").innerHTML = "正在处理数据...";
   if (inp.length > 0) {
     processData();
   } else {
@@ -155,54 +158,118 @@ function startProcess() {
 var shitValue = 0.114514;
 /* ========== 核心流程 ========== */
 function processData() {
-  const inputData = document.getElementById('inputData').value.replace(/\n/g, '').replace(/  /g, '');
-  const format = /^\[.*\],\{.*\}$/.test(inputData) ? 'new' : 'old';
-  const { username, items } = (format === 'new'
-    ? (() => {
-      const [, username, songDataStr] = inputData.match(/^\[(.*?)\],\{(.*)\}$/);
-      const songData = songDataStr.match(/\[.*?\]/g);
-      return { username, items: songData.map(processSong) };
-    })()
-    : (() => {
-      const start = inputData.indexOf('{"UserName":');
-      const end = inputData.indexOf('}]}') + 3;
-      const str = inputData.slice(start, end);
-      const parsed = tryParseJSON(str);
-      if (!(parsed && parsed.SongRecords)) {
-        alert_invalid();
-        return { username: "", items: [] };
-      }
-      return { username: parsed.UserName, items: parsed.SongRecords.map(processSongFromOldFormat).filter(Boolean) };
-    })());
+  const rawInput = document.getElementById('inputData').value;
 
-  // 全局保存
-  window.processedItems = items;
+  const inputData = rawInput.replace(/\n/g, '').replace(/  /g, '');
+  const isNewFormat = /^\[.*\],\{.*\}$/.test(inputData);
+
+  let username = "";
+  let userID = "";
+  let allItems = [];
+
+  if (isNewFormat) {
+    const m = inputData.match(/^\[(.*?)\],\{(.*)\}$/);
+    const songDataStr = m ? m[2] : "";
+    username = m ? m[1] : "";
+
+    // 抓取每个 [ ... ]（可带 ,v3）
+    const songBlocks = songDataStr.match(/\[[^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*\](?:,?v3)?/g) || [];
+    const items = songBlocks.map(s => processSong(s)).filter(Boolean);
+
+    allItems = items;
+
+    // 独立字段（新格式缺少 UserID、对象数组）
+    window.extractedFields = {
+      Username: username || "",
+      UserID: "",
+      SongRecords: [],
+      SongRecordsV3: []
+    };
+
+  } else {
+    const jsonText = extractJSON(rawInput);
+    const parsed = tryParseJSON(jsonText) || {};
+    const { Username, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
+
+    username = Username || parsed.UserName || "";
+    userID   = UserID || "";
+
+    const itemsSR = Array.isArray(SongRecords)
+      ? SongRecords.map(rec => processSongFromOldFormat(rec, false)).filter(Boolean)
+      : [];
+    const itemsV3 = Array.isArray(SongRecordsV3)
+      ? SongRecordsV3.map(rec => processSongFromOldFormat(rec, true)).filter(Boolean)
+      : [];
+
+    allItems = [...itemsSR, ...itemsV3];
+
+    window.extractedFields = {
+      Username: username || "",
+      UserID: userID || "",
+      SongRecords: Array.isArray(SongRecords) ? SongRecords : [],
+      SongRecordsV3: Array.isArray(SongRecordsV3) ? SongRecordsV3 : []
+    };
+  }
+
+  // —— 关键：合并 v2/v3 为单条用于全局与渲染
+  const mergedItems = mergeSongVersions(allItems);
+
+  // 全局保存：只保存合并后的
+  window.processedItems = mergedItems;
+
   // 清空输出区域以避免多次解析时内容堆叠
-  document.getElementById('output').innerHTML = '';
-  // 根据单曲 Reality 原始值排序
-  items.sort((a, b) => b.singleRealityRaw - a.singleRealityRaw);
-  // 显示用户信息
-  drawUserInfo(username, items);
-
   const outputDiv = document.getElementById('output');
-  const card = document.createElement('div');
-  card.classList.add('card');
-  card.classList.add('card-info');
-  card.innerHTML = `1145141919810`;
-  outputDiv.appendChild(card);
-  shitValue = Math.max(1, Math.min(20, card.offsetWidth * 0.07));
   outputDiv.innerHTML = '';
-  items.forEach(drawCard);
-  // 格式化写回 inputData
-  formatInput(username, items);
 
-  //final for k9.lv 's upload sys
-  initUpload();
+  // 排序（按合并后的 reality）
+  mergedItems.sort((a, b) => b.singleRealityRaw - a.singleRealityRaw);
+
+  // 显示用户信息（基于合并后的）
+  drawUserInfo(username, mergedItems);
+
+  // 探测卡片计算字号
+  const probe = document.createElement('div');
+  probe.classList.add('card', 'card-info');
+  probe.innerHTML = `1145141919810`;
+  outputDiv.appendChild(probe);
+  shitValue = Math.max(1, Math.min(20, probe.offsetWidth * 0.07));
+  outputDiv.innerHTML = '';
+
+  // 渲染卡片（基于合并后的）
+  mergedItems.forEach(drawCard);
+
+  // —— 保存回“新格式”：保留两条（不合并），v3 尾部自动加 ,v3
+  formatInput(username, allItems);
+
+  if (typeof initUpload === 'function') {
+    try {
+      initUpload();
+    } catch (e) {
+      console.warn('initUpload 执行出错：', e);
+    }
+  } else {
+    console.warn('initUpload 未定义，已跳过调用。');
+  }
 }
 
 /* ========== 工具函数 ========== */
-function processSong(song) {
-  const raw = song.trim().slice(1, -1);
+function processSong(songBlock) {
+  // 支持：
+  // [title,category,constant,score,accuracy,level,[a,b,c]]
+  // [title,category,constant,score,accuracy,level,[a,b,c],v3]
+  const block = String(songBlock).trim();
+  if (!block.startsWith('[')) return null;
+
+  // 是否是 V3：允许末尾 ,v3 或 , v3（不带引号）
+  let isV3 = /(,\s*v3\s*)\]$/.test(block);
+
+  // 去掉尾部 ,v3 再做字段分割
+  const normalized = isV3 ? block.replace(/,\s*v3\s*\]$/, ']') : block;
+
+  // 去掉包裹的 [ ]
+  const raw = normalized.slice(1, -1);
+
+  // 顶层安全分割（保留内层 [ ... ]）
   const tokens = [];
   let buf = '';
   let depth = 0;
@@ -218,62 +285,175 @@ function processSong(song) {
   }
   tokens.push(buf);
 
+  if (tokens.length < 7) return null;
+
   let [title, category, constant, score, accuracy, level, achievedStatus] = tokens;
-  achievedStatus = achievedStatus
-    .replace(/[\[\]]/g, '')
+
+  // 清洗/解析
+  const strip = s => String(s).trim().replace(/^"(.*)"$|^'(.*)'$/, '$1$2');
+
+  achievedStatus = strip(achievedStatus)
+    .replace(/^\[|\]$/g, '')
     .split(',')
-    .map(n => parseInt(n, 10));
+    .map(n => parseInt(n.trim(), 10))
+    .filter(n => Number.isFinite(n));
 
-  const constantVal  = parseFloat(constant);
-  const scoreVal     = parseInt(score, 10);
-  const accuracyVal  = parseFloat(accuracy);
-  const levelVal     = parseInt(level, 10);
+  const constantVal = parseFloat(constant);
+  const scoreVal    = parseInt(score, 10);
+  const accuracyVal = parseFloat(accuracy);
+  const levelVal    = parseInt(level, 10);
 
-  const singleRealityRaw = reality(scoreVal, constantVal);
+// 同时计算 v2 与 v3 的 reality
+const r_v2 = reality(scoreVal, constantVal);
+const r_v3 = realityv3(scoreVal, constantVal);
+
+// —— 关键逻辑：是否改用 v3 公式
+const useV3 =
+  isV3 ||
+  (Number.isFinite(levelVal) && levelVal <= 1) ||
+  (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
+  (Array.isArray(achievedStatus) && (achievedStatus.includes(2) || achievedStatus.includes(5)));
+
+const singleRealityRaw = useV3 ? r_v3 : r_v2;
 
   return {
+    // 版本信息与比较用
+    isV3,
+    version: isV3 ? 'v3' : 'v2',
+    r_v2,
+    r_v3,
+
+    // 供后续显示/排序
     singleRealityRaw,
-    singleReality: singleRealityRaw.toFixed(2),
+    singleReality: Number.isFinite(singleRealityRaw) ? singleRealityRaw.toFixed(2) : '0.00',
+
+    // 基本字段
     constant: constantVal,
-    name: title,
-    category,
+    name: strip(title),
+    category: strip(category),
     bestScore: scoreVal,
-    bestAccuracy: accuracyVal.toFixed(4),
-    bestLevel: levelVal,
-    achievedStatus
+    bestAccuracy: Number.isFinite(accuracyVal) ? accuracyVal.toFixed(4) : '0.0000',
+    bestLevel: Number.isFinite(levelVal) ? levelVal : 0,
+    achievedStatus,
+
+    // 合并用 key（同曲同定数归并）
+    __mergeKey: `${strip(title)}@@${Number(constantVal).toFixed(4)}`
   };
 }
 
-function processSongFromOldFormat(record) {
-  const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record;
-  const constantObj = constants[BeatmapID];
+function mergeSongVersions(items) {
+  const map = new Map();
 
+  (items || []).forEach(it => {
+    const key = it.__mergeKey || `${it.name}@@${Number(it.constant).toFixed(4)}`;
+    const prev = map.get(key);
+
+    // 当前条目的 reality（已经在 processSong / processSongFromOldFormat 中按版本算过）
+    const curRlt = Number(it.singleRealityRaw) || 0;
+
+    if (!prev) {
+      // 初始化：克隆一份简化对象
+      map.set(key, {
+        isV3: it.isV3,                 // 仅标注来源（可选）
+        name: it.name,
+        category: it.category,
+        constant: it.constant,
+        bestScore: it.bestScore,
+        bestAccuracy: parseFloat(it.bestAccuracy), // 转成数值，最后再格式化
+        bestLevel: it.bestLevel,
+        achievedStatus: Array.isArray(it.achievedStatus) ? Array.from(new Set(it.achievedStatus)).sort((a,b)=>a-b) : [],
+        singleRealityRaw: curRlt,
+        singleReality: (curRlt || 0).toFixed(2)
+      });
+      return;
+    }
+
+    // 合并：分数取高
+    prev.bestScore = Math.max(prev.bestScore, it.bestScore);
+
+    // acc 取高
+    const curAcc = parseFloat(it.bestAccuracy);
+    if (Number.isFinite(curAcc)) prev.bestAccuracy = Math.max(prev.bestAccuracy, curAcc);
+
+    // 等级取低
+    prev.bestLevel = Math.min(prev.bestLevel, it.bestLevel);
+
+    // 状态并集
+    const union = new Set([...(prev.achievedStatus || []), ...(it.achievedStatus || [])]);
+    prev.achievedStatus = Array.from(union).sort((a,b)=>a-b);
+
+    // Reality 取高（当同曲出现 v2 与 v3 时生效）
+    prev.singleRealityRaw = Math.max(prev.singleRealityRaw, curRlt);
+    prev.singleReality = prev.singleRealityRaw.toFixed(2);
+
+    // 如果任意版本是 v3，可选地将 isV3 标注为 true（不影响渲染）
+    prev.isV3 = prev.isV3 || !!it.isV3;
+
+    map.set(key, prev);
+  });
+
+  // 把 bestAccuracy 格式化回字符串（与你原渲染逻辑一致）
+  return Array.from(map.values()).map(o => ({
+    ...o,
+    bestAccuracy: Number.isFinite(o.bestAccuracy) ? o.bestAccuracy.toFixed(4) : '0.0000'
+  }));
+}
+
+function processSongFromOldFormat(record, isV3 = false) {
+  const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record || {};
+  if (!BeatmapID) return null;
+
+  const constantObj = constants[BeatmapID];
   if (!constantObj) return null;
 
   const { constant, category, name, yct } = constantObj;
-  const singleRealityRaw = reality(BestScore, constant);
+  const scoreVal = BestScore || 0;
+  const accVal   = Number.isFinite(BestAccuracy) ? BestAccuracy : 0;
+  const levelVal = Number.isFinite(BestLevel) ? BestLevel : 0;
+  const status   = Array.isArray(AchievedStatus) ? AchievedStatus : [];
+
+  const r_v2 = reality(scoreVal, constant);
+  const r_v3 = realityv3(scoreVal, constant);
+
+  // —— 核心：和 processSong 保持一致的判定逻辑
+  const useV3 =
+    isV3 ||
+    (Number.isFinite(levelVal) && levelVal <= 1) ||
+    (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
+    (status.includes(2) || status.includes(5));
+
+  const singleRealityRaw = useV3 ? r_v3 : r_v2;
 
   return {
+    isV3: !!isV3,
+    version: isV3 ? "v3" : "v2",
+    r_v2,
+    r_v3,
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
-    constant: constant,
+    constant,
     name,
     category,
     yct,
-    bestScore: BestScore,
-    bestAccuracy: BestAccuracy.toFixed(4),
-    bestLevel: BestLevel, 
-    achievedStatus: AchievedStatus
+    bestScore: scoreVal,
+    bestAccuracy: accVal.toFixed(4),
+    bestLevel: levelVal,
+    achievedStatus: status,
+    __mergeKey: `${name}@@${Number(constant).toFixed(4)}`
   };
 }
 
 function formatInput(username, items) {
-  const formattedItems = items.map(item =>
-    `[${item.name},${item.category},${item.constant},${item.bestScore},${item.bestAccuracy},${item.bestLevel},[${item.achievedStatus}]]`
-  ).join(',\n  ');
+  // items 为 processSong / processSongFromOldFormat 的统一对象
+  // 若 isV3 为 true，则在尾部追加 ,v3
+  const formattedItems = (items || []).map(item => {
+    const base = `[${item.name},${item.category},${item.constant},${item.bestScore},${item.bestAccuracy},${item.bestLevel},[${(item.achievedStatus || []).join(',')}]]`;
+    return item.isV3 ? base.replace(/\]$/, ',v3]') : base;
+  }).join(',\n  ');
 
-  document.getElementById('inputData').value = `[${username}],{\n  ${formattedItems}\n}`;
+  document.getElementById('inputData').value = `[${username || ''}],{\n  ${formattedItems}\n}`;
 }
+
 
 // **初始化 SQL.js**
 async function initSQL() {
@@ -391,11 +571,29 @@ function processPrefsFile(prefsContent) {
   }
 }
 
-function extractJSON(jsonString) {
-  window.data = jsonString
-  const start = jsonString.indexOf('{"UserName":');
-  const end = jsonString.indexOf(']}]', start);
-  return (start !== -1 && end !== -1) ? `${jsonString.slice(start, end + 3)}}` : null;
+function extractJSON(jsonLike) {
+  // 尝试直接就是纯 JSON
+  const direct = tryParseJSON(jsonLike);
+  if (direct && typeof direct === 'object') return jsonLike;
+
+  // 从首个 { 起，用栈匹配到对应的 }
+  const s = String(jsonLike);
+  const start = s.indexOf('{');
+  if (start === -1) return null;
+
+  let depth = 0;
+  for (let i = start; i < s.length; i++) {
+    const ch = s[i];
+    if (ch === '{') depth++;
+    else if (ch === '}') depth--;
+
+    if (depth === 0) {
+      const candidate = s.slice(start, i + 1);
+      if (tryParseJSON(candidate)) return candidate;
+      // 若这段不合法，仍尝试继续向后寻找下一个闭合点
+    }
+  }
+  return null;
 }
 
 function tryParseJSON(str) {
@@ -404,6 +602,17 @@ function tryParseJSON(str) {
   } catch (e) {
     return null;
   }
+}
+function extractHeaderFields(parsed) {
+  // 传入已 JSON.parse 的对象；任何字段缺失都用空值兜底
+  const Username = (parsed && (parsed.Username || parsed.UserName)) || "";
+  const UserID   = (parsed && parsed.UserID) || "";
+
+  // SongRecords / SongRecordsV3 必须是数组才返回，否则空数组
+  const SongRecords   = (parsed && Array.isArray(parsed.SongRecords))   ? parsed.SongRecords   : [];
+  const SongRecordsV3 = (parsed && Array.isArray(parsed.SongRecordsV3)) ? parsed.SongRecordsV3 : [];
+
+  return { Username, UserID, SongRecords, SongRecordsV3 };
 }
 
 /* ========== 显示用户信息 ========== */
@@ -1454,3 +1663,4 @@ function exportImage(canvas) {
   const picgen = document.getElementById('picgen');
   if (picgen) picgen.style.display = 'none';
 }
+
