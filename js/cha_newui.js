@@ -130,61 +130,26 @@ function reality(score, c) {
 }
 
 function realityv3(score, c) {
-    // 如果定数小于0.001，直接返回0
-    if (c < 1e-3) {
-        return 0;
-    }
-
+    if (c < 1e-3) return 0;
     const bestScore = score;
-    
-    switch (true) {
-        case bestScore >= 1000000:
-            return c + 1.5;
-            
-        case bestScore >= 850000:
-            return c + (bestScore - 850000) / 100000.0;
-            
-        case bestScore >= 700000:
-            const result1 = c * (0.5 + (bestScore - 700000) / 300000.0) + (bestScore - 850000) / 100000.0;
-            return result1 < 0 ? 0 : result1;
-            
-        case bestScore >= 600000:
-            const result2 = (c - 3) * (bestScore - 600000) / 200000.0;
-            return result2 < 0 ? 0 : result2;
-            
-        default:
-            return 0;
-    }
+    if (bestScore >= 1000000) return c + 1.5;
+    if (bestScore >= 850000) return c + (bestScore - 850000) / 100000.0;
+    if (bestScore >= 700000) return Math.max(0, c * (0.5 + (bestScore - 700000) / 300000.0) + (bestScore - 850000) / 100000.0);
+    if (bestScore >= 600000) return Math.max(0, (c - 3) * (bestScore - 600000) / 200000.0);
+    return 0;
 }
+
 function curlt(results) {
-  // 过滤、排序并截取前20个
   let values = results
     .filter(item => item.singleRealityRaw > 0)
     .map(item => item.singleRealityRaw)
     .sort((a, b) => b - a)
     .slice(0, 20);
 
-  const size = 20;
-  let ws = new Array(size).fill(0);
-
-  for (let i = 0; i < size; i++) {
-    if (i < values.length) {
-      ws[i] = values[i] / size;
-    }
-  }
-
-  let psize = size;
-  while (psize > 1) {
-    let halfSize = Math.floor(psize / 2);
-    for (let i = 0; i < halfSize; i++) {
-      ws[i] += ws[psize - i - 1];
-    }
-    psize -= halfSize;
-  }
-
-  return ws[0];
+  // 直接计算平均值
+  const sum = values.reduce((a, b) => a + b, 0);
+  return sum / 20;
 }
-
 function findScore(constant, target) {
   //倒观rlt
   if (target <= constant - 1.5) return 700000;
