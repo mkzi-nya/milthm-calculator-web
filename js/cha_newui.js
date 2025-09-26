@@ -131,11 +131,10 @@ function reality(score, c) {
 
 function realityv3(score, c) {
     if (c < 1e-3) return 0;
-    const bestScore = score;
-    if (bestScore >= 1000000) return c + 1.5;
-    if (bestScore >= 850000) return c + (bestScore - 850000) / 100000.0;
-    if (bestScore >= 700000) return Math.max(0, c * (0.5 + (bestScore - 700000) / 300000.0) + (bestScore - 850000) / 100000.0);
-    if (bestScore >= 600000) return Math.max(0, (c - 3) * (bestScore - 600000) / 200000.0);
+    if (score >= 1000000) return c + 1.5;
+    if (score >= 850000) return c + (score - 850000) / 100000.0;
+    if (score >= 700000) return Math.max(0, c * (0.5 + (score - 700000) / 300000.0) + (score - 850000) / 100000.0);
+    if (score >= 600000) return Math.max(0, (c - 3) * (score - 600000) / 200000.0);
     return 0;
 }
 

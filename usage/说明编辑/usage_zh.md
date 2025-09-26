@@ -28,7 +28,6 @@
   - [Milthm Wiki](#milthm-wiki)
   - [Milthm交流群](#milthm交流群)
   - [什么是文件路径](#什么是文件路径)
-  - [Reality 对照表](#reality-对照表)
 
 ---
 
@@ -128,13 +127,16 @@ Reality 的计算基于游玩分数和谱面定数：
 
 单曲 Reality 计算公式如下（其中 s 为分数，c 为定数）：
 
-{{reality公式}}
+{{realityv3}}
 
-[Reality 对照表](#reality-对照表)
+在当前版本下，如果旧版(4.0以前)的分数不高于1005000，且未达到AllPerfect以上的评级，则将同时使用reality v2与v3公式取最高值，如下：  
+
+{{realityv2}}
+
 
 #### 代码实现：
 
-{{公式js}}
+{{realityjs}}
 
 ---
 
@@ -467,8 +469,4 @@ Reality 的计算基于游玩分数和谱面定数：
   若系统阻止访问，请尝试连接电脑或授予文件管理器 ADB 权限。
 
 ---
-
-### Reality 对照表
-
-{{reality表}}
 
