@@ -140,7 +140,7 @@ Reality 的计算基于游玩分数和谱面定数：
 
 ### Score V3算法
 
-[官方文档](https://www.bilibili.com/opus/1102033370624294920)  
+[官方文档](https://www.milthm.cn/wiki/hans/blog/2025-08-17)  
 代码实现  
 {{sv3}}
 
