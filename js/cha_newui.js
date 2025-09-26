@@ -130,7 +130,59 @@ function reality(score, c) {
 }
 
 function realityv3(score, c) {
-  return reality(score, c);
+    // 如果定数小于0.001，直接返回0
+    if (c < 1e-3) {
+        return 0;
+    }
+
+    const bestScore = score;
+    
+    switch (true) {
+        case bestScore >= 1000000:
+            return c + 1.5;
+            
+        case bestScore >= 850000:
+            return c + (bestScore - 850000) / 100000.0;
+            
+        case bestScore >= 700000:
+            const result1 = c * (0.5 + (bestScore - 700000) / 300000.0) + (bestScore - 850000) / 100000.0;
+            return result1 < 0 ? 0 : result1;
+            
+        case bestScore >= 600000:
+            const result2 = (c - 3) * (bestScore - 600000) / 200000.0;
+            return result2 < 0 ? 0 : result2;
+            
+        default:
+            return 0;
+    }
+}
+function curlt(results) {
+  // 过滤、排序并截取前20个
+  let values = results
+    .filter(item => item.singleRealityRaw > 0)
+    .map(item => item.singleRealityRaw)
+    .sort((a, b) => b - a)
+    .slice(0, 20);
+
+  const size = 20;
+  let ws = new Array(size).fill(0);
+
+  for (let i = 0; i < size; i++) {
+    if (i < values.length) {
+      ws[i] = values[i] / size;
+    }
+  }
+
+  let psize = size;
+  while (psize > 1) {
+    let halfSize = Math.floor(psize / 2);
+    for (let i = 0; i < halfSize; i++) {
+      ws[i] += ws[psize - i - 1];
+    }
+    psize -= halfSize;
+  }
+
+  return ws[0];
 }
 
 function findScore(constant, target) {
@@ -620,15 +672,15 @@ function drawUserInfo(username, results) {
   const userInfoDiv = document.getElementById('userInfo');
   const usercontainer = document.getElementById('usercontainer');
   usercontainer.style.display = 'block';
-  const avg = (results.filter(item => item.singleRealityRaw > 0)
-    .slice(0, 20)
-    .reduce((acc, item) => acc + item.singleRealityRaw, 0) / 20) || '0.0000';
-  window.average1 = Math.floor(avg * 10000) / 10000
+  
+  const avg = curlt(results);
+  window.average = avg;
+  window.average1 = Math.floor(avg*10000)/10000;
   userInfoDiv.innerHTML = `${username} ${window.average1}`;
 
   window.username = username;
   window.average = avg;
-  window.utlr = tlr()
+  window.utlr = tlr();
 }
 
 function tlr() {
@@ -1371,7 +1423,7 @@ function downloadImage() {
       if ((window.average1 || 0) >= 12.5) text += "    🐉👃👈😨";
       ctx.fillText(text, 660, 129);
     }
-    ctx.fillText(`Ytilaer: ${(window.utlr || 0).toFixed(4)}`, 660, 160);
+    //ctx.fillText(`Ytilaer: ${(window.utlr || 0).toFixed(4)}`, 660, 160);
 
     // 时间
     const now = new Date();
@@ -1627,7 +1679,7 @@ function drawCards(ctx, canvas, items, imgPairs) {
           Math.max(it.singleRealityRaw ?? 0, items?.[19]?.singleRealityRaw ?? 0)
         : 114514
     );
-    ctx.fillText(`>>${targetScore}`, x + 212, y + 86);
+    //ctx.fillText(`>>${targetScore}`, x + 212, y + 86);
 
     // 封面与段位图
     const coverImg = imgPairs[i]?.[0] || null;
