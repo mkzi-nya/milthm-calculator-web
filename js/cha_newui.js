@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.09.26 10:30(UTC+8)"
+const Updated = "Updated at 2025.09.27 17:30(UTC+8)"
 var cha_newui_js_ver = 7
 
 console.log(Updated)
@@ -346,6 +346,7 @@ const singleRealityRaw = useV3 ? r_v3 : r_v2;
 
     // 基本字段
     constant: constantVal,
+    constantv3: constantv3Val,
     name: strip(title),
     category: strip(category),
     bestScore: scoreVal,
@@ -375,6 +376,7 @@ function mergeSongVersions(items) {
         name: it.name,
         category: it.category,
         constant: it.constant,
+        constantv3: it.constantv3,
         bestScore: it.bestScore,
         bestAccuracy: parseFloat(it.bestAccuracy), // 转成数值，最后再格式化
         bestLevel: it.bestLevel,
@@ -730,7 +732,7 @@ function drawCard(result, index) {
     fontSize: `${fontSize}px`,
     marginBottom: `${marginBottom*0.5}px`
   });
-  const constantText = `${parseFloat(result.constant).toFixed(1)}->&nbsp`;
+  const constantText = `${parseFloat(result.constantv3).toFixed(1)}->&nbsp`;
   const singleRealitySpan = document.createElement('span');
   singleRealitySpan.innerHTML = parseFloat(result.singleReality).toFixed(2);
   if (result.bestScore >= 1005000) {
@@ -1630,8 +1632,9 @@ function drawCards(ctx, canvas, items, imgPairs) {
         y + 98
       );
     } else {
+      let consttext = `${it.constantv3.toFixed(1)}`;
       ctx.fillText(
-        `${it.category} ${parseFloat(it.constant ?? 0).toFixed(1)} > ${(it.singleReality ?? '0.00')}   ${acc}`,
+        `${it.category} ${consttext} > ${(it.singleReality ?? '0.00')}   ${acc}`,
         x + 208,
         y + 98
       );
