@@ -2,18 +2,18 @@ const constantsData = {
   "5aaafcea-684f-4310-936d-67ae35956c48": [-1, "Ø", "驟雨の狭間", , 13.42, 3.5, 2, 1],
   "1104f25d-2493-4bc7-9172-b262d36488ac": [0, "SP", "Oiiaioooooiai", , 8.68, 3.5, 4, 0],
   "e543f4a5-5f55-45e5-9c41-ebe1c155c12e": [0, "SP", "Dogbite", , 6.71, 3, 3, 2.5],
-  "6252f7c4-8eae-4b59-a22f-9f142f904029": [12.5, "CL", "Contrasty Angeles", 2, 12.27, 4.5, 3.5, 0],
-  "d742e989-92c4-4474-87ef-57b218d0fc41": [12.7, "CL", "命日", 246, 15.43, 2.5, 3.5, 0],
+  "6252f7c4-8eae-4b59-a22f-9f142f904029": [12.3, 12.5, "CL", "Contrasty Angeles", 2, 12.27, 4.5, 3.5, 0],
+  "d742e989-92c4-4474-87ef-57b218d0fc41": [12.2, 12.7, "CL", "命日", 246, 15.43, 2.5, 3.5, 0],
   "9acd5289-bc81-49fb-afc8-7b0631e60e60": [12.1, "CL", "Regnaissance", 234, 9.80, 5, 4.5, 0],
   "a19a54b6-363e-49ae-9cd2-633a2db8ae4f": [11.9, "CL", "Broken Conviction", 215, 11.75, 2, 1.5, 4],
   "eab07c23-395d-47f3-be33-15c7c566f694": [11.7, "CL", "Moonflutter", 219, 11.37, 3, 3, 3.5],
   "ead657f6-f0f2-4a21-acfd-4322892a0562": [11.7, "CL", "Fly To Meteor feat.兔柒", 215, 8.76, 3.5, 3.5, 1],
   "217898b1-4806-401f-adf5-740e9d72b66e": [10.5, "CL", "雨女", 203, 6.36, 2, 1.5, 0],
   "cc75ce1c-dbed-4bc7-94eb-728bf36bb1ec": [12.1, "CB", "Innocent white", 240, 9.52, 4.5, 4, 0],
-  "97ef94ce-df45-4a92-9645-2456f606e0fa": [12.0, "CB", "Meltovt Necrosys", 211, 13.77, 3.5, 2.5, 0],
-  "ed40cd1b-2741-415a-be81-6fcc63db4044": [11.8, "CB", "HYPER MEMORIES", 256, 13.03, 1.5, 2, 0],
+  "97ef94ce-df45-4a92-9645-2456f606e0fa": [11.9, 12.0, "CB", "Meltovt Necrosys", 211, 13.77, 3.5, 2.5, 0],
+  "ed40cd1b-2741-415a-be81-6fcc63db4044": [11.7, 11.8, "CB", "HYPER MEMORIES", 256, 13.03, 1.5, 2, 0],
   "ef55520f-c913-449f-bf26-ab947384127e": [11.5, "CB", "Broken Conviction", 220, 8.66, 2.5, 2, 0],
-  "269efa5f-8b69-4a71-be24-7abe57372b3f": [11.6, "CB", "Contrasty Angeles", 217, 12.26, 3, 3.5, 0],
+  "269efa5f-8b69-4a71-be24-7abe57372b3f": [11.5, 11.6, "CB", "Contrasty Angeles", 217, 12.26, 3, 3.5, 0],
   "e0162d0e-0727-49c2-80fa-f611621650ea": [11.4, "CB", "slic.hertz #GdbG", 240, 9.16, 2.5, 3.5, 0],
   "61f5e310-d45b-40dc-a934-e3a849382729": [11.4, "CB", "Moonflutter", 211, 10.79, 3, 2.5, 0],
   "14080c32-a16c-464c-b24a-880f1a7e657d": [11.4, "CB", "Algebra", 220, 7.89, 4, 3.5, 0],
@@ -162,13 +162,13 @@ const constantsData = {
   "1a3167ae-9105-4545-9aa7-3cab60874e9c": [10.4, "CB", "Kayava", 205, 3.11, , , ],
   "1ae6231b-d165-4f09-a138-9ec0d29431a7": [5.5, "SK", "Kayava", 101, 1.17, , , ],
   "85a6566f-d9df-408e-a812-0b13a80362cc": [3, "DZ", "Kayava", 60, 0.18, , , ],
-  "abefe6c9-2b30-45ef-b5b0-8edb5fc18195": [11.6, "CB", "Threat - Metropolis", 211, , 2.5, 2, 0],
+  "abefe6c9-2b30-45ef-b5b0-8edb5fc18195": [11.5, 11.6, "CB", "Threat - Metropolis", 211, , 2.5, 2, 0],
   "975a9b31-3f04-4587-b77e-2282dec95188": [6.6, "SK", "Threat - Metropolis", 120, 1.71, , , ],
   "c292f47e-d8ff-483f-bfd7-aa43937f0e2e": [2, "DZ", "Threat - Metropolis", 39, 0.34, , , ],
   "6add3ab9-52c0-4c13-abc9-506dfa89faa6": [11.1, "CB", "Sheer Ice Torrent", 333, 3.62, 3.5, 2.5, 0],
   "d3ddf678-adb0-4157-ae10-21c2667c7ba8": [7.8, "SK", "Sheer Ice Torrent", 333, 2.97, , , ],
   "e23637e8-fe15-4d9a-b3c9-9e059745ad3c": [2, "DZ", "Sheer Ice Torrent", 333, 0.41, , , ],
-  "a8d6dfa7-b879-4eef-a10a-dbbd46519583": [12.4, "CB", "大月墜落狂想", 231, 11.91, 4, 2, 0],
+  "a8d6dfa7-b879-4eef-a10a-dbbd46519583": [12.2, 12.4, "CB", "大月墜落狂想", 231, 11.91, 4, 2, 0],
   "9eb53fd3-a91c-45c6-8608-f3a76eecf9f7": [8, "SK", "大月墜落狂想", 157, 4.34, , , ],
   "ca751a94-f71e-4556-9d54-76de325ca29c": [2, "DZ", "大月墜落狂想", 37, 0.36, , , ],
   "addba2e9-ad45-4770-b850-717ab2e0e17d": [10.7, "CB", "FULi AUTO SHOOTER", 192, 7.07, 2.5, 3.5, 0],
@@ -270,17 +270,17 @@ const constantsData = {
 
 };
 //解析出constant
-const constants = {}, fields = ["constant", "category", "name", "yct", "ad", "ae", "af", "ag"];
+const constants = {}, 
+      fields = ["constant", "constantv3", "category", "name", "yct", "ad", "ae", "af", "ag"];
+
 for (const id in constantsData) {
-  const arr = constantsData[id], obj = {};
-  fields.forEach((k, i) => {
+  let arr = constantsData[id];
+  if (typeof arr[1] !== "number") arr.splice(1, 0, arr[0]); // 插入 constantv3
+
+  constants[id] = fields.reduce((obj, k, i) => {
     let v = arr[i];
-    if (v === undefined) {
-      if (k === "ad") v = 0;
-      else if (k === "ae" || k === "af") v = 1;
-      else if (k === "ag") v = 0;
-    }
+    if (v === undefined) v = (k === "ad" ? 0 : (k === "ae" || k === "af" ? 1 : (k === "ag" ? 0 : v)));
     if (v !== undefined) obj[k] = v;
-  });
-  constants[id] = obj;
-};
+    return obj;
+  }, {});
+}
