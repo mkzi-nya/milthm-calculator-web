@@ -5,19 +5,15 @@
 - [使用说明](#使用说明)
   - [上传存档文件](#上传存档文件)
   - [输入已解析的数据](#输入已解析的数据)
-  - [旧版本存档](#旧版本存档)
-  - [其他存档路径](#其他存档路径)
-  - [雷达图](#雷达图)
+  - [旧版存档路径](#其他存档路径)
 - [关于 Milthm](#关于-milthm)
   - [Reality 计算公式](#reality-计算公式)
   - [Score V3算法](#score-v3算法)
-  - [关于查分图中的Ytilaer](关于查分图中的ytilaer)
   - [关于存档文件](#关于存档文件)
   - [音符判定](#音符判定)
   - [结算评级](#结算评级)
   - [完成状态](#完成状态)
   - [露晓卉庭](#露晓卉庭)
-  - [愚人节](#愚人节)
   - [隐藏曲解锁方式](#隐藏曲解锁方式)
   - [定数表](#定数表)
   - [谱师统计](#谱师统计)
@@ -89,30 +85,17 @@
 其中：
 - `acc` 为小数表示准确度；
 - `level` 代表评级，其定义如下：
+- `isv3?` 如果为realityv3(4.0版本实装)成绩，则添加`v3`
 
 {{14}}
 
 ---
 
-### 旧版本存档
-
-`Milthm 3.2` 之前的存档在移动端无法直接提取，可尝试以下方法：
-
-{{15}}
-
----
-
-### 其他存档路径
+### 旧版存档路径
 
 若上传后无法解析，可尝试手动提取 JSON 数据并上传：
 
 {{16}}
-
----
-
-## 雷达图
-
-相关计算方式由 `PanyiAme` 提供，详见 [Milthm 查分表说明](https://wwp.lanzoup.com/iZ59A2j8nbpe)。
 
 ---
 
@@ -151,12 +134,6 @@ Reality 的计算基于游玩分数和谱面定数：
 
 ---
 
-## 关于查分图中的Ytilaer
-
-该值无实际意义，具体如下
-- 当b20的平均分大于1005k时，该值与实际Reality相等
-- 该值为20首曲目的reality(平均分,平均单曲rlt)的最大值
-
 ## 关于存档文件
 
 在以下部分中，路径将被简写为 `MilthmDataDirectory`。
@@ -182,10 +159,11 @@ Reality 的计算基于游玩分数和谱面定数：
 
 游戏中单个音符的判定共分为五种，分别为：
 
-- **Perfect**：获得 101% 分数及 100% ACC。
-- **perfect**：依据精准度获得 75%-101% 分数及 100% ACC。
-- **Good**：依据精准度获得 30%-75% 分数及 50% ACC。
-- **Bad**：Combo 中断，获得 0%-30% 分数及 10% ACC。
+- **Perfect**：获得 100% 分数及 100% ACC。
+- **perfect**：获得 99% 分数及 100% ACC。
+- **Great**：获得 60% 分数及 60% ACC。
+- **Good**: 获得 30% 分数及 30% ACC。
+- **Bad**：Combo 中断，获得 15% 分数及 15% ACC。
 - **Miss**：Combo 中断，不获得分数与 ACC。
 
 各区间内的分数与精准度成正比例关系，详细判定范围如下表所示：
@@ -198,13 +176,14 @@ Reality 的计算基于游玩分数和谱面定数：
 
 结算评级分为八种：  
 未达成FC(全连)时为白色,FC为蓝色,AP为紫色  
+当前版本无法获得Milthm以下评级的AP图标  
 - <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">：旧版显示为<img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为满分）。
-- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M,即Milthm，分数达到1005000时获得；
-- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/20.png" style="height:1.5em;vertical-align:middle;">：分数达到950000时获得；
-- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/30.png" style="height:1.5em;vertical-align:middle;">：分数达到900000时获得；
-- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/40.png" style="height:1.5em;vertical-align:middle;">：分数达到850000时获得；
-- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到800000时获得；
-- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：分数小于800000时获得，未通关，没有FC/AP图标。
+- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M,即Milthm，分数达到1000000时获得；
+- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/20.png" style="height:1.5em;vertical-align:middle;">：分数达到925000时获得；
+- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/30.png" style="height:1.5em;vertical-align:middle;">：分数达到850000时获得；
+- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/40.png" style="height:1.5em;vertical-align:middle;">：分数达到750000时获得；
+- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到700000时获得；
+- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：分数小于700000时获得，未通关，没有FC/AP图标。
 
 ---
 
@@ -217,7 +196,7 @@ Reality 的计算基于游玩分数和谱面定数：
 - <img src="../jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC > 80%，且至少存在一个 Bad/Miss 判定。
 - <img src="../jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
-  - 所有音符均在 ±140ms 内击中，且至少存在一个 Good 判定。
+  - 所有音符均在 ±140ms 内击中，且至少存在一个 Great/Good 判定。
 - <img src="../jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±70ms 内击中，且至少存在一个 small perfect 判定。
 - <img src="../jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
@@ -226,17 +205,6 @@ Reality 的计算基于游玩分数和谱面定数：
   - 使用 AutoPlay 通关。
 - <img src="../jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
   - 分数大于 1010000（使用倾盆大雨）。
-
----
-
-## 愚人节
-
-### 攻略（仅供参考）
-- 进入游戏后开启噩梦游玩任意一首`CB`难度的曲目，游玩时难度显示会发生变化，且所有按键全部转换为雨丝，分数上升极慢
-- 游玩后会弹出一个提示，确认后返回，所有曲目的等级都会发生变化，升高大约20倍（[查看](https://github.com/mkzi-nya/milthm-calculator-web/blob/main/js/cha_newui.js#L20-L212)），且UserReality会乘以20（与愚人节定数并无联系）
-- 然后再次游玩任意谱面后弹出弹窗，然后会去除30级以上的谱面
-- 游玩一个大于16级的谱面进入剧情，会解锁`Rainbow Flavor!`的愚人节谱面，然后游戏闪退
-- 然后会出现卤味鸭小游戏，打到一定回合后解锁第2张愚人节谱
 
 ---
 
@@ -315,7 +283,11 @@ Reality 的计算基于游玩分数和谱面定数：
 
 共计：`蘑菇`\*10,`装饰`\*20,`食物`\*360  
 当前版本解锁所有曲目至少需 `蘑菇`\*10,`装饰`\*20,`食物`\*485  
-在不考虑产量概率增加的情况下最低(及时浇水)需要24小时  
+在不考虑产量概率增加的情况下最低(及时浇水)需要`28`小时  
+当前版本将等级升至10级，需`47.5`小时  
+当前版本将等级升至10级并解锁所有曲目至少需 `蘑菇`\*10,`装饰`\*75,`食物`\*1085  
+至少需`104.5`小时
+
 
 
 ---
@@ -327,6 +299,7 @@ Reality 的计算基于游玩分数和谱面定数：
   解锁并游玩 HYPER MEMORIES；  
   游玩过程中背景会出现黑白色的苏珊，此时请勿击打任何音符；  
   之后分数变为负数，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
+  
 
 - **Contrasty Angeles**
 
@@ -334,6 +307,7 @@ Reality 的计算基于游玩分数和谱面定数：
   游玩 HYPER MEMORIES；  
   游玩过程中背景会出现黑白色的苏珊，此时需保持全连；  
   之后分数骤减，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
+  
 
 - **Dogbite**
 - 游玩Dogbite CB难度并获得A以上等级
@@ -341,6 +315,10 @@ Reality 的计算基于游玩分数和谱面定数：
 - 满足第二点后，会触发异象，之后进入Dogbite SP谱面，即成功解锁（无需通关）
   
 - 注: 可通过开启`倾盆大雨`异象来降低解锁难度
+  
+  
+- **靈**
+- 在`绮梦`玩法下，使用**浅仪洸花**游玩`Sakuyahime`及可解锁
 
 ---
 

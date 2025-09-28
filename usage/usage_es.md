@@ -114,7 +114,8 @@ Ingrese los datos en el cuadro de texto de la página principal con el siguiente
 ```text
 [name],{
     [Contrasty Angeles,CL,12.3,1010000,1.0000,0,[0,3,4,5],
-    [name,Difficulty, constant, score, acc, level,achievedStatus]
+    [Contrasty Angeles,CL,12.3,1010000,1.0000,0,[0,3,4,5,v3],
+    [name,Difficulty, constant, score, acc, level,achievedStatus,isv3?]
 }
 ```
 
@@ -124,10 +125,8 @@ Donde:
 
 ```text
 level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
-achievedStatus: 0=clear, 3=?, 4=fc, 5=ap, 6=false
+achievedStatus: 0=clear, 2=R, 3=?, 4=fc, 5=ap, 6=false
 ```
-
-> 沿用了milthm3.8版本中的评级格式，但实际从3.9版本开始存档中就不是这种格式了
 
 ---
 
@@ -135,23 +134,7 @@ achievedStatus: 0=clear, 3=?, 4=fc, 5=ap, 6=false
 
 Los guardados anteriores a `Milthm 3.2` no pueden extraerse directamente en dispositivos móviles, puede intentar los siguientes métodos:
 
-```sh
-SOURCE_DIR="/storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/"
-DEST_DIR="/sdcard/"
-FILE_NAME="save.json"
-
-while true; do
-    if [ -f "$SOURCE_DIR$FILE_NAME" ]; then
-        cp "$SOURCE_DIR$FILE_NAME" "$DEST_DIR"
-        if [ $? -eq 0 ]; then
-            echo "文件 $FILE_NAME 已成功复制到 /sdcard/"
-            break
-        else
-            echo "复制文件失败，请检查权限！"
-        fi
-    fi
-done
-```
+{{15}}
 
 ---
 
@@ -256,9 +239,9 @@ En el juego, la evaluación de cada nota se divide en cinco tipos:
 
 La puntuación y precisión dentro de cada rango son proporcionales, el rango detallado es el siguiente:
 
-| Perfect | perfect | Good | Bad | Miss |
-|-|-|-|-|-|
-| ±35ms | ±35-70ms | ±70-140ms | ±140-155ms | >155ms |
+| Perfect | perfect | Great | Good | Bad | Miss |
+|-|-|-|-|-|-|
+| ±35ms | ±35-70ms | ±70-105ms | ±105-140 | ±140-155ms | >155ms |
 
 ---
 
