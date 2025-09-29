@@ -154,27 +154,20 @@ function findScore(constant, target) {
   if (target <= 0) return 600000;
   if (target > constant + 1.5) return "Unable to deduce points";
   
-  // 情况1: target >= constant + 1 (对应 score >= 850000)
-  if (target >= constant + 1) {
+  if (target >= constant) {
     if (target === constant + 1.5) return 1000000;
     return Math.ceil(850000 + (target - constant) * 100000);
   }
   
-  // 情况2: target >= constant + 0.5 (对应 700000 <= score < 850000)
-  if (target >= constant + 0.5) {
+  if (target >= Math.max(0,0.5*c-1.5)) {
     const denominator = constant / 300000 + 1 / 100000;
     const score = (target + constant * 11/6 + 8.5) / denominator;
     return Math.min(Math.ceil(score), 849999);
   }
   
-  // 情况3: target > 0 (对应 600000 <= score < 700000)
-  if (target > 0) {
     if (Math.abs(constant - 3) < 1e-6) return 600000;
     const score = 600000 + (target * 200000) / (constant - 3);
     return Math.min(Math.ceil(score), 699999);
-  }
-  
-  return 600000;
 }
 function startProcess() {
   var inp = document.getElementById('inputData').value;
@@ -1656,7 +1649,7 @@ function drawCards(ctx, canvas, items, imgPairs) {
     // 目标分
     ctx.font = '13px Arial';
     const targetScore = findScore(
-      it.constant ?? 0,
+      it.constantv3 ?? 0,
       Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 !== (window.average ?? 0) * 100
         ? (Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 - (window.average ?? 0) * 100) / 5 +
           Math.max(it.singleRealityRaw ?? 0, items?.[19]?.singleRealityRaw ?? 0)
