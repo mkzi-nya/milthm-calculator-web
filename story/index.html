@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Milthm 剧情文档</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .markdown-body {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+
+    .toc {
+      display: none;
+    }
+
+    pre,
+    code {
+      user-select: text;
+    }
+
+    .loading {
+      color: #8b949e;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .error {
+      color: #f85149;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <article id="content" class="markdown-body">
+      <div class="loading">正在加载剧情文档...</div>
+    </article>
+  </div>
+
+  <script>
+    marked.use(markedKatex());
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
+        return hljs.highlightAuto(code).value;
+      }
+    });
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = ''; // 恢复默认大小
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    // 在页面加载时自动加载 zh.md 文件
+    window.addEventListener('load', function() {
+      fetch('./zh.md')
+        .then(res => {
+          if (!res.ok) {
+            throw new Error('文件未找到');
+          }
+          return res.text();
+        })
+        .then(md => {
+          document.getElementById('content').innerHTML = marked.parse(md, { 
+            headerIds: true, 
+            mangle: false 
+          });
+          document.querySelectorAll('h2,h3,h4').forEach(h => {
+            h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+          });
+          hljs.highlightAll();
+          resizeKatex();
+        })
+        .catch(() => {
+          document.getElementById('content').innerHTML = 
+            '<div class="error">无法加载剧情文档文件 (zh.md)</div>';
+        });
+    });
+
+  </script>
+
+</body>
+
+</html>
