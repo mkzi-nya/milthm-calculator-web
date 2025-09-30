@@ -423,6 +423,54 @@ function loadDev() {
     window.addEventListener('resize', resizeKatex);
     window.addEventListener('load', loadMarkdown);
     document.addEventListener('mousemove', checkMouseOnLink);
+    
+    // reality对照表函数
+    function findScore(constant, target) {
+  if (target <= 0) return 600000;
+  if (target > constant + 1.5) return "Unable to deduce points";
+  
+  if (target >= constant) {
+    if (target === constant + 1.5) return 1000000;
+    return Math.ceil(850000 + (target - constant) * 100000);
+  }
+  
+  if (target >= Math.max(0, 0.5 * constant - 1.5)) {
+    const denominator = constant / 300000 + 1 / 100000;
+    const score = (target + constant * 11/6 + 8.5) / denominator;
+    return Math.min(Math.ceil(score), 849999);
+  }
+  
+  if (Math.abs(constant - 3) < 1e-6) return 600000;
+  const score = 600000 + (target * 200000) / (constant - 3);
+  return Math.min(Math.ceil(score), 699999);
+}
+
+function updateOutput() {
+  const input = document.getElementById("constantInput").value;
+  const output = document.getElementById("output");
+  
+  if (input === "") {
+    output.textContent = "reality\tscore\n请填写 c (constant)，结果将以公式形式计算";
+    return;
+  }
+  
+  const c = parseFloat(input);
+  let result = "reality\tscore\n";
+  
+  // 先计算所有结果
+  const data = [];
+  for (let r = 0; r <= c + 1.5; r += 0.01) {
+    const score = findScore(c, parseFloat(r.toFixed(2)));
+    data.push({ r: r.toFixed(2), s: score });
+  }
+  
+  // 倒序输出
+  for (let i = data.length - 1; i >= 0; i--) {
+    result += `${data[i].r}\t${data[i].s}\n`;
+  }
+  
+  output.textContent = result;
+}
   </script>
 </body>
 </html>
