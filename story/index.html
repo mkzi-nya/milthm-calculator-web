@@ -61,10 +61,61 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* 语言选择器样式 */
+    .language-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 2em;
+      z-index: 1000;
+    }
+
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      background: #222;
+      border-radius: 5px;
+      padding: 10px;
+      list-style: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .language-menu li {
+      padding: 8px 12px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .language-menu li:hover {
+      background: #444;
+    }
   </style>
 </head>
 
 <body>
+  <!-- 语言选择按钮 -->
+  <div class="language-selector" onclick="toggleLanguageMenu()">🌐</div>
+  <ul class="language-menu" id="language-menu">
+    <li onclick="changeLanguage('zh_Hans')">简体中文</li>
+    <li onclick="changeLanguage('zh_Hant')">繁體中文</li>
+    <li onclick="changeLanguage('yue_Hant')">粵語</li>
+    <li onclick="changeLanguage('en')">English</li>
+    <li onclick="changeLanguage('ja')">日本語</li>
+    <li onclick="changeLanguage('ko')">한국어</li>
+    <li onclick="changeLanguage('ru')">Русский</li>
+    <li onclick="changeLanguage('es')">Español</li>
+    <li onclick="changeLanguage('fr')">Français</li>
+    <li onclick="changeLanguage('vi')">Tiếng Việt</li>
+  </ul>
 
   <div class="container">
     <article id="content" class="markdown-body">
@@ -81,24 +132,84 @@
       }
     });
 
-    function resizeKatex() {
-      const w = document.querySelector('.markdown-body').clientWidth;
-      document.querySelectorAll('.katex-display').forEach(e => {
-        e.style.fontSize = ''; // 恢复默认大小
-        const actual = e.scrollWidth;
-        if (actual > w) {
-          const fs = parseFloat(getComputedStyle(e).fontSize);
-          e.style.fontSize = (fs * w / actual) + 'px';
+    // 支持的语言列表
+    const supportedLanguages = [
+      'zh_Hans', 'zh_Hant', 'yue_Hant', 'en', 'ja', 'ko', 'ru', 'es', 'fr', 'vi'
+    ];
+
+    // 语言映射表 - 修复映射关系
+    const languageMap = {
+      // 简体中文
+      "zh": "zh_Hans",
+      "zh-cn": "zh_Hans",
+      "zh-hans-cn": "zh_Hans",
+      "zh-hans": "zh_Hans",
+      
+      // 繁体中文
+      "zh-tw": "zh_Hant",
+      "zh-hk": "zh_Hant",
+      "zh-mo": "zh_Hant",
+      "zh-hant": "zh_Hant",
+      "zh-hant-tw": "zh_Hant",
+      "zh-hant-hk": "zh_Hant",
+      
+      // 粤语
+      "yue": "yue_Hant",
+      "yue-hant": "yue_Hant",
+      "yue-hk": "yue_Hant",
+      
+      // 其他语言
+      "en": "en",
+      "ja": "ja",
+      "ko": "ko",
+      "ru": "ru",
+      "es": "es",
+      "fr": "fr",
+      "vi": "vi"
+    };
+
+    // 获取用户语言
+    function getUserLanguage() {
+      // 首先检查URL参数
+      const urlParams = new URLSearchParams(window.location.search);
+      let lang = urlParams.get('lang');
+      
+      // 如果URL参数存在且是支持的语言，直接使用
+      if (lang && supportedLanguages.includes(lang)) {
+        return lang;
+      }
+      
+      // 如果没有URL参数，则使用浏览器语言
+      if (!lang) {
+        const browserLang = navigator.language.toLowerCase();
+        console.log('浏览器语言:', browserLang);
+        
+        // 直接检查语言映射
+        if (languageMap[browserLang]) {
+          return languageMap[browserLang];
         }
-      });
+        
+        // 检查语言代码的前缀（如 zh-CN 的前缀是 zh）
+        const langPrefix = browserLang.split('-')[0];
+        if (languageMap[langPrefix]) {
+          return languageMap[langPrefix];
+        }
+      }
+      
+      // 默认使用英语
+      return "en";
     }
 
-    // 在页面加载时自动加载 zh.md 文件
-    window.addEventListener('load', function() {
-      fetch('./zh.md')
+    // 加载Markdown文件
+    function loadMarkdown() {
+      const lang = getUserLanguage();
+      const fileName = `${lang}.md`;
+      console.log('尝试加载语言文件:', fileName);
+      
+      fetch(`./${fileName}`)
         .then(res => {
           if (!res.ok) {
-            throw new Error('文件未找到');
+            throw new Error(`HTTP error! status: ${res.status}`);
           }
           return res.text();
         })
@@ -113,12 +224,76 @@
           hljs.highlightAll();
           resizeKatex();
         })
-        .catch(() => {
-          document.getElementById('content').innerHTML = 
-            '<div class="error">无法加载剧情文档文件 (zh.md)</div>';
+        .catch((error) => {
+          console.error('加载文件失败:', error);
+          // 如果当前不是英语，尝试加载英语版本
+          if (lang !== "en") {
+            console.log('尝试加载英语版本...');
+            fetch('./en.md')
+              .then(res => {
+                if (!res.ok) throw new Error('英语文件也未找到');
+                return res.text();
+              })
+              .then(md => {
+                document.getElementById('content').innerHTML = marked.parse(md, { 
+                  headerIds: true, 
+                  mangle: false 
+                });
+                document.querySelectorAll('h2,h3,h4').forEach(h => {
+                  h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+                });
+                hljs.highlightAll();
+                resizeKatex();
+              })
+              .catch(() => {
+                document.getElementById('content').innerHTML = 
+                  '<div class="error">无法加载剧情文档文件</div>';
+              });
+          } else {
+            document.getElementById('content').innerHTML = 
+              '<div class="error">无法加载剧情文档文件</div>';
+          }
         });
-    });
+    }
 
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = ''; // 恢复默认大小
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    // 语言切换功能
+    function toggleLanguageMenu() {
+      const menu = document.getElementById("language-menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function changeLanguage(lang) {
+      // 更新URL参数并重新加载页面
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.location.href = url.toString();
+    }
+
+    // 在页面加载时自动加载对应语言的md文件
+    window.addEventListener('load', loadMarkdown);
+
+    // 点击页面其他地方关闭语言菜单
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById("language-menu");
+      const selector = document.querySelector(".language-selector");
+      if (menu.style.display === "block" && 
+          !menu.contains(event.target) && 
+          !selector.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
   </script>
 
 </body>
