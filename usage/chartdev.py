@@ -56,17 +56,33 @@ def generate_chart_dev(data, chart_info_data):
     return modal_html
 
 def generate_chart_info_html(title, difficulty, chart_id, chart_info_data):
-    clean_title = re.sub(r'[()\s]', '', title)
-    difficulty_key = clean_title + difficulty
-    chartInfo = chart_info_data.get(difficulty_key) or chart_info_data.get(str(chart_id))
+    # 适配新的 chartinfo.json 格式
+    chart_info = None
     
-    if chartInfo:
+    # 首先尝试用 chart_id 查找
+    if chart_id and chart_id in chart_info_data:
+        chart_info = chart_info_data[chart_id]
+        # 如果是列表，取第一个元素
+        if isinstance(chart_info, list):
+            chart_info = chart_info[0] if chart_info else None
+    
+    # 如果没找到，尝试用 曲名_难度 格式查找
+    if not chart_info:
+        clean_title = re.sub(r'[()\s]', '', title)
+        difficulty_key = f"{clean_title}_{difficulty}"
+        if difficulty_key in chart_info_data:
+            chart_info = chart_info_data[difficulty_key]
+            # 如果是列表，取第一个元素
+            if isinstance(chart_info, list):
+                chart_info = chart_info[0] if chart_info else None
+    
+    if chart_info:
         info_html = f'''
     <p style="margin-top: 4px;">
-        Combo: {chartInfo.get('combo', 'N/A')}  Tap: {chartInfo.get('tap', 'N/A')}  Drag: {chartInfo.get('drag', 'N/A')}  Hold: {chartInfo.get('hold', 'N/A')}  EX: {chartInfo.get('ex', 'N/A')}
-        有判占比: {chartInfo.get('有判占比', 'N/A')}  有判数: {chartInfo.get('有判数', 'N/A')}  单note得分: {chartInfo.get('单note', 'N/A')}
+        Combo: {chart_info.get('combo', 'N/A')}  Tap: {chart_info.get('tap', 'N/A')}  Drag: {chart_info.get('drag', 'N/A')}  Hold: {chart_info.get('hold', 'N/A')}  EX: {chart_info.get('ex', 'N/A')}
+        有判占比: {chart_info.get('有判占比', 'N/A')}%  有判数: {chart_info.get('有判数', 'N/A')}  单note得分: {chart_info.get('单note', 'N/A')}
     </p>'''
-        if chartInfo.get('error'):
+        if chart_info.get('error'):
             info_html += '<p style="color: red;">Error: 此谱面统计可能有误</p>'
         return info_html
     else:
