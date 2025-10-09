@@ -123,10 +123,7 @@ Trong đó:
 - `acc` là số thập phân biểu thị độ chính xác;
 - `level` biểu thị xếp hạng, được định nghĩa như sau:
 
-```text
-level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
-achievedStatus: 0=clear, 2=R, 3=?, 4=fc, 5=ap, 6=false
-```
+{{14}}
 
 ---
 

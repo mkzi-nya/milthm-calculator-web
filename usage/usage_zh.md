@@ -2,9 +2,8 @@
 ## 目录
 
 - [网站](#网站)
-- [使用说明](#使用说明)
+- [查分器使用说明](#使用说明)
   - [上传存档文件](#上传存档文件)
-  - [输入已解析的数据](#输入已解析的数据)
   - [旧版存档路径](#其他存档路径)
 - [关于 Milthm](#关于-milthm)
   - [游戏基础功能介绍\(官方wiki\)](https://milthm.com/wiki/hans/manual/features)
@@ -102,30 +101,6 @@ _简体中文以外的语言可能无法及时更新_
 [安卓演示视频](https://mkzi-nya.github.io/milthm-calculator-web/files/android.mp4)  
 [IOS演示视频](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)  
 安卓用户[没有访问权限](#没有访问权限)
-
----
-
-### 输入已解析的数据
-
-在主页的输入框中输入数据，格式如下：
-
-```text
-[name],{
-    [Contrasty Angeles,CL,12.3,1010000,1.0000,0,[0,3,4,5],
-    [Contrasty Angeles,CL,12.3,1010000,1.0000,0,[0,3,4,5,v3],
-    [name,Difficulty, constant, score, acc, level,achievedStatus,isv3?]
-}
-```
-
-其中：
-- `acc` 为小数表示准确度；
-- `level` 代表评级，其定义如下：
-- `isv3?` 如果为realityv3(4.0版本实装)成绩，则添加`v3`
-
-```text
-level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
-achievedStatus: 0=clear, 2=R, 3=?, 4=fc, 5=ap, 6=false
-```
 
 ---
 

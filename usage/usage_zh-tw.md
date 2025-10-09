@@ -123,10 +123,7 @@ _简体中文以外的语言可能无法及时更新_
 - `acc` 為小數表示準確度；
 - `level` 代表評級，其定義如下：
 
-```text
-level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
-achievedStatus: 0=clear, 2=R, 3=?, 4=fc, 5=ap, 6=false
-```
+{{14}}
 
 ---
 

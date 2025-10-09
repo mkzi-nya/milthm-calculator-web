@@ -123,10 +123,7 @@ Androidユーザー[アクセス権限がない場合](#アクセス権限がな
 - `acc`は精度を小数で表記；
 - `level`は評価を表し、定義は以下：
 
-```text
-level: 0=R, 1=M, 2=S, 3=A, 4=B, 5=C, 6=F
-achievedStatus: 0=clear, 2=R, 3=?, 4=fc, 5=ap, 6=false
-```
+{{14}}
 
 ---
 

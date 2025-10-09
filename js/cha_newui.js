@@ -159,81 +159,43 @@ function findScore(constant, target) {
     return Math.ceil(850000 + (target - constant) * 100000);
   }
   
-  if (target >= Math.max(0,0.5*c-1.5)) {
+  // 修复这里：将 c 改为 constant
+  if (target >= Math.max(0, 0.5 * constant - 1.5)) {
     const denominator = constant / 300000 + 1 / 100000;
     const score = (target + constant * 11/6 + 8.5) / denominator;
     return Math.min(Math.ceil(score), 849999);
   }
   
-    if (Math.abs(constant - 3) < 1e-6) return 600000;
-    const score = 600000 + (target * 200000) / (constant - 3);
-    return Math.min(Math.ceil(score), 699999);
-}
-function startProcess() {
-  var inp = document.getElementById('inputData').value;
-  if (inp.length > 0) {
-    processData();
-  } else {
-    layer.msg("请输入内容！");
-  }
+  if (Math.abs(constant - 3) < 1e-6) return 600000;
+  const score = 600000 + (target * 200000) / (constant - 3);
+  return Math.min(Math.ceil(score), 699999);
 }
 var shitValue = 0.114514;
 /* ========== 核心流程 ========== */
 function processData() {
   const rawInput = document.getElementById('inputData').value;
 
-  const inputData = rawInput.replace(/\n/g, '').replace(/  /g, '');
-  const isNewFormat = /^\[.*\],\{.*\}$/.test(inputData);
+  // 直接解析JSON输入
+  const jsonText = extractJSON(rawInput);
+  const parsed = tryParseJSON(jsonText) || {};
+  const { Username, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
 
-  let username = "";
-  let userID = "";
-  let allItems = [];
+  const username = Username || parsed.UserName || "";
+  const userID = UserID || "";
 
-  if (isNewFormat) {
-    const m = inputData.match(/^\[(.*?)\],\{(.*)\}$/);
-    const songDataStr = m ? m[2] : "";
-    username = m ? m[1] : "";
+  const itemsSR = Array.isArray(SongRecords)
+    ? SongRecords.map(rec => processSongFromOldFormat(rec, false)).filter(Boolean)
+    : [];
+  const itemsV3 = Array.isArray(SongRecordsV3)
+    ? SongRecordsV3.map(rec => processSongFromOldFormat(rec, true)).filter(Boolean)
+    : [];
 
-    // 抓取每个 [ ... ]（可带 ,v3）
-    const songBlocks = songDataStr.match(/\[[^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*\](?:,?v3)?/g) || [];
-    const items = songBlocks.map(s => processSong(s)).filter(Boolean);
+  const allItems = [...itemsSR, ...itemsV3];
 
-    allItems = items;
+  // 保存完整的原始JSON数据，而不是只保存提取的字段
+  window.extractedFields = parsed;
 
-    // 独立字段（新格式缺少 UserID、对象数组）
-    window.extractedFields = {
-      Username: username || "",
-      UserID: "",
-      SongRecords: [],
-      SongRecordsV3: []
-    };
-
-  } else {
-    const jsonText = extractJSON(rawInput);
-    const parsed = tryParseJSON(jsonText) || {};
-    const { Username, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
-
-    username = Username || parsed.UserName || "";
-    userID   = UserID || "";
-
-    const itemsSR = Array.isArray(SongRecords)
-      ? SongRecords.map(rec => processSongFromOldFormat(rec, false)).filter(Boolean)
-      : [];
-    const itemsV3 = Array.isArray(SongRecordsV3)
-      ? SongRecordsV3.map(rec => processSongFromOldFormat(rec, true)).filter(Boolean)
-      : [];
-
-    allItems = [...itemsSR, ...itemsV3];
-
-    window.extractedFields = {
-      Username: username || "",
-      UserID: userID || "",
-      SongRecords: Array.isArray(SongRecords) ? SongRecords : [],
-      SongRecordsV3: Array.isArray(SongRecordsV3) ? SongRecordsV3 : []
-    };
-  }
-
-  // —— 关键：合并 v2/v3 为单条用于全局与渲染
+  // 合并 v2/v3 为单条用于全局与渲染
   const mergedItems = mergeSongVersions(allItems);
 
   // 全局保存：只保存合并后的
@@ -260,8 +222,8 @@ function processData() {
   // 渲染卡片（基于合并后的）
   mergedItems.forEach(drawCard);
 
-  // —— 保存回“新格式”：保留两条（不合并），v3 尾部自动加 ,v3
-  formatInput(username, allItems);
+  // 直接将完整的原始JSON放入输入框
+  document.getElementById('inputData').value = JSON.stringify(window.extractedFields);
 
   if (typeof initUpload === 'function') {
     try {
@@ -273,7 +235,6 @@ function processData() {
     console.warn('initUpload 未定义，已跳过调用。');
   }
 }
-
 /* ========== 工具函数 ========== */
 function processSong(songBlock) {
   // 支持：
@@ -655,44 +616,8 @@ function drawUserInfo(username, results) {
 
   window.username = username;
   window.average = avg;
-  window.utlr = tlr();
 }
 
-function tlr() {
-  let as, ar;
-  if (window.processedItems.length >= 20) {
-    let items = window.processedItems;
-    let aitems = window.processedItems.slice(0, 20);
-
-    as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-    ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
-    aitems.forEach(i => {
-      i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
-    });
-    for (let i = 20; i < items.length; i++) {
-      let curr = items[i];
-      let ltlr = (curr.singleRealityRaw - ar) / 20 + reality(as + (curr.bestScore - as) / 20, 0);
-      let minLtlrItem = aitems.reduce((min, x) => x.ltlr < min.ltlr ? x : min);
-      if (ltlr > minLtlrItem.ltlr) {
-        let index = aitems.indexOf(minLtlrItem);
-        curr.ltlr = ltlr;
-        aitems[index] = curr;
-
-        as = aitems.reduce((sum, i) => sum + i.bestScore, 0) / aitems.length;
-        ar = aitems.reduce((sum, i) => sum + i.singleRealityRaw, 0) / aitems.length;
-        aitems.forEach(i => {
-          i.ltlr = (i.singleRealityRaw - ar) / 20 + reality(as + (i.bestScore - as) / 20, 0);
-        });
-      }
-    }
-
-    ar = typeof ar !== 'undefined' ? ar : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.singleRealityRaw || 0), 0) / window.processedItems.slice(0, 20).length;
-    as = typeof as !== 'undefined' ? as : window.processedItems.slice(0, 20).reduce((sum, i) => sum + (i.bestScore || 0), 0) / window.processedItems.slice(0, 20).length;
-
-    return reality(as, ar) - 1;
-  }
-  else return 0;
-}
 
 /* ========== 绘制单张卡片（DOM） ========== */
 function drawCard(result, index) {
@@ -837,30 +762,34 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
         const tables = getAllTables(db);
 
         if (tables.includes("kv")) {
+          // 处理存档数据库
           processDBFile(reader.result, SQL);
         } else if (tables.includes("scores")) {
+          // 处理data.db - 直接生成JSON
           const scores = extractScores(db);
           processHistoryRecords(scores);
-          alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，如有需要请上传save.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2. If needed, please upload save.db.");
+alert("注意：data.db内只包含您将Milthm更新至3.2版本之后的游玩记录，且无法区分是否为v3(milthm4.0)成绩，可能不准确，建议上传saves.db\n\nNote: The data.db file only contains your play records after updating Milthm to version 3.2, and cannot distinguish whether it is a v3 (Milthm 4.0) score.");
         } else {
           console.error("数据库不包含 'kv' 或 'scores' 表，无法解析\nThe database does not contain the 'kv' or 'scores' table and cannot be parsed.");
         }
       };
       reader.readAsArrayBuffer(file);
     } else {
+      // 处理其他文件类型
       const reader = new FileReader();
       reader.onload = () => handleFile(reader.result, fileName);
       reader.onerror = () => layer.msg("读取文件失败\nFailed to read the file.");
       reader.readAsText(file);
     }
     console.log("文件处理完成\nFile processing completed.");
-  }catch (error) {
+  } catch (error) {
     console.error("处理文件时出错:", error, "\nAn error occurred while processing the file:", error);
     layer.msg("处理文件时出错，请检查文件格式是否正确\nAn error occurred while processing the file, please check if the file format is correct.", {icon: 2});
-  }finally {
+  } finally {
     layer.closeAll('loading');
   }
 });
+
 function getAllTables(db) {
   try {
     const stmt = db.prepare("SELECT name FROM sqlite_master WHERE type='table'");
@@ -897,10 +826,11 @@ function processHistoryRecords(scores) {
     const chartid = scoreData.chart_id;
     const score = scoreData.score;
     const constantData = constants[chartid];
-    const score_accuracy = scoreData.score_accuracy * 100
+    const score_accuracy = scoreData.score_accuracy * 100;
+    
     if (constantData) {
       const { constant, category, name, yct, ad, ae, af, ag } = constantData;
-      const singleReality = reality(score, constant);
+      const singleReality = realityv3(score, constant);
       scoreData.constant = constant;
       scoreData.category = category;
       scoreData.name = name;
@@ -918,53 +848,120 @@ function processHistoryRecords(scores) {
   }
 
   const userrealityHistory = calculateUserReality(scores);
-  const username = scores[0]?.username;
-  window.dataurlt=userrealityHistory;
-  window.datas=scores;
-  formatInput(username, items);
+  const username = scores[0]?.username || "Unknown Player";
+  
+  // 直接生成JSON数据
+  const jsonData = generateJSONFromScores(scores, username);
+  
+  window.dataurlt = userrealityHistory;
+  window.datas = scores;
+  
+  // 将生成的JSON放入输入框
+  document.getElementById('inputData').value = JSON.stringify(jsonData);
+  
   loadImageCSS().then(() => urltc(userrealityHistory, scores));
-  processData()
+  processData();
 }
-
-function geturltc() {
-  if (window.dataurlt && window.datas) {
-    urltc(window.dataurlt, window.datas);
-  } else {
-    alert("未找到data.db数据");
-  }
+function generateJSONFromScores(scores, username) {
+  const songRecords = [];
+  const songRecordsV3 = [];
+  
+  // 使用Map来去重，只保留每个chart_id的最高分
+  const bestScoresMap = new Map();
+  
+  scores.forEach(scoreData => {
+    const chartId = scoreData.chart_id;
+    const currentScore = scoreData.score;
+    
+    if (!bestScoresMap.has(chartId) || bestScoresMap.get(chartId).score < currentScore) {
+      bestScoresMap.set(chartId, scoreData);
+    }
+  });
+  
+  // 将最佳分数转换为SongRecords格式
+  bestScoresMap.forEach((scoreData, chartId) => {
+    const constantData = constants[chartId];
+    if (!constantData) return;
+    
+    const { constant, constantv3, category, name } = constantData;
+    const record = {
+      BeatmapID: chartId,
+      BestScore: scoreData.score,
+      BestAccuracy: scoreData.score_accuracy,
+      BestLevel: scoreData.score === 1010000 ? 0 : 
+                scoreData.score >= 1005000 ? 1 : 
+                scoreData.score >= 950000 ? 2 : 
+                scoreData.score >= 900000 ? 3 : 
+                scoreData.score >= 850000 ? 4 : 
+                scoreData.score >= 800000 ? 5 : 6,
+      AchievedStatus: (() => {
+        const status = [3];
+        if (scoreData.score >= 800000) status.push(0);
+        if (scoreData.score_good_count + scoreData.score_bad_count + scoreData.score_miss_count === 0) status.push(5);
+        if (scoreData.score_bad_count + scoreData.score_miss_count === 0) status.push(4);
+        if (scoreData.score < 800000) status.push(6);
+        return status;
+      })()
+    };
+    songRecordsV3.push(record);
+  });
+  
+  return {
+    Username: username,
+    UserID: "",
+    SongRecords: songRecords,
+    SongRecordsV3: songRecordsV3
+  };
 }
 
 function calculateUserReality(scores) {
   let b20_lg = new Map();
   let userrealityHistory = [];
   let lastUserReality = null;
+  
   scores.forEach(scoreData => {
     const { chart_id, score, played_at } = scoreData;
     if (!b20_lg.has(chart_id) || b20_lg.get(chart_id).score < score) {
       b20_lg.set(chart_id, scoreData);
     }
+    
     let b20 = Array.from(b20_lg.values())
       .sort((a, b) => b.singleReality - a.singleReality)
       .slice(0, 20);
+      
     let filteredReality = b20.slice(0, 20).filter(data => data.singleReality > 0);
     let sumReality = filteredReality.reduce((sum, data) => sum + data.singleReality, 0);
     let userreality = sumReality / 20;
+    
     if (lastUserReality === null || userreality !== lastUserReality) {
       userrealityHistory.push({ userreality, played_at });
       lastUserReality = userreality;
     }
   });
-  window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, score_perfect_count, score_good_count, score_bad_count, score_miss_count, 
-  ...rest }) => ({
+  
+  // 更新window.items为统一格式
+  window.items = Array.from(b20_lg.values()).map(({ score, singleReality, score_accuracy, grade, score_perfect_count, score_good_count, score_bad_count, score_miss_count, ...rest }) => ({
     ...rest,
     bestScore: score,
     singleRealityRaw: singleReality,
     singleReality: singleReality.toFixed(2),
     bestAccuracy: score_accuracy,
-    bestLevel: score===1010000?0:score>=1005000?1:score>=950000?2:score>=900000?3:score>=850000?4:score>=800000?5:6,
-    achievedStatus: (() => { const a=[3]; score>=800000&&a.push(0); score_good_count+score_bad_count+score_miss_count===0&&a.push(5); score_bad_count+score_miss_count===0&&a.push(4); score<800000&&a.push(6); return a })()
-
+    bestLevel: score === 1010000 ? 0 : 
+               score >= 1005000 ? 1 : 
+               score >= 950000 ? 2 : 
+               score >= 900000 ? 3 : 
+               score >= 850000 ? 4 : 
+               score >= 800000 ? 5 : 6,
+    achievedStatus: (() => {
+      const status = [3];
+      if (score >= 800000) status.push(0);
+      if (score_good_count + score_bad_count + score_miss_count === 0) status.push(5);
+      if (score_bad_count + score_miss_count === 0) status.push(4);
+      if (score < 800000) status.push(6);
+      return status;
+    })()
   }));
+  
   return userrealityHistory;
 }
 
@@ -1068,7 +1065,7 @@ function urltc(userrealityHistory, scores) {
     ctx.fillText("(由Panyi提供计算方式)", 1850, 1380);
     ctx.font = "40px Arial";
     ctx.fillText("最近游玩", 400, 110);
-    ctx.fillText("推分建议", 400, 760);
+    //ctx.fillText("推分建议", 400, 760);
 
     drawRadarChart(ctx, [d, e, f, g, h], 1150, 680, 700, 700);
 
@@ -1080,7 +1077,7 @@ function urltc(userrealityHistory, scores) {
       for (const it of sim) {
         if (it.name === track.name && Math.abs(it.constant - track.constant) < 1e-3) {
           it.bestScore        = 1010000;
-          it.singleRealityRaw = reality(1010000, track.constant);
+          it.singleRealityRaw = realityv3(1010000, track.constantv3);
           found = true;
           break;
         }
@@ -1088,9 +1085,9 @@ function urltc(userrealityHistory, scores) {
       if (!found) {
         sim.push({
           name: track.name,
-          constant: track.constant,
+          constantv3: track.constantv3,
           bestScore: 1010000,
-          singleRealityRaw: reality(1010000, track.constant),
+          singleRealityRaw: realityv3(1010000, track.constantv3),
         });
       }
       const newAvg = sim
@@ -1119,7 +1116,7 @@ function urltc(userrealityHistory, scores) {
       .sort((a, b) => b.gain - a.gain)
       .slice(0, 25);
 
-    /* ---------- 绘制表格 ---------- */
+    /* ---------- 绘制表格 ---------- 
     const tableX = 100, tableY = 800;
     const rowH = 25;
     const colW = [60, 260, 100, 150];
@@ -1167,7 +1164,7 @@ function urltc(userrealityHistory, scores) {
                   tableX + colW[0] + colW[1] + colW[2] + 6,
                   y + rowH / 2);
     });
-
+    */
     // 最近 10 次分数卡（封面 & 图标也从 CSS 取）
     lg_drawCards(ctx, scores.slice(-10).reverse(), 50, 150).then(() => {
       const link = document.createElement("a");
