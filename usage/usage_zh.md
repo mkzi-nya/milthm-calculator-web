@@ -7,6 +7,7 @@
   - [输入已解析的数据](#输入已解析的数据)
   - [旧版存档路径](#其他存档路径)
 - [关于 Milthm](#关于-milthm)
+  - [游戏基础功能介绍\(官方wiki\)](https://milthm.com/wiki/hans/manual/features)
   - [Reality 计算公式](#reality-计算公式)
   - [Score V3算法](#score-v3算法)
   - [关于存档文件](#关于存档文件)
@@ -14,6 +15,7 @@
   - [结算评级](#结算评级)
   - [完成状态](#完成状态)
   - [露晓卉庭](#露晓卉庭)
+  - [绮梦](#sweetdream)
   - [隐藏曲解锁方式](#隐藏曲解锁方式)
   - [定数表](#定数表)
   - [谱师统计](#谱师统计)
@@ -318,6 +320,7 @@ function calculateScore(input) {
 
 ## 音符判定
 
+关于判定系统，可查看官方wiki介绍：[判定系统](https://milthm.com/wiki/hans/manual/judgment/)  
 游戏中单个音符的判定共分为五种，分别为：
 
 - **Perfect**：获得 100% 分数及 100% ACC。
@@ -372,8 +375,9 @@ function calculateScore(input) {
 ---
 
 ## 露晓卉庭
+关于露晓卉庭，可查看官方wiki：[“露晓卉庭”介绍](https://milthm.com/wiki/hans/blog/2025-09-12)
 
-> 该文档具有时效性 以实际情况为准  
+> 下方文档具有时效性 以实际情况为准  
 
 在这里，可以点击花盆种植作物。  
 开启`绮梦`游玩曲目可以收集`露凝`，使用`露凝`浇水可以加速作物成熟。  
@@ -459,6 +463,60 @@ function calculateScore(input) {
 当前版本将等级升至10级，需`47.5`小时  
 当前版本全解锁至少需 `蘑菇`\*15,`装饰`\*95,`食物`\*1165  
 至少需`118`小时
+
+
+
+---
+
+## 绮梦 <a id="sweetdream"></a>
+关于绮梦玩法介绍，可查看官方wiki：[梦境涟漪“绮梦”介绍](https://milthm.com/wiki/hans/blog/2025-08-23)
+在开启「绮梦」玩法后在游戏中将出现「梦境纯净度」收集条。  
+「梦境纯净度」收集条的机制如下(Great归为Good)：  
+| 难度 | Good及以下判定掉血倍率 | 回血倍率 | Good保护阈值 |
+|-|-|-|-|
+| Drizzle | 30% | 500% | 90 |
+| Sprinkle | 60% | 300% | 80 |
+| Cloudburst | 100% | 100% | 60 |
+| Clear | 110% | 80% | 50 |
+| 其他 | 100% | 100% | 60 |
+
+> 洸花只提升血条上限而不提升保护阈值
+
+| 连击数 | 连击回血加成 |
+|-|-|
+| 0~3 | 0 |
+| 4~7 | 100% |
+| 8~11 | 200% |
+| 12~15 | 300% |
+| >16 | 400% |
+
+ex音符、drag音符固定只能恢复 30% 的其他音符的恢复量，并且“连击回血加成”增益对ex音符、drag音符无效  
+单个音符的基础恢复血条值是 0.1  
+Good 判定的基础扣血量是 12.0，Bad 和 Miss 是 8.0   
+  
+  
+假如目前连击数 > 16，Cloudburst 命中单个 tap、hold音符并获得 perfect 判定：  
+最终恢复 = 0.1 \* 400% \* 100% \* 角色buff(假设这里没有) = 0.4  
+  
+假如目前连击数 > 16，Cloudburst 命中单个 ex音符 或 drag音符：  
+最终恢复 = 0.1 \* 30% = 0.03  
+  
+  
+假如目前连击数 > 16，Drizzle 命中单个 tap、hold音符并获得 perfect 判定：  
+最终恢复 = 0.1 \* 400% \* 500% \* 角色buff(假设这里没有) = 2.0  
+
+假如目前连击数 > 16，Drizzle 命中单个 ex音符 或 drag音符：  
+最终恢复 = 0.1 \* 30% \* 500% = 0.15  
+  
+  
+Drizzle 单个音符爆 good：  
+最终损失 = 12.0 * 30% * 角色buff(假设这里没有) = 3.6  
+  
+Drizzle 单个音符爆 bad / miss：  
+最终损失 = 8.0 * 30% * 角色buff(假设这里没有) = 2.4  
+  
+爆 good 损失的血量如果扣除后会低于 保护阈值，只会扣到保护阈值的位置，比如 Drizzle 难度在血量 = 91 的时候爆g，  
+最终只会损失 1.0 血，而不是 3.6 血  
 
 
 
@@ -903,6 +961,10 @@ function calculateScore(input) {
 [返回目录](#目录)
 
 ### Milthm Wiki
+
+- **[官方wiki](https://milthm.com/wiki/hans/manual/features)**
+
+- **[官方wiki\(English\)](https://milthm.com/wiki/en/manual/features)**
 
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
 

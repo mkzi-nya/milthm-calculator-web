@@ -611,6 +611,10 @@ Score images embed save data as text—upload to [http://k9.lv/c/prefedit.html](
 
 ### Milthm Wiki
 
+- **[官方wiki](https://milthm.com/wiki/hans/manual/features)**
+
+- **[官方wiki\(English\)](https://milthm.com/wiki/en/manual/features)**
+
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
 
 - **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**

@@ -656,6 +656,10 @@ Androidのバージョンが高い場合、この問題が発生する可能性�
 
 ### Milthm Wiki
 
+- **[官方wiki](https://milthm.com/wiki/hans/manual/features)**
+
+- **[官方wiki\(English\)](https://milthm.com/wiki/en/manual/features)**
+
 - **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
 
 - **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
