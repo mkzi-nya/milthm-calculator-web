@@ -1597,7 +1597,7 @@ function drawCards(ctx, canvas, items, imgPairs) {
           y = y0 + Math.floor(i / 2) * row - (i % 2 ? 0 : 50);
 
     // 卡底
-    ctx.fillStyle = 'rgba(128,128,128,.4)';
+    ctx.fillStyle = it.isV3 || (Number.isFinite(it.bestLevel) && it.bestLevel <= 1) || (Number.isFinite(it.bestScore) && it.bestScore >= 1005000) || (Array.isArray(it.achievedStatus) && (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))) ? 'rgba(128,128,128,.4)' : 'rgba(128,128,128,.2)';
     ctx.fillRect(x, y, cardW, cardH);
 
     // 排名号
