@@ -178,10 +178,12 @@ function processData() {
   // 直接解析JSON输入
   const jsonText = extractJSON(rawInput);
   const parsed = tryParseJSON(jsonText) || {};
-  const { Username, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
+  const { Username, Nickname, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
 
   const username = Username || parsed.UserName || "";
   const userID = UserID || "";
+  window.userID=userID;
+  window.Nickname=Nickname;
 
   const itemsSR = Array.isArray(SongRecords)
     ? SongRecords.map(rec => processSongFromOldFormat(rec, false)).filter(Boolean)
@@ -595,12 +597,13 @@ function extractHeaderFields(parsed) {
   // 传入已 JSON.parse 的对象；任何字段缺失都用空值兜底
   const Username = (parsed && (parsed.Username || parsed.UserName)) || "";
   const UserID   = (parsed && parsed.UserID) || "";
+  const Nickname   = (parsed && parsed.Nickname) || "";
 
   // SongRecords / SongRecordsV3 必须是数组才返回，否则空数组
   const SongRecords   = (parsed && Array.isArray(parsed.SongRecords))   ? parsed.SongRecords   : [];
   const SongRecordsV3 = (parsed && Array.isArray(parsed.SongRecordsV3)) ? parsed.SongRecordsV3 : [];
 
-  return { Username, UserID, SongRecords, SongRecordsV3 };
+  return { Username, Nickname, UserID, SongRecords, SongRecordsV3 };
 }
 
 /* ========== 显示用户信息 ========== */
@@ -1387,13 +1390,14 @@ function downloadImage() {
       ctx.fillText(star, 660, 75);
     }
 
-    ctx.fillText(`Player: ${window.username || ''}`, 660, 100);
+    ctx.fillText(`Player: ${window.username || ''}  (${window.Nickname || ''})`, 660, 100);
+    ctx.fillText(`userID: ${window.userID || ''}`, 660, 128);
     if (yrjds == "true") {
-      ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 129);
+      ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 160);
     } else {
       let text = `Reality: ${window.average1 ?? ''}`;
-      if ((window.average1 || 0) >= 12.5) text += "    🐉👃👈😨";
-      ctx.fillText(text, 660, 129);
+      if ((window.average1 || 0) >= 13.4) text += "    🐉👃👈😨";
+      ctx.fillText(text, 660, 160);
     }
     //ctx.fillText(`Ytilaer: ${(window.utlr || 0).toFixed(4)}`, 660, 160);
 
@@ -1414,7 +1418,7 @@ function drawTip() {
   const n = 1;
   let tip;
 
-  if (window.average1 >= 12.7 && Math.random() < 0.75) {
+  if (window.average1 >= 13.45 && Math.random() < 0.75) {
     tip = lines[Math.floor(Math.random() * Math.min(n, lines.length))];
   } else {
     tip = lines[Math.floor(Math.random() * lines.length)];
