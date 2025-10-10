@@ -1566,7 +1566,7 @@ async function downloadImage() {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>查分结果-${new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0]}</title>
         <style>
             @font-face {
                 font-family: 'Chill Round';
@@ -2117,7 +2117,7 @@ async function downloadImage() {
 
                 const element = document.querySelector('.bg');
                 const dataURL = await htmlToImage.toPng(element, {
-                    pixelRatio: 2,
+                    pixelRatio: ${totalCardCount < 50 ? '2' : '1'},
                     style: {
                         margin: '0',
                         transform: 'translate(0, 0)',
@@ -2469,7 +2469,7 @@ function limitText(str, len = 16) {
 // 得到卡片 html
 function getCardHtml(items, maxCount) {
   const htmls = []
-  const getItemHtml = (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 16) => {
+  const getItemHtml = (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 14) => {
     if (i + 1 > maxCount && !ignoreMaxCount) {
       return
     }
@@ -2503,7 +2503,7 @@ function getCardHtml(items, maxCount) {
     // 封面与段位图
     // 等级/段位：映射到 .icon-N
     const iconName = getLevelIconName(it);
-    const imgName = it.name.replace("#", '').replace("?", '').replace(">", '').replace("<", '').replace("*", '').replace('"', '').replace("|", '').replace("/", '').replace("\\", '').replace(":", '');
+    const imgName = it.name.replaceAll("#", '').replaceAll("?", '').replaceAll(">", '').replaceAll("<", '').replaceAll("*", '').replaceAll('"', '').replaceAll("|", '').replaceAll("/", '').replaceAll("\\", '').replaceAll(":", '');
     const coverImgName = `${imgName}.jpg`;
     const iconImgName = iconName;
     // const coverImgName = imgPairs[i]?.[0] || '';
@@ -2599,7 +2599,7 @@ function getCardHtml(items, maxCount) {
       <aside class="down">
     `)
   }
-  window.norlt.forEach((it, i) => { getItemHtml(it, i, true, "EX #", 13) });
+  window.norlt.forEach((it, i) => { getItemHtml(it, i, true, "EX #", 11) });
   const cardsHtml = `<aside class="down">
   ${htmls.join("\n")}
   </aside>`
