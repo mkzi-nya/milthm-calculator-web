@@ -275,7 +275,9 @@
             <hr />
             <button class="layui-btn layui-btn-primary"
               onclick="javascript:loadImage_nya();"
-              data-i18n="generateImage">生成图像</button>
+                        <button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage_pr();" data-i18n="generateImage">生成图像</button>
+                        <!-- TODO: generateImageLegacy i18n -->
+                        <button class="layui-btn layui-btn-primary" onclick="javascript:achive_downloadImage_pr();" data-i18n="generateImageLegacy">生成图像(旧版)</button>
             <button class="layui-btn layui-btn-primary"
               onclick="showSettings();" data-i18n="settings">查分图设置</button>
             <div id="picgen" style="display:none;">
