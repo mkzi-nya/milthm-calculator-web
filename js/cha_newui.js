@@ -1,5 +1,5 @@
 
-const Updated = "Updated at 2025.10.10 3:00(UTC+8)"
+const Updated = "Updated at 2025.10.10 22:00(UTC+8)"
 var cha_newui_js_ver = 7
 
 async function renderToCanvas(element) {
@@ -381,6 +381,7 @@ function mergeSongVersions(items) {
         category: it.category,
         constant: it.constant,
         constantv3: it.constantv3,
+        yct: it.yct,
         bestScore: it.bestScore,
         bestAccuracy: parseFloat(it.bestAccuracy), // 转成数值，最后再格式化
         bestLevel: it.bestLevel,
@@ -1450,8 +1451,8 @@ async function downloadImage() {
     }
   });
   items.forEach(item => {
-    if (item.achievedStatus?.includes(5) && item.constant > maxConstant) {
-      maxConstant = item.constant;
+    if (item.achievedStatus?.includes(5) && (( yrjds == 'true' ? item.yct ?? item.constantv3 : item.constantv3 ) > maxConstant)) {
+      maxConstant = yrjds == 'true' ? item.yct ?? item.constantv3 : item.constantv3;
     }
     if (item.category == "DZ" || item.category == "SK" || item.category == "CB" || item.category == "CL") {
       // progress[item.category].all++
@@ -1467,27 +1468,17 @@ async function downloadImage() {
     }
 
   });
-
-
-
-  if (yrjds == 'true') {
-    // 愚人节都是 longbee
-    maxConstant *= 20;
-  }
-  if (maxConstant > 12) star = 3;
+  if (maxConstant > 240) star = 114514;
+  else if (maxConstant > 200) star = 9;
+  else if (maxConstant > 180) star = 8;
+  else if (maxConstant > 160) star = 7;
+  else if (maxConstant > 140) star = 6;
+  else if (maxConstant > 120) star = 5;
+  else if (maxConstant > 100) star = 4;
+  else if (maxConstant > 12) star = 3;
   else if (maxConstant > 9) star = 2;
   else if (maxConstant > 6) star = 1;
-
-  if (yrjds == 'true') {
-    if (maxConstant > 240) star = 114514;
-    else if (maxConstant > 200) star = 9;
-    else if (maxConstant > 180) star = 8;
-    else if (maxConstant > 170) star = 7;
-    else if (maxConstant > 140) star = 6;
-    else if (maxConstant > 120) star = 5;
-    else if (maxConstant > 100) star = 4;
-  }
-
+  
   // 选择背景图：优先文件输入（自定义），否则随机选
   const bgInput = document.getElementById('bgImage');
   const hasFile = bgInput && bgInput.files && bgInput.files[0];
@@ -2460,7 +2451,7 @@ function getLevelIconName(it) {
   else if (Array.isArray(it.achievedStatus) && it.achievedStatus.includes(5)) iconName = `${it.bestLevel}0`;
   else if (Array.isArray(it.achievedStatus) && it.achievedStatus.includes(4)) iconName = `${it.bestLevel}1`;
   else iconName = `${it.bestLevel}`;
-  console.log("it", it, iconName)
+  //console.log("it", it, iconName)
   // 数字类统一映射为 .icon-{N}
   // 若 iconName 不是纯数字，尝试解析；失败则显示 ERROR icon
   const n = Number(iconName);
@@ -2492,7 +2483,7 @@ function getCardHtml(items, maxCount) {
     const yrjds = document.getElementById('yrjds')?.value;
     const singleReality = yrjds != "true" ? it.singleReality : (it.singleReality * 20).toFixed(2)
     if (yrjds == "true") {
-      consttext = `${(it.constantv3 * 20).toFixed(1)}`;
+      consttext = `${it.yct || it.constantv3.toFixed(1)}`;
     }
     const rating = `${it.category} ${consttext} &gt; ${(singleReality ?? '0.00')}`
     // 目标分
@@ -2660,7 +2651,7 @@ function drawCards(ctx, canvas, items, imgPairs) {
     const acc = `${(((it.bestAccuracy ?? 0) * 100) || 0).toFixed(2)}%`;
     if (document.getElementById('yrjds')?.value === 'true') {
       ctx.fillText(
-        `${it.category} ${it.yct || it.constant} > ${((it.singleRealityRaw ?? 0) * 20).toFixed(1)}   ${acc}`,
+        `${it.category} ${it.yct || it.constantv3} > ${((it.singleRealityRaw ?? 0) * 20).toFixed(1)}   ${acc}`,
         x + 208,
         y + 98
       );
