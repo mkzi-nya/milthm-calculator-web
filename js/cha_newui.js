@@ -1522,7 +1522,7 @@ async function downloadImage() {
     // 构造 tip
   }
   if (window.average1 >= 13.45 && Math.random() < 0.75) {
-    tip = lines[Math.floor(Math.random() * Math.min(n, lines.length))];
+    tip = lines[Math.floor(Math.random() * Math.min(1, lines.length))];
 
   } else {
     tip = lines[Math.floor(Math.random() * lines.length)];
@@ -1825,6 +1825,7 @@ async function downloadImage() {
             .cardtext {
                 color: white;
                 padding: 5px;
+                padding-left: 0;
                 width: 205px;
             }
 
@@ -1918,6 +1919,8 @@ async function downloadImage() {
 
             .line {
                 border: 3px solid #d1d8ff;
+                background-color: #d1d8ff;
+                width: 0;
                 height: 25px;
                 border-radius: 100px;
             }
@@ -2270,6 +2273,7 @@ function archiveDownloadImage() {
         return;
       }
       let lines = window.tipsCache;
+      const n = 1;
       let tip;
 
       if (window.average1 >= 13.475 && Math.random() < 0.5) {
@@ -2549,7 +2553,7 @@ function getCardHtml(items, maxCount) {
                   <div
                       style="display: flex; align-items: center; padding-bottom: 9px; position: relative;">
                       <div
-                          style="width: 6px; height: 18px; border-radius: 5px; margin-right: 5px;"
+                          style="width: 6px; height: 18px; border-radius: 5px; margin-right: 5px; margin-left: 8px;"
                           class="${category}"></div>
                       <h4
                           style="font-weight: normal"
@@ -2562,7 +2566,7 @@ function getCardHtml(items, maxCount) {
                       <p class="score ${gradeClass}">${scoreStr}</p>
                   </div>
                   <p
-                      style="margin-left: 8px; font-size: 0.9em; margin-bottom: 5px; color:#dde3ffc9;">${targetScoreText}</p>
+                      style="margin-left: 9px; font-size: 0.9em; margin-bottom: 5px; color:#dde3ffc9;">${targetScoreText}</p>
                   <div
                       style="display: flex; justify-content: space-between; margin: 10px 8px 0 8px; align-items: center; font-size: 0.85em;">
                       <p
