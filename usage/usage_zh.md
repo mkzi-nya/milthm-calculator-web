@@ -5,6 +5,7 @@
 - [查分器使用说明](#使用说明)
   - [上传存档文件](#上传存档文件)
   - [旧版存档路径](#其他存档路径)
+  - [在线客服](#在线客服)
 - [关于 Milthm](#关于-milthm)
   - [游戏基础功能介绍\(官方wiki\)](https://milthm.com/wiki/hans/manual/features)
   - [Reality 计算公式](#reality-计算公式)
@@ -133,6 +134,14 @@ _简体中文以外的语言可能无法及时更新_
   ```text
   $HOME/.config/unity3d/Morizero/Milthm/
   ```
+
+---
+
+### 在线客服
+
+- [客服A\(中国大陆找TA\)](https://www.deepseek.com/)
+- [客服B](https://chatgpt.com/)
+问题描述：将你看不懂的地方复制后发给TA即可  
 
 ---
 
