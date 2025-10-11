@@ -607,6 +607,7 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 | [花月](info:info("花月"))               | [2.0](info:info("花月", "Drizzle"))  | [8.2](info:info("花月", "Sprinkle"))  | [9.3](info:info("花月", "Cloudburst"))  | -    | - |
 | [暮予星光](info:info("暮予星光"))           | [2.0](info:info("暮予星光", "Drizzle"))  | [7.5](info:info("暮予星光", "Sprinkle"))  | [9.1](info:info("暮予星光", "Cloudburst")) | -    | - |
 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome"))           | [2.5](info:info("Fantasia Sonata Sky Syndrome", "Drizzle"))  | [7.1](info:info("Fantasia Sonata Sky Syndrome", "Sprinkle"))  | [10.5](info:info("Fantasia Sonata Sky Syndrome", "Cloudburst")) | -    | - |
+| [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection"))  | [1.0](info:info("Fantasia Sonata Reflection", "Drizzle")) | -  | - | - | - |
 
 ---
 
