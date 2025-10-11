@@ -41,7 +41,7 @@
 
 ## Website
 
-{{网站}}
+{{web}}
 
 ---
 
@@ -129,13 +129,14 @@ Reality is calculated based on score and chart difficulty:
 
 Single-song Reality formula (where s = score, c = difficulty):  
 
-{{reality公式}}
+{{reality}}
+{{realityv2}}
 
 [Reality Reference Table](#reality-reference-table)
 
 #### Code Implementation:  
 
-{{公式js}}
+{{realityjs}}
 
 ---
 
@@ -228,7 +229,7 @@ Post-game evaluations:
 
 [Back to Top](#table-of-contents)
 
-{{章节en}}
+{{vhjp-en}}
 
 > - SP/challenge charts excluded from Reality calculations.  
 > - Due to rounding, displayed Reality may differ (e.g., 13.005 → 13.00).  
@@ -236,7 +237,7 @@ Post-game evaluations:
 Current theoretical max Reality: `12.725` (displayed as 12.72)  
 Top 20 hardest charts:  
 
-{{章节en1}}
+{{vhjp-en1}}
 
 ---
 
@@ -343,4 +344,4 @@ A string specifying a file's location in a directory tree, using separators like
 
 ### Reality Reference Table
 
-{{reality表}}
+{{realityv3}}
