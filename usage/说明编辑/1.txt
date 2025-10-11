@@ -42,14 +42,14 @@ function realityv2(score, c) {
 
 ```
 }
-"判定范围":{
+"pdfw":{
 
 | Perfect | perfect | Great | Good | Bad | Miss |
 |-|-|-|-|-|-|
 | ±35ms | ±35-70ms | ±70-105ms | ±105-140 | ±140-155ms | >155ms |
 
 }
-"章节zh1":{
+"vhjp-zh1":{
 
 
 | 排行 | 标题  | 难度 | 定数 |
@@ -242,7 +242,7 @@ function realityv2(score, c) {
 ---
 
 }
-"章节zh":{
+"vhjp-zh":{
 - [说明](#说明)
 - [主线章节](#介绍---天气预报)
   - [天气预报](#介绍---天气预报)
@@ -258,7 +258,7 @@ function realityv2(score, c) {
   - [梦境磁带](#单曲---梦境磁带)
   - [露晓卉庭](#单曲---露晓卉庭)
 }
-"联系我们":{
+"lx-wm":{
 
 - **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
 
@@ -349,7 +349,7 @@ rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
 $$
 
 }
-"章节en":{
+"vhjp-en":{
 - [Description](#description)
 - [Main Chapter](#introduction---weather-report)
   - [Weather Report](#introduction---weather-report)
@@ -364,7 +364,7 @@ $$
   - [Gathering Blossoms Under Rain](#single---gathering-blossoms-under-rain)
   
 }
-"章节en1":{
+"vhjp-en1":{
 > Click the link to view the detailed information of the track/chart.
 > The track/chart details are sourced from Milthm Lang's repository [RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/), with permission granted for use.
 
@@ -548,7 +548,7 @@ $$
 
 
 }
-"网站":{
+"web":{
 
 - [k9.lv/c/](htt://k9.lv/c/)
 - [mhtlim.top](https://mhtlim.top/)
@@ -559,7 +559,7 @@ $$
 > 以上网站由mkzi_nya托管
 
 }
-"章节ja":{
+"vhjp-ja":{
 - [説明](#説明)
 - [主な章](#イントロダクション---天気予報)
   - [天気予報](#イントロダクション---天気予報)
@@ -573,7 +573,7 @@ $$
   - [夢のテープ](#シングル---夢のテープ)
   - [Gathering Blossoms Under Rain](#シングル---gathering-blossoms-under-rain)
 }
-"章节ja1":{
+"vhjp-ja1":{
 > Click the link to view the detailed information of the track/chart.
 > The track/chart details are sourced from Milthm Lang's repository [RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/), with permission granted for use.
 
@@ -757,7 +757,7 @@ $$
 
 
 }
-"群":{
+"qy":{
   记录于25.8.20 10:30  
   
 | 群 | 群号 | 人数 |
