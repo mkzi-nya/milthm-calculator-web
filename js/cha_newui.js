@@ -1,6 +1,23 @@
 
-const Updated = "Updated at 2025.10.10 22:00(UTC+8)"
+const Updated = "Updated at 2025.10.11 02:38 (UTC+8)"
 var cha_newui_js_ver = 7
+const BACKGROUND_COUNT = 11
+const BACKGROUND_COUNT_YRJ = 4
+
+function getStrLength(str) {
+  let len = 0;
+  for (const ch of str) {
+    const code = ch.charCodeAt(0);
+    if (code > 255) len += 2;                // 全角
+    else if (/[A-Z]/.test(ch) && ch !== 'I') len += 1.5; // 大写但非 I
+    else len += 1;                           // 其他半角
+  }
+  return len;
+}
+function buildNumArray(n) {
+  const arr = Array.from({ length: n }, (_, i) => i + 1);
+  return arr
+}
 
 async function renderToCanvas(element) {
   // 动态加载 html2canvas
@@ -1451,7 +1468,7 @@ async function downloadImage() {
     }
   });
   items.forEach(item => {
-    if (item.achievedStatus?.includes(5) && (( yrjds == 'true' ? item.yct ?? item.constantv3 : item.constantv3 ) > maxConstant)) {
+    if (item.achievedStatus?.includes(5) && ((yrjds == 'true' ? item.yct ?? item.constantv3 : item.constantv3) > maxConstant)) {
       maxConstant = yrjds == 'true' ? item.yct ?? item.constantv3 : item.constantv3;
     }
     if (item.category == "DZ" || item.category == "SK" || item.category == "CB" || item.category == "CL") {
@@ -1478,21 +1495,22 @@ async function downloadImage() {
   else if (maxConstant > 12) star = 3;
   else if (maxConstant > 9) star = 2;
   else if (maxConstant > 6) star = 1;
-  
+
   // 选择背景图：优先文件输入（自定义），否则随机选
   const bgInput = document.getElementById('bgImage');
   const hasFile = bgInput && bgInput.files && bgInput.files[0];
-  async function getBgFile() {
+  async function getBgFile(index) {
     if (hasFile) {
       const bg_filename = await readFileAsDataURL(hasFile);
       return bg_filename;
     } else if (yrjds == 'true') {
-      return `./jpgs/background/yrj-${Math.floor(Math.random() * 3) + 1}.jpg`;
+      return `./jpgs/background/yrj-${index}.avif`;
     } else {
-      return `./jpgs/background/${Math.floor(Math.random() * 8) + 1}.jpg`;
+      return `./jpgs/background/${index}.avif`;
     }
   }
-  const bg_filename = await getBgFile();
+  const bg_index = yrjds == 'true' ? Math.floor(Math.random() * BACKGROUND_COUNT_YRJ) + 1 : Math.floor(Math.random() * BACKGROUND_COUNT) + 1;
+  const bg_filename = await getBgFile(bg_index);
   // console.log("bgfile", bg_filename)
 
   const isRealityV3 = checkTop20V3Condition();
@@ -1558,6 +1576,7 @@ async function downloadImage() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>查分结果-${new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0]}</title>
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
         <style>
             @font-face {
                 font-family: 'Chill Round';
@@ -1585,14 +1604,13 @@ async function downloadImage() {
 
 
             body {
-                background-color: #1e1e24;
+                background-color: #191820;
                 color: white;
             }
             main {
                 width: 100%;
                 min-height: 1778px;
                 background-color: #0009;
-                /* backdrop-filter: blur(10px); */
             }
 
             .main-container {
@@ -1666,6 +1684,10 @@ async function downloadImage() {
                 justify-items: start;
             }
 
+            .hidden {
+              display: none;
+            }
+
             h1 {
                 font-weight: normal;
                 font-size: 2.5em;
@@ -1710,7 +1732,7 @@ async function downloadImage() {
                 background: url(./jpgs/v50-bg.png);
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
-                box-shadow: 0 0 14px rgba(255, 45, 45, 0.77);
+                box-shadow: 0 0 14px rgba(255, 70, 70, 0.77);
                 /* background-position-y: 1px; */
                 color: white;
             }
@@ -1763,7 +1785,6 @@ async function downloadImage() {
                 height: 100%;
                 border-radius: 15px;
                 overflow: hidden;
-                backdrop-filter: blur(10px);
             }
 
             .cardcover {
@@ -1779,7 +1800,7 @@ async function downloadImage() {
 
             .cardcover-v3 {
                 /* background: linear-gradient(45deg,rgba(58, 57, 88, 0.85),rgba(49, 41, 77, 0.85)); */
-                background-color: rgba(49, 48, 85, 0.85);
+                background-color: rgba(47, 46, 77, 0.85);
             }
 
             .card {
@@ -1789,7 +1810,7 @@ async function downloadImage() {
                 border-radius: 25px;
             }
 
-            #capture {
+            button {
                 padding: 10px;
                 width: 200px;
                 border-radius: 100px;
@@ -1800,17 +1821,23 @@ async function downloadImage() {
                 align-items: center;
                 justify-content: center;
                 /* text-align: center; */
-                font-size: 1.5em;
+                font-size: 1.3em;
                 transition: background-color 0.2s;
                 margin: 20px;
+                color: #FFF;
+                box-shadow: 0 8px 5pxrgba(222, 195, 252, 0.6);
+                /* background: linear-gradient(90deg, #DEC3FC, #A1C5FC);*/
+                background: #0B0A0F88;
+                font-weight: 200;
+                border: 2px solid #56555A;
             }
 
-            #capture:hover {
-                background-color: #DDD;
+            button:hover {
+                background-color:#262333;
             }
 
-            #capture:active {
-                background-color: #BBB;
+            button:active {
+                background-color:#363346;
             }
 
             .cardtext {
@@ -1937,7 +1964,7 @@ async function downloadImage() {
 
             .progress p {
                 margin-right: 5px;
-                font-size: 0.85em;
+                font-size: 0.9em;
             }
 
             .prog-line {
@@ -2083,7 +2110,12 @@ async function downloadImage() {
                 </footer>
             </main>
             </div>
-            <button id="capture">保存图片</button>
+            <div style="display: flex; justify-content: center;">
+              <button id="capture">保存图片</button>
+              <button onclick="changeBackground()">换一张背景</button>
+            </div>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal;" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试使用其他设备浏览。</h2>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal;">如果发现图片资源未加载完全的情况，可以尝试退出重新生成几次。</h2>
         <script>
         const date = "${new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0]}"
         const parents = document.querySelectorAll('.down');
@@ -2094,6 +2126,17 @@ async function downloadImage() {
                 }
             })
         let isDownloading = false;
+        let imgIndex = ${bg_index + 1};
+        function changeBackground() {
+          const nums = [${yrjds != "true" ? buildNumArray(BACKGROUND_COUNT) : buildNumArray(BACKGROUND_COUNT_YRJ)}];
+          const prefix = ${yrjds != "true" ? '""' : '"yrj-"'}
+          const bg_element = document.querySelector('.bg');
+          if (imgIndex >= nums.length) {
+            imgIndex = 0;
+          }
+          bg_element.style.backgroundImage = 'url(./jpgs/background/' + prefix + nums[imgIndex] + '.avif)';
+          imgIndex++;
+        }
         function waitForImages(selector = 'img') {
                 const images = Array.from(document.querySelectorAll(selector));
                 const promises = images.map(img => {
@@ -2139,6 +2182,15 @@ async function downloadImage() {
                 link.href = URL.createObjectURL(blob);
                 link.download = 'output_MilAerno_' + date + '.png';
                 link.click();
+            }
+
+            function isSafari() {
+              const ua = navigator.userAgent;
+              return /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR/.test(ua);
+            }
+
+            if (!isSafari()) {
+              document.querySelector("#safari-tip").classList.add("hidden");
             }
 
             document.querySelector('#capture').addEventListener('click', async () => {
@@ -2269,12 +2321,12 @@ function archiveDownloadImage() {
 
       if (window.average1 >= 13.475 && Math.random() < 0.5) {
         tip = lines[Math.floor(Math.random() * Math.min(1, lines.length))];
-      } else 
-      if (window.average1 >= 13.45 && Math.random() < 0.3) {
-        tip = lines[Math.floor(Math.random() * Math.min(2, lines.length))];
-      } else {
-        tip = lines[Math.floor(Math.random() * lines.length)];
-      }
+      } else
+        if (window.average1 >= 13.45 && Math.random() < 0.3) {
+          tip = lines[Math.floor(Math.random() * Math.min(2, lines.length))];
+        } else {
+          tip = lines[Math.floor(Math.random() * lines.length)];
+        }
 
       // 替换 {Name} 并加前缀
       tip = 'Tip: ' + tip.replace(/\{Name\}/g, window.username || "玩家");
@@ -2460,21 +2512,36 @@ function getLevelIconName(it) {
 }
 
 function limitText(str, len = 16) {
-  return str.length > len ? str.slice(0, len) + '...' : str;
+  console.log("str", str, "len", len)
+  let resultstr = str;
+  if (getStrLength(str) > len) {
+    let l = 0;
+    let cut = false;
+    Array.from(str).forEach((s, i) => {
+      l += getStrLength(s)
+      console.log("str", s, getStrLength(s), "totallen", l)
+      if (l >= len && !cut) {
+        resultstr = str.slice(0, Math.max(i - 2, 0)) + "...";
+        cut = true;
+        return
+      }
+    })
+  }
+  return resultstr;
 }
 
 // 得到卡片 html
 function getCardHtml(items, maxCount) {
   const htmls = []
-  const getItemHtml = (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 14) => {
+  const getItemHtml = (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 21) => {
     if (i + 1 > maxCount && !ignoreMaxCount) {
       return
     }
-    const number = numberPrefix + (i + 1);
+    const numStr = numberPrefix + (i + 1);
 
     // 分数（含渐变颜色）
     const scoreStr = String(it.bestScore ?? 0).padStart(7, '0');
-    const songName = escapeHtml(limitText(it.name, maxTitleLen))
+    const songName = escapeHtml(limitText(it.name, maxTitleLen - numStr.length))
 
     // 评级/常数/准确率 行
     // ctx.font = '20px Arial';
@@ -2523,6 +2590,7 @@ function getCardHtml(items, maxCount) {
     }
 
     const scoreIsV3 = it.isV3 || it.bestLevel <= 1 || it.bestScore >= 1005000 || (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))
+    // const scoreIsV3 = true;
 
     const cardHtmlText = `
   <section class="card">
@@ -2539,7 +2607,7 @@ function getCardHtml(items, maxCount) {
           </div>
           <div style="position: relative;">
               <p
-                  style="text-align: right; position: absolute; right: 0; top: 6px;  color:#dde3ffc9">${number}</p>
+                  style="text-align: right; position: absolute; right: 0; top: 6px;  color:${scoreIsV3 ? '#cbbeffee' : '#dde3ffc9'}">${numStr}</p>
               <div class="cardtext">
                   <div
                       style="display: flex; align-items: center; padding-bottom: 9px; position: relative;">
@@ -2563,7 +2631,7 @@ function getCardHtml(items, maxCount) {
                       <p
                           style="color: #ffffffd7;">${acc}</p>
                       <p
-                          style="text-align: right; color:#a4ceff; font-size: 1em;">${rating}</p>
+                          style="text-align: right; color:${scoreIsV3 ? '#9ac9ff' : '#ffffffd7'}; font-size: 1em;">${rating}</p>
                   </div>
               </div>
           </div>
@@ -2596,7 +2664,7 @@ function getCardHtml(items, maxCount) {
       <aside class="down">
     `)
   }
-  window.norlt.forEach((it, i) => { getItemHtml(it, i, true, "EX #", 11) });
+  window.norlt.forEach((it, i) => { getItemHtml(it, i, true, "EX #") });
   const cardsHtml = `<aside class="down">
   ${htmls.join("\n")}
   </aside>`
