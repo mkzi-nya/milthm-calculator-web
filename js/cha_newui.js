@@ -1,8 +1,9 @@
-
-const Updated = "Updated at 2025.10.11 02:38 (UTC+8)"
+const Updated = "Updated at 2025.10.13 3:37 (UTC+8)"
 var cha_newui_js_ver = 7
 const BACKGROUND_COUNT = 11
 const BACKGROUND_COUNT_YRJ = 4
+
+//
 
 function getStrLength(str) {
   let len = 0;
@@ -36,6 +37,7 @@ async function renderToCanvas(element) {
 
 
 console.log(Updated)
+console.log("awa")
 console.log(" ███  ███                               \n\
  ███  ███                               \n\
  ███▒▒███                               \n\
@@ -537,7 +539,25 @@ async function processDBFile(arrayBuffer, SQL) {
   }
 }
 
-function handleFile(content, fileName) {
+async function parsePDFFile(content) {
+  const pdf = await pdfjsLib.getDocument({ data: content }).promise;
+  let fullText = "";
+  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+    const page = await pdf.getPage(pageNum);
+    const content = await page.getTextContent();
+    fullText += content.items.map(item => item.str).join(" ") + "\n";
+  }
+  // console.log("fullText", fullText)
+  const match = fullText.match(/---BEGIN_JSON---(.*?)---END_JSON---/s);
+  if (match) {
+    document.getElementById('inputData').value = match[1];
+    processData();
+  } else {
+    alert("未找到用户数据。");
+  }
+}
+
+async function handleFile(content, fileName) {
   const inputDataElem = document.getElementById('inputData');
 
   if (fileName.endsWith('.json')) {
@@ -830,10 +850,15 @@ document.getElementById('fileupLoad').addEventListener("change", async function 
         }
       };
       reader.readAsArrayBuffer(file);
+    } else if (fileName.endsWith('.pdf')) {
+      const reader = new FileReader();
+      reader.onload = async () => await parsePDFFile(reader.result);
+      reader.onerror = () => layer.msg("读取 PDF 文件失败\nFailed to read the PDF file.");
+      reader.readAsArrayBuffer(file);
     } else {
       // 处理其他文件类型
       const reader = new FileReader();
-      reader.onload = () => handleFile(reader.result, fileName);
+      reader.onload = async () => await handleFile(reader.result, fileName);
       reader.onerror = () => layer.msg("读取文件失败\nFailed to read the file.");
       reader.readAsText(file);
     }
@@ -1099,7 +1124,6 @@ function urltc(userrealityHistory, scores) {
       let y = scaleY(reality);
       ctx.fillText(reality.toFixed(2), chartX - 10, y);
     }
-    console.log("数据", items);
 
     const calculateMetric = (items, key, multiplier, divisor) => {
       return multiplier * (
@@ -1415,12 +1439,22 @@ function escapeHtml(str) {
   return el.innerHTML;
 }
 
+async function imgToDataURL(url) {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  layer.msg(`正在读取以及生成图片资源...。\n<p>正在转换图片 "${url}..."</p>`)
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+}
+
 async function downloadImage() {
   // 显示生成进度 UI（项目里已有 ol_runner/ol_updateImgGenProcess）
   // if (typeof ol_runner === 'function') {
   //   ol_runner((e) => { document.getElementById('picgen').style.display = 'block' }, [114, 514]);
   // }
-  console.log("test")
   // 读取要导出的卡片数量 & 过滤设置
   const cardCount = parseInt(document.getElementById('cardCount').value, 10);
   const maxItems = Math.max(0, cardCount);
@@ -1569,7 +1603,13 @@ async function downloadImage() {
 
   const input = document.getElementById('inputData')?.value || '';
   const data = 'userdata:' + (window.data || input);
-
+  const bg_count = yrjds != 'true' ? BACKGROUND_COUNT : BACKGROUND_COUNT_YRJ;
+  const bg_prefix = yrjds != 'true' ? '' : 'yrj-';
+  const bgs = []
+  for (let index = 1; index <= bg_count; index++) {
+    const bg = `./jpgs/background/${bg_prefix}${index}.avif`;
+    bgs.push(`'${await imgToDataURL(bg)}'`);
+  }
   const htmlHead = `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -1602,6 +1642,12 @@ async function downloadImage() {
                 font-family: 'Chill Round', Geist Variable, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei, sans-serif;
             }
 
+            @media print {
+                * {
+                    -webkit-print-color-adjust: exact !important; /* Safari / Chrome */
+                    print-color-adjust: exact !important;         /* Firefox */
+                }
+            }
 
             body {
                 background-color: #191820;
@@ -1617,8 +1663,16 @@ async function downloadImage() {
                 min-height: 1778px;
             }
 
+            #hidden-json {
+              font-size: 0.1rem;
+              color: #191820;
+              user-select: none;
+              max-width: ${width}px;
+              margin: auto;
+            }
+
             .bg {
-                background-image: url(${bg_filename});
+                background-image: url(${await imgToDataURL(bg_filename)});
                 background-size: cover;
                 min-height: 1778px;
                 background-position: center;
@@ -1640,6 +1694,7 @@ async function downloadImage() {
 
             .avatar-container {
                 display: flex;
+                user-select: none;
                 flex-direction: row-reverse;
             }
 
@@ -1664,7 +1719,7 @@ async function downloadImage() {
                 font-size: 1.5em;
                 max-width: calc(${width}px - 550px);
                 overflow: hidden;
-                text-wrap-mode: nowrap;
+                white-space: nowrap;
             }
 
             .topmain {
@@ -1677,7 +1732,7 @@ async function downloadImage() {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(380px, max-content));
+                grid-template-columns: repeat(auto-fit, minmax(430px, max-content));
                 gap: 30px;
                 justify-content: center;
                 align-items: start;
@@ -1720,7 +1775,7 @@ async function downloadImage() {
             }
 
             .reality-v3 {
-                background: url(./jpgs/v3-bg.png);
+                background: url(${await imgToDataURL('./jpgs/v3-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px #6945f7;
@@ -1728,8 +1783,30 @@ async function downloadImage() {
                 color: white;
             }
 
+            #capture {
+              transition: border 0.2s, box-shadow 0.2s, filter 0.2s;
+              background: url(${await imgToDataURL('./jpgs/main-btn-bg.webp')});
+              border: 2px solid #8378B4;
+              box-shadow: 0 5px 10px #a19bdb55;
+              position: relative;
+              width: 300px;
+              background-size: cover;
+              }
+
+            #capture:hover {
+                border-color:rgb(161, 153, 238);
+                filter: brightness(1.2);
+                box-shadow: 0 5px 10px rgba(188, 155, 219, 0.33);
+            }
+
+            #capture:active {
+                border-color:rgb(164, 142, 224);
+                filter: brightness(1.2);
+                box-shadow: 0 5px 10px rgba(188, 155, 219, 0.33);
+            }
+
             .reality-v50 {
-                background: url(./jpgs/v50-bg.png);
+                background: url(${await imgToDataURL('./jpgs/v50-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px rgba(255, 70, 70, 0.77);
@@ -1768,12 +1845,14 @@ async function downloadImage() {
                 /* max-width: 210px; */
                 /* width: 100%; */
                 height: 100%;
+                user-select: none;
                 display: flex;
                 justify-self: center;
                 /* border-radius: 15px; */
             }
 
             .cardimgcover {
+                display: block;
                 width: 204.444px;
                 height: 115px;
                 margin-right: 8px;
@@ -1820,15 +1899,12 @@ async function downloadImage() {
                 justify-self: center;
                 align-items: center;
                 justify-content: center;
-                /* text-align: center; */
                 font-size: 1.3em;
-                transition: background-color 0.2s;
+                transition: background 0.2s, box-shadow 0.2s, color 0.2s;
                 margin: 20px;
                 color: #FFF;
-                box-shadow: 0 8px 5pxrgba(222, 195, 252, 0.6);
-                /* background: linear-gradient(90deg, #DEC3FC, #A1C5FC);*/
                 background: #0B0A0F88;
-                font-weight: 200;
+                font-weight: 400;
                 border: 2px solid #56555A;
             }
 
@@ -1870,11 +1946,11 @@ async function downloadImage() {
             }
 
             .R {
+                color: #969BFA;
                 background: linear-gradient(0deg, #9A6EFA, #92C5FA);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                color: transparent;
             }
 
             .FC {
@@ -1882,15 +1958,30 @@ async function downloadImage() {
             }
 
             .AP {
+                color: #E4D7FE;
                 background: linear-gradient(0deg, #A174FA, #E4D7FE);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                color: transparent;
+            }
+
+            .AP-compatible {
+                color: #E4D7FE;
+                background: transparent;
+                background-clip: unset;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #E4D7FE;
+            }
+
+            .R-compatible {
+                color: #969BFA;
+                background: transparent;
+                background-clip: unset;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #969BFA;
             }
 
             .CB {
-                /* background-color: #9368f0; */
                 background: linear-gradient(45deg, #6479f1, #9567e9);
             }
 
@@ -1981,6 +2072,31 @@ async function downloadImage() {
                 display: flex;
             }
 
+            .user-agent {
+                font-size: 0.6em;
+                color: #FFF6;
+                margin-top: 10px;
+            }
+
+            button.active {
+                background-color: #fff;
+                color: #000;
+                box-shadow: 0 0 10px #ffffffa8;
+                border: 0;
+            }
+
+            .buttons-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+            }
+
+            button.squared {
+                width: 50px;
+                font-size: 40px;
+            }
+
         </style>
     </head>
     <body>
@@ -1989,7 +2105,7 @@ async function downloadImage() {
             <main>
                 <div class="main-container">
                     <aside class="top">
-                        <div class="cover">
+                    <div class="cover">
                             <div class="topmain">
                                 <div class="info">
                                     <h1>Milthm-Calculator</h1>
@@ -2061,7 +2177,7 @@ async function downloadImage() {
                                 <div style="height: 100%; text-align: right;">
                                     <div class="avatar-container">
                                         <div class="avatar">
-                                            <img src="./jpgs/${yrjds != 'true' ? 'avatar.png' : 'avatar-aprilfools.png'}"
+                                            <img src="./jpgs/${yrjds != 'true' ? 'avatar.webp' : 'avatar-aprilfools.webp'}"
                                                 class="avatar">
                                             ${star > 0 ? '<img class="star" src="./jpgs/' + star + '-star.png">' : ''}
                                         </div>
@@ -2107,81 +2223,181 @@ async function downloadImage() {
                     <p style="font-size: 0.9em; color: #DDD;">
                         ${Updated}
                     </p>
+                    <p class="user-agent">${navigator.userAgent}</p>
                 </footer>
             </main>
             </div>
-            <div style="display: flex; justify-content: center;">
-              <button id="capture">保存图片</button>
-              <button onclick="changeBackground()">换一张背景</button>
+            <div class="buttons-container">
+            <button onclick="printPage()">打印页面</button>
+            <button id="capture">保存图片</button>
+            <button onclick="copyJson()">复制用户数据</button>
             </div>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal;" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试使用其他设备浏览。</h2>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal;">如果发现图片资源未加载完全的情况，可以尝试退出重新生成几次。</h2>
+            <div class="buttons-container">
+            <button onclick="changeBackground()">换一张背景</button>
+            <button id="compatible-btn" onclick="switchCompatibleMode()">兼容模式</button>
+            </div>
+            <div class="buttons-container" style="z-index: 1000; position: relative; justify-content: space-evenly; max-width: 1000px; margin:auto;">
+              <div style="display: flex; align-items: center;">
+                <button class="squared" onclick="setPageScale(-0.05)">-</button>
+                <h2 style="text-align: center; font-weight: normal;" id="scaleText">图片缩放 (100%)</h2>
+                <button class="squared" onclick="setPageScale(0.05)">+</button>
+              </div>
+              <div style="display: flex; align-items: center;">
+                <button class="squared" onclick="setPageWidth(-100)">-</button>
+                <h2 style="text-align: center; font-weight: normal;" id="widthText">图片宽度 (${width}px)</h2>
+                <button class="squared" onclick="setPageWidth(100)">+</button>
+              </div>
+            </div>
+
+            <h2 style="text-align: center; margin: 15px; font-weight: normal;" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试打印页面保存为 PDF 或调整缩放并截图。</h2>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal;">如果出现 AP / R 分数显示错误一类的问题，可以尝试打开 "兼容模式"。</h2>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal;">你可以试试改变图片缩放或宽度来适应自己的需求 / 方便设备截图</h2>
+            <h3 style="text-align: center; margin: 15px; font-weight: normal;">该查分器主题为测试阶段，若出现问题可将查分结果图或问题描述发送至<a href="https://qm.qq.com/q/Utb6sNDvki">交流群</a>询问。</h3>
+            <div id="hidden-json">---BEGIN_JSON---${(window.data || input)}---END_JSON---</div>
         <script>
-        const date = "${new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0]}"
-        const parents = document.querySelectorAll('.down');
-            parents.forEach((parent, i) => {
-                if (parent && parent.children.length === 1) {
-                    parent.style.display = 'grid';
-                    parent.style.justifyContent = 'start';
-                }
-            })
-        let isDownloading = false;
-        let imgIndex = ${bg_index + 1};
-        function changeBackground() {
-          const nums = [${yrjds != "true" ? buildNumArray(BACKGROUND_COUNT) : buildNumArray(BACKGROUND_COUNT_YRJ)}];
-          const prefix = ${yrjds != "true" ? '""' : '"yrj-"'}
-          const bg_element = document.querySelector('.bg');
-          if (imgIndex >= nums.length) {
-            imgIndex = 0;
+          let currentScale = 1;
+          let currentWidth = ${width};
+          const bg = document.querySelector('.bg');
+          function printPage() {
+            window.print();
           }
-          bg_element.style.backgroundImage = 'url(./jpgs/background/' + prefix + nums[imgIndex] + '.avif)';
-          imgIndex++;
-        }
-        function waitForImages(selector = 'img') {
-                const images = Array.from(document.querySelectorAll(selector));
-                const promises = images.map(img => {
-                    if (img.complete) return Promise.resolve();
-                    return new Promise(resolve => {
-                        img.onload = img.onerror = resolve;
-                    });
+          function setPageWidth(widthChange) {
+              const w = currentWidth + widthChange;
+              if (w <= 650) {
+                return;
+              }
+              currentWidth = w;
+              // const viewportHeight = window.innerHeight;
+              const lastDocHeight = document.documentElement.scrollHeight;
+              bg.style.minHeight = '0';
+              bg.style.width = w + 'px';
+              document.querySelector('main').style.minHeight = '0';
+
+              document.querySelector('.main-container').style.minHeight = '0';
+              const docHeight = document.documentElement.scrollHeight;
+              const widthText = '图片宽度 (' + w + 'px)';
+              if (widthChange < 0) {
+                const distanceFromBottom = window.scrollY + (docHeight - lastDocHeight)
+                window.scrollTo({
+                    top: distanceFromBottom,
+                    behavior: 'auto'
                 });
-                return Promise.all(promises);
+              }
+              document.querySelector('#widthText').innerText = widthText;
+
+          }
+
+          function setPageScale(scaleChange) {
+              const scale = currentScale + scaleChange;
+              if (scale <= 0) {
+                return;
+              }
+              currentScale = scale;
+              const scaleText = '图片缩放 (' + (scale * 100).toFixed(0) + '%)';
+              document.querySelector('#scaleText').innerText = scaleText;
+              if (!isSafari()) {
+                document.querySelector('.bg').style.transformOrigin = 'bottom';
+              } else {
+                document.querySelector('.bg').style.transformOrigin = 'bottom left';
+              }
+              document.querySelector('.bg').style.transform = 'scale(' + scale + ')';
+          }
+
+          function switchCompatibleMode() {
+                document.querySelector('#compatible-btn').classList.toggle("active");
+                document.querySelectorAll('.AP').forEach((item, i) => {
+                    item.classList.toggle('AP-compatible')
+                })
+                document.querySelectorAll('.R').forEach((item, i) => {
+                    item.classList.toggle('R-compatible')
+                })
+            }
+
+          const date = "${new Date().toISOString().replace(/[:\-T]/g, '_').split('.')[0]}"
+          const parents = document.querySelectorAll('.down');
+              parents.forEach((parent, i) => {
+                  if (parent && parent.children.length === 1) {
+                      parent.style.display = 'grid';
+                      parent.style.justifyContent = 'start';
+                  }
+              })
+          let isDownloading = false;
+          let imgIndex = ${bg_index + 1};
+          function changeBackground() {
+            const bgs = [${bgs}];
+            const prefix = ${yrjds != "true" ? '""' : '"yrj-"'}
+            const bg_element = document.querySelector('.bg');
+            if (imgIndex >= bgs.length) {
+              imgIndex = 0;
+            }
+            bg_element.style.backgroundImage = 'url(' + bgs[imgIndex] + ')';
+            imgIndex++;
+          }
+          function waitForImages(selector = 'img') {
+              const images = Array.from(document.querySelectorAll(selector));
+
+              const promises = images.map(img => {
+                if (img.complete) {
+                  // Safari 某些情况下 img.complete 为 true 但未 decode 完
+                  return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+                } else {
+                  return new Promise(resolve => {
+                    img.onload = async () => {
+                      if (img.decode) {
+                        await img.decode().catch(() => {});
+                      }
+                      resolve();
+                    };
+                    img.onerror = () => {resolve();};
+                  });
+                }
+              });
+
+              return Promise.all(promises);
             }
 
             async function download() {
-                // 等待所有 <img> 加载完成
-                await waitForImages();
+              try {
+                  // 等待所有 <img> 加载完成
+                  await waitForImages();
 
-                const element = document.querySelector('.bg');
-                const dataURL = await htmlToImage.toPng(element, {
-                    pixelRatio: ${totalCardCount < 50 ? '2' : '1'},
-                    style: {
-                        margin: '0',
-                        transform: 'translate(0, 0)',
-                    },
-                });
+                  // const element = document.querySelector('.bg');
+                  const dataURL = await htmlToImage.toPng(bg, {
+                      pixelRatio: ${totalCardCount < 50 ? '2' : '1'},
+                      cacheBust: true,
+                      useCORS: true,
+                      style: {
+                          margin: '0',
+                          transform: 'translate(0, 0)',
+                      },
+                  });
 
-                // --- 将 dataURL 转 Uint8Array ---
-                const base64Data = dataURL.split(',')[1];
-                const pngBinary = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+                  // --- 将 dataURL 转 Uint8Array ---
+                  const base64Data = dataURL.split(',')[1];
+                  const pngBinary = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
 
-                // --- JSON 数据 ---
-                const jsonStr = '${data}';
+                  // --- JSON 数据 ---
+                  const jsonStr = '${data}';
 
-                // 将 JSON 转成 Uint8Array
-                const txtBytes = new TextEncoder().encode(jsonStr);
+                  // 将 JSON 转成 Uint8Array
+                  const txtBytes = new TextEncoder().encode(jsonStr);
 
-                // 合并 PNG 和 JSON
-                const combined = new Uint8Array(pngBinary.length + txtBytes.length);
-                combined.set(pngBinary, 0);
-                combined.set(txtBytes, pngBinary.length);
+                  // 合并 PNG 和 JSON
+                  const combined = new Uint8Array(pngBinary.length + txtBytes.length);
+                  combined.set(pngBinary, 0);
+                  combined.set(txtBytes, pngBinary.length);
 
-                // 下载合并后的 PNG
-                const blob = new Blob([combined], { type: 'image/png' });
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = 'output_MilAerno_' + date + '.png';
-                link.click();
+                  // 下载合并后的 PNG
+                  const blob = new Blob([combined], { type: 'image/png' });
+                  const link = document.createElement('a');
+                  link.href = URL.createObjectURL(blob);
+                  link.download = 'output_MilAerno_' + date + '.png';
+                  link.click();
+              } catch(e) {
+                  console.error("保存图片失败", e);
+                  alert("保存图片失败 xwx\\n可以尝试 \\"打印页面\\" 或截图页面，或是在交流群询问详情。");
+              }
+
             }
 
             function isSafari() {
@@ -2204,19 +2420,33 @@ async function downloadImage() {
             })
 
             window.onload = async () => {
-                await download()
+                // await download()
             };
+
+            function copyJson() {
+            const element = document.getElementById('hidden-json');
+            const text = element.innerText || element.textContent;
+            const match = text.match(/---BEGIN_JSON---(.*?)---END_JSON---/s);
+            navigator.clipboard.writeText(match)
+              .then(() => {
+                alert('用户数据已复制！');
+              })
+              .catch(err => {
+                console.error('复制失败:', err);
+              });
+            }
         </script>
     </body>
 </html>`;
   // // 绘制卡片并导出
-  const cardsHtml = getCardHtml(items, actualCardCount);
+  const cardsHtml = await getCardHtml(items, actualCardCount);
   // // console.log(cardsHtml);
   const htmlContent = htmlHead + cardsHtml + htmlFoot;
   // 打开一个新窗口或新标签页
   const newWindow = window.open('', '_blank');
 
   // 往新窗口写入 HTML 内容
+  console.log(htmlContent);
   newWindow.document.open();
   newWindow.document.write(htmlContent);
   newWindow.document.close();
@@ -2512,14 +2742,12 @@ function getLevelIconName(it) {
 }
 
 function limitText(str, len = 16) {
-  console.log("str", str, "len", len)
   let resultstr = str;
   if (getStrLength(str) > len) {
     let l = 0;
     let cut = false;
     Array.from(str).forEach((s, i) => {
       l += getStrLength(s)
-      console.log("str", s, getStrLength(s), "totallen", l)
       if (l >= len && !cut) {
         resultstr = str.slice(0, Math.max(i - 2, 0)) + "...";
         cut = true;
@@ -2531,9 +2759,9 @@ function limitText(str, len = 16) {
 }
 
 // 得到卡片 html
-function getCardHtml(items, maxCount) {
+async function getCardHtml(items, maxCount) {
   const htmls = []
-  const getItemHtml = (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 21) => {
+  const getItemHtml = async (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 21) => {
     if (i + 1 > maxCount && !ignoreMaxCount) {
       return
     }
@@ -2591,15 +2819,15 @@ function getCardHtml(items, maxCount) {
 
     const scoreIsV3 = it.isV3 || it.bestLevel <= 1 || it.bestScore >= 1005000 || (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))
     // const scoreIsV3 = true;
-
+    const dataurl = await imgToDataURL('./jpgs/' + coverImgName)
     const cardHtmlText = `
   <section class="card">
       <div class="cardcover ${scoreIsV3 ? 'cardcover-v3' : ''}">
           <div class="cardimgcover"
-              style="background-image: url('./jpgs/${coverImgName}'), url('./jpgs/img-error.webp');">
+              style="background-image: url('${dataurl}'), url('${await imgToDataURL('./jpgs/img-error.webp')}');">
               <div class="cardbg">
                   <img
-                      src="jpgs/${coverImgName}"
+                      src="${dataurl}"
                       onerror="this.onerror=null; this.src='./jpgs/img-error.webp';"
                       alt
                       class="cardimg">
@@ -2651,7 +2879,10 @@ function getCardHtml(items, maxCount) {
     // if (coverImg) ctx.drawImage(coverImg, x + 13, y + 13, imgW, imgH);
     // if (iconImg) ctx.drawImage(iconImg, x + 351, y + 26, icon, icon);
   };
-  items.forEach((it, i) => { getItemHtml(it, i, false) });
+  // await Promise.all(items.map((it, i) => getItemHtml(it, i, false)));
+  for (let i = 0; i < items.length; i++) {
+    await getItemHtml(items[i], i, false);
+  }
   // 增加下划线
   if (window.norlt.length > 0) {
     htmls.push(`
@@ -2664,7 +2895,10 @@ function getCardHtml(items, maxCount) {
       <aside class="down">
     `)
   }
-  window.norlt.forEach((it, i) => { getItemHtml(it, i, true, "EX #") });
+  // await Promise.all(window.norlt.map((it, i) => getItemHtml(it, i, true, "EX #")));
+  for (let i = 0; i < window.norlt.length; i++) {
+    await getItemHtml(window.norlt[i], i, true, "EX #");
+  }
   const cardsHtml = `<aside class="down">
   ${htmls.join("\n")}
   </aside>`
