@@ -354,7 +354,7 @@ function processSong(songBlock) {
     (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
     (Array.isArray(achievedStatus) && (achievedStatus.includes(2) || achievedStatus.includes(5)));
 
-  const singleRealityRaw = useV3 ? r_v3 : r_v2;
+  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3+1.5 : r_v2;
 
   return {
     // 版本信息与比较用
@@ -465,7 +465,7 @@ function processSongFromOldFormat(record, isV3 = false) {
     (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
     (status.includes(2) || status.includes(5));
 
-  const singleRealityRaw = useV3 ? r_v3 : r_v2;
+  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3+1.5 : r_v2;
 
   return {
     isV3: !!isV3,
