@@ -1,6 +1,6 @@
-const Updated = "Updated at 2025.10.13 3:37 (UTC+8)"
+const Updated = "Updated at 2025.10.14 03:48 (UTC+8)"
 var cha_newui_js_ver = 7
-const BACKGROUND_COUNT = 11
+const BACKGROUND_COUNT = 15
 const BACKGROUND_COUNT_YRJ = 4
 
 //
@@ -354,7 +354,7 @@ function processSong(songBlock) {
     (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
     (Array.isArray(achievedStatus) && (achievedStatus.includes(2) || achievedStatus.includes(5)));
 
-  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3+1.5 : r_v2;
+  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3 > 1e-5 ? constantv3 + 1.5 : 0 : r_v2;
 
   return {
     // 版本信息与比较用
@@ -465,7 +465,7 @@ function processSongFromOldFormat(record, isV3 = false) {
     (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
     (status.includes(2) || status.includes(5));
 
-  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3+1.5 : r_v2;
+  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3 > 1e-5 ? constantv3 + 1.5 : 0 : r_v2;
 
   return {
     isV3: !!isV3,
@@ -1442,7 +1442,10 @@ function escapeHtml(str) {
 async function imgToDataURL(url) {
   const response = await fetch(url);
   const blob = await response.blob();
-  layer.msg(`正在读取以及生成图片资源...。\n<p>正在转换图片 "${url}..."</p>`)
+  // layer.msg(`正在读取以及生成图片资源...。\n<p>正在转换图片 "${url}..."</p>`)
+  if (typeof ol_runner === 'function') {
+    ol_runner(ol_updateImgGenProcess, [`正在转换图片 "${url}..."`]);
+  }
   return new Promise(resolve => {
     const reader = new FileReader();
     reader.onloadend = () => resolve(reader.result);
@@ -1451,6 +1454,9 @@ async function imgToDataURL(url) {
 }
 
 async function downloadImage() {
+  if (typeof ol_runner === 'function') {
+    ol_runner((e) => { document.getElementById('picgen').style.display = 'block' }, [114, 514]);
+  }
   // 显示生成进度 UI（项目里已有 ol_runner/ol_updateImgGenProcess）
   // if (typeof ol_runner === 'function') {
   //   ol_runner((e) => { document.getElementById('picgen').style.display = 'block' }, [114, 514]);
@@ -1512,8 +1518,8 @@ async function downloadImage() {
       }
       if ((Array.isArray(item.achievedStatus) && item.achievedStatus.includes(5)) || item.bestLevel === 0) {
         progress[item.category].ap++
-      }
-      if ((Array.isArray(item.achievedStatus) && item.achievedStatus.includes(4)) || item.bestLevel === 0) {
+        progress[item.category].fc++
+      } else if ((Array.isArray(item.achievedStatus) && item.achievedStatus.includes(4)) || item.bestLevel === 0) {
         progress[item.category].fc++
       }
     }
@@ -1577,7 +1583,7 @@ async function downloadImage() {
   tip = tip != '' ? 'Tip: ' + tip.replaceAll('\{Name\}', username) : '';
   // console.log("tips", lines)
 
-  const average1 = (yrjds != "true" ? window.average1 : window.average * 20)?.toFixed(2);
+  const average1 = Math.round((yrjds != "true" ? window.average1 : window.average * 20) * 100) / 100;
   const average = yrjds != "true" ? window.average : (window.average * 20);
   // console.log(average1, average)
   // 默认 2 列宽度
@@ -1606,10 +1612,15 @@ async function downloadImage() {
   const bg_count = yrjds != 'true' ? BACKGROUND_COUNT : BACKGROUND_COUNT_YRJ;
   const bg_prefix = yrjds != 'true' ? '' : 'yrj-';
   const bgs = []
-  for (let index = 1; index <= bg_count; index++) {
-    const bg = `./jpgs/background/${bg_prefix}${index}.avif`;
-    bgs.push(`'${await imgToDataURL(bg)}'`);
+  if (!hasFile) {
+    for (let index = 1; index <= bg_count; index++) {
+      const bg = `./jpgs/background/${bg_prefix}${index}.avif`;
+      bgs.push(`'${await imgToDataURL(bg)}'`);
+    }
+  } else {
+    bgs.push(`'${bg_filename}'`)
   }
+
   const htmlHead = `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -1652,6 +1663,7 @@ async function downloadImage() {
             body {
                 background-color: #191820;
                 color: white;
+                overflow: scroll;
             }
             main {
                 width: 100%;
@@ -1673,6 +1685,7 @@ async function downloadImage() {
 
             .bg {
                 background-image: url(${await imgToDataURL(bg_filename)});
+                overflow-x: auto;
                 background-size: cover;
                 min-height: 1778px;
                 background-position: center;
@@ -1688,13 +1701,13 @@ async function downloadImage() {
             .avatar {
                 border-radius: 999px;
                 position: relative;
+                user-select: none;
                 width: 80px;
                 box-shadow: 0 0 15px rgba(12, 12, 20, 0.384), 0px 10px 15px rgba(15, 15, 22, 0.18);
             }
 
             .avatar-container {
                 display: flex;
-                user-select: none;
                 flex-direction: row-reverse;
             }
 
@@ -1702,6 +1715,20 @@ async function downloadImage() {
                 display: flex;
                 align-items: center;
                 justify-content: right;
+            }
+
+            button:disabled {
+              color: #9F9FA2;
+              border-color: #56555A;
+              cursor: not-allowed;
+              background-color: #121017;
+            }
+
+            button:disabled:hover {
+              color: #9F9FA2;
+              border-color: #56555A;
+              cursor: not-allowed;
+              background-color: #121017;
             }
 
             .name-reality {
@@ -1769,6 +1796,7 @@ async function downloadImage() {
             .star {
                 position: absolute;
                 top: 58px;
+                user-select: none;
                 left: 0;
                 width: 80px;
                 /* height: 20px; */
@@ -1926,6 +1954,7 @@ async function downloadImage() {
             .grade {
                 max-width: 50px;
                 margin: -10px;
+                user-select: none;
                 margin-top: -8px;
             }
 
@@ -1958,7 +1987,7 @@ async function downloadImage() {
             }
 
             .AP {
-                color: #E4D7FE;
+                color: #BFA0FC;
                 background: linear-gradient(0deg, #A174FA, #E4D7FE);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -1966,11 +1995,11 @@ async function downloadImage() {
             }
 
             .AP-compatible {
-                color: #E4D7FE;
+                color: #BFA0FC;
                 background: transparent;
                 background-clip: unset;
                 -webkit-background-clip: unset;
-                -webkit-text-fill-color: #E4D7FE;
+                -webkit-text-fill-color: #BFA0FC;
             }
 
             .R-compatible {
@@ -1991,7 +2020,7 @@ async function downloadImage() {
             }
 
             .DZ {
-                background: linear-gradient(45deg, #b2b5c5, #93dbdb);
+                background: linear-gradient(45deg, #93dbdb, #b2b5c5);
             }
 
             .SK {
@@ -2003,7 +2032,7 @@ async function downloadImage() {
             }
 
             .SP {
-                background: linear-gradient(45deg, #FFF, #FFF);
+                background: linear-gradient(45deg,#FFF, #FFF);
             }
 
             .textp {
@@ -2095,6 +2124,20 @@ async function downloadImage() {
             button.squared {
                 width: 50px;
                 font-size: 40px;
+            }
+
+            .mobile-show {
+                display: none;
+            }
+
+            @media (max-width: 835px) {
+              .mobile-hidden {
+                display: none;
+              }
+
+              .mobile-show {
+                display: block;
+              }
             }
 
         </style>
@@ -2211,29 +2254,30 @@ async function downloadImage() {
   const htmlFoot = `
                   </div>
                 <footer>
-                    <p style="margin-bottom: 10px;">Generated by
-                        Milthm-Calculator | Theme
-                        <span style="color: #c3a3ff;">
+                <p style="margin-bottom: 10px;">Generated by
+                Milthm-Calculator | Theme
+                <span style="color: #c3a3ff;">
                             MilAerno
                         </span>
                         Designed by
                         <a href="https://www.xzadudu179.top"
                             target="_blank">xzadudu179</a>
                     </p>
-                    <p style="font-size: 0.9em; color: #DDD;">
-                        ${Updated}
+                    <p style="font-size: 0.9em; color: #DDDA; margin-bottom: 10px;">${navigator.userAgent}</p>
+                    <p style="font-size: 0.9em; color: #DDDA;">
+                    ${Updated}
                     </p>
-                    <p class="user-agent">${navigator.userAgent}</p>
                 </footer>
             </main>
             </div>
             <div class="buttons-container">
-            <button onclick="printPage()">打印页面</button>
+            <button class="mobile-hidden" onclick="printPage()">打印页面</button>
             <button id="capture">保存图片</button>
+            <button class="mobile-show" onclick="printPage()">打印页面</button>
             <button onclick="copyJson()">复制用户数据</button>
             </div>
             <div class="buttons-container">
-            <button onclick="changeBackground()">换一张背景</button>
+            <button onclick="changeBackground()" id="change-background">换一张背景</button>
             <button id="compatible-btn" onclick="switchCompatibleMode()">兼容模式</button>
             </div>
             <div class="buttons-container" style="z-index: 1000; position: relative; justify-content: space-evenly; max-width: 1000px; margin:auto;">
@@ -2248,9 +2292,8 @@ async function downloadImage() {
                 <button class="squared" onclick="setPageWidth(100)">+</button>
               </div>
             </div>
-
-            <h2 style="text-align: center; margin: 15px; font-weight: normal;" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试打印页面保存为 PDF 或调整缩放并截图。</h2>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal;">如果出现 AP / R 分数显示错误一类的问题，可以尝试打开 "兼容模式"。</h2>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal; color: #FBB" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试打印页面保存为 PDF 或调整缩放并截图。或使用其他设备访问。</h2>
+            <h2 style="text-align: center; margin: 15px; font-weight: normal; color:rgb(241, 205, 255);">如果出现 AP / R 分数显示成渐变方块一类的问题，可以尝试打开 "兼容模式"。</h2>
             <h2 style="text-align: center; margin: 15px; font-weight: normal;">你可以试试改变图片缩放或宽度来适应自己的需求 / 方便设备截图</h2>
             <h3 style="text-align: center; margin: 15px; font-weight: normal;">该查分器主题为测试阶段，若出现问题可将查分结果图或问题描述发送至<a href="https://qm.qq.com/q/Utb6sNDvki">交流群</a>询问。</h3>
             <div id="hidden-json">---BEGIN_JSON---${(window.data || input)}---END_JSON---</div>
@@ -2405,6 +2448,11 @@ async function downloadImage() {
               return /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR/.test(ua);
             }
 
+            function isHuawei() {
+              const ua = navigator.userAgent;
+              return /HuaweiBrowser/.test(ua) && !/Chromium|Edg|OPR/.test(ua);
+            }
+
             if (!isSafari()) {
               document.querySelector("#safari-tip").classList.add("hidden");
             }
@@ -2420,7 +2468,10 @@ async function downloadImage() {
             })
 
             window.onload = async () => {
-                // await download()
+                if (isHuawei()) {
+                  switchCompatibleMode();
+                }
+                ${hasFile ? "document.querySelector('#change-background').disabled = true;" : ""}
             };
 
             function copyJson() {
@@ -2439,17 +2490,19 @@ async function downloadImage() {
     </body>
 </html>`;
   // // 绘制卡片并导出
-  const cardsHtml = await getCardHtml(items, actualCardCount);
+  const cardsHtml = await getCardHtml(items, actualCardCount, await imgToDataURL('./jpgs/img-error.webp'));
   // // console.log(cardsHtml);
   const htmlContent = htmlHead + cardsHtml + htmlFoot;
   // 打开一个新窗口或新标签页
   const newWindow = window.open('', '_blank');
 
   // 往新窗口写入 HTML 内容
-  console.log(htmlContent);
   newWindow.document.open();
   newWindow.document.write(htmlContent);
   newWindow.document.close();
+  if (typeof ol_runner === 'function') {
+    ol_runner(ol_updateImgGenProcess, ['完成']);
+  }
 }
 
 /* ========== 下载图片 (含背景、卡片等，全部从 image.css 取图) ========== */
@@ -2737,8 +2790,8 @@ function getLevelIconName(it) {
   // 数字类统一映射为 .icon-{N}
   // 若 iconName 不是纯数字，尝试解析；失败则显示 ERROR icon
   const n = Number(iconName);
-  if (!Number.isFinite(n)) return '-1.png';
-  return `${n}.png`;
+  if (!Number.isFinite(n)) return '-1';
+  return `${n}`;
 }
 
 function limitText(str, len = 16) {
@@ -2759,7 +2812,7 @@ function limitText(str, len = 16) {
 }
 
 // 得到卡片 html
-async function getCardHtml(items, maxCount) {
+async function getCardHtml(items, maxCount, errorImg) {
   const htmls = []
   const getItemHtml = async (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 21) => {
     if (i + 1 > maxCount && !ignoreMaxCount) {
@@ -2791,21 +2844,20 @@ async function getCardHtml(items, maxCount) {
         : 114514, yrjds != "true" ? "No remaining" : "🐉👃👈😨"
     );
     // ctx.fillText(`>>${targetScore}`, x + 212, y + 86);
-    const targetScoreText = `&gt;&gt; Goal: ${String(targetScore).padStart(7, '0')}`
+    const targetScoreText = `&gt;&gt; Goal: ${!isNaN(Number(targetScore)) ? String(targetScore).padStart(7, '0') : targetScore}`
     // 封面与段位图
     // 等级/段位：映射到 .icon-N
     const iconName = getLevelIconName(it);
-    const imgName = it.name.replaceAll("#", '').replaceAll("?", '').replaceAll(">", '').replaceAll("<", '').replaceAll("*", '').replaceAll('"', '').replaceAll("|", '').replaceAll("/", '').replaceAll("\\", '').replaceAll(":", '');
-    const coverImgName = `${imgName}.jpg`;
-    const iconImgName = iconName;
+    let imgName = it.name.replaceAll("#", '').replaceAll("?", '').replaceAll(">", '').replaceAll("<", '').replaceAll("*", '').replaceAll('"', '').replaceAll("|", '').replaceAll("/", '').replaceAll("\\", '').replaceAll(":", '');
+    const iconImgName = iconName + '.png';
     // const coverImgName = imgPairs[i]?.[0] || '';
     // const iconImgName = imgPairs[i]?.[1] || '';
     let gradeClass = ''
-    if (iconImgName == '0' || iconImgName == '0-1') {
+    if (iconName == '0' || iconName == '0-1') {
       gradeClass = 'R'
-    } else if (iconImgName.length > 1 && iconImgName[1] == '0') {
+    } else if (iconName.length > 1 && iconName[1] == '0') {
       gradeClass = 'AP'
-    } else if (iconImgName.length > 1 && iconImgName[1] == '1') {
+    } else if (iconName.length > 1 && iconName[1] == '1') {
       gradeClass = 'FC'
     }
 
@@ -2816,6 +2868,10 @@ async function getCardHtml(items, maxCount) {
     if (category != "CB" && category != "CL" && category != "SP" && category != "UN" && category != "SK" && category != "DZ") {
       category = 'SP';
     }
+    if (category == 'SP' && imgName == 'Welcome to Milthm') {
+      imgName = 'Welcome to Milthm SP'
+    }
+    const coverImgName = `${imgName}.jpg`;
 
     const scoreIsV3 = it.isV3 || it.bestLevel <= 1 || it.bestScore >= 1005000 || (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))
     // const scoreIsV3 = true;
@@ -2824,11 +2880,11 @@ async function getCardHtml(items, maxCount) {
   <section class="card">
       <div class="cardcover ${scoreIsV3 ? 'cardcover-v3' : ''}">
           <div class="cardimgcover"
-              style="background-image: url('${dataurl}'), url('${await imgToDataURL('./jpgs/img-error.webp')}');">
+              style="background-image: url('${dataurl}'), url('${errorImg}');">
               <div class="cardbg">
                   <img
                       src="${dataurl}"
-                      onerror="this.onerror=null; this.src='./jpgs/img-error.webp';"
+                      onerror="this.onerror=null; this.src='${errorImg}';"
                       alt
                       class="cardimg">
               </div>
