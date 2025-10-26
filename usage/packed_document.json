@@ -1868,6 +1868,60 @@
   "chartersList" : [ "你申某" ],
   "tags" : [ "Ameonna", "TsukiP", "blue eyes", "calm", "character", "che zi", "dreamy", "dress", "fantasy, ethereal", "female", "gentle expression", "light blue", "long hair", "luvia", "pastel colors", "pink", "prolog", "serene", "sitting", "sm", "soft lighting", "watercolor style", "你申某", "澈子", "雨女" ]
 }, {
+  "id" : "b47d064b-255c-4bf6-a6e3-2ffa1de7f1a9",
+  "title" : "Autumn Rain",
+  "titleCulture" : "en",
+  "latinTitle" : "Autumn Rain",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 124.0
+  } ],
+  "artist" : "Vantasy",
+  "artistsList" : [ "Vantasy" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "MUJI",
+  "chartersList" : [ "母鸡" ],
+  "tags" : [ "Autumn Rain", "MUJI", "Vantasy", "bunny", "character", "che zi", "cloud", "dreamy", "fluffy cloud", "girl", "muji", "pastel", "pastel blue", "pastel pink", "playful", "rain", "soft colors", "white hair", "winking", "母鸡", "母鸡Sama", "澈子" ]
+}, {
+  "id" : "ab993c74-6067-4e6d-827f-b4de125f86f8",
+  "title" : "Autumn Rain",
+  "titleCulture" : "en",
+  "latinTitle" : "Autumn Rain",
+  "bpmInfo" : [ {
+    "start" : -0.05,
+    "bpm" : 124.0
+  } ],
+  "artist" : "Vantasy",
+  "artistsList" : [ "Vantasy" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Icier",
+  "chartersList" : [ "Icier" ],
+  "tags" : [ "Autumn Rain", "Icier", "Vantasy", "bunny", "character", "che zi", "cloud", "dreamy", "fluffy cloud", "girl", "pastel", "pastel blue", "pastel pink", "playful", "rain", "soft colors", "white hair", "winking", "澈子" ]
+}, {
+  "id" : "347c9618-7ce2-4164-b683-99bade9a2ae7",
+  "title" : "Autumn Rain",
+  "titleCulture" : "en",
+  "latinTitle" : "Autumn Rain",
+  "bpmInfo" : [ {
+    "start" : -0.05,
+    "bpm" : 124.0
+  } ],
+  "artist" : "Vantasy",
+  "artistsList" : [ "Vantasy" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Icier",
+  "chartersList" : [ "Icier" ],
+  "tags" : [ "Autumn Rain", "Icier", "Vantasy", "bunny", "character", "che zi", "cloud", "dreamy", "fluffy cloud", "girl", "pastel", "pastel blue", "pastel pink", "playful", "rain", "soft colors", "white hair", "winking", "澈子" ]
+}, {
   "id" : "ff09bba7-6607-4427-93b9-26a0e29e31c6",
   "title" : "BUCHiAGE Fireworks",
   "titleCulture" : "en",
@@ -2443,6 +2497,60 @@
   "charter" : "Akko",
   "chartersList" : [ "Akko" ],
   "tags" : [ "Akko", "Curse of 14", "R -TOP", "RAISE-C yun", "RAISE-C雲", "abstract", "anime", "black", "chi ling", "cyberpunk", "electrode_core", "girl", "gloves", "headset", "intense", "neon", "purple", "stylish", "赤澪" ]
+}, {
+  "id" : "a6ea8ba3-6258-4734-b906-af8da2f6d7b0",
+  "title" : "Deluge",
+  "titleCulture" : "en",
+  "latinTitle" : "Deluge",
+  "bpmInfo" : [ {
+    "start" : 0.1,
+    "bpm" : 132.0
+  } ],
+  "artist" : "SQRY01",
+  "artistsList" : [ "SQRY01" ],
+  "illustrator" : [ "香香鸡" ],
+  "illustratorsList" : [ "香香鸡" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet vs. Ursulina",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Deluge", "Magazet", "Magazet vs. Ursulina", "SQRY01", "anime", "blue", "bonnet", "cloak", "dramatic lighting", "dreamy", "ethereal", "fantasy", "frilly dress", "girl", "glowing particles", "high contrast", "illustration", "kneeling", "night", "reflections", "ribbon", "ripples", "serene", "shallow water", "sitting", "sparkles", "water", "white hair", "wide shot", "xiang xiang ji", "香香鸡" ]
+}, {
+  "id" : "f00e2bc8-4299-4442-a0a3-5a31f635ffec",
+  "title" : "Deluge",
+  "titleCulture" : "en",
+  "latinTitle" : "Deluge",
+  "bpmInfo" : [ {
+    "start" : 0.1,
+    "bpm" : 132.0
+  } ],
+  "artist" : "SQRY01",
+  "artistsList" : [ "SQRY01" ],
+  "illustrator" : [ "香香鸡" ],
+  "illustratorsList" : [ "香香鸡" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet vs. Ursulina",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Deluge", "Magazet", "Magazet vs. Ursulina", "SQRY01", "anime", "blue", "bonnet", "cloak", "dramatic lighting", "dreamy", "ethereal", "fantasy", "frilly dress", "girl", "glowing particles", "high contrast", "illustration", "kneeling", "night", "reflections", "ribbon", "ripples", "serene", "shallow water", "sitting", "sparkles", "water", "white hair", "wide shot", "xiang xiang ji", "香香鸡" ]
+}, {
+  "id" : "9a2e01f9-990f-4105-9b21-29dd10681c44",
+  "title" : "Deluge",
+  "titleCulture" : "en",
+  "latinTitle" : "Deluge",
+  "bpmInfo" : [ {
+    "start" : 0.1,
+    "bpm" : 132.0
+  } ],
+  "artist" : "SQRY01",
+  "artistsList" : [ "SQRY01" ],
+  "illustrator" : [ "香香鸡" ],
+  "illustratorsList" : [ "香香鸡" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet vs. Ursulina",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Deluge", "Magazet", "Magazet vs. Ursulina", "SQRY01", "anime", "blue", "bonnet", "cloak", "dramatic lighting", "dreamy", "ethereal", "fantasy", "frilly dress", "girl", "glowing particles", "high contrast", "illustration", "kneeling", "night", "reflections", "ribbon", "ripples", "serene", "shallow water", "sitting", "sparkles", "water", "white hair", "wide shot", "xiang xiang ji", "香香鸡" ]
 }, {
   "id" : "5aac139b-ab96-486d-a081-6bfebe382932",
   "title" : "Dogbite",
@@ -3038,6 +3146,69 @@
   "chartersList" : [ "Magazet", "Akko" ],
   "tags" : [ "Akko", "Fantasia Sonata Stars", "Magazet", "PYKAMIA", "Starry Magazet feat. Akko", "anime", "blue eyes", "brown hair", "character", "chi ling", "colorful outfit", "dynamic pose", "female", "golden rings", "mechanical structure", "red accents", "sci-fi", "yu ye", "赤澪", "雨野" ]
 }, {
+  "id" : "b3585c5d-6936-4129-b45c-edc40026e7ac",
+  "title" : "Fluorescent Light",
+  "titleCulture" : "en",
+  "latinTitle" : "Fluorescent Light",
+  "bpmInfo" : [ {
+    "start" : 1.722,
+    "bpm" : 138.0
+  }, {
+    "start" : 45.183,
+    "bpm" : 213.0
+  } ],
+  "artist" : "Wooden",
+  "artistsList" : [ "Wooden" ],
+  "illustrator" : [ "豆乳" ],
+  "illustratorsList" : [ "豆乳" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fluorescent Light", "Wooden", "anime", "birds", "blue", "cherry blossoms", "chi ling", "doves", "ethereal", "fantasy", "floral", "flowing sleeves", "girl", "illustration", "kimono", "lavender hair", "long hair", "magical", "moon", "night sky", "petals", "portrait", "purple", "ribbon bow", "sakura", "serene", "soft light", "soymilk", "sparkles", "豆乳", "赤澪" ]
+}, {
+  "id" : "cab72aa4-2891-4485-90b6-9fd803cecf60",
+  "title" : "Fluorescent Light",
+  "titleCulture" : "en",
+  "latinTitle" : "Fluorescent Light",
+  "bpmInfo" : [ {
+    "start" : 1.722,
+    "bpm" : 138.0
+  }, {
+    "start" : 45.183,
+    "bpm" : 213.0
+  } ],
+  "artist" : "Wooden",
+  "artistsList" : [ "Wooden" ],
+  "illustrator" : [ "豆乳" ],
+  "illustratorsList" : [ "豆乳" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fluorescent Light", "Wooden", "anime", "birds", "blue", "cherry blossoms", "chi ling", "doves", "ethereal", "fantasy", "floral", "flowing sleeves", "girl", "illustration", "kimono", "lavender hair", "long hair", "magical", "moon", "night sky", "petals", "portrait", "purple", "ribbon bow", "sakura", "serene", "soft light", "soymilk", "sparkles", "豆乳", "赤澪" ]
+}, {
+  "id" : "f32e28cf-c2d3-4981-88e7-200eb2daab15",
+  "title" : "Fluorescent Light",
+  "titleCulture" : "en",
+  "latinTitle" : "Fluorescent Light",
+  "bpmInfo" : [ {
+    "start" : 1.722,
+    "bpm" : 138.0
+  }, {
+    "start" : 45.183,
+    "bpm" : 213.0
+  } ],
+  "artist" : "Wooden",
+  "artistsList" : [ "Wooden" ],
+  "illustrator" : [ "豆乳" ],
+  "illustratorsList" : [ "豆乳" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fluorescent Light", "Wooden", "anime", "birds", "blue", "cherry blossoms", "chi ling", "doves", "ethereal", "fantasy", "floral", "flowing sleeves", "girl", "illustration", "kimono", "lavender hair", "long hair", "magical", "moon", "night sky", "petals", "portrait", "purple", "ribbon bow", "sakura", "serene", "soft light", "soymilk", "sparkles", "豆乳", "赤澪" ]
+}, {
   "id" : "508fff6a-32dc-4f6b-88c7-bbd86e639085",
   "title" : "Fly To Meteor (Milthm Edit)",
   "titleCulture" : "en",
@@ -3396,7 +3567,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Akko",
   "chartersList" : [ "Akko" ],
-  "tags" : [ "Akko", "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "chi ling", "cute", "electrode_core", "geometric shapes", "pastel colors", "pink", "rose", "white dress", "はんてん", "赤澪" ]
+  "tags" : [ "Akko", "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "chi ling", "electrode_core", "geometric shapes", "pastel colors", "pink", "rose", "white dress", "はんてん", "赤澪" ]
 }, {
   "id" : "cdb92390-bb3e-4ec7-bfbd-764c57345058",
   "title" : "はんてん",
@@ -3414,7 +3585,7 @@
   "difficultyValue" : 0.0,
   "charter" : "papa but left for 8 months",
   "chartersList" : [ "爬爬" ],
-  "tags" : [ "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "cute", "electrode_core", "geometric shapes", "papa but left for 8 months", "pastel colors", "pink", "rose", "white dress", "はんてん", "爬爬" ]
+  "tags" : [ "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "electrode_core", "geometric shapes", "papa but left for 8 months", "pastel colors", "pink", "rose", "white dress", "はんてん", "爬爬" ]
 }, {
   "id" : "738d7d56-9716-4cf1-8bb4-a54e31c6df61",
   "title" : "はんてん",
@@ -3432,7 +3603,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Akko",
   "chartersList" : [ "Akko" ],
-  "tags" : [ "Akko", "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "chi ling", "cute", "electrode_core", "geometric shapes", "pastel colors", "pink", "rose", "white dress", "はんてん", "赤澪" ]
+  "tags" : [ "Akko", "Hanten", "ME_DD", "VictorReznov、HX.", "abstract background", "anime", "cat ears", "character design", "chi ling", "electrode_core", "geometric shapes", "pastel colors", "pink", "rose", "white dress", "はんてん", "赤澪" ]
 }, {
   "id" : "1ab3b5cf-b6af-48ec-99e8-2d3a4e9edc72",
   "title" : "Hikari",
@@ -3900,7 +4071,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Kagetsu", "Kirara Magic", "Kiyotsuki", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月", "花月", "阿白" ]
+  "tags" : [ "Asagi Honoka", "Kagetsu", "Kirara Magic", "Kiyotsuki", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "female", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月", "浅仪洸花", "浅儀 洸花", "淺儀洸花", "花月", "阿白" ]
 }, {
   "id" : "8c794275-de29-4beb-87a1-af024fe94e1e",
   "title" : "花月",
@@ -3918,7 +4089,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Milthm",
   "chartersList" : [ "Milthm Team" ],
-  "tags" : [ "Kagetsu", "Kirara Magic", "Milthm", "Milthm Team", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "花月", "阿白" ]
+  "tags" : [ "Asagi Honoka", "Kagetsu", "Kirara Magic", "Milthm", "Milthm Team", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "female", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "浅仪洸花", "浅儀 洸花", "淺儀洸花", "花月", "阿白" ]
 }, {
   "id" : "d6514d67-18d3-4d8e-8492-890061efb6f7",
   "title" : "花月",
@@ -3936,7 +4107,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Kiyotsuki",
   "chartersList" : [ "Kiyotsuki" ],
-  "tags" : [ "Kagetsu", "Kirara Magic", "Kiyotsuki", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月", "花月", "阿白" ]
+  "tags" : [ "Asagi Honoka", "Kagetsu", "Kirara Magic", "Kiyotsuki", "a bai", "artwork", "blue hair", "bubbles", "character", "dreamy", "fantasy", "female", "floating", "flower accessory", "illustration", "peaceful", "pink petals", "serene", "soft colors", "traditional clothing", "water", "十返清月", "浅仪洸花", "浅儀 洸花", "淺儀洸花", "花月", "阿白" ]
 }, {
   "id" : "1a3167ae-9105-4545-9aa7-3cab60874e9c",
   "title" : "Kayava",
@@ -4817,6 +4988,60 @@
   "chartersList" : [ "Akko" ],
   "tags" : [ "Akko", "C.H.S", "Psyched Akko", "Psyched Fevereiro", "chi ling", "contrast", "dark", "dim lighting", "focus", "gesture", "hallway", "intense", "light", "mysterious", "panda", "red curtain", "shadows", "surreal", "t+pazolite", "text", "title", "赤澪" ]
 }, {
+  "id" : "0e9354c8-7b97-46b2-81d7-a296ac8bc97f",
+  "title" : "Pthahnil",
+  "titleCulture" : "en",
+  "latinTitle" : "Pthahnil",
+  "bpmInfo" : [ {
+    "start" : -0.16,
+    "bpm" : 160.0
+  } ],
+  "artist" : "AiSS",
+  "artistsList" : [ "AiSS" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "『Fallen Angel』Magazet - \"NM=Left EX=Right\"",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Abit", "AiSS", "Magazet", "Pthahnil", "blue light", "che zi", "cyan", "dark", "digital art", "dreamy", "ethereal", "fantasy", "floating", "girl", "gloves", "glowing circles", "lying", "magic", "night", "rain", "ripples", "sci-fi", "soft lighting", "surreal", "top-down view", "white dress", "white hair", "『Fallen Angel』Magazet - \"NM=Left EX=Right\"", "澈子" ]
+}, {
+  "id" : "442a982d-fdea-45bb-a201-81df43a64543",
+  "title" : "Pthahnil",
+  "titleCulture" : "en",
+  "latinTitle" : "Pthahnil",
+  "bpmInfo" : [ {
+    "start" : -0.16,
+    "bpm" : 160.0
+  } ],
+  "artist" : "AiSS",
+  "artistsList" : [ "AiSS" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "『Fallen Angel』Magazet - \"NM=Left EX=Right\"",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Abit", "AiSS", "Magazet", "Pthahnil", "blue light", "che zi", "cyan", "dark", "digital art", "dreamy", "ethereal", "fantasy", "floating", "girl", "gloves", "glowing circles", "lying", "magic", "night", "rain", "ripples", "sci-fi", "soft lighting", "surreal", "top-down view", "white dress", "white hair", "『Fallen Angel』Magazet - \"NM=Left EX=Right\"", "澈子" ]
+}, {
+  "id" : "72d3d925-136e-48f9-a4d4-75a0c5460cb4",
+  "title" : "Pthahnil",
+  "titleCulture" : "en",
+  "latinTitle" : "Pthahnil",
+  "bpmInfo" : [ {
+    "start" : -0.16,
+    "bpm" : 160.0
+  } ],
+  "artist" : "AiSS",
+  "artistsList" : [ "AiSS" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "『Fallen Angel』Magazet - \"NM=Left EX=Right\"",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Abit", "AiSS", "Magazet", "Pthahnil", "blue light", "che zi", "cyan", "dark", "digital art", "dreamy", "ethereal", "fantasy", "floating", "girl", "gloves", "glowing circles", "lying", "magic", "night", "rain", "ripples", "sci-fi", "soft lighting", "surreal", "top-down view", "white dress", "white hair", "『Fallen Angel』Magazet - \"NM=Left EX=Right\"", "澈子" ]
+}, {
   "id" : "242edead-e9cd-428d-9799-f8a603109fc6",
   "title" : "Rainbow Flavor!",
   "titleCulture" : "en",
@@ -5211,7 +5436,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Ariayaka",
   "chartersList" : [ "Ariayaka" ],
-  "tags" : [ "Ariayaka", "Connor \"12LBS\" Skidmore", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
+  "tags" : [ "Ariayaka", "Connor \"12LBS\" Skidmore", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
 }, {
   "id" : "eb802d90-72c0-4b95-856a-b2951a57c0ec",
   "title" : "Sheer Ice Torrent",
@@ -5229,7 +5454,7 @@
   "difficultyValue" : 0.0,
   "charter" : "3",
   "chartersList" : [ "Milthm Team" ],
-  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
+  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
 }, {
   "id" : "d3ddf678-adb0-4158-ae10-21c2667c7ba8",
   "title" : "Sheer Ice Torrent",
@@ -5247,7 +5472,7 @@
   "difficultyValue" : 0.0,
   "charter" : "3",
   "chartersList" : [ "Milthm Team" ],
-  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
+  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
 }, {
   "id" : "e23637e8-fe16-4d9a-b3c9-9e059745ad3c",
   "title" : "Sheer Ice Torrent",
@@ -5265,7 +5490,7 @@
   "difficultyValue" : 0.0,
   "charter" : "3",
   "chartersList" : [ "Milthm Team" ],
-  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
+  "tags" : [ "3", "Connor \"12LBS\" Skidmore", "Milthm Team", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
 }, {
   "id" : "d3ddf678-adb0-4157-ae10-21c2667c7ba8",
   "title" : "Sheer Ice Torrent",
@@ -5283,7 +5508,7 @@
   "difficultyValue" : 0.0,
   "charter" : "Magazet",
   "chartersList" : [ "Magazet" ],
-  "tags" : [ "Connor \"12LBS\" Skidmore", "Magazet", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
+  "tags" : [ "Connor \"12LBS\" Skidmore", "Magazet", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "阿白", "雨世界" ]
 }, {
   "id" : "e23637e8-fe15-4d9a-b3c9-9e059745ad3c",
   "title" : "Sheer Ice Torrent",
@@ -5301,7 +5526,7 @@
   "difficultyValue" : 0.0,
   "charter" : "姜片",
   "chartersList" : [ "姜片" ],
-  "tags" : [ "Connor \"12LBS\" Skidmore", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "cute", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "jiang pian", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "姜片", "阿白", "雨世界" ]
+  "tags" : [ "Connor \"12LBS\" Skidmore", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "jiang pian", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "姜片", "阿白", "雨世界" ]
 }, {
   "id" : "eceaaf9e-3754-4054-9c17-2d87644de96e",
   "title" : "烁雨",

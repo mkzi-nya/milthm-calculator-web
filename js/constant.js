@@ -269,7 +269,19 @@ const constantsData = {
   "ff09bba7-6607-4427-93b9-26a0e29e31c6": [2.0, "DZ", "BUCHiAGE Fireworks", , 0.79, , ,],
   "835951b5-b513-4cad-a8b9-53cb52460a3e": [10.7, "CB", "BUCHiAGE Fireworks", , 9.21, , ,],
   "ce3608e3-bb79-4854-a10a-35dd8ecc93b6": [7.7, "SK", "BUCHiAGE Fireworks", , 2.55, , ,],
-  "4961f6d8-5519-4918-b5ef-c46ef9f523e2": [1.0, "DZ", "Fantasia Sonata Reflection", , 0.03, , ,]
+  "4961f6d8-5519-4918-b5ef-c46ef9f523e2": [1.0, "DZ", "Fantasia Sonata Reflection", , 0.03, , ,],
+  "b47d064b-255c-4bf6-a6e3-2ffa1de7f1a9": [10.1, "CB", "Autumn Rain", , , , ,],
+  "ab993c74-6067-4e6d-827f-b4de125f86f8": [6.4, "SK", "Autumn Rain", , , , ,],
+  "347c9618-7ce2-4164-b683-99bade9a2ae7": [3.0, "DZ", "Autumn Rain", , , , ,],
+  "72d3d925-136e-48f9-a4d4-75a0c5460cb4": [10.7, "CB", "Pthahnil", , , , ,],
+  "442a982d-fdea-45bb-a201-81df43a64543": [7.0, "SK", "Pthahnil", , , , ,],
+  "0e9354c8-7b97-46b2-81d7-a296ac8bc97f": [2.0, "DZ", "Pthahnil", , , , ,],
+  "f00e2bc8-4299-4442-a0a3-5a31f635ffec": [9.0, "CB", "Deluge", , , , ,],
+  "9a2e01f9-990f-4105-9b21-29dd10681c44": [5.0, "SK", "Deluge", , , , ,],
+  "a6ea8ba3-6258-4734-b906-af8da2f6d7b0": [2.0, "DZ", "Deluge", , , , ,],
+  "f32e28cf-c2d3-4981-88e7-200eb2daab15": [9.6, "CB", "Pthahnil", , , , ,],
+  "b3585c5d-6936-4129-b45c-edc40026e7ac": [6.2, "SK", "Pthahnil", , , , ,],
+  "cab72aa4-2891-4485-90b6-9fd803cecf60": [2.0, "DZ", "Pthahnil", , , , ,],
 
 };
 //解析出constant
