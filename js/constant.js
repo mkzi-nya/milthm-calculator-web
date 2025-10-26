@@ -279,9 +279,9 @@ const constantsData = {
   "f00e2bc8-4299-4442-a0a3-5a31f635ffec": [9.0, "CB", "Deluge", , , , ,],
   "9a2e01f9-990f-4105-9b21-29dd10681c44": [5.0, "SK", "Deluge", , , , ,],
   "a6ea8ba3-6258-4734-b906-af8da2f6d7b0": [2.0, "DZ", "Deluge", , , , ,],
-  "f32e28cf-c2d3-4981-88e7-200eb2daab15": [9.6, "CB", "Pthahnil", , , , ,],
-  "b3585c5d-6936-4129-b45c-edc40026e7ac": [6.2, "SK", "Pthahnil", , , , ,],
-  "cab72aa4-2891-4485-90b6-9fd803cecf60": [2.0, "DZ", "Pthahnil", , , , ,],
+  "f32e28cf-c2d3-4981-88e7-200eb2daab15": [9.6, "CB", "Fluorescent Light", , , , ,],
+  "b3585c5d-6936-4129-b45c-edc40026e7ac": [6.2, "SK", "Fluorescent Light", , , , ,],
+  "cab72aa4-2891-4485-90b6-9fd803cecf60": [2.0, "DZ", "Fluorescent Light", , , , ,],
 
 };
 //解析出constant
