@@ -13,7 +13,6 @@
   - [Radar Chart](#radar-chart)
 - [About Milthm](#about-milthm)
   - [Reality Calculation Formula](#reality-calculation-formula)
-  - [About Ytilaer in Score Graphs](#about-ytilaer-in-score-graphs)
   - [About Save Files](#about-save-files)
   - [Note Judgments](#note-judgments)
   - [Result Ratings](#result-ratings)

@@ -13,7 +13,6 @@
   - [Gráfico de radar](#雷达图)
 - [Acerca de Milthm](#关于-milthm)
   - [Fórmula de cálculo de Reality](#reality-计算公式)
-  - [Sobre Ytilaer en el gráfico de puntuación](关于查分图中的ytilaer)
   - [Acerca de los archivos de guardado](#关于存档文件)
   - [Determinación de notas](#音符判定)
   - [Calificación final](#结算评级)

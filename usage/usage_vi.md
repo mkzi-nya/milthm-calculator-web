@@ -13,7 +13,6 @@ Hoặc bạn có thể gửi PR cho bản dịch ngôn ngữ hiện tại tại 
   - [Biểu đồ radar](#biểu-đồ-radar)
 - [Về Milthm](#về-milthm)
   - [Công thức tính Reality](#công-thức-tính-reality)
-  - [Về Ytilaer trong biểu đồ điểm](#về-ytilaer-trong-biểu-đồ-điểm)
   - [Về tệp lưu](#về-tệp-lưu)
   - [Phán đoán nốt nhạc](#phán-đoán-nốt-nhạc)
   - [Xếp hạng kết thúc](#xếp-hạng-kết-thúc)
