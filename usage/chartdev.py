@@ -40,8 +40,8 @@ def generate_chart_dev(data, chart_info_data):
     title1 = title.replace('(', '（').replace(')', '）')
     
     # 生成游戏链接
-    url = f"https://milt.hm/songlist/All/?q={title}"
-    
+    url = f"https://milt.hm/songlist/All/?q=chartid%3D{id}"
+
     # 构建modal的HTML
     modal_html = f'''
 <div style="position: absolute; background-color: rgba(0, 0, 0, 0.8); padding: 2px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000; font-family: Arial, sans-serif; color: #fff; font-size: 11px; line-height: 1.4; width: 250px;" aaa="{titles},{difficulty}">
@@ -92,7 +92,7 @@ def generate_info_dev(data):
     title = re.sub(r'[()]', '', data.get('title', ''))
     item = data
     chartersList = data.get('chartersList', [])  # 添加这行获取chartersList
-    url = f"https://milt.hm/songlist/All/?q=chartid%3D{id}"
+    url = f"https://milt.hm/songlist/All/?q={title}"
 
     
     bpm_text = ''
