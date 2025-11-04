@@ -40,7 +40,7 @@ def generate_chart_dev(data, chart_info_data):
     title1 = title.replace('(', '（').replace(')', '）')
     
     # 生成游戏链接
-    url = f"https://milt.hm/songlist/All/?q=chartid%3D{id}"
+    url = f"https://milt.hm/songlist/All/?q={title}"
     
     # 构建modal的HTML
     modal_html = f'''
