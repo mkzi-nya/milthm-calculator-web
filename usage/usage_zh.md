@@ -786,7 +786,7 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 
 ## 曲师统计
 
-<div style="font-size:10px;">
+<div style="font-size:10px; white-space:nowrap;">
 
 | artist | song |
 |-|-|
@@ -878,7 +878,7 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 
 ## 谱师统计
 
-<div style="font-size:10px;">
+<div style="font-size:10px; white-space:nowrap;">
 
 | Charter | Drizzle | Sprinkle | Cloudburst | Clear | Special |
 |-|-|-|-|-|-|
