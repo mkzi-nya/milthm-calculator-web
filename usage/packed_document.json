@@ -1976,6 +1976,51 @@
   "chartersList" : [ "Akko" ],
   "tags" : [ "4444_Exxxx", "Akko", "Akko ", "BUCHiAGE Fireworks", "Dragon_Klub", "Dragon_klub", "NAREU.", "action pose", "anime character", "bright lights", "chi ling", "energetic", "fireworks", "gold accents", "red outfit", "赤澪" ]
 }, {
+  "id" : "195880a7-3550-4756-8d1d-97d064328775",
+  "title" : "Before it Ends",
+  "titleCulture" : "en",
+  "latinTitle" : "Before it Ends",
+  "bpmInfo" : [ ],
+  "artist" : "BilliumMoto",
+  "artistsList" : [ "BilliumMoto" ],
+  "illustrator" : [ "sarukimu" ],
+  "illustratorsList" : [ "sarukimu" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Ursulina Never Ends",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Before it Ends", "BilliumMoto", "Magazet", "Ursulina Never Ends", "sarukimu" ]
+}, {
+  "id" : "7efee172-e8f7-4ffd-b63d-6646ade686ec",
+  "title" : "Before it Ends",
+  "titleCulture" : "en",
+  "latinTitle" : "Before it Ends",
+  "bpmInfo" : [ ],
+  "artist" : "BilliumMoto",
+  "artistsList" : [ "BilliumMoto" ],
+  "illustrator" : [ "sarukimu" ],
+  "illustratorsList" : [ "sarukimu" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet Never Ends",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Before it Ends", "BilliumMoto", "Magazet", "Magazet Never Ends", "sarukimu" ]
+}, {
+  "id" : "37f5c629-d6c5-4996-bd45-1a6903101111",
+  "title" : "Before it Ends",
+  "titleCulture" : "en",
+  "latinTitle" : "Before it Ends",
+  "bpmInfo" : [ ],
+  "artist" : "BilliumMoto",
+  "artistsList" : [ "BilliumMoto" ],
+  "illustrator" : [ "sarukimu" ],
+  "illustratorsList" : [ "sarukimu" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Magazet Never Ends",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "Before it Ends", "BilliumMoto", "Magazet", "Magazet Never Ends", "sarukimu" ]
+}, {
   "id" : "a4ac4167-5934-4157-90e7-675c994b4451",
   "title" : "参宿四~Betelgeuse~",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
@@ -3019,6 +3064,60 @@
   "charter" : "神と共に踊る「マガゼット」",
   "chartersList" : [ "Magazet" ],
   "tags" : [ "Fantasia Sonata God Dance", "Magazet", "PYKAMIA vs Sakuzyo", "Sakuzyo", "dance", "dramatic", "elegant", "golden", "luxury", "mysterious", "pykamia", "red tie", "sakuzyo", "silver hair", "suit", "white box", "yu ye", "削除", "神と共に踊る「マガゼット」", "雨野" ]
+}, {
+  "id" : "bea32197-37da-47d8-b18f-ca8449bf3cf7",
+  "title" : "Fantasia Sonata Hope",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata Hope",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 231.0
+  } ],
+  "artist" : "PYKAMIA vs Reku Mochizuki",
+  "artistsList" : [ "PYKAMIA", "Reku Mochizuki" ],
+  "illustrator" : [ "RORU" ],
+  "illustratorsList" : [ "RORU" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fantasia Sonata Hope", "PYKAMIA vs Reku Mochizuki", "RORU", "chi ling", "赤澪" ]
+}, {
+  "id" : "27c295cf-2094-40ab-8647-beb65a257443",
+  "title" : "Fantasia Sonata Hope",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata Hope",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 231.0
+  } ],
+  "artist" : "PYKAMIA vs Reku Mochizuki",
+  "artistsList" : [ "PYKAMIA", "Reku Mochizuki" ],
+  "illustrator" : [ "RORU" ],
+  "illustratorsList" : [ "RORU" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fantasia Sonata Hope", "PYKAMIA vs Reku Mochizuki", "RORU", "chi ling", "赤澪" ]
+}, {
+  "id" : "fb7b7388-ee38-488d-8d59-81397b6277d9",
+  "title" : "Fantasia Sonata Hope",
+  "titleCulture" : "en",
+  "latinTitle" : "Fantasia Sonata Hope",
+  "bpmInfo" : [ {
+    "start" : -0.01,
+    "bpm" : 231.0
+  } ],
+  "artist" : "PYKAMIA vs Reku Mochizuki",
+  "artistsList" : [ "PYKAMIA", "Reku Mochizuki" ],
+  "illustrator" : [ "RORU" ],
+  "illustratorsList" : [ "RORU" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Akko",
+  "chartersList" : [ "Akko" ],
+  "tags" : [ "Akko", "Fantasia Sonata Hope", "PYKAMIA vs Reku Mochizuki", "RORU", "chi ling", "赤澪" ]
 }, {
   "id" : "4961f6d8-5519-4918-b5ef-c46ef9f523e2",
   "title" : "Fantasia Sonata Reflection",
@@ -5528,6 +5627,60 @@
   "chartersList" : [ "姜片" ],
   "tags" : [ "Connor \"12LBS\" Skidmore", "Rain World", "RainWorld", "Sheer Ice Torrent", "a bai", "animal", "cartoon", "close-up", "comfort", "cozy", "fantasy", "fire", "glowing eyes", "heartwarming", "illustration", "jiang pian", "magical", "night", "serene", "slug cat", "snow", "soft colors", "warmth", "winter", "姜片", "阿白", "雨世界" ]
 }, {
+  "id" : "50efadfb-ae2c-4e1f-aa1d-81cd90641db0",
+  "title" : "いつか忘れるんだろう",
+  "titleCulture" : "en",
+  "latinTitle" : "Someday, I will Forget",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 180.0
+  } ],
+  "artist" : "TsukiP",
+  "artistsList" : [ "TsukiP" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "BlueDream0",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "BlueDream0", "Magazet", "Someday, I will Forget", "TsukiP", "che zi", "いつか忘れるんだろう", "澈子" ]
+}, {
+  "id" : "ef43ff97-deaf-4323-b354-70f52d9e5461",
+  "title" : "いつか忘れるんだろう",
+  "titleCulture" : "en",
+  "latinTitle" : "Someday, I will Forget",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 180.0
+  } ],
+  "artist" : "TsukiP",
+  "artistsList" : [ "TsukiP" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "BlueDream0",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "BlueDream0", "Magazet", "Someday, I will Forget", "TsukiP", "che zi", "いつか忘れるんだろう", "澈子" ]
+}, {
+  "id" : "ae8b037d-36ec-49f0-aca2-983f01bfb6c7",
+  "title" : "いつか忘れるんだろう",
+  "titleCulture" : "en",
+  "latinTitle" : "Someday, I will Forget",
+  "bpmInfo" : [ {
+    "start" : 0.0,
+    "bpm" : 180.0
+  } ],
+  "artist" : "TsukiP",
+  "artistsList" : [ "TsukiP" ],
+  "illustrator" : [ "澈子" ],
+  "illustratorsList" : [ "澈子" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "BlueDream0",
+  "chartersList" : [ "Magazet" ],
+  "tags" : [ "BlueDream0", "Magazet", "Someday, I will Forget", "TsukiP", "che zi", "いつか忘れるんだろう", "澈子" ]
+}, {
   "id" : "eceaaf9e-3754-4054-9c17-2d87644de96e",
   "title" : "烁雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
@@ -5977,6 +6130,60 @@
   "charter" : "十返清月",
   "chartersList" : [ "Kiyotsuki" ],
   "tags" : [ "Kiyotsuki", "PYKAMIA", "Tiger Lotus", "art", "bing guo", "black and white", "cat ears", "characters", "dark clothing", "dramatic lighting", "fantasy", "female", "formal attire", "gloves", "long hair", "male", "moon", "night", "stylized", "two", "冰果", "十返清月", "白虎蓮華" ]
+}, {
+  "id" : "e0cb3704-d30e-4f01-ac56-2be215269d7d",
+  "title" : "運命",
+  "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
+  "latinTitle" : "Unmei",
+  "bpmInfo" : [ {
+    "start" : 0.06,
+    "bpm" : 182.0
+  } ],
+  "artist" : "世界の花",
+  "artistsList" : [ "世界の花" ],
+  "illustrator" : [ "世界の花" ],
+  "illustratorsList" : [ "世界の花" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Particle of Crystal",
+  "chartersList" : [ "Icier", "Akko" ],
+  "tags" : [ "Akko", "Icier", "Particle of Crystal", "Unmei", "chi ling", "世界の花", "赤澪", "運命" ]
+}, {
+  "id" : "d0d29240-8b57-4c50-905d-7a0350e05fca",
+  "title" : "運命",
+  "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
+  "latinTitle" : "Unmei",
+  "bpmInfo" : [ {
+    "start" : 0.06,
+    "bpm" : 182.0
+  } ],
+  "artist" : "世界の花",
+  "artistsList" : [ "世界の花" ],
+  "illustrator" : [ "世界の花" ],
+  "illustratorsList" : [ "世界の花" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Crystal with Particle",
+  "chartersList" : [ "Icier", "Akko" ],
+  "tags" : [ "Akko", "Crystal with Particle", "Icier", "Unmei", "chi ling", "世界の花", "赤澪", "運命" ]
+}, {
+  "id" : "5144879f-47c9-4c2c-a072-8189afe85771",
+  "title" : "運命",
+  "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo:ja-JP",
+  "latinTitle" : "Unmei",
+  "bpmInfo" : [ {
+    "start" : 0.06,
+    "bpm" : 182.0
+  } ],
+  "artist" : "世界の花",
+  "artistsList" : [ "世界の花" ],
+  "illustrator" : [ "世界の花" ],
+  "illustratorsList" : [ "世界の花" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Particle & xzadudu179",
+  "chartersList" : [ "Akko", "xzadudu179" ],
+  "tags" : [ "Akko", "Particle & xzadudu179", "Unmei", "chi ling", "xzadudu179", "世界の花", "赤澪", "運命" ]
 }, {
   "id" : "72ebcd95-605f-406d-91c6-35265f3133a8",
   "title" : "Vestige of Dreams",
