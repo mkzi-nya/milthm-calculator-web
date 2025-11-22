@@ -68,13 +68,29 @@ def generate_chart_info_html(title, difficulty, chart_id, chart_info_data):
     
     # 如果没找到，尝试用 曲名_难度 格式查找
     if not chart_info:
-        clean_title = re.sub(r'[()\s]', '', title)
-        difficulty_key = f"{clean_title}_{difficulty}"
-        if difficulty_key in chart_info_data:
-            chart_info = chart_info_data[difficulty_key]
-            # 如果是列表，取第一个元素
-            if isinstance(chart_info, list):
-                chart_info = chart_info[0] if chart_info else None
+        # 创建多个可能的键名格式进行查找
+        possible_keys = []
+        
+        # 原始标题（保留空格）
+        possible_keys.append(f"{title}_{difficulty}")
+        
+        # 移除括号但保留空格
+        clean_title_no_parentheses = re.sub(r'[()]', '', title)
+        possible_keys.append(f"{clean_title_no_parentheses}_{difficulty}")
+        
+        # 移除所有特殊字符包括空格
+        clean_title_no_spaces = re.sub(r'[()\s]', '', title)
+        possible_keys.append(f"{clean_title_no_spaces}_{difficulty}")
+        
+        # 尝试所有可能的键名
+        for key in possible_keys:
+            if key in chart_info_data:
+                chart_info = chart_info_data[key]
+                # 如果是列表，取第一个元素
+                if isinstance(chart_info, list):
+                    chart_info = chart_info[0] if chart_info else None
+                if chart_info:
+                    break
     
     if chart_info:
         info_html = f'''
