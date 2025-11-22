@@ -282,7 +282,18 @@ const constantsData = {
   "f32e28cf-c2d3-4981-88e7-200eb2daab15": [9.6, "CB", "Fluorescent Light", , , , ,],
   "b3585c5d-6936-4129-b45c-edc40026e7ac": [6.2, "SK", "Fluorescent Light", , , , ,],
   "cab72aa4-2891-4485-90b6-9fd803cecf60": [2.0, "DZ", "Fluorescent Light", , , , ,],
-
+  "7efee172-e8f7-4ffd-b63d-6646ade686ec": [3.0, "Drizzle", "Before it Ends", , , , ,],
+  "37f5c629-d6c5-4996-bd45-1a6903101111": [7.4, "Sprinkle", "Before it Ends", , , , ,],
+  "195880a7-3550-4756-8d1d-97d064328775": [10.6, "Cloudburst", "Before it Ends", , , , ,],
+  "bea32197-37da-47d8-b18f-ca8449bf3cf7": [3.5, "Drizzle", "Fantasia Sonata Hope", , , , ,],
+  "27c295cf-2094-40ab-8647-beb65a257443": [8.9, "Sprinkle", "Fantasia Sonata Hope", , , , ,],
+  "fb7b7388-ee38-488d-8d59-81397b6277d9": [10.7, "Cloudburst", "Fantasia Sonata Hope", , , , ,],
+  "ae8b037d-36ec-49f0-aca2-983f01bfb6c7": [2.0, "Drizzle", "いつか忘れるんだろう", , , , ,],
+  "50efadfb-ae2c-4e1f-aa1d-81cd90641db0": [7.4, "Sprinkle", "いつか忘れるんだろう", , , , ,],
+  "ef43ff97-deaf-4323-b354-70f52d9e5461": [8.9, "Cloudburst", "いつか忘れるんだろう", , , , ,],
+  "d0d29240-8b57-4c50-905d-7a0350e05fca": [2.0, "Drizzle", "運命", , , , ,],
+  "e0cb3704-d30e-4f01-ac56-2be215269d7d": [7.6, "Sprinkle", "運命", , , , ,],
+  "5144879f-47c9-4c2c-a072-8189afe85771": [9.9, "Cloudburst", "運命", , , , ,],
 };
 //解析出constant
 const constants = {},
