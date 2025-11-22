@@ -778,10 +778,10 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 | [Fantasia Sonata Botanical Garden](info:info("Fantasia Sonata Botanical Garden"))          | [2.0](info:info("Fantasia Sonata Botanical Garden", "Drizzle"))  | [6.1](info:info("Fantasia Sonata Botanical Garden", "Sprinkle"))  | [10.0](info:info("Fantasia Sonata Botanical Garden", "Cloudburst")) | - |
 | [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!"))          | [2.0](info:info("Dum! Dum!! Dum!!!", "Drizzle"))  | [7.1](info:info("Dum! Dum!! Dum!!!", "Sprinkle"))  | [10.5](info:info("Dum! Dum!! Dum!!!", "Cloudburst")) | - |
 | [Splash the Beat!!](info:info("Splash the Beat!!"))          | [1.0](info:info("Splash the Beat!!", "Drizzle"))  | [7.2](info:info("Splash the Beat!!", "Sprinkle"))  | [12.1](info:info("Splash the Beat!!", "Cloudburst")) | - |
-| [いつか忘れるんだろう](info:info("いつか忘れるんだろう"))          | [ - ](info:info("いつか忘れるんだろう", "Drizzle"))  | [ - ](info:info("いつか忘れるんだろう", "Sprinkle"))  | [ - ](info:info("いつか忘れるんだろう", "Cloudburst")) | - |
-| [運命](info:info("運命"))          | [ - ](info:info("運命", "Drizzle"))  | [ - ](info:info("運命", "Sprinkle"))  | [ - ](info:info("運命", "Cloudburst")) | - |
-| [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope"))          | [ - ](info:info("Fantasia Sonata Hope", "Drizzle"))  | [ - ](info:info("Fantasia Sonata Hope", "Sprinkle"))  | [ - ](info:info("Fantasia Sonata Hope", "Cloudburst")) | - |
-| [Before it Ends](info:info("Before it Ends"))          | [ - ](info:info("Before it Ends", "Drizzle"))  | [ - ](info:info("Before it Ends", "Sprinkle"))  | [ - ](info:info("Before it Ends", "Cloudburst")) | - |
+| [いつか忘れるんだろう](info:info("いつか忘れるんだろう"))          | [ 2.0 ](info:info("いつか忘れるんだろう", "Drizzle"))  | [ 7.4 ](info:info("いつか忘れるんだろう", "Sprinkle"))  | [ 8.9 ](info:info("いつか忘れるんだろう", "Cloudburst")) | - |
+| [運命](info:info("運命"))          | [ 2.0 ](info:info("運命", "Drizzle"))  | [ 7.6 ](info:info("運命", "Sprinkle"))  | [ 9.9 ](info:info("運命", "Cloudburst")) | - |
+| [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope"))          | [ 3.5 ](info:info("Fantasia Sonata Hope", "Drizzle"))  | [ 8.9 ](info:info("Fantasia Sonata Hope", "Sprinkle"))  | [ 10.7 ](info:info("Fantasia Sonata Hope", "Cloudburst")) | - |
+| [Before it Ends](info:info("Before it Ends"))          | [ 3.0 ](info:info("Before it Ends", "Drizzle"))  | [ 7.4 ](info:info("Before it Ends", "Sprinkle"))  | [ 10.6 ](info:info("Before it Ends", "Cloudburst")) | - |
 
 
 ---
