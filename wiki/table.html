@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>定数表</title>
+
+  <!-- 本地资源（不再注入 load.js） -->
+  <link rel="stylesheet" href="./github-markdown-dark.min.css">
+  <script src="./marked.min.js"></script>
+  <script src="./katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="./index.umd.js"></script>
+  <link rel="stylesheet" href="./github-dark.min.css">
+  <script src="./highlight.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .container { width: 100%; max-width: 900px; }
+    .markdown-body { width: 100%; overflow-wrap: break-word; }
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    .toc { display: none; }
+    pre, code { user-select: text; }
+
+    .language-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 2em;
+    }
+    .language-menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      background: #222;
+      border-radius: 5px;
+      padding: 10px;
+      list-style: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .language-menu li {
+      padding: 8px 12px;
+      cursor: pointer;
+      color: white;
+    }
+    .language-menu li:hover { background: #444; }
+
+    /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
+    div[aaa] {
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        opacity 0.12s ease-in-out,
+        visibility 0.12s ease-in-out,
+        top 0.12s ease,
+        left 0.12s ease;
+    }
+    div[aaa].visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L5K3QVRHFZ');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <article id="content" class="markdown-body"></article>
+  </div>
+
+  <!-- 内联 Markdown：直接整体替换 
+- [返回主页](./)
+
+## 定数表
+
+[返回目录](#目录)
+
+- [说明](#说明)
+- [主线章节](#介绍---天气预报)
+  - [天气预报](#介绍---天气预报)
+  - [雨的声音](#序章---雨的声音)
+  - [甜与苦的一体两面](#主线章节一---甜与苦的一体两面)
+- [支线章节](#支线章节一---花裳随雨得春迟)
+  - [花裳随雨得春迟](#支线章节一---花裳随雨得春迟)
+- [联动章节](#联动---雨世界)
+  - [雨世界](#联动---雨世界)
+  - [Notanote](#联动---notanote)
+  - [Electrode Core](#联动---electrode-core)
+  - [解空明镜](#联动---解空明镜)
+- [单曲](#单曲---梦境磁带)
+  - [梦境磁带](#单曲---梦境磁带)
+  - [露晓卉庭](#单曲---露晓卉庭)
+
+---
+
+## 说明
+
+> - 所有 `SP` 和非常规谱面均不参与 Reality 计算。  
+
+当前版本的理论 Reality 为 `13.475`（显示为 13.48）  
+当前版本定数最高的 20 首曲目如下：
+
+| 排行 | 标题  | 难度 | 定数 |
+|---|---------------------|------|----|
+| 1 | [靈](info:info("靈", "Cloudburst")) | CB | 12.8 |
+| 2 | [命日](info:info("命日", "Clear")) | CL | 12.7 |
+| 3 | [Contrasty Angeles](info:info("Contrasty Angeles", "Clear")) | CL | 12.5 |
+| 4 | [大月墜落狂想](info:info("大月墜落狂想", "Cloudburst")) | CB | 12.4 |
+| 5 | [Regnaissance](info:info("Regnaissance", "Clear")) | CL | 12.1 |
+| 5 | [Innocent white](info:info("Innocent white", "Cloudburst")) | CB | 12.1 |
+| 5 | [Splash the Beat!!](info:info("Splash the Beat!!", "Cloudburst")) | CB | 12.1 |
+| 8 | [灯ノ桜蝶](info:info("灯ノ桜蝶", "Cloudburst")) | CB | 12.0 |
+| 8 | [Meltovt Necrosys](info:info("Meltovt Necrosys", "Cloudburst")) | CB | 12.0 |
+| 10 | [Broken Conviction](info:info("Broken Conviction", "Clear")) | CL | 11.9 |
+| 10 | [Sakuyahime](info:info("Sakuyahime", "Cloudburst")) | CB | 11.9 |
+| 12 | [百九十](info:info("百九十", "Cloudburst")) | CB | 11.8 |
+| 12 | [HYPER MEMORIES](info:info("HYPER MEMORIES", "Cloudburst")) | CB | 11.8 |
+| 14 | [Moonflutter](info:info("Moonflutter", "Clear")) | CL | 11.7 |
+| 14 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit")) | CL | 11.7 |
+| 14 | [Brightened Demonios](info:info("Brightened Demonios", "Cloudburst")) | CB | 11.7 |
+| 17 | [KASANE](info:info("KASANE", "Cloudburst")) | CB | 11.6 |
+| 17 | [Threat - Metropolis](info:info("Threat - Metropolis", "Cloudburst")) | CB | 11.6 |
+| 17 | [Contrasty Angeles](info:info("Contrasty Angeles", "Cloudburst")) | CB | 11.6 |
+| 20 | [Broken Conviction](info:info("Broken Conviction", "Cloudburst")) | CB | 11.5 |
+| 20 | [Vestige of Dreams](info:info("Vestige of Dreams", "Cloudburst")) | CB | 11.5 |
+
+---
+
+> 点击链接可以查看 曲目/谱面 的详情信息
+> 曲目/谱面详情信息来源于Milthm Lang的仓库[RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/)，已获得使用许可
+
+---
+
+## 介绍 - 天气预报
+
+| 标题                | DZ   | SK   | CB   | CL   | SP |
+|---------------------|------|------|------|------|---|
+| [Welcome to Milthm](info:info("Welcome to Milthm"))  | [1.0](info:info("Welcome to Milthm", "Drizzle")) | -  | - | - | [SP](info:info("Welcome to Milthm", "Special")) |
+| [时落之雨](info:info("时落之雨"))           | [1.0](info:info("时落之雨", "Drizzle"))  | [4.5](info:info("时落之雨", "Sprinkle"))  | [8.5](info:info("时落之雨", "Cloudburst"))  | -    | - |
+| [夜風](info:info("夜風"))               | [3.0](info:info("夜風","Drizzle"))  | [7.3](info:info("夜風", "Sprinkle"))  | [10.1](info:info("夜風", "Cloudburst")) | -    | - |
+| [花月](info:info("花月"))               | [2.0](info:info("花月", "Drizzle"))  | [8.2](info:info("花月", "Sprinkle"))  | [9.3](info:info("花月", "Cloudburst"))  | -    | - |
+| [暮予星光](info:info("暮予星光"))           | [2.0](info:info("暮予星光", "Drizzle"))  | [7.5](info:info("暮予星光", "Sprinkle"))  | [9.1](info:info("暮予星光", "Cloudburst")) | -    | - |
+| [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome"))           | [2.5](info:info("Fantasia Sonata Sky Syndrome", "Drizzle"))  | [7.1](info:info("Fantasia Sonata Sky Syndrome", "Sprinkle"))  | [10.5](info:info("Fantasia Sonata Sky Syndrome", "Cloudburst")) | -    | - |
+| [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection"))  | [1.0](info:info("Fantasia Sonata Reflection", "Drizzle")) | -  | - | - | - |
+
+---
+
+## 序章 - 雨的声音
+
+---
+
+| 标题           | DZ   | SK   | CB   | CL   |
+|---------------|------|------|------|------|
+| [LOUDER!](info:info("LOUDER!"))  | [2.0](info:info("LOUDER!", "Drizzle"))  | [5.5](info:info("LOUDER!", "Sprinkle"))  | [9.5](info:info("LOUDER!", "Cloudburst")) | - |
+| [雨女](info:info("雨女"))          | [3.0](info:info("雨女", "Drizzle")) | [6.5](info:info("雨女", "Sprinkle")) | [9.5](info:info("雨女", "Cloudburst")) | [10.5](info:info("雨女", "Clear")) |
+| [雨之城](info:info("雨之城"))        | [1.0](info:info("雨之城", "Drizzle"))  | [4.0](info:info("雨之城", "Sprinkle"))  | [7.5](info:info("雨之城", "Cloudburst"))  | -    |
+| [Jump out?](info:info("Jump out?"))     | [2.0](info:info("Jump out?", "Drizzle"))  | [7.9](info:info("Jump out?", "Sprinkle"))  | [9.7](info:info("Jump out?", "Cloudburst"))  | -    |
+| [☹](info:info("☹"))      | [4.0](info:info("☹", "Drizzle"))  | [8.0](info:info("☹", "Sprinkle"))  | [10.1](info:info("☹", "Cloudburst")) | -    |
+| [イコラト](info:info("イコラト"))      | [3.0](info:info("イコラト", "Drizzle"))  | [8.7](info:info("イコラト", "Sprinkle"))  | [11.2](info:info("イコラト", "Cloudburst")) | -    |
+| [命日](info:info("命日"))          | [3.0](info:info("命日", "Drizzle"))  | [8.6](info:info("命日", "Sprinkle"))  | [11.1](info:info("命日", "Cloudburst")) | [12.7(12.2)](info:info("命日", "Clear")) |
+
+---
+
+## 主线章节一 - 甜与苦的一体两面
+
+| 标题                | DZ   | SK   | CB   | CL   |
+|---------------------|------|------|------|------|
+| [粗线条的雨](info:info("粗线条的雨"))         | [1.0](info:info("粗线条的雨", "Drizzle"))  | [4.0](info:info("粗线条的雨", "Sprinkle"))  | [8.3](info:info("粗线条的雨", "Cloudburst"))  | -    |
+| [Aconsma](info:info("Aconsma"))            | [1.0](info:info("Aconsma", "Drizzle"))  | [6.0](info:info("Aconsma", "Sprinkle"))  | [9.3](info:info("Aconsma", "Cloudburst"))  | -    |
+| [OverRain](info:info("OverRain"))           | [2.0](info:info("OverRain", "Drizzle"))  | [7.6](info:info("OverRain", "Sprinkle"))  | [10.0](info:info("OverRain", "Cloudburst")) | -    |
+| [Fragment of Memories](info:info("Fragment of Memories")) | [2.0](info:info("Fragment of Memories", "Drizzle"))  | [8.4](info:info("Fragment of Memories", "Sprinkle"))  | [11.3](info:info("Fragment of Memories", "Cloudburst")) | -    |
+| [HYPER MEMORIES](info:info("HYPER MEMORIES"))     | [3.0](info:info("HYPER MEMORIES", "Drizzle"))  | [8.9](info:info("HYPER MEMORIES", "Sprinkle"))  | [11.8(11.7)](info:info("HYPER MEMORIES", "Cloudburst")) | -    |
+| [Regnaissance](info:info("Regnaissance"))       | [4.5](info:info("Regnaissance", "Drizzle"))  | [8.5](info:info("Regnaissance", "Sprinkle"))  | [11.1](info:info("Regnaissance", "Cloudburst")) | [12.1](info:info("Regnaissance", "Clear")) |
+| [Contrasty Angeles](info:info("Contrasty Angeles"))  | [4.0](info:info("Contrasty Angeles", "Drizzle"))  | [9.0](info:info("Contrasty Angeles", "Sprinkle"))  | [11.6(11.5)](info:info("Contrasty Angeles", "Cloudburst")) | [12.5(12.3)](info:info("Contrasty Angeles", "Clear")) |
+| [Brightened Demonios](info:info("Brightened Demonios"))  | [4.5](info:info("Brightened Demonios", "Drizzle"))  | [9.3](info:info("Brightened Demonios", "Sprinkle"))  | [11.7](info:info("Brightened Demonios", "Cloudburst")) | - |
+| [Myth compiler](info:info("Myth compiler"))  | [3.0](info:info("Myth compiler", "Drizzle"))  | [7.0](info:info("Myth compiler", "Sprinkle"))  | [11.4](info:info("Myth compiler", "Cloudburst")) | - |
+| [Fantasia Sonata Arcadia](info:info("Fantasia Sonata Arcadia"))  | [2.0](info:info("Fantasia Sonata Arcadia", "Drizzle"))  | [6.0](info:info("Fantasia Sonata Arcadia", "Sprinkle"))  | [10.5](info:info("Fantasia Sonata Arcadia", "Cloudburst")) | - |
+
+---
+
+## 支线章节一 - 花裳随雨得春迟
+
+| 标题                | DZ   | SK   | CB   | CL   |
+|---------------------|------|------|------|------|
+| [Vestige of Dreams](info:info("Vestige of Dreams"))          | [2.5](info:info("Vestige of Dreams", "Drizzle"))  | [6.5](info:info("Vestige of Dreams", "Sprinkle"))  | [11.5](info:info("Vestige of Dreams", "Cloudburst")) | - |
+| [百九十](info:info("百九十"))          | [3.0](info:info("百九十", "Drizzle"))  | [9.2](info:info("百九十", "Sprinkle"))  | [11.8](info:info("百九十", "Cloudburst")) | - |
+| [灯ノ桜蝶](info:info("灯ノ桜蝶"))          | [2.0](info:info("灯ノ桜蝶", "Drizzle"))  | [9.7](info:info("灯ノ桜蝶", "Sprinkle"))  | [12.0](info:info("灯ノ桜蝶", "Cloudburst")) | - |
+| [Sakuyahime](info:info("Sakuyahime"))          | [3.5](info:info("Sakuyahime", "Drizzle"))  | [5.8](info:info("Sakuyahime", "Sprinkle"))  | [11.9](info:info("Sakuyahime", "Cloudburst")) | - |
+| [靈](info:info("靈"))          | [4.5](info:info("靈", "Drizzle"))  | [9.4](info:info("靈", "Sprinkle"))  | [12.8](info:info("靈", "Cloudburst")) | - |
+| [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks"))          | [2.0](info:info("BUCHiAGE Fireworks", "Drizzle"))  | [7.7](info:info("BUCHiAGE Fireworks", "Sprinkle"))  | [10.7](info:info("BUCHiAGE Fireworks", "Cloudburst")) | - |
+| [ニニ feat. Qayo & mii](info:info("ニニ feat. Qayo & mii"))          | [2.0](info:info("ニニ feat. Qayo & mii", "Drizzle"))  | [6.7](info:info("ニニ feat. Qayo & mii", "Sprinkle"))  | [11.3](info:info("ニニ feat. Qayo & mii", "Cloudburst")) | - |
+
+
+---
+
+## 联动 - 雨世界
+
+| 标题                    | DZ   | SK   | CB   | CL   |
+|-------------------------|------|------|------|------|
+| [Sundown](info:info("Sundown"))                | [1.0](info:info("Sundown", "Drizzle"))  | -    | -    | -    |
+| [Bio-Engineering](info:info("Bio-Engineering"))        | [2.0](info:info("Bio-Engineering", "Drizzle"))  | [8.3](info:info("Bio-Engineering", "Sprinkle"))  | [9.6](info:info("Bio-Engineering", "Cloudburst"))  | -    |
+| [Threat - Sky Islands](info:info("Threat - Sky Islands"))   | [2.0](info:info("Threat - Sky Islands", "Drizzle"))  | [6.9](info:info("Threat - Sky Islands", "Sprinkle"))  | [10.6](info:info("Threat - Sky Islands", "Cloudburst"))  | -    |
+| [Threat - Superstructure](info:info("Threat - Superstructure")) | [2.0](info:info("Threat - Superstructure", "Drizzle"))  | [5.5](info:info("Threat - Superstructure", "Sprinkle"))  | [10.3](info:info("Threat - Superstructure", "Cloudburst")) | -    |
+| [White Lizard](info:info("White Lizard"))           | -    | [4.0](info:info("White Lizard", "Sprinkle"))  | -    | -    |
+| [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) | [2.0](info:info("Threat - Waterfront Complex", "Drizzle"))  | [7.6](info:info("Threat - Waterfront Complex", "Sprinkle"))  | [10.7](info:info("Threat - Waterfront Complex", "Cloudburst"))  | -    |
+| [Kayava](info:info("Kayava"))                 | [3.0](info:info("Kayava", "Drizzle"))  | [5.5](info:info("Kayava", "Sprinkle"))  | [10.4](info:info("Kayava", "Cloudburst"))  | -    |
+| [Threat - Metropolis](info:info("Threat - Metropolis"))    | [2.0](info:info("Threat - Metropolis", "Drizzle"))  | [6.6](info:info("Threat - Metropolis", "Sprinkle"))  | [11.6(11.5)](info:info("Threat - Metropolis", "Cloudburst"))  | -    |
+| [Sheer Ice Torrent](info:info("Sheer Ice Torrent"))      | [2.0](info:info("Sheer Ice Torrent", "Drizzle"))  | [7.8](info:info("Sheer Ice Torrent", "Sprinkle"))  | [11.1](info:info("Sheer Ice Torrent", "Cloudburst"))  | -    |
+| [大月墜落狂想](info:info("大月墜落狂想")) | [2.0](info:info("大月墜落狂想", "Drizzle"))  | [8.0](info:info("大月墜落狂想", "Sprinkle"))  | [12.4(12.2)](info:info("大月墜落狂想", "Cloudburst")) | -    |
+
+---
+
+## 联动 - Notanote
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [烁雨](info:info("烁雨"))             | [2.0](info:info("烁雨", "Drizzle"))  | [7.0](info:info("烁雨", "Sprinkle"))  | [9.4](info:info("烁雨", "Cloudburst"))  | -    |
+| [cybernetic blazar](info:info("cybernetic blazar")) | [4.0](info:info("cybernetic blazar", "Drizzle"))  | [7.8](info:info("cybernetic blazar", "Sprinkle"))  | [10.2](info:info("cybernetic blazar", "Cloudburst"))  | -    |
+| [Innocent white](info:info("Innocent white"))    | [2.0](info:info("Innocent white", "Drizzle"))  | [8.2](info:info("Innocent white", "Sprinkle"))  | [12.1](info:info("Innocent white", "Cloudburst")) | -    |
+| [Elsorhg](info:info("Elsorhg"))           | [2.0](info:info("Elsorhg", "Drizzle"))  | [7.5](info:info("Elsorhg", "Sprinkle"))  | [10.9](info:info("Elsorhg", "Cloudburst"))  | -    |
+| [Meltovt Necrosys](info:info("Meltovt Necrosys"))  | [2.0](info:info("Meltovt Necrosys", "Drizzle"))  | [7.8](info:info("Meltovt Necrosys", "Sprinkle"))  | [12.0(11.9)](info:info("Meltovt Necrosys", "Cloudburst"))  | -    |
+
+---
+
+## 联动 - Electrode Core
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [はんてん](info:info("はんてん"))             | [2.0](info:info("はんてん", "Drizzle"))  | [6.1](info:info("はんてん", "Sprinkle"))  | [10.1](info:info("はんてん", "Cloudburst"))  | -    |
+| [Curse of 14](info:info("Curse of 14"))           | [3.0](info:info("Curse of 14", "Drizzle"))  | [7.5](info:info("Curse of 14", "Sprinkle"))  | [10.4](info:info("Curse of 14", "Cloudburst"))  | -    |
+| [Virtual S0da](info:info("Virtual S0da"))           | [3.0](info:info("Virtual S0da", "Drizzle"))  | [6.7](info:info("Virtual S0da", "Sprinkle"))  | [10.6](info:info("Virtual S0da", "Cloudburst"))  | -    |
+| [apOapSis(Edit)](info:info("apOapSisEdit"))           | [3.5](info:info("apOapSisEdit", "Drizzle"))  | [6.4](info:info("apOapSisEdit", "Sprinkle"))  | [10.7](info:info("apOapSisEdit", "Cloudburst"))  | -    |
+
+---
+
+## 联动 - 解空明镜
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [Deluge](info:info("Deluge"))             | [2.0](info:info("Deluge", "Drizzle"))  | [5.0](info:info("Deluge", "Sprinkle"))  | [9.0](info:info("Deluge", "Cloudburst"))  | -    |
+| [Fluorescent Light](info:info("Fluorescent Light"))           | [2.0](info:info("Fluorescent Light", "Drizzle"))  | [6.2](info:info("Fluorescent Light", "Sprinkle"))  | [9.6](info:info("Fluorescent Light", "Cloudburst"))  | -    |
+| [Autumn Rain](info:info("Virtual S0da"))           | [3.0](info:info("Autumn Rain", "Drizzle"))  | [6.4](info:info("Autumn Rain", "Sprinkle"))  | [10.1](info:info("Autumn Rain", "Cloudburst"))  | -    |
+| [Pthahnil](info:info("Pthahnil"))           | [2.0](info:info("Pthahnil", "Drizzle"))  | [7.0](info:info("Pthahnil", "Sprinkle"))  | [10.7](info:info("Pthahnil", "Cloudburst"))  | -    |
+
+---
+
+
+## 单曲 - 梦境磁带
+
+| 标题                         | DZ   | SK   | CB   | CL   | SP |
+|---------------|------|------|------|------|--|
+| [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai"))    | [3.5](info:info("ネオン色のまち feat. Mai", "Drizzle"))  | [8.0](info:info("ネオン色のまち feat. Mai", "Sprinkle"))  | [9.7](info:info("ネオン色のまち feat. Mai", "Cloudburst"))  | -    | - |
+| [INFP.mp3](info:info("INFP.mp3"))                    | [2.0](info:info("INFP.mp3", "Drizzle"))  | [5.5](info:info("INFP.mp3", "Sprinkle"))  | [9.2](info:info("INFP.mp3", "Cloudburst"))  | -    | - |
+| [Oniichan](info:info("Oniichan"))                    | [3.0](info:info("Oniichan", "Drizzle"))  | [8.0](info:info("Oniichan", "Sprinkle"))  | [9.8](info:info("Oniichan", "Cloudburst"))  | -    | - |
+| [Moving On](info:info("Moving On"))     | [2.0](info:info("Moving On", "Drizzle"))  | [6.3](info:info("Moving On", "Sprinkle"))  | [10.8](info:info("Moving On", "Cloudburst")) | -    |
+| [Oiiaioooooiai](info:info("Oiiaioooooiai"))               | -    | -    | -    | - | [🐈](info:info("Oiiaioooooiai", "Special")) |
+| [WATER](info:info("WATER"))                       | [3.0](info:info("WATER", "Drizzle"))  | [7.3](info:info("WATER", "Sprinkle"))  | [10.6](info:info("WATER", "Cloudburst")) | -    | - |
+| [Hikari](info:info("Hikari"))                      | [3.0](info:info("Hikari", "Drizzle"))  | [7.4](info:info("Hikari", "Sprinkle"))  | [10.7](info:info("Hikari", "Cloudburst")) | -    | - |
+| [Moonflutter](info:info("Moonflutter"))                 | [3.0](info:info("Moonflutter", "Drizzle"))  | [7.9](info:info("Moonflutter", "Sprinkle"))  | [11.4](info:info("Moonflutter", "Cloudburst")) | [11.7](info:info("Moonflutter", "Clear")) | - |
+| [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor Milthm Edit"))              | [3.0](info:info("Fly To Meteor Milthm Edit", "Drizzle"))  | [6.5](info:info("Fly To Meteor Milthm Edit", "Sprinkle"))  | [10.5](info:info("Fly To Meteor Milthm Edit", "Cloudburst")) | - | - |
+| [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit"))              | - | - | - | [11.7](info:info("Fly To Meteor feat.兔柒 Milthm Edit", "Clear")) | - |
+| [樱落繁花](info:info("樱落繁花"))                    | [3.0](info:info("樱落繁花", "Drizzle"))  | [8.8](info:info("樱落繁花", "Sprinkle"))  | [10.9](info:info("樱落繁花", "Cloudburst")) | -    | - |
+| [Agnostic](info:info("Agnostic"))                    | [3.0](info:info("Agnostic", "Drizzle"))  | [7.4](info:info("Agnostic", "Sprinkle"))  | [10.2](info:info("Agnostic", "Cloudburst")) | -    | - |
+| [Dogbite](info:info("Dogbite"))                     | [3.0](info:info("Dogbite", "Drizzle"))  | [6.5](info:info("Dogbite", "Sprinkle"))  | [10.3](info:info("Dogbite", "Cloudburst")) | - | [🐕](info:info("Dogbite", "Special")) |
+| [Psyched Fevereiro](info:info("Psyched Fevereiro"))           | [3.5](info:info("Psyched Fevereiro", "Drizzle"))  | [7.3](info:info("Psyched Fevereiro", "Sprinkle"))  | [10.0](info:info("Psyched Fevereiro", "Cloudburst")) | -    | - |
+| [Future Unbound (Game Edit)](info:info("Future Unbound Game Edit"))  | [3.0](info:info("Future Unbound Game Edit","Drizzle"))  | [7.5](info:info("Future Unbound Game Edit","Sprinkle"))  | [10.5](info:info("Future Unbound Game Edit","Cloudburst")) | -    | - |
+| [Algebra](info:info("Algebra"))                     | [2.0](info:info("Algebra", "Drizzle"))  | [8.1](info:info("Algebra", "Sprinkle"))  | [11.4](info:info("Algebra", "Cloudburst")) | - | [🔢](info:info("Algebra", "Special")) |
+| [Words](info:info("Words"))                       | [2.0](info:info("Words", "Drizzle"))  | [6.5](info:info("Words", "Sprinkle"))  | [8.3](info:info("Words", "Cloudburst"))  | -    | - |
+| [仮想明日](info:info("仮想明日"))                    | [3.5](info:info("仮想明日", "Drizzle"))  | [6.7](info:info("仮想明日", "Sprinkle"))  | [10.0](info:info("仮想明日", "Cloudburst"))  | -    | - |
+| [白虎蓮華](info:info("白虎蓮華"))                    | [3.0](info:info("白虎蓮華", "Drizzle"))  | [6.5](info:info("白虎蓮華", "Sprinkle"))  | [9.6](info:info("白虎蓮華", "Cloudburst"))  | -    | - |
+| [サイクルの欠片](info:info("サイクルの欠片"))              | [1.0](info:info("サイクルの欠片", "Drizzle"))  | [7.8](info:info("サイクルの欠片", "Sprinkle"))  | [8.6](info:info("サイクルの欠片", "Cloudburst"))  | -    | - |
+| [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~"))          | [2.0](info:info("参宿四~Betelgeuse~", "Drizzle"))  | [6.4](info:info("参宿四~Betelgeuse~", "Sprinkle"))  | [11.2](info:info("参宿四~Betelgeuse~", "Cloudburst"))  | -    | - |
+| [slic.hertz #GdbG](info:info("slic.hertz #GdbG"))            | [3.0](info:info("slic.hertz #GdbG", "Drizzle"))  | [7.6](info:info("slic.hertz #GdbG", "Sprinkle"))  | [11.4](info:info("slic.hertz #GdbG", "Cloudburst"))  | -    | - |
+| [Rainbow Flavor!](info:info("Rainbow Flavor!"))             | [1.0](info:info("Rainbow Flavor!", "Drizzle"))  | [7.5](info:info("Rainbow Flavor!", "Sprinkle"))  | [9.9](info:info("Rainbow Flavor!", "Cloudburst")) | - | [🍬](info:info("Rainbow Flavor!", "Special")) |
+| [IN](info:info("IN"))                           | [2.0](info:info("IN", "Drizzle"))  | [7.9](info:info("IN", "Sprinkle"))  | [11.2](info:info("IN", "Cloudburst")) | -    | - |
+| [驟雨の狭間](info:info("驟雨の狭間"))                  | -    | -    | [Ø](info:info("驟雨の狭間", "Cloudburst"))    | - | - |
+| [Broken Conviction](info:info("Broken Conviction"))           | [4.5](info:info("Broken Conviction", "Drizzle"))  | [4.5](info:info("Broken Conviction", "Sprinkle"))  | [11.5](info:info("Broken Conviction", "Cloudburst")) | [11.9](info:info("Broken Conviction", "Clear")) | - |
+| [选择你的宽带](info:info("选择你的宽带")) | - | - | - | - | [🛜](info:info("选择你的宽带", "Special")) |
+
+---
+
+## 单曲 - 露晓卉庭
+
+| 标题                         | DZ   | SK   | CB   | CL   | SP |
+|---------------|------|------|------|------|--|
+| [FULi AUTO SHOOTER](info:info("FULi AUTO SHOOTER")) | [3.0](info:info("FULi AUTO SHOOTER", "Drizzle"))  | [7.2](info:info("FULi AUTO SHOOTER", "Sprinkle"))  | [10.7](info:info("FULi AUTO SHOOTER", "Cloudburst"))  | -    | - |
+| [cafe in 6412I731V](info:info("cafe in 6412I731V"))                    | [2.0](info:info("cafe in 6412I731V", "Drizzle"))  | [7.1](info:info("cafe in 6412I731V", "Sprinkle"))  | [11.3](info:info("cafe in 6412I731V", "Cloudburst"))  | -    | - |
+| [KASANE](info:info("KASANE")) | [3.0](info:info("KASANE", "Drizzle"))  | [7.8](info:info("KASANE", "Sprinkle"))  | [11.6](info:info("KASANE", "Cloudburst"))  | -    | - |
+| [KAEDE](info:info("KAEDE")) | -  | -  | -  | - | [🍁](info:info("KAEDE", "Special")) |
+| [Fantasia Sonata Stars](info:info("Fantasia Sonata Stars"))           | [2.0](info:info("Fantasia Sonata Stars", "Drizzle"))  | [6.8](info:info("Fantasia Sonata Stars", "Sprinkle"))  | [10.4](info:info("Fantasia Sonata Stars", "Cloudburst")) | -    | - |
+| [Fantasia Sonata God Dance](info:info("Fantasia Sonata God Dance"))           | [3.0](info:info("Fantasia Sonata God Dance", "Drizzle"))  | [6.9](info:info("Fantasia Sonata God Dance", "Sprinkle"))  | [11.3](info:info("Fantasia Sonata God Dance", "Cloudburst")) | -    | - |
+| [ホシフルヨルニ](info:info("ホシフルヨルニ"))           | [2.0](info:info("ホシフルヨルニ", "Drizzle"))  | [4.0](info:info("ホシフルヨルニ", "Sprinkle"))  | [9.4](info:info("ホシフルヨルニ", "Cloudburst")) | -    | - |
+| [GlassyHeart.](info:info("GlassyHeart."))           | [3.0](info:info("GlassyHeart.", "Drizzle"))  | [7.7](info:info("GlassyHeart.", "Sprinkle"))  | [11.1](info:info("GlassyHeart.", "Cloudburst")) | -    | - |
+| [Chartreuse Green](info:info("Chartreuse Green"))           | [2.0](info:info("Chartreuse Green", "Drizzle"))  | [7.7](info:info("Chartreuse Green", "Sprinkle"))  | [10.3](info:info("Chartreuse Green", "Cloudburst")) | -    | - |
+| [Aleph-0](info:info("Aleph-0"))           | [2.0](info:info("Aleph-0", "Drizzle"))  | [5.5](info:info("Aleph-0", "Sprinkle"))  | [11.1](info:info("Aleph-0", "Cloudburst")) | -    | - |
+| [Garden](info:info("Garden"))          | [2.0](info:info("Garden", "Drizzle"))  | [7.3](info:info("Garden", "Sprinkle"))  | [9.8](info:info("Garden", "Cloudburst")) | - | - |
+| [Fantasia Sonata Botanical Garden](info:info("Fantasia Sonata Botanical Garden"))          | [2.0](info:info("Fantasia Sonata Botanical Garden", "Drizzle"))  | [6.1](info:info("Fantasia Sonata Botanical Garden", "Sprinkle"))  | [10.0](info:info("Fantasia Sonata Botanical Garden", "Cloudburst")) | - | - |
+| [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!"))          | [2.0](info:info("Dum! Dum!! Dum!!!", "Drizzle"))  | [7.0](info:info("Dum! Dum!! Dum!!!", "Sprinkle"))  | [10.5](info:info("Dum! Dum!! Dum!!!", "Cloudburst")) | - | - |
+| [Splash the Beat!!](info:info("Splash the Beat!!"))          | [1.0](info:info("Splash the Beat!!", "Drizzle"))  | [7.2](info:info("Splash the Beat!!", "Sprinkle"))  | [12.1](info:info("Splash the Beat!!", "Cloudburst")) | - | - |
+| [いつか忘れるんだろう](info:info("いつか忘れるんだろう"))          | [ 2.0 ](info:info("いつか忘れるんだろう", "Drizzle"))  | [ 7.4 ](info:info("いつか忘れるんだろう", "Sprinkle"))  | [ 8.9 ](info:info("いつか忘れるんだろう", "Cloudburst")) | - | - |
+| [運命](info:info("運命"))          | [ 2.0 ](info:info("運命", "Drizzle"))  | [ 7.6 ](info:info("運命", "Sprinkle"))  | [ 9.9 ](info:info("運命", "Cloudburst")) | - | - |
+| [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope"))          | [ 3.5 ](info:info("Fantasia Sonata Hope", "Drizzle"))  | [ 8.9 ](info:info("Fantasia Sonata Hope", "Sprinkle"))  | [ 10.7 ](info:info("Fantasia Sonata Hope", "Cloudburst")) | - | - |
+| [Before it Ends](info:info("Before it Ends"))          | [ 3.0 ](info:info("Before it Ends", "Drizzle"))  | [ 7.4 ](info:info("Before it Ends", "Sprinkle"))  | [ 10.6 ](info:info("Before it Ends", "Cloudburst")) | - | - |
+| [conflict](info:info("conflict"))          | [2.0](info:info("conflict", "Drizzle"))  | [9.3](info:info("conflict", "Sprinkle"))  | [11.4](info:info("conflict", "Cloudburst")) | - | - |
+| [Sound of Nature](info:info("Sound of Nature"))          | [2.0](info:info("Sound of Nature", "Drizzle"))  | [6.9](info:info("Sound of Nature", "Sprinkle"))  | [10.7](info:info("Sound of Nature", "Cloudburst")) | - | - |
+
+
+---
+
+ -->
+  <script type="text/markdown" id="md">
+
+- [返回主页](./)
+
+## 定数表
+
+[返回目录](#目录)
+
+- [说明](#说明)
+- [主线章节](#介绍---天气预报)
+  - [天气预报](#介绍---天气预报)
+  - [雨的声音](#序章---雨的声音)
+  - [甜与苦的一体两面](#主线章节一---甜与苦的一体两面)
+- [支线章节](#支线章节一---花裳随雨得春迟)
+  - [花裳随雨得春迟](#支线章节一---花裳随雨得春迟)
+- [联动章节](#联动---雨世界)
+  - [雨世界](#联动---雨世界)
+  - [Notanote](#联动---notanote)
+  - [Electrode Core](#联动---electrode-core)
+  - [解空明镜](#联动---解空明镜)
+- [单曲](#单曲---梦境磁带)
+  - [梦境磁带](#单曲---梦境磁带)
+  - [露晓卉庭](#单曲---露晓卉庭)
+
+---
+
+## 说明
+
+> - 所有 `SP` 和非常规谱面均不参与 Reality 计算。  
+
+当前版本的理论 Reality 为 `13.475`（显示为 13.48）  
+当前版本定数最高的 20 首曲目如下：
+
+| 排行 | 标题  | 难度 | 定数 |
+|---|---------------------|------|----|
+| 1 | [靈](info:info("靈", "Cloudburst")) | CB | 12.8 |
+| 2 | [命日](info:info("命日", "Clear")) | CL | 12.7 |
+| 3 | [Contrasty Angeles](info:info("Contrasty Angeles", "Clear")) | CL | 12.5 |
+| 4 | [大月墜落狂想](info:info("大月墜落狂想", "Cloudburst")) | CB | 12.4 |
+| 5 | [Regnaissance](info:info("Regnaissance", "Clear")) | CL | 12.1 |
+| 5 | [Innocent white](info:info("Innocent white", "Cloudburst")) | CB | 12.1 |
+| 5 | [Splash the Beat!!](info:info("Splash the Beat!!", "Cloudburst")) | CB | 12.1 |
+| 8 | [灯ノ桜蝶](info:info("灯ノ桜蝶", "Cloudburst")) | CB | 12.0 |
+| 8 | [Meltovt Necrosys](info:info("Meltovt Necrosys", "Cloudburst")) | CB | 12.0 |
+| 10 | [Broken Conviction](info:info("Broken Conviction", "Clear")) | CL | 11.9 |
+| 10 | [Sakuyahime](info:info("Sakuyahime", "Cloudburst")) | CB | 11.9 |
+| 12 | [百九十](info:info("百九十", "Cloudburst")) | CB | 11.8 |
+| 12 | [HYPER MEMORIES](info:info("HYPER MEMORIES", "Cloudburst")) | CB | 11.8 |
+| 14 | [Moonflutter](info:info("Moonflutter", "Clear")) | CL | 11.7 |
+| 14 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit")) | CL | 11.7 |
+| 14 | [Brightened Demonios](info:info("Brightened Demonios", "Cloudburst")) | CB | 11.7 |
+| 17 | [KASANE](info:info("KASANE", "Cloudburst")) | CB | 11.6 |
+| 17 | [Threat - Metropolis](info:info("Threat - Metropolis", "Cloudburst")) | CB | 11.6 |
+| 17 | [Contrasty Angeles](info:info("Contrasty Angeles", "Cloudburst")) | CB | 11.6 |
+| 20 | [Broken Conviction](info:info("Broken Conviction", "Cloudburst")) | CB | 11.5 |
+| 20 | [Vestige of Dreams](info:info("Vestige of Dreams", "Cloudburst")) | CB | 11.5 |
+
+---
+
+> 点击链接可以查看 曲目/谱面 的详情信息
+> 曲目/谱面详情信息来源于Milthm Lang的仓库[RainSeek.Dataset.Milthm](https://github.com/MilthmLang/RainSeek.Dataset.Milthm/)，已获得使用许可
+
+---
+
+## 介绍 - 天气预报
+
+| 标题                | DZ   | SK   | CB   | CL   | SP |
+|---------------------|------|------|------|------|---|
+| [Welcome to Milthm](info:info("Welcome to Milthm"))  | [1.0](info:info("Welcome to Milthm", "Drizzle")) | -  | - | - | [SP](info:info("Welcome to Milthm", "Special")) |
+| [时落之雨](info:info("时落之雨"))           | [1.0](info:info("时落之雨", "Drizzle"))  | [4.5](info:info("时落之雨", "Sprinkle"))  | [8.5](info:info("时落之雨", "Cloudburst"))  | -    | - |
+| [夜風](info:info("夜風"))               | [3.0](info:info("夜風","Drizzle"))  | [7.3](info:info("夜風", "Sprinkle"))  | [10.1](info:info("夜風", "Cloudburst")) | -    | - |
+| [花月](info:info("花月"))               | [2.0](info:info("花月", "Drizzle"))  | [8.2](info:info("花月", "Sprinkle"))  | [9.3](info:info("花月", "Cloudburst"))  | -    | - |
+| [暮予星光](info:info("暮予星光"))           | [2.0](info:info("暮予星光", "Drizzle"))  | [7.5](info:info("暮予星光", "Sprinkle"))  | [9.1](info:info("暮予星光", "Cloudburst")) | -    | - |
+| [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome"))           | [2.5](info:info("Fantasia Sonata Sky Syndrome", "Drizzle"))  | [7.1](info:info("Fantasia Sonata Sky Syndrome", "Sprinkle"))  | [10.5](info:info("Fantasia Sonata Sky Syndrome", "Cloudburst")) | -    | - |
+| [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection"))  | [1.0](info:info("Fantasia Sonata Reflection", "Drizzle")) | -  | - | - | - |
+
+---
+
+## 序章 - 雨的声音
+
+---
+
+| 标题           | DZ   | SK   | CB   | CL   |
+|---------------|------|------|------|------|
+| [LOUDER!](info:info("LOUDER!"))  | [2.0](info:info("LOUDER!", "Drizzle"))  | [5.5](info:info("LOUDER!", "Sprinkle"))  | [9.5](info:info("LOUDER!", "Cloudburst")) | - |
+| [雨女](info:info("雨女"))          | [3.0](info:info("雨女", "Drizzle")) | [6.5](info:info("雨女", "Sprinkle")) | [9.5](info:info("雨女", "Cloudburst")) | [10.5](info:info("雨女", "Clear")) |
+| [雨之城](info:info("雨之城"))        | [1.0](info:info("雨之城", "Drizzle"))  | [4.0](info:info("雨之城", "Sprinkle"))  | [7.5](info:info("雨之城", "Cloudburst"))  | -    |
+| [Jump out?](info:info("Jump out?"))     | [2.0](info:info("Jump out?", "Drizzle"))  | [7.9](info:info("Jump out?", "Sprinkle"))  | [9.7](info:info("Jump out?", "Cloudburst"))  | -    |
+| [☹](info:info("☹"))      | [4.0](info:info("☹", "Drizzle"))  | [8.0](info:info("☹", "Sprinkle"))  | [10.1](info:info("☹", "Cloudburst")) | -    |
+| [イコラト](info:info("イコラト"))      | [3.0](info:info("イコラト", "Drizzle"))  | [8.7](info:info("イコラト", "Sprinkle"))  | [11.2](info:info("イコラト", "Cloudburst")) | -    |
+| [命日](info:info("命日"))          | [3.0](info:info("命日", "Drizzle"))  | [8.6](info:info("命日", "Sprinkle"))  | [11.1](info:info("命日", "Cloudburst")) | [12.7(12.2)](info:info("命日", "Clear")) |
+
+---
+
+## 主线章节一 - 甜与苦的一体两面
+
+| 标题                | DZ   | SK   | CB   | CL   |
+|---------------------|------|------|------|------|
+| [粗线条的雨](info:info("粗线条的雨"))         | [1.0](info:info("粗线条的雨", "Drizzle"))  | [4.0](info:info("粗线条的雨", "Sprinkle"))  | [8.3](info:info("粗线条的雨", "Cloudburst"))  | -    |
+| [Aconsma](info:info("Aconsma"))            | [1.0](info:info("Aconsma", "Drizzle"))  | [6.0](info:info("Aconsma", "Sprinkle"))  | [9.3](info:info("Aconsma", "Cloudburst"))  | -    |
+| [OverRain](info:info("OverRain"))           | [2.0](info:info("OverRain", "Drizzle"))  | [7.6](info:info("OverRain", "Sprinkle"))  | [10.0](info:info("OverRain", "Cloudburst")) | -    |
+| [Fragment of Memories](info:info("Fragment of Memories")) | [2.0](info:info("Fragment of Memories", "Drizzle"))  | [8.4](info:info("Fragment of Memories", "Sprinkle"))  | [11.3](info:info("Fragment of Memories", "Cloudburst")) | -    |
+| [HYPER MEMORIES](info:info("HYPER MEMORIES"))     | [3.0](info:info("HYPER MEMORIES", "Drizzle"))  | [8.9](info:info("HYPER MEMORIES", "Sprinkle"))  | [11.8(11.7)](info:info("HYPER MEMORIES", "Cloudburst")) | -    |
+| [Regnaissance](info:info("Regnaissance"))       | [4.5](info:info("Regnaissance", "Drizzle"))  | [8.5](info:info("Regnaissance", "Sprinkle"))  | [11.1](info:info("Regnaissance", "Cloudburst")) | [12.1](info:info("Regnaissance", "Clear")) |
+| [Contrasty Angeles](info:info("Contrasty Angeles"))  | [4.0](info:info("Contrasty Angeles", "Drizzle"))  | [9.0](info:info("Contrasty Angeles", "Sprinkle"))  | [11.6(11.5)](info:info("Contrasty Angeles", "Cloudburst")) | [12.5(12.3)](info:info("Contrasty Angeles", "Clear")) |
+| [Brightened Demonios](info:info("Brightened Demonios"))  | [4.5](info:info("Brightened Demonios", "Drizzle"))  | [9.3](info:info("Brightened Demonios", "Sprinkle"))  | [11.7](info:info("Brightened Demonios", "Cloudburst")) | - |
+| [Myth compiler](info:info("Myth compiler"))  | [3.0](info:info("Myth compiler", "Drizzle"))  | [7.0](info:info("Myth compiler", "Sprinkle"))  | [11.4](info:info("Myth compiler", "Cloudburst")) | - |
+| [Fantasia Sonata Arcadia](info:info("Fantasia Sonata Arcadia"))  | [2.0](info:info("Fantasia Sonata Arcadia", "Drizzle"))  | [6.0](info:info("Fantasia Sonata Arcadia", "Sprinkle"))  | [10.5](info:info("Fantasia Sonata Arcadia", "Cloudburst")) | - |
+
+---
+
+## 支线章节一 - 花裳随雨得春迟
+
+| 标题                | DZ   | SK   | CB   | CL   |
+|---------------------|------|------|------|------|
+| [Vestige of Dreams](info:info("Vestige of Dreams"))          | [2.5](info:info("Vestige of Dreams", "Drizzle"))  | [6.5](info:info("Vestige of Dreams", "Sprinkle"))  | [11.5](info:info("Vestige of Dreams", "Cloudburst")) | - |
+| [百九十](info:info("百九十"))          | [3.0](info:info("百九十", "Drizzle"))  | [9.2](info:info("百九十", "Sprinkle"))  | [11.8](info:info("百九十", "Cloudburst")) | - |
+| [灯ノ桜蝶](info:info("灯ノ桜蝶"))          | [2.0](info:info("灯ノ桜蝶", "Drizzle"))  | [9.7](info:info("灯ノ桜蝶", "Sprinkle"))  | [12.0](info:info("灯ノ桜蝶", "Cloudburst")) | - |
+| [Sakuyahime](info:info("Sakuyahime"))          | [3.5](info:info("Sakuyahime", "Drizzle"))  | [5.8](info:info("Sakuyahime", "Sprinkle"))  | [11.9](info:info("Sakuyahime", "Cloudburst")) | - |
+| [靈](info:info("靈"))          | [4.5](info:info("靈", "Drizzle"))  | [9.4](info:info("靈", "Sprinkle"))  | [12.8](info:info("靈", "Cloudburst")) | - |
+| [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks"))          | [2.0](info:info("BUCHiAGE Fireworks", "Drizzle"))  | [7.7](info:info("BUCHiAGE Fireworks", "Sprinkle"))  | [10.7](info:info("BUCHiAGE Fireworks", "Cloudburst")) | - |
+| [ニニ feat. Qayo & mii](info:info("ニニ feat. Qayo & mii"))          | [2.0](info:info("ニニ feat. Qayo & mii", "Drizzle"))  | [6.7](info:info("ニニ feat. Qayo & mii", "Sprinkle"))  | [11.3](info:info("ニニ feat. Qayo & mii", "Cloudburst")) | - |
+
+
+---
+
+## 联动 - 雨世界
+
+| 标题                    | DZ   | SK   | CB   | CL   |
+|-------------------------|------|------|------|------|
+| [Sundown](info:info("Sundown"))                | [1.0](info:info("Sundown", "Drizzle"))  | -    | -    | -    |
+| [Bio-Engineering](info:info("Bio-Engineering"))        | [2.0](info:info("Bio-Engineering", "Drizzle"))  | [8.3](info:info("Bio-Engineering", "Sprinkle"))  | [9.6](info:info("Bio-Engineering", "Cloudburst"))  | -    |
+| [Threat - Sky Islands](info:info("Threat - Sky Islands"))   | [2.0](info:info("Threat - Sky Islands", "Drizzle"))  | [6.9](info:info("Threat - Sky Islands", "Sprinkle"))  | [10.6](info:info("Threat - Sky Islands", "Cloudburst"))  | -    |
+| [Threat - Superstructure](info:info("Threat - Superstructure")) | [2.0](info:info("Threat - Superstructure", "Drizzle"))  | [5.5](info:info("Threat - Superstructure", "Sprinkle"))  | [10.3](info:info("Threat - Superstructure", "Cloudburst")) | -    |
+| [White Lizard](info:info("White Lizard"))           | -    | [4.0](info:info("White Lizard", "Sprinkle"))  | -    | -    |
+| [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) | [2.0](info:info("Threat - Waterfront Complex", "Drizzle"))  | [7.6](info:info("Threat - Waterfront Complex", "Sprinkle"))  | [10.7](info:info("Threat - Waterfront Complex", "Cloudburst"))  | -    |
+| [Kayava](info:info("Kayava"))                 | [3.0](info:info("Kayava", "Drizzle"))  | [5.5](info:info("Kayava", "Sprinkle"))  | [10.4](info:info("Kayava", "Cloudburst"))  | -    |
+| [Threat - Metropolis](info:info("Threat - Metropolis"))    | [2.0](info:info("Threat - Metropolis", "Drizzle"))  | [6.6](info:info("Threat - Metropolis", "Sprinkle"))  | [11.6(11.5)](info:info("Threat - Metropolis", "Cloudburst"))  | -    |
+| [Sheer Ice Torrent](info:info("Sheer Ice Torrent"))      | [2.0](info:info("Sheer Ice Torrent", "Drizzle"))  | [7.8](info:info("Sheer Ice Torrent", "Sprinkle"))  | [11.1](info:info("Sheer Ice Torrent", "Cloudburst"))  | -    |
+| [大月墜落狂想](info:info("大月墜落狂想")) | [2.0](info:info("大月墜落狂想", "Drizzle"))  | [8.0](info:info("大月墜落狂想", "Sprinkle"))  | [12.4(12.2)](info:info("大月墜落狂想", "Cloudburst")) | -    |
+
+---
+
+## 联动 - Notanote
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [烁雨](info:info("烁雨"))             | [2.0](info:info("烁雨", "Drizzle"))  | [7.0](info:info("烁雨", "Sprinkle"))  | [9.4](info:info("烁雨", "Cloudburst"))  | -    |
+| [cybernetic blazar](info:info("cybernetic blazar")) | [4.0](info:info("cybernetic blazar", "Drizzle"))  | [7.8](info:info("cybernetic blazar", "Sprinkle"))  | [10.2](info:info("cybernetic blazar", "Cloudburst"))  | -    |
+| [Innocent white](info:info("Innocent white"))    | [2.0](info:info("Innocent white", "Drizzle"))  | [8.2](info:info("Innocent white", "Sprinkle"))  | [12.1](info:info("Innocent white", "Cloudburst")) | -    |
+| [Elsorhg](info:info("Elsorhg"))           | [2.0](info:info("Elsorhg", "Drizzle"))  | [7.5](info:info("Elsorhg", "Sprinkle"))  | [10.9](info:info("Elsorhg", "Cloudburst"))  | -    |
+| [Meltovt Necrosys](info:info("Meltovt Necrosys"))  | [2.0](info:info("Meltovt Necrosys", "Drizzle"))  | [7.8](info:info("Meltovt Necrosys", "Sprinkle"))  | [12.0(11.9)](info:info("Meltovt Necrosys", "Cloudburst"))  | -    |
+
+---
+
+## 联动 - Electrode Core
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [はんてん](info:info("はんてん"))             | [2.0](info:info("はんてん", "Drizzle"))  | [6.1](info:info("はんてん", "Sprinkle"))  | [10.1](info:info("はんてん", "Cloudburst"))  | -    |
+| [Curse of 14](info:info("Curse of 14"))           | [3.0](info:info("Curse of 14", "Drizzle"))  | [7.5](info:info("Curse of 14", "Sprinkle"))  | [10.4](info:info("Curse of 14", "Cloudburst"))  | -    |
+| [Virtual S0da](info:info("Virtual S0da"))           | [3.0](info:info("Virtual S0da", "Drizzle"))  | [6.7](info:info("Virtual S0da", "Sprinkle"))  | [10.6](info:info("Virtual S0da", "Cloudburst"))  | -    |
+| [apOapSis(Edit)](info:info("apOapSisEdit"))           | [3.5](info:info("apOapSisEdit", "Drizzle"))  | [6.4](info:info("apOapSisEdit", "Sprinkle"))  | [10.7](info:info("apOapSisEdit", "Cloudburst"))  | -    |
+
+---
+
+## 联动 - 解空明镜
+
+| 标题              | DZ   | SK   | CB   | CL   |
+|-------------------|------|------|------|------|
+| [Deluge](info:info("Deluge"))             | [2.0](info:info("Deluge", "Drizzle"))  | [5.0](info:info("Deluge", "Sprinkle"))  | [9.0](info:info("Deluge", "Cloudburst"))  | -    |
+| [Fluorescent Light](info:info("Fluorescent Light"))           | [2.0](info:info("Fluorescent Light", "Drizzle"))  | [6.2](info:info("Fluorescent Light", "Sprinkle"))  | [9.6](info:info("Fluorescent Light", "Cloudburst"))  | -    |
+| [Autumn Rain](info:info("Virtual S0da"))           | [3.0](info:info("Autumn Rain", "Drizzle"))  | [6.4](info:info("Autumn Rain", "Sprinkle"))  | [10.1](info:info("Autumn Rain", "Cloudburst"))  | -    |
+| [Pthahnil](info:info("Pthahnil"))           | [2.0](info:info("Pthahnil", "Drizzle"))  | [7.0](info:info("Pthahnil", "Sprinkle"))  | [10.7](info:info("Pthahnil", "Cloudburst"))  | -    |
+
+---
+
+
+## 单曲 - 梦境磁带
+
+| 标题                         | DZ   | SK   | CB   | CL   | SP |
+|---------------|------|------|------|------|--|
+| [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai"))    | [3.5](info:info("ネオン色のまち feat. Mai", "Drizzle"))  | [8.0](info:info("ネオン色のまち feat. Mai", "Sprinkle"))  | [9.7](info:info("ネオン色のまち feat. Mai", "Cloudburst"))  | -    | - |
+| [INFP.mp3](info:info("INFP.mp3"))                    | [2.0](info:info("INFP.mp3", "Drizzle"))  | [5.5](info:info("INFP.mp3", "Sprinkle"))  | [9.2](info:info("INFP.mp3", "Cloudburst"))  | -    | - |
+| [Oniichan](info:info("Oniichan"))                    | [3.0](info:info("Oniichan", "Drizzle"))  | [8.0](info:info("Oniichan", "Sprinkle"))  | [9.8](info:info("Oniichan", "Cloudburst"))  | -    | - |
+| [Moving On](info:info("Moving On"))     | [2.0](info:info("Moving On", "Drizzle"))  | [6.3](info:info("Moving On", "Sprinkle"))  | [10.8](info:info("Moving On", "Cloudburst")) | -    |
+| [Oiiaioooooiai](info:info("Oiiaioooooiai"))               | -    | -    | -    | - | [🐈](info:info("Oiiaioooooiai", "Special")) |
+| [WATER](info:info("WATER"))                       | [3.0](info:info("WATER", "Drizzle"))  | [7.3](info:info("WATER", "Sprinkle"))  | [10.6](info:info("WATER", "Cloudburst")) | -    | - |
+| [Hikari](info:info("Hikari"))                      | [3.0](info:info("Hikari", "Drizzle"))  | [7.4](info:info("Hikari", "Sprinkle"))  | [10.7](info:info("Hikari", "Cloudburst")) | -    | - |
+| [Moonflutter](info:info("Moonflutter"))                 | [3.0](info:info("Moonflutter", "Drizzle"))  | [7.9](info:info("Moonflutter", "Sprinkle"))  | [11.4](info:info("Moonflutter", "Cloudburst")) | [11.7](info:info("Moonflutter", "Clear")) | - |
+| [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor Milthm Edit"))              | [3.0](info:info("Fly To Meteor Milthm Edit", "Drizzle"))  | [6.5](info:info("Fly To Meteor Milthm Edit", "Sprinkle"))  | [10.5](info:info("Fly To Meteor Milthm Edit", "Cloudburst")) | - | - |
+| [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit"))              | - | - | - | [11.7](info:info("Fly To Meteor feat.兔柒 Milthm Edit", "Clear")) | - |
+| [樱落繁花](info:info("樱落繁花"))                    | [3.0](info:info("樱落繁花", "Drizzle"))  | [8.8](info:info("樱落繁花", "Sprinkle"))  | [10.9](info:info("樱落繁花", "Cloudburst")) | -    | - |
+| [Agnostic](info:info("Agnostic"))                    | [3.0](info:info("Agnostic", "Drizzle"))  | [7.4](info:info("Agnostic", "Sprinkle"))  | [10.2](info:info("Agnostic", "Cloudburst")) | -    | - |
+| [Dogbite](info:info("Dogbite"))                     | [3.0](info:info("Dogbite", "Drizzle"))  | [6.5](info:info("Dogbite", "Sprinkle"))  | [10.3](info:info("Dogbite", "Cloudburst")) | - | [🐕](info:info("Dogbite", "Special")) |
+| [Psyched Fevereiro](info:info("Psyched Fevereiro"))           | [3.5](info:info("Psyched Fevereiro", "Drizzle"))  | [7.3](info:info("Psyched Fevereiro", "Sprinkle"))  | [10.0](info:info("Psyched Fevereiro", "Cloudburst")) | -    | - |
+| [Future Unbound (Game Edit)](info:info("Future Unbound Game Edit"))  | [3.0](info:info("Future Unbound Game Edit","Drizzle"))  | [7.5](info:info("Future Unbound Game Edit","Sprinkle"))  | [10.5](info:info("Future Unbound Game Edit","Cloudburst")) | -    | - |
+| [Algebra](info:info("Algebra"))                     | [2.0](info:info("Algebra", "Drizzle"))  | [8.1](info:info("Algebra", "Sprinkle"))  | [11.4](info:info("Algebra", "Cloudburst")) | - | [🔢](info:info("Algebra", "Special")) |
+| [Words](info:info("Words"))                       | [2.0](info:info("Words", "Drizzle"))  | [6.5](info:info("Words", "Sprinkle"))  | [8.3](info:info("Words", "Cloudburst"))  | -    | - |
+| [仮想明日](info:info("仮想明日"))                    | [3.5](info:info("仮想明日", "Drizzle"))  | [6.7](info:info("仮想明日", "Sprinkle"))  | [10.0](info:info("仮想明日", "Cloudburst"))  | -    | - |
+| [白虎蓮華](info:info("白虎蓮華"))                    | [3.0](info:info("白虎蓮華", "Drizzle"))  | [6.5](info:info("白虎蓮華", "Sprinkle"))  | [9.6](info:info("白虎蓮華", "Cloudburst"))  | -    | - |
+| [サイクルの欠片](info:info("サイクルの欠片"))              | [1.0](info:info("サイクルの欠片", "Drizzle"))  | [7.8](info:info("サイクルの欠片", "Sprinkle"))  | [8.6](info:info("サイクルの欠片", "Cloudburst"))  | -    | - |
+| [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~"))          | [2.0](info:info("参宿四~Betelgeuse~", "Drizzle"))  | [6.4](info:info("参宿四~Betelgeuse~", "Sprinkle"))  | [11.2](info:info("参宿四~Betelgeuse~", "Cloudburst"))  | -    | - |
+| [slic.hertz #GdbG](info:info("slic.hertz #GdbG"))            | [3.0](info:info("slic.hertz #GdbG", "Drizzle"))  | [7.6](info:info("slic.hertz #GdbG", "Sprinkle"))  | [11.4](info:info("slic.hertz #GdbG", "Cloudburst"))  | -    | - |
+| [Rainbow Flavor!](info:info("Rainbow Flavor!"))             | [1.0](info:info("Rainbow Flavor!", "Drizzle"))  | [7.5](info:info("Rainbow Flavor!", "Sprinkle"))  | [9.9](info:info("Rainbow Flavor!", "Cloudburst")) | - | [🍬](info:info("Rainbow Flavor!", "Special")) |
+| [IN](info:info("IN"))                           | [2.0](info:info("IN", "Drizzle"))  | [7.9](info:info("IN", "Sprinkle"))  | [11.2](info:info("IN", "Cloudburst")) | -    | - |
+| [驟雨の狭間](info:info("驟雨の狭間"))                  | -    | -    | [Ø](info:info("驟雨の狭間", "Cloudburst"))    | - | - |
+| [Broken Conviction](info:info("Broken Conviction"))           | [4.5](info:info("Broken Conviction", "Drizzle"))  | [4.5](info:info("Broken Conviction", "Sprinkle"))  | [11.5](info:info("Broken Conviction", "Cloudburst")) | [11.9](info:info("Broken Conviction", "Clear")) | - |
+| [选择你的宽带](info:info("选择你的宽带")) | - | - | - | - | [🛜](info:info("选择你的宽带", "Special")) |
+
+---
+
+## 单曲 - 露晓卉庭
+
+| 标题                         | DZ   | SK   | CB   | CL   | SP |
+|---------------|------|------|------|------|--|
+| [FULi AUTO SHOOTER](info:info("FULi AUTO SHOOTER")) | [3.0](info:info("FULi AUTO SHOOTER", "Drizzle"))  | [7.2](info:info("FULi AUTO SHOOTER", "Sprinkle"))  | [10.7](info:info("FULi AUTO SHOOTER", "Cloudburst"))  | -    | - |
+| [cafe in 6412I731V](info:info("cafe in 6412I731V"))                    | [2.0](info:info("cafe in 6412I731V", "Drizzle"))  | [7.1](info:info("cafe in 6412I731V", "Sprinkle"))  | [11.3](info:info("cafe in 6412I731V", "Cloudburst"))  | -    | - |
+| [KASANE](info:info("KASANE")) | [3.0](info:info("KASANE", "Drizzle"))  | [7.8](info:info("KASANE", "Sprinkle"))  | [11.6](info:info("KASANE", "Cloudburst"))  | -    | - |
+| [KAEDE](info:info("KAEDE")) | -  | -  | -  | - | [🍁](info:info("KAEDE", "Special")) |
+| [Fantasia Sonata Stars](info:info("Fantasia Sonata Stars"))           | [2.0](info:info("Fantasia Sonata Stars", "Drizzle"))  | [6.8](info:info("Fantasia Sonata Stars", "Sprinkle"))  | [10.4](info:info("Fantasia Sonata Stars", "Cloudburst")) | -    | - |
+| [Fantasia Sonata God Dance](info:info("Fantasia Sonata God Dance"))           | [3.0](info:info("Fantasia Sonata God Dance", "Drizzle"))  | [6.9](info:info("Fantasia Sonata God Dance", "Sprinkle"))  | [11.3](info:info("Fantasia Sonata God Dance", "Cloudburst")) | -    | - |
+| [ホシフルヨルニ](info:info("ホシフルヨルニ"))           | [2.0](info:info("ホシフルヨルニ", "Drizzle"))  | [4.0](info:info("ホシフルヨルニ", "Sprinkle"))  | [9.4](info:info("ホシフルヨルニ", "Cloudburst")) | -    | - |
+| [GlassyHeart.](info:info("GlassyHeart."))           | [3.0](info:info("GlassyHeart.", "Drizzle"))  | [7.7](info:info("GlassyHeart.", "Sprinkle"))  | [11.1](info:info("GlassyHeart.", "Cloudburst")) | -    | - |
+| [Chartreuse Green](info:info("Chartreuse Green"))           | [2.0](info:info("Chartreuse Green", "Drizzle"))  | [7.7](info:info("Chartreuse Green", "Sprinkle"))  | [10.3](info:info("Chartreuse Green", "Cloudburst")) | -    | - |
+| [Aleph-0](info:info("Aleph-0"))           | [2.0](info:info("Aleph-0", "Drizzle"))  | [5.5](info:info("Aleph-0", "Sprinkle"))  | [11.1](info:info("Aleph-0", "Cloudburst")) | -    | - |
+| [Garden](info:info("Garden"))          | [2.0](info:info("Garden", "Drizzle"))  | [7.3](info:info("Garden", "Sprinkle"))  | [9.8](info:info("Garden", "Cloudburst")) | - | - |
+| [Fantasia Sonata Botanical Garden](info:info("Fantasia Sonata Botanical Garden"))          | [2.0](info:info("Fantasia Sonata Botanical Garden", "Drizzle"))  | [6.1](info:info("Fantasia Sonata Botanical Garden", "Sprinkle"))  | [10.0](info:info("Fantasia Sonata Botanical Garden", "Cloudburst")) | - | - |
+| [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!"))          | [2.0](info:info("Dum! Dum!! Dum!!!", "Drizzle"))  | [7.0](info:info("Dum! Dum!! Dum!!!", "Sprinkle"))  | [10.5](info:info("Dum! Dum!! Dum!!!", "Cloudburst")) | - | - |
+| [Splash the Beat!!](info:info("Splash the Beat!!"))          | [1.0](info:info("Splash the Beat!!", "Drizzle"))  | [7.2](info:info("Splash the Beat!!", "Sprinkle"))  | [12.1](info:info("Splash the Beat!!", "Cloudburst")) | - | - |
+| [いつか忘れるんだろう](info:info("いつか忘れるんだろう"))          | [ 2.0 ](info:info("いつか忘れるんだろう", "Drizzle"))  | [ 7.4 ](info:info("いつか忘れるんだろう", "Sprinkle"))  | [ 8.9 ](info:info("いつか忘れるんだろう", "Cloudburst")) | - | - |
+| [運命](info:info("運命"))          | [ 2.0 ](info:info("運命", "Drizzle"))  | [ 7.6 ](info:info("運命", "Sprinkle"))  | [ 9.9 ](info:info("運命", "Cloudburst")) | - | - |
+| [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope"))          | [ 3.5 ](info:info("Fantasia Sonata Hope", "Drizzle"))  | [ 8.9 ](info:info("Fantasia Sonata Hope", "Sprinkle"))  | [ 10.7 ](info:info("Fantasia Sonata Hope", "Cloudburst")) | - | - |
+| [Before it Ends](info:info("Before it Ends"))          | [ 3.0 ](info:info("Before it Ends", "Drizzle"))  | [ 7.4 ](info:info("Before it Ends", "Sprinkle"))  | [ 10.6 ](info:info("Before it Ends", "Cloudburst")) | - | - |
+| [conflict](info:info("conflict"))          | [2.0](info:info("conflict", "Drizzle"))  | [9.3](info:info("conflict", "Sprinkle"))  | [11.4](info:info("conflict", "Cloudburst")) | - | - |
+| [Sound of Nature](info:info("Sound of Nature"))          | [2.0](info:info("Sound of Nature", "Drizzle"))  | [6.9](info:info("Sound of Nature", "Sprinkle"))  | [10.7](info:info("Sound of Nature", "Cloudburst")) | - | - |
+
+
+---
+
+
+  </script>
+
+  <script>
+    // ===== Markdown & 高亮 & KaTeX =====
+    marked.use(markedKatex());
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
+        return hljs.highlightAuto(code).value;
+      }
+    });
+
+    function getUserLanguage() {
+      const langMap = {
+        "zh": "zh", "zh-cn": "zh", "zh-tw": "zh-tw",
+        "en": "en", "ja": "ja", "ko": "ko", "ru": "ru",
+        "es": "es", "vi": "vi", "ken": "ken"
+      };
+      const urlParams = new URLSearchParams(window.location.search);
+      let lang = urlParams.get('lang') || navigator.language.toLowerCase();
+      return langMap[lang] || "en";
+    }
+
+    function loadMarkdown() {
+      let md = document.getElementById('md').textContent.replace(/^\n/, '');
+
+      // 链接自动转义处理（原逻辑保留）
+      md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, p1, p2) {
+        if (p2.startsWith('info:')) {
+          const [protocol, rest] = p2.split(':', 2);
+          const encodedRest = encodeURIComponent(rest);
+          return `[${p1}](${protocol}:${encodedRest})`;
+        }
+        return match;
+      });
+
+      content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+      content.querySelectorAll('h2,h3,h4').forEach(h => {
+        h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+      });
+      hljs.highlightAll();
+      resizeKatex();
+      runJavascriptLinks();
+      loadDev();
+    }
+
+    function runJavascriptLinks() {
+      const links = document.querySelectorAll('a[href^="info:info"], a[href^="info:info"]');
+      links.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+        });
+      });
+    }
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = '';
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    function toggleLanguageMenu() {
+      const menu = document.getElementById("language-menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+    function changeLanguage(lang) { window.location.search = `?lang=${lang}`; }
+
+    // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
+    const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }
+    const HIDE_DELAY_MS = 120;
+
+    function ensureState(key) {
+      if (!hoverState.has(key)) {
+        hoverState.set(key, { hoverLink: false, hoverDev: false, el: null, timer: null });
+      }
+      return hoverState.get(key);
+    }
+
+    function scheduleHide(key) {
+      const state = ensureState(key);
+      if (state.timer) clearTimeout(state.timer);
+      state.timer = setTimeout(() => {
+        if (!state.hoverLink && !state.hoverDev && state.el) {
+          state.el.classList.remove('visible');
+        }
+        state.timer = null;
+      }, HIDE_DELAY_MS);
+    }
+
+    function placeAndShowForLink(aaaElement, linkRect) {
+      if (!aaaElement) return;
+      // 显示
+      aaaElement.classList.add('visible');
+      // 放在链接正下方并水平居中
+      const topPosition = linkRect.bottom + window.scrollY;
+      let leftPosition = linkRect.left + linkRect.width / 2 + window.scrollX - aaaElement.offsetWidth / 2;
+
+      const screenWidth = window.innerWidth;
+      const elementWidth = aaaElement.offsetWidth;
+      if (leftPosition + elementWidth > screenWidth) leftPosition = screenWidth - elementWidth;
+      else if (leftPosition < 0) leftPosition = 0;
+
+      aaaElement.style.position = 'absolute';
+      aaaElement.style.top = `${topPosition}px`;
+      aaaElement.style.left = `${leftPosition}px`;
+    }
+
+    // ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
+// ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
+function loadDev() {
+  fetch(`./chartdev.html?${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`加载 chartdev.html 失败：${res.status}`);
+      return res.text();
+    })
+    .then(html => {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+
+      const nodes = temp.querySelectorAll('div[aaa]');
+      nodes.forEach(node => {
+        const key = node.getAttribute('aaa');
+        if (!document.querySelector(`body > div[aaa="${CSS.escape(key)}"]`)) {
+          node.style.position = node.style.position || 'absolute';
+          document.body.appendChild(node);
+
+          // dev 悬停监听：进入 dev 时保持显示，离开 dev 时可能隐藏
+          node.addEventListener('mouseenter', () => {
+            const k = node.getAttribute('aaa');   // ✅ 动态读取
+            const st = ensureState(k);
+            st.el = node;
+            st.hoverDev = true;
+            node.classList.add('visible');
+            if (st.timer) { clearTimeout(st.timer); st.timer = null; }
+          });
+
+          node.addEventListener('mouseleave', () => {
+            const k = node.getAttribute('aaa');   // ✅ 动态读取
+            const st = ensureState(k);
+            st.hoverDev = false;
+            scheduleHide(k);
+          });
+        }
+      });
+    })
+    .catch(err => console.error(err));
+}
+
+    // ===== Morph 相关：点击链接时顺滑切换 =====
+    let currentKey = null;             // 当前“主”窗口绑定的 key
+    let currentEl = null;              // 当前“主”窗口引用的 DOM 元素（会被复用以移动/换内容）
+    let isMorphing = false;            // 动画中防抖
+    const MORPH_SWAP_DELAY = 40;       // 轻微延迟以确保位置先到再替换内容
+
+    /**
+     * 将上一个窗口（currentEl）移动到新链接下方，并把内容替换为新窗口内容
+     * @param {HTMLElement} targetEl  目标 key 的 dev 节点（供取内容使用）
+     * @param {DOMRect} linkRect      新链接的 rect
+     * @param {String} targetKey      目标 key
+     */
+    function morphToTarget(targetEl, linkRect, targetKey) {
+      if (!currentEl || !targetEl || currentEl === targetEl) return;
+
+      // 1) 取消老 key 的隐藏、定时器，并标记当前元素为可见
+      if (currentKey) {
+        const oldState = ensureState(currentKey);
+        if (oldState.timer) { clearTimeout(oldState.timer); oldState.timer = null; }
+        oldState.hoverLink = false; // 点击时不强依赖 hover
+        oldState.hoverDev = false;
+        oldState.el = currentEl;
+      }
+      currentEl.classList.add('visible');
+
+      // 2) 平滑移动到新位置
+      placeAndShowForLink(currentEl, linkRect);
+
+      // 3) 微延迟后替换内容与 key（让用户先看到“飞过去”，再变文字）
+      setTimeout(() => {
+        // 替换内部内容
+        currentEl.innerHTML = targetEl.innerHTML;
+        // 更新 aaa key（后续 hover/隐藏依赖）
+        currentEl.setAttribute('aaa', targetKey);
+
+        // 隐藏/移除目标原节点，避免重复（保留在 DOM 但不可见即可）
+        targetEl.classList.remove('visible');
+        targetEl.style.top = '-99999px';
+        targetEl.style.left = '-99999px';
+
+        // 更新 currentKey & 状态
+        currentKey = targetKey;
+        const newState = ensureState(currentKey);
+        newState.el = currentEl;
+        newState.hoverLink = false;
+        newState.hoverDev = false;
+
+        isMorphing = false;
+      }, MORPH_SWAP_DELAY);
+    }
+
+    /**
+     * 以“当前元素优先”的策略显示目标窗口：
+     * - 若已有 currentEl：将其移动并替换为目标内容（morph）
+     * - 否则正常显示目标元素本身
+     */
+    function showByMorphOrDirect(targetKey, linkRect) {
+      const targetEl = document.querySelector(`div[aaa="${targetKey}"]`);
+      if (!targetEl) return;
+
+      // 如果从未有过 currentEl，则以 targetEl 为主
+      if (!currentEl) {
+        currentEl = targetEl;
+        currentKey = targetKey;
+        const st = ensureState(targetKey);
+        st.el = currentEl;
+        st.hoverLink = true;
+        if (st.timer) { clearTimeout(st.timer); st.timer = null; }
+        placeAndShowForLink(currentEl, linkRect);
+        return;
+      }
+
+      // 若已有 currentEl 且 key 不同，执行 morph
+      if (currentEl && currentKey !== targetKey && !isMorphing) {
+        isMorphing = true;
+        morphToTarget(targetEl, linkRect, targetKey);
+        return;
+      }
+
+      // key 相同或正在 morph，就直接更新位置即可
+      placeAndShowForLink(currentEl, linkRect);
+    }
+
+    // ===== 监听鼠标移动到链接（hover）与点击（click）=====
+    function parseInfoKeyFromAnchor(anchor) {
+      const url = decodeURIComponent(anchor.href || '');
+      const match = url.match(/(info)\(([^)]*)\)/);
+      if (!match) return null;
+      const params = match[2].split(',').map(param => param.trim().replace(/['"]/g, ''));
+      const key = (params.length === 2) ? params.join(',') : params[0];
+      return key || null;
+    }
+
+    function bindLinkHoverAndClick(target) {
+      if (target.dataset.aaaBound) return;
+      target.dataset.aaaBound = '1';
+
+      // Hover 行为：与之前一致（但会优先复用 currentEl 以避免两个窗口闪烁）
+      target.addEventListener('mouseenter', () => {
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        const state = ensureState(key);
+        state.hoverLink = true;
+        if (state.timer) { clearTimeout(state.timer); state.timer = null; }
+        showByMorphOrDirect(key, target.getBoundingClientRect());
+      });
+
+      target.addEventListener('mouseleave', () => {
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        const state = ensureState(key);
+        state.hoverLink = false;
+        scheduleHide(key);
+      });
+
+      // 点击行为：触发“平滑切换”动画（morph 优先）
+      target.addEventListener('click', (e) => {
+        // 原本我们已阻止 info:info 的默认跳转；此处确保一次
+        e.preventDefault();
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        showByMorphOrDirect(key, target.getBoundingClientRect());
+      });
+    }
+
+    // 捕获全局鼠标移动，动态绑定链接（保持与原有逻辑兼容）
+    function checkMouseOnLink(event) {
+      const target = event.target;
+      if (target.tagName !== 'A') return;
+      const key = parseInfoKeyFromAnchor(target);
+      if (!key) return;
+
+      // 先绑定 hover/click
+      bindLinkHoverAndClick(target);
+
+      // 在 mousemove 命中时也刷新位置与显示，保证体验顺滑
+      const aaaElement = currentEl && currentKey === key
+        ? currentEl
+        : document.querySelector(`div[aaa="${key}"]`);
+      if (!aaaElement) return;
+
+      const state = ensureState(key);
+      state.el = currentEl || aaaElement;
+      state.hoverLink = true;
+
+      // 若当前就是这个 key，用当前元素定位即可
+      placeAndShowForLink(state.el, target.getBoundingClientRect());
+    }
+
+    // ===== 初始化 =====
+    window.addEventListener('resize', resizeKatex);
+    window.addEventListener('load', loadMarkdown);
+    document.addEventListener('mousemove', checkMouseOnLink);
+    
+
+  </script>
+</body>
+</html>

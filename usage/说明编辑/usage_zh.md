@@ -319,7 +319,7 @@ Reality 的计算基于游玩分数和谱面定数：
 | Dum! Dum!! Dum!!! | 食物\*60 |
 | Splash the Beat!! | 食物\*300 |
 | Sound of Nature | 菌菇\*30,装饰\*80 |
-| Conflict | 菌菇\*20,装饰\*25 |
+| conflict | 菌菇\*20,装饰\*25 |
 
 </div>
 

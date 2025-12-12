@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>独占曲列表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .markdown-body {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+
+    pre,
+    code {
+      user-select: text;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <article id="content" class="markdown-body"></article>
+  </div>
+
+  <script type="text/markdown" id="md">
+
+- [返回主页](./)
+
+## Milthm 独占曲列表
+
+### 天气预报
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 1 | Welcome to Milthm | TsukiP |
+| 2 | Fantasia Sonata Reflection | PYKAMIA |
+| 3 | Fantasia Sonata Sky Syndrome | PYKAMIA |
+
+### 雨的声音
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 4 | 雨之城 (Castle in the Rain) | CsLrisEto |
+| 5 | イコラト (eclat) | TsukiP |
+| 6 | 雨女 (Ameonna) | TsukiP |
+
+### 甜与苦的一体两面
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 7 | Aconsma | ILusMin |
+| 8 | OverRain | SharK |
+| 9 | Fragment of Memories | U-Ruri |
+| 10 | HYPER MEMORIES | Wooden, Salty Salt |
+| 11 | Regnaissance | AiSS vs. Abit |
+| 12 | Contrasty Angeles | HLxQ.v.M |
+| 13 | Brightened Demonios | HLxQ.v.M |
+| 14 | Myth compiler | 溝口ゆうま feat. 大瀬良あい |
+| 15 | Fantasia Sonata Arcadia | PYKAMIA |
+
+### 花裳随雨得春迟
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 16 | Vestige of Dreams | DRIVE. |
+| 17 | 靈 (Rei) | MYTK |
+
+### 梦境磁带
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 18 | INFP.mp3 | TsukiP |
+| 19 | Oniichan | MoryueCi |
+| 20 | Moving On | Nastram |
+| 21 | サイクルの欠片 (Pieces of the Cycle) | TsukiP |
+| 22 | Broken Conviction | Cansol |
+
+### 露晓卉庭
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 23 | Garden | NceS & All_Life_X & AiSS |
+| 24 | Fantasia Sonata Botanical Garden | PYKAMIA |
+
+### Notanote
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 25 | 烁雨 (Sparkrain) | ILusMin (Milthm x Notanote Original) |
+| 26 | cybernetic blazar | ああああ (Notanote x Milthm Original) |
+| 27 | Innocent white | 影虎。 (Notanote x Milthm Original) |
+
+
+  </script>
+
+  <script>
+    marked.use(markedKatex());
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (lang && hljs.getLanguage(lang)) {
+          return hljs.highlight(code, { language: lang }).value;
+        }
+        return hljs.highlightAuto(code).value;
+      }
+    });
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = '';
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    const md = document.getElementById('md').textContent.replace(/^\n/, '');
+    const content = document.getElementById('content');
+    content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+    content.querySelectorAll('h2,h3,h4').forEach(h => {
+      h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+    });
+    hljs.highlightAll();
+    resizeKatex();
+
+    addEventListener('resize', () => resizeKatex());
+  </script>
+
+</body>
+
+</html>

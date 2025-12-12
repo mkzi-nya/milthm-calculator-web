@@ -47,7 +47,6 @@ _简体中文以外的语言可能无法及时更新_
 - [mhtl.im](https://mhtl.im)
 > 以上网站由_4everDimensions托管
 - [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/)
-- [milcalc.netlify.app](https://milcalc.netlify.app/)
 > 以上网站由mkzi_nya托管
 
 ---
@@ -453,7 +452,7 @@ function calculateScore(input) {
 | Dum! Dum!! Dum!!! | 食物\*60 |
 | Splash the Beat!! | 食物\*300 |
 | Sound of Nature | 菌菇\*30,装饰\*80 |
-| Conflict | 菌菇\*20,装饰\*25 |
+| conflict | 菌菇\*20,装饰\*25 |
 
 </div>
 

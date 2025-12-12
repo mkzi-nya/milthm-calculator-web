@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Reality对照表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .markdown-body {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+
+    pre,
+    code {
+      user-select: text;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <article id="content" class="markdown-body"></article>
+  </div>
+
+  <script type="text/markdown" id="md">
+
+- [返回主页](./)
+
+## Reality对照表
+<div>
+  <label for="constantInput">输入定数:</label>
+  <input id="constantInput" type="number" step="0.01" placeholder="请输入数字" oninput="updateOutput()" />
+  
+  <pre><code id="output"></code></pre>
+</div>
+
+  </script>
+
+  <script>
+    marked.use(markedKatex());
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (lang && hljs.getLanguage(lang)) {
+          return hljs.highlight(code, { language: lang }).value;
+        }
+        return hljs.highlightAuto(code).value;
+      }
+    });
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = '';
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    const md = document.getElementById('md').textContent.replace(/^\n/, '');
+    const content = document.getElementById('content');
+    content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+    content.querySelectorAll('h2,h3,h4').forEach(h => {
+      h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+    });
+    hljs.highlightAll();
+    resizeKatex();
+
+    addEventListener('resize', () => resizeKatex());
+    // reality对照表函数
+    function findScore(constant, target) {
+  if (target <= 0) return 600000;
+  if (target > constant + 1.5) return "Unable to deduce points";
+  
+  if (target >= constant) {
+    if (target === constant + 1.5) return 1000000;
+    return Math.ceil(850000 + (target - constant) * 100000);
+  }
+  
+  if (target >= Math.max(0, 0.5 * constant - 1.5)) {
+    const denominator = constant / 300000 + 1 / 100000;
+    const score = (target + constant * 11/6 + 8.5) / denominator;
+    return Math.min(Math.ceil(score), 849999);
+  }
+  
+  if (Math.abs(constant - 3) < 1e-6) return 600000;
+  const score = 600000 + (target * 200000) / (constant - 3);
+  return Math.min(Math.ceil(score), 699999);
+}
+
+function updateOutput() {
+  const input = document.getElementById("constantInput").value;
+  const output = document.getElementById("output");
+  
+  if (input === "") {
+    output.textContent = "reality\tscore\n请填写 c (constant)，结果将以公式形式计算";
+    return;
+  }
+  
+  const c = parseFloat(input);
+  let result = "reality\tscore\n";
+  
+  // 先计算所有结果
+  const data = [];
+  for (let r = 0; r <= c + 1.5; r += 0.01) {
+    const score = findScore(c, parseFloat(r.toFixed(2)));
+    data.push({ r: r.toFixed(2), s: score });
+  }
+  
+  // 倒序输出
+  for (let i = data.length - 1; i >= 0; i--) {
+    result += `${data[i].r}\t${data[i].s}\n`;
+  }
+  
+  output.textContent = result;
+}
+
+  </script>
+
+</body>
+
+</html>
