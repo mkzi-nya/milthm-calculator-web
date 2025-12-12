@@ -294,6 +294,12 @@ const constantsData = {
   "d0d29240-8b57-4c50-905d-7a0350e05fca": [2.0, "Drizzle", "運命", , , , ,],
   "e0cb3704-d30e-4f01-ac56-2be215269d7d": [7.6, "Sprinkle", "運命", , , , ,],
   "5144879f-47c9-4c2c-a072-8189afe85771": [9.9, "Cloudburst", "運命", , , , ,],
+  "9f67df07-3564-4637-98bd-c815672cf1fc": [2.0, "Drizzle", "Sound of Nature", , , , ,],
+  "1da6bd8f-8c5f-4eb4-9541-2e70a4da6472": [6.9, "Sprinkle", "Sound of Nature", , , , ,],
+  "cd76fd59-3091-404f-943b-7028c0ef9ffe": [10.7, "Cloudburst", "Sound of Nature", , , , ,],
+  "8d873c10-b5e8-40e0-bf46-2a66a46d44f2": [2.0, "Drizzle", "conflict", , , , ,],
+  "bd6cc967-d948-4a92-9e68-c86b091873bd ": [9.3, "Sprinkle", "conflict", , , , ,],
+  "57229919-1eda-45c9-bcfd-8b77d895fecb": [11.4, "Cloudburst", "conflict", , , , ,],
 };
 //解析出constant
 const constants = {},
