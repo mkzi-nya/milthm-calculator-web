@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # BUCHiAGE Fireworks
 
 ## 曲目信息

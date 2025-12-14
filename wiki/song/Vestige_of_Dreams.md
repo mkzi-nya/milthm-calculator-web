@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Vestige of Dreams
 
 ## 曲目信息

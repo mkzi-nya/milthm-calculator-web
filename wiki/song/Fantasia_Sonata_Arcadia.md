@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Fantasia Sonata Arcadia
 
 ## 曲目信息

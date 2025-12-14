@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # cybernetic blazar
 
 ## 曲目信息

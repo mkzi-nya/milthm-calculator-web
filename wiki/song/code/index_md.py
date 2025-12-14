@@ -1,90 +1,88 @@
 import re
+import json
 from pathlib import Path
 
-MAP_JS = Path("map.js")
-OUT_MD = Path("index.md")
+MAP_JS = Path("../map.js")
+OUT_MD = Path("./index.md")
 
-# ---------- 字符分类 ----------
+# ---------------- utils ----------------
 
-def is_latin(c):
-    return ('A' <= c <= 'Z') or ('a' <= c <= 'z')
+def parse_map_js(text: str):
+    """
+    解析：
+    export const songMap = {
+      "Key": ["Original", ...],
+    };
+    """
+    obj = {}
 
-def is_kana(c):
-    o = ord(c)
-    return (
-        0x3040 <= o <= 0x309F or  # 平假名
-        0x30A0 <= o <= 0x30FF     # 片假名
-    )
-
-def is_cjk(c):
-    o = ord(c)
-    return 0x4E00 <= o <= 0x9FFF
-
-def sort_group(key):
-    if not key:
-        return 9
-    c = key[0]
-    if is_latin(c):
-        return 0
-    if is_kana(c):
-        return 1
-    if is_cjk(c):
-        return 2
-    return 3
-
-# ---------- 解析 map.js ----------
-
-def load_map_js(path: Path):
-    text = path.read_text(encoding="utf-8")
-
-    m = re.search(
-        r"export\s+const\s+songMap\s*=\s*({[\s\S]*?})\s*;",
-        text
-    )
-    if not m:
-        raise RuntimeError("未在 map.js 中找到 songMap")
-
-    body = m.group(1)
-
-    entries = []
-
-    # 匹配："键名": ["第一项", ...]
-    item_re = re.compile(
-        r'"([^"]+)"\s*:\s*\[\s*"([^"]+)"',
+    # 提取 "key": [ ... ]
+    pattern = re.compile(
+        r'"([^"]+)"\s*:\s*\[(.*?)\]',
         re.S
     )
 
-    for key, first in item_re.findall(body):
-        entries.append({
-            "key": key,
-            "first": first,
-        })
+    for key, arr in pattern.findall(text):
+        # 只解析数组第一个字符串（original）
+        m = re.search(r'"([^"]+)"', arr)
+        if not m:
+            continue
+        original = m.group(1)
+        obj[key] = original
 
-    return entries
+    return obj
 
-# ---------- 主流程 ----------
 
-def main():
-    entries = load_map_js(MAP_JS)
+def char_group(s: str):
+    """
+    返回排序优先级 + 辅助排序 key
+    """
+    if not s:
+        return (99, "")
 
-    # 分组排序：组优先级 + 组内 Unicode 排序
-    entries.sort(
-        key=lambda e: (
-            sort_group(e["key"]),
-            e["first"]
-        )
-    )
+    c = s[0]
 
-    lines = []
-    lines.append("# 所有曲目")
-    lines.append("")
+    # 1. 大写字母
+    if "A" <= c <= "Z":
+        return (0, s)
 
-    for e in entries:
-        lines.append(f'- [{e["first"]}](./?q={e["key"]})')
+    # 2. 小写字母
+    if "a" <= c <= "z":
+        return (1, s)
 
-    OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    code = ord(c)
 
-    print(f"✓ 已生成 {OUT_MD}")
+    # 3. 日文（假名 + 常用汉字范围）
+    if (
+        0x3040 <= code <= 0x309F or  # Hiragana
+        0x30A0 <= code <= 0x30FF or  # Katakana
+        0x31F0 <= code <= 0x31FF or
+        0xFF66 <= code <= 0xFF9D
+    ):
+        return (2, s)
 
-if __name__ == "__main__":
-    main()
+    # 4. 中文（CJK Unified Ideographs）
+    if 0x4E00 <= code <= 0x9FFF:
+        return (3, s)
+
+    # 5. 其他符号
+    return (4, s)
+
+
+# ---------------- main ----------------
+
+text = MAP_JS.read_text(encoding="utf-8")
+song_map = parse_map_js(text)
+
+items = list(song_map.items())  # (key, original)
+
+items.sort(key=lambda kv: char_group(kv[1]))
+
+lines = ["# 所有曲目", ""]
+
+for key, original in items:
+    lines.append(f"- [{original}](./?q={key})")
+
+OUT_MD.write_text("\n".join(lines), encoding="utf-8")
+
+print(f"✓ 已生成 {OUT_MD}")

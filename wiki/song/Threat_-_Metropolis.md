@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Threat - Metropolis
 
 ## 曲目信息

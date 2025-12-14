@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Future Unbound (Game Edit)
 
 ## 曲目信息

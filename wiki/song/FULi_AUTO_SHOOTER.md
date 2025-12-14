@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # FULi AUTO SHOOTER
 
 ## 曲目信息

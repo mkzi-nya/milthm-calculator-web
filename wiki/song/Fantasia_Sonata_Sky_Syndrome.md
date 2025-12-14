@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Fantasia Sonata Sky Syndrome
 
 ## 曲目信息
