@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: mkzi-nya/milthm-calculator-web
+  branch: main
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "all"
+    label: "所有文件"
+    files:
+      - file: "README.md"
+        label: "README"
+        name: "readme"
+        fields:
+          - { label: "内容", name: "body", widget: "markdown" }
+
+  - name: "songs"
+    label: "曲目"
+    folder: "wiki/song"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "正文", name: "body", widget: "markdown" }
