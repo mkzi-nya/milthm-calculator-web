@@ -15,9 +15,14 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Contrasty Angeles", "Drizzle")) | [Sprinkle](info:info("Contrasty Angeles", "Sprinkle")) | [Cloudburst](info:info("Contrasty Angeles", "Cloudburst")) | [Clear](info:info("Contrasty Angeles", "Clear")) |
 | - | - | - | - | - |
-| 等级 | 4.0 | 9.0 | 11.6 | 12.5 |
+| 等级 | 4 | 9 | 11+ | 12+ |
 | Note数量 | 350 | 735 | 1260 | 1290 |
 | 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki | 爬爬 |
+
+## 曲目定数
+| 难度 | [Drizzle](info:info("Contrasty Angeles", "Drizzle")) | [Sprinkle](info:info("Contrasty Angeles", "Sprinkle")) | [Cloudburst](info:info("Contrasty Angeles", "Cloudburst")) | [Clear](info:info("Contrasty Angeles", "Clear")) |
+| - | - | - | - | - |
+| 定数 | 4.0 | 9.0 | 11.6 | 12.5 |
 
 - 该曲目CB难度初出定数为11.5，v4.0更新后调整为11.6。但当该谱面使用旧版成绩计算Reality时，依旧按照11.5的定数参与计算。
 - 该曲目CL难度初出定数为12.3，v4.0更新后调整为12.5。但当该谱面使用旧版成绩计算Reality时，依旧按照12.3的定数参与计算。
@@ -52,3 +57,5 @@
 - 初次游玩该曲目后该曲目将自动解锁，并带回开屏界面。
   - 点击进入游戏后，将自动进入故事第7节。
 - 该曲目解锁后，将获得角色“苏珊·现实”。
+- 在2025年愚人节活动期间，尽管其他曲目的难度等级被显著提高，但本曲的CL难度显示为了2级，“Clear”字样变为了“PapaJK”。
+  - 实际难度等级为256。
