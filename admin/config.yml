@@ -5,21 +5,19 @@ backend:
 
 publish_mode: editorial_workflow
 
-collections:
-  - name: "all"
-    label: "所有文件"
-    files:
-      - file: "README.md"
-        label: "README"
-        name: "readme"
-        fields:
-          - { label: "内容", name: "body", widget: "markdown" }
+# === 必须存在（即使不用）===
+media_folder: "admin/uploads"
+public_folder: "/admin/uploads"
 
-  - name: "songs"
-    label: "曲目"
-    folder: "wiki/song"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "标题", name: "title", widget: "string" }
-      - { label: "正文", name: "body", widget: "markdown" }
+media_library:
+  name: disabled
+
+collections:
+  - name: test
+    label: Test
+    files:
+      - file: README.md
+        label: README
+        name: readme
+        fields:
+          - { label: Content, name: body, widget: markdown }
