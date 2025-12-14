@@ -5,19 +5,24 @@ backend:
 
 publish_mode: editorial_workflow
 
-# === 必须存在（即使不用）===
-media_folder: "admin/uploads"
-public_folder: "/admin/uploads"
+# ===== 必填（Decap CMS 3.9 强制）=====
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 media_library:
-  name: disabled
+  name: uploadcare
 
+# ===== 核心：编辑整个仓库 =====
 collections:
-  - name: test
-    label: Test
-    files:
-      - file: README.md
-        label: README
-        name: readme
-        fields:
-          - { label: Content, name: body, widget: markdown }
+
+  # 1️⃣ 编辑所有 Markdown（整个仓库递归）
+  - name: "markdown"
+    label: "Markdown Files"
+    folder: ""
+    create: false
+    extension: "md"
+    format: "frontmatter"
+    nested:
+      depth: 10
+    fields:
+      - { label: "Content", name: "body", widget: "markdown" }
