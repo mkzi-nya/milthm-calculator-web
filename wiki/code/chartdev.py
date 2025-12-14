@@ -144,7 +144,7 @@ def generate_chart_dev(data, chart_info_data, return_key=False):
 <div style="position: absolute; background-color: rgba(0, 0, 0, 0.8); padding: 2px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000; font-family: Arial, sans-serif; color: #fff; font-size: 11px; line-height: 1.4; width: 250px;" aaa="{titles},{difficulty}">
     <p>ID: {id}</p>
     <p><a href="{url}" target="_blank" style="color: #4da6ff; text-decoration: none;">点此进入游戏</a></p>
-    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './{data.get("latinTitle", "")}' : './song/{data.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
+    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './?q={data.get("latinTitle", "")}' : './song/?q={data.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
     <p>charter: {charter}</p>
     <p>chartersList: {', '.join(chartersList)}</p>
     {generate_chart_info_html_from_data(chart_info)}
@@ -174,7 +174,7 @@ def generate_chart_dev_with_info(data, chart_info):
 <div style="position: absolute; background-color: rgba(0, 0, 0, 0.8); padding: 2px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000; font-family: Arial, sans-serif; color: #fff; font-size: 11px; line-height: 1.4; width: 250px;" aaa="{titles},{difficulty}">
     <p>ID: {id}</p>
     <p><a href="{url}" target="_blank" style="color: #4da6ff; text-decoration: none;">点此进入游戏</a></p>
-    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './{data.get("latinTitle", "")}' : './song/{data.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
+    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './?q={data.get("latinTitle", "")}' : './song/?q={data.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
     <p>charter: {charter}</p>
     <p>chartersList: {', '.join(chartersList)}</p>
     {generate_chart_info_html_from_data(chart_info)}
@@ -264,7 +264,7 @@ def generate_info_dev(data):
     
     info_html += f'''
     <p><a href="{url}" target="_blank" style="color: #4da6ff; text-decoration: none;">点此进入游戏</a></p>
-    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './{item.get("latinTitle", "")}' : './song/{item.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
+    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './?q={item.get("latinTitle", "")}' : './song/?q={item.get("latinTitle", "")}'">点此查看曲目详情信息</a></p>
     <p>artist: {item.get('artist', '')}<br><br>illustrator: {', '.join(item.get('illustrator', []))}</p>
     <p>BPM:<br><br>{bpm_text.rstrip(', ')}</p>
 </div>'''
