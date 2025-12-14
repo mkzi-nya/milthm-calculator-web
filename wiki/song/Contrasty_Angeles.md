@@ -15,15 +15,9 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Contrasty Angeles", "Drizzle")) | [Sprinkle](info:info("Contrasty Angeles", "Sprinkle")) | [Cloudburst](info:info("Contrasty Angeles", "Cloudburst")) | [Clear](info:info("Contrasty Angeles", "Clear")) |
 | - | - | - | - | - |
-| 等级 | 4 | 9 | 11+ | 12+ |
+| 等级 | 4 (4.0) | 9 (9.0) | 11+ (11.6) | 12+ (12.5) |
 | Note数量 | 350 | 735 | 1260 | 1290 |
 | 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki | 爬爬 |
-
-## 曲目定数
-| 难度 | [Drizzle](info:info("Contrasty Angeles", "Drizzle")) | [Sprinkle](info:info("Contrasty Angeles", "Sprinkle")) | [Cloudburst](info:info("Contrasty Angeles", "Cloudburst")) | [Clear](info:info("Contrasty Angeles", "Clear")) |
-| - | - | - | - | - |
-| 定数 | 4.0 | 9.0 | 11.6 | 12.5 |
-
 - 该曲目CB难度初出定数为11.5，v4.0更新后调整为11.6。但当该谱面使用旧版成绩计算Reality时，依旧按照11.5的定数参与计算。
 - 该曲目CL难度初出定数为12.3，v4.0更新后调整为12.5。但当该谱面使用旧版成绩计算Reality时，依旧按照12.3的定数参与计算。
 
