@@ -21,7 +21,7 @@
 ## 解锁方法
 
 隐藏曲，在阅读故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」前完全不可见。  
-在解锁《Regnaissance》和《[Contrasty Angeles](./?q=Contrasty_Angeles)》后，即可解锁故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。阅读该故事后，本曲将出现在选曲列表中，但是不显示曲名。再次点击列表中的该曲即可解锁。
+在解锁《Regnaissance》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》后，即可解锁故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。阅读该故事后，本曲将出现在选曲列表中，但是不显示曲名。再次点击列表中的该曲即可解锁。
 - 但若在v3.8更新前完成彼时曲包的全部内容，更新后本曲将会直接显示在曲目列表中（即便没有阅读故事）。
 
 ## 曲目试听
@@ -31,7 +31,7 @@
 ## 曲目相关
 
 - 本曲目为Milthm原创曲。
-- 本曲目曲名与《Contrasty Angeles》完全照应，被认为是后者的续作。
+- 本曲目曲名与《[Contrasty Angeles](info:info("Contrasty Angeles"))》完全照应，被认为是后者的续作。
   - 在旋律上，两者也有相似之处。
 
 ## 游戏相关
