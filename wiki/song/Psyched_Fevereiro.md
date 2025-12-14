@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.04,150.0] |
+| 谱面时长 | 2:08 |
+| BPM | 150 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Psyched Fevereiro", "Drizzle")) | [Sprinkle](info:info("Psyched Fevereiro", "Sprinkle")) | [Cloudburst](info:info("Psyched Fevereiro", "Cloudburst")) |

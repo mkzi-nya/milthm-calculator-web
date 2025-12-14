@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.015,128.0] |
+| 谱面时长 | 2:45 |
+| BPM | 128 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("花月", "Drizzle")) | [Sprinkle](info:info("花月", "Sprinkle")) | [Cloudburst](info:info("花月", "Cloudburst")) |

@@ -9,14 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.057,108.106] |
+| 谱面时长 | 2:32 |
+| BPM | 108.106 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Threat - Superstructure", "Drizzle")) | [Sprinkle](info:info("Threat - Superstructure", "Sprinkle")) | [Cloudburst](info:info("Threat - Superstructure", "Cloudburst")) |
 | - | - | - | - |
 | 等级 | 2.0 | 5.5 | 10.3 |
-| Note数量 | 85 | 350 | 562 |
+| Note数量 | 85 | 350 | {info:combo,Cloudburst} |
 | 谱师 | Eric_Lian, Magazet | 云梦, TCSTWTBHY | Kiyotsuki |
 
 ## 解锁方法

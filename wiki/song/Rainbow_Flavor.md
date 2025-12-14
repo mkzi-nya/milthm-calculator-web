@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,128.0] |
+| 谱面时长 | 2:34 |
+| BPM | 128 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Rainbow Flavor!", "Drizzle")) | [Sprinkle](info:info("Rainbow Flavor!", "Sprinkle")) | [Cloudburst](info:info("Rainbow Flavor!", "Cloudburst")) |

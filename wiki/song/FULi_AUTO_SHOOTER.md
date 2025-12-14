@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.02,145.0] |
+| 谱面时长 | 2:00 |
+| BPM | 145 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("FULi AUTO SHOOTER", "Drizzle")) | [Sprinkle](info:info("FULi AUTO SHOOTER", "Sprinkle")) | [Cloudburst](info:info("FULi AUTO SHOOTER", "Cloudburst")) |

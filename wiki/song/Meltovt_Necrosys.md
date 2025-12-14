@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.01,210.0] |
+| 谱面时长 | 2:22 |
+| BPM | 210 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Meltovt Necrosys", "Drizzle")) | [Sprinkle](info:info("Meltovt Necrosys", "Sprinkle")) | [Cloudburst](info:info("Meltovt Necrosys", "Cloudburst")) |

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [1.18,210.0] |
+| 谱面时长 | 2:24 |
+| BPM | 210 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Contrasty Angeles", "Drizzle")) | [Sprinkle](info:info("Contrasty Angeles", "Sprinkle")) | [Cloudburst](info:info("Contrasty Angeles", "Cloudburst")) | [Clear](info:info("Contrasty Angeles", "Clear")) |

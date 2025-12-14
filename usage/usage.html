@@ -4,17 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Usage</title>
-
-  <!-- 本地资源（不再注入 load.js） -->
-  <link rel="stylesheet" href="./github-markdown-dark.min.css">
-  <script src="./marked.min.js"></script>
-  <script src="./katex.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script src="./index.umd.js"></script>
-  <link rel="stylesheet" href="./github-dark.min.css">
-  <script src="./highlight.min.js"></script>
-
+  <title>Reality对照表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -24,152 +21,166 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
     }
-    .container { width: 100%; max-width: 900px; }
-    .markdown-body { width: 100%; overflow-wrap: break-word; }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .markdown-body {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
     .katex-display {
       display: block !important;
       text-align: center;
       margin: 10px 0;
       font-size: 1em;
     }
-    .toc { display: none; }
-    pre, code { user-select: text; }
 
-    .language-selector {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #222;
-      padding: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      color: white;
-      font-size: 2em;
-    }
-    .language-menu {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 10px;
-      background: #222;
-      border-radius: 5px;
-      padding: 10px;
-      list-style: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    .language-menu li {
-      padding: 8px 12px;
-      cursor: pointer;
-      color: white;
-    }
-    .language-menu li:hover { background: #444; }
-
-    /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
-    div[aaa] {
-      visibility: hidden;
-      opacity: 0;
-      transition:
-        opacity 0.12s ease-in-out,
-        visibility 0.12s ease-in-out,
-        top 0.12s ease,
-        left 0.12s ease;
-    }
-    div[aaa].visible {
-      visibility: visible;
-      opacity: 1;
+    pre,
+    code {
+      user-select: text;
     }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-L5K3QVRHFZ');
-  </script>
 </head>
 
 <body>
-  <!-- 语言选择按钮 -->
-  <div class="language-selector" onclick="toggleLanguageMenu()">🌐</div>
-  <ul class="language-menu" id="language-menu">
-    <li onclick="changeLanguage('zh')">中文</li>
-    <li onclick="changeLanguage('zh-tw')">繁體中文</li>
-    <li onclick="changeLanguage('en')">English</li>
-    <li onclick="changeLanguage('ja')">日本語</li>
-    <li onclick="changeLanguage('ko')">한국어</li>
-    <li onclick="changeLanguage('ru')">Русский</li>
-    <li onclick="changeLanguage('es')">Español</li>
-    <li onclick="changeLanguage('vi')">Tiếng Việt</li>
-    <li onclick="changeLanguage('ken')">⋿ウᏵ㆑エㄎサ</li>
-  </ul>
 
   <div class="container">
     <article id="content" class="markdown-body"></article>
   </div>
 
+  <script type="text/markdown" id="md">
+
+## 目录
+
+- [网站](#网站)
+- [查分器使用说明](#使用说明)
+  - [上传存档文件](#上传存档文件)
+  - [旧版存档路径](#其他存档路径)
+  - [在线客服](#在线客服)
+- [(推荐查看)Milthm Wiki](../wiki/)
+
+---
+
+## 网站
+
+- [k9.lv/c/](htt://k9.lv/c/)
+- [mhtlim.top](https://mhtlim.top/)
+- [mhtl.im](https://mhtl.im)
+> 以上网站由_4everDimensions托管
+- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/)
+> 以上网站由mkzi_nya托管
+
+---
+
+## 使用说明
+
+>查分器纯属玩家自行制作，与官方并无关联
+
+### 上传存档文件
+
+点击主页中的 **「上传文件」** 选项，选择存档文件 `saves.db` 或推分记录文件 `data.db` 上传即可。
+
+> **注意：**
+> - `data.db` 只包含 `3.2` 更新后的游玩记录（如果未丢失）。
+> - 安卓端推荐使用 [MT 管理器](https://mt2.cn/) 访问 `sdcard/Android/data` 目录。
+
+#### 文件路径（详见 [Milthm Wiki](https://milthm.fandom.com/wiki/Data_File)）
+
+[什么是文件路径](#什么是文件路径)
+
+- **Android (TapTap)**
+  ```text
+  /storage/emulated/0/Android/data/game.taptap.morizero.milthm/files/data/
+  ```
+- **Android (Google Play)**
+  ```text
+  /storage/emulated/0/Android/data/com.morizero.milthm/files/data/
+  ```
+- **iOS**
+
+  使用 [文件](https://support.apple.com//102570) 应用打开 Milthm 文件夹：
+
+  ```text
+  /data/
+  ```
+
+  > 如果找不到本地文件：进入“文件”主页右上角的三点菜单，将本地文件取消隐藏（[详见](https://www.tenorshare.com/iphone-fix/on-my-iphone-missing-in-files-app.html)）。
+
+- **Windows 用户：**  
+  在资源管理器地址栏输入：  
+  ```text
+  %AppData%\..\LocalLow\Morizero\Milthm\data\
+  ```
+- **Mac OS**
+  ```text
+  /Library/Application Support/Morizero/Milthm/data/
+  ```
+- **Linux**
+  ```text
+  ~/.config/unity3d/Morizero/Milthm/data/
+  ```
+
+[安卓演示视频](https://mkzi-nya.github.io/milthm-calculator-web/files/android.mp4)  
+[IOS演示视频](https://mkzi-nya.github.io/milthm-calculator-web/files/ios.mp4)  
+安卓用户[没有访问权限](#没有访问权限)
+
+---
+
+### 旧版存档路径
+
+若上传后无法解析，可尝试手动提取 JSON 数据并上传：
+
+- **Android (TapTap)**
+  ```text
+  /data/user/0/game.taptap.morizero.milthm/shared_prefs/
+  ```
+- **Android (Google Play)**
+  ```text
+  /data/user/0/com.morizero.milthm/shared_prefs/
+  ```
+- **iOS**
+  ```text
+  milthm file/Data/Library/Preferences
+  ```
+- **Windows**
+  regedit:
+  ```text
+  HKEY_CURRENT_USER\Software\Morizero\Milthm\
+  ```
+- **Mac OS**
+  ```text
+  ~/Library/Preferences
+  ```
+- **Linux**
+  ```text
+  $HOME/.config/unity3d/Morizero/Milthm/
+  ```
+
+---
+
+### 在线客服
+
+- [客服A\(中国大陆找TA\)](https://www.deepseek.com/)
+- [客服B](https://chatgpt.com/)
+问题描述：将你看不懂的地方复制后发给TA即可  
+
+  </script>
+
   <script>
-    // ===== Markdown & 高亮 & KaTeX =====
     marked.use(markedKatex());
     marked.setOptions({
       highlight: (code, lang) => {
-        if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
+        if (lang && hljs.getLanguage(lang)) {
+          return hljs.highlight(code, { language: lang }).value;
+        }
         return hljs.highlightAuto(code).value;
       }
     });
-
-    function getUserLanguage() {
-      const langMap = {
-        "zh": "zh", "zh-cn": "zh", "zh-tw": "zh-tw",
-        "en": "en", "ja": "ja", "ko": "ko", "ru": "ru",
-        "es": "es", "vi": "vi", "ken": "ken"
-      };
-      const urlParams = new URLSearchParams(window.location.search);
-      let lang = urlParams.get('lang') || navigator.language.toLowerCase();
-      return langMap[lang] || "en";
-    }
-
-    function loadMarkdown() {
-      const lang = getUserLanguage();
-      fetch(`./usage_${lang}.md?${Date.now()}`)
-        .then(res => res.text())
-        .then(md => {
-          // 链接自动转义处理（保留原逻辑）
-          md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, p1, p2) {
-            if (p2.startsWith('info:')) {
-              const [protocol, rest] = p2.split(':', 2);
-              const encodedRest = encodeURIComponent(rest);
-              return `[${p1}](${protocol}:${encodedRest})`;
-            }
-            return `[${p1}](${p2})`;
-          });
-          content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
-          content.querySelectorAll('h2,h3,h4').forEach(h => {
-            h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
-          });
-          hljs.highlightAll();
-          resizeKatex();
-          runJavascriptLinks();
-          // 载入 dev
-          loadDev();
-        })
-        .catch(() => {
-          content.innerHTML = `<p style="color: red;">未找到 <b>usage_${lang}.md</b> 文件</p>`;
-          loadDev();
-        });
-    }
-
-    function runJavascriptLinks() {
-      const links = document.querySelectorAll('a[href^="info:info"], a[href^="info:info"]');
-      links.forEach(link => {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-        });
-      });
-    }
 
     function resizeKatex() {
       const w = document.querySelector('.markdown-body').clientWidth;
@@ -183,247 +194,16 @@
       });
     }
 
-    function toggleLanguageMenu() {
-      const menu = document.getElementById("language-menu");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-    function changeLanguage(lang) { window.location.search = `?lang=${lang}`; }
+    const md = document.getElementById('md').textContent.replace(/^\n/, '');
+    const content = document.getElementById('content');
+    content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+    content.querySelectorAll('h2,h3,h4').forEach(h => {
+      h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+    });
+    hljs.highlightAll();
+    resizeKatex();
 
-    // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
-    const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }
-    const HIDE_DELAY_MS = 120;
-
-    function ensureState(key) {
-      if (!hoverState.has(key)) {
-        hoverState.set(key, { hoverLink: false, hoverDev: false, el: null, timer: null });
-      }
-      return hoverState.get(key);
-    }
-
-    function scheduleHide(key) {
-      const state = ensureState(key);
-      if (state.timer) clearTimeout(state.timer);
-      state.timer = setTimeout(() => {
-        if (!state.hoverLink && !state.hoverDev && state.el) {
-          state.el.classList.remove('visible');
-        }
-        state.timer = null;
-      }, HIDE_DELAY_MS);
-    }
-
-    function placeAndShowForLink(aaaElement, linkRect) {
-      if (!aaaElement) return;
-      // 显示
-      aaaElement.classList.add('visible');
-      // 放在链接正下方并水平居中
-      const topPosition = linkRect.bottom + window.scrollY;
-      let leftPosition = linkRect.left + linkRect.width / 2 + window.scrollX - aaaElement.offsetWidth / 2;
-
-      const screenWidth = window.innerWidth;
-      const elementWidth = aaaElement.offsetWidth;
-      if (leftPosition + elementWidth > screenWidth) leftPosition = screenWidth - elementWidth;
-      else if (leftPosition < 0) leftPosition = 0;
-
-      aaaElement.style.position = 'absolute';
-      aaaElement.style.top = `${topPosition}px`;
-      aaaElement.style.left = `${leftPosition}px`;
-    }
-
-    // ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
-// ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
-function loadDev() {
-  fetch(`./chartdev.html?${Date.now()}`)
-    .then(res => {
-      if (!res.ok) throw new Error(`加载 chartdev.html 失败：${res.status}`);
-      return res.text();
-    })
-    .then(html => {
-      const temp = document.createElement('div');
-      temp.innerHTML = html;
-
-      const nodes = temp.querySelectorAll('div[aaa]');
-      nodes.forEach(node => {
-        const key = node.getAttribute('aaa');
-        if (!document.querySelector(`body > div[aaa="${CSS.escape(key)}"]`)) {
-          node.style.position = node.style.position || 'absolute';
-          document.body.appendChild(node);
-
-          // dev 悬停监听：进入 dev 时保持显示，离开 dev 时可能隐藏
-          node.addEventListener('mouseenter', () => {
-            const k = node.getAttribute('aaa');   // ✅ 动态读取
-            const st = ensureState(k);
-            st.el = node;
-            st.hoverDev = true;
-            node.classList.add('visible');
-            if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-          });
-
-          node.addEventListener('mouseleave', () => {
-            const k = node.getAttribute('aaa');   // ✅ 动态读取
-            const st = ensureState(k);
-            st.hoverDev = false;
-            scheduleHide(k);
-          });
-        }
-      });
-    })
-    .catch(err => console.error(err));
-}
-
-    // ===== Morph 相关：点击链接时顺滑切换 =====
-    let currentKey = null;             // 当前“主”窗口绑定的 key
-    let currentEl = null;              // 当前“主”窗口引用的 DOM 元素（会被复用以移动/换内容）
-    let isMorphing = false;            // 动画中防抖
-    const MORPH_SWAP_DELAY = 40;       // 轻微延迟以确保位置先到再替换内容
-
-    /**
-     * 将上一个窗口（currentEl）移动到新链接下方，并把内容替换为新窗口内容
-     * @param {HTMLElement} targetEl  目标 key 的 dev 节点（供取内容使用）
-     * @param {DOMRect} linkRect      新链接的 rect
-     * @param {String} targetKey      目标 key
-     */
-    function morphToTarget(targetEl, linkRect, targetKey) {
-      if (!currentEl || !targetEl || currentEl === targetEl) return;
-
-      // 1) 取消老 key 的隐藏、定时器，并标记当前元素为可见
-      if (currentKey) {
-        const oldState = ensureState(currentKey);
-        if (oldState.timer) { clearTimeout(oldState.timer); oldState.timer = null; }
-        oldState.hoverLink = false; // 点击时不强依赖 hover
-        oldState.hoverDev = false;
-        oldState.el = currentEl;
-      }
-      currentEl.classList.add('visible');
-
-      // 2) 平滑移动到新位置
-      placeAndShowForLink(currentEl, linkRect);
-
-      // 3) 微延迟后替换内容与 key（让用户先看到“飞过去”，再变文字）
-      setTimeout(() => {
-        // 替换内部内容
-        currentEl.innerHTML = targetEl.innerHTML;
-        // 更新 aaa key（后续 hover/隐藏依赖）
-        currentEl.setAttribute('aaa', targetKey);
-
-        // 隐藏/移除目标原节点，避免重复（保留在 DOM 但不可见即可）
-        targetEl.classList.remove('visible');
-        targetEl.style.top = '-99999px';
-        targetEl.style.left = '-99999px';
-
-        // 更新 currentKey & 状态
-        currentKey = targetKey;
-        const newState = ensureState(currentKey);
-        newState.el = currentEl;
-        newState.hoverLink = false;
-        newState.hoverDev = false;
-
-        isMorphing = false;
-      }, MORPH_SWAP_DELAY);
-    }
-
-    /**
-     * 以“当前元素优先”的策略显示目标窗口：
-     * - 若已有 currentEl：将其移动并替换为目标内容（morph）
-     * - 否则正常显示目标元素本身
-     */
-    function showByMorphOrDirect(targetKey, linkRect) {
-      const targetEl = document.querySelector(`div[aaa="${targetKey}"]`);
-      if (!targetEl) return;
-
-      // 如果从未有过 currentEl，则以 targetEl 为主
-      if (!currentEl) {
-        currentEl = targetEl;
-        currentKey = targetKey;
-        const st = ensureState(targetKey);
-        st.el = currentEl;
-        st.hoverLink = true;
-        if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-        placeAndShowForLink(currentEl, linkRect);
-        return;
-      }
-
-      // 若已有 currentEl 且 key 不同，执行 morph
-      if (currentEl && currentKey !== targetKey && !isMorphing) {
-        isMorphing = true;
-        morphToTarget(targetEl, linkRect, targetKey);
-        return;
-      }
-
-      // key 相同或正在 morph，就直接更新位置即可
-      placeAndShowForLink(currentEl, linkRect);
-    }
-
-    // ===== 监听鼠标移动到链接（hover）与点击（click）=====
-    function parseInfoKeyFromAnchor(anchor) {
-      const url = decodeURIComponent(anchor.href || '');
-      const match = url.match(/(info)\(([^)]*)\)/);
-      if (!match) return null;
-      const params = match[2].split(',').map(param => param.trim().replace(/['"]/g, ''));
-      const key = (params.length === 2) ? params.join(',') : params[0];
-      return key || null;
-    }
-
-    function bindLinkHoverAndClick(target) {
-      if (target.dataset.aaaBound) return;
-      target.dataset.aaaBound = '1';
-
-      // Hover 行为：与之前一致（但会优先复用 currentEl 以避免两个窗口闪烁）
-      target.addEventListener('mouseenter', () => {
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        const state = ensureState(key);
-        state.hoverLink = true;
-        if (state.timer) { clearTimeout(state.timer); state.timer = null; }
-        showByMorphOrDirect(key, target.getBoundingClientRect());
-      });
-
-      target.addEventListener('mouseleave', () => {
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        const state = ensureState(key);
-        state.hoverLink = false;
-        scheduleHide(key);
-      });
-
-      // 点击行为：触发“平滑切换”动画（morph 优先）
-      target.addEventListener('click', (e) => {
-        // 原本我们已阻止 info:info 的默认跳转；此处确保一次
-        e.preventDefault();
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        showByMorphOrDirect(key, target.getBoundingClientRect());
-      });
-    }
-
-    // 捕获全局鼠标移动，动态绑定链接（保持与原有逻辑兼容）
-    function checkMouseOnLink(event) {
-      const target = event.target;
-      if (target.tagName !== 'A') return;
-      const key = parseInfoKeyFromAnchor(target);
-      if (!key) return;
-
-      // 先绑定 hover/click
-      bindLinkHoverAndClick(target);
-
-      // 在 mousemove 命中时也刷新位置与显示，保证体验顺滑
-      const aaaElement = currentEl && currentKey === key
-        ? currentEl
-        : document.querySelector(`div[aaa="${key}"]`);
-      if (!aaaElement) return;
-
-      const state = ensureState(key);
-      state.el = currentEl || aaaElement;
-      state.hoverLink = true;
-
-      // 若当前就是这个 key，用当前元素定位即可
-      placeAndShowForLink(state.el, target.getBoundingClientRect());
-    }
-
-    // ===== 初始化 =====
-    window.addEventListener('resize', resizeKatex);
-    window.addEventListener('load', loadMarkdown);
-    document.addEventListener('mousemove', checkMouseOnLink);
-    
+    addEventListener('resize', () => resizeKatex());
     // reality对照表函数
     function findScore(constant, target) {
   if (target <= 0) return 600000;
@@ -471,6 +251,9 @@ function updateOutput() {
   
   output.textContent = result;
 }
+
   </script>
+
 </body>
+
 </html>

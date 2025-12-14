@@ -1,7 +1,7 @@
 # Brightened Demonios
 
 ## 曲目信息
-| 曲名 | [Brightened Demonios](info:info("Before it Ends")) |
+| 曲名 | [Brightened Demonios](info:info("Brightened Demonios")) |
 | - | - |
 | 拉丁文曲名 | Brightened Demonios |
 | 曲师 | HLxQ.v.M |
@@ -9,15 +9,15 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.004,177.0] |
+| 谱面时长 | 2:42 |
+| BPM | 177 |
 
 ## 谱面信息
-| 难度 | [Drizzle](info:info("Before it Ends", "Drizzle")) | [Sprinkle](info:info("Before it Ends", "Sprinkle")) | [Cloudburst](info:info("Before it Ends", "Cloudburst")) |
+| 难度 | [Drizzle](info:info("Brightened Demonios", "Drizzle")) | [Sprinkle](info:info("Brightened Demonios", "Sprinkle")) | [Cloudburst](info:info("Brightened Demonios", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 4.5 | 6.5 | 11.7 |
-| Note数量 | 295 | 649 | 1300 |
-| 谱师 | Akko | TCSTWTBHY | Kiyotsuki, Akko, Eric_Lian, 树穴猪 |
+| 等级 | 4.5 | 9.3 | 11.7 |
+| Note数量 | 425 | 651 | 1357 |
+| 谱师 | Akko | Kiyotsuki | Kiyotsuki, Akko, Eric_Lian, 树穴猪 |
 
 ## 解锁方法
 

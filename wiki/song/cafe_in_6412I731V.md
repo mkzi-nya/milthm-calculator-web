@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,234.0] |
+| 谱面时长 | 2:05 |
+| BPM | 234 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("cafe in 6412I731V", "Drizzle")) | [Sprinkle](info:info("cafe in 6412I731V", "Sprinkle")) | [Cloudburst](info:info("cafe in 6412I731V", "Cloudburst")) |

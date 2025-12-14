@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,196.0] |
+| 谱面时长 | 2:01 |
+| BPM | 196 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Moonfall   大月墜落狂想", "Drizzle")) | [Sprinkle](info:info("Moonfall   大月墜落狂想", "Sprinkle")) | [Cloudburst](info:info("Moonfall   大月墜落狂想", "Cloudburst")) |

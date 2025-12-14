@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.05,166.0] |
+| 谱面时长 | 2:18 |
+| BPM | 166 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Bio-Engineering", "Drizzle")) | [Sprinkle](info:info("Bio-Engineering", "Sprinkle")) | [Cloudburst](info:info("Bio-Engineering", "Cloudburst")) |

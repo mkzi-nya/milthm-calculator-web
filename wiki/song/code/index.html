@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>曲目信息</title>
-  <link rel="stylesheet" href="./github-markdown-dark.min.css">
-  <script src="./marked.min.js"></script>
-  <script src="./katex.min.js"></script>
+  <link rel="stylesheet" href="../github-markdown-dark.min.css">
+  <script src="../marked.min.js"></script>
+  <script src="../katex.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script src="./index.umd.js"></script>
-  <link rel="stylesheet" href="./github-dark.min.css">
-  <script src="./highlight.min.js"></script>
+  <script src="../index.umd.js"></script>
+  <link rel="stylesheet" href="../github-dark.min.css">
+  <script src="../highlight.min.js"></script>
   <script type="module">
     import { songMap } from './map.js';
     window.songMap = songMap;
@@ -38,35 +38,6 @@
     }
     .toc { display: none; }
     pre, code { user-select: text; }
-
-    .language-selector {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #222;
-      padding: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      color: white;
-      font-size: 2em;
-    }
-    .language-menu {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 10px;
-      background: #222;
-      border-radius: 5px;
-      padding: 10px;
-      list-style: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    .language-menu li {
-      padding: 8px 12px;
-      cursor: pointer;
-      color: white;
-    }
-    .language-menu li:hover { background: #444; }
 
     /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
     div[aaa] {
@@ -109,16 +80,6 @@
       text-decoration: underline;
     }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-L5K3QVRHFZ');
-  </script>
-</head>
 
 <body>
   <div class="container">
@@ -474,12 +435,6 @@
       });
     }
 
-    function toggleLanguageMenu() {
-      const menu = document.getElementById("language-menu");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-    function changeLanguage(lang) { window.location.search = `?lang=${lang}`; }
-
     // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
     const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }
     const HIDE_DELAY_MS = 120;
@@ -522,7 +477,7 @@
 
     // ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
     function loadDev() {
-      fetch(`./chartdev.html?${Date.now()}`)
+      fetch(`../chartdev.html?${Date.now()}`)
         .then(res => {
           if (!res.ok) throw new Error(`加载 chartdev.html 失败：${res.status}`);
           return res.text();

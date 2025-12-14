@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.02,120.0] |
+| 谱面时长 | 2:15 |
+| BPM | 120 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Kayava", "Drizzle")) | [Sprinkle](info:info("Kayava", "Sprinkle")) | [Cloudburst](info:info("Kayava", "Cloudburst")) |

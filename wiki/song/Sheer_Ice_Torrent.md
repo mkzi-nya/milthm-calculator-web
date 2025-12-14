@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.012,116.0] |
+| 谱面时长 | 2:32 |
+| BPM | 116 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Sheer Ice Torrent", "Drizzle")) | [Sprinkle](info:info("Sheer Ice Torrent", "Sprinkle")) | [Cloudburst](info:info("Sheer Ice Torrent", "Cloudburst")) |

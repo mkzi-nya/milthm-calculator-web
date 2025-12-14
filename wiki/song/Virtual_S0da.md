@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.5,150.0] |
+| 谱面时长 | 2:49 |
+| BPM | 150 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Virtual S0da", "Drizzle")) | [Sprinkle](info:info("Virtual S0da", "Sprinkle")) | [Cloudburst](info:info("Virtual S0da", "Cloudburst")) |

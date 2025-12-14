@@ -85,7 +85,24 @@ def list_to_str(v):
     return ", ".join(map(str, v)) if isinstance(v, list) else "-" if not v else str(v)
 
 def bpm_to_str(bpm):
-    return "-" if not bpm else ",".join(f"[{x['start']},{x['bpm']}]" for x in bpm)
+    if not bpm:
+        return "-"
+
+    # 工具：整数就去 .0
+    def fmt(x):
+        if isinstance(x, (int, float)) and x == int(x):
+            return str(int(x))
+        return str(x)
+
+    # 只有一项：直接返回 bpm
+    if len(bpm) == 1:
+        return fmt(bpm[0]["bpm"])
+
+    # 多项：输出 [start,bpm],[start,bpm]
+    return ",".join(
+        f"[{fmt(x['start'])},{fmt(x['bpm'])}]"
+        for x in bpm
+    )
 
 def latin_title_to_filename(latin):
     if not latin:

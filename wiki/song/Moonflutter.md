@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,87.0] |
+| 谱面时长 | 2:57 |
+| BPM | 87 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Moonflutter", "Drizzle")) | [Sprinkle](info:info("Moonflutter", "Sprinkle")) | [Cloudburst](info:info("Moonflutter", "Cloudburst")) | [Clear](info:info("Moonflutter", "Clear")) |

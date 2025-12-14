@@ -9,14 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.057,108.106] |
+| 谱面时长 | 0:00 |
+| BPM | 108.106 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Threat - Metropolis", "Drizzle")) | [Sprinkle](info:info("Threat - Metropolis", "Sprinkle")) | [Cloudburst](info:info("Threat - Metropolis", "Cloudburst")) |
 | - | - | - | - |
 | 等级 | 2.0 | 6.6 | 11.6 |
-| Note数量 | 399 | 919 | 1274 |
+| Note数量 | 399 | 919 | {info:combo,Cloudburst} |
 | 谱师 | Akko | Akko, 爬爬 | Kiyotsuki |
 
 ## 解锁方法

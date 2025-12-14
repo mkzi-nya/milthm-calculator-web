@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,126.5] |
+| 谱面时长 | 2:04 |
+| BPM | 126.5 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fantasia Sonata Botanical Garden", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Botanical Garden", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Botanical Garden", "Cloudburst")) |

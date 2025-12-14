@@ -9,13 +9,13 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,167.0] |
+| 谱面时长 | 2:29 |
+| BPM | 167 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fantasia Sonata Sky Syndrome", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Sky Syndrome", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Sky Syndrome", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.5 | 7.1 | {ct,CB} |
+| 等级 | 2.5 | 7.1 | 10.5 |
 | Note数量 | 318 | 569 | 1258 |
 | 谱师 | Milthm Team | Kiyotsuki | Kiyotsuki |
 

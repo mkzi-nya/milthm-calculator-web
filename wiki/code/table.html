@@ -37,35 +37,6 @@
     .toc { display: none; }
     pre, code { user-select: text; }
 
-    .language-selector {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #222;
-      padding: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      color: white;
-      font-size: 2em;
-    }
-    .language-menu {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 10px;
-      background: #222;
-      border-radius: 5px;
-      padding: 10px;
-      list-style: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    .language-menu li {
-      padding: 8px 12px;
-      cursor: pointer;
-      color: white;
-    }
-    .language-menu li:hover { background: #444; }
-
     /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
     div[aaa] {
       visibility: hidden;
@@ -82,15 +53,6 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5K3QVRHFZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-L5K3QVRHFZ');
-  </script>
-</head>
 
 <body>
   <div class="container">
@@ -147,12 +109,6 @@
         }
       });
     }
-
-    function toggleLanguageMenu() {
-      const menu = document.getElementById("language-menu");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-    function changeLanguage(lang) { window.location.search = `?lang=${lang}`; }
 
     // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
     const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,122.0] |
+| 谱面时长 | 2:05 |
+| BPM | 122 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Threat - Waterfront Complex", "Drizzle")) | [Sprinkle](info:info("Threat - Waterfront Complex", "Sprinkle")) | [Cloudburst](info:info("Threat - Waterfront Complex", "Cloudburst")) |

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.302746,197.0] |
+| 谱面时长 | 2:41 |
+| BPM | 197 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fantasia Sonata Arcadia", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Arcadia", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Arcadia", "Cloudburst")) |

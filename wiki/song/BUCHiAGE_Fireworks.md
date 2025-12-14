@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,192.0] |
+| 谱面时长 | 2:13 |
+| BPM | 192 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("BUCHiAGE Fireworks", "Drizzle")) | [Sprinkle](info:info("BUCHiAGE Fireworks", "Sprinkle")) | [Cloudburst](info:info("BUCHiAGE Fireworks", "Cloudburst")) |

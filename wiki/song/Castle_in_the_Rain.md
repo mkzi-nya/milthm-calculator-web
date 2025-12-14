@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [-0.003,102.0] |
+| 谱面时长 | 1:22 |
+| BPM | 102 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("雨之城", "Drizzle")) | [Sprinkle](info:info("雨之城", "Sprinkle")) | [Cloudburst](info:info("雨之城", "Cloudburst")) |

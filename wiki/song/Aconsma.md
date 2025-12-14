@@ -6,11 +6,11 @@
 | 拉丁文曲名 | Aconsma |
 | 曲师 | ILusMin |
 | 曲绘 | Qieth |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,140.0] |
+| 所属曲包 | 甜与苦的一体两面 |
+| 更新版本 | v2.0 |
+| 时长 | 2:27 |
+| 谱面时长 | 2:20 |
+| BPM | 140 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Aconsma", "Drizzle")) | [Sprinkle](info:info("Aconsma", "Sprinkle")) | [Cloudburst](info:info("Aconsma", "Cloudburst")) |
@@ -20,13 +20,15 @@
 | 谱师 | Kiyotsuki | Akko | Kiyotsuki |
 
 ## 解锁方法
-
-(待补充)
+解锁曲包《甜与苦的一体两面》后，在《粗线条的雨》的任意难度取得A评级解锁
 
 ## 曲目试听
-
-(待补充)
+（待补充）
 
 ## 游戏相关
-
-(待补充)
+- 本曲目为Milthm原创曲。
+  - 但本曲的独占性质在歌曲实装后才被确认。
+- 在解锁了《HYPER MEMORIES》、但《Regnaissance》和《Contrasty Angeles》未全部解锁时，游玩本曲目结算时将显示隐藏曲的解锁提示。
+  - 该效果会先依据玩家隐藏曲的解锁状态判断此时显示哪一条提示，并先显示对应曲目的解锁任务后显示提示。  
+  - 当《Regnaissance》未解锁时，提示为“只需遗漏《HYPER MEMORIES》的特定段落的所有音符”；当《Regnaissance》已解锁但《Contrasty Angeles》未解锁时，提示为“只需接住《HYPER MEMORIES》的特定段落的所有音符”。
+  - 该效果无法在两首隐藏曲都解锁后重新体验。

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.001,175.0] |
+| 谱面时长 | 2:03 |
+| BPM | 175 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Hikari", "Drizzle")) | [Sprinkle](info:info("Hikari", "Sprinkle")) | [Cloudburst](info:info("Hikari", "Cloudburst")) |

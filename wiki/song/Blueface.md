@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.08,125.0] |
+| 谱面时长 | 2:33 |
+| BPM | 125 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("☹", "Drizzle")) | [Sprinkle](info:info("☹", "Sprinkle")) | [Cloudburst](info:info("☹", "Cloudburst")) |

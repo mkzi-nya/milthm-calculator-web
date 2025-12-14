@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.666,180.0] |
+| 谱面时长 | 2:09 |
+| BPM | 180 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Chartreuse Green", "Drizzle")) | [Sprinkle](info:info("Chartreuse Green", "Sprinkle")) | [Cloudburst](info:info("Chartreuse Green", "Cloudburst")) |

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,135.0] |
+| 谱面时长 | 2:42 |
+| BPM | 135 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("仮想明日", "Drizzle")) | [Sprinkle](info:info("仮想明日", "Sprinkle")) | [Cloudburst](info:info("仮想明日", "Cloudburst")) |

@@ -9,8 +9,8 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | - |
-| BPM | [0.0,190.0] |
+| 谱面时长 | 2:09 |
+| BPM | 190 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("KASANE", "Drizzle")) | [Sprinkle](info:info("KASANE", "Sprinkle")) | [Cloudburst](info:info("KASANE", "Cloudburst")) |

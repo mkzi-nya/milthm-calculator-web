@@ -574,14 +574,6 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 
   <script>
     marked.use(markedKatex());
-    marked.setOptions({
-      highlight: (code, lang) => {
-        if (lang && hljs.getLanguage(lang)) {
-          return hljs.highlight(code, { language: lang }).value;
-        }
-        return hljs.highlightAuto(code).value;
-      }
-    });
 
     function resizeKatex() {
       const w = document.querySelector('.markdown-body').clientWidth;
