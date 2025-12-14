@@ -4,7 +4,7 @@ from pathlib import Path
 
 PACKED_DOC = Path("packed_document.json")
 CHARTINFO = Path("chartinfo.json")
-OUT_JS = Path("../map.js")
+OUT_JS = Path("map.js")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
