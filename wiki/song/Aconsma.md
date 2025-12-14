@@ -5,21 +5,19 @@
 ## 曲目信息
 | 曲名 | [Aconsma](info:info("Aconsma")) |
 | - | - |
-| 拉丁文曲名 | Aconsma |
 | 曲师 | ILusMin |
 | 曲绘 | Qieth |
 | 所属曲包 | 甜与苦的一体两面 |
 | 更新版本 | v2.0 |
 | 时长 | 2:27 |
-| 谱面时长 | 2:20 |
 | BPM | 140 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Aconsma", "Drizzle")) | [Sprinkle](info:info("Aconsma", "Sprinkle")) | [Cloudburst](info:info("Aconsma", "Cloudburst")) |
 | - | - | - | - |
 | 等级 | 1.0 | 6.0 | 9.3 |
-| Note数量 | 109 | 530 | 600 |
 | 谱师 | Kiyotsuki | Akko | Kiyotsuki |
+| Note数量 | 109 | 530 | 600 |
 
 ## 解锁方法
 解锁曲包《甜与苦的一体两面》后，在《[粗线条的雨](info:info("粗线条的雨"))》的任意难度取得A评级解锁
