@@ -5,11 +5,9 @@ backend:
 
 publish_mode: editorial_workflow
 
-# ===== 必须存在（但我们不用图片）=====
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-# 使用本地媒体库，避免 uploadcare/publicKey 问题
 local_media_library: true
 
 collections:
@@ -22,8 +20,5 @@ collections:
     format: "frontmatter"
     summary: "{{title}}"
     fields:
-      # ⚠️ 这个 title 是“必须的”
       - { label: "Title", name: "title", widget: "string" }
-
-      # 正文（你的 md 内容）
       - { label: "Content", name: "body", widget: "markdown" }
