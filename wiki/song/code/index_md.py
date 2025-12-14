@@ -80,7 +80,7 @@ def main():
     lines.append("")
 
     for e in entries:
-        lines.append(f'- [{e["first"]}](./{e["key"]})')
+        lines.append(f'- [{e["first"]}](./?q={e["key"]})')
 
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
