@@ -5,24 +5,87 @@ backend:
 
 publish_mode: editorial_workflow
 
-# ===== 必填（Decap CMS 3.9 强制）=====
+# ===== 必须存在 =====
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
+# ===== 明确禁用媒体库（不要 uploadcare）=====
 media_library:
-  name: uploadcare
+  name: null
 
-# ===== 核心：编辑整个仓库 =====
 collections:
 
-  # 1️⃣ 编辑所有 Markdown（整个仓库递归）
+  # ===============================
+  # Markdown（整个仓库）
+  # ===============================
   - name: "markdown"
     label: "Markdown Files"
     folder: ""
-    create: false
     extension: "md"
-    format: "frontmatter"
+    format: "raw"
     nested:
       depth: 10
+    identifier_field: path
     fields:
+      - { label: "Path", name: "path", widget: "string" }
       - { label: "Content", name: "body", widget: "markdown" }
+
+  # ===============================
+  # JavaScript（整个仓库）
+  # ===============================
+  - name: "javascript"
+    label: "JavaScript Files"
+    folder: ""
+    extension: "js"
+    format: "raw"
+    nested:
+      depth: 10
+    identifier_field: path
+    fields:
+      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Code", name: "body", widget: "code", default_language: javascript }
+
+  # ===============================
+  # JSON
+  # ===============================
+  - name: "json"
+    label: "JSON Files"
+    folder: ""
+    extension: "json"
+    format: "raw"
+    nested:
+      depth: 10
+    identifier_field: path
+    fields:
+      - { label: "Path", name: "path", widget: "string" }
+      - { label: "JSON", name: "body", widget: "code", default_language: json }
+
+  # ===============================
+  # YAML
+  # ===============================
+  - name: "yaml"
+    label: "YAML Files"
+    folder: ""
+    extension: "yml"
+    format: "raw"
+    nested:
+      depth: 10
+    identifier_field: path
+    fields:
+      - { label: "Path", name: "path", widget: "string" }
+      - { label: "YAML", name: "body", widget: "code", default_language: yaml }
+
+  # ===============================
+  # TXT
+  # ===============================
+  - name: "text"
+    label: "Text Files"
+    folder: ""
+    extension: "txt"
+    format: "raw"
+    nested:
+      depth: 10
+    identifier_field: path
+    fields:
+      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Text", name: "body", widget: "text" }
