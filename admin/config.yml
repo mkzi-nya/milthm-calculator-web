@@ -9,9 +9,8 @@ publish_mode: editorial_workflow
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-# ===== 明确禁用媒体库（不要 uploadcare）=====
-media_library:
-  name: null
+# ✅ 唯一正确的“禁用外部媒体库”方式
+local_media_library: true
 
 collections:
 
@@ -25,13 +24,14 @@ collections:
     format: "raw"
     nested:
       depth: 10
-    identifier_field: path
+    summary: "{{slug}}"
     fields:
-      - { label: "Path", name: "path", widget: "string" }
+      # ⚠️ 必须存在（哪怕不用）
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
 
   # ===============================
-  # JavaScript（整个仓库）
+  # JavaScript
   # ===============================
   - name: "javascript"
     label: "JavaScript Files"
@@ -40,9 +40,9 @@ collections:
     format: "raw"
     nested:
       depth: 10
-    identifier_field: path
+    summary: "{{slug}}"
     fields:
-      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "Code", name: "body", widget: "code", default_language: javascript }
 
   # ===============================
@@ -55,9 +55,9 @@ collections:
     format: "raw"
     nested:
       depth: 10
-    identifier_field: path
+    summary: "{{slug}}"
     fields:
-      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "JSON", name: "body", widget: "code", default_language: json }
 
   # ===============================
@@ -70,9 +70,9 @@ collections:
     format: "raw"
     nested:
       depth: 10
-    identifier_field: path
+    summary: "{{slug}}"
     fields:
-      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "YAML", name: "body", widget: "code", default_language: yaml }
 
   # ===============================
@@ -85,7 +85,7 @@ collections:
     format: "raw"
     nested:
       depth: 10
-    identifier_field: path
+    summary: "{{slug}}"
     fields:
-      - { label: "Path", name: "path", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
       - { label: "Text", name: "body", widget: "text" }
