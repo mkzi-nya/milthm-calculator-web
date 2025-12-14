@@ -1,0 +1,32 @@
+# Fantasia Sonata Sky Syndrome
+
+## 曲目信息
+| 曲名 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")) |
+| - | - |
+| 拉丁文曲名 | Fantasia Sonata Sky Syndrome |
+| 曲师 | PYKAMIA |
+| 曲绘 | nanakaria |
+| 所属曲包 | (待补充) |
+| 更新版本 | (待补充) |
+| 时长 | (待补充) |
+| 谱面时长 | - |
+| BPM | [0.0,167.0] |
+
+## 谱面信息
+| 难度 | [Drizzle](info:info("Fantasia Sonata Sky Syndrome", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Sky Syndrome", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Sky Syndrome", "Cloudburst")) |
+| - | - | - | - |
+| 等级 | 2.5 | 7.1 | {ct,CB} |
+| Note数量 | 318 | 569 | 1258 |
+| 谱师 | Milthm Team | Kiyotsuki | Kiyotsuki |
+
+## 解锁方法
+
+(待补充)
+
+## 曲目试听
+
+(待补充)
+
+## 游戏相关
+
+(待补充)

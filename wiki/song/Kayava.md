@@ -1,0 +1,32 @@
+# Kayava
+
+## 曲目信息
+| 曲名 | [Kayava](info:info("Kayava")) |
+| - | - |
+| 拉丁文曲名 | Kayava |
+| 曲师 | James Primate |
+| 曲绘 | 域核 |
+| 所属曲包 | (待补充) |
+| 更新版本 | (待补充) |
+| 时长 | (待补充) |
+| 谱面时长 | - |
+| BPM | [-0.02,120.0] |
+
+## 谱面信息
+| 难度 | [Drizzle](info:info("Kayava", "Drizzle")) | [Sprinkle](info:info("Kayava", "Sprinkle")) | [Cloudburst](info:info("Kayava", "Cloudburst")) |
+| - | - | - | - |
+| 等级 | 3.0 | 5.5 | 10.4 |
+| Note数量 | 193 | 479 | 775 |
+| 谱师 | Akko | 云梦 | Akko |
+
+## 解锁方法
+
+(待补充)
+
+## 曲目试听
+
+(待补充)
+
+## 游戏相关
+
+(待补充)

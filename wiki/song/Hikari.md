@@ -1,0 +1,32 @@
+# Hikari
+
+## 曲目信息
+| 曲名 | [Hikari](info:info("Hikari")) |
+| - | - |
+| 拉丁文曲名 | Hikari |
+| 曲师 | Kuroe |
+| 曲绘 | 注射 |
+| 所属曲包 | (待补充) |
+| 更新版本 | (待补充) |
+| 时长 | (待补充) |
+| 谱面时长 | - |
+| BPM | [0.001,175.0] |
+
+## 谱面信息
+| 难度 | [Drizzle](info:info("Hikari", "Drizzle")) | [Sprinkle](info:info("Hikari", "Sprinkle")) | [Cloudburst](info:info("Hikari", "Cloudburst")) |
+| - | - | - | - |
+| 等级 | 3.0 | 7.4 | 10.7 |
+| Note数量 | 150 | 484 | 758 |
+| 谱师 | Magazet | Magazet | xzadudu179 |
+
+## 解锁方法
+
+(待补充)
+
+## 曲目试听
+
+(待补充)
+
+## 游戏相关
+
+(待补充)

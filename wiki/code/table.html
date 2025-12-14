@@ -103,25 +103,6 @@
   </script>
 
   <script>
-    // ===== Markdown & 高亮 & KaTeX =====
-    marked.use(markedKatex());
-    marked.setOptions({
-      highlight: (code, lang) => {
-        if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
-        return hljs.highlightAuto(code).value;
-      }
-    });
-
-    function getUserLanguage() {
-      const langMap = {
-        "zh": "zh", "zh-cn": "zh", "zh-tw": "zh-tw",
-        "en": "en", "ja": "ja", "ko": "ko", "ru": "ru",
-        "es": "es", "vi": "vi", "ken": "ken"
-      };
-      const urlParams = new URLSearchParams(window.location.search);
-      let lang = urlParams.get('lang') || navigator.language.toLowerCase();
-      return langMap[lang] || "en";
-    }
 
     function loadMarkdown() {
       let md = document.getElementById('md').textContent.replace(/^\n/, '');
