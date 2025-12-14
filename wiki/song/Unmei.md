@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:31 |
 | BPM | 182 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("運命", "Drizzle")) | [Sprinkle](info:info("運命", "Sprinkle")) | [Cloudburst](info:info("運命", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.6 | 9.9 |
+| 等级 | 2(2.0) | 7+(7.6) | 9+(9.9) |
 | Note数量 | 196 | 775 | 863 |
-| 谱师 | Icier, Akko | Icier, Akko | Akko, xzadudu179 |
+| 谱师 | Crystal with Particle | Particle of Crystal | Particle & xzadudu179 |
 
 ## 解锁方法
 

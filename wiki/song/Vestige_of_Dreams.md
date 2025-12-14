@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:11 |
 | BPM | 202 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Vestige of Dreams", "Drizzle")) | [Sprinkle](info:info("Vestige of Dreams", "Sprinkle")) | [Cloudburst](info:info("Vestige of Dreams", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.5 | 6.5 | 11.5 |
+| 等级 | 2+(2.5) | 6+(6.5) | 11+(11.5) |
 | Note数量 | 185 | 460 | 1144 |
-| 谱师 | Akko | Akko | Akko, Ariayaka |
+| 谱师 | Akko | Akko | Akko & Ariayaka |
 
 ## 解锁方法
 

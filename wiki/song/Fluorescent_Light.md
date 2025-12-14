@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:43 |
 | BPM | [1.722,138],[45.183,213] |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fluorescent Light", "Drizzle")) | [Sprinkle](info:info("Fluorescent Light", "Sprinkle")) | [Cloudburst](info:info("Fluorescent Light", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 6.2 | 9.6 |
+| 等级 | 2(2.0) | 6(6.2) | 9+(9.6) |
 | Note数量 | 238 | 535 | 953 |
 | 谱师 | Akko | Akko | Akko |
 

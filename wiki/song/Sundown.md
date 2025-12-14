@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 1:23 |
 | BPM | 109 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Sundown", "Drizzle")) |
 | - | - |
-| 等级 | 1.0 |
+| 等级 | 1(1.0) |
 | Note数量 | 24 |
-| 谱师 | xzadudu179, Ariayaka, Kiyotsuki |
+| 谱师 | 179 綾吟 Kiyotsuki Attuned. |
 
 ## 解锁方法
 

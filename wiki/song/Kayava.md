@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:15 |
 | BPM | 120 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Kayava", "Drizzle")) | [Sprinkle](info:info("Kayava", "Sprinkle")) | [Cloudburst](info:info("Kayava", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 5.5 | 10.4 |
+| 等级 | 3(3.0) | 5+(5.5) | 10(10.4) |
 | Note数量 | 193 | 479 | 775 |
-| 谱师 | Akko | 云梦 | Akko |
+| 谱师 | Akko | 云 | Akko |
 
 ## 解锁方法
 

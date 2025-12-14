@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 1:54 |
 | BPM | 126 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("LOUDER!", "Drizzle")) | [Sprinkle](info:info("LOUDER!", "Sprinkle")) | [Cloudburst](info:info("LOUDER!", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 5.5 | 9.5 |
+| 等级 | 2(2.0) | 5+(5.5) | 9+(9.5) |
 | Note数量 | 195 | 399 | 628 |
 | 谱师 | Kiyotsuki | Kiyotsuki | Akko |
 

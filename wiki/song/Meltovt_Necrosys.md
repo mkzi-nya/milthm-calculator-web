@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:22 |
 | BPM | 210 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Meltovt Necrosys", "Drizzle")) | [Sprinkle](info:info("Meltovt Necrosys", "Sprinkle")) | [Cloudburst](info:info("Meltovt Necrosys", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.8 | 12.0 |
+| 等级 | 2(2.0) | 7+(7.8) | 12(12.0) |
 | Note数量 | 377 | 681 | 1505 |
-| 谱师 | Magazet | 树穴猪 | Akko, xzadudu179 |
+| 谱师 | Mt | 猪肉小憨包 | XZADUDU179 feat. AKKO |
 
 ## 解锁方法
 

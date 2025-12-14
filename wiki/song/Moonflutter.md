@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:57 |
 | BPM | 87 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Moonflutter", "Drizzle")) | [Sprinkle](info:info("Moonflutter", "Sprinkle")) | [Cloudburst](info:info("Moonflutter", "Cloudburst")) | [Clear](info:info("Moonflutter", "Clear")) |
 | - | - | - | - | - |
-| 等级 | 3.0 | 7.9 | 11.4 | 11.7 |
+| 等级 | 3(3.0) | 7+(7.9) | 11(11.4) | 11+(11.7) |
 | Note数量 | 471 | 647 | 1422 | 1350 |
-| 谱师 | Kiyotsuki | Magazet | 云梦, xzadudu179 | 爬爬 |
+| 谱师 | Kiyotsuki | Magaflutter | 云梦 % xzadudu179 | Papaflutter |
 
 ## 解锁方法
 

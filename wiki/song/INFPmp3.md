@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 1:39 |
 | BPM | 100 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("INFP.mp3", "Drizzle")) | [Sprinkle](info:info("INFP.mp3", "Sprinkle")) | [Cloudburst](info:info("INFP.mp3", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 5.5 | 9.2 |
+| 等级 | 2(2.0) | 5+(5.5) | 9(9.2) |
 | Note数量 | 101 | 272 | 520 |
-| 谱师 | Magazet | Magazet | Magazet |
+| 谱师 | MGZT.mil | MGZT.mil | MGZT.mil |
 
 ## 解锁方法
 

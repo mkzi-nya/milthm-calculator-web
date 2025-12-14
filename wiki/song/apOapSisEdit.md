@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:50 |
 | BPM | 180 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("apOapSis(Edit)", "Drizzle")) | [Sprinkle](info:info("apOapSis(Edit)", "Sprinkle")) | [Cloudburst](info:info("apOapSis(Edit)", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.5 | 6.4 | 10.7 |
+| 等级 | 3+(3.5) | 6(6.4) | 10+(10.7) |
 | Note数量 | 407 | 609 | 1264 |
-| 谱师 | Ariayaka | Akko | Akko, xzadudu179 |
+| 谱师 | Ariayaka | Akko | Akko feat. xzadudu179 |
 
 ## 解锁方法
 

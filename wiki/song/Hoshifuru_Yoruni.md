@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:35 |
 | BPM | 99 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("ホシフルヨルニ", "Drizzle")) | [Sprinkle](info:info("ホシフルヨルニ", "Sprinkle")) | [Cloudburst](info:info("ホシフルヨルニ", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 4.0 | 9.4 |
+| 等级 | 2(2.0) | 4(4.0) | 9(9.4) |
 | Note数量 | 154 | 203 | 879 |
 | 谱师 | Akko | Akko | Akko |
 

@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:16 |
 | BPM | 170 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Curse of 14", "Drizzle")) | [Sprinkle](info:info("Curse of 14", "Sprinkle")) | [Cloudburst](info:info("Curse of 14", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 7.5 | 10.4 |
+| 等级 | 3(3.0) | 7+(7.5) | 10(10.4) |
 | Note数量 | 195 | 651 | 936 |
-| 谱师 | Akko | 爬爬, Akko | 点缀星空 |
+| 谱师 | Akko | Curse of Papa&Akko | Curse of stars |
 
 ## 解锁方法
 

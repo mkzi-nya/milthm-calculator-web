@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:05 |
 | BPM | 234 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("cafe in 6412I731V", "Drizzle")) | [Sprinkle](info:info("cafe in 6412I731V", "Sprinkle")) | [Cloudburst](info:info("cafe in 6412I731V", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.1 | 11.3 |
+| 等级 | 2(2.0) | 7(7.1) | 11(11.3) |
 | Note数量 | 331 | 628 | 1065 |
-| 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki, Eric_Lian |
+| 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki + Eric |
 
 ## 解锁方法
 

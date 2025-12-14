@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:05 |
 | BPM | 122 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Threat - Waterfront Complex", "Drizzle")) | [Sprinkle](info:info("Threat - Waterfront Complex", "Sprinkle")) | [Cloudburst](info:info("Threat - Waterfront Complex", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.6 | 10.7 |
+| 等级 | 2(2.0) | 7+(7.6) | 10+(10.7) |
 | Note数量 | 261 | 687 | 1339 |
-| 谱师 | Ursulina | TCSTWTBHY | Ursulina |
+| 谱师 | Ursulina AS DRIZZLE | TCSTWTBHY | Ursulina As SPRINKLE |
 
 ## 解锁方法
 

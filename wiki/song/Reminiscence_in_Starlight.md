@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:50 |
 | BPM | 170 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("暮予星光", "Drizzle")) | [Sprinkle](info:info("暮予星光", "Sprinkle")) | [Cloudburst](info:info("暮予星光", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.5 | 9.1 |
+| 等级 | 2(2.0) | 7+(7.5) | 9(9.1) |
 | Note数量 | 274 | 1337 | 1452 |
-| 谱师 | Milthm Team | Kiyotsuki | Akko |
+| 谱师 | Milthm | Kiyotsuki | Akko |
 
 ## 解锁方法
 

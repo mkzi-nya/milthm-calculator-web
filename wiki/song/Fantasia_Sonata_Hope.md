@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:26 |
 | BPM | 231 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fantasia Sonata Hope", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Hope", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Hope", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.5 | 8.9 | 10.7 |
+| 等级 | 3+(3.5) | 8+(8.9) | 10+(10.7) |
 | Note数量 | 398 | 704 | 963 |
 | 谱师 | Akko | Akko | Akko |
 

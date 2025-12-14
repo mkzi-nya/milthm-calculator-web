@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:32 |
 | BPM | 116 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Sheer Ice Torrent", "Drizzle")) | [Sprinkle](info:info("Sheer Ice Torrent", "Sprinkle")) | [Cloudburst](info:info("Sheer Ice Torrent", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.8 | 11.1 |
+| 等级 | 2(2.0) | 7+(7.8) | 11(11.1) |
 | Note数量 | 248 | 554 | 861 |
 | 谱师 | 姜片 | Magazet | Ariayaka |
 

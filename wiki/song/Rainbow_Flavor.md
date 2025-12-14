@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:34 |
 | BPM | 128 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Rainbow Flavor!", "Drizzle")) | [Sprinkle](info:info("Rainbow Flavor!", "Sprinkle")) | [Cloudburst](info:info("Rainbow Flavor!", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 1.0 | 7.5 | 9.9 |
+| 等级 | 1(1.0) | 7+(7.5) | 9+(9.9) |
 | Note数量 | 260 | 531 | 1067 |
 | 谱师 | Akko | Akko | Akko |
 

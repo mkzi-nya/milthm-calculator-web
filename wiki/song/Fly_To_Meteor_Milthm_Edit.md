@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:33 |
 | BPM | 180 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fly To Meteor (Milthm Edit)", "Drizzle")) | [Sprinkle](info:info("Fly To Meteor (Milthm Edit)", "Sprinkle")) | [Cloudburst](info:info("Fly To Meteor (Milthm Edit)", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 6.5 | 10.5 |
+| 等级 | 3(3.0) | 6+(6.5) | 10+(10.5) |
 | Note数量 | 203 | 426 | 1000 |
-| 谱师 | 余火 | 余火 | 余火 |
+| 谱师 | 仰望夜空的孩童 | 奔赴星空的少年 | 行于繁星的旅人 |
 
 ## 解锁方法
 

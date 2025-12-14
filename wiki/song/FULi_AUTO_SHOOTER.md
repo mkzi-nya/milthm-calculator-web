@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:00 |
 | BPM | 145 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("FULi AUTO SHOOTER", "Drizzle")) | [Sprinkle](info:info("FULi AUTO SHOOTER", "Sprinkle")) | [Cloudburst](info:info("FULi AUTO SHOOTER", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 7.2 | 10.7 |
+| 等级 | 3(3.0) | 7(7.2) | 10+(10.7) |
 | Note数量 | 245 | 621 | 1090 |
 | 谱师 | Akko | Akko | Akko |
 

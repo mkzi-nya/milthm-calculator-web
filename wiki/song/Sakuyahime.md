@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:51 |
 | BPM | 148 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Sakuyahime", "Drizzle")) | [Sprinkle](info:info("Sakuyahime", "Sprinkle")) | [Cloudburst](info:info("Sakuyahime", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.5 | 5.8 | 11.9 |
+| 等级 | 3+(3.5) | 5+(5.8) | 11+(11.9) |
 | Note数量 | 483 | 1050 | 1480 |
 | 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki |
 

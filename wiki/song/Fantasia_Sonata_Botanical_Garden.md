@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:04 |
 | BPM | 126.5 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Fantasia Sonata Botanical Garden", "Drizzle")) | [Sprinkle](info:info("Fantasia Sonata Botanical Garden", "Sprinkle")) | [Cloudburst](info:info("Fantasia Sonata Botanical Garden", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 6.1 | 10.0 |
+| 等级 | 2(2.0) | 6(6.1) | 10(10.0) |
 | Note数量 | 271 | 500 | 902 |
-| 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki |
+| 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki "In horto sub pluvia, sola sed pacata" |
 
 ## 解锁方法
 

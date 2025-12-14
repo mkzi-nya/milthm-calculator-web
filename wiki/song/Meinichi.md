@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:24 |
 | BPM | 248 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("命日", "Drizzle")) | [Sprinkle](info:info("命日", "Sprinkle")) | [Cloudburst](info:info("命日", "Cloudburst")) | [Clear](info:info("命日", "Clear")) |
 | - | - | - | - | - |
-| 等级 | 3.0 | 8.6 | 11.1 | 12.7 |
+| 等级 | 3(3.0) | 8+(8.6) | 11(11.1) | 12+(12.7) |
 | Note数量 | 213 | 743 | 1231 | 1246 |
-| 谱师 | 嘤箱 | Magazet | Kiyotsuki | TCSTWTBHY |
+| 谱师 | 嘤箱 | Magazet | Kiyotsuki | [A→A(_)]通过两台电视闲聊 |
 
 ## 解锁方法
 

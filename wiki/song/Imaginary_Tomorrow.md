@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:42 |
 | BPM | 135 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("仮想明日", "Drizzle")) | [Sprinkle](info:info("仮想明日", "Sprinkle")) | [Cloudburst](info:info("仮想明日", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.5 | 6.7 | 10.0 |
+| 等级 | 3+(3.5) | 6+(6.7) | 10(10.0) |
 | Note数量 | 218 | 871 | 1057 |
-| 谱师 | Akko, 爬爬 | Akko | Akko, Magazet |
+| 谱师 | 赤澪 feat. 爬爬 | Akko feat. 澪 | 赤澪 feat. Magazet |
 
 ## 解锁方法
 

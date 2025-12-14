@@ -9,13 +9,12 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:13 |
 | BPM | 174 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("ニニ (feat. Qayo & mii)", "Drizzle")) | [Sprinkle](info:info("ニニ (feat. Qayo & mii)", "Sprinkle")) | [Cloudburst](info:info("ニニ (feat. Qayo & mii)", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 6.7 | 11.3 |
+| 等级 | 2(2.0) | 6+(6.7) | 11(11.3) |
 | Note数量 | 203 | 423 | 1261 |
 | 谱师 | Akko | Akko | Akko |
 

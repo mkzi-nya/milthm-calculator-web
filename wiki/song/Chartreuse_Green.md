@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:09 |
 | BPM | 180 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Chartreuse Green", "Drizzle")) | [Sprinkle](info:info("Chartreuse Green", "Sprinkle")) | [Cloudburst](info:info("Chartreuse Green", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.7 | 10.3 |
+| 等级 | 2(2.0) | 7+(7.7) | 10(10.3) |
 | Note数量 | 262 | 578 | 941 |
-| 谱师 | 爬爬, 树穴猪 | 爬爬 | 云梦 |
+| 谱师 | 蓝色の爬 Eating 粉毛の猪 | 蓝色の爬 | 绿色の云 |
 
 ## 解锁方法
 

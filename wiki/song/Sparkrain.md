@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:35 |
 | BPM | 166 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("烁雨", "Drizzle")) | [Sprinkle](info:info("烁雨", "Sprinkle")) | [Cloudburst](info:info("烁雨", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.0 | 9.4 |
+| 等级 | 2(2.0) | 7(7.0) | 9(9.4) |
 | Note数量 | 268 | 521 | 631 |
-| 谱师 | Eric_Lian, Akko | Akko | Ariayaka |
+| 谱师 | Eric&Akko | Akko | Ariayaka |
 
 ## 解锁方法
 

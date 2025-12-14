@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:23 |
 | BPM | 177 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("白虎蓮華", "Drizzle")) | [Sprinkle](info:info("白虎蓮華", "Sprinkle")) | [Cloudburst](info:info("白虎蓮華", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 6.5 | 9.6 |
+| 等级 | 3(3.0) | 6+(6.5) | 9+(9.6) |
 | Note数量 | 315 | 648 | 1036 |
-| 谱师 | Kiyotsuki | Kiyotsuki | Kiyotsuki |
+| 谱师 | Kiyotsuki | 十返清月 | 十返清月 |
 
 ## 解锁方法
 

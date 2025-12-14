@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:52 |
 | BPM | 183.76 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("樱落繁花", "Drizzle")) | [Sprinkle](info:info("樱落繁花", "Sprinkle")) | [Cloudburst](info:info("樱落繁花", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 8.8 | 10.9 |
+| 等级 | 3(3.0) | 8+(8.8) | 10+(10.9) |
 | Note数量 | 261 | 791 | 1134 |
-| 谱师 | Ariayaka | Kiyotsuki | Ariayaka |
+| 谱师 | Ariayaka | 十返清月 | Ariayaka |
 
 ## 解锁方法
 

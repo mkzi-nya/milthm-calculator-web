@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 1:11 |
 | BPM | 150 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Welcome to Milthm", "Drizzle")) |
 | - | - |
-| 等级 | 1.0 |
+| 等级 | 1(1.0) |
 | Note数量 | 61 |
-| 谱师 | Buger404, TCSTWTBHY |
+| 谱师 | Buger404、TCSTWTBHY |
 
 ## 解锁方法
 

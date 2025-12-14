@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 3:09 |
 | BPM | 96 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("はんてん", "Drizzle")) | [Sprinkle](info:info("はんてん", "Sprinkle")) | [Cloudburst](info:info("はんてん", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 6.1 | 10.1 |
+| 等级 | 2(2.0) | 6(6.1) | 10(10.1) |
 | Note数量 | 212 | 562 | 1341 |
-| 谱师 | Akko | Akko | 爬爬 |
+| 谱师 | Akko | Akko | papa but left for 8 months |
 
 ## 解锁方法
 

@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:33 |
 | BPM | 125 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("☹", "Drizzle")) | [Sprinkle](info:info("☹", "Sprinkle")) | [Cloudburst](info:info("☹", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 4.0 | 8.0 | 10.1 |
+| 等级 | 4(4.0) | 8(8.0) | 10(10.1) |
 | Note数量 | 242 | 437 | 683 |
-| 谱师 | SakiA, TCSTWTBHY | Akko, TCSTWTBHY | 云梦, 爬爬 |
+| 谱师 | SakiA vs. TwT | 澪：TwT | 爬爬-TwT-云梦 |
 
 ## 解锁方法
 

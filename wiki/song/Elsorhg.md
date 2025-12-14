@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:15 |
 | BPM | 195 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Elsorhg", "Drizzle")) | [Sprinkle](info:info("Elsorhg", "Sprinkle")) | [Cloudburst](info:info("Elsorhg", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.5 | 10.9 |
+| 等级 | 2(2.0) | 7+(7.5) | 10+(10.9) |
 | Note数量 | 167 | 538 | 1026 |
-| 谱师 | Kiyotsuki | Magazet, Kiyotsuki | Magazet, Kiyotsuki |
+| 谱师 | Kiyotsuki | Magazet + Kiyotsuki | UndefinedViolet |
 
 ## 解锁方法
 

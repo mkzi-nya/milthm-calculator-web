@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 1:58 |
 | BPM | 97.5 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Dogbite", "Drizzle")) | [Sprinkle](info:info("Dogbite", "Sprinkle")) | [Cloudburst](info:info("Dogbite", "Cloudburst")) | [Special](info:info("Dogbite", "Special")) |
 | - | - | - | - | - |
-| 等级 | 3.0 | 6.5 | 10.3 | - |
+| 等级 | 3(3.0) | 6+(6.5) | 10(10.3) | - |
 | Note数量 | 103 | 450 | 1329 | - |
-| 谱师 | Magazet, TCSTWTBHY | TCSTWTBHY | 爬爬, Akko, Eric_Lian | 爬爬, Akko |
+| 谱师 | Peekaboo & Magazet | t+cstwtbhy | Milthm Furry Group | 爬爬|Biting with
 
 ## 解锁方法
 

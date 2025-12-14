@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:08 |
 | BPM | [0.063,167],[0.053,167] |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Agnostic", "Drizzle")) | [Sprinkle](info:info("Agnostic", "Sprinkle")) | [Cloudburst](info:info("Agnostic", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3.0 | 7.4 | 10.2 |
+| 等级 | 3(3.0) | 7(7.4) | 10(10.2) |
 | Note数量 | 194 | 481 | 1141 |
-| 谱师 | Magazet | Magazet | Magazet |
+| 谱师 | Mirabilis jalapa L. | Monotropa uniflora L. | Matthiola incana (L.) R. Br. |
 
 ## 解锁方法
 

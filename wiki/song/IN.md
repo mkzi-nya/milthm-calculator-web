@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:08 |
 | BPM | 133 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("IN", "Drizzle")) | [Sprinkle](info:info("IN", "Sprinkle")) | [Cloudburst](info:info("IN", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.9 | 11.2 |
+| 等级 | 2(2.0) | 7+(7.9) | 11(11.2) |
 | Note数量 | 200 | 460 | 927 |
-| 谱师 | Akko | 树穴猪, 王子 | vitamin b |
+| 谱师 | partIclNstuz | pig live k"IN"o carven  | vitamIN b |
 
 ## 解锁方法
 

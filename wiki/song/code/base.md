@@ -9,7 +9,6 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | {info:谱面时长} |
 | BPM | {doc:bpmInfo} |
 
 ## 谱面信息
@@ -17,7 +16,7 @@
 | - | - | - | - | - | - |
 | 等级 | {ct,DZ} | {ct,SK} | {ct,CB} | {ct,CL} | - |
 | Note数量 | {info:combo,Drizzle} | {info:combo,Sprinkle} | {info:combo,Cloudburst} | {info:combo,Clear} | - |
-| 谱师 | {doc:chartersList,Drizzle} | {doc:chartersList,Sprinkle} | {doc:chartersList,Cloudburst} | {doc:chartersList,Clear} | {doc:chartersList,Special} |
+| 谱师 | {doc:charter,Drizzle} | {doc:charter,Sprinkle} | {doc:charter,Cloudburst} | {doc:charter,Clear} | {doc:charter,Special} |
 
 ## 解锁方法
 

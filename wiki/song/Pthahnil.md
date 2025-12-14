@@ -9,15 +9,14 @@
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |
-| 谱面时长 | 2:27 |
 | BPM | 160 |
 
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Pthahnil", "Drizzle")) | [Sprinkle](info:info("Pthahnil", "Sprinkle")) | [Cloudburst](info:info("Pthahnil", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2.0 | 7.0 | 10.7 |
+| 等级 | 2(2.0) | 7(7.0) | 10+(10.7) |
 | Note数量 | 306 | 545 | 1083 |
-| 谱师 | Magazet | Magazet | Magazet |
+| 谱师 | 『Fallen Angel』Magazet - "NM=Left EX=Right" | 『Fallen Angel』Magazet - "NM=Left EX=Right" | 『Fallen Angel』Magazet - "NM=Left EX=Right" |
 
 ## 解锁方法
 
