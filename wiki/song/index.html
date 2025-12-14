@@ -569,7 +569,7 @@
       const topResults = results.slice(0, 5);
       topResults.forEach(result => {
         // 多种访问方式
-        md += `- [${result.chineseName}](./${encodeURIComponent(result.latinName)})\n`;
+        md += `- [${result.chineseName}](./?q=${encodeURIComponent(result.latinName)})\n`;
       });
       
       md += `\n> 搜索词: "${searchTerm}"\n`;
