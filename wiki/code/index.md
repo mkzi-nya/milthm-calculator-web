@@ -14,6 +14,7 @@
     - [露晓卉庭(花园)](#garden)
     - [隐藏曲解锁方式](#hidden-song-unlock)
 - 列表条目
+  - [曲目信息](./song/)
   - [定数表](./table.html)
   - [曲师统计](./artist-statistics.html)
   - [谱师统计](./charter-statistics.html)
