@@ -5,87 +5,25 @@ backend:
 
 publish_mode: editorial_workflow
 
-# ===== 必须存在 =====
+# ===== 必须存在（但我们不用图片）=====
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-# ✅ 唯一正确的“禁用外部媒体库”方式
+# 使用本地媒体库，避免 uploadcare/publicKey 问题
 local_media_library: true
 
 collections:
-
-  # ===============================
-  # Markdown（整个仓库）
-  # ===============================
-  - name: "markdown"
-    label: "Markdown Files"
-    folder: ""
+  - name: song
+    label: Wiki Songs
+    folder: "wiki/song"
+    create: true
+    slug: "{{slug}}"
     extension: "md"
-    format: "raw"
-    nested:
-      depth: 10
-    summary: "{{slug}}"
+    format: "frontmatter"
+    summary: "{{title}}"
     fields:
-      # ⚠️ 必须存在（哪怕不用）
-      - { label: "Title", name: "title", widget: "string", required: false }
+      # ⚠️ 这个 title 是“必须的”
+      - { label: "Title", name: "title", widget: "string" }
+
+      # 正文（你的 md 内容）
       - { label: "Content", name: "body", widget: "markdown" }
-
-  # ===============================
-  # JavaScript
-  # ===============================
-  - name: "javascript"
-    label: "JavaScript Files"
-    folder: ""
-    extension: "js"
-    format: "raw"
-    nested:
-      depth: 10
-    summary: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string", required: false }
-      - { label: "Code", name: "body", widget: "code", default_language: javascript }
-
-  # ===============================
-  # JSON
-  # ===============================
-  - name: "json"
-    label: "JSON Files"
-    folder: ""
-    extension: "json"
-    format: "raw"
-    nested:
-      depth: 10
-    summary: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string", required: false }
-      - { label: "JSON", name: "body", widget: "code", default_language: json }
-
-  # ===============================
-  # YAML
-  # ===============================
-  - name: "yaml"
-    label: "YAML Files"
-    folder: ""
-    extension: "yml"
-    format: "raw"
-    nested:
-      depth: 10
-    summary: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string", required: false }
-      - { label: "YAML", name: "body", widget: "code", default_language: yaml }
-
-  # ===============================
-  # TXT
-  # ===============================
-  - name: "text"
-    label: "Text Files"
-    folder: ""
-    extension: "txt"
-    format: "raw"
-    nested:
-      depth: 10
-    summary: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string", required: false }
-      - { label: "Text", name: "body", widget: "text" }
