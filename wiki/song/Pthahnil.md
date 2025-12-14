@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |
 | - | - |
-| 拉丁文曲名 | Pthahnil |
 | 曲师 | AiSS |
 | 曲绘 | 澈子 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Pthahnil", "Drizzle")) | [Sprinkle](info:info("Pthahnil", "Sprinkle")) | [Cloudburst](info:info("Pthahnil", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 7(7.0) | 10+(10.7) |
-| Note数量 | 306 | 545 | 1083 |
+| 等级 | 2 (2.0) | 7 (7.0) | 10+ (10.7) |
 | 谱师 | 『Fallen Angel』Magazet - "NM=Left EX=Right" | 『Fallen Angel』Magazet - "NM=Left EX=Right" | 『Fallen Angel』Magazet - "NM=Left EX=Right" |
+| Note数量 | 306 | 545 | 1083 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [conflict](info:info("conflict")) |
 | - | - |
-| 拉丁文曲名 | conflict |
 | 曲师 | siromaru, cranky |
 | 曲绘 |  |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("conflict", "Drizzle")) | [Sprinkle](info:info("conflict", "Sprinkle")) | [Cloudburst](info:info("conflict", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | {ct,SK} | 11(11.4) |
-| Note数量 | 238 | 909 | 1581 |
+| 等级 | 2 (2.0) | {ct,SK} | 11 (11.4) |
 | 谱师 | [6A9EC0] + Icier | {doc:charter,Sprinkle} | tcstwtbhy + akko |
+| Note数量 | 238 | 909 | 1581 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

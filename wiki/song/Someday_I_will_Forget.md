@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("いつか忘れるんだろう", "Drizzle")) | [Sprinkle](info:info("いつか忘れるんだろう", "Sprinkle")) | [Cloudburst](info:info("いつか忘れるんだろう", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 7(7.4) | 8+(8.9) |
-| Note数量 | 220 | 500 | 469 |
+| 等级 | 2 (2.0) | 7 (7.4) | 8+ (8.9) |
 | 谱师 | BlueDream0 | BlueDream0 | BlueDream0 |
+| Note数量 | 220 | 500 | 469 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

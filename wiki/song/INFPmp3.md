@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [INFP.mp3](info:info("INFP.mp3")) |
 | - | - |
-| 拉丁文曲名 | INFP.mp3 |
 | 曲师 | TsukiP |
 | 曲绘 | 水沐汐 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("INFP.mp3", "Drizzle")) | [Sprinkle](info:info("INFP.mp3", "Sprinkle")) | [Cloudburst](info:info("INFP.mp3", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 5+(5.5) | 9(9.2) |
-| Note数量 | 101 | 272 | 520 |
+| 等级 | 2 (2.0) | 5+ (5.5) | 9 (9.2) |
 | 谱师 | MGZT.mil | MGZT.mil | MGZT.mil |
+| Note数量 | 101 | 272 | 520 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

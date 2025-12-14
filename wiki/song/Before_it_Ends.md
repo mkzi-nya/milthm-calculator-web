@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Before it Ends](info:info("Before it Ends")) |
 | - | - |
-| 拉丁文曲名 | Before it Ends |
 | 曲师 | BilliumMoto |
 | 曲绘 | sarukimu |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Before it Ends", "Drizzle")) | [Sprinkle](info:info("Before it Ends", "Sprinkle")) | [Cloudburst](info:info("Before it Ends", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3(3.0) | 7(7.4) | 10+(10.6) |
-| Note数量 | 295 | 649 | 1300 |
+| 等级 | 3 (3.0) | 7 (7.4) | 10+ (10.6) |
 | 谱师 | Magazet Never Ends | Magazet Never Ends | Ursulina Never Ends |
+| Note数量 | 295 | 649 | 1300 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

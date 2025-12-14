@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Moonfall   大月墜落狂想", "Drizzle")) | [Sprinkle](info:info("Moonfall   大月墜落狂想", "Sprinkle")) | [Cloudburst](info:info("Moonfall   大月墜落狂想", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 8(8.0) | 12(12.4) |
-| Note数量 | 310 | 610 | 1800 |
+| 等级 | 2 (2.0) | 8 (8.0) | 12 (12.4) |
 | 谱师 | 十返清月 | 十返清月 | Ariayaka |
+| Note数量 | 310 | 610 | 1800 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

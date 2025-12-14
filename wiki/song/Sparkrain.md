@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("烁雨", "Drizzle")) | [Sprinkle](info:info("烁雨", "Sprinkle")) | [Cloudburst](info:info("烁雨", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 7(7.0) | 9(9.4) |
-| Note数量 | 268 | 521 | 631 |
+| 等级 | 2 (2.0) | 7 (7.0) | 9 (9.4) |
 | 谱师 | Eric&Akko | Akko | Ariayaka |
+| Note数量 | 268 | 521 | 631 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("参宿四~Betelgeuse~", "Drizzle")) | [Sprinkle](info:info("参宿四~Betelgeuse~", "Sprinkle")) | [Cloudburst](info:info("参宿四~Betelgeuse~", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 6(6.4) | 11(11.2) |
-| Note数量 | 196 | 286 | 921 |
+| 等级 | 2 (2.0) | 6 (6.4) | 11 (11.2) |
 | 谱师 | Akko | Akko | Akko vs. Kiyotsuki |
+| Note数量 | 196 | 286 | 921 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

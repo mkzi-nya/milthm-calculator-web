@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |
 | - | - |
-| 拉丁文曲名 | cybernetic blazar |
 | 曲师 | ああああ |
 | 曲绘 | 天野岁 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("cybernetic blazar", "Drizzle")) | [Sprinkle](info:info("cybernetic blazar", "Sprinkle")) | [Cloudburst](info:info("cybernetic blazar", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 4(4.0) | 7+(7.8) | 10(10.2) |
-| Note数量 | 298 | 450 | 773 |
+| 等级 | 4 (4.0) | 7+ (7.8) | 10 (10.2) |
 | 谱师 | cybernetic blazer | 云 | 泪泪泪泪 AAAA KKKK |
+| Note数量 | 298 | 450 | 773 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

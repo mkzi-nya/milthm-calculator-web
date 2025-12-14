@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Aleph-0](info:info("Aleph-0")) |
 | - | - |
-| 拉丁文曲名 | Aleph-0 |
 | 曲师 | LeaF |
 | 曲绘 | 王吹风 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Aleph-0", "Drizzle")) | [Sprinkle](info:info("Aleph-0", "Sprinkle")) | [Cloudburst](info:info("Aleph-0", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 5+(5.5) | 11(11.1) |
-| Note数量 | 262 | 604 | 773 |
+| 等级 | 2 (2.0) | 5+ (5.5) | 11 (11.1) |
 | 谱师 | Akko | Akko | Magfracta ​Akkeliא |
+| Note数量 | 262 | 604 | 773 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

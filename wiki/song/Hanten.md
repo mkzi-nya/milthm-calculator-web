@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("はんてん", "Drizzle")) | [Sprinkle](info:info("はんてん", "Sprinkle")) | [Cloudburst](info:info("はんてん", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 6(6.1) | 10(10.1) |
-| Note数量 | 212 | 562 | 1341 |
+| 等级 | 2 (2.0) | 6 (6.1) | 10 (10.1) |
 | 谱师 | Akko | Akko | papa but left for 8 months |
+| Note数量 | 212 | 562 | 1341 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

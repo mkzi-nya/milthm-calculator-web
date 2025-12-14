@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Agnostic](info:info("Agnostic")) |
 | - | - |
-| 拉丁文曲名 | Agnostic |
 | 曲师 | AiSS |
 | 曲绘 | 神居冰绘 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Agnostic", "Drizzle")) | [Sprinkle](info:info("Agnostic", "Sprinkle")) | [Cloudburst](info:info("Agnostic", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3(3.0) | 7(7.4) | 10(10.2) |
-| Note数量 | 194 | 481 | 1141 |
+| 等级 | 3 (3.0) | 7 (7.4) | 10 (10.2) |
 | 谱师 | Mirabilis jalapa L. | Monotropa uniflora L. | Matthiola incana (L.) R. Br. |
+| Note数量 | 194 | 481 | 1141 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

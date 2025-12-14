@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Oiiaioooooiai](info:info("oiiaioooooiai")) |
 | - | - |
-| 拉丁文曲名 | Oiiaioooooiai |
 | 曲师 | 黑瘦的鱼头 |
 | 曲绘 | 水沐汐 |
 | 所属曲包 | (待补充) |
@@ -15,14 +14,19 @@
 | 难度 | [Special](info:info("oiiaioooooiai", "Special")) |
 | - | - |
 | 等级 | - |
-| Note数量 | - |
 | 谱师 | 爬爬：oiiaioooooiai |
+| Note数量 | - |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

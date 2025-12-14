@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("灯ノ桜蝶", "Drizzle")) | [Sprinkle](info:info("灯ノ桜蝶", "Sprinkle")) | [Cloudburst](info:info("灯ノ桜蝶", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 9+(9.7) | 12(12.0) |
-| Note数量 | 412 | 1140 | {info:combo,Cloudburst} |
+| 等级 | 2 (2.0) | 9+ (9.7) | 12 (12.0) |
 | 谱师 | 十返清月 | 十返清月 | Eric_Lian |
+| Note数量 | 412 | 1140 | {info:combo,Cloudburst} |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |
 | - | - |
-| 拉丁文曲名 | Meltovt Necrosys |
 | 曲师 | Halv |
 | 曲绘 | 泱雪, nyniazero |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Meltovt Necrosys", "Drizzle")) | [Sprinkle](info:info("Meltovt Necrosys", "Sprinkle")) | [Cloudburst](info:info("Meltovt Necrosys", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 7+(7.8) | 12(12.0) |
-| Note数量 | 377 | 681 | 1505 |
+| 等级 | 2 (2.0) | 7+ (7.8) | 12 (12.0) |
 | 谱师 | Mt | 猪肉小憨包 | XZADUDU179 feat. AKKO |
+| Note数量 | 377 | 681 | 1505 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

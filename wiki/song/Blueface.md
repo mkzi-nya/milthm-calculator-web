@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("☹", "Drizzle")) | [Sprinkle](info:info("☹", "Sprinkle")) | [Cloudburst](info:info("☹", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 4(4.0) | 8(8.0) | 10(10.1) |
-| Note数量 | 242 | 437 | 683 |
+| 等级 | 4 (4.0) | 8 (8.0) | 10 (10.1) |
 | 谱师 | SakiA vs. TwT | 澪：TwT | 爬爬-TwT-云梦 |
+| Note数量 | 242 | 437 | 683 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

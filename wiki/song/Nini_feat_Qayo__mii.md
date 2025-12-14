@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("ニニ (feat. Qayo & mii)", "Drizzle")) | [Sprinkle](info:info("ニニ (feat. Qayo & mii)", "Sprinkle")) | [Cloudburst](info:info("ニニ (feat. Qayo & mii)", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 6+(6.7) | 11(11.3) |
-| Note数量 | 203 | 423 | 1261 |
+| 等级 | 2 (2.0) | 6+ (6.7) | 11 (11.3) |
 | 谱师 | Akko | Akko | Akko |
+| Note数量 | 203 | 423 | 1261 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

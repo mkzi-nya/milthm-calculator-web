@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("仮想明日", "Drizzle")) | [Sprinkle](info:info("仮想明日", "Sprinkle")) | [Cloudburst](info:info("仮想明日", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3+(3.5) | 6+(6.7) | 10(10.0) |
-| Note数量 | 218 | 871 | 1057 |
+| 等级 | 3+ (3.5) | 6+ (6.7) | 10 (10.0) |
 | 谱师 | 赤澪 feat. 爬爬 | Akko feat. 澪 | 赤澪 feat. Magazet |
+| Note数量 | 218 | 871 | 1057 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

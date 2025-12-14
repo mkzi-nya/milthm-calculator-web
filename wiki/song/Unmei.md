@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("運命", "Drizzle")) | [Sprinkle](info:info("運命", "Sprinkle")) | [Cloudburst](info:info("運命", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 7+(7.6) | 9+(9.9) |
-| Note数量 | 196 | 775 | 863 |
+| 等级 | 2 (2.0) | 7+ (7.6) | 9+ (9.9) |
 | 谱师 | Crystal with Particle | Particle of Crystal | Particle & xzadudu179 |
+| Note数量 | 196 | 775 | 863 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

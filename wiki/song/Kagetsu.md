@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("花月", "Drizzle")) | [Sprinkle](info:info("花月", "Sprinkle")) | [Cloudburst](info:info("花月", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 2(2.0) | 8(8.2) | 9(9.3) |
-| Note数量 | 316 | 799 | 997 |
+| 等级 | 2 (2.0) | 8 (8.2) | 9 (9.3) |
 | 谱师 | Milthm | Kiyotsuki | Kiyotsuki |
+| Note数量 | 316 | 799 | 997 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

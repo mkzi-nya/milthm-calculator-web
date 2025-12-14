@@ -14,15 +14,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("ネオン色のまち feat. Mai", "Drizzle")) | [Sprinkle](info:info("ネオン色のまち feat. Mai", "Sprinkle")) | [Cloudburst](info:info("ネオン色のまち feat. Mai", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3+(3.5) | 8(8.0) | 9+(9.7) |
-| Note数量 | 314 | 690 | 721 |
+| 等级 | 3+ (3.5) | 8 (8.0) | 9+ (9.7) |
 | 谱师 | Magazet in Bustling city | Magazet in Rhythmic music | Magazet in Romantic love |
+| Note数量 | 314 | 690 | 721 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

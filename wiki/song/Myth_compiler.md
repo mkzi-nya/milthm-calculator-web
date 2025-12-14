@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Myth compiler](info:info("Myth compiler")) |
 | - | - |
-| 拉丁文曲名 | Myth compiler |
 | 曲师 | 溝口ゆうま, 大瀬良あい |
 | 曲绘 | 神居冰绘 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Myth compiler", "Drizzle")) | [Sprinkle](info:info("Myth compiler", "Sprinkle")) | [Cloudburst](info:info("Myth compiler", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3(3.0) | 7(7.0) | 11(11.4) |
-| Note数量 | 904 | 1107 | 1434 |
+| 等级 | 3 (3.0) | 7 (7.0) | 11 (11.4) |
 | 谱师 | Ariayaka | Ariayaka | 点缀星空 |
+| Note数量 | 904 | 1107 | 1434 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

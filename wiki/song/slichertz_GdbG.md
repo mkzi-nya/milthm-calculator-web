@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |
 | - | - |
-| 拉丁文曲名 | slic.hertz #GdbG |
 | 曲师 | Sobrem |
 | 曲绘 | MYOB! |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("slic.hertz #GdbG", "Drizzle")) | [Sprinkle](info:info("slic.hertz #GdbG", "Sprinkle")) | [Cloudburst](info:info("slic.hertz #GdbG", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3(3.0) | 7+(7.6) | 11(11.4) |
-| Note数量 | 503 | 914 | 1544 |
+| 等级 | 3 (3.0) | 7+ (7.6) | 11 (11.4) |
 | 谱师 | zero.dream | part.icles | Kiyotsuki |
+| Note数量 | 503 | 914 | 1544 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 

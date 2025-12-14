@@ -3,7 +3,6 @@
 ## 曲目信息
 | 曲名 | [Hikari](info:info("Hikari")) |
 | - | - |
-| 拉丁文曲名 | Hikari |
 | 曲师 | Kuroe |
 | 曲绘 | 注射 |
 | 所属曲包 | (待补充) |
@@ -14,15 +13,20 @@
 ## 谱面信息
 | 难度 | [Drizzle](info:info("Hikari", "Drizzle")) | [Sprinkle](info:info("Hikari", "Sprinkle")) | [Cloudburst](info:info("Hikari", "Cloudburst")) |
 | - | - | - | - |
-| 等级 | 3(3.0) | 7(7.4) | 10+(10.7) |
-| Note数量 | 150 | 484 | 758 |
+| 等级 | 3 (3.0) | 7 (7.4) | 10+ (10.7) |
 | 谱师 | BlueDream0☆kirakira~ | BlueDream0★blingbling~ | 179 -qwq- Primticles |
+| Note数量 | 150 | 484 | 758 |
+
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
+
+## 曲目相关
 
 (待补充)
 
