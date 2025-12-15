@@ -23,7 +23,7 @@
 ## 解锁方法
 
 隐藏曲，在阅读故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」前完全不可见。  
-在解锁《Regnaissance》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》后，即可解锁故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。阅读该故事后，本曲将出现在选曲列表中，但是不显示曲名。再次点击列表中的该曲即可解锁。
+在解锁《【Regnaissance】（info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》后，即可解锁故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。阅读该故事后，本曲将出现在选曲列表中，但是不显示曲名。再次点击列表中的该曲即可解锁。
 - 但若在v3.8更新前完成彼时曲包的全部内容，更新后本曲将会直接显示在曲目列表中（即便没有阅读故事）。
 
 ## 曲目试听
@@ -47,5 +47,5 @@
   - 曲目结束后，屏幕将变白，并出现微笑的苏珊。
     - 点击屏幕，苏珊消失，浮现如下文字：
       > 真希望在没有雨的世界里还能和你们成为一家人……
-  - 该游玩效果可通过梦境涟漪“噩梦”重复体验。
-- 本曲目为角色苏珊的角色曲，在故事模式中有对应的剧情「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。
+  - 该游玩效果可通过梦境涟漪「噩梦」重复体验。
+- 本曲目为角色「苏珊」的角色曲，在故事模式中有对应的剧情「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。
