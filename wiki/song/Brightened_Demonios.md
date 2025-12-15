@@ -1,3 +1,5 @@
+[返回目录](./)
+
 # Brightened Demonios
 
 ## 曲目信息
