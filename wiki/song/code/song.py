@@ -82,7 +82,11 @@ def load_constant_js(path: Path):
 # ---------- utils ----------
 
 def list_to_str(v):
-    return ", ".join(map(str, v)) if isinstance(v, list) else "-" if not v else str(v)
+    if isinstance(v, list):
+        return ", ".join(map(str, v))
+    if not v:
+        return "-"
+    return str(v)
 
 def md_escape_table_cell(s):
     if s is None:
@@ -129,13 +133,8 @@ def format_ct(ct):
 
     return f"{base}+ ({ct})" if frac >= 0.5 else f"{base} ({ct})"
 
-# ---------- 表格裁剪（已修复） ----------
+# ---------- 表格裁剪 ----------
 def split_md_table_row(row: str):
-    """
-    安全地拆分 Markdown 表格行
-    - 不会把 \\| 当成分隔符
-    - 返回 cell 列表（不含首尾空列）
-    """
     cells = []
     buf = []
     escape = False
@@ -155,7 +154,6 @@ def split_md_table_row(row: str):
 
     cells.append("".join(buf).strip())
 
-    # 去掉首尾空列（Markdown 表格语法）
     if cells and cells[0] == "":
         cells = cells[1:]
     if cells and cells[-1] == "":
@@ -166,7 +164,6 @@ def split_md_table_row(row: str):
 def trim_chart_table_lines(lines, exist_diffs):
     out = []
     i = 0
-
     valid_diffs = [d for d in DIFF_ORDER if d in exist_diffs]
 
     while i < len(lines):
@@ -185,8 +182,6 @@ def trim_chart_table_lines(lines, exist_diffs):
                 continue
 
             header = split_md_table_row(table[0])
-
-            # 第 0 列是「难度 / 等级 / Note数量 / 谱师」
             keep_idx = [0]
 
             for idx, cell in enumerate(header[1:], start=1):
@@ -195,8 +190,6 @@ def trim_chart_table_lines(lines, exist_diffs):
 
             for row in table:
                 cells = split_md_table_row(row)
-
-                # 补齐列数
                 while len(cells) <= max(keep_idx):
                     cells.append("-")
 
@@ -261,7 +254,15 @@ for song_id, arr in constants.items():
         md = md.replace("{doc:title}", base_doc["title"])
         md = md.replace("{info:title}", info_title)
         md = md.replace("{doc:latinTitle}", list_to_str(base_doc.get("latinTitle")))
-        md = md.replace("{doc:artistsList}", list_to_str(base_doc.get("artistsList")))
+
+        # ✅ 新增：artists 统一适配
+        artists = (
+            base_doc.get("artistsList")
+            if base_doc.get("artistsList")
+            else base_doc.get("artist")
+        )
+        md = md.replace("{doc:artists}", list_to_str(artists))
+
         md = md.replace("{doc:illustratorsList}", list_to_str(base_doc.get("illustratorsList")))
         md = md.replace("{doc:bpmInfo}", bpm_to_str(base_doc.get("bpmInfo")))
 
@@ -290,4 +291,4 @@ for song_id, arr in constants.items():
 
     md_path.write_text(md, encoding="utf-8")
 
-print("✓ 所有曲目处理完成（裁剪 / 等级 / charter / 拉丁名去重）")
+print("✓ 所有曲目处理完成（artists / 裁剪 / 等级 / charter / 拉丁名去重）")

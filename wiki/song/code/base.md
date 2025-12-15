@@ -9,7 +9,7 @@
 | 曲名 | [{doc:title}](info:info("{info:title}")) |
 | - | - |
 | 拉丁文曲名 | {doc:latinTitle} |
-| 曲师 | {doc:artistsList} |
+| 曲师 | {doc:artists} |
 | 曲绘 | {doc:illustratorsList} |
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
