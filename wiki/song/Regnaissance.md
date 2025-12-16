@@ -49,6 +49,7 @@
     - 它们分别是「Redemption」「Nothingness」和「Rebirth」。
     - 结尾再次用这些图形显示了「Two Sides」。
   - 在PV曲名揭晓前，播放了一段文字：
+  
     > 「Why are you crying?」
     - 这是从剧情中摘出来的。
   - 曲目解锁后，该PV无法回看。
