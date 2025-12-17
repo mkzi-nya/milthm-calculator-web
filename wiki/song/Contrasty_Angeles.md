@@ -31,7 +31,7 @@
 右侧配有黑白苏珊立绘。
 
 游玩《HYPER MEMORIES》，先正常击打音符，随后当背景上出现黑白苏珊的立绘后需保持全连。  
-当黑白立绘变红之后，击打的加分将变为负数。这意味着Miss判定会增加分数，Perfect判定会减少分数。  
+当黑白立绘变红之后，击打的加分将变为负数。这意味着 Miss 判定会增加分数，Perfect 判定会减少分数。  
 此时漏掉全部音符，确保结算分数为正数，即可解锁。
 特别地，本曲目的CL难度在CB难度取得S评级才会解锁。
 
@@ -39,17 +39,17 @@
 [【Bilibili】Contrasty Angeles - HLxQ.v.M](https://www.bilibili.com/video/BV1CzW4eeEyR/)
 
 ## 曲目相关
-- 本曲目为Milthm原创曲。
+- 本曲目为 Milthm 原创曲。
 
 ## 游戏相关
 - 本曲目通过《HYPER MEMORIES》初解锁时会播放一段曲目解锁PV。
-  - 该PV用《Regnaissance》解锁PV中相同的图形显示了“Rain's Cream”和“Contrasty Angeles”。
+  - 该PV用《Regnaissance》解锁PV中相同的图形显示了「Rain's Cream」和「Contrasty Angeles」。
   - 曲目解锁后，该PV无法回看。
-- 该曲目的CL难度在v2.0-v3.11曾为游戏最难曲。
-  - 但在v4.0更新后，该曲被《靈》和定数调整后的《命日》超越。
+- 该曲目的 CL 难度在 v2.0-v3.11 曾为游戏最难曲。
+  - 但在 v4.0 更新后，该曲被《靈》和定数调整后的《命日》超越。
 - 本曲目初次游玩时将禁用暂停键，并具有游玩效果。
-  - 该游玩效果可以通过梦境涟漪“噩梦”重新体验。
+  - 该游玩效果可以通过梦境涟漪「噩梦」重新体验。
 - 初次游玩该曲目后该曲目将自动解锁，并带回开屏界面。
-  - 点击进入游戏后，将自动进入故事[1-7](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#_1-7)。
-- 该曲目解锁后，将获得角色“苏珊·现实”。
-- 在2025年愚人节活动期间，尽管其他曲目的难度等级被显著提高，但本曲的CL难度显示为了2级，“Clear”字样变为了“PapaJK”。
+  - 点击进入游戏后，将自动进入故事「[1-7](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#_1-7)」。
+- 该曲目解锁后，将获得角色「苏珊·现实」。
+- 在2025年愚人节活动期间，尽管其他曲目的难度等级被显著提高，但本曲的CL难度显示为了2级，「Clear」字样变为了「PapaJK」。

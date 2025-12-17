@@ -29,6 +29,7 @@
 ## 曲目试听
 
 [【Bilibili】HYPER MEMORIES - Wooden, Salty Salt](https://www.bilibili.com/video/BV1Yu4y1v7PR/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
+[【Youtube】HYPER MEMORIES - Wooden, Salty Salt](https://youtu.be/BV6Npjv2IXs?si=3jPRDVKjA79oAo-w)
 
 
 ## 曲目相关

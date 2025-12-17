@@ -37,11 +37,11 @@
 [【Bilibili】Regnaissance - AiSS vs. Abit](https://www.bilibili.com/video/BV1WZ421N7VM/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
 
 ## 曲目相关
-- 本曲目为Milthm原创曲。
-- 曲师名义中Abit是AiSS的马甲，该曲目实际是AiSS的独作曲。
+- 本曲目为 Milthm 原创曲。
+- 曲师名义中 Abit 是 AiSS 的马甲，该曲目实际是 AiSS 的独作曲。
   - 但同一曲师的《[Agnostic](info:info("Agnostic"))》和《[Pthanhil](info:info("Pthanhil"))》并没有使用这一名义。
 - 本曲曲名为法语，意为「再生」。
-  - 但由于与英语中「文艺复兴」（Renaissance）过于相似，因此常被人误认。
+  - 但由于与英语中「文艺复兴」(Renaissance) 过于相似，因此常被人误认。
 
 ## 游戏相关
 - 本曲目通过《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》初解锁时会播放一段曲目解锁PV。
@@ -55,5 +55,5 @@
   - 曲目解锁后，该PV无法回看。
 - 本曲目初次游玩时将禁用暂停键，并具有游玩效果。
   - 该游玩效果可以通过梦境涟漪「噩梦」重新体验。
-- 初次游玩后将带回v1.x时期的开屏界面。
+- 初次游玩后将带回 v1.x 时期的开屏界面。
   - 该开屏界面无法重新体验。
