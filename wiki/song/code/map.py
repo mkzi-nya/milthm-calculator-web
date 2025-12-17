@@ -8,110 +8,102 @@ OUT_JS = Path("../map.js")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
-# ---------- utils ----------
-
-def latin_title_to_key(latin):
-    if not latin:
+def latin_title_to_key(v):
+    if not v:
         return None
-    if isinstance(latin, list):
-        s = " ".join(map(str, latin))
-    else:
-        s = str(latin)
-    s = s.strip()
-    s = re.sub(r"\s+", " ", s)
-    s = s.replace(" ", "_")
+    s = " ".join(map(str, v)) if isinstance(v, list) else str(v)
+    s = re.sub(r"\s+", " ", s.strip()).replace(" ", "_")
     s = re.sub(r"[^A-Za-z0-9_\-]", "", s)
     return s or None
 
-def is_pure_latin_words(title):
-    return bool(re.fullmatch(r"[A-Za-z ]+", title))
+def is_pure_latin_words(s):
+    return bool(re.fullmatch(r"[A-Za-z ]+", s))
 
-def make_latin_abbr(title):
-    words = title.strip().split()
-    if len(words) <= 1:
-        return None
-    return "".join(w[0].upper() for w in words if w)
+def make_latin_abbr(s):
+    w = s.strip().split()
+    return "".join(x[0].upper() for x in w) if len(w) > 1 else None
 
-def extract_han_only(title):
-    han = re.findall(r"[\u4e00-\u9fff]", title)
-    if len(han) >= 2:
-        return "".join(han)
-    return None
-
-# ---------- load data ----------
+def extract_han_only(s):
+    h = re.findall(r"[\u4e00-\u9fff]", s)
+    return "".join(h) if len(h) >= 2 else None
 
 packed_docs = json.loads(PACKED_DOC.read_text(encoding="utf-8"))
 chartinfo = json.loads(CHARTINFO.read_text(encoding="utf-8"))
 
 doc_by_id = {d["id"]: d for d in packed_docs if "id" in d}
 
-# ---------- build map ----------
-
 song_map = {}
-used_keys = set()
 
 for key, info in chartinfo.items():
     if "_" not in key:
         continue
-
     base, diff = key.rsplit("_", 1)
     if diff not in DIFF_ORDER:
         continue
 
-    chart_id = info.get("id")
-    if not isinstance(chart_id, str):
+    cid = info.get("id")
+    doc = doc_by_id.get(cid)
+    if not isinstance(cid, str) or not doc:
         continue
 
-    doc = doc_by_id.get(chart_id)
-    if not doc:
+    main = latin_title_to_key(doc.get("latinTitle")) or base
+    if not main:
         continue
 
-    # ---------- 主 key ----------
-    latin_key = latin_title_to_key(doc.get("latinTitle")) or base
-    if not latin_key:
-        continue
+    item = song_map.setdefault(main, {
+        "original": doc.get("title"),
+        "aliases": set(),
+        "ids": set()
+    })
 
-    if latin_key not in song_map:
-        song_map[latin_key] = {
-            "original": doc.get("title"),
-            "aliases": [],
-        }
-        used_keys.add(latin_key)
-
+    item["ids"].add(cid)
     title = str(doc.get("title") or "")
 
-    # ---------- alias A：拉丁缩写 ----------
     if is_pure_latin_words(title):
         abbr = make_latin_abbr(title)
-        if abbr and abbr not in used_keys:
-            song_map[latin_key]["aliases"].append(abbr)
-            used_keys.add(abbr)
+        if abbr:
+            item["aliases"].add(abbr)
 
-    # ---------- alias B：纯汉字 ----------
-    han_alias = extract_han_only(title)
-    if han_alias and han_alias not in used_keys:
-        song_map[latin_key]["aliases"].append(han_alias)
-        used_keys.add(han_alias)
+    han = extract_han_only(title)
+    if han:
+        item["aliases"].add(han)
 
-# ---------- write map.js ----------
+# ---------- 全局唯一去重 ----------
 
-lines = []
-lines.append("export const songMap = {")
+alias_owner = {}
 
-for key in sorted(song_map.keys()):
-    data = song_map[key]
+# original 先占位
+for main, item in song_map.items():
+    orig = item["original"]
+    if orig:
+        alias_owner[orig] = main
 
-    arr = [data["original"]]
-    arr.extend(data["aliases"])
+for main, item in song_map.items():
+    uniq = []
+    for a in sorted(item["aliases"] | item["ids"]):
+        if not a or a == main or a == item["original"]:
+            continue
+        if a not in alias_owner:
+            alias_owner[a] = main
+            uniq.append(a)
+    item["aliases"] = uniq
+    del item["ids"]
 
-    js_key = json.dumps(key, ensure_ascii=False)
-    js_arr = "[" + ", ".join(json.dumps(x, ensure_ascii=False) for x in arr) + "]"
+# ---------- 输出（关键修复点在这里） ----------
 
-    lines.append(f"  {js_key}: {js_arr},")
+lines = ["export const songMap = {"]
+for k in sorted(song_map):
+    v = song_map[k]
 
-lines.append("};")
-lines.append("")
+    arr = []
+    if v["original"] and v["original"] != k:
+        arr.append(v["original"])
+    arr.extend(v["aliases"])
+
+    lines.append(
+        f"  {json.dumps(k, ensure_ascii=False)}: "
+        f"[{', '.join(json.dumps(x, ensure_ascii=False) for x in arr)}],"
+    )
+lines.append("};\n")
 
 OUT_JS.write_text("\n".join(lines), encoding="utf-8")
-
-print("✓ 已生成 map.js（自动主键 / 智能别名 / 无需填写 id）")
