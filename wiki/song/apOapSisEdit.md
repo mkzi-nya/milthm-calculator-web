@@ -1,6 +1,6 @@
 [返回目录](./)
 
-> 此页面正在建设中，部分信息可能不完整  
+> 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 
 # apOapSis(Edit)
@@ -9,7 +9,7 @@
 | 曲名 | [apOapSis(Edit)](info:info("apOapSis(Edit)")) |
 | - | - |
 | 曲师 | Euphem1a. |
-| 曲绘 | Kista, 7enuous_忒涅尔斯 |
+| 曲绘 | Kista＆7enuous_忒涅尔斯 |
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
 | 时长 | (待补充) |

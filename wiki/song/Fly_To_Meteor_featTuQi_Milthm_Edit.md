@@ -1,6 +1,6 @@
 [返回目录](./)
 
-> 此页面正在建设中，部分信息可能不完整  
+> 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 
 # Fly To Meteor feat.兔柒 (Milthm Edit)
@@ -9,7 +9,7 @@
 | 曲名 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 (Milthm Edit)")) |
 | - | - |
 | 拉丁文曲名 | Fly To Meteor feat.TuQi (Milthm Edit) |
-| 曲师 | ShooTinGStaR, MoryueCi, Cyberspace |
+| 曲师 | ShooTinGStaR + MoryueCi + Cyberspace |
 | 曲绘 | 注射 |
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |

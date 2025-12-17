@@ -81,17 +81,22 @@ def load_constant_js(path: Path):
 
 # ---------- utils ----------
 
-def list_to_str(v):
-    if isinstance(v, list):
-        return ", ".join(map(str, v))
-    if not v:
-        return "-"
-    return str(v)
-
 def md_escape_table_cell(s):
-    if s is None:
+    if not s:
         return "-"
     return str(s).replace("|", r"\|")
+
+def illustrator_to_str(v):
+    """
+    illustrator 专用：
+    - list -> ', ' 拼接
+    - 空 / None -> '-'
+    """
+    if not v:
+        return "-"
+    if isinstance(v, list):
+        return md_escape_table_cell(", ".join(map(str, v)))
+    return md_escape_table_cell(v)
 
 def bpm_to_str(bpm):
     if not bpm:
@@ -130,13 +135,12 @@ def format_ct(ct):
 
     base = int(ct)
     frac = ct - base
-
     return f"{base}+ ({ct})" if frac >= 0.5 else f"{base} ({ct})"
 
 # ---------- 表格裁剪 ----------
+
 def split_md_table_row(row: str):
-    cells = []
-    buf = []
+    cells, buf = [], []
     escape = False
 
     for ch in row.strip():
@@ -253,20 +257,20 @@ for song_id, arr in constants.items():
         md = base_tpl
         md = md.replace("{doc:title}", base_doc["title"])
         md = md.replace("{info:title}", info_title)
-        md = md.replace("{doc:latinTitle}", list_to_str(base_doc.get("latinTitle")))
+        md = md.replace("{doc:latinTitle}", str(base_doc.get("latinTitle") or "-"))
 
-        # ✅ 新增：artists 统一适配
-        artists = (
-            base_doc.get("artistsList")
-            if base_doc.get("artistsList")
-            else base_doc.get("artist")
+        # artist：保持原样（单字段）
+        md = md.replace("{doc:artist}", md_escape_table_cell(base_doc.get("artist")))
+
+        # illustrator：list -> ', ' 拼接
+        md = md.replace(
+            "{doc:illustrator}",
+            illustrator_to_str(base_doc.get("illustrator"))
         )
-        md = md.replace("{doc:artists}", list_to_str(artists))
 
-        md = md.replace("{doc:illustratorsList}", list_to_str(base_doc.get("illustratorsList")))
         md = md.replace("{doc:bpmInfo}", bpm_to_str(base_doc.get("bpmInfo")))
 
-        if base_doc.get("title") == list_to_str(base_doc.get("latinTitle")):
+        if base_doc.get("title") == str(base_doc.get("latinTitle")):
             md = re.sub(r"\|\s*拉丁文曲名\s*\|.*?\n", "", md)
 
     md = md.replace(f"{{ct,{DIFF_SHORT[diff]}}}", format_ct(ct_value))
@@ -291,4 +295,4 @@ for song_id, arr in constants.items():
 
     md_path.write_text(md, encoding="utf-8")
 
-print("✓ 所有曲目处理完成（artists / 裁剪 / 等级 / charter / 拉丁名去重）")
+print("✓ 所有曲目处理完成（illustrator 支持 list，用逗号分隔）")

@@ -1,15 +1,15 @@
 [返回目录](./)
 
-> 此页面正在建设中，部分信息可能不完整  
+> 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 
-# 参宿四\~Betelgeuse\~
+# 参宿四~Betelgeuse~
 
 ## 曲目信息
-| 曲名 | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |
+| 曲名 | [参宿四~Betelgeuse~](info:info("参宿四~Betelgeuse~")) |
 | - | - |
 | 拉丁文曲名 | Betelgeuse |
-| 曲师 | Amberry, Villax |
+| 曲师 | Villax vs. Amberry |
 | 曲绘 | 雨生種 |
 | 所属曲包 | (待补充) |
 | 更新版本 | (待补充) |
