@@ -98,4 +98,10 @@ export const songMap = {
   "cybernetic_blazar": ["cybernetic blazar", "3a908e2d-8a39-4220-a6b8-4817bd1cea4a", "CB", "b1361177-1426-47cc-b036-afd09cad775b", "cea79b8c-23fd-4fbd-b2a9-6f080ef15b44"],
   "eclat": ["イコラト", "2cfa74ee-7e6d-4ebf-8f0a-e7cfb3a7e94c", "520361a1-805b-4332-b53e-1da11a94de1b", "da07cabf-7c7b-4083-a41a-879be13c8c94"],
   "slichertz_GdbG": ["slic.hertz #GdbG", "26a76638-ec89-4809-bd40-5d6afe403c40", "6eac0020-b9a1-480e-9539-633c0e502f9c", "e0162d0e-0727-49c2-80fa-f611621650ea"],
+  "rainfall_sounds": ["雨的声音", "序章", "rainfall sounds", "chapter0"],
+  "two_sides_of_bitter_and_sweet": ["甜与苦的一体两面", "主线一", "第一章", "chapter1", "Two Sides of Bitter and Sweet"],
+  "a_spring_waiting_in_blossoms": ["花裳随雨得春迟", "支线一", "A Spring Waiting in Blossoms", "side1"],
+  "rain_world": ["雨世界", "Rain World", "联动一"],
+  "notanote": ["Notanote", "联动二"],
+  
 };

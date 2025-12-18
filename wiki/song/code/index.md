@@ -99,3 +99,11 @@
 - [靈](./?q=Rei)
 - [驟雨の狭間](./?q=Rainshower)
 - [☹](./?q=Blueface)
+
+# 章节目录
+- [序章: 雨的声音](./?q=rainfall_sounds)
+- [主线章节一: 甜与苦的一体两面](./?q=two_sides_of_bitter_and_sweet)
+- [支线章节一: 花裳随雨得春迟](./?q=a_spring_waiting_in_blossoms)
+- [联动: 雨世界](./?q=rain_world)
+- [联动: Notanote](./?q=notanote)
+
