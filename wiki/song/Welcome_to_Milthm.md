@@ -13,7 +13,7 @@
 | BPM | 150 |
 
 ## 谱面信息
-| 难度 | [Drizzle](info:info("Welcome to Milthm", "Drizzle")) | [\(\￣\_\￣\|\|\|\)](info:info("Welcome to Milthm", "Special")) |
+| 难度 | [Drizzle](info:info("Welcome to Milthm", "Drizzle")) | [\(￣\_￣\|\|\|\)](info:info("Welcome to Milthm", "Special")) |
 | - | - | - |
 | 等级 | 1 (1.0) | 🦆 |
 | 谱师 | Buger404、TCSTWTBHY | 爬爬 beaten by LuviaDuck, very hurt |
