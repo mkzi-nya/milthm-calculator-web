@@ -32,10 +32,10 @@
 ## 游戏相关
 
 - 该曲目的 Drizzle 难度为 Milthm 的新手教程。
-- 初次进入游戏时，在完成设置后将自动进入这首曲目的 Drizzle 难度。
+- 初次进入游戏时，在完成设置后将自动进入本曲目的 Drizzle 难度。
   - 若中途退出，则大多数曲目将会被锁定，且每次进入游戏都将弹出设置界面并再次重复这一过程。
-- 初次通关本曲 Drizzle 难度后，将解锁曲包《[雨的声音](./?q=rainfall_sounds))》和《[甜与苦的一体两面](./?q=two_sides_of_bitter_and_sweet)》。
+- 初次通关本曲 Drizzle 难度后，将解锁曲包《[雨的声音](./?q=rainfall_sounds)》和《[甜与苦的一体两面](./?q=two_sides_of_bitter_and_sweet)》。
 - 该曲目在 2024 年的愚人节活动 (v1.8) 中存在 Special 难度，在此期间此曲目名称为「Welcome to Milk Rhythm」，且等级显示为「🦆」。
   - 该谱面在 2025 年愚人节活动 (v3.5) 中复刻。
-- 该曲目的 Drizzle 难度在 v4.0 时经过修改。
+- 该曲目的 Drizzle 难度谱面在 v4.0 时经过修改。
   
