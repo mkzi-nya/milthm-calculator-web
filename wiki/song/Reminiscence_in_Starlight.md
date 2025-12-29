@@ -34,7 +34,12 @@
 
 - 【百度百科】: [暮予星光](https://baike.baidu.com/item/%E6%9A%AE%E4%BA%88%E6%98%9F%E5%85%89/61857237)
 
-### 歌词
+## 游戏相关
+
+- 该曲目的 Sprinkle 难度谱面是所有 Sprinkle 谱面中物量最多的。
+- 该曲目的 Cloudburst 难度谱面为 《[Algebra](info:info("Algebra", "Cloudburst"))》与《[Elsorhg](info:info("Elsorhg", "Cloudburst"))》的入门级谱面，当你无法很好的演奏他们，可尝试练习这个谱面。
+
+## 歌词
 
 ```text
 相拥已打烊，
@@ -79,7 +84,3 @@
 等你的余光，
 等你会陪我品尝点点的星光。
 ```
-
-## 游戏相关
-
-(待补充)
