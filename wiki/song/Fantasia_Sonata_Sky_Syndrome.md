@@ -1,8 +1,5 @@
 [返回目录](./)
 
-> 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
-> 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
-
 # Fantasia Sonata Sky Syndrome
 
 ## 曲目信息
@@ -10,9 +7,9 @@
 | - | - |
 | 曲师 | PYKAMIA |
 | 曲绘 | nanakaria |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 天气预报 |
+| 更新版本 | v3.6 |
+| 时长 | 02:32 |
 | BPM | 167 |
 
 ## 谱面信息
@@ -25,15 +22,17 @@
 
 ## 解锁方法
 
-(待补充)
+- 默认解锁
 
 ## 曲目试听
 
-(待补充)
+- [【Youube】](https://youtu.be/s6iJzxHFRJU?si=geERnkEA2UxZates)
 
 ## 曲目相关
 
-(待补充)
+- 该曲曲绘上的琴谱为《[花雨](https://milthm.com/wiki/hans/resources/petalrain)》--- Milthm 主菜单界面的主题曲。
+- 左边的女孩是 Shiroma ，她是 PYKAMIA 的代表人物。
+- 该曲目为 Milthm 独占曲。
 
 ## 游戏相关
 
