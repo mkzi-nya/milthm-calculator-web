@@ -36,6 +36,7 @@
 
 ## 游戏相关
 
+- 在只解锁到《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》时使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」，隐藏曲解锁条件将变为可以理解的内容。
 - 在解锁了《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》、但《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁时，游玩本曲目结算时将显示隐藏曲的解锁提示。
   - 该效果会先依据玩家隐藏曲的解锁状态判断此时显示哪一条提示，并先显示对应曲目的解锁任务后显示提示。  
   - 当《[Regnaissance](info:info("Regnaissance"))》未解锁时，提示为「只需遗漏《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」；当《[Regnaissance](info:info("Regnaissance"))》已解锁但《[Contrasty Angeles](info:info("Contrasty Angeles"))》未解锁时，提示为「只需接住《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」。

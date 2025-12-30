@@ -23,19 +23,19 @@
 
 ## 解锁方法
 
-隐藏曲，解锁前不显示曲名、曲师和曲绘。  
-解锁曲包《甜与苦的一体两面》,并在《[Fragment of Memories](info:info("Fragment of Memories"))》任意难度取得A评级后，阅读故事第5节即可解锁。
+- 隐藏曲，解锁前不显示曲名、曲师和曲绘。
+- 在《[Fragment of Memories](info:info("Fragment of Memories"))》任意难度取得A评级后，使沉浸度达到100%，阅读故事第5节即可解锁。
 
 ## 曲目试听
 
-[【Bilibili】HYPER MEMORIES - Wooden, Salty Salt](https://www.bilibili.com/video/BV1Yu4y1v7PR/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
-[【Youtube】HYPER MEMORIES - Wooden, Salty Salt](https://youtu.be/BV6Npjv2IXs?si=3jPRDVKjA79oAo-w)
+- [【Bilibili】HYPER MEMORIES - Wooden, Salty Salt](https://www.bilibili.com/video/BV1Yu4y1v7PR/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
+- [【Youtube】HYPER MEMORIES - Wooden, Salty Salt](https://youtu.be/BV6Npjv2IXs?si=3jPRDVKjA79oAo-w)
+- [【SoundCloud】](https://on.soundcloud.com/hoYs2QFUXxra1Rqf6)
 
 
 ## 曲目相关
 - 本曲目为Milthm原创曲。
   - 但本曲在实装前就已发表。
-  - 该曲目实际为Wooden和Salty Salt两位曲师的合作曲。
 - 该曲目原曲时长为04:36，游戏版本经过剪辑。
 
 ## 游戏相关
@@ -45,9 +45,9 @@
   - 故事第6节解锁后，再次游玩该曲目将在某一段落显示黑白的苏珊立绘。
     - 触发对应隐藏曲的解锁条件时，这一立绘将变为彩色，成为曲绘的一部分。
   - 触发条件后，游戏的暂停键将被隐藏，画面出现部分抖动。
-  - 该效果可在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》均解锁后通过梦境涟漪「噩梦」再次触发体验。
+  - 该效果可在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》均解锁后通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」再次触发体验。
 - 该曲目具有两张曲绘。
   - 两张曲绘的区别为镜子前是否有苏珊立绘。
   - 在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁时，将显示无立绘的曲绘；全部解锁后，将切换为另一张立绘且无法更改。
-    - 即便通过梦境涟漪「噩梦」重演游玩效果时，曲绘也不会更改。
-- 当《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁前，除「精彩演奏」、「完美演奏」、「镜像」、「精益求精」外，所有的「梦境涟漪」都将被禁用。
+    - 即便通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重演游玩效果时，曲绘也不会更改。
+- 当《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁前，除「精彩演奏」、「完美演奏」、「镜像」、「精益求精」外，所有 [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) 都将被禁用。

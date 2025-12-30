@@ -26,7 +26,8 @@
 
 ## 曲目试听
 
-[【Bilibili】Fragment of Memories - U-Ruri](https://www.bilibili.com/video/BV1Rnp1eiErs/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
+- [【Bilibili】Fragment of Memories - U-Ruri](https://www.bilibili.com/video/BV1Rnp1eiErs/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
+- [【Youtube】](https://youtu.be/bBmzPOHxljE?si=vGTW1gawCFJRjEV1)
 
 ## 曲目相关
 
