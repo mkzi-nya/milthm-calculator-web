@@ -12,22 +12,27 @@
 主要负责人：
 
     mkzi_nya
-    4everDimensions
+    CalaMity-Zero
 
 脚本：
 
     mkzi_nya
-    4everDimensions
+    CalaMity-Zero
 
-UI/前端&后端&托管：
+前端&后端&托管：
 
-    4everDimensions
+    CalaMity-Zero
+
+UI/查分图:
+
+    CalaMity-Zero
+    xzadudu179
 
 文档:
 
     mkzi_nya
     xyh5033
-    4everDimensions
+    CalaMity-Zero
     纸喵柚nya
     zxQAQ
 
@@ -39,11 +44,12 @@ UI/前端&后端&托管：
 特别鸣谢：
 
     mkzi_nya(归梦)
-    4everDimensions
+    CalaMity-Zero
     libchara-dev
     Autumn
     Panyi
     Eric_Lian
+    xzadudu179
     xyh5033
     纸喵柚nya
     zxQAQ
