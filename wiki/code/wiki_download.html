@@ -57,32 +57,41 @@
 {{markdown}}
   </script>
 
-  <script>
-    marked.use(markedKatex());
+<script>
+  marked.use(markedKatex());
 
-    function resizeKatex() {
-      const w = document.querySelector('.markdown-body').clientWidth;
-      document.querySelectorAll('.katex-display').forEach(e => {
-        e.style.fontSize = '';
-        const actual = e.scrollWidth;
-        if (actual > w) {
-          const fs = parseFloat(getComputedStyle(e).fontSize);
-          e.style.fontSize = (fs * w / actual) + 'px';
-        }
-      });
-    }
-
-    const md = document.getElementById('md').textContent.replace(/^\n/, '');
-    const content = document.getElementById('content');
-    content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
-    content.querySelectorAll('h2,h3,h4').forEach(h => {
-      h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+  function resizeKatex() {
+    const w = document.querySelector('.markdown-body').clientWidth;
+    document.querySelectorAll('.katex-display').forEach(e => {
+      e.style.fontSize = '';
+      const actual = e.scrollWidth;
+      if (actual > w) {
+        const fs = parseFloat(getComputedStyle(e).fontSize);
+        e.style.fontSize = (fs * w / actual) + 'px';
+      }
     });
-    hljs.highlightAll();
-    resizeKatex();
+  }
 
-    addEventListener('resize', () => resizeKatex());
-  </script>
+  const md = document.getElementById('md').textContent.replace(/^\n/, '');
+  const content = document.getElementById('content');
+  content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+
+  content.querySelectorAll('h2,h3,h4').forEach(h => {
+    h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+  });
+
+  hljs.highlightAll();
+  resizeKatex();
+  addEventListener('resize', () => resizeKatex());
+
+  /* 🔽 新增代码：让 md 链接直接下载 */
+  content.querySelectorAll('a[href$=".md"]').forEach(a => {
+    a.setAttribute('download', '');
+    a.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+  });
+</script>
 
 </body>
 
