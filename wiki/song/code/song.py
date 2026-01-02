@@ -87,11 +87,6 @@ def md_escape_table_cell(s):
     return str(s).replace("|", r"\|")
 
 def illustrator_to_str(v):
-    """
-    illustrator 专用：
-    - list -> ', ' 拼接
-    - 空 / None -> '-'
-    """
     if not v:
         return "-"
     if isinstance(v, list):
@@ -215,6 +210,17 @@ base_tpl = BASE_MD.read_text(encoding="utf-8")
 
 doc_by_chart_id = {d["id"]: d for d in packed_docs if "id" in d}
 
+# ---------- 已存在文件检测 ----------
+
+existing_files = {p.name for p in SONG_DIR.glob("*.md")}
+
+if existing_files:
+    print("已存在的 md 文件（将跳过，不做任何修改）：")
+    for name in sorted(existing_files):
+        print(" -", name)
+else:
+    print("未检测到已存在的 md 文件，将全部生成")
+
 # ---------- 主流程 ----------
 
 for song_id, arr in constants.items():
@@ -251,27 +257,22 @@ for song_id, arr in constants.items():
     filename = latin_filename or info_title
     md_path = SONG_DIR / f"{filename}.md"
 
-    if md_path.exists():
-        md = md_path.read_text(encoding="utf-8")
-    else:
-        md = base_tpl
-        md = md.replace("{doc:title}", base_doc["title"])
-        md = md.replace("{info:title}", info_title)
-        md = md.replace("{doc:latinTitle}", str(base_doc.get("latinTitle") or "-"))
+    # 已存在的文件直接跳过（不读、不写、不改）
+    if md_path.name in existing_files:
+        continue
 
-        # artist：保持原样（单字段）
-        md = md.replace("{doc:artist}", md_escape_table_cell(base_doc.get("artist")))
+    # ---------- 仅生成新文件 ----------
 
-        # illustrator：list -> ', ' 拼接
-        md = md.replace(
-            "{doc:illustrator}",
-            illustrator_to_str(base_doc.get("illustrator"))
-        )
+    md = base_tpl
+    md = md.replace("{doc:title}", base_doc["title"])
+    md = md.replace("{info:title}", info_title)
+    md = md.replace("{doc:latinTitle}", str(base_doc.get("latinTitle") or "-"))
+    md = md.replace("{doc:artist}", md_escape_table_cell(base_doc.get("artist")))
+    md = md.replace("{doc:illustrator}", illustrator_to_str(base_doc.get("illustrator")))
+    md = md.replace("{doc:bpmInfo}", bpm_to_str(base_doc.get("bpmInfo")))
 
-        md = md.replace("{doc:bpmInfo}", bpm_to_str(base_doc.get("bpmInfo")))
-
-        if base_doc.get("title") == str(base_doc.get("latinTitle")):
-            md = re.sub(r"\|\s*拉丁文曲名\s*\|.*?\n", "", md)
+    if base_doc.get("title") == str(base_doc.get("latinTitle")):
+        md = re.sub(r"\|\s*拉丁文曲名\s*\|.*?\n", "", md)
 
     md = md.replace(f"{{ct,{DIFF_SHORT[diff]}}}", format_ct(ct_value))
 
@@ -295,4 +296,4 @@ for song_id, arr in constants.items():
 
     md_path.write_text(md, encoding="utf-8")
 
-print("✓ 所有曲目处理完成（illustrator 支持 list，用逗号分隔）")
+print("✓ 所有曲目处理完成（已存在文件完全未修改）")

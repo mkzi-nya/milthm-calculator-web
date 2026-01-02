@@ -8,6 +8,8 @@ OUT_JS = Path("../map.js")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
+# ---------- utils ----------
+
 def latin_title_to_key(v):
     if not v:
         return None
@@ -27,10 +29,14 @@ def extract_han_only(s):
     h = re.findall(r"[\u4e00-\u9fff]", s)
     return "".join(h) if len(h) >= 2 else None
 
+# ---------- 读取数据 ----------
+
 packed_docs = json.loads(PACKED_DOC.read_text(encoding="utf-8"))
 chartinfo = json.loads(CHARTINFO.read_text(encoding="utf-8"))
 
 doc_by_id = {d["id"]: d for d in packed_docs if "id" in d}
+
+# ---------- 构建 song_map ----------
 
 song_map = {}
 
@@ -72,7 +78,6 @@ for key, info in chartinfo.items():
 
 alias_owner = {}
 
-# original 先占位
 for main, item in song_map.items():
     orig = item["original"]
     if orig:
@@ -89,21 +94,57 @@ for main, item in song_map.items():
     item["aliases"] = uniq
     del item["ids"]
 
-# ---------- 输出（关键修复点在这里） ----------
+# ---------- 读取已有 map.js（如果存在） ----------
 
-lines = ["export const songMap = {"]
+existing_keys = set()
+existing_lines = []
+
+if OUT_JS.exists():
+    text = OUT_JS.read_text(encoding="utf-8")
+
+    # 抓取已有 key
+    for m in re.finditer(r'^\s*"([^"]+)"\s*:', text, re.M):
+        existing_keys.add(m.group(1))
+
+    # 保留原内容（去掉结尾 };）
+    lines = text.rstrip().splitlines()
+    if lines and lines[-1].strip() == "};":
+        existing_lines = lines[:-1]
+    else:
+        existing_lines = lines
+
+    print(f"检测到已有 map.js，已有 {len(existing_keys)} 个条目，将只补充缺失项")
+else:
+    existing_lines = ["export const songMap = {"]
+    print("未检测到 map.js，将完整生成")
+
+# ---------- 生成新增项 ----------
+
+new_lines = []
+
 for k in sorted(song_map):
-    v = song_map[k]
+    if k in existing_keys:
+        continue
 
+    v = song_map[k]
     arr = []
+
     if v["original"] and v["original"] != k:
         arr.append(v["original"])
     arr.extend(v["aliases"])
 
-    lines.append(
+    new_lines.append(
         f"  {json.dumps(k, ensure_ascii=False)}: "
         f"[{', '.join(json.dumps(x, ensure_ascii=False) for x in arr)}],"
     )
-lines.append("};\n")
 
-OUT_JS.write_text("\n".join(lines), encoding="utf-8")
+# ---------- 写回 ----------
+
+out = []
+out.extend(existing_lines)
+out.extend(new_lines)
+out.append("};\n")
+
+OUT_JS.write_text("\n".join(out), encoding="utf-8")
+
+print(f"✓ map.js 更新完成，新增 {len(new_lines)} 项，原有内容未修改")

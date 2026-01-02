@@ -233,7 +233,9 @@
 | [Before it Ends](info:info("Before it Ends"))          | [ 3.0 ](info:info("Before it Ends", "Drizzle"))  | [ 7.4 ](info:info("Before it Ends", "Sprinkle"))  | [ 10.6 ](info:info("Before it Ends", "Cloudburst")) | - | - |
 | [conflict](info:info("conflict"))          | [2.0](info:info("conflict", "Drizzle"))  | [9.3](info:info("conflict", "Sprinkle"))  | [11.4](info:info("conflict", "Cloudburst")) | - | - |
 | [Sound of Nature](info:info("Sound of Nature"))          | [2.0](info:info("Sound of Nature", "Drizzle"))  | [6.9](info:info("Sound of Nature", "Sprinkle"))  | [10.7](info:info("Sound of Nature", "Cloudburst")) | - | - |
-
+| [LiFE Garden](info:info("LiFE Garden")) |[2.0](info:info("LiFE Garden", "Drizzle")) | [9.4](info:info("LiFE Garden", "Sprinkle")) | [11.0](info:info("LiFE Garden", "Cloudburst")) | - | [ 0.0 l](info:info("LiFE Garden", "Special")) |
+| [LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix) | - | - | - | [_](info:info("LiFE Garden (Extended Mix)", "Clear")) | - |
+| [Melody to Heaven](info:info("Melody to Heaven")) | [2.0](info:info("Melody to Heaven", "Drizzle")) | [6.2](info:info("Melody to Heaven", "Sprinkle")) | [12.1](info:info("Melody to Heaven", "Cloudburst")) | - |
 
 ---
 
