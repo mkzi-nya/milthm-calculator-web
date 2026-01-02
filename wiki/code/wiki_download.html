@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Milthm Wiki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .markdown-body {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+
+    pre,
+    code {
+      user-select: text;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <article id="content" class="markdown-body"></article>
+  </div>
+
+  <script type="text/markdown" id="md">
+{{markdown}}
+  </script>
+
+  <script>
+    marked.use(markedKatex());
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = '';
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    const md = document.getElementById('md').textContent.replace(/^\n/, '');
+    const content = document.getElementById('content');
+    content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+    content.querySelectorAll('h2,h3,h4').forEach(h => {
+      h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+    });
+    hljs.highlightAll();
+    resizeKatex();
+
+    addEventListener('resize', () => resizeKatex());
+  </script>
+
+</body>
+
+</html>
