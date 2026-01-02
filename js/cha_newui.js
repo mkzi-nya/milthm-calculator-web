@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.10.14 03:48 (UTC+8)"
+const Updated = "Updated at 2025.11.09 21:30 (UTC+8)"
 var cha_newui_js_ver = 7
 const BACKGROUND_COUNT = 15
 const BACKGROUND_COUNT_YRJ = 4
@@ -119,7 +119,7 @@ function loadImageCSS() {
   return new Promise((resolve, reject) => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'images.css';
+    link.href = 'https://storage.mhtl.im/images.css';
 
     link.onload = () => {
       console.log('CSS 加载完成！');
@@ -1544,9 +1544,9 @@ async function downloadImage() {
       const bg_filename = await readFileAsDataURL(hasFile);
       return bg_filename;
     } else if (yrjds == 'true') {
-      return `./jpgs/background/yrj-${index}.avif`;
+      return `https://storage.mhtl.im/jpgs/background/yrj-${index}.avif`;
     } else {
-      return `./jpgs/background/${index}.avif`;
+      return `https://storage.mhtl.im/jpgs/background/${index}.avif`;
     }
   }
   const bg_index = yrjds == 'true' ? Math.floor(Math.random() * BACKGROUND_COUNT_YRJ) + 1 : Math.floor(Math.random() * BACKGROUND_COUNT) + 1;
@@ -1614,7 +1614,7 @@ async function downloadImage() {
   const bgs = []
   if (!hasFile) {
     for (let index = 1; index <= bg_count; index++) {
-      const bg = `./jpgs/background/${bg_prefix}${index}.avif`;
+      const bg = `https://storage.mhtl.im/jpgs/background/${bg_prefix}${index}.avif`;
       bgs.push(`'${await imgToDataURL(bg)}'`);
     }
   } else {
@@ -1631,14 +1631,14 @@ async function downloadImage() {
         <style>
             @font-face {
                 font-family: 'Chill Round';
-                src: url('./fonts/Chill Round/ChillRoundF v3.0.ttf') format('truetype');
+                src: url('https://storage.mhtl.im/fonts/Chill Round/ChillRoundF v3.0.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
 
             @font-face {
                 font-family: 'alimamafangyuanti';
-                src: url('./fonts/alimamafangyuanti/AlimamaFangYuanTiVF-Thin.ttf') format('truetype');
+                src: url('https://storage.mhtl.im/fonts/alimamafangyuanti/AlimamaFangYuanTiVF-Thin.ttf') format('truetype');
                 font-style: normal;
             }
 
@@ -1685,7 +1685,6 @@ async function downloadImage() {
 
             .bg {
                 background-image: url(${await imgToDataURL(bg_filename)});
-                overflow-x: auto;
                 background-size: cover;
                 min-height: 1778px;
                 background-position: center;
@@ -1803,7 +1802,7 @@ async function downloadImage() {
             }
 
             .reality-v3 {
-                background: url(${await imgToDataURL('./jpgs/v3-bg.webp')});
+                background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/v3-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px #6945f7;
@@ -1813,11 +1812,12 @@ async function downloadImage() {
 
             #capture {
               transition: border 0.2s, box-shadow 0.2s, filter 0.2s;
-              background: url(${await imgToDataURL('./jpgs/main-btn-bg.webp')});
+              background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/main-btn-bg.webp')});
               border: 2px solid #8378B4;
               box-shadow: 0 5px 10px #a19bdb55;
               position: relative;
-              width: 300px;
+              width: 600px;
+              height: 100px
               background-size: cover;
               }
 
@@ -1834,7 +1834,7 @@ async function downloadImage() {
             }
 
             .reality-v50 {
-                background: url(${await imgToDataURL('./jpgs/v50-bg.webp')});
+                background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/v50-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px rgba(255, 70, 70, 0.77);
@@ -1934,6 +1934,22 @@ async function downloadImage() {
                 background: #0B0A0F88;
                 font-weight: 400;
                 border: 2px solid #56555A;
+            }
+
+            @media (max-width: 524px) {
+              button {
+                width: 88%;
+              }
+
+              #size-settings {
+                justify-content: center !important;
+              }
+            }
+
+            @media (max-width: 1050px) {
+              .settings {
+                margin: 25px !important;
+              }
             }
 
             button:hover {
@@ -2115,8 +2131,10 @@ async function downloadImage() {
             }
 
             .buttons-container {
+              max-width: 1000px;
+              margin: auto;
               display: flex;
-              justify-content: center;
+              justify-content: space-around;
               align-items: center;
               flex-wrap: wrap;
             }
@@ -2140,12 +2158,52 @@ async function downloadImage() {
               }
             }
 
+            input[type="range"] {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 20px;
+                width: 100%;
+                border-radius: 999px;
+                background: linear-gradient(to right, #98C7FE 0%, #DFC3FD 60%, #0002 60%, #0002 100%);
+                outline: none;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width:30px; height:30px; border-radius:50%;
+                background:#fff; box-shadow:0 3px 6px #e0b1ffa1;
+                border: none;
+                cursor: pointer;
+            }
+
+            .controls-container {
+              margin: 30px 0;
+              margin-left: 8px;
+              margin-top: 10px;
+              padding: 10px;
+            }
+
+            .controls {
+                display:flex;
+                max-width: 500px;
+                justify-content: center;
+                gap:12px;
+                align-items:center;
+            }
+
+            .settings {
+              padding: 15px;
+              border-radius: 30px;
+              background: #FFF1;
+              max-width: 1000px;
+              margin: auto;
+            }
+
         </style>
     </head>
     <body>
     <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
         <div class="bg">
-            <main>
+            <main id="main-cover">
                 <div class="main-container">
                     <aside class="top">
                     <div class="cover">
@@ -2220,9 +2278,9 @@ async function downloadImage() {
                                 <div style="height: 100%; text-align: right;">
                                     <div class="avatar-container">
                                         <div class="avatar">
-                                            <img src="./jpgs/${yrjds != 'true' ? 'avatar.webp' : 'avatar-aprilfools.webp'}"
+                                            <img src="https://storage.mhtl.im/jpgs/${yrjds != 'true' ? 'avatar.webp' : 'avatar-aprilfools.webp'}"
                                                 class="avatar">
-                                            ${star > 0 ? '<img class="star" src="./jpgs/' + star + '-star.png">' : ''}
+                                            ${star > 0 ? '<img class="star" src="https://storage.mhtl.im/jpgs/' + star + '-star.png">' : ''}
                                         </div>
                                         <div class="name-reality">
                                             <p
@@ -2231,7 +2289,7 @@ async function downloadImage() {
                                                 <p
                                                     class="reality-content ${yrjds != 'true' ? isRealityV3 ? 'reality-v3' : '' : 'reality-v50'}">${yrjds != 'true' ? 'REALITY' : 'YTILAER'}</p>
                                                 <p
-                                                    class="reality-text">${average1 ? average1 : '0.00'}</p>
+                                                    class="reality-text">${average1 ? average1.toFixed(2) : '0.00'}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2270,32 +2328,47 @@ async function downloadImage() {
                 </footer>
             </main>
             </div>
-            <div class="buttons-container">
-            <button class="mobile-hidden" onclick="printPage()">打印页面</button>
-            <button id="capture">保存图片</button>
-            <button class="mobile-show" onclick="printPage()">打印页面</button>
-            <button onclick="copyJson()">复制用户数据</button>
-            </div>
-            <div class="buttons-container">
-            <button onclick="changeBackground()" id="change-background">换一张背景</button>
-            <button id="compatible-btn" onclick="switchCompatibleMode()">兼容模式</button>
-            </div>
-            <div class="buttons-container" style="z-index: 1000; position: relative; justify-content: space-evenly; max-width: 1000px; margin:auto;">
-              <div style="display: flex; align-items: center;">
-                <button class="squared" onclick="setPageScale(-0.05)">-</button>
-                <h2 style="text-align: center; font-weight: normal;" id="scaleText">图片缩放 (100%)</h2>
-                <button class="squared" onclick="setPageScale(0.05)">+</button>
+              <div style="display: flex; justify-content: center; align-items: center; margin: 10px">
+                  <button id="capture">保存图片</button>
               </div>
-              <div style="display: flex; align-items: center;">
-                <button class="squared" onclick="setPageWidth(-100)">-</button>
-                <h2 style="text-align: center; font-weight: normal;" id="widthText">图片宽度 (${width}px)</h2>
-                <button class="squared" onclick="setPageWidth(100)">+</button>
+            <div class="settings">
+              <h2 style="text-align: left; margin: 15px; font-weight: normal; font-size: 2rem">设置 / 操作</h2>
+              <div class="buttons-container">
+                <button onclick="changeBackground()" id="change-background">换一张背景</button>
+                <button id="compatible-btn" onclick="switchCompatibleMode()">兼容模式</button>
+                <button onclick="printPage()">打印页面</button>
+                <button onclick="copyJson()">复制用户数据</button>
               </div>
+              <div class="buttons-container" id="size-settings" style="z-index: 1000; position: relative; justify-content: space-between; max-width: 1000px; margin:auto;">
+                <div style="display: flex; align-items: center;">
+                  <button class="squared" onclick="setPageScale(-0.05)">-</button>
+                  <h2 style="text-align: center; font-weight: normal;" id="scaleText">图片缩放 (100%)</h2>
+                  <button class="squared" onclick="setPageScale(0.05)">+</button>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <button class="squared" onclick="setPageWidth(-100)">-</button>
+                  <h2 style="text-align: center; font-weight: normal;" id="widthText">图片宽度 (${width}px)</h2>
+                  <button class="squared" onclick="setPageWidth(100)">+</button>
+                </div>
+              </div>
+              <div style="">
+                <div class="controls-container">
+                    <h2
+                        style="margin-bottom: 20px; margin-left: 5px; font-weight: normal;">背景暗化</h2>
+                    <div class="controls">
+                        <input id="bg-slider" type="range" min="0" max="100" value="60">
+                        <div class="info">
+                            <div id="bgslider-text">0%</div>
+                        </div>
+                    </div>
+                    <p id="bg-warning" style="color: #F77; margin-top: 15px; margin-left: 3px;">*太明亮的背景可能会影响查分图的显示效果</p>
+                </div>
+              </div>
+              <h2 style="text-align: left; margin: 15px; font-weight: normal; color: #FBB" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试打印页面保存为 PDF 或调整缩放并截图。或使用其他设备访问。</h2>
+              <h2 style="text-align: left; margin: 15px; font-weight: normal; color:rgb(241, 205, 255);">如果出现 AP / R 分数显示成渐变方块一类的问题，可以尝试打开 "兼容模式"。</h2>
+              <h2 style="text-align: left; margin: 15px; font-weight: normal;">你可以试试改变图片缩放或宽度来适应自己的需求 / 方便设备截图</h2>
+              <h3 style="text-align: left; margin: 15px; font-weight: normal;">该查分器主题为测试阶段，若出现问题可将查分结果图或问题描述发送至<a href="https://qm.qq.com/q/Utb6sNDvki">交流群</a>询问。</h3>
             </div>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal; color: #FBB" id="safari-tip">检测到当前浏览器为 Safari 内核，可能会出现兼容问题，若遇到无法保存 / 图片异常等问题，请尝试打印页面保存为 PDF 或调整缩放并截图。或使用其他设备访问。</h2>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal; color:rgb(241, 205, 255);">如果出现 AP / R 分数显示成渐变方块一类的问题，可以尝试打开 "兼容模式"。</h2>
-            <h2 style="text-align: center; margin: 15px; font-weight: normal;">你可以试试改变图片缩放或宽度来适应自己的需求 / 方便设备截图</h2>
-            <h3 style="text-align: center; margin: 15px; font-weight: normal;">该查分器主题为测试阶段，若出现问题可将查分结果图或问题描述发送至<a href="https://qm.qq.com/q/Utb6sNDvki">交流群</a>询问。</h3>
             <div id="hidden-json">---BEGIN_JSON---${(window.data || input)}---END_JSON---</div>
         <script>
           let currentScale = 1;
@@ -2407,7 +2480,7 @@ async function downloadImage() {
                   // const element = document.querySelector('.bg');
                   const dataURL = await htmlToImage.toPng(bg, {
                       pixelRatio: ${totalCardCount < 50 ? '2' : '1'},
-                      cacheBust: true,
+                      cacheBust: false,
                       useCORS: true,
                       style: {
                           margin: '0',
@@ -2467,10 +2540,32 @@ async function downloadImage() {
                 isDownloading = false;
             })
 
+            function changeOpacity(value) {
+                // value 0~255
+                return '#000000' + value.toString(16);
+            }
+
+            function bgUpdate(v, bgSlider, sliderText){
+              const alphaValue = Math.round(v * 2.55);
+
+              document.querySelector('#main-cover').style.background = changeOpacity(alphaValue);
+              sliderText.textContent = v + '%';
+              if (bgSlider.value < 20) {
+                  document.querySelector('#bg-warning').classList.remove("hidden");
+              } else {
+                  document.querySelector('#bg-warning').classList.add("hidden");
+              }
+              bgSlider.style.background = 'linear-gradient(to right, #98C7FE 0%, #DFC3FD ' + v + '%, #FFF2 ' + v + '%, #FFF2 100%)';
+            }
+
             window.onload = async () => {
                 if (isHuawei()) {
                   switchCompatibleMode();
                 }
+                const bgSlider = document.getElementById('bg-slider');
+                const bgText = document.querySelector('#bgslider-text');
+                bgUpdate(bgSlider.value, bgSlider, bgText);
+                bgSlider.addEventListener('input', e => bgUpdate(e.target.value, e.target, bgText));
                 ${hasFile ? "document.querySelector('#change-background').disabled = true;" : ""}
             };
 
@@ -2490,7 +2585,7 @@ async function downloadImage() {
     </body>
 </html>`;
   // // 绘制卡片并导出
-  const cardsHtml = await getCardHtml(items, actualCardCount, await imgToDataURL('./jpgs/img-error.webp'));
+  const cardsHtml = await getCardHtml(items, actualCardCount, await imgToDataURL('https://storage.mhtl.im/jpgs/img-error.webp'));
   // // console.log(cardsHtml);
   const htmlContent = htmlHead + cardsHtml + htmlFoot;
   // 打开一个新窗口或新标签页
@@ -2875,7 +2970,7 @@ async function getCardHtml(items, maxCount, errorImg) {
 
     const scoreIsV3 = it.isV3 || it.bestLevel <= 1 || it.bestScore >= 1005000 || (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))
     // const scoreIsV3 = true;
-    const dataurl = await imgToDataURL('./jpgs/' + coverImgName)
+    const dataurl = await imgToDataURL('https://storage.mhtl.im/jpgs/' + coverImgName)
     const cardHtmlText = `
   <section class="card">
       <div class="cardcover ${scoreIsV3 ? 'cardcover-v3' : ''}">
@@ -2904,7 +2999,7 @@ async function getCardHtml(items, maxCount, errorImg) {
 
                   </div>
                   <div class="gradetext">
-                      <img src="./jpgs/${iconImgName}" alt
+                      <img src="https://storage.mhtl.im/jpgs/${iconImgName}" alt
                           class="grade">
                       <p class="score ${gradeClass}">${scoreStr}</p>
                   </div>
