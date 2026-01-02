@@ -11,7 +11,7 @@
 | -------- | --------------------------------------- |
 | 曲师     | Yooh                                    |
 | 曲绘     | QIER                                    |
-| 所属曲包 | 露晓卉庭                                |
+| 所属曲包 | [露晓卉庭](./?q=gathering_blossoms_under_rain)                                |
 | 更新版本 | v4.4[DZ/SK/CB] ???[SP]                  |
 | 时长     | 02:00                                   |
 | BPM      | 149                                     |
@@ -26,8 +26,8 @@
 
 ## 解锁方法
 
-解锁曲包《露晓卉庭》后，在「露晓卉庭」中花费 1200「食物」解锁。  
-[LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)"))[[CL]((info:info(%22LiFE%20Garden%20(Extended%20Mix)", "Clear"))] 需在本曲 Cloudburst 难度取得 S 评级解锁。  
+解锁曲包《[露晓卉庭](./?q=gathering_blossoms_under_rain)》后，在「[露晓卉庭](https://milthm.com/wiki/hans/blog/2025-09-12)」中花费 1200「食物」解锁。  
+[LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)"))[[CL](info:info("LiFE Garden (Extended Mix)", "Clear"))] 需在本曲 Cloudburst 难度取得 S 评级解锁。  
 本曲目的 Special 难度尚未实装，需等待后续版本更新后解锁。
 
 ## 曲目试听
