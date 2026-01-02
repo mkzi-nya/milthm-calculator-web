@@ -103,7 +103,7 @@ export const songMap = {
   "a_spring_waiting_in_blossoms": ["花裳随雨得春迟", "支线一", "A Spring Waiting in Blossoms", "side1"],
   "rain_world": ["雨世界", "Rain World", "联动一"],
   "notanote": ["Notanote", "联动二"],
-  
+  "weather_report": ["weather_report","天气预报"],
   "LiFE_Garden": ["LiFE Garden", "12cd9ae1-83c0-47e5-b73d-b47af35ea208", "1d5f8908-4ce6-46d9-b61c-06cb406fb17d", "467c01d6-5c0e-473b-9ac9-0cc4827f0098", "LG"],
   "LiFE_Garden_Extended_Mix": ["LiFE Garden (Extended Mix)", "59af276a-3e2a-4c05-be72-2572cbdbae5c"],
   "Melody_to_Heaven": ["Melody to Heaven", "98233a57-65da-4cff-a4db-879547376fa9", "MTH", "d47bc4ce-8543-48d1-addc-5d512d849745", "db4427b9-ebe2-4084-941a-d697b11a30db"],
