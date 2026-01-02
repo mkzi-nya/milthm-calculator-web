@@ -13,8 +13,6 @@
 
     mkzi_nya
     4everDimensions
-    libchara-dev
-    Autumn
 
 脚本：
 
@@ -24,6 +22,18 @@
 UI/前端&后端&托管：
 
     4everDimensions
+
+文档:
+
+    mkzi_nya
+    xyh5033
+    4everDimensions
+    纸喵柚nya
+    zxQAQ
+
+其他:
+    Autumn
+    libchara-dev
 
 特别鸣谢：
 
