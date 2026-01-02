@@ -1,0 +1,28 @@
+主要负责人：
+    • <a href="https://github.com/mkzi-nya" {}>mkzi_nya</a> (查分核心功能开发&脚本&基本实现开发)
+    • <a href="https://www.xzadudu179.top/" {}>xzadudu179</a> (UI/前端&新查分图)
+    • <a href="https://k9.lv/klm/" {}>不是xyn喵~</a> (UI/前端&后端&托管&云相关功能开发)
+    • <a href="https://github.com/jsjsjsjsjsjsjson" {}>libchara-dev</a>
+    • Autumn
+
+文档:
+    • <a href="https://github.com/mkzi-nya" {}>mkzi_nya</a>
+    • <a href="https://www.xzadudu179.top/" {}>xzadudu179</a>
+    • xyh5033
+    • 纸喵柚nya
+    • "火猫"
+
+特别鸣谢：
+    • <a href="https://github.com/mkzi-nya" {}>mkzi_nya</a>
+    • <a href="https://www.xzadudu179.top/" {}>xzadudu179</a>
+    • <a href="https://k9.lv/klm/" {}>不是xyn喵~</a>
+    • <a href="https://github.com/jsjsjsjsjsjsjson" {}>libchara-dev</a>
+    • Autumn
+    • Panyi
+    • Eric_Lian
+    • xyh5033
+    • 纸喵柚nya
+    • "火猫"
+
+感谢所有参与贡献的人！
+Copyleft 21 Century. Milthm Reality Calculator Project.
