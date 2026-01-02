@@ -12,29 +12,29 @@
 主要负责人：
 
     mkzi_nya
-    CalaMity-Zero
+    不是xyn喵~
 
 脚本：
 
     mkzi_nya
-    CalaMity-Zero
+    不是xyn喵~
 
 前端&后端&托管：
 
-    CalaMity-Zero
+    不是xyn喵~
 
 UI/查分图:
 
-    CalaMity-Zero
+    不是xyn喵~
     xzadudu179
 
 文档:
 
     mkzi_nya
     xyh5033
-    CalaMity-Zero
+    不是xyn喵~
     纸喵柚nya
-    zxQAQ
+    "火猫"
 
 其他:
     Autumn
@@ -44,7 +44,7 @@ UI/查分图:
 特别鸣谢：
 
     mkzi_nya(归梦)
-    CalaMity-Zero
+    不是xyn喵~
     libchara-dev
     Autumn
     Panyi
@@ -52,4 +52,4 @@ UI/查分图:
     xzadudu179
     xyh5033
     纸喵柚nya
-    zxQAQ
+    "火猫"
