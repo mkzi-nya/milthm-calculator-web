@@ -34,6 +34,7 @@ UI/前端&后端&托管：
 其他:
     Autumn
     libchara-dev
+    Panyi
 
 特别鸣谢：
 
@@ -43,3 +44,6 @@ UI/前端&后端&托管：
     Autumn
     Panyi
     Eric_Lian
+    xyh5033
+    纸喵柚nya
+    zxQAQ
