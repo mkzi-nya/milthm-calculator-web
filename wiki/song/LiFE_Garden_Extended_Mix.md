@@ -2,12 +2,12 @@
 
 # LiFE Garden (Extended Mix)
 
-> 本页面为关于《[LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)"))》的信息。有关《[LiFE Garden](info:info("LiFE Garden"))》的信息，请[点击此处查看](./?q=LiFE_Garden)。
+> 本页面为关于《[LiFE Garden (Extended Mix)](info:info("LiFE Garden Extended Mix"))》的信息。有关《[LiFE Garden](info:info("LiFE Garden"))》的信息，请[点击此处查看](./?q=LiFE_Garden)。
 
 
 ## 曲目信息
 
-| 曲名     | [LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)")) |
+| 曲名     | [LiFE Garden (Extended Mix)](info:info("LiFE Garden Extended Mix")) |
 | -------- | ------------------------------------------------------------ |
 | 曲师     | Yooh                                                         |
 | 曲绘     | QIER                                                         |
@@ -18,7 +18,7 @@
 
 ## 谱面信息
 
-| 难度     | [Clear](info:info("LiFE Garden (Extended Mix)", "Clear")) |
+| 难度     | [Clear](info:info("LiFE Garden Extended Mix", "Clear")) |
 | -------- | --------------------------------------------------------- |
 | 等级     | - (0.0)                                                   |
 | 谱师     | Milthm Team                                               |
