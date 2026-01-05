@@ -39,20 +39,19 @@
 | 5 | [Regnaissance](info:info("Regnaissance", "Clear")) | CL | 12.1 |
 | 5 | [Innocent white](info:info("Innocent white", "Cloudburst")) | CB | 12.1 |
 | 5 | [Splash the Beat!!](info:info("Splash the Beat!!", "Cloudburst")) | CB | 12.1 |
-| 8 | [灯ノ桜蝶](info:info("灯ノ桜蝶", "Cloudburst")) | CB | 12.0 |
-| 8 | [Meltovt Necrosys](info:info("Meltovt Necrosys", "Cloudburst")) | CB | 12.0 |
-| 10 | [Broken Conviction](info:info("Broken Conviction", "Clear")) | CL | 11.9 |
-| 10 | [Sakuyahime](info:info("Sakuyahime", "Cloudburst")) | CB | 11.9 |
-| 12 | [百九十](info:info("百九十", "Cloudburst")) | CB | 11.8 |
-| 12 | [HYPER MEMORIES](info:info("HYPER MEMORIES", "Cloudburst")) | CB | 11.8 |
-| 14 | [Moonflutter](info:info("Moonflutter", "Clear")) | CL | 11.7 |
-| 14 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit")) | CL | 11.7 |
-| 14 | [Brightened Demonios](info:info("Brightened Demonios", "Cloudburst")) | CB | 11.7 |
-| 17 | [KASANE](info:info("KASANE", "Cloudburst")) | CB | 11.6 |
-| 17 | [Threat - Metropolis](info:info("Threat - Metropolis", "Cloudburst")) | CB | 11.6 |
-| 17 | [Contrasty Angeles](info:info("Contrasty Angeles", "Cloudburst")) | CB | 11.6 |
-| 20 | [Broken Conviction](info:info("Broken Conviction", "Cloudburst")) | CB | 11.5 |
-| 20 | [Vestige of Dreams](info:info("Vestige of Dreams", "Cloudburst")) | CB | 11.5 |
+| 5 | [Melody to Heaven](info:info("Melody to Heaven", "Cloudburst")) | CB | 12.1 |
+| 9 | [灯ノ桜蝶](info:info("灯ノ桜蝶", "Cloudburst")) | CB | 12.0 |
+| 9 | [Meltovt Necrosys](info:info("Meltovt Necrosys", "Cloudburst")) | CB | 12.0 |
+| 11 | [Broken Conviction](info:info("Broken Conviction", "Clear")) | CL | 11.9 |
+| 11 | [Sakuyahime](info:info("Sakuyahime", "Cloudburst")) | CB | 11.9 |
+| 13 | [百九十](info:info("百九十", "Cloudburst")) | CB | 11.8 |
+| 13 | [HYPER MEMORIES](info:info("HYPER MEMORIES", "Cloudburst")) | CB | 11.8 |
+| 15 | [Moonflutter](info:info("Moonflutter", "Clear")) | CL | 11.7 |
+| 15 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit")) | CL | 11.7 |
+| 15 | [Brightened Demonios](info:info("Brightened Demonios", "Cloudburst")) | CB | 11.7 |
+| 18 | [KASANE](info:info("KASANE", "Cloudburst")) | CB | 11.6 |
+| 18 | [Threat - Metropolis](info:info("Threat - Metropolis", "Cloudburst")) | CB | 11.6 |
+| 18 | [Contrasty Angeles](info:info("Contrasty Angeles", "Cloudburst")) | CB | 11.6 |
 
 ---
 
