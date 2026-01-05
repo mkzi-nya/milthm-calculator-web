@@ -35,7 +35,7 @@ Sprinkle
 
 Cloudburst
 
-- 在《[雨之城](info:info("雨之城"))》[[CB](info:info("雨之城", "Cloudburst"))] 中达到S及以上评级解锁。
+- 在《[雨之城](info:info("雨之城"))》[[CB](info:info("雨之城", "Cloudburst"))] 难度中达到S及以上评级解锁。
 
 ## 曲目试听
 
