@@ -39,9 +39,9 @@ Cloudburst
 
 ## 曲目试听
 
-[【Bilibili】时落之雨 - Delos](https://b23.tv/SaPPL5H)
-[【Youtube】](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
-[【网易云音乐】](https://163cn.tv/Y8eGnE8)
+- [【Bilibili】时落之雨 - Delos](https://b23.tv/SaPPL5H)
+- [【Youtube】](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
+- [【网易云音乐】](https://163cn.tv/Y8eGnE8)
 
 ## 曲目相关
 
