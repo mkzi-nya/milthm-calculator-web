@@ -39,13 +39,13 @@ Cloudburst
 
 ## 曲目试听
 
-- [【Bilibili】时落之雨 - Delos](https://b23.tv/SaPPL5H)
-- [【Youtube】](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
-- [【网易云音乐】](https://163cn.tv/Y8eGnE8)
+- [【Bilibili】时落之雨](https://b23.tv/SaPPL5H)
+- [【Youtube】时落之雨](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
+- [【网易云音乐】时落之雨](https://163cn.tv/Y8eGnE8)
 
 ## 曲目相关
 
-- 该曲为《<ruby>魔法少女小圆<rt><ruby>魔法少女まどか☆マギカ<rt>まほうしょうじょ まどか☆マギカ</rt></ruby></rt></ruby>》中「<ruby>晓美焰<rt><ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby></rt></ruby>」的同人曲。
+- 该曲为《<ruby>[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)<rt><ruby>魔法少女まどか☆マギカ<rt>まほうしょうじょ まどか☆マギカ</rt></ruby></rt></ruby>》中「<ruby>[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)<rt><ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby></rt></ruby>」的同人曲。
 
 ## 游戏相关
 
