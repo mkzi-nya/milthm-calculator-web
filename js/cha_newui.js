@@ -1525,16 +1525,16 @@ async function downloadImage() {
     }
 
   });
-  if (maxConstant > 240) star = 114514;
-  else if (maxConstant > 200) star = 9;
-  else if (maxConstant > 180) star = 8;
-  else if (maxConstant > 160) star = 7;
-  else if (maxConstant > 140) star = 6;
-  else if (maxConstant > 120) star = 5;
-  else if (maxConstant > 100) star = 4;
-  else if (maxConstant > 12) star = 3;
-  else if (maxConstant > 9) star = 2;
-  else if (maxConstant > 6) star = 1;
+  if (maxConstant >= 240) star = 114514;
+  else if (maxConstant >= 200) star = 9;
+  else if (maxConstant >= 180) star = 8;
+  else if (maxConstant >= 160) star = 7;
+  else if (maxConstant >= 140) star = 6;
+  else if (maxConstant >= 120) star = 5;
+  else if (maxConstant >= 100) star = 4;
+  else if (maxConstant >= 12) star = 3;
+  else if (maxConstant >= 9) star = 2;
+  else if (maxConstant >= 6) star = 1;
 
   // 选择背景图：优先文件输入（自定义），否则随机选
   const bgInput = document.getElementById('bgImage');
