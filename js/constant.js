@@ -309,6 +309,12 @@ const constantsData = {
   "1d5f8908-4ce6-46d9-b61c-06cb406fb17d": [11.0, "CB", "LiFE Garden", , , , ,],
   "59af276a-3e2a-4c05-be72-2572cbdbae5c": [0.0, "CL", "LiFE Garden (Extended Mix)", , , , ,],
   "809946a4-eedd-4e06-b29d-6f6853a68250": [0.0, "SP", "LiFE Garden", , , , ,],
+  "8e590b72-8707-4dbb-bb50-b46ceef28217": [2.0, "DZ", "Polyridia", , , , ,],
+  "0046b267-be27-4b5c-9608-c1d08367c0e7": [5.8, "SK", "Polyridia", , , , ,],
+  "dee2aed5-9358-4679-afbd-70e953fce57a": [9.6, "CB", "Polyridia", , , , ,],
+  "027632b8-fcf0-4f29-9499-617d9c2c1306": [2.0, "DZ", "Ephemeric World", , , , ,],
+  "a55f41e2-a610-4f4e-aa8f-daf8269987dc": [6.3, "SK", "Ephemeric World", , , , ,],
+  "df81f1f6-eb27-470e-87bd-4f17508ffe62": [12.3, "CB", "Ephemeric World", , , , ,],
 };
 //解析出constant
 const constants = {},

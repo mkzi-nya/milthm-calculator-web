@@ -1,5 +1,4 @@
 import re
-import json
 from pathlib import Path
 
 MAP_JS = Path("../map.js")
@@ -8,81 +7,103 @@ OUT_MD = Path("./index.md")
 # ---------------- utils ----------------
 
 def parse_map_js(text: str):
-    """
-    解析：
-    export const songMap = {
-      "Key": ["Original", ...],
-    };
-    """
     obj = {}
-
-    # 提取 "key": [ ... ]
-    pattern = re.compile(
-        r'"([^"]+)"\s*:\s*\[(.*?)\]',
-        re.S
-    )
+    pattern = re.compile(r'"([^"]+)"\s*:\s*\[(.*?)\]', re.S)
 
     for key, arr in pattern.findall(text):
-        # 只解析数组第一个字符串（original）
         m = re.search(r'"([^"]+)"', arr)
         if not m:
             continue
-        original = m.group(1)
-        obj[key] = original
+        obj[key] = m.group(1)
 
     return obj
 
 
 def char_group(s: str):
-    """
-    返回排序优先级 + 辅助排序 key
-    """
     if not s:
         return (99, "")
-
     c = s[0]
 
-    # 1. 大写字母
     if "A" <= c <= "Z":
         return (0, s)
-
-    # 2. 小写字母
     if "a" <= c <= "z":
         return (1, s)
 
     code = ord(c)
-
-    # 3. 日文（假名 + 常用汉字范围）
     if (
-        0x3040 <= code <= 0x309F or  # Hiragana
-        0x30A0 <= code <= 0x30FF or  # Katakana
+        0x3040 <= code <= 0x309F or
+        0x30A0 <= code <= 0x30FF or
         0x31F0 <= code <= 0x31FF or
         0xFF66 <= code <= 0xFF9D
     ):
         return (2, s)
 
-    # 4. 中文（CJK Unified Ideographs）
     if 0x4E00 <= code <= 0x9FFF:
         return (3, s)
 
-    # 5. 其他符号
     return (4, s)
+
+
+def extract_existing_keys(md_text: str):
+    """
+    从「所有曲目」章节中提取已有的 q=xxx
+    """
+    keys = set()
+
+    in_song_section = False
+    for line in md_text.splitlines():
+        if line.startswith("# 所有曲目"):
+            in_song_section = True
+            continue
+        if in_song_section and line.startswith("# "):
+            break
+
+        m = re.search(r"\(\./\?q=([^)]+)\)", line)
+        if in_song_section and m:
+            keys.add(m.group(1))
+
+    return keys
 
 
 # ---------------- main ----------------
 
-text = MAP_JS.read_text(encoding="utf-8")
-song_map = parse_map_js(text)
+md_text = OUT_MD.read_text(encoding="utf-8")
+existing_keys = extract_existing_keys(md_text)
 
-items = list(song_map.items())  # (key, original)
+song_map = parse_map_js(MAP_JS.read_text(encoding="utf-8"))
+items = [(k, v) for k, v in song_map.items() if k not in existing_keys]
+
+# 没有新歌直接退出
+if not items:
+    print("✓ 没有需要新增的曲目")
+    exit(0)
 
 items.sort(key=lambda kv: char_group(kv[1]))
+new_lines = [f"- [{v}](./?q={k})" for k, v in items]
 
-lines = ["# 所有曲目", ""]
+# 插入到「所有曲目」章节末尾
+out_lines = []
+inserted = False
+in_song_section = False
 
-for key, original in items:
-    lines.append(f"- [{original}](./?q={key})")
+for line in md_text.splitlines():
+    if line.startswith("# 所有曲目"):
+        in_song_section = True
+        out_lines.append(line)
+        continue
 
-OUT_MD.write_text("\n".join(lines), encoding="utf-8")
+    if in_song_section and line.startswith("# ") and not inserted:
+        out_lines.append("")
+        out_lines.extend(new_lines)
+        inserted = True
+        in_song_section = False
 
-print(f"✓ 已生成 {OUT_MD}")
+    out_lines.append(line)
+
+# 文件结尾仍在「所有曲目」里
+if in_song_section and not inserted:
+    out_lines.append("")
+    out_lines.extend(new_lines)
+
+OUT_MD.write_text("\n".join(out_lines), encoding="utf-8")
+print(f"✓ 已新增 {len(new_lines)} 条曲目")

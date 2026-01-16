@@ -2777,6 +2777,60 @@
   "chartersList" : [ "Magazet", "Kiyotsuki" ],
   "tags" : [ "Elsorhg", "Exut", "Fl00t", "Kiyotsuki", "Magazet", "Magazet + Kiyotsuki", "background-white", "character", "color-cool", "float", "future", "glass", "hair-blue", "mood-energetic", "motion-dynamic", "notanote", "text-stylized", "十返清月" ]
 }, {
+  "id" : "027632b8-fcf0-4f29-9499-617d9c2c1306",
+  "title" : "Ephemeric World",
+  "titleCulture" : "en",
+  "latinTitle" : "Ephemeric World",
+  "bpmInfo" : [ {
+    "start" : 0.001,
+    "bpm" : 200.0
+  } ],
+  "artist" : "t404_null",
+  "artistsList" : [ "t404:null" ],
+  "illustrator" : [ "HiROKAZE" ],
+  "illustratorsList" : [ "HiROKAZE" ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Kiyotsuki",
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "Ephemeric World", "HiROKAZE", "Kiyotsuki", "abstract", "blue", "chaotic", "cyberpunk", "digital art", "electronic", "glitch art", "globe", "hud", "shattered glass", "t404_null", "typography", "十返清月" ]
+}, {
+  "id" : "a55f41e2-a610-4f4e-aa8f-daf8269987dc",
+  "title" : "Ephemeric World",
+  "titleCulture" : "en",
+  "latinTitle" : "Ephemeric World",
+  "bpmInfo" : [ {
+    "start" : 0.001,
+    "bpm" : 200.0
+  } ],
+  "artist" : "t404_null",
+  "artistsList" : [ "t404:null" ],
+  "illustrator" : [ "HiROKAZE" ],
+  "illustratorsList" : [ "HiROKAZE" ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Kiyotsuki",
+  "chartersList" : [ "Kiyotsuki" ],
+  "tags" : [ "Ephemeric World", "HiROKAZE", "Kiyotsuki", "abstract", "blue", "chaotic", "cyberpunk", "digital art", "electronic", "glitch art", "globe", "hud", "shattered glass", "t404_null", "typography", "十返清月" ]
+}, {
+  "id" : "df81f1f6-eb27-470e-87bd-4f17508ffe62",
+  "title" : "Ephemeric World",
+  "titleCulture" : "en",
+  "latinTitle" : "Ephemeric World",
+  "bpmInfo" : [ {
+    "start" : 0.001,
+    "bpm" : 200.0
+  } ],
+  "artist" : "t404_null",
+  "artistsList" : [ "t404:null" ],
+  "illustrator" : [ "HiROKAZE" ],
+  "illustratorsList" : [ "HiROKAZE" ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Matrix///Blanchet",
+  "chartersList" : [ "树穴猪" ],
+  "tags" : [ "Ephemeric World", "HiROKAZE", "Matrix///Blanchet", "abstract", "blue", "chaotic", "cyberpunk", "digital art", "electronic", "glitch art", "globe", "hud", "shattered glass", "t404_null", "typography", "树穴猪" ]
+}, {
   "id" : "b2594118-dcf5-4750-9e57-e4eeef6142fe",
   "title" : "时落之雨",
   "titleCulture" : "zh-Hans-CN:zh-Hant-TW:yue-Hant-mo",
@@ -5158,6 +5212,267 @@
   "charter" : "2024.11.17",
   "chartersList" : [ "Magazet" ],
   "tags" : [ "1st anniversary", "2024.11.17", "Magazet", "Pieces of the Cycle", "TsukiP", "blue sky", "character", "clouds", "dreamy", "dress", "ethereal", "fantasy", "female", "floating", "flowers", "long hair", "luvia", "motion", "pastel colors", "petal", "ribbon", "serene", "shui mu xi", "springtime", "vibrant", "サイクルの欠片", "水沐汐" ]
+}, {
+  "id" : "dee2aed5-9358-4679-afbd-70e953fce57a",
+  "title" : "Polyridia",
+  "titleCulture" : "en",
+  "latinTitle" : "Polyridia",
+  "bpmInfo" : [ {
+    "start" : 1.0422294,
+    "bpm" : 170.0
+  }, {
+    "start" : 3.5128176,
+    "bpm" : 170.0
+  }, {
+    "start" : 6.336347,
+    "bpm" : 170.0
+  }, {
+    "start" : 8.806935,
+    "bpm" : 170.0
+  }, {
+    "start" : 11.630465,
+    "bpm" : 170.0
+  }, {
+    "start" : 14.101053,
+    "bpm" : 170.0
+  }, {
+    "start" : 16.924582,
+    "bpm" : 170.0
+  }, {
+    "start" : 19.39517,
+    "bpm" : 170.0
+  }, {
+    "start" : 22.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 32.10105,
+    "bpm" : 170.0
+  }, {
+    "start" : 34.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 43.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 49.395172,
+    "bpm" : 170.0
+  }, {
+    "start" : 66.689285,
+    "bpm" : 170.0
+  }, {
+    "start" : 68.80694,
+    "bpm" : 170.0
+  }, {
+    "start" : 81.159874,
+    "bpm" : 170.0
+  }, {
+    "start" : 83.983406,
+    "bpm" : 170.0
+  }, {
+    "start" : 86.453995,
+    "bpm" : 170.0
+  }, {
+    "start" : 89.27753,
+    "bpm" : 170.0
+  }, {
+    "start" : 91.748116,
+    "bpm" : 170.0
+  }, {
+    "start" : 94.57164,
+    "bpm" : 170.0
+  }, {
+    "start" : 97.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 99.86576,
+    "bpm" : 170.0
+  }, {
+    "start" : 102.33635,
+    "bpm" : 170.0
+  } ],
+  "artist" : "Rigel Wired",
+  "artistsList" : [ "Rigel Wired" ],
+  "illustrator" : [ "" ],
+  "illustratorsList" : [ ],
+  "difficulty" : "Cloudburst",
+  "difficultyValue" : 0.0,
+  "charter" : "Icier feat. Eric",
+  "chartersList" : [ "Icier", "Eric_Lian" ],
+  "tags" : [ "Eric_Lian", "ExerciseBook", "Icier", "Icier feat. Eric", "Polyridia", "Rigel Wired", "anime", "blue eyes", "braids", "cute", "dreamy", "girl", "light blue hair", "magical", "pastel", "reaching hand", "stars", "swirls", "超级练习册" ]
+}, {
+  "id" : "0046b267-be27-4b5c-9608-c1d08367c0e7",
+  "title" : "Polyridia",
+  "titleCulture" : "en",
+  "latinTitle" : "Polyridia",
+  "bpmInfo" : [ {
+    "start" : 1.0422294,
+    "bpm" : 170.0
+  }, {
+    "start" : 3.5128176,
+    "bpm" : 170.0
+  }, {
+    "start" : 6.336347,
+    "bpm" : 170.0
+  }, {
+    "start" : 8.806935,
+    "bpm" : 170.0
+  }, {
+    "start" : 11.630465,
+    "bpm" : 170.0
+  }, {
+    "start" : 14.101053,
+    "bpm" : 170.0
+  }, {
+    "start" : 16.924582,
+    "bpm" : 170.0
+  }, {
+    "start" : 19.39517,
+    "bpm" : 170.0
+  }, {
+    "start" : 22.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 32.10105,
+    "bpm" : 170.0
+  }, {
+    "start" : 34.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 43.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 49.395172,
+    "bpm" : 170.0
+  }, {
+    "start" : 66.689285,
+    "bpm" : 170.0
+  }, {
+    "start" : 68.80694,
+    "bpm" : 170.0
+  }, {
+    "start" : 81.159874,
+    "bpm" : 170.0
+  }, {
+    "start" : 83.983406,
+    "bpm" : 170.0
+  }, {
+    "start" : 86.453995,
+    "bpm" : 170.0
+  }, {
+    "start" : 89.27753,
+    "bpm" : 170.0
+  }, {
+    "start" : 91.748116,
+    "bpm" : 170.0
+  }, {
+    "start" : 94.57164,
+    "bpm" : 170.0
+  }, {
+    "start" : 97.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 99.86576,
+    "bpm" : 170.0
+  }, {
+    "start" : 102.33635,
+    "bpm" : 170.0
+  } ],
+  "artist" : "Rigel Wired",
+  "artistsList" : [ "Rigel Wired" ],
+  "illustrator" : [ "" ],
+  "illustratorsList" : [ ],
+  "difficulty" : "Sprinkle",
+  "difficultyValue" : 0.0,
+  "charter" : "Ariayaka",
+  "chartersList" : [ "Ariayaka" ],
+  "tags" : [ "Ariayaka", "Polyridia", "Rigel Wired", "anime", "blue eyes", "braids", "cute", "dreamy", "girl", "light blue hair", "magical", "pastel", "reaching hand", "stars", "swirls" ]
+}, {
+  "id" : "8e590b72-8707-4dbb-bb50-b46ceef28217",
+  "title" : "Polyridia",
+  "titleCulture" : "en",
+  "latinTitle" : "Polyridia",
+  "bpmInfo" : [ {
+    "start" : 1.0422294,
+    "bpm" : 170.0
+  }, {
+    "start" : 3.5128176,
+    "bpm" : 170.0
+  }, {
+    "start" : 6.336347,
+    "bpm" : 170.0
+  }, {
+    "start" : 8.806935,
+    "bpm" : 170.0
+  }, {
+    "start" : 11.630465,
+    "bpm" : 170.0
+  }, {
+    "start" : 14.101053,
+    "bpm" : 170.0
+  }, {
+    "start" : 16.924582,
+    "bpm" : 170.0
+  }, {
+    "start" : 19.39517,
+    "bpm" : 170.0
+  }, {
+    "start" : 22.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 32.10105,
+    "bpm" : 170.0
+  }, {
+    "start" : 34.2187,
+    "bpm" : 170.0
+  }, {
+    "start" : 43.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 49.395172,
+    "bpm" : 170.0
+  }, {
+    "start" : 66.689285,
+    "bpm" : 170.0
+  }, {
+    "start" : 68.80694,
+    "bpm" : 170.0
+  }, {
+    "start" : 81.159874,
+    "bpm" : 170.0
+  }, {
+    "start" : 83.983406,
+    "bpm" : 170.0
+  }, {
+    "start" : 86.453995,
+    "bpm" : 170.0
+  }, {
+    "start" : 89.27753,
+    "bpm" : 170.0
+  }, {
+    "start" : 91.748116,
+    "bpm" : 170.0
+  }, {
+    "start" : 94.57164,
+    "bpm" : 170.0
+  }, {
+    "start" : 97.04223,
+    "bpm" : 170.0
+  }, {
+    "start" : 99.86576,
+    "bpm" : 170.0
+  }, {
+    "start" : 102.33635,
+    "bpm" : 170.0
+  } ],
+  "artist" : "Rigel Wired",
+  "artistsList" : [ "Rigel Wired" ],
+  "illustrator" : [ "" ],
+  "illustratorsList" : [ ],
+  "difficulty" : "Drizzle",
+  "difficultyValue" : 0.0,
+  "charter" : "Ariayaka",
+  "chartersList" : [ "Ariayaka" ],
+  "tags" : [ "Ariayaka", "Polyridia", "Rigel Wired", "anime", "blue eyes", "braids", "cute", "dreamy", "girl", "light blue hair", "magical", "pastel", "reaching hand", "stars", "swirls" ]
 }, {
   "id" : "03b883cf-f28b-4e33-8f67-d3bcb1a74719",
   "title" : "Psyched Fevereiro",
