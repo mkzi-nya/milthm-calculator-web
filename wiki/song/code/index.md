@@ -17,6 +17,7 @@
 - [Dogbite](./?q=Dogbite)
 - [Dum! Dum!! Dum!!!](./?q=Dum_Dum_Dum)
 - [Elsorhg](./?q=Elsorhg)
+- [Ephemeric World](./?q=Ephemeric_World)
 - [FULi AUTO SHOOTER](./?q=FULi_AUTO_SHOOTER)
 - [Fantasia Sonata Arcadia](./?q=Fantasia_Sonata_Arcadia)
 - [Fantasia Sonata Botanical Garden](./?q=Fantasia_Sonata_Botanical_Garden)
@@ -51,6 +52,7 @@
 - [Oiiaioooooiai](./?q=Oiiaioooooiai)
 - [Oniichan](./?q=Oniichan)
 - [OverRain](./?q=OverRain)
+- [Polyridia](./?q=Polyridia)
 - [Psyched Fevereiro](./?q=Psyched_Fevereiro)
 - [Pthahnil](./?q=Pthahnil)
 - [Rainbow Flavor!](./?q=Rainbow_Flavor)
@@ -102,7 +104,6 @@
 - [靈](./?q=Rei)
 - [驟雨の狭間](./?q=Rainshower)
 - [☹](./?q=Blueface)
-
 # 章节目录
 - [介绍: 天气预报](./?q=weather_report)
 - [序章: 雨的声音](./?q=rainfall_sounds)
@@ -112,4 +113,3 @@
 - [联动: Notanote](./?q=notanote)
 - [单曲: 梦境磁带](./?q=dream_tape)
 - [单曲: 露晓卉庭](./?q=gathering_blossoms_under_rain)
-
