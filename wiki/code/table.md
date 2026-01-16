@@ -170,6 +170,8 @@
 | [Fluorescent Light](info:info("Fluorescent Light"))           | [2.0](info:info("Fluorescent Light", "Drizzle"))  | [6.2](info:info("Fluorescent Light", "Sprinkle"))  | [9.6](info:info("Fluorescent Light", "Cloudburst"))  | -    |
 | [Autumn Rain](info:info("Virtual S0da"))           | [3.0](info:info("Autumn Rain", "Drizzle"))  | [6.4](info:info("Autumn Rain", "Sprinkle"))  | [10.1](info:info("Autumn Rain", "Cloudburst"))  | -    |
 | [Pthahnil](info:info("Pthahnil"))           | [2.0](info:info("Pthahnil", "Drizzle"))  | [7.0](info:info("Pthahnil", "Sprinkle"))  | [10.7](info:info("Pthahnil", "Cloudburst"))  | -    |
+| [Polyridia](info:info("Polyridia")) | [2.0](info:info("Polyridia", "Drizzle")) | [5.8](info:info("Polyridia", "Sprinkle")) | [9.6](info:info("Polyridia", "Cloudburst")) | - |
+| [Ephemeric World](info:info("Ephemeric World")) | [2.0](info:info("Ephemeric World", "Drizzle")) | [6.3](info:info("Ephemeric World", "Sprinkle")) | [12.3](info:info("Ephemeric World", "Cloudburst")) | - |
 
 ---
 
