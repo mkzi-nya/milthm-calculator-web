@@ -28,7 +28,10 @@
 
 ## 曲目试听
 
-[【Bilibili】Brightened Demonios - HLxQ.v.M](https://www.bilibili.com/video/BV1qk3Xz9Ez4)
+- [【Bilibili】](https://www.bilibili.com/video/BV1qk3Xz9Ez4)
+<div style="position: relative; width: 50%;aspect-ratio: 16 / 9;">
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&aid=114799794983629&bvid=BV1qk3Xz9Ez4&cid=30865229129&p=1" frameborder="no" scrolling="no"></iframe>
+</div>
 
 ## 曲目相关
 

@@ -39,13 +39,18 @@ Cloudburst
 
 ## 曲目试听
 
-- [【Bilibili】时落之雨](https://b23.tv/SaPPL5H)
-- [【Youtube】时落之雨](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
-- [【网易云音乐】时落之雨](https://163cn.tv/Y8eGnE8)
+- [【Bilibili】](https://b23.tv/SaPPL5H)
+<div style="position: relative; width: 50%;aspect-ratio: 16 / 9;">
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&aid=113520616214448&bvid=BV1uyUDYdEXx&cid=26877887693&p=1" frameborder="no" scrolling="no"></iframe>
+</div>
+
+- [【Youtube】](https://youtu.be/CSTuEIh61wc?si=lEOrd0CBQ0leBTXd)
+- [【网易云音乐】](https://163cn.tv/Y8eGnE8)
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=528404572&auto=0&height=66"></iframe>
 
 ## 曲目相关
 
-- 该曲为《<ruby>[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)<rt><ruby>魔法少女まどか☆マギカ<rt>まほうしょうじょ まどか☆マギカ</rt></ruby></rt></ruby>》中「<ruby>[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)<rt><ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby></rt></ruby>」的同人曲。
+- 该曲为《[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)》(<ruby>魔法少女まどか☆マギカ<rt>まほうしょうじょ まどか☆マギカ</rt></ruby>)中「<ruby>[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)<rt><ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby></rt></ruby>」的同人曲。
 
 ## 游戏相关
 

@@ -29,7 +29,10 @@
 
 ## 曲目试听
 
-- [【Bilibili】雨之城 - CsLrisEto](https://b23.tv/1epDi4K)
+- [【Bilibili】](https://b23.tv/1epDi4K)
+<div style="position: relative; width: 50%;aspect-ratio: 16 / 9;">
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&aid=821015472&bvid=BV1f34y1f7dX&cid=987734894&p=1" frameborder="no" scrolling="no"></iframe>
+</div>
 
 ## 曲目相关
 
