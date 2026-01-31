@@ -5,6 +5,8 @@
 > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
 
+# Curse of 14
+
 ## 曲目信息
 | 曲名 | [Curse of 14](info:info("Curse of 14")) |
 | - | - |
