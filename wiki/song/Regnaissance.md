@@ -36,6 +36,10 @@
 
 ## 曲目试听
 - [【Bilibili】](https://www.bilibili.com/video/BV1WZ421N7VM/)
+<div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
+<iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1WZ421N7VM&p=1"rameborder="no"scrolling="no"></iframe>
+</div>
+
 - [【Youtube】](https://youtu.be/MHDKdyw3jJ8)
 
 ## 曲目相关

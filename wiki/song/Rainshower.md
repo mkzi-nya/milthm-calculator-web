@@ -29,6 +29,10 @@
 ## 曲目试听
 
 - [【Bilibili】](https://b23.tv/XTHKBV6)
+<div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
+<iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1b44y187L1&p=1"rameborder="no"scrolling="no"></iframe>
+</div>
+
 - [【Youtube】](https://youtu.be/tLL8cqRmaNE)
 - SoundCloud
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A757598539&color=15469a"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/silentrm-net" title="Silentroom" target="_blank" style="color: #cccccc; text-decoration: none;">Silentroom</a> · <a href="https://soundcloud.com/silentrm-net/shuu-no-hazama" title="驟雨の狭間 [Rainshower]" target="_blank" style="color: #cccccc; text-decoration: none;">驟雨の狭間 [Rainshower]</a></div>
