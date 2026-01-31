@@ -50,7 +50,7 @@ Cloudburst
 
 ## 曲目相关
 
-- 该曲为《[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)》(<ruby>魔法少女<rt>まほうしょうじょ </rt></ruby>まどか☆マギカ)中「<ruby>[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)<rt><ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby></rt></ruby>」的同人曲。
+- 该曲为《[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)》(<ruby>魔法少女<rt>まほうしょうじょ </rt></ruby>まどか☆マギカ)中「[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)(<ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby>)」的同人曲。
 
 ## 游戏相关
 
