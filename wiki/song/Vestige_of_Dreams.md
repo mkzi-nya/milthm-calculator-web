@@ -29,7 +29,7 @@
 
 ## 曲目试听
 
-[【Bilibili】Vestige of Dreams - DRIVE.](https://www.bilibili.com/video/BV1mCZBYgEAo)
+- [【Bilibili】](https://www.bilibili.com/video/BV1mCZBYgEAo)
 
 ## 曲目相关
 

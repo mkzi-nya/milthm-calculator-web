@@ -32,7 +32,7 @@
 
 ## 曲目试听
 
-[【Bilibili】Fantasia Sonata Arcadia - PYKAMIA](https://www.bilibili.com/video/BV1oyJBzvE3K/?spm_id_from=333.337.search-card.all.click)
+- [【Bilibili】](https://www.bilibili.com/video/BV1oyJBzvE3K/)
 
 ## 曲目相关
 

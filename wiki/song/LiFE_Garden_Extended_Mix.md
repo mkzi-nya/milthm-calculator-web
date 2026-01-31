@@ -31,7 +31,7 @@
 
 ## 曲目试听
 
-[【Bilibili】LiFE Garden (Extended Mix) - Yooh](https://www.bilibili.com/video/BV1vX4y187dK)
+- [【Bilibili】](https://www.bilibili.com/video/BV1vX4y187dK)
 
 ## 曲目相关
 

@@ -35,8 +35,8 @@
 特别地，本曲目的CL难度在CB难度取得S评级才会解锁。
 
 ## 曲目试听
-- [【Bilibili】Regnaissance - AiSS vs. Abit](https://www.bilibili.com/video/BV1WZ421N7VM/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
-- [【Youtube】](https://youtu.be/MHDKdyw3jJ8?si=QPcvEPqE6Z7E3R6R)
+- [【Bilibili】](https://www.bilibili.com/video/BV1WZ421N7VM/)
+- [【Youtube】](https://youtu.be/MHDKdyw3jJ8)
 
 ## 曲目相关
 - 本曲目为 Milthm 原创曲。

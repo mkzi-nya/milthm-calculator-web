@@ -24,7 +24,7 @@
 
 ## 曲目试听
 
-- [【【Artcore for HARCA】Rigel_Wired - Polyridia-哔哩哔哩](https://b23.tv/sv7hl27)
+- [【【Artcore for HARCA】](https://b23.tv/sv7hl27)
 
 
 ## 曲目相关

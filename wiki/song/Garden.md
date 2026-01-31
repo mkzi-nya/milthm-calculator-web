@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-[【Bilibili】Garden (Full ver.) - NceS & All_Life_X & AiSS](https://b23.tv/lPKrJlM)
+- [【Bilibili】](https://b23.tv/lPKrJlM)
 
 ## 曲目相关
 

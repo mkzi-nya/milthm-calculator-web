@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-[【Bilibili】Fantasia Sonata Botanical Garden - PYKAMIA](https://www.bilibili.com/video/BV1ZxxxzDEec)
+- [【Bilibili】](https://www.bilibili.com/video/BV1ZxxxzDEec)
 
 ## 曲目相关
 

@@ -31,7 +31,7 @@
 
 ## 曲目试听
 
-[【Bilibili】Myth compiler - 溝口ゆうま feat. 大瀬良あい](https://www.bilibili.com/video/BV1BrJBzqEEM)
+- [【Bilibili】](https://www.bilibili.com/video/BV1BrJBzqEEM)
 
 ## 曲目相关
 

@@ -28,8 +28,8 @@
 
 ## 曲目试听
 
-- [【Bilibili】粗线条的雨 - 有棵里里](https://www.bilibili.com/video/BV1oV4y1J7N4/?spm_id_from=333.337.search-card.all.click&vd_source=5b3e79ab92787fc9811abb3777741746)
-- [【Youtube】](https://youtu.be/QRI00cGcIdU?si=CBMpob53j0TWUe7X)
+- [【Bilibili】](https://www.bilibili.com/video/BV1oV4y1J7N4/)
+- [【Youtube】](https://youtu.be/QRI00cGcIdU)
 
 ## 歌词
 
