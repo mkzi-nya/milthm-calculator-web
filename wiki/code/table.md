@@ -36,7 +36,7 @@
 | 2 | [命日](info:info("命日", "Clear")) | CL | 12.7 |
 | 3 | [Contrasty Angeles](info:info("Contrasty Angeles", "Clear")) | CL | 12.5 |
 | 4 | [大月墜落狂想](info:info("大月墜落狂想", "Cloudburst")) | CB | 12.4 |
-| 5 | [Ephemeric World](info:info("Ephemeric World", "Cloudburst")) | 12.3 |
+| 5 | [Ephemeric World](info:info("Ephemeric World", "Cloudburst")) | CB | 12.3 |
 | 6 | [Regnaissance](info:info("Regnaissance", "Clear")) | CL | 12.1 |
 | 6 | [Innocent white](info:info("Innocent white", "Cloudburst")) | CB | 12.1 |
 | 6 | [Splash the Beat!!](info:info("Splash the Beat!!", "Cloudburst")) | CB | 12.1 |
