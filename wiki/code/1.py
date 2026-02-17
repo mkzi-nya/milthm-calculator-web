@@ -39,6 +39,9 @@ def main():
     chartdev = os.path.join(CUR_DIR, "chartdev.py")
     if os.path.isfile(chartdev):
         subprocess.run(["python3", chartdev], check=False)
+    charter = os.path.join(CUR_DIR, "charter.py")
+    if os.path.isfile(charter):
+        subprocess.run(["python3", charter], check=False)
 
 if __name__ == "__main__":
     main()
