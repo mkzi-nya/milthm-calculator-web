@@ -315,6 +315,13 @@ const constantsData = {
   "027632b8-fcf0-4f29-9499-617d9c2c1306": [2.0, "DZ", "Ephemeric World", , , , ,],
   "a55f41e2-a610-4f4e-aa8f-daf8269987dc": [6.3, "SK", "Ephemeric World", , , , ,],
   "df81f1f6-eb27-470e-87bd-4f17508ffe62": [12.3, "CB", "Ephemeric World", , , , ,],
+  "b16c2048-9a8b-49b0-808d-d2b220cab206": [3.0, "DZ", "Habitable Zone", , , , ,],
+  "1b392653-c814-4bca-804e-e520f65f2dcc": [8.5, "SK", "Habitable Zone", , , , ,],
+  "490932e6-484e-495d-98c3-2db660223f3f": [11.0, "CB", "Habitable Zone", , , , ,],
+  "0a4a79f4-5d5e-4b15-bf7a-9dec166d28b2": [2.5, "DZ", "烽閻鸞錵", , , , ,],
+  "74e0fc4b-5d08-40ba-bff1-48a0bbf86e15": [9.3, "SK", "烽閻鸞錵", , , , ,],
+  "2b837dbd-4892-42db-ba54-7d4b0bfa8531": [11.9, "CB", "烽閻鸞錵", , , , ,],
+
 };
 //解析出constant
 const constants = {},
