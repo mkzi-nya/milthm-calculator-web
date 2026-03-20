@@ -8,6 +8,7 @@
 |-|-|
 | 10lulu | [大月墜落狂想](info:info("大月墜落狂想")) |
 | A-39 | [WATER](info:info("WATER")) |
+| ADA | [Habitable Zone](info:info("Habitable Zone")) |
 | AiSS | [Agnostic](info:info("Agnostic")),<br>[Garden](info:info("Garden")),<br>[Pthahnil](info:info("Pthahnil")),<br>[Regnaissance](info:info("Regnaissance")) |
 | All_Life_X | [Garden](info:info("Garden")) |
 | Amberry | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |
@@ -25,6 +26,7 @@
 | DRIVE. | [Vestige of Dreams](info:info("Vestige of Dreams")) |
 | Euphem1a. | [apOapSis(Edit)](info:info("apOapSisEdit")) |
 | Fl00t | [Elsorhg](info:info("Elsorhg")) |
+| gmtn. | [furioso melodia](info:info("furioso melodia")) |
 | Gray Planet | [☹](info:info("☹")) |
 | Halv | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |
 | HLxQ.v.M | [Brightened Demonios](info:info("Brightened Demonios")),<br>[Contrasty Angeles](info:info("Contrasty Angeles")) |
@@ -36,6 +38,7 @@
 | Katie | [IN](info:info("IN")) |
 | Kirara Magic | [花月](info:info("花月")) |
 | Kuroe | [Hikari](info:info("Hikari")) |
+| Lalot | [烽閻鸞錵](info:info("烽閻鸞錵")) |
 | LeaF | [Aleph-0](info:info("Aleph-0")),<br>[命日](info:info("命日")) |
 | Lydia Esrig | [Bio-Engineering](info:info("Bio-Engineering")),<br>[Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")),<br>[White Lizard](info:info("White Lizard")) |
 | ME_DD | [はんてん](info:info("はんてん")) |
@@ -46,14 +49,17 @@
 | Nastram | [Moving On](info:info("Moving On")) |
 | NceS | [Garden](info:info("Garden")) |
 | Nerovix | [Virtual S0da](info:info("Virtual S0da")) |
+| Night Yard | [烽閻鸞錵](info:info("烽閻鸞錵")) |
+| Noir-D | [逆飛雨](info:info("逆飛雨")) |
 | Otokaze | [ホシフルヨルニ](info:info("ホシフルヨルニ")) |
-| PYKAMIA | [Fantasia Sonata Arcadia](info:info("Fantasia Sonata Arcadia")),<br>[Fantasia Sonata Botanical Garden](info:info("Fantasia Sonata Botanical Garden")),<br>[Fantasia Sonata God Dance](info:info("Fantasia Sonata God Dance")),<br>[Fantasia Sonata Hope](info:info("Fantasia Sonata Hope")),<br>[Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")),<br>[Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")),<br>[Fantasia Sonata Stars](info:info("Fantasia Sonata Stars")),<br>[白虎蓮華](info:info("白虎蓮華")) |
+| PYKAMIA | [Fantasia Sonata Arcadia](info:info("Fantasia Sonata Arcadia")),<br>[Fantasia Sonata Botanical Garden](info:info("Fantasia Sonata Botanical Garden")),<br>[Fantasia Sonata God Dance](info:info("Fantasia Sonata God Dance")),<br>[Fantasia Sonata Hope](info:info("Fantasia Sonata Hope")),<br>[Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")),<br>[Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")),<br>[Fantasia Sonata Stars](info:info("Fantasia Sonata Stars")),<br>[Fantasia Sonata Surmount Vanity Aufleben](info:info("Fantasia Sonata Surmount Vanity Aufleben")),<br>[白虎蓮華](info:info("白虎蓮華")) |
 | R -TOP | [Curse of 14](info:info("Curse of 14")) |
 | Reku Mochizuki | [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope")),<br>[Moonflutter](info:info("Moonflutter")) |
 | Reo | [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai")) |
 | Rigel Wired | [Polyridia](info:info("Polyridia")) |
 | RyosU | [暮予星光](info:info("暮予星光")) |
 | Salty Salt | [HYPER MEMORIES](info:info("HYPER MEMORIES")) |
+| sdklmr | [瑠璃色](info:info("瑠璃色")) |
 | ShooTinGStaR | [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor Milthm Edit")),<br>[Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 Milthm Edit")) |
 | Silentroom | [驟雨の狭間](info:info("驟雨の狭間")) |
 | siromaru | [conflict](info:info("conflict")) |
@@ -93,5 +99,6 @@
 | むさぬりゆ | [cafe in 6412I731V](info:info("cafe in 6412I731V")) |
 | テヅカ | [ニニ (feat. Qayo & mii)](info:info("ニニ feat. Qayo & mii")) |
 | ヒトリ | [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai")) |
+| ルゼ | [Fantasia Sonata Surmount Vanity Aufleben](info:info("Fantasia Sonata Surmount Vanity Aufleben")) |
 
 </div>

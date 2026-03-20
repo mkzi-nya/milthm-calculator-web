@@ -321,7 +321,18 @@ const constantsData = {
   "0a4a79f4-5d5e-4b15-bf7a-9dec166d28b2": [2.5, "DZ", "烽閻鸞錵", , , , ,],
   "74e0fc4b-5d08-40ba-bff1-48a0bbf86e15": [9.3, "SK", "烽閻鸞錵", , , , ,],
   "2b837dbd-4892-42db-ba54-7d4b0bfa8531": [11.9, "CB", "烽閻鸞錵", , , , ,],
-
+  "36b19d1e-eba2-40a6-bf81-b6a4466b56be": [2.0, "DZ", "Fantasia Sonata Surmount Vanity Aufleben", , , , ,],
+  "c52c18e3-7579-4608-8e7f-b3b873eddfdd": [9.0, "SK", "Fantasia Sonata Surmount Vanity Aufleben", , , , ,],
+  "2026a2ce-b846-4a2a-8dfd-2da0ef02d713": [12.2, "CB", "Fantasia Sonata Surmount Vanity Aufleben", , , , ,],
+  "5bf7cb40-f40b-4ed6-9c4f-788fd0a7011c": [2.0, "DZ", "逆飛雨", , , , ,],
+  "dd91dc34-c5f2-40e0-a808-4d6f977b3860": [7.7, "SK", "逆飛雨", , , , ,],
+  "4f1bc47d-aa5a-4b91-b3ad-f237f28eca16": [11.3, "CB", "逆飛雨", , , , ,],
+  "2031d629-621a-4af8-849a-e713fac031fc": [3.5, "DZ", "瑠璃色", , , , ,],
+  "001f7fdf-9340-441a-8199-8540334bbca0": [9.9, "SK", "瑠璃色", , , , ,],
+  "6a732e7d-7392-463d-9c7e-a77afe4dd6de": [11.8, "CB", "瑠璃色", , , , ,],
+  "cce9858d-bf0a-47b4-9150-4efd8ef71366": [2.0, "DZ", "furioso melodia", , , , ,],
+  "fee664eb-ec20-4620-bb95-33576965dfc5": [6.8, "SK", "furioso melodia", , , , ,],
+  "d2d55ec2-8138-4273-9e0a-01b81b534a63": [10.8, "CB", "furioso melodia", , , , ,],
 };
 //解析出constant
 const constants = {},
