@@ -1,0 +1,46 @@
+[返回目录](./)
+
+> 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
+> 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
+> 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
+
+
+# KAEDE
+
+<div class="wiki-img">
+  <img src="../../resources/avif/KAEDE.avif">
+</div>
+
+## 曲目信息
+| 曲名 | [KAEDE](info:info("KAEDE")) |
+| - | - |
+| 拉丁文曲名 | KAEDE |
+| 曲师 | Ocelot |
+| 曲绘 | Ether-0 |
+| 所属曲包 | (待补充) |
+| 更新版本 | (待补充) |
+| 时长 | (待补充) |
+| BPM | 177 |
+
+## 谱面信息
+| 难度 | [Special](info:info("KAEDE", "Special")) |
+| - | - |
+| 等级 | 0 (0.0) |
+| 谱师 | Milthm Team |
+| Note数量 | - |
+
+## 解锁方法
+
+(待补充)
+
+## 曲目试听
+
+(待补充)
+
+## 曲目相关
+
+(待补充)
+
+## 游戏相关
+
+(待补充)

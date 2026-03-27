@@ -1,5 +1,11 @@
 [返回目录](./)
 
+# Polyridia
+
+<div class="wiki-img">
+  <img src="../../resources/avif/Polyridia.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [Polyridia](info:info("Polyridia")) |
 | - | - |

@@ -2,6 +2,10 @@
 
 # 花月
 
+<div class="wiki-img">
+  <img src="../../resources/avif/花月.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [花月](info:info("花月")) |
 | - | - |

@@ -2,6 +2,10 @@
 
 # HYPER MEMORIES
 
+<div class="wiki-img">
+  <img src="../../resources/avif/HYPER MEMORIES.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [HYPER MEMORIES](info:info("HYPER MEMORIES")) |
 | - | - |

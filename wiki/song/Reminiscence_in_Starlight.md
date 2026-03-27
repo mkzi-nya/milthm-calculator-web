@@ -2,6 +2,10 @@
 
 # 暮予星光
 
+<div class="wiki-img">
+  <img src="../../resources/avif/暮予星光.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [暮予星光](info:info("暮予星光")) |
 | - | - |

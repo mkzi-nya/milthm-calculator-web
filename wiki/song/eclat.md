@@ -2,6 +2,10 @@
 
 # イコラト
 
+<div class="wiki-img">
+  <img src="../../resources/avif/イコラト.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [イコラト](info:info("イコラト")) |
 | - | - |

@@ -2,6 +2,10 @@
 
 # 雨之城
 
+<div class="wiki-img">
+  <img src="../../resources/avif/雨之城.avif">
+</div>
+
 ## 曲目信息
 
 | 曲名       | [雨之城](info:info("雨之城")) |

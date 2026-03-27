@@ -4,6 +4,10 @@
 
 # Fantasia Sonata Arcadia
 
+<div class="wiki-img">
+  <img src="../../resources/avif/Fantasia Sonata Arcadia.avif">
+</div>
+
 ## 曲目信息
 
 | 曲名     | [Fantasia Sonata Arcadia](info:info("Fantasia Sonata Arcadia")) |

@@ -2,6 +2,10 @@
 
 # Welcome to Milthm
 
+<div class="wiki-img">
+  <img src="../../resources/avif/Welcome to Milthm.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [Welcome to Milthm](info:info("Welcome to Milthm")) |
 | - | - |

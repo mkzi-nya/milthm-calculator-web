@@ -2,6 +2,10 @@
 
 # Garden
 
+<div class="wiki-img">
+  <img src="../../resources/avif/Garden.avif">
+</div>
+
 ## 曲目信息
 
 | 曲名     | [Garden](info:info("Garden")) |

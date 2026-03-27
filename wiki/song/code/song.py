@@ -1,299 +1,271 @@
-import re
 import json
+import re
+import textwrap
 from pathlib import Path
+from urllib.parse import quote
 
-BASE_MD = Path("base.md")
-CONST_JS = Path("constant.js")
-PACKED_DOC = Path("packed_document.json")
-CHARTINFO = Path("chartinfo.json")
-SONG_DIR = Path("../")
-
-SONG_DIR.mkdir(exist_ok=True)
+RESOURCES_JSON = Path("../../../resources/resources.json")
+AVIF_DIR = Path("../../../resources/avif")
+OUTPUT_DIR = Path("../")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
-DIFF_ALIAS = {
-    "DZ": "Drizzle", "Drizzle": "Drizzle",
-    "SK": "Sprinkle", "Sprinkle": "Sprinkle",
-    "CB": "Cloudburst", "Cloudburst": "Cloudburst",
-    "CL": "Clear", "Clear": "Clear",
-    "SP": "Special", "Special": "Special",
-    "Ø": "Cloudburst",
-}
+PAGE_TEMPLATE = textwrap.dedent(
+    """\
+    [返回目录](./)
 
-DIFF_SHORT = {
-    "Drizzle": "DZ",
-    "Sprinkle": "SK",
-    "Cloudburst": "CB",
-    "Clear": "CL",
-    "Special": "SP",
-}
+    > 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
+    > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
+    > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-# ---------- constant.js ----------
 
-def load_constant_js(path: Path):
-    text = path.read_text(encoding="utf-8")
-    m = re.search(r"const\s+constantsData\s*=\s*({[\s\S]*?})\s*;", text)
-    if not m:
-        raise RuntimeError("constantsData not found")
+    # {song_key}
 
-    body = m.group(1)
-    result = {}
-    pair_re = re.compile(r'"([^"]+)"\s*:\s*\[(.*?)\]', re.S)
+    {main_artwork_block}
+    {square_artwork_block}## 曲目信息
+    | 曲名 | {song_link} |
+    | - | - |
+    | 拉丁文曲名 | {latin_title} |
+    | 曲师 | {artist} |
+    | 曲绘 | {illustrator} |
+    | 所属曲包 | (待补充) |
+    | 更新版本 | (待补充) |
+    | 时长 | (待补充) |
+    | BPM | {bpm} |
 
-    for key, arr_body in pair_re.findall(body):
-        items, buf = [], ""
-        in_str = escape = False
+    ## 谱面信息
+    {chart_info_table}
 
-        def flush():
-            nonlocal buf
-            s = buf.strip()
-            if s == "":
-                items.append(None)
-            elif s.startswith('"') and s.endswith('"'):
-                items.append(s[1:-1])
+    ## 解锁方法
+
+    (待补充)
+
+    ## 曲目试听
+
+    (待补充)
+
+    ## 曲目相关
+
+    (待补充)
+
+    ## 游戏相关
+
+    (待补充)
+    """
+)
+
+IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
+    """\
+    <div class="wiki-img">
+      <img src="{src}">
+    </div>
+    """
+)
+
+
+def load_resources(path: Path):
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise RuntimeError("resources.json 顶层必须为 object")
+    return data
+
+
+def md_escape_table_cell(value):
+    if value is None:
+        return "-"
+    return str(value).replace("|", r"\|")
+
+
+def md_escape_link_text(value):
+    s = str(value)
+    for ch in r"\\[]":
+        s = s.replace(ch, "\\" + ch)
+    return s
+
+
+def list_or_scalar_to_str(value):
+    if not value:
+        return "-"
+    if isinstance(value, list):
+        return md_escape_table_cell(", ".join(map(str, value)))
+    return md_escape_table_cell(value)
+
+
+def bpm_to_str(song: dict):
+    diff_map = song.get("difficulty") or {}
+    for diff_name in DIFF_ORDER:
+        diff_info = diff_map.get(diff_name)
+        bpm_info = diff_info.get("bpmInfo") if isinstance(diff_info, dict) else None
+        if not bpm_info:
+            continue
+
+        def fmt(x):
+            if isinstance(x, (int, float)) and x == int(x):
+                return str(int(x))
+            return str(x)
+
+        if len(bpm_info) == 1 and isinstance(bpm_info[0], dict) and "bpm" in bpm_info[0]:
+            return fmt(bpm_info[0]["bpm"])
+
+        parts = []
+        for item in bpm_info:
+            if not isinstance(item, dict):
+                continue
+            bpm = item.get("bpm")
+            if bpm is None:
+                continue
+            start = item.get("start")
+            if start is None:
+                parts.append(fmt(bpm))
             else:
-                try:
-                    items.append(float(s))
-                except Exception:
-                    items.append(None)
-            buf = ""
+                parts.append(f"[{fmt(start)},{fmt(bpm)}]")
+        return md_escape_table_cell(",".join(parts)) if parts else "-"
+    return "-"
 
-        for ch in arr_body:
-            if escape:
-                buf += ch
-                escape = False
-            elif ch == "\\":
-                escape = True
-                buf += ch
-            elif ch == '"':
-                in_str = not in_str
-                buf += ch
-            elif ch == "," and not in_str:
-                flush()
-            else:
-                buf += ch
-        flush()
 
-        result[key] = items
-
-    return result
-
-# ---------- utils ----------
-
-def md_escape_table_cell(s):
-    if not s:
+def format_ct(value):
+    if value is None:
         return "-"
-    return str(s).replace("|", r"\|")
-
-def illustrator_to_str(v):
-    if not v:
-        return "-"
-    if isinstance(v, list):
-        return md_escape_table_cell(", ".join(map(str, v)))
-    return md_escape_table_cell(v)
-
-def bpm_to_str(bpm):
-    if not bpm:
-        return "-"
-
-    def fmt(x):
-        return str(int(x)) if isinstance(x, (int, float)) and x == int(x) else str(x)
-
-    if len(bpm) == 1:
-        return fmt(bpm[0]["bpm"])
-
-    return ",".join(
-        f"[{fmt(x['start'])},{fmt(x['bpm'])}]"
-        for x in bpm
-    )
-
-def latin_title_to_filename(latin):
-    if not latin:
-        return None
-    if isinstance(latin, list):
-        s = " ".join(map(str, latin))
-    else:
-        s = str(latin)
-    s = s.strip().replace(" ", "_")
-    s = re.sub(r"[^A-Za-z0-9_\-]", "", s)
-    return s or None
-
-def format_ct(ct):
-    if ct is None:
-        return "-"
-
     try:
-        ct = float(ct)
+        ct = float(value)
     except Exception:
-        return str(ct)
+        return md_escape_table_cell(value)
 
     base = int(ct)
     frac = ct - base
     return f"{base}+ ({ct})" if frac >= 0.5 else f"{base} ({ct})"
 
-# ---------- 表格裁剪 ----------
 
-def split_md_table_row(row: str):
-    cells, buf = [], []
-    escape = False
+def latin_title_to_filename(latin_title):
+    if not latin_title:
+        return None
+    name = str(latin_title).strip()
+    name = re.sub(r"[^A-Za-z0-9]", "_", name)
+    return name or None
 
-    for ch in row.strip():
-        if escape:
-            buf.append(ch)
-            escape = False
-        elif ch == "\\":
-            buf.append(ch)
-            escape = True
-        elif ch == "|":
-            cells.append("".join(buf).strip())
-            buf = []
-        else:
-            buf.append(ch)
 
-    cells.append("".join(buf).strip())
+def info_href(*parts):
+    encoded = ", ".join(json.dumps(str(part), ensure_ascii=False) for part in parts)
+    return f"info:info({encoded})"
 
-    if cells and cells[0] == "":
-        cells = cells[1:]
-    if cells and cells[-1] == "":
-        cells = cells[:-1]
 
-    return cells
+def make_song_link(song_key: str):
+    return f'[{md_escape_link_text(song_key)}]({info_href(song_key)})'
 
-def trim_chart_table_lines(lines, exist_diffs):
-    out = []
-    i = 0
-    valid_diffs = [d for d in DIFF_ORDER if d in exist_diffs]
 
-    while i < len(lines):
-        line = lines[i]
-        out.append(line)
+def make_diff_link(song_key: str, diff_name: str):
+    return f'[{diff_name}]({info_href(song_key, diff_name)})'
 
-        if line.strip() == "## 谱面信息":
-            i += 1
-            table = []
 
-            while i < len(lines) and lines[i].lstrip().startswith("|"):
-                table.append(lines[i])
-                i += 1
+def make_image_src(filename: str):
+    return f"../../resources/avif/{quote(filename)}"
 
-            if not table:
-                continue
 
-            header = split_md_table_row(table[0])
-            keep_idx = [0]
+def build_chart_info_table(song_key: str, diff_map: dict):
+    diffs = [d for d in DIFF_ORDER if isinstance(diff_map.get(d), dict)]
+    if not diffs:
+        return "(待补充)"
 
-            for idx, cell in enumerate(header[1:], start=1):
-                if any(d in cell for d in valid_diffs):
-                    keep_idx.append(idx)
+    header = ["难度"] + [make_diff_link(song_key, d) for d in diffs]
+    separator = ["-"] * len(header)
+    level_row = ["等级"]
+    charter_row = ["谱师"]
+    combo_row = ["Note数量"]
 
-            for row in table:
-                cells = split_md_table_row(row)
-                while len(cells) <= max(keep_idx):
-                    cells.append("-")
+    for diff_name in diffs:
+        info = diff_map[diff_name]
+        level = info.get("difficultyValue")
+        if level is None:
+            level = info.get("difficultyValuev2")
+        charter = info.get("charter")
+        combo = info.get("combo")
+        if combo is None:
+            combo = info.get("noteCount")
 
-                new_cells = [cells[j] for j in keep_idx]
-                out.append("| " + " | ".join(new_cells) + " |")
+        level_row.append(format_ct(level))
+        charter_row.append(md_escape_table_cell(charter) if charter else "-")
+        combo_row.append(str(combo) if combo is not None else "-")
 
+    rows = [header, separator, level_row, charter_row, combo_row]
+    return "\n".join("| " + " | ".join(row) + " |" for row in rows)
+
+
+def build_main_artwork_block(song_key: str):
+    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"{song_key}.avif")).strip() + "\n"
+
+
+def build_square_artwork_block(song_key: str, avif_dir: Path):
+    square_path = avif_dir / f"SquareArtwork_{song_key}.avif"
+    if not square_path.exists():
+        return ""
+    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"SquareArtwork_{song_key}.avif")).strip() + "\n\n"
+
+
+def build_markdown(song_key: str, song: dict, avif_dir: Path):
+    return PAGE_TEMPLATE.format(
+        song_key=song_key,
+        main_artwork_block=build_main_artwork_block(song_key),
+        square_artwork_block=build_square_artwork_block(song_key, avif_dir),
+        song_link=make_song_link(song_key),
+        latin_title=md_escape_table_cell(song.get("latinTitle") or "-"),
+        artist=list_or_scalar_to_str(song.get("artist") or song.get("artistsList")),
+        illustrator=list_or_scalar_to_str(song.get("illustrator") or song.get("illustratorsList")),
+        bpm=bpm_to_str(song),
+        chart_info_table=build_chart_info_table(song_key, song.get("difficulty") or {}),
+    ).rstrip() + "\n"
+
+
+def main():
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    resources = load_resources(RESOURCES_JSON)
+    existing_files = {path.name for path in OUTPUT_DIR.glob("*.md")}
+    seen_output_names = set(existing_files)
+    created_files = []
+    skipped_existing = []
+    skipped_duplicate = []
+
+    if existing_files:
+        print("已存在的 md 文件（将跳过，不做任何修改）：")
+        for name in sorted(existing_files):
+            print(" -", name)
+    else:
+        print("未检测到已存在的 md 文件，将按 resources.json 生成")
+
+    for song_key, song in sorted(resources.items(), key=lambda item: item[0]):
+        if not isinstance(song, dict):
             continue
 
-        i += 1
+        filename_base = latin_title_to_filename(song.get("latinTitle"))
+        if not filename_base:
+            filename_base = latin_title_to_filename(song_key)
+        if not filename_base:
+            filename_base = latin_title_to_filename(song.get("songid"))
+        if not filename_base:
+            print(f"跳过：{song_key}，无法生成合法文件名")
+            continue
 
-    return out
+        output_path = OUTPUT_DIR / f"{filename_base}.md"
 
-# ---------- 数据加载 ----------
+        if output_path.name in existing_files:
+            skipped_existing.append(output_path.name)
+            continue
 
-constants = load_constant_js(CONST_JS)
-packed_docs = json.loads(PACKED_DOC.read_text(encoding="utf-8"))
-chartinfo = json.loads(CHARTINFO.read_text(encoding="utf-8"))
-base_tpl = BASE_MD.read_text(encoding="utf-8")
+        if output_path.name in seen_output_names:
+            skipped_duplicate.append((song_key, output_path.name))
+            print(f"跳过：{song_key} -> {output_path.name}，目标文件名冲突")
+            continue
+        seen_output_names.add(output_path.name)
 
-doc_by_chart_id = {d["id"]: d for d in packed_docs if "id" in d}
+        markdown = build_markdown(song_key, song, AVIF_DIR)
+        output_path.write_text(markdown, encoding="utf-8")
+        created_files.append(output_path.name)
 
-# ---------- 已存在文件检测 ----------
+    print(
+        f"✓ 处理完成：新生成 {len(created_files)} 个，"
+        f"跳过已存在 {len(skipped_existing)} 个，"
+        f"跳过冲突 {len(skipped_duplicate)} 个"
+    )
 
-existing_files = {p.name for p in SONG_DIR.glob("*.md")}
 
-if existing_files:
-    print("已存在的 md 文件（将跳过，不做任何修改）：")
-    for name in sorted(existing_files):
-        print(" -", name)
-else:
-    print("未检测到已存在的 md 文件，将全部生成")
-
-# ---------- 主流程 ----------
-
-for song_id, arr in constants.items():
-    raw_diff = arr[1] if isinstance(arr[1], str) else arr[2]
-    diff = DIFF_ALIAS.get(raw_diff)
-    if not diff:
-        continue
-
-    ct_value = arr[0] if isinstance(arr[1], str) else arr[1]
-
-    info_title = None
-    for k, v in chartinfo.items():
-        if v.get("id") == song_id:
-            info_title = k.rsplit("_", 1)[0]
-            break
-    if not info_title:
-        continue
-
-    chart_by_diff = {
-        k.split("_", 1)[1]: v
-        for k, v in chartinfo.items()
-        if k.startswith(info_title + "_")
-    }
-
-    first_chart = next(iter(chart_by_diff.values()), None)
-    if not first_chart:
-        continue
-
-    base_doc = doc_by_chart_id.get(first_chart.get("id"))
-    if not base_doc:
-        continue
-
-    latin_filename = latin_title_to_filename(base_doc.get("latinTitle"))
-    filename = latin_filename or info_title
-    md_path = SONG_DIR / f"{filename}.md"
-
-    # 已存在的文件直接跳过（不读、不写、不改）
-    if md_path.name in existing_files:
-        continue
-
-    # ---------- 仅生成新文件 ----------
-
-    md = base_tpl
-    md = md.replace("{doc:title}", base_doc["title"])
-    md = md.replace("{info:title}", info_title)
-    md = md.replace("{doc:latinTitle}", str(base_doc.get("latinTitle") or "-"))
-    md = md.replace("{doc:artist}", md_escape_table_cell(base_doc.get("artist")))
-    md = md.replace("{doc:illustrator}", illustrator_to_str(base_doc.get("illustrator")))
-    md = md.replace("{doc:bpmInfo}", bpm_to_str(base_doc.get("bpmInfo")))
-
-    if base_doc.get("title") == str(base_doc.get("latinTitle")):
-        md = re.sub(r"\|\s*拉丁文曲名\s*\|.*?\n", "", md)
-
-    md = md.replace(f"{{ct,{DIFF_SHORT[diff]}}}", format_ct(ct_value))
-
-    for dname, info in chart_by_diff.items():
-        combo = info.get("combo") or info.get("noteCount")
-        if combo is not None:
-            md = md.replace(f"{{info:combo,{dname}}}", str(combo))
-
-    for dname, info in chart_by_diff.items():
-        chart_id = info.get("id")
-        charter_doc = doc_by_chart_id.get(chart_id)
-        if charter_doc and charter_doc.get("charter"):
-            md = md.replace(
-                f"{{doc:charter,{dname}}}",
-                md_escape_table_cell(charter_doc["charter"])
-            )
-
-    lines = md.splitlines()
-    lines = trim_chart_table_lines(lines, list(chart_by_diff.keys()))
-    md = "\n".join(lines)
-
-    md_path.write_text(md, encoding="utf-8")
-
-print("✓ 所有曲目处理完成（已存在文件完全未修改）")
+if __name__ == "__main__":
+    main()

@@ -2,6 +2,10 @@
 
 # Fantasia Sonata Reflection
 
+<div class="wiki-img">
+  <img src="../../resources/avif/Fantasia Sonata Reflection.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")) |
 | - | - |

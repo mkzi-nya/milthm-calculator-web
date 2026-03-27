@@ -2,6 +2,10 @@
 
 # ☹
 
+<div class="wiki-img">
+  <img src="../../resources/avif/☹.avif">
+</div>
+
 ## 曲目信息
 | 曲名 | [☹](info:info("☹")) |
 | - | - |
