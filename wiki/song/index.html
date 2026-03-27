@@ -171,10 +171,6 @@
       numeric: true,
       sensitivity: 'base'
     });
-    const collatorJa = new Intl.Collator('ja', {
-      numeric: true,
-      sensitivity: 'base'
-    });
 
     let resourcesData = null;
     let songEntries = [];
@@ -244,7 +240,6 @@
       return String(latinTitle ?? '').replace(/[^a-zA-Z0-9]/g, '_');
     }
 
-
     function chooseMdFileBase(key, data) {
       const latinTitle = String(data?.latinTitle ?? '').trim();
       const songKey = String(key ?? '').trim();
@@ -302,10 +297,6 @@
       return /[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(char);
     }
 
-    function hasKana(text) {
-      return /[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(String(text ?? ''));
-    }
-
     function getPinyinInitial(char) {
       if (!isHan(char)) {
         return char.toUpperCase();
@@ -330,127 +321,114 @@
       return '';
     }
 
-    function looksLikeRomanizedJapanese(text) {
-      const value = String(text ?? '').trim();
-      if (!value || !/^[A-Za-z][A-Za-z0-9' -]*$/.test(value)) {
-        return false;
-      }
-      if (/\b(the|and|in|of|a|an|to|feat|edit)\b/i.test(value)) {
-        return false;
-      }
-      return value.length <= 32;
+    function getFirstChar(str) {
+      const s = String(str ?? '').trim();
+      return s ? Array.from(s)[0] : '';
     }
 
-    function guessSortMeta(entry) {
-      const title = String(entry.key ?? '');
-      const latinTitle = String(entry.latinTitle ?? '');
-      const culture = String(entry.data?.titleCulture ?? '');
-      const firstChar = firstMeaningfulChar(title);
+    function isUpperAlpha(ch) {
+      return /^[A-Z]$/.test(ch);
+    }
 
-      if (!firstChar) {
-        return { initial: '~', script: 'other', tieBreaker: '', fullKey: '' };
+    function isLowerAlpha(ch) {
+      return /^[a-z]$/.test(ch);
+    }
+
+    function isDigit(ch) {
+      return /^[0-9]$/.test(ch);
+    }
+
+    function isHanChar(ch) {
+      return /\p{Script=Han}/u.test(ch);
+    }
+
+    function isKanaChar(ch) {
+      return /[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(ch);
+    }
+
+    function getKanaInitial(text) {
+      for (const ch of Array.from(String(text ?? ''))) {
+        if (KANA_ROMAJI_INITIAL[ch]) {
+          return KANA_ROMAJI_INITIAL[ch];
+        }
       }
+      return 'Z';
+    }
 
-      if (/[A-Za-z]/.test(firstChar)) {
+    function getUnicodeSortKey(text) {
+      return Array.from(String(text ?? ''))
+        .map(ch => ch.codePointAt(0).toString(16).padStart(6, '0'))
+        .join('-');
+    }
+
+    function buildStrictSortKey(entry) {
+      const key = String(entry.key ?? '');
+      const first = getFirstChar(key);
+
+      if (isUpperAlpha(first)) {
         return {
-          initial: firstChar.toUpperCase(),
-          script: 'latin',
-          tieBreaker: normalizeText(title),
-          fullKey: normalizeText(title)
+          group: 0,
+          primary: key,
+          fallback: key
         };
       }
 
-      if (/[0-9]/.test(firstChar)) {
+      if (isLowerAlpha(first)) {
         return {
-          initial: firstChar,
-          script: 'digit',
-          tieBreaker: normalizeText(title),
-          fullKey: normalizeText(title)
+          group: 1,
+          primary: key,
+          fallback: key
         };
       }
 
-      if (isKana(firstChar)) {
-        const kanaInitial = getJapaneseInitialFromText(title) || 'Z';
+      if (isDigit(first)) {
         return {
-          initial: kanaInitial,
-          script: 'japanese',
-          tieBreaker: normalizeText(latinTitle || title),
-          fullKey: normalizeText(latinTitle || title)
+          group: 2,
+          primary: key,
+          fallback: key
         };
       }
 
-      if (isHan(firstChar)) {
-        const cultureHasJa = culture.includes('ja-JP');
-        const cultureHasZh = culture.includes('zh-') || culture.includes('yue-');
-
-        if (cultureHasJa && !cultureHasZh) {
-          const latinInitial = /^[A-Za-z]/.test(latinTitle) ? latinTitle[0].toUpperCase() : '';
-          return {
-            initial: latinInitial || getJapaneseInitialFromText(title) || getPinyinInitial(firstChar),
-            script: 'japanese',
-            tieBreaker: normalizeText(latinTitle || title),
-            fullKey: normalizeText(latinTitle || title)
-          };
-        }
-
-        if (hasKana(title) && cultureHasJa) {
-          const latinInitial = /^[A-Za-z]/.test(latinTitle) ? latinTitle[0].toUpperCase() : '';
-          return {
-            initial: latinInitial || getJapaneseInitialFromText(title) || getPinyinInitial(firstChar),
-            script: 'japanese',
-            tieBreaker: normalizeText(latinTitle || title),
-            fullKey: normalizeText(latinTitle || title)
-          };
-        }
-
-        if (cultureHasJa && looksLikeRomanizedJapanese(latinTitle)) {
-          return {
-            initial: latinTitle[0].toUpperCase(),
-            script: 'japanese',
-            tieBreaker: normalizeText(latinTitle),
-            fullKey: normalizeText(latinTitle)
-          };
-        }
-
+      if (isHanChar(first)) {
         return {
-          initial: getPinyinInitial(firstChar),
-          script: 'chinese',
-          tieBreaker: normalizeText(title),
-          fullKey: normalizeText(title)
+          group: 3,
+          primary: getPinyinInitial(first),
+          fallback: key
+        };
+      }
+
+      if (isKanaChar(first)) {
+        return {
+          group: 4,
+          primary: getKanaInitial(key),
+          fallback: key
         };
       }
 
       return {
-        initial: firstChar,
-        script: 'other',
-        tieBreaker: normalizeText(title),
-        fullKey: title
+        group: 5,
+        primary: getUnicodeSortKey(first || key),
+        fallback: getUnicodeSortKey(key)
       };
     }
 
-    function compareSongEntries(a, b) {
-      const byInitial = collatorBase.compare(a.sortMeta.initial, b.sortMeta.initial);
-      if (byInitial !== 0) return byInitial;
+    function compareStrict(a, b) {
+      const ka = buildStrictSortKey(a);
+      const kb = buildStrictSortKey(b);
 
-      if (a.sortMeta.script === b.sortMeta.script) {
-        if (a.sortMeta.script === 'chinese') {
-          const byZh = collatorZh.compare(a.key, b.key);
-          if (byZh !== 0) return byZh;
-        } else if (a.sortMeta.script === 'japanese') {
-          const byJa = collatorBase.compare(a.sortMeta.tieBreaker, b.sortMeta.tieBreaker);
-          if (byJa !== 0) return byJa;
-          const byJaDisplay = collatorJa.compare(a.key, b.key);
-          if (byJaDisplay !== 0) return byJaDisplay;
-        } else {
-          const byBase = collatorBase.compare(a.sortMeta.tieBreaker, b.sortMeta.tieBreaker);
-          if (byBase !== 0) return byBase;
-        }
+      if (ka.group !== kb.group) {
+        return ka.group - kb.group;
       }
 
-      const byLatin = collatorBase.compare(a.latinTitle || a.key, b.latinTitle || b.key);
-      if (byLatin !== 0) return byLatin;
+      const primaryCompare = collatorBase.compare(ka.primary, kb.primary);
+      if (primaryCompare !== 0) return primaryCompare;
 
-      return collatorBase.compare(a.key, b.key);
+      if (ka.group === 5) {
+        const unicodeCompare = ka.fallback.localeCompare(kb.fallback, 'en', { numeric: true, sensitivity: 'variant' });
+        if (unicodeCompare !== 0) return unicodeCompare;
+      }
+
+      return collatorBase.compare(String(a.key ?? ''), String(b.key ?? ''));
     }
 
     function pushWeightedField(target, label, value, weight) {
@@ -638,13 +616,11 @@
         for (const queryNorm of normalizedParts) {
           const queryTokens = tokenize(queryNorm);
           let partBestScore = 0;
-          let partBestField = '';
 
           for (const field of entry.search.fields) {
             const score = scoreField(queryNorm, queryTokens, field);
             if (score > partBestScore) {
               partBestScore = score;
-              partBestField = field.label;
             }
           }
 
@@ -668,7 +644,7 @@
       ranked.sort((a, b) => {
         if (b.matchedParts !== a.matchedParts) return b.matchedParts - a.matchedParts;
         if (b.score !== a.score) return b.score - a.score;
-        return compareSongEntries(a.entry, b.entry);
+        return compareStrict(a.entry, b.entry);
       });
 
       return { exactEntry: null, results: ranked, queryParts };
@@ -696,12 +672,11 @@
           sortMeta: null,
           search: null
         };
-        entry.sortMeta = guessSortMeta(entry);
         entry.search = buildSearchBundle(key, data);
         return entry;
       });
 
-      songEntries.sort(compareSongEntries);
+      songEntries.sort(compareStrict);
       songSlugMap = new Map();
       songParamMap = new Map();
       for (const entry of songEntries) {
@@ -880,7 +855,54 @@
       statusBar.className = `status-bar visible${type ? ` ${type}` : ''}`;
     }
 
-    function renderMarkdown(mdContent) {
+    async function convertImageUrlToPngBlobUrl(url) {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`图片加载失败：${response.status} ${url}`);
+      }
+
+      const blob = await response.blob();
+      const bitmap = await createImageBitmap(blob);
+
+      const canvas = document.createElement('canvas');
+      canvas.width = bitmap.width;
+      canvas.height = bitmap.height;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        throw new Error('无法获取 canvas 2D 上下文');
+      }
+
+      ctx.drawImage(bitmap, 0, 0);
+
+      const pngBlob = await new Promise((resolve, reject) => {
+        canvas.toBlob(result => {
+          if (result) resolve(result);
+          else reject(new Error('PNG 导出失败'));
+        }, 'image/png');
+      });
+
+      return URL.createObjectURL(pngBlob);
+    }
+
+    async function replaceAvifImagesWithPng(root = document) {
+      const images = Array.from(root.querySelectorAll('img'));
+
+      for (const img of images) {
+        const src = img.getAttribute('src') || '';
+        if (!/\.avif(\?.*)?(#.*)?$/i.test(src)) continue;
+
+        try {
+          const pngBlobUrl = await convertImageUrlToPngBlobUrl(src);
+          img.dataset.originalSrc = src;
+          img.src = pngBlobUrl;
+        } catch (error) {
+          console.error('AVIF 转 PNG 失败：', src, error);
+        }
+      }
+    }
+
+    async function renderMarkdown(mdContent) {
       const safeMarkdown = transformMarkdownLinks(mdContent);
       let rendered = '';
       try {
@@ -894,6 +916,8 @@
       }
 
       content.innerHTML = rendered;
+
+      await replaceAvifImagesWithPng(content);
 
       content.querySelectorAll('h2,h3,h4').forEach(h => {
         h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
@@ -1074,7 +1098,7 @@
           updateUrlForRequest(request.type === 'home' ? { type: 'home', value: '' } : request);
         }
 
-        renderMarkdown(state.markdown);
+        await renderMarkdown(state.markdown);
         if (state.hasError) {
           setStatus('页面已显示错误详情。', 'error');
         }
@@ -1101,7 +1125,7 @@
         searchBox.value = currentRenderedState.queryValue || '';
         updateSearchVisibility(currentRenderedState);
         try {
-          renderMarkdown(currentRenderedState.markdown);
+          await renderMarkdown(currentRenderedState.markdown);
         } catch {
           content.innerHTML = `<pre>${errorMessage.replace(/[&<>]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[ch]))}</pre>`;
         }
