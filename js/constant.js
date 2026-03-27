@@ -26,7 +26,7 @@ function def(k, obj) {
   if (k === "ag") return 0;
 }
 
-fetch("./resources/resources.json")
+fetch("https://mhtl.im/resources/resources.json")
   .then(r => r.json())
   .then(data => {
     for (const [title, song] of Object.entries(data)) {
