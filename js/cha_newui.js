@@ -1,4 +1,4 @@
-const Updated = "Updated at 2025.11.09 21:30 (UTC+8)"
+const Updated = "Updated at 2026.03.28 17:44 (UTC+8)"
 var cha_newui_js_ver = 7
 const BACKGROUND_COUNT = 15
 const BACKGROUND_COUNT_YRJ = 4
@@ -71,6 +71,8 @@ let columns = 3; //默认三列布局
 function songNameToCssClass(name) {
   // 与 py 中 class_name 的生成方式一致：空格与“-” -> “_”，转小写
   // 并去掉常见不安全字符（文件名里可能去掉了它们）
+  if (name === "Fly To Meteor (Milthm Edit)") name = "Fly To Meteor feat.兔柒 (Milthm Edit)";
+  if (name === "LiFE Garden") name = "LiFE Garden (Extended Mix)";
   const cleaned = String(name)
     .replace(/[ \-]/g, '_')   // 替换所有空格和连字符为下划线
     .replace(/[()?]/g, '')    // 删除所有括号和问号
@@ -78,6 +80,7 @@ function songNameToCssClass(name) {
     .replace(/\./g, '')
     .replace(/\#/g, '')
     .replace(/\~/g, '')
+    .replace(/\&/g, '')
     .toLowerCase();
   return cleaned || 'nya';
 }
@@ -1869,22 +1872,21 @@ async function downloadImage() {
                 color: #cfccdb;
             }
 
-            .cardimg {
-                /* max-width: 210px; */
-                /* width: 100%; */
-                height: 100%;
-                user-select: none;
-                display: flex;
-                justify-self: center;
-                /* border-radius: 15px; */
-            }
-
             .cardimgcover {
                 display: block;
-                width: 204.444px;
+                width: 204px;
                 height: 115px;
                 margin-right: 8px;
                 border-radius: 15px;
+                overflow: hidden;
+            }
+            
+            .cardimg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                user-select: none;
             }
 
             .cardbg {
@@ -1967,6 +1969,14 @@ async function downloadImage() {
                 width: 205px;
             }
 
+            .cardtitle {
+                overflow-x: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-right: 2em;
+                /* max-width: 70%; */
+            }
+
             .grade {
                 max-width: 50px;
                 margin: -10px;
@@ -1978,6 +1988,7 @@ async function downloadImage() {
                 font-size: 2em;
                 display: flex;
                 align-items: center;
+                margin-left: 5px;
                 margin-bottom: 5px;
             }
 
@@ -2511,7 +2522,7 @@ async function downloadImage() {
                   link.click();
               } catch(e) {
                   console.error("保存图片失败", e);
-                  alert("保存图片失败 xwx\\n可以尝试 \\"打印页面\\" 或截图页面，或是在交流群询问详情。");
+                  alert("保存图片失败 xwx\\n可以尝试 \\"打印页面\\" 或截图页面，或是在交流群询问详情。\\nerror:" + e);
               }
 
             }
@@ -2908,77 +2919,109 @@ function limitText(str, len = 16) {
 
 // 得到卡片 html
 async function getCardHtml(items, maxCount, errorImg) {
-  const htmls = []
+  const htmls = [];
+
+  // === CSS 图片缓存（避免重复 getComputedStyle） ===
+  const cssImageCache = new Map();
+  function getCachedCssImage(className) {
+    if (cssImageCache.has(className)) {
+      return cssImageCache.get(className);
+    }
+    const url = getDataUrlFromCssClass(className);
+    cssImageCache.set(className, url);
+    return url;
+  }
+
   const getItemHtml = async (it, i, ignoreMaxCount = false, numberPrefix = '#', maxTitleLen = 21) => {
     if (i + 1 > maxCount && !ignoreMaxCount) {
-      return
+      return;
     }
+
     const numStr = numberPrefix + (i + 1);
 
-    // 分数（含渐变颜色）
+    // ===== 基本信息 =====
     const scoreStr = String(it.bestScore ?? 0).padStart(7, '0');
-    const songName = escapeHtml(limitText(it.name, maxTitleLen - numStr.length))
+    const songName = escapeHtml(limitText(it.name, maxTitleLen - numStr.length));
 
-    // 评级/常数/准确率 行
-    // ctx.font = '20px Arial';
     const acc = `${(((it.bestAccuracy ?? 0) * 100) || 0).toFixed(2)}%`;
+
     let consttext = `${it.constantv3.toFixed(1)}`;
     const yrjds = document.getElementById('yrjds')?.value;
-    const singleReality = yrjds != "true" ? it.singleReality : (it.singleReality * 20).toFixed(2)
+    const singleReality = yrjds != "true"
+      ? it.singleReality
+      : (it.singleReality * 20).toFixed(2);
+
     if (yrjds == "true") {
       consttext = `${it.yct || it.constantv3.toFixed(1)}`;
     }
-    const rating = `${it.category} ${consttext} &gt; ${(singleReality ?? '0.00')}`
-    // 目标分
-    // ctx.font = '13px Arial';
+
+    const rating = `${it.category} ${consttext} &gt; ${(singleReality ?? '0.00')}`;
+
     const targetScore = findScore(
       it.constantv3 ?? 0,
       Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 !== (window.average ?? 0) * 100
         ? (Math.ceil((window.average ?? 0) * 100 - 0.5) + 0.5 - (window.average ?? 0) * 100) / 5 +
-        Math.max(singleReality ?? 0, yrjds != "true" ? items?.[19]?.singleRealityRaw ?? 0 : (items?.[19]?.singleRealityRaw ?? 0) * 20)
-        : 114514, yrjds != "true" ? "No remaining" : "🐉👃👈😨"
+          Math.max(
+            singleReality ?? 0,
+            yrjds != "true"
+              ? items?.[19]?.singleRealityRaw ?? 0
+              : (items?.[19]?.singleRealityRaw ?? 0) * 20
+          )
+        : 114514,
+      yrjds != "true" ? "No remaining" : "🐉👃👈😨"
     );
-    // ctx.fillText(`>>${targetScore}`, x + 212, y + 86);
-    const targetScoreText = `&gt;&gt; Goal: ${!isNaN(Number(targetScore)) ? String(targetScore).padStart(7, '0') : targetScore}`
-    // 封面与段位图
-    // 等级/段位：映射到 .icon-N
+
+    const targetScoreText =
+      `&gt;&gt; Goal: ${!isNaN(Number(targetScore))
+        ? String(targetScore).padStart(7, '0')
+        : targetScore}`;
+
+    // ===== 图标 =====
     const iconName = getLevelIconName(it);
-    let imgName = it.name.replaceAll("#", '').replaceAll("?", '').replaceAll(">", '').replaceAll("<", '').replaceAll("*", '').replaceAll('"', '').replaceAll("|", '').replaceAll("/", '').replaceAll("\\", '').replaceAll(":", '');
     const iconImgName = iconName + '.png';
-    // const coverImgName = imgPairs[i]?.[0] || '';
-    // const iconImgName = imgPairs[i]?.[1] || '';
-    let gradeClass = ''
+
+    let gradeClass = '';
     if (iconName == '0' || iconName == '0-1') {
-      gradeClass = 'R'
+      gradeClass = 'R';
     } else if (iconName.length > 1 && iconName[1] == '0') {
-      gradeClass = 'AP'
+      gradeClass = 'AP';
     } else if (iconName.length > 1 && iconName[1] == '1') {
-      gradeClass = 'FC'
+      gradeClass = 'FC';
     }
 
+    // ===== 分类 =====
     let category = it.category;
-    if (category == "Ø") {
-      category = 'UN'
-    }
-    if (category != "CB" && category != "CL" && category != "SP" && category != "UN" && category != "SK" && category != "DZ") {
+    if (category == "Ø") category = 'UN';
+
+    if (!["CB", "CL", "SP", "UN", "SK", "DZ"].includes(category)) {
       category = 'SP';
     }
-    if (category == 'SP' && imgName == 'Welcome to Milthm') {
-      imgName = 'Welcome to Milthm SP'
-    }
-    const coverImgName = `${imgName}.jpg`;
 
-    const scoreIsV3 = it.isV3 || it.bestLevel <= 1 || it.bestScore >= 1005000 || (it.achievedStatus.includes(2) || it.achievedStatus.includes(5))
-    // const scoreIsV3 = true;
-    const dataurl = await imgToDataURL('https://storage.mhtl.im/jpgs/' + coverImgName)
+    // ===== ⭐ 核心修改：从 CSS 获取封面 =====
+    const coverClass = songNameToCssClass(it.name);
+
+    let dataurl = getCachedCssImage(coverClass);
+
+    if (!dataurl) {
+      dataurl = getCachedCssImage('nya'); // fallback
+    }
+
+    // ===== V3 判断 =====
+    const scoreIsV3 =
+      it.isV3 ||
+      it.bestLevel <= 1 ||
+      it.bestScore >= 1005000 ||
+      (it.achievedStatus.includes(2) || it.achievedStatus.includes(5));
+
+    // ===== HTML =====
     const cardHtmlText = `
   <section class="card">
       <div class="cardcover ${scoreIsV3 ? 'cardcover-v3' : ''}">
           <div class="cardimgcover"
-              style="background-image: url('${dataurl}'), url('${errorImg}');">
+              style="background-image: url('${dataurl || errorImg}'), url('${errorImg}');">
               <div class="cardbg">
                   <img
-                      src="${dataurl}"
+                      src="${dataurl || errorImg}"
                       onerror="this.onerror=null; this.src='${errorImg}';"
                       alt
                       class="cardimg">
@@ -3007,15 +3050,16 @@ async function getCardHtml(items, maxCount, errorImg) {
                       style="margin-left: 9px; font-size: 0.9em; margin-bottom: 5px; color:#dde3ffc9;">${targetScoreText}</p>
                   <div
                       style="display: flex; justify-content: space-between; margin: 10px 8px 0 8px; align-items: center; font-size: 0.85em;">
-                      <p
-                          style="color: #ffffffd7;">${acc}</p>
-                      <p
-                          style="text-align: right; color:${scoreIsV3 ? '#9ac9ff' : '#ffffffd7'}; font-size: 1em;">${rating}</p>
+                      <p style="color: #ffffffd7;">${acc}</p>
+                      <p style="text-align: right; color:${scoreIsV3 ? '#9ac9ff' : '#ffffffd7'}; font-size: 1em;">
+                          ${rating}
+                      </p>
                   </div>
               </div>
           </div>
       </div>
-  </section>`
+  </section>`;
+
     if (i + 1 == 21 && numberPrefix == '#') {
       htmls.push(`</aside>
         <div class="split-title">
@@ -3023,18 +3067,18 @@ async function getCardHtml(items, maxCount, errorImg) {
             <h2>OVERFLOW</h2>
             <hr>
         </div>
-        <aside class="down">`)
+        <aside class="down">`);
     }
-    htmls.push(cardHtmlText);
 
-    // if (coverImg) ctx.drawImage(coverImg, x + 13, y + 13, imgW, imgH);
-    // if (iconImg) ctx.drawImage(iconImg, x + 351, y + 26, icon, icon);
+    htmls.push(cardHtmlText);
   };
-  // await Promise.all(items.map((it, i) => getItemHtml(it, i, false)));
+
+  // ===== 主循环 =====
   for (let i = 0; i < items.length; i++) {
     await getItemHtml(items[i], i, false);
   }
-  // 增加下划线
+
+  // ===== EXTRAS =====
   if (window.norlt.length > 0) {
     htmls.push(`
       </aside>
@@ -3044,16 +3088,16 @@ async function getCardHtml(items, maxCount, errorImg) {
               <hr>
           </div>
       <aside class="down">
-    `)
+    `);
   }
-  // await Promise.all(window.norlt.map((it, i) => getItemHtml(it, i, true, "EX #")));
+
   for (let i = 0; i < window.norlt.length; i++) {
     await getItemHtml(window.norlt[i], i, true, "EX #");
   }
-  const cardsHtml = `<aside class="down">
+
+  return `<aside class="down">
   ${htmls.join("\n")}
-  </aside>`
-  return cardsHtml
+  </aside>`;
 }
 
 /* 画导出图片里的卡片（封面与 icon 都用上面预加载好的 imgPairs） */
