@@ -7,9 +7,7 @@
 
 # Innocent white
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Innocent white.avif">
-</div>
+<div class="wiki-img" img="Innocent white.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Innocent white](info:info("Innocent white")) |

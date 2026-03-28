@@ -2,9 +2,7 @@
 
 # Jump out?
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Jump%20out%3F.avif">
-</div>
+<div class="wiki-img" img="Jump%20out%3F.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Jump out?](info:info("Jump out ")) |

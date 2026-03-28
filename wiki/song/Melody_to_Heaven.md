@@ -7,9 +7,7 @@
 
 # Melody to Heaven
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Melody to Heaven.avif">
-</div>
+<div class="wiki-img" img="Melody to Heaven.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Melody to Heaven](info:info("Melody to Heaven")) |

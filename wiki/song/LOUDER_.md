@@ -2,9 +2,7 @@
 
 # LOUDER!
 
-<div class="wiki-img">
-  <img src="../../resources/avif/LOUDER%21.avif">
-</div>
+<div class="wiki-img" img="LOUDER%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [LOUDER!](info:info("LOUDER!")) |

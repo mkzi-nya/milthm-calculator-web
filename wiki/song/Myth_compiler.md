@@ -2,9 +2,7 @@
 
 # Myth compiler
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Myth compiler.avif">
-</div>
+<div class="wiki-img" img="Myth compiler.avif"></div>
 
 ## 曲目信息
 

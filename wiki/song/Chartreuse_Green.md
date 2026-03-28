@@ -7,9 +7,7 @@
 
 # Chartreuse Green
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Chartreuse Green.avif">
-</div>
+<div class="wiki-img" img="Chartreuse Green.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Chartreuse Green](info:info("Chartreuse Green")) |

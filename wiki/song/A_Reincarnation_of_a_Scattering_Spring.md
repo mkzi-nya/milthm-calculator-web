@@ -7,9 +7,7 @@
 
 # 樱落繁花
 
-<div class="wiki-img">
-  <img src="../../resources/avif/樱落繁花.avif">
-</div>
+<div class="wiki-img" img="樱落繁花.avif"></div>
 
 ## 曲目信息
 | 曲名 | [樱落繁花](info:info("樱落繁花")) |

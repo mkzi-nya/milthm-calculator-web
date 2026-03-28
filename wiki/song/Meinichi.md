@@ -2,9 +2,7 @@
 
 # 命日
 
-<div class="wiki-img">
-  <img src="../../resources/avif/命日.avif">
-</div>
+<div class="wiki-img" img="命日.avif"></div>
 
 ## 曲目信息
 | 曲名 | [命日](info:info("命日")) |

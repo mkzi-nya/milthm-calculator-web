@@ -7,9 +7,7 @@
 
 # Elsorhg
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Elsorhg.avif">
-</div>
+<div class="wiki-img" img="Elsorhg.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Elsorhg](info:info("Elsorhg")) |

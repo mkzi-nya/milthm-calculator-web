@@ -7,9 +7,7 @@
 
 # Fantasia Sonata Stars
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Fantasia Sonata Stars.avif">
-</div>
+<div class="wiki-img" img="Fantasia Sonata Stars.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Stars](info:info("Fantasia Sonata Stars")) |

@@ -115,6 +115,35 @@
       margin: 0 auto;
       border-radius: 6px;
     }
+    .wiki-audio {
+      margin: 16px auto;
+      text-align: center;
+      width: 100%;
+    }
+    .wiki-audio audio {
+      display: block;
+      width: min(100%, 680px);
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+    .wiki-img[data-media-status="loading"],
+    .wiki-audio[data-media-status="loading"],
+    .wiki-img[data-media-status="error"],
+    .wiki-audio[data-media-status="error"] {
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      background: #161b22;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .wiki-img[data-media-status="error"],
+    .wiki-audio[data-media-status="error"] {
+      border-color: #f85149;
+      background: rgba(248,81,73,.08);
+      color: #ffb3ad;
+    }
 
     div[aaa] {
       visibility: hidden;
@@ -186,6 +215,16 @@
     };
     let renderToken = 0;
     let searchTimer = null;
+    let mediaHydrationToken = 0;
+    const mediaObjectUrls = new Set();
+
+    const MEDIA_SOURCE_TIMEOUT_MS = 5000;
+    const MEDIA_SOURCE_ENDPOINTS = [
+      { name: 'GitHub Raw', url: 'https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
+      { name: 'ghproxy.net', url: 'https://ghproxy.net/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
+      { name: 'gh-proxy.com', url: 'https://gh-proxy.com/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
+      { name: 'storage.mhtl.im', url: 'https://storage.mhtl.im/avif/' }
+    ];
 
     const PINYIN_BOUNDARIES = [
       ['A', '啊'], ['B', '芭'], ['C', '擦'], ['D', '搭'], ['E', '蛾'], ['F', '发'],
@@ -855,51 +894,263 @@
       statusBar.className = `status-bar visible${type ? ` ${type}` : ''}`;
     }
 
-    async function convertImageUrlToPngBlobUrl(url) {
-      const response = await fetch(url, { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`图片加载失败：${response.status} ${url}`);
+    function revokeTrackedMediaObjectUrls() {
+      for (const url of mediaObjectUrls) {
+        URL.revokeObjectURL(url);
       }
-
-      const blob = await response.blob();
-      const bitmap = await createImageBitmap(blob);
-
-      const canvas = document.createElement('canvas');
-      canvas.width = bitmap.width;
-      canvas.height = bitmap.height;
-
-      const ctx = canvas.getContext('2d');
-      if (!ctx) {
-        throw new Error('无法获取 canvas 2D 上下文');
-      }
-
-      ctx.drawImage(bitmap, 0, 0);
-
-      const pngBlob = await new Promise((resolve, reject) => {
-        canvas.toBlob(result => {
-          if (result) resolve(result);
-          else reject(new Error('PNG 导出失败'));
-        }, 'image/png');
-      });
-
-      return URL.createObjectURL(pngBlob);
+      mediaObjectUrls.clear();
     }
 
-    async function replaceAvifImagesWithPng(root = document) {
-      const images = Array.from(root.querySelectorAll('img'));
+    function trackMediaObjectUrl(url) {
+      if (url) mediaObjectUrls.add(url);
+      return url;
+    }
 
-      for (const img of images) {
-        const src = img.getAttribute('src') || '';
-        if (!/\.avif(\?.*)?(#.*)?$/i.test(src)) continue;
+    function encodeMediaPath(path) {
+      return String(path ?? '')
+        .split('/')
+        .map(segment => encodeURIComponent(segment))
+        .join('/');
+    }
+
+    function buildMediaUrl(baseUrl, fileName) {
+      return `${String(baseUrl ?? '')}${encodeMediaPath(fileName)}`;
+    }
+
+    function getMediaKindLabel(kind) {
+      return kind === 'audio' ? '音频' : '图片';
+    }
+
+    function inferMediaMimeType(kind, fileName) {
+      const lowerName = String(fileName ?? '').toLowerCase();
+      if (kind === 'audio') {
+        if (lowerName.endsWith('.ogg') || lowerName.endsWith('.oga')) return 'audio/ogg';
+        if (lowerName.endsWith('.mp3')) return 'audio/mpeg';
+        if (lowerName.endsWith('.wav')) return 'audio/wav';
+        return 'audio/ogg';
+      }
+      if (lowerName.endsWith('.avif')) return 'image/avif';
+      if (lowerName.endsWith('.webp')) return 'image/webp';
+      if (lowerName.endsWith('.png')) return 'image/png';
+      if (lowerName.endsWith('.jpg') || lowerName.endsWith('.jpeg')) return 'image/jpeg';
+      return 'application/octet-stream';
+    }
+
+    function normalizeMediaBlob(blob, kind, fileName) {
+      if (blob && blob.type) return blob;
+      return new Blob([blob], { type: inferMediaMimeType(kind, fileName) });
+    }
+
+    async function fetchBlobWithTimeout(url, timeoutMs = 0) {
+      const controller = typeof AbortController === 'function' ? new AbortController() : null;
+      let timeoutId = null;
+
+      try {
+        if (controller && timeoutMs > 0) {
+          timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+        }
+
+        const response = await fetch(url, {
+          cache: 'no-store',
+          signal: controller ? controller.signal : undefined
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const blob = await response.blob();
+        if (!blob || blob.size <= 0) {
+          throw new Error('空文件');
+        }
+
+        return blob;
+      } catch (error) {
+        if (timeoutMs > 0 && error && error.name === 'AbortError') {
+          throw new Error(`请求超时（${timeoutMs}ms）`);
+        }
+        throw error;
+      } finally {
+        if (timeoutId) clearTimeout(timeoutId);
+      }
+    }
+
+    async function resolveMediaFile(fileName, kind, hydrationToken) {
+      const attempts = [];
+
+      for (let index = 0; index < MEDIA_SOURCE_ENDPOINTS.length; index += 1) {
+        const source = MEDIA_SOURCE_ENDPOINTS[index];
+        const timeoutMs = index < MEDIA_SOURCE_ENDPOINTS.length - 1 ? MEDIA_SOURCE_TIMEOUT_MS : 0;
+        const url = buildMediaUrl(source.url, fileName);
 
         try {
-          const pngBlobUrl = await convertImageUrlToPngBlobUrl(src);
-          img.dataset.originalSrc = src;
-          img.src = pngBlobUrl;
+          const rawBlob = await fetchBlobWithTimeout(url, timeoutMs);
+          if (hydrationToken !== mediaHydrationToken) {
+            throw new Error('媒体加载已过期');
+          }
+          const blob = normalizeMediaBlob(rawBlob, kind, fileName);
+          return {
+            source,
+            url,
+            blob
+          };
         } catch (error) {
-          console.error('AVIF 转 PNG 失败：', src, error);
+          const errorText = String(error && error.message ? error.message : error);
+          attempts.push({
+            name: source.name,
+            url,
+            error: errorText
+          });
+
+          if (hydrationToken !== mediaHydrationToken) {
+            throw error;
+          }
         }
       }
+
+      const loadError = new Error(`${getMediaKindLabel(kind)}加载失败：${fileName}`);
+      loadError.attempts = attempts;
+      throw loadError;
+    }
+
+    async function convertImageBlobToPngBlob(blob) {
+      const bitmap = await createImageBitmap(blob);
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = bitmap.width;
+        canvas.height = bitmap.height;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          throw new Error('无法获取 canvas 2D 上下文');
+        }
+
+        ctx.drawImage(bitmap, 0, 0);
+
+        return await new Promise((resolve, reject) => {
+          canvas.toBlob(result => {
+            if (result) resolve(result);
+            else reject(new Error('PNG 导出失败'));
+          }, 'image/png');
+        });
+      } finally {
+        if (bitmap && typeof bitmap.close === 'function') {
+          bitmap.close();
+        }
+      }
+    }
+
+    async function normalizeImageBlobForDisplay(blob, fileName) {
+      const lowerName = String(fileName ?? '').trim().toLowerCase();
+      const blobType = String(blob?.type ?? '').toLowerCase();
+      const shouldConvertToPng = lowerName.endsWith('.avif') || blobType === 'image/avif';
+
+      if (!shouldConvertToPng) {
+        return blob;
+      }
+
+      try {
+        return await convertImageBlobToPngBlob(blob);
+      } catch (error) {
+        throw new Error(`AVIF 转 PNG 失败：${String(error && error.message ? error.message : error)}`);
+      }
+    }
+
+    function buildMediaFailureTitle(kind, fileName) {
+      return `${getMediaKindLabel(kind)}加载失败：${fileName}`;
+    }
+
+    function buildMediaFailureDetail(error) {
+      const attempts = Array.isArray(error?.attempts) ? error.attempts : [];
+      if (!attempts.length) {
+        return String(error && error.message ? error.message : error);
+      }
+      return attempts
+        .map(item => `${item.name}: ${item.error}`)
+        .join(' | ');
+    }
+
+    async function hydrateWikiImageNode(node, hydrationToken) {
+      const fileName = String(node.getAttribute('img') ?? '').trim();
+      if (!fileName) {
+        node.dataset.mediaStatus = 'error';
+        node.textContent = '图片文件名缺失。';
+        return;
+      }
+
+      node.dataset.mediaStatus = 'loading';
+      node.textContent = `正在加载图片：${fileName}`;
+
+      try {
+        const resolved = await resolveMediaFile(fileName, 'image', hydrationToken);
+        const displayBlob = await normalizeImageBlobForDisplay(resolved.blob, fileName);
+        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
+
+        const objectUrl = trackMediaObjectUrl(URL.createObjectURL(displayBlob));
+        const img = document.createElement('img');
+        img.src = objectUrl;
+        img.alt = fileName.replace(/\.[^./\\]+$/, '');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+
+        node.replaceChildren(img);
+        node.dataset.mediaStatus = 'ready';
+        node.title = `${resolved.source.name}: ${resolved.url}`;
+      } catch (error) {
+        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
+        node.dataset.mediaStatus = 'error';
+        node.textContent = buildMediaFailureTitle('image', fileName);
+        node.title = buildMediaFailureDetail(error);
+        console.error('图片加载失败：', fileName, error);
+      }
+    }
+
+    async function hydrateWikiAudioNode(node, hydrationToken) {
+      const fileName = String(node.getAttribute('img') ?? '').trim();
+      if (!fileName) {
+        node.dataset.mediaStatus = 'error';
+        node.textContent = '音频文件名缺失。';
+        return;
+      }
+
+      node.dataset.mediaStatus = 'loading';
+      node.textContent = `正在加载音频：${fileName}`;
+
+      try {
+        const resolved = await resolveMediaFile(fileName, 'audio', hydrationToken);
+        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
+
+        const objectUrl = trackMediaObjectUrl(URL.createObjectURL(resolved.blob));
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        audio.preload = 'none';
+
+        const source = document.createElement('source');
+        source.src = objectUrl;
+        source.type = inferMediaMimeType('audio', fileName);
+        audio.appendChild(source);
+        audio.appendChild(document.createTextNode('当前浏览器不支持音频播放。'));
+
+        node.replaceChildren(audio);
+        node.dataset.mediaStatus = 'ready';
+        node.title = `${resolved.source.name}: ${resolved.url}`;
+      } catch (error) {
+        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
+        node.dataset.mediaStatus = 'error';
+        node.textContent = buildMediaFailureTitle('audio', fileName);
+        node.title = buildMediaFailureDetail(error);
+        console.error('音频加载失败：', fileName, error);
+      }
+    }
+
+    async function hydrateWikiMedia(root = document, hydrationToken = mediaHydrationToken) {
+      const imageNodes = Array.from(root.querySelectorAll('div.wiki-img[img]'));
+      const audioNodes = Array.from(root.querySelectorAll('div.wiki-audio[img]'));
+
+      await Promise.allSettled([
+        ...imageNodes.map(node => hydrateWikiImageNode(node, hydrationToken)),
+        ...audioNodes.map(node => hydrateWikiAudioNode(node, hydrationToken))
+      ]);
     }
 
     async function renderMarkdown(mdContent) {
@@ -915,9 +1166,14 @@
         throw new Error('Markdown 渲染结果为空。');
       }
 
+      revokeTrackedMediaObjectUrls();
       content.innerHTML = rendered;
 
-      await replaceAvifImagesWithPng(content);
+      const currentMediaToken = ++mediaHydrationToken;
+      hydrateWikiMedia(content, currentMediaToken).catch(error => {
+        if (currentMediaToken !== mediaHydrationToken) return;
+        console.error('媒体占位节点处理失败：', error);
+      });
 
       content.querySelectorAll('h2,h3,h4').forEach(h => {
         h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');

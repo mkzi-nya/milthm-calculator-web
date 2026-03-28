@@ -7,9 +7,7 @@
 
 # Future Unbound (Game Edit)
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Future%20Unbound%20%28Game%20Edit%29.avif">
-</div>
+<div class="wiki-img" img="Future%20Unbound%20%28Game%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Future Unbound (Game Edit)](info:info("Future Unbound (Game Edit)")) |

@@ -2,9 +2,7 @@
 
 # Fantasia Sonata Sky Syndrome
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Fantasia Sonata Sky Syndrome.avif">
-</div>
+<div class="wiki-img" img="Fantasia Sonata Sky Syndrome.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")) |

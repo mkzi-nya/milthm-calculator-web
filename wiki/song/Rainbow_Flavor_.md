@@ -7,9 +7,7 @@
 
 # Rainbow Flavor!
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Rainbow%20Flavor%21.avif">
-</div>
+<div class="wiki-img" img="Rainbow%20Flavor%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Rainbow Flavor!](info:info("Rainbow Flavor!")) |

@@ -7,9 +7,7 @@
 
 # cybernetic blazar
 
-<div class="wiki-img">
-  <img src="../../resources/avif/cybernetic blazar.avif">
-</div>
+<div class="wiki-img" img="cybernetic blazar.avif"></div>
 
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |

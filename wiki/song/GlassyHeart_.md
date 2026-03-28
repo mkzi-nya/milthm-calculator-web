@@ -7,13 +7,9 @@
 
 # GlassyHeart.
 
-<div class="wiki-img">
-  <img src="../../resources/avif/GlassyHeart..avif">
-</div>
+<div class="wiki-img" img="GlassyHeart..avif"></div>
 
-<div class="wiki-img">
-  <img src="../../resources/avif/SquareArtwork_GlassyHeart..avif">
-</div>
+<div class="wiki-img" img="SquareArtwork_GlassyHeart..avif"></div>
 
 ## 曲目信息
 | 曲名 | [GlassyHeart.](info:info("GlassyHeart.")) |

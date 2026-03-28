@@ -3,9 +3,7 @@
 # Vestige of Dreams
 
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Vestige of Dreams.avif">
-</div>
+<div class="wiki-img" img="Vestige of Dreams.avif"></div>
 
 ## 曲目信息
 

@@ -7,9 +7,7 @@
 
 # Fluorescent Light
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Fluorescent Light.avif">
-</div>
+<div class="wiki-img" img="Fluorescent Light.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fluorescent Light](info:info("Fluorescent Light")) |

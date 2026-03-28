@@ -7,9 +7,7 @@
 
 # Agnostic
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Agnostic.avif">
-</div>
+<div class="wiki-img" img="Agnostic.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Agnostic](info:info("Agnostic")) |

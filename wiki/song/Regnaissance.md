@@ -2,9 +2,7 @@
 
 # Regnaissance
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Regnaissance.avif">
-</div>
+<div class="wiki-img" img="Regnaissance.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Regnaissance](info:info("Regnaissance")) |

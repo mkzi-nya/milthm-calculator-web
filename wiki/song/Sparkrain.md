@@ -7,9 +7,7 @@
 
 # 烁雨
 
-<div class="wiki-img">
-  <img src="../../resources/avif/烁雨.avif">
-</div>
+<div class="wiki-img" img="烁雨.avif"></div>
 
 ## 曲目信息
 | 曲名 | [烁雨](info:info("烁雨")) |

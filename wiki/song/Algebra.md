@@ -7,9 +7,7 @@
 
 # Algebra
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Algebra.avif">
-</div>
+<div class="wiki-img" img="Algebra.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Algebra](info:info("Algebra")) |

@@ -7,9 +7,7 @@
 
 # Habitable Zone
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Habitable%20Zone.avif">
-</div>
+<div class="wiki-img" img="Habitable%20Zone.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Habitable Zone](info:info("Habitable Zone")) |

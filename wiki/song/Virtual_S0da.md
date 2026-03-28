@@ -7,9 +7,7 @@
 
 # Virtual S0da
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Virtual S0da.avif">
-</div>
+<div class="wiki-img" img="Virtual S0da.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Virtual S0da](info:info("Virtual S0da")) |

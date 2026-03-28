@@ -7,9 +7,7 @@
 
 # Moving On
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Moving On.avif">
-</div>
+<div class="wiki-img" img="Moving On.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Moving On](info:info("Moving On")) |

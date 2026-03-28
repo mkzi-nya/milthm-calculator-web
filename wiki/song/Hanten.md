@@ -7,9 +7,7 @@
 
 # はんてん
 
-<div class="wiki-img">
-  <img src="../../resources/avif/はんてん.avif">
-</div>
+<div class="wiki-img" img="はんてん.avif"></div>
 
 ## 曲目信息
 | 曲名 | [はんてん](info:info("はんてん")) |

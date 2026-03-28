@@ -7,9 +7,7 @@
 
 # Meltovt Necrosys
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Meltovt Necrosys.avif">
-</div>
+<div class="wiki-img" img="Meltovt Necrosys.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |

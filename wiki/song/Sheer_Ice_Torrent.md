@@ -7,9 +7,7 @@
 
 # Sheer Ice Torrent
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Sheer Ice Torrent.avif">
-</div>
+<div class="wiki-img" img="Sheer Ice Torrent.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sheer Ice Torrent](info:info("Sheer Ice Torrent")) |

@@ -7,9 +7,7 @@
 
 # 参宿四\~Betelgeuse\~
 
-<div class="wiki-img">
-  <img src="../../resources/avif/参宿四\~Betelgeuse\~.avif">
-</div>
+<div class="wiki-img" img="参宿四\~Betelgeuse\~.avif"></div>
 
 ## 曲目信息
 | 曲名 | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |

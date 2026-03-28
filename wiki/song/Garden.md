@@ -2,9 +2,7 @@
 
 # Garden
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Garden.avif">
-</div>
+<div class="wiki-img" img="Garden.avif"></div>
 
 ## 曲目信息
 

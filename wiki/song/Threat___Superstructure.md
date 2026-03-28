@@ -7,9 +7,7 @@
 
 # Threat - Superstructure
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Threat%20-%20Superstructure.avif">
-</div>
+<div class="wiki-img" img="Threat%20-%20Superstructure.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Superstructure](info:info("Threat - Superstructure")) |

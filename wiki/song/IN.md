@@ -7,9 +7,7 @@
 
 # IN
 
-<div class="wiki-img">
-  <img src="../../resources/avif/IN.avif">
-</div>
+<div class="wiki-img" img="IN.avif"></div>
 
 ## 曲目信息
 | 曲名 | [IN](info:info("IN")) |

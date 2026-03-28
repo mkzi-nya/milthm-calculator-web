@@ -7,9 +7,7 @@
 
 # Sakuyahime
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Sakuyahime.avif">
-</div>
+<div class="wiki-img" img="Sakuyahime.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sakuyahime](info:info("Sakuyahime")) |

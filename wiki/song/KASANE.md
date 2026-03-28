@@ -7,9 +7,7 @@
 
 # KASANE
 
-<div class="wiki-img">
-  <img src="../../resources/avif/KASANE.avif">
-</div>
+<div class="wiki-img" img="KASANE.avif"></div>
 
 ## 曲目信息
 | 曲名 | [KASANE](info:info("KASANE")) |

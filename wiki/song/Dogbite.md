@@ -7,9 +7,7 @@
 
 # Dogbite
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Dogbite.avif">
-</div>
+<div class="wiki-img" img="Dogbite.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Dogbite](info:info("Dogbite")) |

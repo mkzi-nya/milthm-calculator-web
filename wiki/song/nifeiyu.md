@@ -7,9 +7,7 @@
 
 # 逆飛雨
 
-<div class="wiki-img">
-  <img src="../../resources/avif/%E9%80%86%E9%A3%9B%E9%9B%A8.avif">
-</div>
+<div class="wiki-img" img="%E9%80%86%E9%A3%9B%E9%9B%A8.avif"></div>
 
 ## 曲目信息
 | 曲名 | [逆飛雨](info:info("逆飛雨")) |

@@ -7,9 +7,7 @@
 
 # Threat - Waterfront Complex
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Threat%20-%20Waterfront%20Complex.avif">
-</div>
+<div class="wiki-img" img="Threat%20-%20Waterfront%20Complex.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) |

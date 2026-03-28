@@ -7,9 +7,7 @@
 
 # 瑠璃色
 
-<div class="wiki-img">
-  <img src="../../resources/avif/%E7%91%A0%E7%92%83%E8%89%B2.avif">
-</div>
+<div class="wiki-img" img="%E7%91%A0%E7%92%83%E8%89%B2.avif"></div>
 
 ## 曲目信息
 | 曲名 | [瑠璃色](info:info("瑠璃色")) |

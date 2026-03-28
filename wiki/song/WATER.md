@@ -7,9 +7,7 @@
 
 # WATER
 
-<div class="wiki-img">
-  <img src="../../resources/avif/WATER.avif">
-</div>
+<div class="wiki-img" img="WATER.avif"></div>
 
 ## 曲目信息
 | 曲名 | [WATER](info:info("WATER")) |

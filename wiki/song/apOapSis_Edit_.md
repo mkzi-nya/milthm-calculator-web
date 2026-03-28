@@ -7,9 +7,7 @@
 
 # apOapSis(Edit)
 
-<div class="wiki-img">
-  <img src="../../resources/avif/apOapSis%28Edit%29.avif">
-</div>
+<div class="wiki-img" img="apOapSis%28Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [apOapSis(Edit)](info:info("apOapSis(Edit)")) |

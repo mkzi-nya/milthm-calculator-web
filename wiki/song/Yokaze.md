@@ -2,9 +2,7 @@
 
 # 夜風
 
-<div class="wiki-img">
-  <img src="../../resources/avif/夜風.avif">
-</div>
+<div class="wiki-img" img="夜風.avif"></div>
 
 ## 曲目信息
 | 曲名 | [夜風](info:info("夜風")) |

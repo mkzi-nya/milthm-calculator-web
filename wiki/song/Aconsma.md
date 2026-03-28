@@ -2,9 +2,7 @@
 
 # Aconsma
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Aconsma.avif">
-</div>
+<div class="wiki-img" img="Aconsma.avif"></div>
 
 ## 曲目信息
 

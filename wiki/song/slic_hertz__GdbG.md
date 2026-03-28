@@ -7,9 +7,7 @@
 
 # slic.hertz #GdbG
 
-<div class="wiki-img">
-  <img src="../../resources/avif/slic.hertz%20%23GdbG.avif">
-</div>
+<div class="wiki-img" img="slic.hertz%20%23GdbG.avif"></div>
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |

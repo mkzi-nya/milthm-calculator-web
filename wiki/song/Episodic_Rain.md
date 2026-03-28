@@ -2,9 +2,7 @@
 
 # 时落之雨
 
-<div class="wiki-img">
-  <img src="../../resources/avif/时落之雨.avif">
-</div>
+<div class="wiki-img" img="时落之雨.avif"></div>
 
 ## 曲目信息
 

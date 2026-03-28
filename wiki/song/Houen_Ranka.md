@@ -7,13 +7,9 @@
 
 # 烽閻鸞錵
 
-<div class="wiki-img">
-  <img src="../../resources/avif/%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif">
-</div>
+<div class="wiki-img" img="%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
 
-<div class="wiki-img">
-  <img src="../../resources/avif/SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif">
-</div>
+<div class="wiki-img" img="SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
 
 ## 曲目信息
 | 曲名 | [烽閻鸞錵](info:info("烽閻鸞錵")) |

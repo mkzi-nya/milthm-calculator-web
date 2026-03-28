@@ -7,9 +7,7 @@
 
 # サイクルの欠片
 
-<div class="wiki-img">
-  <img src="../../resources/avif/サイクルの欠片.avif">
-</div>
+<div class="wiki-img" img="サイクルの欠片.avif"></div>
 
 ## 曲目信息
 | 曲名 | [サイクルの欠片](info:info("サイクルの欠片")) |

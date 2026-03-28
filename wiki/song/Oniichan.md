@@ -7,9 +7,7 @@
 
 # Oniichan
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Oniichan.avif">
-</div>
+<div class="wiki-img" img="Oniichan.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Oniichan](info:info("Oniichan")) |

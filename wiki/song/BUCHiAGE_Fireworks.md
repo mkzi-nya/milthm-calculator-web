@@ -7,9 +7,7 @@
 
 # BUCHiAGE Fireworks
 
-<div class="wiki-img">
-  <img src="../../resources/avif/BUCHiAGE Fireworks.avif">
-</div>
+<div class="wiki-img" img="BUCHiAGE Fireworks.avif"></div>
 
 ## 曲目信息
 | 曲名 | [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks")) |

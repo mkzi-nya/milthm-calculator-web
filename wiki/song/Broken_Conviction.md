@@ -7,9 +7,7 @@
 
 # Broken Conviction
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Broken Conviction.avif">
-</div>
+<div class="wiki-img" img="Broken Conviction.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Broken Conviction](info:info("Broken Conviction")) |

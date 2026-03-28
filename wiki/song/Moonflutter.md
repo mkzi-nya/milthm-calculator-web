@@ -7,9 +7,7 @@
 
 # Moonflutter
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Moonflutter.avif">
-</div>
+<div class="wiki-img" img="Moonflutter.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Moonflutter](info:info("Moonflutter")) |

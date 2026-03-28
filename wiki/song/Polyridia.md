@@ -2,9 +2,7 @@
 
 # Polyridia
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Polyridia.avif">
-</div>
+<div class="wiki-img" img="Polyridia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Polyridia](info:info("Polyridia")) |

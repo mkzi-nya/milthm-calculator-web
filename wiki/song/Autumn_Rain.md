@@ -7,9 +7,7 @@
 
 # Autumn Rain
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Autumn Rain.avif">
-</div>
+<div class="wiki-img" img="Autumn Rain.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Autumn Rain](info:info("Autumn Rain")) |

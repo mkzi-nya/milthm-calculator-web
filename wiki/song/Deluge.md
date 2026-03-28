@@ -7,9 +7,7 @@
 
 # Deluge
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Deluge.avif">
-</div>
+<div class="wiki-img" img="Deluge.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Deluge](info:info("Deluge")) |

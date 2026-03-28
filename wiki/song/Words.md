@@ -7,9 +7,7 @@
 
 # Words
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Words.avif">
-</div>
+<div class="wiki-img" img="Words.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Words](info:info("Words")) |

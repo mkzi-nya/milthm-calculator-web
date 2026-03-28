@@ -2,9 +2,7 @@
 
 # Fantasia Sonata Botanical Garden
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Fantasia Sonata Botanical Garden.avif">
-</div>
+<div class="wiki-img" img="Fantasia Sonata Botanical Garden.avif"></div>
 
 ## 曲目信息
 

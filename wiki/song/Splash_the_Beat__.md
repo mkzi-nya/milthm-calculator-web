@@ -7,9 +7,7 @@
 
 # Splash the Beat!!
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Splash%20the%20Beat%21%21.avif">
-</div>
+<div class="wiki-img" img="Splash%20the%20Beat%21%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Splash the Beat!!](info:info("Splash the Beat!!")) |

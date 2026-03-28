@@ -7,9 +7,7 @@
 
 # Before it Ends
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Before it Ends.avif">
-</div>
+<div class="wiki-img" img="Before it Ends.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Before it Ends](info:info("Before it Ends")) |

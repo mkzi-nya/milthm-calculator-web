@@ -7,9 +7,7 @@
 
 # Aleph-0
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Aleph-0.avif">
-</div>
+<div class="wiki-img" img="Aleph-0.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Aleph-0](info:info("Aleph-0")) |

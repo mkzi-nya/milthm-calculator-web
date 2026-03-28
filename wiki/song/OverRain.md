@@ -2,9 +2,7 @@
 
 # OverRain
 
-<div class="wiki-img">
-  <img src="../../resources/avif/OverRain.avif">
-</div>
+<div class="wiki-img" img="OverRain.avif"></div>
 
 ## 曲目信息
 

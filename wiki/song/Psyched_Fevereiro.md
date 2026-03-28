@@ -7,9 +7,7 @@
 
 # Psyched Fevereiro
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Psyched Fevereiro.avif">
-</div>
+<div class="wiki-img" img="Psyched Fevereiro.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Psyched Fevereiro](info:info("Psyched Fevereiro")) |

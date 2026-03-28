@@ -7,9 +7,7 @@
 
 # furioso melodia
 
-<div class="wiki-img">
-  <img src="../../resources/avif/furioso%20melodia.avif">
-</div>
+<div class="wiki-img" img="furioso%20melodia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [furioso melodia](info:info("furioso melodia")) |

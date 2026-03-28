@@ -7,9 +7,7 @@
 
 # ホシフルヨルニ
 
-<div class="wiki-img">
-  <img src="../../resources/avif/ホシフルヨルニ.avif">
-</div>
+<div class="wiki-img" img="ホシフルヨルニ.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ホシフルヨルニ](info:info("ホシフルヨルニ")) |

@@ -7,9 +7,7 @@
 
 # Sound of Nature
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Sound of Nature.avif">
-</div>
+<div class="wiki-img" img="Sound of Nature.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sound of Nature](info:info("Sound of Nature")) |

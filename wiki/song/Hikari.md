@@ -7,9 +7,7 @@
 
 # Hikari
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Hikari.avif">
-</div>
+<div class="wiki-img" img="Hikari.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Hikari](info:info("Hikari")) |

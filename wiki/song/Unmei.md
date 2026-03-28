@@ -2,9 +2,7 @@
 
 # 運命
 
-<div class="wiki-img">
-  <img src="../../resources/avif/運命.avif">
-</div>
+<div class="wiki-img" img="運命.avif"></div>
 
 ## 曲目信息
 | 曲名 | [運命](info:info("運命")) |

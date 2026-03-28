@@ -7,9 +7,7 @@
 
 # Sundown
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Sundown.avif">
-</div>
+<div class="wiki-img" img="Sundown.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sundown](info:info("Sundown")) |

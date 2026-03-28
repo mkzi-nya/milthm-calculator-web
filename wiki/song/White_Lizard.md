@@ -7,9 +7,7 @@
 
 # White Lizard
 
-<div class="wiki-img">
-  <img src="../../resources/avif/White Lizard.avif">
-</div>
+<div class="wiki-img" img="White Lizard.avif"></div>
 
 ## 曲目信息
 | 曲名 | [White Lizard](info:info("White Lizard")) |

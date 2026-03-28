@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 RESOURCES_JSON = Path("../../../resources/resources.json")
-AVIF_DIR = Path("mhtlim-static-files/public/resources/avif")
+AVIF_DIR = Path("../../../resources/avif")
 OUTPUT_DIR = Path("../")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]

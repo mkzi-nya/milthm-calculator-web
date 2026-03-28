@@ -7,9 +7,7 @@
 
 # conflict
 
-<div class="wiki-img">
-  <img src="../../resources/avif/conflict.avif">
-</div>
+<div class="wiki-img" img="conflict.avif"></div>
 
 ## 曲目信息
 | 曲名 | [conflict](info:info("conflict")) |

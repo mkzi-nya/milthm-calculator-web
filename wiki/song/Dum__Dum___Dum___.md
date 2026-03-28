@@ -7,9 +7,7 @@
 
 # Dum! Dum!! Dum!!!
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Dum%21%20Dum%21%21%20Dum%21%21%21.avif">
-</div>
+<div class="wiki-img" img="Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!")) |

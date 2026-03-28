@@ -7,9 +7,7 @@
 
 # Kayava
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Kayava.avif">
-</div>
+<div class="wiki-img" img="Kayava.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Kayava](info:info("Kayava")) |

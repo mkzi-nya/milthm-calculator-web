@@ -7,9 +7,7 @@
 
 # INFP.mp3
 
-<div class="wiki-img">
-  <img src="../../resources/avif/INFP.mp3.avif">
-</div>
+<div class="wiki-img" img="INFP.mp3.avif"></div>
 
 ## 曲目信息
 | 曲名 | [INFP.mp3](info:info("INFP.mp3")) |

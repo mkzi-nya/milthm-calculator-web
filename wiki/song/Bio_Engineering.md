@@ -7,9 +7,7 @@
 
 # Bio-Engineering
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Bio-Engineering.avif">
-</div>
+<div class="wiki-img" img="Bio-Engineering.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Bio-Engineering](info:info("Bio-Engineering")) |

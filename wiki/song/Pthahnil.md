@@ -7,9 +7,7 @@
 
 # Pthahnil
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Pthahnil.avif">
-</div>
+<div class="wiki-img" img="Pthahnil.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |

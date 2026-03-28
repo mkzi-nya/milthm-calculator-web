@@ -7,9 +7,7 @@
 
 # Fly To Meteor (Milthm Edit)
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Fly%20To%20Meteor%20%28Milthm%20Edit%29.avif">
-</div>
+<div class="wiki-img" img="Fly%20To%20Meteor%20%28Milthm%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor (Milthm Edit)")) |
