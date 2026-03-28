@@ -7,7 +7,7 @@
 
 # Psyched Fevereiro
 
-<div class="wiki-img" img="Psyched Fevereiro.avif"></div>
+<div class="wiki-img" file="Psyched Fevereiro.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Psyched Fevereiro](info:info("Psyched Fevereiro")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Psyched Fevereiro.ogg"></div>
 
 ## 曲目相关
 

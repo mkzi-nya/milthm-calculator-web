@@ -7,7 +7,7 @@
 
 # KASANE
 
-<div class="wiki-img" img="KASANE.avif"></div>
+<div class="wiki-img" file="KASANE.avif"></div>
 
 ## 曲目信息
 | 曲名 | [KASANE](info:info("KASANE")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="KASANE.ogg"></div>
 
 ## 曲目相关
 

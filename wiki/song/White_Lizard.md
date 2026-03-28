@@ -7,7 +7,7 @@
 
 # White Lizard
 
-<div class="wiki-img" img="White Lizard.avif"></div>
+<div class="wiki-img" file="White Lizard.avif"></div>
 
 ## 曲目信息
 | 曲名 | [White Lizard](info:info("White Lizard")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="White Lizard.ogg"></div>
 
 ## 曲目相关
 

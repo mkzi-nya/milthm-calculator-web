@@ -2,7 +2,7 @@
 
 # LOUDER!
 
-<div class="wiki-img" img="LOUDER%21.avif"></div>
+<div class="wiki-img" file="LOUDER%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [LOUDER!](info:info("LOUDER!")) |
@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="LOUDER%21.ogg"></div>
 
 ## 曲目相关
 

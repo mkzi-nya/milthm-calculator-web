@@ -7,7 +7,7 @@
 
 # Algebra
 
-<div class="wiki-img" img="Algebra.avif"></div>
+<div class="wiki-img" file="Algebra.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Algebra](info:info("Algebra")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Algebra.ogg"></div>
 
 ## 曲目相关
 

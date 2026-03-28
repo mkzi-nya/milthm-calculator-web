@@ -2,7 +2,7 @@
 
 # 粗线条的雨
 
-<div class="wiki-img" img="粗线条的雨.avif"></div>
+<div class="wiki-img" file="粗线条的雨.avif"></div>
 
 ## 曲目信息
 
@@ -29,6 +29,9 @@
 解锁曲包《甜与苦的一体两面》后，默认解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="粗线条的雨.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1oV4y1J7N4/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

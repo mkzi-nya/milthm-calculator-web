@@ -2,7 +2,7 @@
 
 # 雨之城
 
-<div class="wiki-img" img="雨之城.avif"></div>
+<div class="wiki-img" file="雨之城.avif"></div>
 
 ## 曲目信息
 
@@ -30,6 +30,9 @@
 - 在解锁「序章 - 雨的声音」后，默认解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="雨之城.ogg"></div>
+
 
 - [【Bilibili】](https://b23.tv/1epDi4K)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

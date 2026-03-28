@@ -2,7 +2,7 @@
 
 # 暮予星光
 
-<div class="wiki-img" img="暮予星光.avif"></div>
+<div class="wiki-img" file="暮予星光.avif"></div>
 
 ## 曲目信息
 | 曲名 | [暮予星光](info:info("暮予星光")) |
@@ -28,6 +28,9 @@
 - 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="暮予星光.ogg"></div>
+
 
 - [【Spotify】](https://open.spotify.com/album/55ZpAjhoNo7QaB1YRGLbLI)
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4VpH1XtVoNt1q5tVGn938N?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

@@ -7,7 +7,7 @@
 
 # slic.hertz #GdbG
 
-<div class="wiki-img" img="slic.hertz%20%23GdbG.avif"></div>
+<div class="wiki-img" file="slic.hertz%20%23GdbG.avif"></div>
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="slic.hertz%20%23GdbG.ogg"></div>
 
 ## 曲目相关
 

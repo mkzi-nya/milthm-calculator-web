@@ -2,7 +2,7 @@
 
 # Aconsma
 
-<div class="wiki-img" img="Aconsma.avif"></div>
+<div class="wiki-img" file="Aconsma.avif"></div>
 
 ## 曲目信息
 
@@ -29,7 +29,10 @@
 
 ## 曲目试听
 
-（待补充）
+<div class="wiki-audio" file="Aconsma.ogg"></div>
+
+
+<div class="wiki-audio" file="Aconsma.ogg"></div>
 
 ## 曲目相关
 

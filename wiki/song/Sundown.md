@@ -7,7 +7,7 @@
 
 # Sundown
 
-<div class="wiki-img" img="Sundown.avif"></div>
+<div class="wiki-img" file="Sundown.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sundown](info:info("Sundown")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Sundown.ogg"></div>
 
 ## 曲目相关
 

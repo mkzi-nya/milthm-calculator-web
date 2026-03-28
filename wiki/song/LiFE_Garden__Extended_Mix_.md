@@ -2,9 +2,9 @@
 
 # LiFE Garden (Extended Mix)
 
-> 本页面为关于《[LiFE Garden (Extended Mix)](info:info("LiFE Garden Extended Mix"))》的信息。有关《[LiFE Garden](info:info("LiFE Garden"))》的信息，请[点击此处查看](./?q=LiFE_Garden)。
+> 本页面为关于《[LiFE Garden (Extended Mix)](info:info("LiFE Garden Extended Mix"))》的信息。有关《[LiFE Garden](info:info("LiFE Garden"))》的信息，请[点击此处查看](./?song=LiFE_Garden)。
 
-<div class="wiki-img" img="LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
+<div class="wiki-img" file="LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
 
 ## 曲目信息
 
@@ -31,6 +31,9 @@
 解锁《[LiFE Garden](info:info("LiFE Garden"))》后，在其 [Cloudburst](info:info("LiFE Garden", "Cloudburst")) 难度中取得 S 及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="LiFE%20Garden%20%28Extended%20Mix%29.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1vX4y187dK)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

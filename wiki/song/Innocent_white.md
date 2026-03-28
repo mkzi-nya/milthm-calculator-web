@@ -7,7 +7,7 @@
 
 # Innocent white
 
-<div class="wiki-img" img="Innocent white.avif"></div>
+<div class="wiki-img" file="Innocent white.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Innocent white](info:info("Innocent white")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Innocent white.ogg"></div>
 
 ## 曲目相关
 

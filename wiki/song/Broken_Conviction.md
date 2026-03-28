@@ -7,7 +7,7 @@
 
 # Broken Conviction
 
-<div class="wiki-img" img="Broken Conviction.avif"></div>
+<div class="wiki-img" file="Broken Conviction.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Broken Conviction](info:info("Broken Conviction")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Broken Conviction.ogg"></div>
 
 ## 曲目相关
 

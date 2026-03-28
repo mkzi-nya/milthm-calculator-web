@@ -7,7 +7,7 @@
 
 # WATER
 
-<div class="wiki-img" img="WATER.avif"></div>
+<div class="wiki-img" file="WATER.avif"></div>
 
 ## 曲目信息
 | 曲名 | [WATER](info:info("WATER")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="WATER.ogg"></div>
 
 ## 曲目相关
 

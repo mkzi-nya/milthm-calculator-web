@@ -2,7 +2,7 @@
 
 # 雨女
 
-<div class="wiki-img"img="雨女.avif"></div>
+<div class="wiki-img"file="雨女.avif"></div>
 
 ## 曲目信息
 | 曲名 | [雨女](info:info("雨女")) |

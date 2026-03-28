@@ -7,7 +7,7 @@
 
 # Bio-Engineering
 
-<div class="wiki-img" img="Bio-Engineering.avif"></div>
+<div class="wiki-img" file="Bio-Engineering.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Bio-Engineering](info:info("Bio-Engineering")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Bio-Engineering.ogg"></div>
 
 ## 曲目相关
 

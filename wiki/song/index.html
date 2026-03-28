@@ -220,10 +220,10 @@
 
     const MEDIA_SOURCE_TIMEOUT_MS = 5000;
     const MEDIA_SOURCE_ENDPOINTS = [
-      { name: 'GitHub Raw', url: 'https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
-      { name: 'ghproxy.net', url: 'https://ghproxy.net/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
-      { name: 'gh-proxy.com', url: 'https://gh-proxy.com/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/avif/' },
-      { name: 'storage.mhtl.im', url: 'https://storage.mhtl.im/avif/' }
+      { name: 'GitHub Raw', url: 'https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/' },
+      { name: 'ghproxy.net', url: 'https://ghproxy.net/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/' },
+      { name: 'gh-proxy.com', url: 'https://gh-proxy.com/https://raw.githubusercontent.com/4everDimensions/mhtlim-static-files/main/public/' },
+      { name: 'storage.mhtl.im', url: 'https://storage.mhtl.im/' }
     ];
 
     const PINYIN_BOUNDARIES = [
@@ -913,8 +913,9 @@
         .join('/');
     }
 
-    function buildMediaUrl(baseUrl, fileName) {
-      return `${String(baseUrl ?? '')}${encodeMediaPath(fileName)}`;
+    function buildMediaUrl(baseUrl, fileName, kind) {
+      const mediaSubdir = kind === 'audio' ? 'audio/' : 'avif/';
+      return `${String(baseUrl ?? '')}${mediaSubdir}${encodeMediaPath(fileName)}`;
     }
 
     function getMediaKindLabel(kind) {
@@ -981,7 +982,7 @@
       for (let index = 0; index < MEDIA_SOURCE_ENDPOINTS.length; index += 1) {
         const source = MEDIA_SOURCE_ENDPOINTS[index];
         const timeoutMs = index < MEDIA_SOURCE_ENDPOINTS.length - 1 ? MEDIA_SOURCE_TIMEOUT_MS : 0;
-        const url = buildMediaUrl(source.url, fileName);
+        const url = buildMediaUrl(source.url, fileName, kind);
 
         try {
           const rawBlob = await fetchBlobWithTimeout(url, timeoutMs);
@@ -1071,7 +1072,7 @@
     }
 
     async function hydrateWikiImageNode(node, hydrationToken) {
-      const fileName = String(node.getAttribute('img') ?? '').trim();
+      const fileName = String(node.getAttribute('file') ?? '').trim();
       if (!fileName) {
         node.dataset.mediaStatus = 'error';
         node.textContent = '图片文件名缺失。';
@@ -1106,7 +1107,7 @@
     }
 
     async function hydrateWikiAudioNode(node, hydrationToken) {
-      const fileName = String(node.getAttribute('img') ?? '').trim();
+      const fileName = String(node.getAttribute('file') ?? '').trim();
       if (!fileName) {
         node.dataset.mediaStatus = 'error';
         node.textContent = '音频文件名缺失。';
@@ -1144,8 +1145,8 @@
     }
 
     async function hydrateWikiMedia(root = document, hydrationToken = mediaHydrationToken) {
-      const imageNodes = Array.from(root.querySelectorAll('div.wiki-img[img]'));
-      const audioNodes = Array.from(root.querySelectorAll('div.wiki-audio[img]'));
+      const imageNodes = Array.from(root.querySelectorAll('div.wiki-img[file]'));
+      const audioNodes = Array.from(root.querySelectorAll('div.wiki-audio[file]'));
 
       await Promise.allSettled([
         ...imageNodes.map(node => hydrateWikiImageNode(node, hydrationToken)),

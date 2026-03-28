@@ -7,7 +7,7 @@
 
 # Threat - Superstructure
 
-<div class="wiki-img" img="Threat%20-%20Superstructure.avif"></div>
+<div class="wiki-img" file="Threat%20-%20Superstructure.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Superstructure](info:info("Threat - Superstructure")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Threat%20-%20Superstructure.ogg"></div>
 
 ## 曲目相关
 

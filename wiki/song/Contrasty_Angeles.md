@@ -2,7 +2,7 @@
 
 # Contrasty Angeles
 
-<div class="wiki-img" img="Contrasty Angeles.avif"></div>
+<div class="wiki-img" file="Contrasty Angeles.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Contrasty Angeles](info:info("Contrasty Angeles")) |
@@ -38,6 +38,9 @@
 特别地，本曲目的CL难度在CB难度取得S评级才会解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Contrasty Angeles.ogg"></div>
+
 - [【Bilibili】](https://www.bilibili.com/video/BV1CzW4eeEyR/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1CzW4eeEyR&p=1"rameborder="no"scrolling="no"></iframe>

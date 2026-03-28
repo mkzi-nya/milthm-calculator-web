@@ -7,7 +7,7 @@
 
 # Autumn Rain
 
-<div class="wiki-img" img="Autumn Rain.avif"></div>
+<div class="wiki-img" file="Autumn Rain.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Autumn Rain](info:info("Autumn Rain")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Autumn Rain.ogg"></div>
 
 ## 曲目相关
 

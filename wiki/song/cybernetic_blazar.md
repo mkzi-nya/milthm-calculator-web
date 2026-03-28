@@ -7,7 +7,7 @@
 
 # cybernetic blazar
 
-<div class="wiki-img" img="cybernetic blazar.avif"></div>
+<div class="wiki-img" file="cybernetic blazar.avif"></div>
 
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="cybernetic blazar.ogg"></div>
 
 ## 曲目相关
 

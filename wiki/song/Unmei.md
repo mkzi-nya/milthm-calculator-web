@@ -2,7 +2,7 @@
 
 # 運命
 
-<div class="wiki-img" img="運命.avif"></div>
+<div class="wiki-img" file="運命.avif"></div>
 
 ## 曲目信息
 | 曲名 | [運命](info:info("運命")) |
@@ -29,7 +29,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="運命.ogg"></div>
 
 ## 曲目相关
 

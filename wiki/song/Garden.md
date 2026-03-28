@@ -2,7 +2,7 @@
 
 # Garden
 
-<div class="wiki-img" img="Garden.avif"></div>
+<div class="wiki-img" file="Garden.avif"></div>
 
 ## 曲目信息
 
@@ -29,6 +29,9 @@
 - 解锁单曲包《露晓卉庭》后，在「露晓卉庭」功能花费 10「菌菇」类型作物解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Garden.ogg"></div>
+
 
 - [【Bilibili】](https://b23.tv/lPKrJlM)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

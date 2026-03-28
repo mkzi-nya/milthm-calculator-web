@@ -7,7 +7,7 @@
 
 # Future Unbound (Game Edit)
 
-<div class="wiki-img" img="Future%20Unbound%20%28Game%20Edit%29.avif"></div>
+<div class="wiki-img" file="Future%20Unbound%20%28Game%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Future Unbound (Game Edit)](info:info("Future Unbound (Game Edit)")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Future%20Unbound%20%28Game%20Edit%29.ogg"></div>
 
 ## 曲目相关
 

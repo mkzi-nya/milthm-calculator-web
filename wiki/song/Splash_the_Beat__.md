@@ -7,7 +7,7 @@
 
 # Splash the Beat!!
 
-<div class="wiki-img" img="Splash%20the%20Beat%21%21.avif"></div>
+<div class="wiki-img" file="Splash%20the%20Beat%21%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Splash the Beat!!](info:info("Splash the Beat!!")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Splash%20the%20Beat%21%21.ogg"></div>
 
 ## 曲目相关
 

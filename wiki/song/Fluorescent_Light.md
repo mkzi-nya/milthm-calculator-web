@@ -7,7 +7,7 @@
 
 # Fluorescent Light
 
-<div class="wiki-img" img="Fluorescent Light.avif"></div>
+<div class="wiki-img" file="Fluorescent Light.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fluorescent Light](info:info("Fluorescent Light")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Fluorescent Light.ogg"></div>
 
 ## 曲目相关
 

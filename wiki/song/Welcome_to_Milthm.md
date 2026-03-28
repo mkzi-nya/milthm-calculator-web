@@ -2,7 +2,7 @@
 
 # Welcome to Milthm
 
-<div class="wiki-img" img="Welcome to Milthm.avif"></div>
+<div class="wiki-img" file="Welcome to Milthm.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Welcome to Milthm](info:info("Welcome to Milthm")) |
@@ -41,3 +41,8 @@
   - 该谱面在 2025 年愚人节活动 (v3.5) 中复刻。
 - 该曲目的 Drizzle 难度谱面在 v4.0 时经过修改。
   
+
+
+## 曲目试听
+
+<div class="wiki-audio" file="Welcome to Milthm.ogg"></div>

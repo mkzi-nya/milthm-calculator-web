@@ -7,7 +7,7 @@
 
 # cafe in 6412I731V
 
-<div class="wiki-img" img="cafe in 6412I731V.avif"></div>
+<div class="wiki-img" file="cafe in 6412I731V.avif"></div>
 
 ## 曲目信息
 | 曲名 | [cafe in 6412I731V](info:info("cafe in 6412I731V")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="cafe in 6412I731V.ogg"></div>
 
 ## 曲目相关
 

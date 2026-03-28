@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Sky Syndrome
 
-<div class="wiki-img" img="Fantasia Sonata Sky Syndrome.avif"></div>
+<div class="wiki-img" file="Fantasia Sonata Sky Syndrome.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")) |
@@ -27,6 +27,9 @@
 - 默认解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Fantasia Sonata Sky Syndrome.ogg"></div>
+
 
 - [【Youube】](https://youtu.be/s6iJzxHFRJU?si=geERnkEA2UxZates)
 

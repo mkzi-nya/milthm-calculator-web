@@ -2,7 +2,7 @@
 
 # イコラト
 
-<div class="wiki-img" img="イコラト.avif"></div>
+<div class="wiki-img" file="イコラト.avif"></div>
 
 ## 曲目信息
 | 曲名 | [イコラト](info:info("イコラト")) |
@@ -30,6 +30,9 @@
   在《[☹](info:info("☹"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="イコラト.ogg"></div>
+
 
 - [【Youtube】](https://youtu.be/Fu_j6i-kIkI?si=YLGFxDlMMB-3l0ZL)
 

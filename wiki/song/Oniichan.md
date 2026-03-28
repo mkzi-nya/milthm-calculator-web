@@ -7,7 +7,7 @@
 
 # Oniichan
 
-<div class="wiki-img" img="Oniichan.avif"></div>
+<div class="wiki-img" file="Oniichan.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Oniichan](info:info("Oniichan")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Oniichan.ogg"></div>
 
 ## 曲目相关
 

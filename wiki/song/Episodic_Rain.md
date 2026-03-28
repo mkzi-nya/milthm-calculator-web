@@ -2,7 +2,7 @@
 
 # 时落之雨
 
-<div class="wiki-img" img="时落之雨.avif"></div>
+<div class="wiki-img" file="时落之雨.avif"></div>
 
 ## 曲目信息
 
@@ -40,6 +40,9 @@ Cloudburst
 - 在《[雨之城](info:info("雨之城"))》[[CB](info:info("雨之城", "Cloudburst"))] 难度中达到S及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="时落之雨.ogg"></div>
+
 
 - [【Bilibili】](https://b23.tv/SaPPL5H)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

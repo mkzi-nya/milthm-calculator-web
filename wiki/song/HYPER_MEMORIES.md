@@ -2,7 +2,7 @@
 
 # HYPER MEMORIES
 
-<div class="wiki-img" img="HYPER MEMORIES.avif"></div>
+<div class="wiki-img" file="HYPER MEMORIES.avif"></div>
 
 ## 曲目信息
 | 曲名 | [HYPER MEMORIES](info:info("HYPER MEMORIES")) |
@@ -29,6 +29,9 @@
 - 在《[Fragment of Memories](info:info("Fragment of Memories"))》任意难度取得A评级后，使沉浸度达到100%，阅读故事第5节即可解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="HYPER MEMORIES.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Yu4y1v7PR/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

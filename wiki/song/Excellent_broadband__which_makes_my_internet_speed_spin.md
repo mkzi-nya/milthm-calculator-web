@@ -7,7 +7,7 @@
 
 # 选择你的宽带
 
-<div class="wiki-img" img="%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6.avif"></div>
+<div class="wiki-img" file="%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6.avif"></div>
 
 ## 曲目信息
 | 曲名 | [选择你的宽带](info:info("选择你的宽带")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6.ogg"></div>
 
 ## 曲目相关
 

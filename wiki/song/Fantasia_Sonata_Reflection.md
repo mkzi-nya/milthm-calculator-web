@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Reflection
 
-<div class="wiki-img" img="Fantasia Sonata Reflection.avif"></div>
+<div class="wiki-img" file="Fantasia Sonata Reflection.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")) |
@@ -27,6 +27,9 @@
 - 默认解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Fantasia Sonata Reflection.ogg"></div>
+
 
 - [【Youtube】](https://youtu.be/K6SOkINESXU?si=kl3m5znjhyaDFNoj)
 

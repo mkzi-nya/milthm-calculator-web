@@ -2,7 +2,7 @@
 
 # 驟雨の狭間
 
-<div class="wiki-img" img="驟雨の狭間.avif"></div>
+<div class="wiki-img" file="驟雨の狭間.avif"></div>
 
 ## 曲目信息
 
@@ -29,6 +29,9 @@
 解锁曲包《[梦境磁带](./?q=dream_tape)》后，默认解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="驟雨の狭間.ogg"></div>
+
 
 - [【Bilibili】](https://b23.tv/XTHKBV6)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

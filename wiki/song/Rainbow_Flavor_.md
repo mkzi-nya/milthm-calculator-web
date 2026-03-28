@@ -7,7 +7,7 @@
 
 # Rainbow Flavor!
 
-<div class="wiki-img" img="Rainbow%20Flavor%21.avif"></div>
+<div class="wiki-img" file="Rainbow%20Flavor%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Rainbow Flavor!](info:info("Rainbow Flavor!")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Rainbow%20Flavor%21.ogg"></div>
 
 ## 曲目相关
 

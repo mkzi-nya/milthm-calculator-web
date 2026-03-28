@@ -7,7 +7,7 @@
 
 # サイクルの欠片
 
-<div class="wiki-img" img="サイクルの欠片.avif"></div>
+<div class="wiki-img" file="サイクルの欠片.avif"></div>
 
 ## 曲目信息
 | 曲名 | [サイクルの欠片](info:info("サイクルの欠片")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="サイクルの欠片.ogg"></div>
 
 ## 曲目相关
 

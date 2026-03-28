@@ -7,7 +7,7 @@
 
 # ホシフルヨルニ
 
-<div class="wiki-img" img="ホシフルヨルニ.avif"></div>
+<div class="wiki-img" file="ホシフルヨルニ.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ホシフルヨルニ](info:info("ホシフルヨルニ")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="ホシフルヨルニ.ogg"></div>
 
 ## 曲目相关
 

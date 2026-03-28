@@ -2,7 +2,7 @@
 
 # Brightened Demonios
 
-<div class="wiki-img" img="Brightened Demonios.avif"></div>
+<div class="wiki-img" file="Brightened Demonios.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Brightened Demonios](info:info("Brightened Demonios")) |
@@ -29,6 +29,9 @@
 - 但若在v3.8更新前完成彼时曲包的全部内容，更新后本曲将会直接显示在曲目列表中（即便没有阅读故事）。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Brightened Demonios.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1qk3Xz9Ez4)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

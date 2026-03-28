@@ -7,7 +7,7 @@
 
 # Oiiaioooooiai
 
-<div class="wiki-img" img="Oiiaioooooiai.avif"></div>
+<div class="wiki-img" file="Oiiaioooooiai.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Oiiaioooooiai](info:info("oiiaioooooiai")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Oiiaioooooiai.ogg"></div>
 
 ## 曲目相关
 

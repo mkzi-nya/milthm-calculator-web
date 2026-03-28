@@ -2,7 +2,7 @@
 
 # Regnaissance
 
-<div class="wiki-img" img="Regnaissance.avif"></div>
+<div class="wiki-img" file="Regnaissance.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Regnaissance](info:info("Regnaissance")) |
@@ -37,6 +37,9 @@
 特别地，本曲目的CL难度在CB难度取得S评级才会解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Regnaissance.ogg"></div>
+
 - [【Bilibili】](https://www.bilibili.com/video/BV1WZ421N7VM/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1WZ421N7VM&p=1"rameborder="no"scrolling="no"></iframe>

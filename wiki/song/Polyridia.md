@@ -2,7 +2,7 @@
 
 # Polyridia
 
-<div class="wiki-img" img="Polyridia.avif"></div>
+<div class="wiki-img" file="Polyridia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Polyridia](info:info("Polyridia")) |
@@ -27,6 +27,9 @@
 - 解锁曲包《解空明镜》后默认解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Polyridia.ogg"></div>
+
 
 - [【【Artcore for HARCA】](https://b23.tv/sv7hl27)
 

@@ -7,7 +7,7 @@
 
 # Virtual S0da
 
-<div class="wiki-img" img="Virtual S0da.avif"></div>
+<div class="wiki-img" file="Virtual S0da.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Virtual S0da](info:info("Virtual S0da")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Virtual S0da.ogg"></div>
 
 ## 曲目相关
 

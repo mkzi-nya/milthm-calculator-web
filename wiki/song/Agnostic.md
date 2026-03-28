@@ -7,7 +7,7 @@
 
 # Agnostic
 
-<div class="wiki-img" img="Agnostic.avif"></div>
+<div class="wiki-img" file="Agnostic.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Agnostic](info:info("Agnostic")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Agnostic.ogg"></div>
 
 ## 曲目相关
 

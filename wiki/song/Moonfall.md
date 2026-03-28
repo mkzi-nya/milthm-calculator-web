@@ -7,7 +7,7 @@
 
 # 大月墜落狂想
 
-<div class="wiki-img" img="大月墜落狂想.avif"></div>
+<div class="wiki-img" file="大月墜落狂想.avif"></div>
 
 ## 曲目信息
 | 曲名 | [大月墜落狂想](info:info("Moonfall   大月墜落狂想")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="大月墜落狂想.ogg"></div>
 
 ## 曲目相关
 

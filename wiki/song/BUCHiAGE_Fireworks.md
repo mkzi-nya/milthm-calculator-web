@@ -7,7 +7,7 @@
 
 # BUCHiAGE Fireworks
 
-<div class="wiki-img" img="BUCHiAGE Fireworks.avif"></div>
+<div class="wiki-img" file="BUCHiAGE Fireworks.avif"></div>
 
 ## 曲目信息
 | 曲名 | [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="BUCHiAGE Fireworks.ogg"></div>
 
 ## 曲目相关
 

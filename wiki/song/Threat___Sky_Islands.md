@@ -7,7 +7,7 @@
 
 # Threat - Sky Islands
 
-<div class="wiki-img" img="Threat%20-%20Sky%20Islands.avif"></div>
+<div class="wiki-img" file="Threat%20-%20Sky%20Islands.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Sky Islands](info:info("Threat - Sky Islands")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Threat%20-%20Sky%20Islands.ogg"></div>
 
 ## 曲目相关
 

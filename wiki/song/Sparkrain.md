@@ -7,7 +7,7 @@
 
 # 烁雨
 
-<div class="wiki-img" img="烁雨.avif"></div>
+<div class="wiki-img" file="烁雨.avif"></div>
 
 ## 曲目信息
 | 曲名 | [烁雨](info:info("烁雨")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="烁雨.ogg"></div>
 
 ## 曲目相关
 

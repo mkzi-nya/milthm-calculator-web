@@ -7,7 +7,7 @@
 
 # Meltovt Necrosys
 
-<div class="wiki-img" img="Meltovt Necrosys.avif"></div>
+<div class="wiki-img" file="Meltovt Necrosys.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Meltovt Necrosys.ogg"></div>
 
 ## 曲目相关
 

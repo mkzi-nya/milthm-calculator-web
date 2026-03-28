@@ -7,7 +7,7 @@
 
 # Aleph-0
 
-<div class="wiki-img" img="Aleph-0.avif"></div>
+<div class="wiki-img" file="Aleph-0.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Aleph-0](info:info("Aleph-0")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Aleph-0.ogg"></div>
 
 ## 曲目相关
 

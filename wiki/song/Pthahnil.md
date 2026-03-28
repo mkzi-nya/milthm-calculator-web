@@ -7,7 +7,7 @@
 
 # Pthahnil
 
-<div class="wiki-img" img="Pthahnil.avif"></div>
+<div class="wiki-img" file="Pthahnil.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Pthahnil.ogg"></div>
 
 ## 曲目相关
 

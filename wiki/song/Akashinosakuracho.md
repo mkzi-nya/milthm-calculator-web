@@ -7,7 +7,7 @@
 
 # 灯ノ桜蝶
 
-<div class="wiki-img" img="灯ノ桜蝶.avif"></div>
+<div class="wiki-img" file="灯ノ桜蝶.avif"></div>
 
 ## 曲目信息
 | 曲名 | [灯ノ桜蝶](info:info("灯ノ桜蝶")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="灯ノ桜蝶.ogg"></div>
 
 ## 曲目相关
 

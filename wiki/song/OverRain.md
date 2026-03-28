@@ -2,7 +2,7 @@
 
 # OverRain
 
-<div class="wiki-img" img="OverRain.avif"></div>
+<div class="wiki-img" file="OverRain.avif"></div>
 
 ## 曲目信息
 
@@ -28,6 +28,9 @@
 解锁曲包《甜与苦的一体两面》后，在《粗线条的雨》的任意难度取得A评级解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="OverRain.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Hr421K7De)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

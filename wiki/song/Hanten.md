@@ -7,7 +7,7 @@
 
 # はんてん
 
-<div class="wiki-img" img="はんてん.avif"></div>
+<div class="wiki-img" file="はんてん.avif"></div>
 
 ## 曲目信息
 | 曲名 | [はんてん](info:info("はんてん")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="はんてん.ogg"></div>
 
 ## 曲目相关
 

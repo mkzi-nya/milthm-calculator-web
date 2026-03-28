@@ -7,7 +7,7 @@
 
 # Sheer Ice Torrent
 
-<div class="wiki-img" img="Sheer Ice Torrent.avif"></div>
+<div class="wiki-img" file="Sheer Ice Torrent.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sheer Ice Torrent](info:info("Sheer Ice Torrent")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Sheer Ice Torrent.ogg"></div>
 
 ## 曲目相关
 

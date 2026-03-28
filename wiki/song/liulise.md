@@ -7,7 +7,7 @@
 
 # 瑠璃色
 
-<div class="wiki-img" img="%E7%91%A0%E7%92%83%E8%89%B2.avif"></div>
+<div class="wiki-img" file="%E7%91%A0%E7%92%83%E8%89%B2.avif"></div>
 
 ## 曲目信息
 | 曲名 | [瑠璃色](info:info("瑠璃色")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="%E7%91%A0%E7%92%83%E8%89%B2.ogg"></div>
 
 ## 曲目相关
 

@@ -7,7 +7,7 @@
 
 # 靈
 
-<div class="wiki-img" img="靈.avif"></div>
+<div class="wiki-img" file="靈.avif"></div>
 
 ## 曲目信息
 | 曲名 | [靈](info:info("靈")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="靈.ogg"></div>
 
 ## 曲目相关
 

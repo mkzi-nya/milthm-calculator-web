@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Botanical Garden
 
-<div class="wiki-img" img="Fantasia Sonata Botanical Garden.avif"></div>
+<div class="wiki-img" file="Fantasia Sonata Botanical Garden.avif"></div>
 
 ## 曲目信息
 
@@ -29,6 +29,9 @@
 解锁曲包《露晓卉庭》后，在「露晓卉庭」功能花费 20「观赏」类型作物解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Fantasia Sonata Botanical Garden.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1ZxxxzDEec)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

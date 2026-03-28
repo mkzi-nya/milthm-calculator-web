@@ -2,7 +2,7 @@
 
 # Fragment of Memories
 
-<div class="wiki-img" img="Fragment of Memories.avif"></div>
+<div class="wiki-img" file="Fragment of Memories.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fragment of Memories](info:info("Fragment of Memories")) |
@@ -27,6 +27,9 @@
 解锁曲包《甜与苦的一体两面》后，在《[Aconsma](info:info("Aconsma"))》或《[OverRain](info:info("OverRain"))》的任意难度取得S评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Fragment of Memories.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Rnp1eiErs)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

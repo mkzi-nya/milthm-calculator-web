@@ -7,9 +7,9 @@
 
 # ニニ (feat. Qayo & mii)
 
-<div class="wiki-img" img="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
+<div class="wiki-img" file="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
 
-<div class="wiki-img" img="SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
+<div class="wiki-img" file="SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ニニ (feat. Qayo & mii)](info:info("ニニ (feat. Qayo & mii)")) |
@@ -35,7 +35,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.ogg"></div>
 
 ## 曲目相关
 

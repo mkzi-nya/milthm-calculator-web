@@ -7,7 +7,7 @@
 
 # Threat - Waterfront Complex
 
-<div class="wiki-img" img="Threat%20-%20Waterfront%20Complex.avif"></div>
+<div class="wiki-img" file="Threat%20-%20Waterfront%20Complex.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Threat%20-%20Waterfront%20Complex.ogg"></div>
 
 ## 曲目相关
 

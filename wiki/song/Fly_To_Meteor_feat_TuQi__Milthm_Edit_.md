@@ -7,7 +7,7 @@
 
 # Fly To Meteor feat.兔柒 (Milthm Edit)
 
-<div class="wiki-img" img="Fly%20To%20Meteor%20feat.%E5%85%94%E6%9F%92%20%28Milthm%20Edit%29.avif"></div>
+<div class="wiki-img" file="Fly%20To%20Meteor%20feat.%E5%85%94%E6%9F%92%20%28Milthm%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 (Milthm Edit)")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Fly%20To%20Meteor%20feat.%E5%85%94%E6%9F%92%20%28Milthm%20Edit%29.ogg"></div>
 
 ## 曲目相关
 

@@ -3,7 +3,7 @@
 # Vestige of Dreams
 
 
-<div class="wiki-img" img="Vestige of Dreams.avif"></div>
+<div class="wiki-img" file="Vestige of Dreams.avif"></div>
 
 ## 曲目信息
 
@@ -30,6 +30,9 @@
 解锁曲包后，阅读故事第1节解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Vestige of Dreams.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1mCZBYgEAo)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

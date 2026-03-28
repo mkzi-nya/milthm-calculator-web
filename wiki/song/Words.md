@@ -7,7 +7,7 @@
 
 # Words
 
-<div class="wiki-img" img="Words.avif"></div>
+<div class="wiki-img" file="Words.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Words](info:info("Words")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Words.ogg"></div>
 
 ## 曲目相关
 

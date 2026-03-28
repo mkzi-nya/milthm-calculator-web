@@ -7,7 +7,7 @@
 
 # 樱落繁花
 
-<div class="wiki-img" img="樱落繁花.avif"></div>
+<div class="wiki-img" file="樱落繁花.avif"></div>
 
 ## 曲目信息
 | 曲名 | [樱落繁花](info:info("樱落繁花")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="樱落繁花.ogg"></div>
 
 ## 曲目相关
 

@@ -4,7 +4,7 @@
 
 # Fantasia Sonata Arcadia
 
-<div class="wiki-img" img="Fantasia Sonata Arcadia.avif"></div>
+<div class="wiki-img" file="Fantasia Sonata Arcadia.avif"></div>
 
 ## 曲目信息
 
@@ -33,6 +33,9 @@
 - 但若在v3.8更新前完成彼时曲包的全部内容，更新后本曲将会直接显示在曲目列表中（即便没有阅读故事）。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Fantasia Sonata Arcadia.ogg"></div>
+
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1oyJBzvE3K/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

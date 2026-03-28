@@ -2,7 +2,7 @@
 
 # Ephemeric World
 
-<div class="wiki-img" img="Ephemeric World.avif"></div>
+<div class="wiki-img" file="Ephemeric World.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Ephemeric World](info:info("Ephemeric World")) |
@@ -27,6 +27,9 @@
 - 解锁曲包《解空明镜》后默认解锁
 
 ## 曲目试听
+
+<div class="wiki-audio" file="Ephemeric World.ogg"></div>
+
 
 - 【【Milthm】4.5 “越南全国 Osu!Mania 锦标赛” 特别联动更新预览-哔哩哔哩】 https://b23.tv/9Wr7RRA
 

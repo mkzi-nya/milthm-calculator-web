@@ -2,7 +2,7 @@
 
 # 夜風
 
-<div class="wiki-img" img="夜風.avif"></div>
+<div class="wiki-img" file="夜風.avif"></div>
 
 ## 曲目信息
 | 曲名 | [夜風](info:info("夜風")) |
@@ -28,6 +28,9 @@
 - 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="夜風.ogg"></div>
+
 
 - [【Youtube】](https://youtu.be/H6GctQ0tHJY?si=f-x5Ci-JcAaSrEFT)
 

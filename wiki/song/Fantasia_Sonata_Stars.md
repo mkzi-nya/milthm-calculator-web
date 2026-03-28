@@ -7,7 +7,7 @@
 
 # Fantasia Sonata Stars
 
-<div class="wiki-img" img="Fantasia Sonata Stars.avif"></div>
+<div class="wiki-img" file="Fantasia Sonata Stars.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Stars](info:info("Fantasia Sonata Stars")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Fantasia Sonata Stars.ogg"></div>
 
 ## 曲目相关
 

@@ -7,7 +7,7 @@
 
 # 仮想明日
 
-<div class="wiki-img" img="仮想明日.avif"></div>
+<div class="wiki-img" file="仮想明日.avif"></div>
 
 ## 曲目信息
 | 曲名 | [仮想明日](info:info("仮想明日")) |
@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="仮想明日.ogg"></div>
 
 ## 曲目相关
 

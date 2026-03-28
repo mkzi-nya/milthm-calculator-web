@@ -2,7 +2,7 @@
 
 # Jump out?
 
-<div class="wiki-img" img="Jump%20out%3F.avif"></div>
+<div class="wiki-img" file="Jump%20out%3F.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Jump out?](info:info("Jump out ")) |
@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Jump%20out%3F.ogg"></div>
 
 ## 曲目相关
 

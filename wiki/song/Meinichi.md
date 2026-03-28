@@ -2,7 +2,7 @@
 
 # 命日
 
-<div class="wiki-img" img="命日.avif"></div>
+<div class="wiki-img" file="命日.avif"></div>
 
 ## 曲目信息
 | 曲名 | [命日](info:info("命日")) |
@@ -32,6 +32,9 @@
   - 由于解锁条件重叠，只需将《[雨女](info:info("雨女"))》达成A及以上评级饥渴连续解锁该曲目的对应难度。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="命日.ogg"></div>
+
 
 - <span style="color: red">【R18-G警告】该曲的视频存在可能引人不适的内容</span>
   - [【Youtube】](https://youtu.be/3sDnH4Icla0?si=2h5QkkToUEgh9LLt)

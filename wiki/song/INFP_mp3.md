@@ -7,7 +7,7 @@
 
 # INFP.mp3
 
-<div class="wiki-img" img="INFP.mp3.avif"></div>
+<div class="wiki-img" file="INFP.mp3.avif"></div>
 
 ## 曲目信息
 | 曲名 | [INFP.mp3](info:info("INFP.mp3")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="INFP.mp3.ogg"></div>
 
 ## 曲目相关
 

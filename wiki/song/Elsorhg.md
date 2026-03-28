@@ -7,7 +7,7 @@
 
 # Elsorhg
 
-<div class="wiki-img" img="Elsorhg.avif"></div>
+<div class="wiki-img" file="Elsorhg.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Elsorhg](info:info("Elsorhg")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Elsorhg.ogg"></div>
 
 ## 曲目相关
 

@@ -7,7 +7,7 @@
 
 # Sound of Nature
 
-<div class="wiki-img" img="Sound of Nature.avif"></div>
+<div class="wiki-img" file="Sound of Nature.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sound of Nature](info:info("Sound of Nature")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Sound of Nature.ogg"></div>
 
 ## 曲目相关
 

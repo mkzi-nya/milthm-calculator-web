@@ -7,7 +7,7 @@
 
 # apOapSis(Edit)
 
-<div class="wiki-img" img="apOapSis%28Edit%29.avif"></div>
+<div class="wiki-img" file="apOapSis%28Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [apOapSis(Edit)](info:info("apOapSis(Edit)")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="apOapSis%28Edit%29.ogg"></div>
 
 ## 曲目相关
 

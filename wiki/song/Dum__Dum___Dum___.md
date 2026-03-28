@@ -7,7 +7,7 @@
 
 # Dum! Dum!! Dum!!!
 
-<div class="wiki-img" img="Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
+<div class="wiki-img" file="Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Dum%21%20Dum%21%21%20Dum%21%21%21.ogg"></div>
 
 ## 曲目相关
 

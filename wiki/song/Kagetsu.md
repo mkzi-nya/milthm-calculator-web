@@ -2,7 +2,7 @@
 
 # 花月
 
-<div class="wiki-img" img="花月.avif"></div>
+<div class="wiki-img" file="花月.avif"></div>
 
 ## 曲目信息
 | 曲名 | [花月](info:info("花月")) |
@@ -28,6 +28,9 @@
 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
+
+<div class="wiki-audio" file="花月.ogg"></div>
+
 
 - [【Youtube】](https://youtu.be/CMzk-EKWDqA?si=WHc0BtfNTJXkNGcF)
 

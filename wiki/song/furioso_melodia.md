@@ -7,7 +7,7 @@
 
 # furioso melodia
 
-<div class="wiki-img" img="furioso%20melodia.avif"></div>
+<div class="wiki-img" file="furioso%20melodia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [furioso melodia](info:info("furioso melodia")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="furioso%20melodia.ogg"></div>
 
 ## 曲目相关
 

@@ -7,7 +7,7 @@
 
 # Moonflutter
 
-<div class="wiki-img" img="Moonflutter.avif"></div>
+<div class="wiki-img" file="Moonflutter.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Moonflutter](info:info("Moonflutter")) |
@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="Moonflutter.ogg"></div>
 
 ## 曲目相关
 
