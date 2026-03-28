@@ -31,9 +31,6 @@
 
 <div class="wiki-audio" file="Aconsma.ogg"></div>
 
-
-<div class="wiki-audio" file="Aconsma.ogg"></div>
-
 ## 曲目相关
 
 - 本曲目为Milthm原创曲。
