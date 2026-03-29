@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="靈.ogg"></div>
+<!-- <div class="wiki-audio" file="靈.ogg"></div> -->
 
 ## 曲目相关
 

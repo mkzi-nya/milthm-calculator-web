@@ -38,7 +38,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Regnaissance.ogg"></div>
+<!-- <div class="wiki-audio" file="Regnaissance.ogg"></div> -->
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1WZ421N7VM/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Threat%20-%20Metropolis.ogg"></div>
+<!-- <div class="wiki-audio" file="Threat%20-%20Metropolis.ogg"></div> -->
 
 ## 曲目相关
 

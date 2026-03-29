@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fantasia Sonata God Dance.ogg"></div>
+<!-- <div class="wiki-audio" file="Fantasia Sonata God Dance.ogg"></div> -->
 
 ## 曲目相关
 

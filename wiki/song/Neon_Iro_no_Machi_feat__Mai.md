@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="%E3%83%8D%E3%82%AA%E3%83%B3%E8%89%B2%E3%81%AE%E3%81%BE%E3%81%A1%20feat.%20Mai.ogg"></div>
+<!-- <div class="wiki-audio" file="%E3%83%8D%E3%82%AA%E3%83%B3%E8%89%B2%E3%81%AE%E3%81%BE%E3%81%A1%20feat.%20Mai.ogg"></div> -->
 
 ## 曲目相关
 

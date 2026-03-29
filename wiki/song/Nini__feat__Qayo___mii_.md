@@ -35,7 +35,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.ogg"></div>
+<!-- <div class="wiki-audio" file="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.ogg"></div> -->
 
 ## 曲目相关
 

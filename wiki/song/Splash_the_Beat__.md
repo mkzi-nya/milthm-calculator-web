@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Splash%20the%20Beat%21%21.ogg"></div>
+<!-- <div class="wiki-audio" file="Splash%20the%20Beat%21%21.ogg"></div> -->
 
 ## 曲目相关
 

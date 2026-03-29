@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Oiiaioooooiai.ogg"></div>
+<!-- <div class="wiki-audio" file="Oiiaioooooiai.ogg"></div> -->
 
 ## 曲目相关
 

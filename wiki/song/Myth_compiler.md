@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Myth compiler.ogg"></div>
+<!-- <div class="wiki-audio" file="Myth compiler.ogg"></div> -->
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1BrJBzqEEM)

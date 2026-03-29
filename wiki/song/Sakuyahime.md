@@ -33,8 +33,8 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Sakuyahime.ogg"></div>
-<div class="wiki-audio" file="SakuyahimeAnomaly.wav.ogg"></div>
+<!-- <div class="wiki-audio" file="Sakuyahime.ogg"></div> -->
+<!-- <div class="wiki-audio" file="SakuyahimeAnomaly.wav.ogg"></div> -->
 
 ## 曲目相关
 
