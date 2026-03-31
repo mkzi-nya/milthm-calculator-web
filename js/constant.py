@@ -50,8 +50,8 @@ def convertNew(json_data):
             rader = chart.get("raderValue")
 
             obj = {
-                "constant": chart.get("difficultyValue"),
-                "constantv3": chart.get("difficultyValuev2"),
+                "constant": chart.get("difficultyValuev2") or chart.get("difficultyValue"),
+                "constantv3": chart.get("difficultyValue"),
                 "category": DIFF_MAP.get(diff, diff),
                 "name": title,
                 "yct": chart.get("AFDValue"),
