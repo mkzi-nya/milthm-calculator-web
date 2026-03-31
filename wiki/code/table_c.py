@@ -6,7 +6,7 @@ with open('./packed_document.json', 'r', encoding='utf-8') as f:
     packed_data = json.load(f)
 
 # 读取constant.js文件
-with open('../../js/constant.js', 'r', encoding='utf-8') as f:
+with open('../../js/constant_old.js', 'r', encoding='utf-8') as f:
     js_content = f.read()
 
 # 解析constant.js中的constantsData
