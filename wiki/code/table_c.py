@@ -1,123 +1,485 @@
+from __future__ import annotations
+
 import json
-import re
+from pathlib import Path
+from typing import Any
 
-# 读取packed_document.json
-with open('./packed_document.json', 'r', encoding='utf-8') as f:
-    packed_data = json.load(f)
 
-# 读取constant.js文件
-with open('../../js/constant_old.js', 'r', encoding='utf-8') as f:
-    js_content = f.read()
+SCRIPT_DIR = Path(__file__).resolve().parent
+INPUT_JSON = (SCRIPT_DIR / '../../resources/resources.json').resolve()
+OUTPUT_HTML = (SCRIPT_DIR / '../table_c.html').resolve()
 
-# 解析constant.js中的constantsData
-# 使用正则表达式提取所有UUID和对应的数组
-pattern = r'"([a-f0-9-]+)":\s*\[(.*?)\]'
-matches = re.findall(pattern, js_content, re.DOTALL)
-
-# 创建id到定数的映射
-id_to_constant = {}
-
-for uuid, array_str in matches:
-    # 分割数组元素
-    elements = [e.strip() for e in array_str.split(',')]
-    
-    # 处理可能的空元素
-    elements = [e if e != '' else None for e in elements]
-    
-    # 判断第二项是否为数字
-    if len(elements) > 1 and elements[1] and re.match(r'^-?\d+\.?\d*$', elements[1]):
-        # 第二项是数字，将其作为定数
-        constant = float(elements[1])
-    else:
-        # 否则将第一个数字作为定数
-        try:
-            constant = float(elements[0])
-        except (ValueError, TypeError):
-            # 如果第一个元素不是数字，则跳过
-            continue
-    
-    id_to_constant[uuid] = constant
-
-# 创建谱面列表
-charts = []
-
-for item in packed_data:
-    item_id = item['id']
-    title = item['title']
-    difficulty = item['difficulty']
-    
-    # 获取定数
-    constant = id_to_constant.get(item_id)
-    
-    if constant is not None:
-        charts.append({
-            'title': title,
-            'difficulty': difficulty,
-            'constant': constant
-        })
-
-# 按定数从大到小排序
-charts.sort(key=lambda x: x['constant'], reverse=True)
-
-# 生成表格
-table_lines = []
-table_lines.append("| 定数 | 曲目 | 难度 |")
-table_lines.append("|-|-|-|")
-
-difficulty_map = {
-    "Drizzle": "DZ",
-    "Sprinkle": "SK",
-    "Cloudburst": "CB",
-    "Clear": "CL",
-    "Special": "SP"
+DIFFICULTY_SHORT = {
+    'Drizzle': 'DZ',
+    'Sprinkle': 'SK',
+    'Cloudburst': 'CB',
+    'Clear': 'CL',
+    'Special': 'SP',
 }
 
-for chart in charts:
-    title = chart['title']
-    difficulty = chart['difficulty']
-    constant = chart['constant']
+HTML_TEMPLATE = r"""
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>定数表</title>
+
+  <!-- 本地资源（不再注入 load.js） -->
+  <link rel="stylesheet" href="./github-markdown-dark.min.css">
+  <script src="./marked.min.js"></script>
+  <script src="./katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="./index.umd.js"></script>
+  <link rel="stylesheet" href="./github-dark.min.css">
+  <script src="./highlight.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .container { width: 100%; max-width: 900px; }
+    .markdown-body { width: 100%; overflow-wrap: break-word; }
+    .katex-display {
+      display: block !important;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    .toc { display: none; }
+    pre, code { user-select: text; }
+
+    /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
+    div[aaa] {
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        opacity 0.12s ease-in-out,
+        visibility 0.12s ease-in-out,
+        top 0.12s ease,
+        left 0.12s ease;
+    }
+    div[aaa].visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
+
+<body>
+  <div class="container">
+    <article id="content" class="markdown-body"></article>
+  </div>
+
+  <!-- 内联 Markdown：直接整体替换 {{markdown}} -->
+  <script type="text/markdown" id="md">
+{{markdown}}
+  </script>
+
+  <script>
+
+    function loadMarkdown() {
+      let md = document.getElementById('md').textContent.replace(/^\n/, '');
+
+      // 链接自动转义处理（原逻辑保留）
+      md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, p1, p2) {
+        if (p2.startsWith('info:')) {
+          const [protocol, rest] = p2.split(':', 2);
+          const encodedRest = encodeURIComponent(rest);
+          return `[${p1}](${protocol}:${encodedRest})`;
+        }
+        return match;
+      });
+
+      content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
+      content.querySelectorAll('h2,h3,h4').forEach(h => {
+        h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
+      });
+      hljs.highlightAll();
+      resizeKatex();
+      runJavascriptLinks();
+      loadDev();
+    }
+
+    function runJavascriptLinks() {
+      const links = document.querySelectorAll('a[href^="info:info"], a[href^="info:info"]');
+      links.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+        });
+      });
+    }
+
+    function resizeKatex() {
+      const w = document.querySelector('.markdown-body').clientWidth;
+      document.querySelectorAll('.katex-display').forEach(e => {
+        e.style.fontSize = '';
+        const actual = e.scrollWidth;
+        if (actual > w) {
+          const fs = parseFloat(getComputedStyle(e).fontSize);
+          e.style.fontSize = (fs * w / actual) + 'px';
+        }
+      });
+    }
+
+    // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
+    const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }
+    const HIDE_DELAY_MS = 120;
+
+    function ensureState(key) {
+      if (!hoverState.has(key)) {
+        hoverState.set(key, { hoverLink: false, hoverDev: false, el: null, timer: null });
+      }
+      return hoverState.get(key);
+    }
+
+    function scheduleHide(key) {
+      const state = ensureState(key);
+      if (state.timer) clearTimeout(state.timer);
+      state.timer = setTimeout(() => {
+        if (!state.hoverLink && !state.hoverDev && state.el) {
+          state.el.classList.remove('visible');
+        }
+        state.timer = null;
+      }, HIDE_DELAY_MS);
+    }
+
+    function placeAndShowForLink(aaaElement, linkRect) {
+      if (!aaaElement) return;
+      // 显示
+      aaaElement.classList.add('visible');
+      // 放在链接正下方并水平居中
+      const topPosition = linkRect.bottom + window.scrollY;
+      let leftPosition = linkRect.left + linkRect.width / 2 + window.scrollX - aaaElement.offsetWidth / 2;
+
+      const screenWidth = window.innerWidth;
+      const elementWidth = aaaElement.offsetWidth;
+      if (leftPosition + elementWidth > screenWidth) leftPosition = screenWidth - elementWidth;
+      else if (leftPosition < 0) leftPosition = 0;
+
+      aaaElement.style.position = 'absolute';
+      aaaElement.style.top = `${topPosition}px`;
+      aaaElement.style.left = `${leftPosition}px`;
+    }
+
+    // ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
+// ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
+function loadDev() {
+  fetch(`./chartdev.html?${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`加载 chartdev.html 失败：${res.status}`);
+      return res.text();
+    })
+    .then(html => {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+
+      const nodes = temp.querySelectorAll('div[aaa]');
+      nodes.forEach(node => {
+        const key = node.getAttribute('aaa');
+        if (!document.querySelector(`body > div[aaa="${CSS.escape(key)}"]`)) {
+          node.style.position = node.style.position || 'absolute';
+          document.body.appendChild(node);
+
+          // dev 悬停监听：进入 dev 时保持显示，离开 dev 时可能隐藏
+          node.addEventListener('mouseenter', () => {
+            const k = node.getAttribute('aaa');   // ✅ 动态读取
+            const st = ensureState(k);
+            st.el = node;
+            st.hoverDev = true;
+            node.classList.add('visible');
+            if (st.timer) { clearTimeout(st.timer); st.timer = null; }
+          });
+
+          node.addEventListener('mouseleave', () => {
+            const k = node.getAttribute('aaa');   // ✅ 动态读取
+            const st = ensureState(k);
+            st.hoverDev = false;
+            scheduleHide(k);
+          });
+        }
+      });
+    })
+    .catch(err => console.error(err));
+}
+
+    // ===== Morph 相关：点击链接时顺滑切换 =====
+    let currentKey = null;             // 当前“主”窗口绑定的 key
+    let currentEl = null;              // 当前“主”窗口引用的 DOM 元素（会被复用以移动/换内容）
+    let isMorphing = false;            // 动画中防抖
+    const MORPH_SWAP_DELAY = 40;       // 轻微延迟以确保位置先到再替换内容
+
+    /**
+     * 将上一个窗口（currentEl）移动到新链接下方，并把内容替换为新窗口内容
+     * @param {HTMLElement} targetEl  目标 key 的 dev 节点（供取内容使用）
+     * @param {DOMRect} linkRect      新链接的 rect
+     * @param {String} targetKey      目标 key
+     */
+    function morphToTarget(targetEl, linkRect, targetKey) {
+      if (!currentEl || !targetEl || currentEl === targetEl) return;
+
+      // 1) 取消老 key 的隐藏、定时器，并标记当前元素为可见
+      if (currentKey) {
+        const oldState = ensureState(currentKey);
+        if (oldState.timer) { clearTimeout(oldState.timer); oldState.timer = null; }
+        oldState.hoverLink = false; // 点击时不强依赖 hover
+        oldState.hoverDev = false;
+        oldState.el = currentEl;
+      }
+      currentEl.classList.add('visible');
+
+      // 2) 平滑移动到新位置
+      placeAndShowForLink(currentEl, linkRect);
+
+      // 3) 微延迟后替换内容与 key（让用户先看到“飞过去”，再变文字）
+      setTimeout(() => {
+        // 替换内部内容
+        currentEl.innerHTML = targetEl.innerHTML;
+        // 更新 aaa key（后续 hover/隐藏依赖）
+        currentEl.setAttribute('aaa', targetKey);
+
+        // 隐藏/移除目标原节点，避免重复（保留在 DOM 但不可见即可）
+        targetEl.classList.remove('visible');
+        targetEl.style.top = '-99999px';
+        targetEl.style.left = '-99999px';
+
+        // 更新 currentKey & 状态
+        currentKey = targetKey;
+        const newState = ensureState(currentKey);
+        newState.el = currentEl;
+        newState.hoverLink = false;
+        newState.hoverDev = false;
+
+        isMorphing = false;
+      }, MORPH_SWAP_DELAY);
+    }
+
+    /**
+     * 以“当前元素优先”的策略显示目标窗口：
+     * - 若已有 currentEl：将其移动并替换为目标内容（morph）
+     * - 否则正常显示目标元素本身
+     */
+    function showByMorphOrDirect(targetKey, linkRect) {
+      const targetEl = document.querySelector(`div[aaa="${targetKey}"]`);
+      if (!targetEl) return;
+
+      // 如果从未有过 currentEl，则以 targetEl 为主
+      if (!currentEl) {
+        currentEl = targetEl;
+        currentKey = targetKey;
+        const st = ensureState(targetKey);
+        st.el = currentEl;
+        st.hoverLink = true;
+        if (st.timer) { clearTimeout(st.timer); st.timer = null; }
+        placeAndShowForLink(currentEl, linkRect);
+        return;
+      }
+
+      // 若已有 currentEl 且 key 不同，执行 morph
+      if (currentEl && currentKey !== targetKey && !isMorphing) {
+        isMorphing = true;
+        morphToTarget(targetEl, linkRect, targetKey);
+        return;
+      }
+
+      // key 相同或正在 morph，就直接更新位置即可
+      placeAndShowForLink(currentEl, linkRect);
+    }
+
+    // ===== 监听鼠标移动到链接（hover）与点击（click）=====
+    function parseInfoKeyFromAnchor(anchor) {
+      const url = decodeURIComponent(anchor.href || '');
+      const match = url.match(/(info)\(([^)]*)\)/);
+      if (!match) return null;
+      const params = match[2].split(',').map(param => param.trim().replace(/['"]/g, ''));
+      const key = (params.length === 2) ? params.join(',') : params[0];
+      return key || null;
+    }
+
+    function bindLinkHoverAndClick(target) {
+      if (target.dataset.aaaBound) return;
+      target.dataset.aaaBound = '1';
+
+      // Hover 行为：与之前一致（但会优先复用 currentEl 以避免两个窗口闪烁）
+      target.addEventListener('mouseenter', () => {
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        const state = ensureState(key);
+        state.hoverLink = true;
+        if (state.timer) { clearTimeout(state.timer); state.timer = null; }
+        showByMorphOrDirect(key, target.getBoundingClientRect());
+      });
+
+      target.addEventListener('mouseleave', () => {
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        const state = ensureState(key);
+        state.hoverLink = false;
+        scheduleHide(key);
+      });
+
+      // 点击行为：触发“平滑切换”动画（morph 优先）
+      target.addEventListener('click', (e) => {
+        // 原本我们已阻止 info:info 的默认跳转；此处确保一次
+        e.preventDefault();
+        const key = parseInfoKeyFromAnchor(target);
+        if (!key) return;
+        showByMorphOrDirect(key, target.getBoundingClientRect());
+      });
+    }
+
+    // 捕获全局鼠标移动，动态绑定链接（保持与原有逻辑兼容）
+    function checkMouseOnLink(event) {
+      const target = event.target;
+      if (target.tagName !== 'A') return;
+      const key = parseInfoKeyFromAnchor(target);
+      if (!key) return;
+
+      // 先绑定 hover/click
+      bindLinkHoverAndClick(target);
+
+      // 在 mousemove 命中时也刷新位置与显示，保证体验顺滑
+      const aaaElement = currentEl && currentKey === key
+        ? currentEl
+        : document.querySelector(`div[aaa="${key}"]`);
+      if (!aaaElement) return;
+
+      const state = ensureState(key);
+      state.el = currentEl || aaaElement;
+      state.hoverLink = true;
+
+      // 若当前就是这个 key，用当前元素定位即可
+      placeAndShowForLink(state.el, target.getBoundingClientRect());
+    }
+
+    // ===== 初始化 =====
+    window.addEventListener('resize', resizeKatex);
+    window.addEventListener('load', loadMarkdown);
+    document.addEventListener('mousemove', checkMouseOnLink);
     
-    # 处理标题中的特殊字符
-    title2 = title.replace('(', '').replace(')', '')
-    title1 = title.replace('~', r'\~')
-    
-    # 创建链接
-    link = f"[{title1}](info:info(\"{title2}\",\"{difficulty}\"))"
-    
-    # 获取难度缩写
-    difficulty_short = difficulty_map.get(difficulty, difficulty)
-    
-    # 定数列：如果为-1则留空，否则显示定数
-    constant_str = "" if constant == -1 else str(constant)
-    
-    table_lines.append(f"| {constant_str} | {link} | {difficulty_short} |")
 
-# 读取table_c.md
-with open('./table_c.md', 'r', encoding='utf-8') as f:
-    table_c_content = f.read().splitlines()
+  </script>
+</body>
+</html>
+"""
 
-# 保存原文件的最后一行
-last_line = table_c_content[-1] if table_c_content else ""
 
-# 在第7行之后插入表格，并保留最后一行
-insert_position = 7  # 第7行之后，即索引7的位置
+def format_constant(value: Any) -> str:
+    if value is None or value == '':
+        return ''
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return ''
+    if number.is_integer():
+        return f'{number:.1f}'
+    text = f'{number:.10f}'.rstrip('0').rstrip('.')
+    if '.' not in text:
+        text += '.0'
+    return text
 
-# 如果最后一行不是空行，先移除它
-if last_line and last_line.strip():
-    content_without_last = table_c_content[:-1]
-else:
-    content_without_last = table_c_content
-    last_line = ""
 
-# 插入新表格
-new_content = content_without_last[:insert_position] + table_lines + content_without_last[insert_position:]
+def escape_markdown_text(text: str) -> str:
+    return (
+        str(text)
+        .replace('\\', '\\\\')
+        .replace('[', '\\[')
+        .replace(']', '\\]')
+        .replace('*', '\\*')
+        .replace('_', '\\_')
+        .replace('`', '\\`')
+        .replace('~', r'\\~')
+    )
 
-# 如果最后一行不为空，添加回去
-if last_line:
-    new_content.append(last_line)
 
-# 写回table_c.md
-with open('./table_c.md', 'w', encoding='utf-8') as f:
-    f.write('\n'.join(new_content))
+def normalize_info_title(title: str) -> str:
+    return str(title).replace('(', '').replace(')', '')
 
-print(f"成功处理了 {len(charts)} 个谱面，并写入到 table_c.md 的第7行之后，保留了原文件的最后一行")
+
+def build_rows(resources: dict[str, Any]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+
+    for title, song in resources.items():
+        difficulties = song.get('difficulty', {})
+        if not isinstance(difficulties, dict):
+            continue
+
+        for difficulty_name, chart in difficulties.items():
+            if not isinstance(chart, dict):
+                continue
+
+            constant = chart.get('difficultyValuev2')
+            try:
+                numeric_constant = float(constant) if constant not in (None, '') else None
+            except (TypeError, ValueError):
+                numeric_constant = None
+
+            rows.append({
+                'title': title,
+                'difficulty': difficulty_name,
+                'difficulty_short': DIFFICULTY_SHORT.get(difficulty_name, difficulty_name),
+                'constant': numeric_constant,
+            })
+
+    rows.sort(
+        key=lambda item: (
+            item['constant'] is None,
+            -(item['constant'] if item['constant'] is not None else float('-inf')),
+            item['title'],
+            item['difficulty'],
+        )
+    )
+    return rows
+
+
+def build_markdown(rows: list[dict[str, Any]]) -> str:
+    lines = [
+        '- [返回主页](./)',
+        '',
+        '## 定数表',
+        '',
+        '',
+        '<div style="font-size:10px; white-space:nowrap;">',
+        '',
+        '| 定数 | 曲目 | 难度 |',
+        '|-|-|-|',
+    ]
+
+    for row in rows:
+        title_display = escape_markdown_text(row['title'])
+        info_title = normalize_info_title(row['title']).replace('"', '\\"')
+        difficulty = row['difficulty'].replace('"', '\\"')
+        link = f'[{title_display}](info:info("{info_title}","{difficulty}"))'
+        constant_str = format_constant(row['constant'])
+        lines.append(f'| {constant_str} | {link} | {row["difficulty_short"]} |')
+
+    lines.extend(['', '', '</div>', ''])
+    return '\n'.join(lines)
+
+
+def main() -> None:
+    with INPUT_JSON.open('r', encoding='utf-8') as file:
+        resources = json.load(file)
+
+    if not isinstance(resources, dict):
+        raise TypeError('resources.json 顶层必须是对象。')
+
+    markdown = build_markdown(build_rows(resources))
+    html = HTML_TEMPLATE.replace('{{markdown}}', markdown.replace('</script>', '<\\/script>'))
+
+    OUTPUT_HTML.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_HTML.write_text(html, encoding='utf-8')
+
+    print(f'Generated: {OUTPUT_HTML}')
+
+
+if __name__ == '__main__':
+    main()
