@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+import re
 
 CUR_DIR = os.getcwd()
 OUT_DIR = os.path.abspath(os.path.join(CUR_DIR, ".."))
+
+def minify_html(html: str) -> str:
+    # 去掉 HTML 注释
+    html = re.sub(r'<!--.*?-->', '', html, flags=re.DOTALL)
+    # 去掉标签间空白
+    html = re.sub(r'>\s+<', '><', html)
+    # 压缩多余空白
+    html = re.sub(r'\s+', ' ', html)
+    return html.strip()
 
 def main():
     for name in os.listdir(CUR_DIR):
@@ -28,7 +38,13 @@ def main():
         if "{{markdown}}" not in html_content:
             continue
 
-        result = html_content.replace("{{markdown}}", md_content)
+        # ⭐ 分离模板
+        parts = html_content.split("{{markdown}}", 1)
+        html_before = minify_html(parts[0])
+        html_after = minify_html(parts[1])
+
+        # ⭐ 只拼接，不动 md
+        result = html_before + md_content + html_after
 
         out_path = os.path.join(OUT_DIR, html_name)
         with open(out_path, "w", encoding="utf-8") as f:
@@ -39,6 +55,7 @@ def main():
     chartdev = os.path.join(CUR_DIR, "chartdev.py")
     if os.path.isfile(chartdev):
         subprocess.run(["python3", chartdev], check=False)
+
     charter = os.path.join(CUR_DIR, "charter.py")
     if os.path.isfile(charter):
         subprocess.run(["python3", charter], check=False)
