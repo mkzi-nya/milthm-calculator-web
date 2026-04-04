@@ -26,7 +26,6 @@ HTML_TEMPLATE = r"""
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>定数表</title>
 
-  <!-- 本地资源（不再注入 load.js） -->
   <link rel="stylesheet" href="./github-markdown-dark.min.css">
   <script src="./marked.min.js"></script>
   <script src="./katex.min.js"></script>
@@ -57,7 +56,6 @@ HTML_TEMPLATE = r"""
     .toc { display: none; }
     pre, code { user-select: text; }
 
-    /* 默认隐藏 dev（aaa）并平滑显隐；增加 top/left 过渡用于移动动画 */
     div[aaa] {
       visibility: hidden;
       opacity: 0;
@@ -79,7 +77,6 @@ HTML_TEMPLATE = r"""
     <article id="content" class="markdown-body"></article>
   </div>
 
-  <!-- 内联 Markdown：直接整体替换 {{markdown}} -->
   <script type="text/markdown" id="md">
 {{markdown}}
   </script>
@@ -89,7 +86,6 @@ HTML_TEMPLATE = r"""
     function loadMarkdown() {
       let md = document.getElementById('md').textContent.replace(/^\n/, '');
 
-      // 链接自动转义处理（原逻辑保留）
       md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, p1, p2) {
         if (p2.startsWith('info:')) {
           const [protocol, rest] = p2.split(':', 2);
@@ -130,9 +126,7 @@ HTML_TEMPLATE = r"""
       });
     }
 
-    // ===== 悬停状态管理：保持 dev 内可交互，离开两端再隐藏 =====
-    const hoverState = new Map(); // key -> { hoverLink: bool, hoverDev: bool, el: HTMLElement, timer: number|null }
-    const HIDE_DELAY_MS = 120;
+    const hoverState = new Map();    const HIDE_DELAY_MS = 120;
 
     function ensureState(key) {
       if (!hoverState.has(key)) {
@@ -154,9 +148,7 @@ HTML_TEMPLATE = r"""
 
     function placeAndShowForLink(aaaElement, linkRect) {
       if (!aaaElement) return;
-      // 显示
       aaaElement.classList.add('visible');
-      // 放在链接正下方并水平居中
       const topPosition = linkRect.bottom + window.scrollY;
       let leftPosition = linkRect.left + linkRect.width / 2 + window.scrollX - aaaElement.offsetWidth / 2;
 
@@ -170,8 +162,6 @@ HTML_TEMPLATE = r"""
       aaaElement.style.left = `${leftPosition}px`;
     }
 
-    // ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
-// ===== 从 chartdev.html 直接载入并挂到 body（保持与原 load.js 一致）=====
 function loadDev() {
   fetch(`./chartdev.html?${Date.now()}`)
     .then(res => {
@@ -189,10 +179,8 @@ function loadDev() {
           node.style.position = node.style.position || 'absolute';
           document.body.appendChild(node);
 
-          // dev 悬停监听：进入 dev 时保持显示，离开 dev 时可能隐藏
           node.addEventListener('mouseenter', () => {
-            const k = node.getAttribute('aaa');   // ✅ 动态读取
-            const st = ensureState(k);
+            const k = node.getAttribute('aaa');            const st = ensureState(k);
             st.el = node;
             st.hoverDev = true;
             node.classList.add('visible');
@@ -200,8 +188,7 @@ function loadDev() {
           });
 
           node.addEventListener('mouseleave', () => {
-            const k = node.getAttribute('aaa');   // ✅ 动态读取
-            const st = ensureState(k);
+            const k = node.getAttribute('aaa');            const st = ensureState(k);
             st.hoverDev = false;
             scheduleHide(k);
           });
@@ -211,47 +198,28 @@ function loadDev() {
     .catch(err => console.error(err));
 }
 
-    // ===== Morph 相关：点击链接时顺滑切换 =====
-    let currentKey = null;             // 当前“主”窗口绑定的 key
-    let currentEl = null;              // 当前“主”窗口引用的 DOM 元素（会被复用以移动/换内容）
-    let isMorphing = false;            // 动画中防抖
-    const MORPH_SWAP_DELAY = 40;       // 轻微延迟以确保位置先到再替换内容
-
-    /**
-     * 将上一个窗口（currentEl）移动到新链接下方，并把内容替换为新窗口内容
-     * @param {HTMLElement} targetEl  目标 key 的 dev 节点（供取内容使用）
-     * @param {DOMRect} linkRect      新链接的 rect
-     * @param {String} targetKey      目标 key
-     */
+    let currentKey = null;    let currentEl = null;    let isMorphing = false;    const MORPH_SWAP_DELAY = 40;
     function morphToTarget(targetEl, linkRect, targetKey) {
       if (!currentEl || !targetEl || currentEl === targetEl) return;
 
-      // 1) 取消老 key 的隐藏、定时器，并标记当前元素为可见
       if (currentKey) {
         const oldState = ensureState(currentKey);
         if (oldState.timer) { clearTimeout(oldState.timer); oldState.timer = null; }
-        oldState.hoverLink = false; // 点击时不强依赖 hover
-        oldState.hoverDev = false;
+        oldState.hoverLink = false;        oldState.hoverDev = false;
         oldState.el = currentEl;
       }
       currentEl.classList.add('visible');
 
-      // 2) 平滑移动到新位置
       placeAndShowForLink(currentEl, linkRect);
 
-      // 3) 微延迟后替换内容与 key（让用户先看到“飞过去”，再变文字）
       setTimeout(() => {
-        // 替换内部内容
         currentEl.innerHTML = targetEl.innerHTML;
-        // 更新 aaa key（后续 hover/隐藏依赖）
         currentEl.setAttribute('aaa', targetKey);
 
-        // 隐藏/移除目标原节点，避免重复（保留在 DOM 但不可见即可）
         targetEl.classList.remove('visible');
         targetEl.style.top = '-99999px';
         targetEl.style.left = '-99999px';
 
-        // 更新 currentKey & 状态
         currentKey = targetKey;
         const newState = ensureState(currentKey);
         newState.el = currentEl;
@@ -262,16 +230,10 @@ function loadDev() {
       }, MORPH_SWAP_DELAY);
     }
 
-    /**
-     * 以“当前元素优先”的策略显示目标窗口：
-     * - 若已有 currentEl：将其移动并替换为目标内容（morph）
-     * - 否则正常显示目标元素本身
-     */
     function showByMorphOrDirect(targetKey, linkRect) {
       const targetEl = document.querySelector(`div[aaa="${targetKey}"]`);
       if (!targetEl) return;
 
-      // 如果从未有过 currentEl，则以 targetEl 为主
       if (!currentEl) {
         currentEl = targetEl;
         currentKey = targetKey;
@@ -283,18 +245,15 @@ function loadDev() {
         return;
       }
 
-      // 若已有 currentEl 且 key 不同，执行 morph
       if (currentEl && currentKey !== targetKey && !isMorphing) {
         isMorphing = true;
         morphToTarget(targetEl, linkRect, targetKey);
         return;
       }
 
-      // key 相同或正在 morph，就直接更新位置即可
       placeAndShowForLink(currentEl, linkRect);
     }
 
-    // ===== 监听鼠标移动到链接（hover）与点击（click）=====
     function parseInfoKeyFromAnchor(anchor) {
       const url = decodeURIComponent(anchor.href || '');
       const match = url.match(/(info)\(([^)]*)\)/);
@@ -308,7 +267,6 @@ function loadDev() {
       if (target.dataset.aaaBound) return;
       target.dataset.aaaBound = '1';
 
-      // Hover 行为：与之前一致（但会优先复用 currentEl 以避免两个窗口闪烁）
       target.addEventListener('mouseenter', () => {
         const key = parseInfoKeyFromAnchor(target);
         if (!key) return;
@@ -326,9 +284,7 @@ function loadDev() {
         scheduleHide(key);
       });
 
-      // 点击行为：触发“平滑切换”动画（morph 优先）
       target.addEventListener('click', (e) => {
-        // 原本我们已阻止 info:info 的默认跳转；此处确保一次
         e.preventDefault();
         const key = parseInfoKeyFromAnchor(target);
         if (!key) return;
@@ -336,17 +292,14 @@ function loadDev() {
       });
     }
 
-    // 捕获全局鼠标移动，动态绑定链接（保持与原有逻辑兼容）
     function checkMouseOnLink(event) {
       const target = event.target;
       if (target.tagName !== 'A') return;
       const key = parseInfoKeyFromAnchor(target);
       if (!key) return;
 
-      // 先绑定 hover/click
       bindLinkHoverAndClick(target);
 
-      // 在 mousemove 命中时也刷新位置与显示，保证体验顺滑
       const aaaElement = currentEl && currentKey === key
         ? currentEl
         : document.querySelector(`div[aaa="${key}"]`);
@@ -356,11 +309,9 @@ function loadDev() {
       state.el = currentEl || aaaElement;
       state.hoverLink = true;
 
-      // 若当前就是这个 key，用当前元素定位即可
       placeAndShowForLink(state.el, target.getBoundingClientRect());
     }
 
-    // ===== 初始化 =====
     window.addEventListener('resize', resizeKatex);
     window.addEventListener('load', loadMarkdown);
     document.addEventListener('mousemove', checkMouseOnLink);
