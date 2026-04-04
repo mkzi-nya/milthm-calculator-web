@@ -7,9 +7,7 @@
 
 # 妹
 
-<div class="wiki-img">
-  <img src="../../resources/avif/%E5%A6%B9.avif">
-</div>
+<div class="wiki-img" file="妹.avif"></div>
 
 ## 曲目信息
 | 曲名 | [妹](info:info("妹")) |
@@ -25,7 +23,7 @@
 ## 谱面信息
 | 难度 | [Special](info:info("妹", "Special")) |
 | - | - |
-| 等级 |  |
+| 等级 | 0 (0.0) |
 | 谱师 | Kiyotsuki |
 | Note数量 | 1567 |
 

@@ -56,9 +56,7 @@ PAGE_TEMPLATE = textwrap.dedent(
 
 IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
     """\
-    <div class="wiki-img">
-      <img src="{src}">
-    </div>
+    <div class="wiki-img" file="{song_key}.avif"></div>
     """
 )
 
@@ -191,7 +189,7 @@ def build_chart_info_table(song_key: str, diff_map: dict):
 
 
 def build_main_artwork_block(song_key: str):
-    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"{song_key}.avif")).strip() + "\n"
+    return IMAGE_BLOCK_TEMPLATE.format(song_key=song_key).strip() + "\n"
 
 
 def build_square_artwork_block(song_key: str, avif_dir: Path):

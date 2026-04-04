@@ -7,9 +7,7 @@
 
 # ネオン色のまち
 
-<div class="wiki-img">
-  <img src="../../resources/avif/%E3%83%8D%E3%82%AA%E3%83%B3%E8%89%B2%E3%81%AE%E3%81%BE%E3%81%A1.avif">
-</div>
+<div class="wiki-img" file="ネオン色のまち.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ネオン色のまち](info:info("ネオン色のまち")) |

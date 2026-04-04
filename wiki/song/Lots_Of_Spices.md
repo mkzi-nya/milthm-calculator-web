@@ -7,9 +7,7 @@
 
 # Lots Of Spices
 
-<div class="wiki-img">
-  <img src="../../resources/avif/Lots%20Of%20Spices.avif">
-</div>
+<div class="wiki-img" file="Lots Of Spices.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Lots Of Spices](info:info("Lots Of Spices")) |
@@ -25,7 +23,7 @@
 ## 谱面信息
 | 难度 | [Special](info:info("Lots Of Spices", "Special")) |
 | - | - |
-| 等级 |  |
+| 等级 | 0 (0.0) |
 | 谱师 | xzadudu179? |
 | Note数量 | 1000 |
 
