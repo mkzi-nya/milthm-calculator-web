@@ -247,9 +247,9 @@
       <input type="number" id="editScore">
       <label for="editAccuracy">Best Accuracy:</label>
       <input type="number" step="0.01" id="editAccuracy">
-      <label for="editLevel">BestLevel:<br>(0=R,1=M,2=S,3=A,4=B,5=C,6=F)</label>
+      <label for="editLevel">BestLevel:<br>(0=R,1=M,2=SS,3=S,4=A,5=B,6=C,7=F)</label>
       <input type="number" id="editLevel">
-      <label for="editAchievedStatus">AchievedStatus:<br>(0=通关,3,4=FC,5=AP,6=False)</label>
+      <label for="editAchievedStatus">AchievedStatus:<br>(0=通关,2=理论,3,4=FC,5=AP,6=False)</label>
       <input type="text" id="editAchievedStatus">
       <div style="text-align: right;">
         <button id="cancelEditBtn">取消</button>
@@ -268,7 +268,7 @@
 let currentData = null;
 let sortMode = 'default';
 // level 映射：数字到评级字母
-const levelMapping = ["R", "M", "S", "A", "B", "C", "F"];
+const levelMapping = ["R", "M", "SS", "S", "A", "B", "C", "F"];
 // 构造映射：键为 "name|category"，值为 BeatmapID（用于非 JSON 转换时查找）
 let beatmapDict = {};
 if (typeof constants !== 'undefined') {
