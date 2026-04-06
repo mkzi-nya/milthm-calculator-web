@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="cafe in 6412I731V.ogg"></div> -->
+<div class="wiki-audio" file="cafe in 6412I731V.ogg"></div>
 
 ## 曲目相关
 

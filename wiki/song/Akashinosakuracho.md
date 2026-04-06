@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="灯ノ桜蝶.ogg"></div> -->
+<div class="wiki-audio" file="灯ノ桜蝶.ogg"></div>
 
 ## 曲目相关
 

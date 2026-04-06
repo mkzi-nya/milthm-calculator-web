@@ -30,7 +30,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="Garden.ogg"></div> -->
+<div class="wiki-audio" file="Garden.ogg"></div>
 
 
 - [【Bilibili】](https://b23.tv/lPKrJlM)

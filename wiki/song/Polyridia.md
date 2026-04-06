@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="Polyridia.ogg"></div> -->
+<div class="wiki-audio" file="Polyridia.ogg"></div>
 
 
 - [【【Artcore for HARCA】](https://b23.tv/sv7hl27)

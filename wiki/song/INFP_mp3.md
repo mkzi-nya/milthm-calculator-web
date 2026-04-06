@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="INFP.mp3.ogg"></div> -->
+<div class="wiki-audio" file="INFP.mp3.ogg"></div>
 
 ## 曲目相关
 

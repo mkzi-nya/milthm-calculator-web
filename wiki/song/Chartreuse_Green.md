@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="Chartreuse Green.ogg"></div> -->
+<div class="wiki-audio" file="Chartreuse Green.ogg"></div>
 
 ## 曲目相关
 

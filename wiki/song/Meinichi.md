@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="命日.ogg"></div> -->
+<div class="wiki-audio" file="命日.ogg"></div>
 
 
 - <span style="color: red">【R18-G警告】该曲的视频存在可能引人不适的内容</span>

@@ -31,7 +31,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="イコラト.ogg"></div> -->
+<div class="wiki-audio" file="イコラト.ogg"></div>
 
 
 - [【Youtube】](https://youtu.be/Fu_j6i-kIkI?si=YLGFxDlMMB-3l0ZL)

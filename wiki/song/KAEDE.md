@@ -9,7 +9,6 @@
 
 <div class="wiki-img" file="KAEDE.avif"></div>
 
-
 ## 曲目信息
 | 曲名 | [KAEDE](info:info("KAEDE")) |
 | - | - |
@@ -34,7 +33,7 @@
 
 ## 曲目试听
 
-(待补充)
+<div class="wiki-audio" file="KAEDE.ogg"></div>
 
 ## 曲目相关
 

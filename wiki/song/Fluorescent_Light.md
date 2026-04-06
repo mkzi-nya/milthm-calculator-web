@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="Fluorescent Light.ogg"></div> -->
+<div class="wiki-audio" file="Fluorescent Light.ogg"></div>
 
 ## 曲目相关
 

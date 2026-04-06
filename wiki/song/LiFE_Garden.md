@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="LiFE Garden.ogg"></div> -->
+<div class="wiki-audio" file="LiFE Garden.ogg"></div>
 
 ## 曲目相关
 

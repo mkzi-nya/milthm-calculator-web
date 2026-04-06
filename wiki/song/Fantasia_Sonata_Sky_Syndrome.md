@@ -28,7 +28,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="Fantasia Sonata Sky Syndrome.ogg"></div> -->
+<div class="wiki-audio" file="Fantasia Sonata Sky Syndrome.ogg"></div>
 
 
 - [【Youube】](https://youtu.be/s6iJzxHFRJU?si=geERnkEA2UxZates)

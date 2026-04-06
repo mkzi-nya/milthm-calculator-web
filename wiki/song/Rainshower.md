@@ -30,7 +30,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="驟雨の狭間.ogg"></div> -->
+<div class="wiki-audio" file="驟雨の狭間.ogg"></div>
 
 
 - [【Bilibili】](https://b23.tv/XTHKBV6)

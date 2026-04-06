@@ -34,7 +34,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="大月墜落狂想.ogg"></div> -->
+<div class="wiki-audio" file="大月墜落狂想.ogg"></div>
 
 ## 曲目相关
 

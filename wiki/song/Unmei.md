@@ -29,7 +29,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="運命.ogg"></div> -->
+<div class="wiki-audio" file="運命.ogg"></div>
 
 ## 曲目相关
 

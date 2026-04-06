@@ -35,7 +35,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.ogg"></div> -->
+<div class="wiki-audio" file="%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.ogg"></div>
 
 ## 曲目相关
 

@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="slic.hertz%20%23GdbG.ogg"></div> -->
+<div class="wiki-audio" file="slic.hertz%20%23GdbG.ogg"></div>
 
 ## 曲目相关
 

@@ -33,7 +33,7 @@
 
 ## 曲目试听
 
-<!-- <div class="wiki-audio" file="%E9%80%86%E9%A3%9B%E9%9B%A8.ogg"></div> -->
+<div class="wiki-audio" file="%E9%80%86%E9%A3%9B%E9%9B%A8.ogg"></div>
 
 ## 曲目相关
 
