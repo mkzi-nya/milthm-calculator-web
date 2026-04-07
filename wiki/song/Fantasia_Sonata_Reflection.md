@@ -28,7 +28,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fantasia Sonata Reflection.ogg"></div>
 
 
 - [【Youtube】](https://youtu.be/K6SOkINESXU?si=kl3m5znjhyaDFNoj)

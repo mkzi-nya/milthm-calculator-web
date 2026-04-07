@@ -28,7 +28,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Jump%20out%3F.ogg"></div>
 
 ## 曲目相关
 

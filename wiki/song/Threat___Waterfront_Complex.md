@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Threat%20-%20Waterfront%20Complex.ogg"></div>
 
 ## 曲目相关
 

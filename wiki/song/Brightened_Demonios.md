@@ -30,7 +30,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Brightened Demonios.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1qk3Xz9Ez4)

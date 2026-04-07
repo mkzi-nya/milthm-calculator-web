@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Dum%21%20Dum%21%21%20Dum%21%21%21.ogg"></div>
 
 ## 曲目相关
 

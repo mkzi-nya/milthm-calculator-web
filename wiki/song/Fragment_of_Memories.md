@@ -28,7 +28,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fragment of Memories.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Rnp1eiErs)

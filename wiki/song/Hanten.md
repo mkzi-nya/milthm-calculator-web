@@ -34,7 +34,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="はんてん.ogg"></div>
 
 ## 曲目相关
 

@@ -42,7 +42,7 @@ PAGE_TEMPLATE = textwrap.dedent(
 
     ## 曲目试听
 
-    <div class="wiki-audio" file="{song_key}.ogg"></div>
+    (待补充)
 
     ## 曲目相关
 

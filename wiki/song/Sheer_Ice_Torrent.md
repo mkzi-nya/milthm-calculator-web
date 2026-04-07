@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Sheer Ice Torrent.ogg"></div>
 
 ## 曲目相关
 

@@ -41,7 +41,6 @@ Cloudburst
 
 ## 曲目试听
 
-<div class="wiki-audio" file="时落之雨.ogg"></div>
 
 
 - [【Bilibili】](https://b23.tv/SaPPL5H)

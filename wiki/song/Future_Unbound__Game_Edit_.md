@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Future%20Unbound%20%28Game%20Edit%29.ogg"></div>
 
 ## 曲目相关
 

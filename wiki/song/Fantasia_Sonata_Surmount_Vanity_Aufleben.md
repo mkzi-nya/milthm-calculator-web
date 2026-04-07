@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben.ogg"></div>
 
 ## 曲目相关
 

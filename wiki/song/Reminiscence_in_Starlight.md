@@ -29,7 +29,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="暮予星光.ogg"></div>
 
 
 - [【Spotify】](https://open.spotify.com/album/55ZpAjhoNo7QaB1YRGLbLI)

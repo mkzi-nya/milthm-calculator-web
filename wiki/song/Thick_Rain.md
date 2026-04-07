@@ -30,7 +30,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="粗线条的雨.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1oV4y1J7N4/)

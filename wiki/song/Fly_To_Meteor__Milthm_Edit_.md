@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fly%20To%20Meteor%20%28Milthm%20Edit%29.ogg"></div>
 
 ## 曲目相关
 

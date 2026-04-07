@@ -31,7 +31,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Vestige of Dreams.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1mCZBYgEAo)

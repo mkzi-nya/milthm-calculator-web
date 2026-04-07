@@ -39,7 +39,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Contrasty Angeles.ogg"></div>
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1CzW4eeEyR/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">

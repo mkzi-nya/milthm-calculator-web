@@ -34,7 +34,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="サイクルの欠片.ogg"></div>
 
 ## 曲目相关
 

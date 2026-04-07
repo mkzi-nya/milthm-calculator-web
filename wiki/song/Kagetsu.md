@@ -29,7 +29,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="花月.ogg"></div>
 
 
 - [【Youtube】](https://youtu.be/CMzk-EKWDqA?si=WHc0BtfNTJXkNGcF)

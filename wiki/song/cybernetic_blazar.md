@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="cybernetic blazar.ogg"></div>
 
 ## 曲目相关
 

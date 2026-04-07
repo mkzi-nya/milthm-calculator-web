@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Autumn Rain.ogg"></div>
 
 ## 曲目相关
 

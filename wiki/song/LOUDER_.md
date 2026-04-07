@@ -28,7 +28,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="LOUDER%21.ogg"></div>
 
 ## 曲目相关
 

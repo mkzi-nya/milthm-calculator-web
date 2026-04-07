@@ -29,7 +29,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="OverRain.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Hr421K7De)

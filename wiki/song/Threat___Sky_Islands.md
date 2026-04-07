@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Threat%20-%20Sky%20Islands.ogg"></div>
 
 ## 曲目相关
 

@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Rainbow%20Flavor%21.ogg"></div>
 
 ## 曲目相关
 

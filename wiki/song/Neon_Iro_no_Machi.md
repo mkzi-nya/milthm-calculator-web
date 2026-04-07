@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="ネオン色のまち.ogg"></div>
 
 ## 曲目相关
 

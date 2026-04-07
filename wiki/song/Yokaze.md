@@ -29,7 +29,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="夜風.ogg"></div>
 
 
 - [【Youtube】](https://youtu.be/H6GctQ0tHJY?si=f-x5Ci-JcAaSrEFT)

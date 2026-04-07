@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fly To Meteor feat.兔柒 (Milthm Edit).ogg"></div>
 
 ## 曲目相关
 

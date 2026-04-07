@@ -33,7 +33,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Sound of Nature.ogg"></div>
 
 ## 曲目相关
 

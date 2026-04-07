@@ -34,7 +34,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="参宿四\~Betelgeuse\~.ogg"></div>
 
 ## 曲目相关
 

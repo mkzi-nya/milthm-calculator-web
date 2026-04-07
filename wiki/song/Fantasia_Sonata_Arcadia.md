@@ -34,7 +34,6 @@
 
 ## 曲目试听
 
-<div class="wiki-audio" file="Fantasia Sonata Arcadia.ogg"></div>
 
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1oyJBzvE3K/)
