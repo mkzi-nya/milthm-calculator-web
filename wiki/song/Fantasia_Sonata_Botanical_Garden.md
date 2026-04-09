@@ -42,3 +42,8 @@
 
 - 本曲目的慢速版为「露晓卉庭」功能界面的背景音乐。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Botanical_Garden.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Botanical_Garden.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Botanical_Garden.png)

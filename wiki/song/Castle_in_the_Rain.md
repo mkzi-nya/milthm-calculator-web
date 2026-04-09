@@ -47,3 +47,8 @@
 - 除主线章节外，所有章节均需在本曲任意难度取得A评级解锁。
   - 这也是《[时落之雨](info:info("时落之雨"))》[[SK](info:info("时落之雨", "Sprinkle"))] 、《[夜風](info:info("夜風"))》、《[花月](info:info("花月"))》、《[暮予星光](info:info("暮予星光"))》、《[Jump out?](info:info("Jump out?"))》、《[LOUDER!](info:info("LOUDER!"))》、《[☹](info:info("☹"))》的解锁条件。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Castle_in_the_Rain.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Castle_in_the_Rain.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Castle_in_the_Rain.png)

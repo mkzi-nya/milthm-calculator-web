@@ -80,3 +80,9 @@
 也能侵入我所有 每次都投降  
 ```
 
+
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Thick_Rain.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Thick_Rain.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Thick_Rain.png)

@@ -45,3 +45,8 @@
 - 该曲目的完整版被用作游戏开屏界面的背景音乐。
   - 该音乐自 v1.0 版本起就已实装进游戏中。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Garden.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Garden.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Garden.png)

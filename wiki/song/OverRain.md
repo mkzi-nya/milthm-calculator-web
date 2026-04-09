@@ -45,3 +45,8 @@
 - 在本曲目的 CB 谱面的开头,存在一段约24秒无任何Note的前摇。
   - 可以通过进入曲目后立即重开的方式跳过。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_OverRain.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_OverRain.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_OverRain.png)

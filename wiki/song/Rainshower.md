@@ -57,3 +57,9 @@
 - 在本曲目更新初期，曾需要在线下载才能游玩。
 - [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA)「倾盆大雨」「隐形」「乱舞」对本曲目无效。
 
+
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Rainshower.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Rainshower.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Rainshower.png)

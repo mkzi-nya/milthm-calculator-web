@@ -45,3 +45,8 @@
 
 - 本曲目为曲包《甜与苦的一体两面》的收尾曲。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Arcadia.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Arcadia.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Arcadia.png)

@@ -46,3 +46,8 @@
 
 - 本曲目为角色「露薇娅」的角色曲，在故事模式中有对应的剧情「[露薇娅](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#露薇娅)」。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Myth_compiler.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Myth_compiler.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Myth_compiler.png)

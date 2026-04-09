@@ -45,3 +45,8 @@
 - 初次解锁本曲目前，将会播放一段实时渲染的 PV。
   - 该 PV 无法通过任何方式回看。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_LiFE_Garden.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_LiFE_Garden.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_LiFE_Garden.png)

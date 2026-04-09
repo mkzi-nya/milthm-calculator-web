@@ -17,3 +17,9 @@
 - 本曲包在v2.0版本更新时仅收录前七首曲目，后三首曲目则在v3.8版本追加。
 - 本曲包的曲目中，仅《[粗线条的雨](info:info("粗线条的雨"))》不是 Milthm 原创曲。
 
+
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_two_sides_of_bitter_and_sweet.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_two_sides_of_bitter_and_sweet.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_two_sides_of_bitter_and_sweet.png)

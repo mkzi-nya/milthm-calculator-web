@@ -42,3 +42,8 @@
   - 当《[Regnaissance](info:info("Regnaissance"))》未解锁时，提示为「只需遗漏《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」；当《[Regnaissance](info:info("Regnaissance"))》已解锁但《[Contrasty Angeles](info:info("Contrasty Angeles"))》未解锁时，提示为「只需接住《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」。
   - 该效果无法在两首隐藏曲都解锁后重新体验。
 
+## 谱面预览
+
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Aconsma.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Aconsma.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Aconsma.png)
