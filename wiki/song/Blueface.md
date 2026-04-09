@@ -22,13 +22,11 @@
 | 谱师 | SakiA vs. TwT | 澪：TwT | 爬爬-TwT-云梦 |
 | Note数量 | 242 | 437 | 683 |
 
-
 ## 解锁方法
 
 - 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -40,12 +38,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Blueface.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Blueface.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Blueface.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Blueface.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Blueface.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Blueface.png)
 

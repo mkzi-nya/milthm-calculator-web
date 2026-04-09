@@ -47,17 +47,4 @@
       - 因该谱面CL难度的谱师Ariayaka由于部分无厘头的原因拉黑该UP，因此这条视频标题为「失落文明，但是已拉黑」。
     - 出于这个原因，该谱面的CB难度的谱面预览标题中的难度标注曾在愚人节当天短暂标为了[BYD 9+]。
 - 本曲目的CL难度是全游第五张多指谱。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Lost_Civilization.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Lost_Civilization.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Lost_Civilization.avif"></div>
-
-- Clear
-<div class="wiki-img" file="chart/Clear_Lost_Civilization.avif"></div>
 

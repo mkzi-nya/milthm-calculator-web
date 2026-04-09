@@ -29,7 +29,6 @@
 
 ## 曲目试听
 
-
 ## 曲目相关
 
 - 本曲目为Milthm原创曲。
@@ -42,15 +41,4 @@
   - 该效果会先依据玩家隐藏曲的解锁状态判断此时显示哪一条提示，并先显示对应曲目的解锁任务后显示提示。  
   - 当《[Regnaissance](info:info("Regnaissance"))》未解锁时，提示为「只需遗漏《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」；当《[Regnaissance](info:info("Regnaissance"))》已解锁但《[Contrasty Angeles](info:info("Contrasty Angeles"))》未解锁时，提示为「只需接住《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》的特定段落的所有音符」。
   - 该效果无法在两首隐藏曲都解锁后重新体验。
-
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Aconsma.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Aconsma.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Aconsma.avif"></div>
 

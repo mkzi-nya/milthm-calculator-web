@@ -21,7 +21,6 @@
 | 谱师 | Akko | Kiyotsuki | Kiyotsuki feat. Akko&Eric feat. Matrix |
 | Note数量 | 425 | 651 | 1357 |
 
-
 ## 解锁方法
 
 隐藏曲，在阅读故事「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」前完全不可见。  
@@ -30,13 +29,10 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1qk3Xz9Ez4)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1qk3Xz9Ez4&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -58,14 +54,10 @@
       > 真希望在没有雨的世界里还能和你们成为一家人……
   - 该游玩效果可通过梦境涟漪「噩梦」重复体验。
 - 本曲目为角色「苏珊」的角色曲，在故事模式中有对应的剧情「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Brightened_Demonios.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Brightened_Demonios.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Brightened_Demonios.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Brightened_Demonios.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Brightened_Demonios.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Brightened_Demonios.png)
 

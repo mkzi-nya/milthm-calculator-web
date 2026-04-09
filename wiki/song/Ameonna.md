@@ -22,7 +22,6 @@
 | 谱师 | sm | 下雨の云 | 雨のMagazet | 爬爬 |
 | Note数量 | 314 | 507 | 705 | 918 |
 
-
 ## 解锁方法
 
 - 在《[イコラト](info:info("イコラト"))》的任意难度中达成C及以上评级。
@@ -84,15 +83,8 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Ameonna.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Ameonna.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Ameonna.avif"></div>
-
-- Clear
-<div class="wiki-img" file="chart/Clear_Ameonna.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ameonna.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ameonna.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ameonna.png)
+- [Clear](https://storage.mhtl.im/chart/Clear_Ameonna.png)
 

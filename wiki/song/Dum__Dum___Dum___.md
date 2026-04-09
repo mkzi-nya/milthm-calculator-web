@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # Dum! Dum!! Dum!!!
 
 <div class="wiki-img" file="avif/Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
@@ -33,7 +32,6 @@
 
 ## 曲目试听
 
-
 ## 曲目相关
 
 (待补充)
@@ -44,12 +42,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Dum__Dum___Dum___.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Dum__Dum___Dum___.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Dum__Dum___Dum___.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Dum__Dum___Dum___.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Dum__Dum___Dum___.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Dum__Dum___Dum___.png)
 

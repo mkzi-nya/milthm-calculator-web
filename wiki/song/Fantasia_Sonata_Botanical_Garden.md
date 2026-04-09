@@ -23,20 +23,16 @@
 | 谱师     | Kiyotsuki                                                    | Kiyotsuki                                                    | Kiyotsuki "In horto sub pluvia, sola sed pacata"             |
 | Note数量 | 271                                                          | 500                                                          | 902                                                          |
 
-
 ## 解锁方法
 
 解锁曲包《露晓卉庭》后，在「露晓卉庭」功能花费 20「观赏」类型作物解锁。
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1ZxxxzDEec)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1ZxxxzDEec&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -45,14 +41,4 @@
 ## 游戏相关
 
 - 本曲目的慢速版为「露晓卉庭」功能界面的背景音乐。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Botanical_Garden.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Botanical_Garden.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Botanical_Garden.avif"></div>
 

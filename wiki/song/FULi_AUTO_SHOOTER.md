@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # FULi AUTO SHOOTER
 
 <div class="wiki-img" file="avif/FULi AUTO SHOOTER.avif"></div>
@@ -26,13 +25,11 @@
 | 谱师 | Akko | Akko | Akko |
 | Note数量 | 245 | 621 | 1090 |
 
-
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -44,12 +41,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_FULi_AUTO_SHOOTER.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_FULi_AUTO_SHOOTER.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_FULi_AUTO_SHOOTER.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_FULi_AUTO_SHOOTER.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_FULi_AUTO_SHOOTER.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_FULi_AUTO_SHOOTER.png)
 

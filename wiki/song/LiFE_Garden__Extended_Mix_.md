@@ -25,20 +25,16 @@
 | 谱师 | Milthm Team |
 | Note数量 | 4039 |
 
-
 ## 解锁方法
 
 解锁《[LiFE Garden](info:info("LiFE Garden"))》后，在其 [Cloudburst](info:info("LiFE Garden", "Cloudburst")) 难度中取得 S 及以上评级解锁。
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1vX4y187dK)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1vX4y187dK&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -50,3 +46,8 @@
 - 本曲目 Clear 难度是全游第四张常驻多指谱，也是自 2023 年起第三年的年终多指谱。
 - 本曲目 Clear 难度是全游物量最多的谱面。
 - 本曲目 Clear 难度至今无人取得 Rhythm of Rain，是目前唯一一张无人取得该评级的常驻谱。
+
+## 谱面预览
+
+- [Clear](https://storage.mhtl.im/chart/Clear_LiFE_Garden__Extended_Mix_.png)
+

@@ -23,14 +23,11 @@
 | 等级     | Unknown (0.0)                                           |
 | Note数量 | 2694                                                    |
 
-
 ## 解锁方法
 
 解锁曲包《[梦境磁带](./?q=dream_tape)》后，默认解锁。
 
 ## 曲目试听
-
-
 
 - [【Bilibili】](https://b23.tv/XTHKBV6)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
@@ -59,3 +56,4 @@
   - 该游玩效果可通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重复体验。
 - 在本曲目更新初期，曾需要在线下载才能游玩。
 - [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA)「倾盆大雨」「隐形」「乱舞」对本曲目无效。
+

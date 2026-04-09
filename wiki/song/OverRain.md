@@ -29,8 +29,6 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1Hr421K7De)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1Hr421K7De&p=1"rameborder="no"scrolling="no"></iframe>
@@ -46,3 +44,4 @@
 
 - 在本曲目的 CB 谱面的开头,存在一段约24秒无任何Note的前摇。
   - 可以通过进入曲目后立即重开的方式跳过。
+

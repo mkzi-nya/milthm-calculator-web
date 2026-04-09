@@ -2,7 +2,6 @@
 
 # Vestige of Dreams
 
-
 <div class="wiki-img" file="avif/Vestige of Dreams.avif"></div>
 
 ## 曲目信息
@@ -24,20 +23,16 @@
 | 谱师     | Akko                                                 | Akko                                                   | Akko & Ariayaka                                            |
 | Note数量 | 185                                                  | 460                                                    | 1144                                                       |
 
-
 ## 解锁方法
 
 解锁曲包后，阅读故事第1节解锁。
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1mCZBYgEAo)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1mCZBYgEAo&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -48,14 +43,4 @@
 ## 游戏相关
 
 (待补充)
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Vestige_of_Dreams.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Vestige_of_Dreams.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Vestige_of_Dreams.avif"></div>
 

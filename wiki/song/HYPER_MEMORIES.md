@@ -30,8 +30,6 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1Yu4y1v7PR/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1Yu4y1v7PR&p=1"rameborder="no"scrolling="no"></iframe>
@@ -39,7 +37,6 @@
 
 - [【Youtube】](https://youtu.be/BV6Npjv2IXs)
 - [【SoundCloud】](https://on.soundcloud.com/hoYs2QFUXxra1Rqf6)
-
 
 ## 曲目相关
 - 本曲目为Milthm原创曲。
@@ -59,14 +56,10 @@
   - 在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁时，将显示无立绘的曲绘；全部解锁后，将切换为另一张立绘且无法更改。
     - 即便通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重演游玩效果时，曲绘也不会更改。
 - 当《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁前，除「精彩演奏」、「完美演奏」、「镜像」、「精益求精」外，所有 [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) 都将被禁用。
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_HYPER_MEMORIES.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_HYPER_MEMORIES.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_HYPER_MEMORIES.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_HYPER_MEMORIES.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_HYPER_MEMORIES.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_HYPER_MEMORIES.png)
 

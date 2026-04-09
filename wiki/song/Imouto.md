@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
 > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # 妹
 
 <div class="wiki-img" file="avif/妹.avif"></div>
@@ -33,7 +32,6 @@
 
 ## 曲目试听
 
-
 ## 曲目相关
 
 (待补充)
@@ -41,3 +39,8 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- [Special](https://storage.mhtl.im/chart/Special_Imouto.png)
+

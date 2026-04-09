@@ -21,14 +21,11 @@
 | 谱师 | Akko | Akko | 碎渣子云 eat 母鸡 |
 | Note数量 | 189 | 680 | 1649 |
 
-
 ## 解锁方法
 
 解锁曲包《甜与苦的一体两面》后，在《[Aconsma](info:info("Aconsma"))》或《[OverRain](info:info("OverRain"))》的任意难度取得S评级解锁。
 
 ## 曲目试听
-
-
 
 - [【Bilibili】](https://www.bilibili.com/video/BV1Rnp1eiErs)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
@@ -40,14 +37,10 @@
 ## 曲目相关
 
 - 本曲目为Milthm原创曲。
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fragment_of_Memories.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Fragment_of_Memories.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Fragment_of_Memories.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fragment_of_Memories.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fragment_of_Memories.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fragment_of_Memories.png)
 

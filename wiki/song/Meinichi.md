@@ -22,7 +22,6 @@
 | 谱师 | 嘤箱 | Magazet | Kiyotsuki | [A→A(_)]通过两台电视闲聊 |
 | Note数量 | 213 | 743 | 1231 | 1246 |
 
-
 ## 解锁方法
 
 - 在《[雨女](info:info("雨女"))》的对应难度达成A及以上评级(Clear难度除外)。
@@ -32,8 +31,6 @@
   - 由于解锁条件重叠，只需将《[雨女](info:info("雨女"))》达成A及以上评级饥渴连续解锁该曲目的对应难度。
 
 ## 曲目试听
-
-
 
 - <span style="color: red">【R18-G警告】该曲的视频存在可能引人不适的内容</span>
   - [【Youtube】](https://youtu.be/3sDnH4Icla0?si=2h5QkkToUEgh9LLt)
@@ -45,7 +42,6 @@
 と、少しでも考えた事はありませんか？
 
 <span style="font-size: 66.67%">--- LeaF</span>
-
 
 - 翻译: 
 
@@ -60,18 +56,10 @@
 - 使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
 - 该曲目 Clear 难度的定数在 v4.0 版本从12.2升到了12.7。
 
-
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Meinichi.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Meinichi.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Meinichi.avif"></div>
-
-- Clear
-<div class="wiki-img" file="chart/Clear_Meinichi.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Meinichi.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Meinichi.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Meinichi.png)
+- [Clear](https://storage.mhtl.im/chart/Clear_Meinichi.png)
 

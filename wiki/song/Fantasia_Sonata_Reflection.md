@@ -21,14 +21,11 @@
 | 谱师 | Kiyotsuki |
 | Note数量 | 170 |
 
-
 ## 解锁方法
 
 - 默认解锁
 
 ## 曲目试听
-
-
 
 - [【Youtube】](https://youtu.be/K6SOkINESXU?si=kl3m5znjhyaDFNoj)
 
@@ -42,6 +39,5 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Reflection.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Reflection.png)
 

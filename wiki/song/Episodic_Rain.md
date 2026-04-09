@@ -24,7 +24,6 @@
 | 谱师     | Milthm                                      | Kiyotsuki                                     | Kiyotsuki                                         |
 | Note数量 | 81                                          | 399                                           | 578                                               |
 
-
 ## 解锁方法
 
 Drizzle
@@ -41,8 +40,6 @@ Cloudburst
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://b23.tv/SaPPL5H)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1uyUDYdEXx&p=1"rameborder="no"scrolling="no"></iframe>
@@ -52,7 +49,6 @@ Cloudburst
 - [【网易云音乐】](https://163cn.tv/Y8eGnE8)
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=528404572&auto=0&height=66"></iframe>
 
-
 ## 曲目相关
 
 - 该曲为《[魔法少女小圆](https://zh.wikipedia.org/wiki/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%93)》(<ruby>魔法少女<rt>まほうしょうじょ </rt></ruby>まどか☆マギカ)中「[晓美焰](https://zh.wikipedia.org/wiki/%E6%99%93%E7%BE%8E%E7%84%B0)(<ruby>暁美 ほむら<rt>あけみ ほむら</rt></ruby>)」的同人曲。
@@ -61,14 +57,4 @@ Cloudburst
 
 - 该曲目的 Cloudburst 难度是专为熟悉雨丝音符的「[水面反射](https://milthm.com/wiki/hans/manual/judgment/water-reflected)」机制而设计的：当你能只使用2根手指完成FC，说明你已经熟悉了这个功能。
   - 这一点在 [RainGPT](https://mkzi-nya.github.io/story/milthm/raingpt/hold-tricks.html) 中有提及。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Episodic_Rain.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Episodic_Rain.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Episodic_Rain.avif"></div>
 

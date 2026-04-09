@@ -23,7 +23,6 @@
 | 谱师     | Ariayaka                                         | Ariayaka                                           | 点缀星空                                               |
 | Note数量 | 904                                              | 1107                                               | 1434                                                   |
 
-
 ## 解锁方法
 
 隐藏曲，在阅读故事「[露薇娅](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E9%9C%B2%E8%96%87%E5%A8%85)」前完全不可见。
@@ -33,13 +32,10 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1BrJBzqEEM)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1BrJBzqEEM&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -49,14 +45,4 @@
 ## 游戏相关
 
 - 本曲目为角色「露薇娅」的角色曲，在故事模式中有对应的剧情「[露薇娅](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#露薇娅)」。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Myth_compiler.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Myth_compiler.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Myth_compiler.avif"></div>
 

@@ -21,13 +21,11 @@
 | 谱师 | TCSTWTBHY? | Kiyotsuki | [Anonymous] |
 | Note数量 | 194 | 478 | 805 |
 
-
 ## 解锁方法
 
 - 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -39,12 +37,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Jump_out_.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Jump_out_.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Jump_out_.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Jump_out_.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Jump_out_.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Jump_out_.png)
 

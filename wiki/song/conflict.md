@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # conflict
 
 <div class="wiki-img" file="avif/conflict.avif"></div>
@@ -26,13 +25,11 @@
 | 谱师 | [6A9EC0] + Icier | {doc:charter,Sprinkle} | tcstwtbhy + akko |
 | Note数量 | 238 | 909 | 1581 |
 
-
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -44,12 +41,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_conflict.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_conflict.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_conflict.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_conflict.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_conflict.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_conflict.png)
 

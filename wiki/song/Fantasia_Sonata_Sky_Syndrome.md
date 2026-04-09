@@ -21,14 +21,11 @@
 | 谱师 | Milthm | Kiyotsuki | Kiyotsuki |
 | Note数量 | 318 | 569 | 1258 |
 
-
 ## 解锁方法
 
 - 默认解锁
 
 ## 曲目试听
-
-
 
 - [【Youube】](https://youtu.be/s6iJzxHFRJU?si=geERnkEA2UxZates)
 
@@ -44,12 +41,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Sky_Syndrome.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Sky_Syndrome.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Sky_Syndrome.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Sky_Syndrome.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Sky_Syndrome.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Sky_Syndrome.png)
 

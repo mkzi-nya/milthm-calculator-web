@@ -21,17 +21,13 @@
 | 谱师 | Ariayaka | Ariayaka | Icier feat. Eric |
 | Note数量 | 305 | 396 | 704 |
 
-
 ## 解锁方法
 
 - 解锁曲包《解空明镜》后默认解锁
 
 ## 曲目试听
 
-
-
 - [【【Artcore for HARCA】](https://b23.tv/sv7hl27)
-
 
 ## 曲目相关
 
@@ -40,14 +36,10 @@
 ## 游戏相关
 
 (待补充)
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Polyridia.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Polyridia.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Polyridia.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Polyridia.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Polyridia.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Polyridia.png)
 

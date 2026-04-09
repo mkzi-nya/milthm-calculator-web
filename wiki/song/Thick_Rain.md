@@ -30,8 +30,6 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1oV4y1J7N4/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1oV4y1J7N4&p=1"rameborder="no"scrolling="no"></iframe>
@@ -81,14 +79,4 @@
 小心翼翼的放 学不会的温柔  
 也能侵入我所有 每次都投降  
 ```
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Thick_Rain.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Thick_Rain.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Thick_Rain.avif"></div>
 

@@ -22,7 +22,6 @@
 | 谱师 | Kiyotsuki | TCSTWTBHY | GUGU_QwQ x 喵卡 x Kiyotsuki x 云梦 |
 | Note数量 | 228 | 761 | 1322 |
 
-
 ## 解锁方法
 
 - 在《[Jump out?](info:info("Jump out?"))》的任意难度中达到A及以上评级解锁。
@@ -30,8 +29,6 @@
   在《[☹](info:info("☹"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
-
-
 
 - [【Youtube】](https://youtu.be/Fu_j6i-kIkI?si=YLGFxDlMMB-3l0ZL)
 
@@ -124,12 +121,7 @@ happy endingの　
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_eclat.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_eclat.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_eclat.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_eclat.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_eclat.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_eclat.png)
 

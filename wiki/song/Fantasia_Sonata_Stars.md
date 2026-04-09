@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # Fantasia Sonata Stars
 
 <div class="wiki-img" file="avif/Fantasia Sonata Stars.avif"></div>
@@ -26,13 +25,11 @@
 | 谱师 | Fantastic BlueDream0 | Orchestral BlueDream0 | Starry Magazet feat. Akko |
 | Note数量 | 162 | 372 | 938 |
 
-
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -44,12 +41,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Stars.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Stars.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Stars.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Stars.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Stars.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Stars.png)
 

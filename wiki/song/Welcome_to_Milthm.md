@@ -21,7 +21,6 @@
 | 谱师 | Buger404、TCSTWTBHY | 爬爬 beaten by LuviaDuck, very hurt |
 | Note数量 | 61 | 312 |
 
-
 ## 解锁方法
 
 默认解锁  
@@ -42,15 +41,10 @@
 - 该曲目的 Drizzle 难度谱面在 v4.0 时经过修改。
   
 
-
 ## 曲目试听
-
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Welcome_to_Milthm.avif"></div>
-
-- \(￣\_￣\|\|\|\)
-<div class="wiki-img" file="chart/\(￣\_￣\|\|\|\)_Welcome_to_Milthm.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Welcome_to_Milthm.png)
+- [Special](https://storage.mhtl.im/chart/Special_Welcome_to_Milthm.png)
 

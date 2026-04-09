@@ -23,20 +23,16 @@
 | 谱师     | Sound of Rain                             | Rhythm of Rain                              | Dream of Rain                                   |
 | Note数量 | 222                                       | 444                                         | 666                                             |
 
-
 ## 解锁方法
 
 - 解锁单曲包《露晓卉庭》后，在「露晓卉庭」功能花费 10「菌菇」类型作物解锁。
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://b23.tv/lPKrJlM)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1Cc411y7xu&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -48,14 +44,4 @@
 
 - 该曲目的完整版被用作游戏开屏界面的背景音乐。
   - 该音乐自 v1.0 版本起就已实装进游戏中。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Garden.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Garden.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Garden.avif"></div>
 

@@ -22,21 +22,17 @@
 | 谱师 | Milthm | Kiyotsuki | Akko |
 | Note数量 | 274 | 1337 | 1452 |
 
-
 ## 解锁方法
 
 - 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
 
-
-
 - [【Spotify】](https://open.spotify.com/album/55ZpAjhoNo7QaB1YRGLbLI)
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4VpH1XtVoNt1q5tVGn938N?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 - [【网易云音乐】](https://y.music.163.com/m/song?id=1971741163)
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1971741163&auto=0&height=66"></iframe>
-
 
 ## 曲目相关
 
@@ -92,14 +88,10 @@
 等你的余光，
 等你会陪我品尝点点的星光。
 ```
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Reminiscence_in_Starlight.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Reminiscence_in_Starlight.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Reminiscence_in_Starlight.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Reminiscence_in_Starlight.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Reminiscence_in_Starlight.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Reminiscence_in_Starlight.png)
 

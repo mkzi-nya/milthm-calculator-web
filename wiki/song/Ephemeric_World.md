@@ -21,34 +21,25 @@
 | 谱师 | Kiyotsuki | Kiyotsuki | Matrix///Blanchet |
 | Note数量 | 714 | 1398 | 1774 |
 
-
 ## 解锁方法
 
 - 解锁曲包《解空明镜》后默认解锁
 
 ## 曲目试听
 
-
-
 - 【【Milthm】4.5 “越南全国 Osu!Mania 锦标赛” 特别联动更新预览-哔哩哔哩】 https://b23.tv/9Wr7RRA
-
 
 ## 曲目相关
 
 - 本曲来自“越南全国 Osu!Mania 锦标赛”(VNMC)的歌曲
 
-
 ## 游戏相关
 
 - 本曲目的 [Cloudburst](info:info("Ephemeric World", "Cloudburst")) 为《解空明镜》中唯一的12级曲目
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Ephemeric_World.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Ephemeric_World.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Ephemeric_World.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ephemeric_World.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ephemeric_World.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ephemeric_World.png)
 

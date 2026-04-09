@@ -24,20 +24,16 @@
 | 谱师     | 阿鱼x俩位异世界旅人                       | 阿鱼x俩位异世界旅人                         | 淡水鱼+WH_C+爬爬+404                            |
 | Note数量 | 42                                        | 88                                          | 297                                             |
 
-
 ## 解锁方法
 
 - 在解锁「序章 - 雨的声音」后，默认解锁。
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://b23.tv/1epDi4K)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1f34y1f7dX&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -50,14 +46,4 @@
 - 该曲目的 Cloudburst 难度为所有 Cloudburst 难度中物量最少的谱面。
 - 除主线章节外，所有章节均需在本曲任意难度取得A评级解锁。
   - 这也是《[时落之雨](info:info("时落之雨"))》[[SK](info:info("时落之雨", "Sprinkle"))] 、《[夜風](info:info("夜風"))》、《[花月](info:info("花月"))》、《[暮予星光](info:info("暮予星光"))》、《[Jump out?](info:info("Jump out?"))》、《[LOUDER!](info:info("LOUDER!"))》、《[☹](info:info("☹"))》的解锁条件。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Castle_in_the_Rain.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Castle_in_the_Rain.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Castle_in_the_Rain.avif"></div>
 

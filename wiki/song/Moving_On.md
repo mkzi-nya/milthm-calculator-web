@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
 > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # Moving On
 
 <div class="wiki-img" file="avif/Moving On.avif"></div>
@@ -45,11 +44,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Moving_On.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Moving_On.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Moving_On.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Moving_On.png)
 
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Moving_On.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Moving_On.avif"></div>

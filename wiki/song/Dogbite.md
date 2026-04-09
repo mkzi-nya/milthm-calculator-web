@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # Dogbite
 
 <div class="wiki-img" file="avif/Dogbite.avif"></div>
@@ -26,13 +25,11 @@
 | 谱师 | Peekaboo & Magazet | t+cstwtbhy | Milthm Furry Group | 爬爬\|Biting with\|赤澪 |
 | Note数量 | 103 | 450 | 1329 | - |
 
-
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -44,15 +41,8 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Dogbite.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Dogbite.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Dogbite.avif"></div>
-
-- Special
-<div class="wiki-img" file="chart/Special_Dogbite.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Dogbite.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Dogbite.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Dogbite.png)
+- [Special](https://storage.mhtl.im/chart/Special_Dogbite.png)
 

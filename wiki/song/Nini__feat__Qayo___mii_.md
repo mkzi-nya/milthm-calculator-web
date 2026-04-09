@@ -4,7 +4,6 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
 > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
-
 # ニニ (feat. Qayo & mii)
 
 <div class="wiki-img" file="avif/%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
@@ -35,7 +34,6 @@
 
 ## 曲目试听
 
-
 ## 曲目相关
 
 (待补充)
@@ -46,12 +44,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Nini__feat__Qayo___mii_.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Nini__feat__Qayo___mii_.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Nini__feat__Qayo___mii_.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Nini__feat__Qayo___mii_.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Nini__feat__Qayo___mii_.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Nini__feat__Qayo___mii_.png)
 

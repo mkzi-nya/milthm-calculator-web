@@ -22,14 +22,11 @@
 | 谱师 | Milthm | Kiyotsuki | Kiyotsuki |
 | Note数量 | 316 | 799 | 997 |
 
-
 ## 解锁方法
 
 在《[雨之城](info:info("雨之城"))》的任意难度中达到A及以上评级解锁。
 
 ## 曲目试听
-
-
 
 - [【Youtube】](https://youtu.be/CMzk-EKWDqA?si=WHc0BtfNTJXkNGcF)
 
@@ -43,12 +40,7 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Kagetsu.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Kagetsu.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Kagetsu.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Kagetsu.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Kagetsu.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Kagetsu.png)
 

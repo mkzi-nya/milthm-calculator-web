@@ -1,7 +1,5 @@
 [返回目录](./)
 
-
-
 # Fantasia Sonata Arcadia
 
 <div class="wiki-img" file="avif/Fantasia Sonata Arcadia.avif"></div>
@@ -25,7 +23,6 @@
 | 谱师     | Akko feat. Kiyotsuki                                       | Akko feat. Kiyotsuki                                         | Akko & Kiyotsuki                                             |
 | Note数量 | 199                                                        | 452                                                          | 936                                                          |
 
-
 ## 解锁方法
 
 隐藏曲，在阅读故事「[尾声](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#尾声)」前完全不可见。 在解锁《[Brightened Demonios](info:info("Brightened Demonios"))》和《[Myth compiler](info:info("Myth compliler"))》后，即可解锁故事「[尾声](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#尾声)」。阅读该故事后，本曲将出现在选曲列表中，但是不显示曲名。再次点击列表中的该曲即可解锁。
@@ -34,13 +31,10 @@
 
 ## 曲目试听
 
-
-
 - [【Bilibili】](https://www.bilibili.com/video/BV1oyJBzvE3K/)
 <div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
 <iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV1oyJBzvE3K&p=1"rameborder="no"scrolling="no"></iframe>
 </div>
-
 
 ## 曲目相关
 
@@ -50,14 +44,4 @@
 ## 游戏相关
 
 - 本曲目为曲包《甜与苦的一体两面》的收尾曲。
-## 谱面预览
-
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Arcadia.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Arcadia.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Arcadia.avif"></div>
 

@@ -22,13 +22,11 @@
 | 谱师 | Crystal with Particle | Particle of Crystal | Particle & xzadudu179 |
 | Note数量 | 196 | 775 | 863 |
 
-
 ## 解锁方法
 
 解锁曲包《露晓卉庭》后，默认解锁
 
 ## 曲目试听
-
 
 ## 曲目相关
 
@@ -37,14 +35,10 @@
 ## 游戏相关
 
 (待补充)
+
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Unmei.avif"></div>
-
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Unmei.avif"></div>
-
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Unmei.avif"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Unmei.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Unmei.png)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Unmei.png)
 
