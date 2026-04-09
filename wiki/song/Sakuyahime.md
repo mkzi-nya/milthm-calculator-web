@@ -44,4 +44,7 @@
 - [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sakuyahime.png)
 - [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Sakuyahime.png)
 - [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Sakuyahime.png)
+- [Drizzle_Story](https://storage.mhtl.im/chart/Drizzle_Story_Sakuyahime.png)
+- [Sprinkle_Story](https://storage.mhtl.im/chart/Sprinkle_Story_Sakuyahime.png)
+- [Cloudburst_Story](https://storage.mhtl.im/chart/Cloudburst_Story_Sakuyahime.png)
 
