@@ -7,7 +7,7 @@
 
 # Dum! Dum!! Dum!!!
 
-<div class="wiki-img" file="Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
+<div class="wiki-img" file="avif/Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Dum__Dum___Dum___.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Dum__Dum___Dum___.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Dum__Dum___Dum___.avif"></div>
+

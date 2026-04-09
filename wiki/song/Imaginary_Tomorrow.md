@@ -7,7 +7,7 @@
 
 # 仮想明日
 
-<div class="wiki-img" file="仮想明日.avif"></div>
+<div class="wiki-img" file="avif/仮想明日.avif"></div>
 
 ## 曲目信息
 | 曲名 | [仮想明日](info:info("仮想明日")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Imaginary_Tomorrow.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Imaginary_Tomorrow.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Imaginary_Tomorrow.avif"></div>
+

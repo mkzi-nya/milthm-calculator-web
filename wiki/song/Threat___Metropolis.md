@@ -7,7 +7,7 @@
 
 # Threat - Metropolis
 
-<div class="wiki-img" file="Threat%20-%20Metropolis.avif"></div>
+<div class="wiki-img" file="avif/Threat%20-%20Metropolis.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Metropolis](info:info("Threat - Metropolis")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Threat___Metropolis.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Threat___Metropolis.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Threat___Metropolis.avif"></div>
+

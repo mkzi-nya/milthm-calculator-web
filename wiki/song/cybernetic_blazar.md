@@ -7,7 +7,7 @@
 
 # cybernetic blazar
 
-<div class="wiki-img" file="cybernetic blazar.avif"></div>
+<div class="wiki-img" file="avif/cybernetic blazar.avif"></div>
 
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_cybernetic_blazar.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_cybernetic_blazar.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_cybernetic_blazar.avif"></div>
+

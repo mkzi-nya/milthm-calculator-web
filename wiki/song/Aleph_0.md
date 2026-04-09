@@ -7,7 +7,7 @@
 
 # Aleph-0
 
-<div class="wiki-img" file="Aleph-0.avif"></div>
+<div class="wiki-img" file="avif/Aleph-0.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Aleph-0](info:info("Aleph-0")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Aleph_0.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Aleph_0.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Aleph_0.avif"></div>
+

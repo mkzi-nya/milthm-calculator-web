@@ -7,7 +7,7 @@
 
 # Psyched Fevereiro
 
-<div class="wiki-img" file="Psyched Fevereiro.avif"></div>
+<div class="wiki-img" file="avif/Psyched Fevereiro.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Psyched Fevereiro](info:info("Psyched Fevereiro")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Psyched_Fevereiro.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Psyched_Fevereiro.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Psyched_Fevereiro.avif"></div>
+

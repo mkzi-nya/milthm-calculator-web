@@ -7,7 +7,7 @@
 
 # Oiiaioooooiai
 
-<div class="wiki-img" file="Oiiaioooooiai.avif"></div>
+<div class="wiki-img" file="avif/Oiiaioooooiai.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Oiiaioooooiai](info:info("oiiaioooooiai")) |

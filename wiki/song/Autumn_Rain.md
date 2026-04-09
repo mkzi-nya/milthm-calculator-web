@@ -7,7 +7,7 @@
 
 # Autumn Rain
 
-<div class="wiki-img" file="Autumn Rain.avif"></div>
+<div class="wiki-img" file="avif/Autumn Rain.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Autumn Rain](info:info("Autumn Rain")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Autumn_Rain.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Autumn_Rain.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Autumn_Rain.avif"></div>
+

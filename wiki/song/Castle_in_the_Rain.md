@@ -2,7 +2,7 @@
 
 # 雨之城
 
-<div class="wiki-img" file="雨之城.avif"></div>
+<div class="wiki-img" file="avif/雨之城.avif"></div>
 
 ## 曲目信息
 
@@ -50,3 +50,14 @@
 - 该曲目的 Cloudburst 难度为所有 Cloudburst 难度中物量最少的谱面。
 - 除主线章节外，所有章节均需在本曲任意难度取得A评级解锁。
   - 这也是《[时落之雨](info:info("时落之雨"))》[[SK](info:info("时落之雨", "Sprinkle"))] 、《[夜風](info:info("夜風"))》、《[花月](info:info("花月"))》、《[暮予星光](info:info("暮予星光"))》、《[Jump out?](info:info("Jump out?"))》、《[LOUDER!](info:info("LOUDER!"))》、《[☹](info:info("☹"))》的解锁条件。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Castle_in_the_Rain.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Castle_in_the_Rain.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Castle_in_the_Rain.avif"></div>
+

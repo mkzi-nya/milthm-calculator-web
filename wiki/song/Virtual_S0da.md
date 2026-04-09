@@ -7,7 +7,7 @@
 
 # Virtual S0da
 
-<div class="wiki-img" file="Virtual S0da.avif"></div>
+<div class="wiki-img" file="avif/Virtual S0da.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Virtual S0da](info:info("Virtual S0da")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Virtual_S0da.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Virtual_S0da.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Virtual_S0da.avif"></div>
+

@@ -7,7 +7,7 @@
 
 # ネオン色のまち
 
-<div class="wiki-img" file="ネオン色のまち.avif"></div>
+<div class="wiki-img" file="avif/ネオン色のまち.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ネオン色のまち](info:info("ネオン色のまち")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Neon_Iro_no_Machi.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Neon_Iro_no_Machi.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Neon_Iro_no_Machi.avif"></div>
+

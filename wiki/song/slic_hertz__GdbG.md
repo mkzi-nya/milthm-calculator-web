@@ -7,7 +7,7 @@
 
 # slic.hertz #GdbG
 
-<div class="wiki-img" file="slic.hertz%20%23GdbG.avif"></div>
+<div class="wiki-img" file="avif/slic.hertz%20%23GdbG.avif"></div>
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_slic_hertz__GdbG.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_slic_hertz__GdbG.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_slic_hertz__GdbG.avif"></div>
+

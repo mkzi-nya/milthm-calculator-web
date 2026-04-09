@@ -115,34 +115,33 @@
       margin: 0 auto;
       border-radius: 6px;
     }
-    .wiki-audio {
-      margin: 16px auto;
-      text-align: center;
-      width: 100%;
-    }
-    .wiki-audio audio {
-      display: block;
-      width: min(100%, 680px);
-      margin: 0 auto;
-      border-radius: 8px;
-    }
-    .wiki-img[data-media-status="loading"],
-    .wiki-audio[data-media-status="loading"],
-    .wiki-img[data-media-status="error"],
-    .wiki-audio[data-media-status="error"] {
-      box-sizing: border-box;
-      padding: 12px 14px;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      background: #161b22;
-      color: #8b949e;
-      line-height: 1.6;
-    }
-    .wiki-img[data-media-status="error"],
-    .wiki-audio[data-media-status="error"] {
-      border-color: #f85149;
+    .wiki-img .error-container {
+      padding: 20px;
       background: rgba(248,81,73,.08);
+      border: 1px solid #f85149;
+      border-radius: 6px;
       color: #ffb3ad;
+    }
+    .wiki-img .error-message {
+      margin-bottom: 12px;
+      word-break: break-word;
+    }
+    .wiki-img .retry-button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: #161b22;
+      color: #c9d1d9;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .wiki-img .retry-button:hover {
+      background: #1f2937;
+      border-color: #58a6ff;
+    }
+    .wiki-img .loading-container {
+      padding: 20px;
+      color: #8b949e;
     }
 
     div[aaa] {
@@ -906,40 +905,23 @@
       return url;
     }
 
-    function encodeMediaPath(path) {
-      return String(path ?? '')
-        .split('/')
-        .map(segment => encodeURIComponent(segment))
-        .join('/');
+    function buildMediaUrl(baseUrl, filePath) {
+      return `${String(baseUrl ?? '')}${filePath}`;
     }
 
-    function buildMediaUrl(baseUrl, fileName, kind) {
-      const mediaSubdir = kind === 'audio' ? 'audio/' : 'avif/';
-      return `${String(baseUrl ?? '')}${mediaSubdir}${encodeMediaPath(fileName)}`;
-    }
-
-    function getMediaKindLabel(kind) {
-      return kind === 'audio' ? '音频' : '图片';
-    }
-
-    function inferMediaMimeType(kind, fileName) {
+    function inferImageMimeType(fileName) {
       const lowerName = String(fileName ?? '').toLowerCase();
-      if (kind === 'audio') {
-        if (lowerName.endsWith('.ogg') || lowerName.endsWith('.oga')) return 'audio/ogg';
-        if (lowerName.endsWith('.mp3')) return 'audio/mpeg';
-        if (lowerName.endsWith('.wav')) return 'audio/wav';
-        return 'audio/ogg';
-      }
       if (lowerName.endsWith('.avif')) return 'image/avif';
       if (lowerName.endsWith('.webp')) return 'image/webp';
       if (lowerName.endsWith('.png')) return 'image/png';
       if (lowerName.endsWith('.jpg') || lowerName.endsWith('.jpeg')) return 'image/jpeg';
+      if (lowerName.endsWith('.gif')) return 'image/gif';
       return 'application/octet-stream';
     }
 
-    function normalizeMediaBlob(blob, kind, fileName) {
+    function normalizeMediaBlob(blob, fileName) {
       if (blob && blob.type) return blob;
-      return new Blob([blob], { type: inferMediaMimeType(kind, fileName) });
+      return new Blob([blob], { type: inferImageMimeType(fileName) });
     }
 
     async function fetchBlobWithTimeout(url, timeoutMs = 0) {
@@ -976,20 +958,20 @@
       }
     }
 
-    async function resolveMediaFile(fileName, kind, hydrationToken) {
+    async function resolveImageFile(filePath, hydrationToken) {
       const attempts = [];
 
       for (let index = 0; index < MEDIA_SOURCE_ENDPOINTS.length; index += 1) {
         const source = MEDIA_SOURCE_ENDPOINTS[index];
         const timeoutMs = index < MEDIA_SOURCE_ENDPOINTS.length - 1 ? MEDIA_SOURCE_TIMEOUT_MS : 0;
-        const url = buildMediaUrl(source.url, fileName, kind);
+        const url = buildMediaUrl(source.url, filePath);
 
         try {
           const rawBlob = await fetchBlobWithTimeout(url, timeoutMs);
           if (hydrationToken !== mediaHydrationToken) {
-            throw new Error('媒体加载已过期');
+            throw new Error('图片加载已过期');
           }
-          const blob = normalizeMediaBlob(rawBlob, kind, fileName);
+          const blob = normalizeMediaBlob(rawBlob, filePath);
           return {
             source,
             url,
@@ -1009,7 +991,7 @@
         }
       }
 
-      const loadError = new Error(`${getMediaKindLabel(kind)}加载失败：${fileName}`);
+      const loadError = new Error(`图片加载失败：${filePath}`);
       loadError.attempts = attempts;
       throw loadError;
     }
@@ -1057,11 +1039,11 @@
       }
     }
 
-    function buildMediaFailureTitle(kind, fileName) {
-      return `${getMediaKindLabel(kind)}加载失败：${fileName}`;
+    function buildImageFailureTitle(fileName) {
+      return `图片加载失败：${fileName}`;
     }
 
-    function buildMediaFailureDetail(error) {
+    function buildImageFailureDetail(error) {
       const attempts = Array.isArray(error?.attempts) ? error.attempts : [];
       if (!attempts.length) {
         return String(error && error.message ? error.message : error);
@@ -1072,86 +1054,90 @@
     }
 
     async function hydrateWikiImageNode(node, hydrationToken) {
-      const fileName = String(node.getAttribute('file') ?? '').trim();
-      if (!fileName) {
+      const filePath = String(node.getAttribute('file') ?? '').trim();
+      if (!filePath) {
         node.dataset.mediaStatus = 'error';
-        node.textContent = '图片文件名缺失。';
+        showImageError(node, '图片路径缺失。', null);
         return;
       }
 
       node.dataset.mediaStatus = 'loading';
-      node.textContent = `正在加载图片：${fileName}`;
+      showImageLoading(node, filePath);
 
+      await loadImageForNode(node, filePath, hydrationToken);
+    }
+
+    async function loadImageForNode(node, filePath, hydrationToken) {
       try {
-        const resolved = await resolveMediaFile(fileName, 'image', hydrationToken);
-        const displayBlob = await normalizeImageBlobForDisplay(resolved.blob, fileName);
+        const resolved = await resolveImageFile(filePath, hydrationToken);
+        const displayBlob = await normalizeImageBlobForDisplay(resolved.blob, filePath);
         if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
 
         const objectUrl = trackMediaObjectUrl(URL.createObjectURL(displayBlob));
         const img = document.createElement('img');
         img.src = objectUrl;
-        img.alt = fileName.replace(/\.[^./\\]+$/, '');
+        img.alt = filePath.replace(/^.*[\\/]/, '').replace(/\.[^./\\]+$/, '');
         img.loading = 'lazy';
         img.decoding = 'async';
 
         node.replaceChildren(img);
         node.dataset.mediaStatus = 'ready';
+        node.dataset.filePath = filePath;
         node.title = `${resolved.source.name}: ${resolved.url}`;
       } catch (error) {
         if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
         node.dataset.mediaStatus = 'error';
-        node.textContent = buildMediaFailureTitle('image', fileName);
-        node.title = buildMediaFailureDetail(error);
-        console.error('图片加载失败：', fileName, error);
+        node.dataset.filePath = filePath;
+        showImageError(node, buildImageFailureTitle(filePath), buildImageFailureDetail(error), filePath);
+        console.error('图片加载失败：', filePath, error);
       }
     }
 
-    async function hydrateWikiAudioNode(node, hydrationToken) {
-      const fileName = String(node.getAttribute('file') ?? '').trim();
-      if (!fileName) {
-        node.dataset.mediaStatus = 'error';
-        node.textContent = '音频文件名缺失。';
-        return;
+    function showImageLoading(node, filePath) {
+      const container = document.createElement('div');
+      container.className = 'loading-container';
+      container.textContent = `正在加载图片：${filePath}`;
+      node.replaceChildren(container);
+    }
+
+    function showImageError(node, title, detail, filePath) {
+      const container = document.createElement('div');
+      container.className = 'error-container';
+      
+      const message = document.createElement('div');
+      message.className = 'error-message';
+      message.textContent = title;
+      if (detail) {
+        message.title = detail;
       }
-
-      node.dataset.mediaStatus = 'loading';
-      node.textContent = `正在加载音频：${fileName}`;
-
-      try {
-        const resolved = await resolveMediaFile(fileName, 'audio', hydrationToken);
-        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
-
-        const objectUrl = trackMediaObjectUrl(URL.createObjectURL(resolved.blob));
-        const audio = document.createElement('audio');
-        audio.controls = true;
-        audio.preload = 'none';
-
-        const source = document.createElement('source');
-        source.src = objectUrl;
-        source.type = inferMediaMimeType('audio', fileName);
-        audio.appendChild(source);
-        audio.appendChild(document.createTextNode('当前浏览器不支持音频播放。'));
-
-        node.replaceChildren(audio);
-        node.dataset.mediaStatus = 'ready';
-        node.title = `${resolved.source.name}: ${resolved.url}`;
-      } catch (error) {
-        if (hydrationToken !== mediaHydrationToken || !node.isConnected) return;
-        node.dataset.mediaStatus = 'error';
-        node.textContent = buildMediaFailureTitle('audio', fileName);
-        node.title = buildMediaFailureDetail(error);
-        console.error('音频加载失败：', fileName, error);
-      }
+      
+      const retryButton = document.createElement('button');
+      retryButton.className = 'retry-button';
+      retryButton.textContent = '重新加载';
+      retryButton.onclick = async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const currentFilePath = filePath || node.dataset.filePath;
+        if (!currentFilePath) return;
+        
+        node.dataset.mediaStatus = 'loading';
+        showImageLoading(node, currentFilePath);
+        
+        const currentToken = ++mediaHydrationToken;
+        await loadImageForNode(node, currentFilePath, currentToken);
+      };
+      
+      container.appendChild(message);
+      container.appendChild(retryButton);
+      node.replaceChildren(container);
     }
 
     async function hydrateWikiMedia(root = document, hydrationToken = mediaHydrationToken) {
       const imageNodes = Array.from(root.querySelectorAll('div.wiki-img[file]'));
-      const audioNodes = Array.from(root.querySelectorAll('div.wiki-audio[file]'));
-
-      await Promise.allSettled([
-        ...imageNodes.map(node => hydrateWikiImageNode(node, hydrationToken)),
-        ...audioNodes.map(node => hydrateWikiAudioNode(node, hydrationToken))
-      ]);
+      await Promise.allSettled(
+        imageNodes.map(node => hydrateWikiImageNode(node, hydrationToken))
+      );
     }
 
     async function renderMarkdown(mdContent) {

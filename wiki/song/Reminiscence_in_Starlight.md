@@ -2,7 +2,7 @@
 
 # 暮予星光
 
-<div class="wiki-img" file="暮予星光.avif"></div>
+<div class="wiki-img" file="avif/暮予星光.avif"></div>
 
 ## 曲目信息
 | 曲名 | [暮予星光](info:info("暮予星光")) |
@@ -92,3 +92,14 @@
 等你的余光，
 等你会陪我品尝点点的星光。
 ```
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Reminiscence_in_Starlight.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Reminiscence_in_Starlight.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Reminiscence_in_Starlight.avif"></div>
+

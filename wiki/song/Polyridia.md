@@ -2,7 +2,7 @@
 
 # Polyridia
 
-<div class="wiki-img" file="Polyridia.avif"></div>
+<div class="wiki-img" file="avif/Polyridia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Polyridia](info:info("Polyridia")) |
@@ -40,3 +40,14 @@
 ## 游戏相关
 
 (待补充)
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Polyridia.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Polyridia.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Polyridia.avif"></div>
+

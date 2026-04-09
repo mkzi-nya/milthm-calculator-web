@@ -7,7 +7,7 @@
 
 # Kayava
 
-<div class="wiki-img" file="Kayava.avif"></div>
+<div class="wiki-img" file="avif/Kayava.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Kayava](info:info("Kayava")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Kayava.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Kayava.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Kayava.avif"></div>
+

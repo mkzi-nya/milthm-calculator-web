@@ -2,7 +2,7 @@
 
 # 夜風
 
-<div class="wiki-img" file="夜風.avif"></div>
+<div class="wiki-img" file="avif/夜風.avif"></div>
 
 ## 曲目信息
 | 曲名 | [夜風](info:info("夜風")) |
@@ -40,3 +40,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Yokaze.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Yokaze.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Yokaze.avif"></div>
+

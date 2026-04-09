@@ -7,7 +7,7 @@
 
 # Habitable Zone
 
-<div class="wiki-img" file="Habitable%20Zone.avif"></div>
+<div class="wiki-img" file="avif/Habitable%20Zone.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Habitable Zone](info:info("Habitable Zone")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Habitable_Zone.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Habitable_Zone.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Habitable_Zone.avif"></div>
+

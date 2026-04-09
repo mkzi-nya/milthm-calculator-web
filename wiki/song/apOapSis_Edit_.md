@@ -7,7 +7,7 @@
 
 # apOapSis(Edit)
 
-<div class="wiki-img" file="apOapSis%28Edit%29.avif"></div>
+<div class="wiki-img" file="avif/apOapSis%28Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [apOapSis(Edit)](info:info("apOapSis(Edit)")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_apOapSis_Edit_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_apOapSis_Edit_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_apOapSis_Edit_.avif"></div>
+

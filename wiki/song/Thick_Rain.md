@@ -2,7 +2,7 @@
 
 # 粗线条的雨
 
-<div class="wiki-img" file="粗线条的雨.avif"></div>
+<div class="wiki-img" file="avif/粗线条的雨.avif"></div>
 
 ## 曲目信息
 
@@ -81,3 +81,14 @@
 小心翼翼的放 学不会的温柔  
 也能侵入我所有 每次都投降  
 ```
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Thick_Rain.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Thick_Rain.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Thick_Rain.avif"></div>
+

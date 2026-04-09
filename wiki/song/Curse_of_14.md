@@ -7,7 +7,7 @@
 
 # Curse of 14
 
-<div class="wiki-img" file="Curse of 14.avif"></div>
+<div class="wiki-img" file="avif/Curse of 14.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Curse of 14](info:info("Curse of 14")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Curse_of_14.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Curse_of_14.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Curse_of_14.avif"></div>
+

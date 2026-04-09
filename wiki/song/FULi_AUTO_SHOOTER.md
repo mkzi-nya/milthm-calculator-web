@@ -7,7 +7,7 @@
 
 # FULi AUTO SHOOTER
 
-<div class="wiki-img" file="FULi AUTO SHOOTER.avif"></div>
+<div class="wiki-img" file="avif/FULi AUTO SHOOTER.avif"></div>
 
 ## 曲目信息
 | 曲名 | [FULi AUTO SHOOTER](info:info("FULi AUTO SHOOTER")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_FULi_AUTO_SHOOTER.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_FULi_AUTO_SHOOTER.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_FULi_AUTO_SHOOTER.avif"></div>
+

@@ -7,7 +7,7 @@
 
 # Sound of Nature
 
-<div class="wiki-img" file="Sound of Nature.avif"></div>
+<div class="wiki-img" file="avif/Sound of Nature.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sound of Nature](info:info("Sound of Nature")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Sound_of_Nature.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Sound_of_Nature.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Sound_of_Nature.avif"></div>
+

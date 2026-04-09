@@ -7,7 +7,7 @@
 
 # Innocent white
 
-<div class="wiki-img" file="Innocent white.avif"></div>
+<div class="wiki-img" file="avif/Innocent white.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Innocent white](info:info("Innocent white")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Innocent_white.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Innocent_white.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Innocent_white.avif"></div>
+

@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Sky Syndrome
 
-<div class="wiki-img" file="Fantasia Sonata Sky Syndrome.avif"></div>
+<div class="wiki-img" file="avif/Fantasia Sonata Sky Syndrome.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Sky_Syndrome.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Sky_Syndrome.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Sky_Syndrome.avif"></div>
+

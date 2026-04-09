@@ -2,7 +2,7 @@
 
 # Myth compiler
 
-<div class="wiki-img" file="Myth compiler.avif"></div>
+<div class="wiki-img" file="avif/Myth compiler.avif"></div>
 
 ## 曲目信息
 
@@ -49,3 +49,14 @@
 ## 游戏相关
 
 - 本曲目为角色「露薇娅」的角色曲，在故事模式中有对应的剧情「[露薇娅](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#露薇娅)」。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Myth_compiler.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Myth_compiler.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Myth_compiler.avif"></div>
+

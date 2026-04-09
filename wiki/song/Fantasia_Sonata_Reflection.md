@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Reflection
 
-<div class="wiki-img" file="Fantasia Sonata Reflection.avif"></div>
+<div class="wiki-img" file="avif/Fantasia Sonata Reflection.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")) |
@@ -39,3 +39,9 @@
 ## 游戏相关
 
 - 与《[1.0](info:info("Welcome to Milthm", "Drizzle"))》相同，该曲目为 Milthm 的进阶教程曲，为学习雨丝音符的「[水面反射](https://milthm.com/wiki/hans/manual/judgment/water-reflected)」而制作。
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Reflection.avif"></div>
+

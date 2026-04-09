@@ -2,7 +2,7 @@
 
 # 命日
 
-<div class="wiki-img" file="命日.avif"></div>
+<div class="wiki-img" file="avif/命日.avif"></div>
 
 ## 曲目信息
 | 曲名 | [命日](info:info("命日")) |
@@ -59,4 +59,19 @@
 
 - 使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
 - 该曲目 Clear 难度的定数在 v4.0 版本从12.2升到了12.7。
+
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Meinichi.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Meinichi.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Meinichi.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Meinichi.avif"></div>
 

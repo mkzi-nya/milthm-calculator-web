@@ -2,7 +2,7 @@
 
 # 时落之雨
 
-<div class="wiki-img" file="时落之雨.avif"></div>
+<div class="wiki-img" file="avif/时落之雨.avif"></div>
 
 ## 曲目信息
 
@@ -61,3 +61,14 @@ Cloudburst
 
 - 该曲目的 Cloudburst 难度是专为熟悉雨丝音符的「[水面反射](https://milthm.com/wiki/hans/manual/judgment/water-reflected)」机制而设计的：当你能只使用2根手指完成FC，说明你已经熟悉了这个功能。
   - 这一点在 [RainGPT](https://mkzi-nya.github.io/story/milthm/raingpt/hold-tricks.html) 中有提及。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Episodic_Rain.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Episodic_Rain.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Episodic_Rain.avif"></div>
+

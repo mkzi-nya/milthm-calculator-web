@@ -2,7 +2,7 @@
 
 # Ephemeric World
 
-<div class="wiki-img" file="Ephemeric World.avif"></div>
+<div class="wiki-img" file="avif/Ephemeric World.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Ephemeric World](info:info("Ephemeric World")) |
@@ -41,3 +41,14 @@
 ## 游戏相关
 
 - 本曲目的 [Cloudburst](info:info("Ephemeric World", "Cloudburst")) 为《解空明镜》中唯一的12级曲目
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Ephemeric_World.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Ephemeric_World.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Ephemeric_World.avif"></div>
+

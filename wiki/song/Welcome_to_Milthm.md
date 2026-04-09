@@ -2,7 +2,7 @@
 
 # Welcome to Milthm
 
-<div class="wiki-img" file="Welcome to Milthm.avif"></div>
+<div class="wiki-img" file="avif/Welcome to Milthm.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Welcome to Milthm](info:info("Welcome to Milthm")) |
@@ -44,4 +44,13 @@
 
 
 ## 曲目试听
+
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Welcome_to_Milthm.avif"></div>
+
+- \(￣\_￣\|\|\|\)
+<div class="wiki-img" file="chart/\(￣\_￣\|\|\|\)_Welcome_to_Milthm.avif"></div>
 

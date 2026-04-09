@@ -7,7 +7,7 @@
 
 # Hikari
 
-<div class="wiki-img" file="Hikari.avif"></div>
+<div class="wiki-img" file="avif/Hikari.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Hikari](info:info("Hikari")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Hikari.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Hikari.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Hikari.avif"></div>
+

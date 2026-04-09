@@ -7,7 +7,7 @@
 
 # Fantasia Sonata Hope
 
-<div class="wiki-img" file="Fantasia Sonata Hope.avif"></div>
+<div class="wiki-img" file="avif/Fantasia Sonata Hope.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Hope.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Hope.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Hope.avif"></div>
+

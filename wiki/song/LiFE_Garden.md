@@ -4,7 +4,7 @@
 
 > 本页面为关于《[LiFE Garden](info:info("LiFE Garden"))》的信息。有关《[LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)"))》的信息，请[点击此处查看](./?song=LiFE_Garden__Extended_Mix_)。
 
-<div class="wiki-img" file="LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
+<div class="wiki-img" file="avif/LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
 
 
 ## 曲目信息
@@ -46,3 +46,18 @@
   - Clear 难度由于具有不同的音源，故此页面不予展示。
 - 初次解锁本曲目前，将会播放一段实时渲染的 PV。
   - 该 PV 无法通过任何方式回看。
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_LiFE_Garden.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_LiFE_Garden.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_LiFE_Garden.avif"></div>
+
+- Special
+<div class="wiki-img" file="chart/Special_LiFE_Garden.avif"></div>
+

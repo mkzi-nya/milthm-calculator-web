@@ -2,7 +2,7 @@
 
 # Fragment of Memories
 
-<div class="wiki-img" file="Fragment of Memories.avif"></div>
+<div class="wiki-img" file="avif/Fragment of Memories.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fragment of Memories](info:info("Fragment of Memories")) |
@@ -40,3 +40,14 @@
 ## 曲目相关
 
 - 本曲目为Milthm原创曲。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fragment_of_Memories.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fragment_of_Memories.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fragment_of_Memories.avif"></div>
+

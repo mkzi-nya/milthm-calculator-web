@@ -7,7 +7,7 @@
 
 # Broken Conviction
 
-<div class="wiki-img" file="Broken Conviction.avif"></div>
+<div class="wiki-img" file="avif/Broken Conviction.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Broken Conviction](info:info("Broken Conviction")) |
@@ -41,3 +41,18 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Broken_Conviction.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Broken_Conviction.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Broken_Conviction.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Broken_Conviction.avif"></div>
+

@@ -7,7 +7,7 @@
 
 # furioso melodia
 
-<div class="wiki-img" file="furioso%20melodia.avif"></div>
+<div class="wiki-img" file="avif/furioso%20melodia.avif"></div>
 
 ## 曲目信息
 | 曲名 | [furioso melodia](info:info("furioso melodia")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_furioso_melodia.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_furioso_melodia.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_furioso_melodia.avif"></div>
+

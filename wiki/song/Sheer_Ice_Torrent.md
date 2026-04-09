@@ -7,7 +7,7 @@
 
 # Sheer Ice Torrent
 
-<div class="wiki-img" file="Sheer Ice Torrent.avif"></div>
+<div class="wiki-img" file="avif/Sheer Ice Torrent.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Sheer Ice Torrent](info:info("Sheer Ice Torrent")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Sheer_Ice_Torrent.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Sheer_Ice_Torrent.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Sheer_Ice_Torrent.avif"></div>
+

@@ -7,7 +7,7 @@
 
 # Before it Ends
 
-<div class="wiki-img" file="Before it Ends.avif"></div>
+<div class="wiki-img" file="avif/Before it Ends.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Before it Ends](info:info("Before it Ends")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Before_it_Ends.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Before_it_Ends.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Before_it_Ends.avif"></div>
+

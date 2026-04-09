@@ -7,7 +7,7 @@
 
 # Oniichan
 
-<div class="wiki-img" file="Oniichan.avif"></div>
+<div class="wiki-img" file="avif/Oniichan.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Oniichan](info:info("Oniichan")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Oniichan.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Oniichan.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Oniichan.avif"></div>
+

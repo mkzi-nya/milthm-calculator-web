@@ -7,7 +7,7 @@
 
 # INFP.mp3
 
-<div class="wiki-img" file="INFP.mp3.avif"></div>
+<div class="wiki-img" file="avif/INFP.mp3.avif"></div>
 
 ## 曲目信息
 | 曲名 | [INFP.mp3](info:info("INFP.mp3")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_INFP_mp3.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_INFP_mp3.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_INFP_mp3.avif"></div>
+

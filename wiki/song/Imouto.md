@@ -7,7 +7,7 @@
 
 # 妹
 
-<div class="wiki-img" file="妹.avif"></div>
+<div class="wiki-img" file="avif/妹.avif"></div>
 
 ## 曲目信息
 | 曲名 | [妹](info:info("妹")) |

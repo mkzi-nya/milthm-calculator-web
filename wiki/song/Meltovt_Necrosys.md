@@ -7,7 +7,7 @@
 
 # Meltovt Necrosys
 
-<div class="wiki-img" file="Meltovt Necrosys.avif"></div>
+<div class="wiki-img" file="avif/Meltovt Necrosys.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Meltovt_Necrosys.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Meltovt_Necrosys.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Meltovt_Necrosys.avif"></div>
+

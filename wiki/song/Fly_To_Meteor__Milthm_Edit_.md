@@ -7,7 +7,7 @@
 
 # Fly To Meteor (Milthm Edit)
 
-<div class="wiki-img" file="Fly%20To%20Meteor%20%28Milthm%20Edit%29.avif"></div>
+<div class="wiki-img" file="avif/Fly%20To%20Meteor%20%28Milthm%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor (Milthm Edit)")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fly_To_Meteor__Milthm_Edit_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fly_To_Meteor__Milthm_Edit_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fly_To_Meteor__Milthm_Edit_.avif"></div>
+

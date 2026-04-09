@@ -2,7 +2,7 @@
 
 # Jump out?
 
-<div class="wiki-img" file="Jump%20out%3F.avif"></div>
+<div class="wiki-img" file="avif/Jump%20out%3F.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Jump out?](info:info("Jump out ")) |
@@ -36,3 +36,15 @@
 ## 游戏相关
 
 - 在 Cloudburst 中，在歌曲的第一段副歌部分出现的雨滴音符，只需弹奏雨露和细雨音符，便能自动收集到。
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Jump_out_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Jump_out_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Jump_out_.avif"></div>
+

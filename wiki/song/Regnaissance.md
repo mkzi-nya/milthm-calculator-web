@@ -2,7 +2,7 @@
 
 # Regnaissance
 
-<div class="wiki-img" file="Regnaissance.avif"></div>
+<div class="wiki-img" file="avif/Regnaissance.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Regnaissance](info:info("Regnaissance")) |
@@ -67,3 +67,17 @@
   - 该游玩效果可以通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重新体验。
 - 初次游玩后将带回 v1.x 时期的开屏界面。
   - 该开屏界面无法重新体验。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Regnaissance.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Regnaissance.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Regnaissance.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Regnaissance.avif"></div>
+

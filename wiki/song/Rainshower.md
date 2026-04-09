@@ -2,7 +2,7 @@
 
 # 驟雨の狭間
 
-<div class="wiki-img" file="驟雨の狭間.avif"></div>
+<div class="wiki-img" file="avif/驟雨の狭間.avif"></div>
 
 ## 曲目信息
 

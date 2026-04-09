@@ -4,7 +4,7 @@
 
 # Fantasia Sonata Arcadia
 
-<div class="wiki-img" file="Fantasia Sonata Arcadia.avif"></div>
+<div class="wiki-img" file="avif/Fantasia Sonata Arcadia.avif"></div>
 
 ## 曲目信息
 
@@ -50,3 +50,14 @@
 ## 游戏相关
 
 - 本曲目为曲包《甜与苦的一体两面》的收尾曲。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Arcadia.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Arcadia.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Arcadia.avif"></div>
+

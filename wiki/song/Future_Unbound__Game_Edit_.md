@@ -7,7 +7,7 @@
 
 # Future Unbound (Game Edit)
 
-<div class="wiki-img" file="Future%20Unbound%20%28Game%20Edit%29.avif"></div>
+<div class="wiki-img" file="avif/Future%20Unbound%20%28Game%20Edit%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Future Unbound (Game Edit)](info:info("Future Unbound (Game Edit)")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Future_Unbound__Game_Edit_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Future_Unbound__Game_Edit_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Future_Unbound__Game_Edit_.avif"></div>
+

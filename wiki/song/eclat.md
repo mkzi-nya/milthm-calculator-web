@@ -2,7 +2,7 @@
 
 # イコラト
 
-<div class="wiki-img" file="イコラト.avif"></div>
+<div class="wiki-img" file="avif/イコラト.avif"></div>
 
 ## 曲目信息
 | 曲名 | [イコラト](info:info("イコラト")) |
@@ -121,3 +121,15 @@ happy endingの　
 もう怖くない、がむしゃらでも良い
 歌声で書こう、光のその側に
 ```
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_eclat.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_eclat.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_eclat.avif"></div>
+

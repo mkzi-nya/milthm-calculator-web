@@ -7,9 +7,9 @@
 
 # 烽閻鸞錵
 
-<div class="wiki-img" file="%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
+<div class="wiki-img" file="avif/%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
 
-<div class="wiki-img" file="SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
+<div class="wiki-img" file="avif/SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.avif"></div>
 
 ## 曲目信息
 | 曲名 | [烽閻鸞錵](info:info("烽閻鸞錵")) |
@@ -43,3 +43,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Houen_Ranka.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Houen_Ranka.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Houen_Ranka.avif"></div>
+

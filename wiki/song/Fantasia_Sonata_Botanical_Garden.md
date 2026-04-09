@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Botanical Garden
 
-<div class="wiki-img" file="Fantasia Sonata Botanical Garden.avif"></div>
+<div class="wiki-img" file="avif/Fantasia Sonata Botanical Garden.avif"></div>
 
 ## 曲目信息
 
@@ -45,3 +45,14 @@
 ## 游戏相关
 
 - 本曲目的慢速版为「露晓卉庭」功能界面的背景音乐。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Botanical_Garden.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Botanical_Garden.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Botanical_Garden.avif"></div>
+

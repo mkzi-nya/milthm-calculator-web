@@ -7,7 +7,7 @@
 
 # KAEDE
 
-<div class="wiki-img" file="KAEDE.avif"></div>
+<div class="wiki-img" file="avif/KAEDE.avif"></div>
 
 ## 曲目信息
 | 曲名 | [KAEDE](info:info("KAEDE")) |

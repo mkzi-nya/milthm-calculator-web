@@ -2,7 +2,7 @@
 
 # Contrasty Angeles
 
-<div class="wiki-img" file="Contrasty Angeles.avif"></div>
+<div class="wiki-img" file="avif/Contrasty Angeles.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Contrasty Angeles](info:info("Contrasty Angeles")) |
@@ -61,3 +61,17 @@
   - 点击进入游戏后，将自动进入故事「[1-7](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#_1-7)」。
 - 该曲目解锁后，将获得角色「苏珊·现实」。
 - 在2025年愚人节活动期间，尽管其他曲目的难度等级被显著提高，但本曲的CL难度显示为了2级，「Clear」字样变为了「PapaJK」。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Contrasty_Angeles.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Contrasty_Angeles.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Contrasty_Angeles.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Contrasty_Angeles.avif"></div>
+

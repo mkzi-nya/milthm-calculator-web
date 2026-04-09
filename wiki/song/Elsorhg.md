@@ -7,7 +7,7 @@
 
 # Elsorhg
 
-<div class="wiki-img" file="Elsorhg.avif"></div>
+<div class="wiki-img" file="avif/Elsorhg.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Elsorhg](info:info("Elsorhg")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Elsorhg.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Elsorhg.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Elsorhg.avif"></div>
+

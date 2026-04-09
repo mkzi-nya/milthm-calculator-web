@@ -7,7 +7,7 @@
 
 # Threat - Superstructure
 
-<div class="wiki-img" file="Threat%20-%20Superstructure.avif"></div>
+<div class="wiki-img" file="avif/Threat%20-%20Superstructure.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Superstructure](info:info("Threat - Superstructure")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Threat___Superstructure.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Threat___Superstructure.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Threat___Superstructure.avif"></div>
+

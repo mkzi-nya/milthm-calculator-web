@@ -7,7 +7,7 @@
 
 # Algebra
 
-<div class="wiki-img" file="Algebra.avif"></div>
+<div class="wiki-img" file="avif/Algebra.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Algebra](info:info("Algebra")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Algebra.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Algebra.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Algebra.avif"></div>
+

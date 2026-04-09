@@ -51,12 +51,29 @@ PAGE_TEMPLATE = textwrap.dedent(
     ## 游戏相关
 
     (待补充)
-    """
+
+    {chart_preview_section}"""
 )
 
 IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
     """\
-    <div class="wiki-img" file="{song_key}.avif"></div>
+    <div class="wiki-img" file="avif/{song_key}.avif"></div>
+    """
+)
+
+CHART_PREVIEW_TEMPLATE = textwrap.dedent(
+    """\
+    ## 谱面预览
+
+    {preview_items}
+    """
+)
+
+CHART_PREVIEW_ITEM_TEMPLATE = textwrap.dedent(
+    """\
+    - {difficulty}
+    <div class="wiki-img" file="chart/{difficulty}_{filename}.avif"></div>
+
     """
 )
 
@@ -199,7 +216,32 @@ def build_square_artwork_block(song_key: str, avif_dir: Path):
     return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"SquareArtwork_{song_key}.avif")).strip() + "\n\n"
 
 
-def build_markdown(song_key: str, song: dict, avif_dir: Path):
+def build_chart_preview_section(filename_base: str, diff_map: dict):
+    """构建谱面预览部分"""
+    # 获取所有存在的难度
+    diffs = [d for d in DIFF_ORDER if isinstance(diff_map.get(d), dict)]
+    if not diffs:
+        return ""
+    
+    # 构建预览项
+    preview_items = []
+    for diff in diffs:
+        preview_items.append(
+            CHART_PREVIEW_ITEM_TEMPLATE.format(
+                difficulty=diff,
+                filename=filename_base
+            )
+        )
+    
+    # 返回完整的预览部分
+    return CHART_PREVIEW_TEMPLATE.format(
+        preview_items="".join(preview_items)
+    )
+
+
+def build_markdown(song_key: str, song: dict, avif_dir: Path, filename_base: str):
+    diff_map = song.get("difficulty") or {}
+    
     return PAGE_TEMPLATE.format(
         song_key=song_key,
         main_artwork_block=build_main_artwork_block(song_key),
@@ -209,7 +251,8 @@ def build_markdown(song_key: str, song: dict, avif_dir: Path):
         artist=list_or_scalar_to_str(song.get("artist") or song.get("artistsList")),
         illustrator=list_or_scalar_to_str(song.get("illustrator") or song.get("illustratorsList")),
         bpm=bpm_to_str(song),
-        chart_info_table=build_chart_info_table(song_key, song.get("difficulty") or {}),
+        chart_info_table=build_chart_info_table(song_key, diff_map),
+        chart_preview_section=build_chart_preview_section(filename_base, diff_map),
     ).rstrip() + "\n"
 
 
@@ -254,7 +297,7 @@ def main():
             continue
         seen_output_names.add(output_path.name)
 
-        markdown = build_markdown(song_key, song, AVIF_DIR)
+        markdown = build_markdown(song_key, song, AVIF_DIR, filename_base)
         output_path.write_text(markdown, encoding="utf-8")
         created_files.append(output_path.name)
 

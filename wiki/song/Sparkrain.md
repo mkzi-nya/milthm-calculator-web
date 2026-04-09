@@ -7,7 +7,7 @@
 
 # 烁雨
 
-<div class="wiki-img" file="烁雨.avif"></div>
+<div class="wiki-img" file="avif/烁雨.avif"></div>
 
 ## 曲目信息
 | 曲名 | [烁雨](info:info("烁雨")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Sparkrain.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Sparkrain.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Sparkrain.avif"></div>
+

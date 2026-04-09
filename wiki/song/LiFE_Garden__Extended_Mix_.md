@@ -4,7 +4,7 @@
 
 > 本页面为关于《[LiFE Garden (Extended Mix)](info:info("LiFE Garden Extended Mix"))》的信息。有关《[LiFE Garden](info:info("LiFE Garden"))》的信息，请[点击此处查看](./?song=LiFE_Garden)。
 
-<div class="wiki-img" file="LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
+<div class="wiki-img" file="avif/LiFE%20Garden%20%28Extended%20Mix%29.avif"></div>
 
 ## 曲目信息
 

@@ -7,7 +7,7 @@
 
 # Chartreuse Green
 
-<div class="wiki-img" file="Chartreuse Green.avif"></div>
+<div class="wiki-img" file="avif/Chartreuse Green.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Chartreuse Green](info:info("Chartreuse Green")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Chartreuse_Green.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Chartreuse_Green.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Chartreuse_Green.avif"></div>
+

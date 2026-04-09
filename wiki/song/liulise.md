@@ -7,7 +7,7 @@
 
 # 瑠璃色
 
-<div class="wiki-img" file="%E7%91%A0%E7%92%83%E8%89%B2.avif"></div>
+<div class="wiki-img" file="avif/%E7%91%A0%E7%92%83%E8%89%B2.avif"></div>
 
 ## 曲目信息
 | 曲名 | [瑠璃色](info:info("瑠璃色")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_liulise.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_liulise.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_liulise.avif"></div>
+

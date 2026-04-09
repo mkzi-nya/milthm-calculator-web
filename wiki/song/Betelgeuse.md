@@ -7,7 +7,7 @@
 
 # 参宿四\~Betelgeuse\~
 
-<div class="wiki-img" file="参宿四\~Betelgeuse\~.avif"></div>
+<div class="wiki-img" file="avif/参宿四\~Betelgeuse\~.avif"></div>
 
 ## 曲目信息
 | 曲名 | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Betelgeuse.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Betelgeuse.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Betelgeuse.avif"></div>
+

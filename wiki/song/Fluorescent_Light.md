@@ -7,7 +7,7 @@
 
 # Fluorescent Light
 
-<div class="wiki-img" file="Fluorescent Light.avif"></div>
+<div class="wiki-img" file="avif/Fluorescent Light.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fluorescent Light](info:info("Fluorescent Light")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fluorescent_Light.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fluorescent_Light.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fluorescent_Light.avif"></div>
+

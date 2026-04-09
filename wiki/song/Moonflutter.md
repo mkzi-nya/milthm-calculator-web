@@ -7,7 +7,7 @@
 
 # Moonflutter
 
-<div class="wiki-img" file="Moonflutter.avif"></div>
+<div class="wiki-img" file="avif/Moonflutter.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Moonflutter](info:info("Moonflutter")) |
@@ -41,3 +41,18 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Moonflutter.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Moonflutter.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Moonflutter.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Moonflutter.avif"></div>
+

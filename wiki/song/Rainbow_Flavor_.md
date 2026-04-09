@@ -7,7 +7,7 @@
 
 # Rainbow Flavor!
 
-<div class="wiki-img" file="Rainbow%20Flavor%21.avif"></div>
+<div class="wiki-img" file="avif/Rainbow%20Flavor%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Rainbow Flavor!](info:info("Rainbow Flavor!")) |
@@ -41,3 +41,18 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Rainbow_Flavor_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Rainbow_Flavor_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Rainbow_Flavor_.avif"></div>
+
+- Special
+<div class="wiki-img" file="chart/Special_Rainbow_Flavor_.avif"></div>
+

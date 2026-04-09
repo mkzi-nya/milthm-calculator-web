@@ -7,7 +7,7 @@
 
 # Pthahnil
 
-<div class="wiki-img" file="Pthahnil.avif"></div>
+<div class="wiki-img" file="avif/Pthahnil.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Pthahnil.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Pthahnil.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Pthahnil.avif"></div>
+

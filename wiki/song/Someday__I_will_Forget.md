@@ -7,7 +7,7 @@
 
 # いつか忘れるんだろう
 
-<div class="wiki-img" file="%E3%81%84%E3%81%A4%E3%81%8B%E5%BF%98%E3%82%8C%E3%82%8B%E3%82%93%E3%81%A0%E3%82%8D%E3%81%86.avif"></div>
+<div class="wiki-img" file="avif/%E3%81%84%E3%81%A4%E3%81%8B%E5%BF%98%E3%82%8C%E3%82%8B%E3%82%93%E3%81%A0%E3%82%8D%E3%81%86.avif"></div>
 
 ## 曲目信息
 | 曲名 | [いつか忘れるんだろう](info:info("いつか忘れるんだろう")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Someday__I_will_Forget.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Someday__I_will_Forget.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Someday__I_will_Forget.avif"></div>
+

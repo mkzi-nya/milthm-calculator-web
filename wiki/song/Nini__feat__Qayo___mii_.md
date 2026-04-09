@@ -7,9 +7,9 @@
 
 # ニニ (feat. Qayo & mii)
 
-<div class="wiki-img" file="%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
+<div class="wiki-img" file="avif/%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
 
-<div class="wiki-img" file="SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
+<div class="wiki-img" file="avif/SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.avif"></div>
 
 ## 曲目信息
 | 曲名 | [ニニ (feat. Qayo & mii)](info:info("ニニ (feat. Qayo & mii)")) |
@@ -43,3 +43,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Nini__feat__Qayo___mii_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Nini__feat__Qayo___mii_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Nini__feat__Qayo___mii_.avif"></div>
+

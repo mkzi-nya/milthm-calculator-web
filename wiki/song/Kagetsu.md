@@ -2,7 +2,7 @@
 
 # 花月
 
-<div class="wiki-img" file="花月.avif"></div>
+<div class="wiki-img" file="avif/花月.avif"></div>
 
 ## 曲目信息
 | 曲名 | [花月](info:info("花月")) |
@@ -40,3 +40,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Kagetsu.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Kagetsu.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Kagetsu.avif"></div>
+

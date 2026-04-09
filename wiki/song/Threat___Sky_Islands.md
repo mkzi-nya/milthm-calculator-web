@@ -7,7 +7,7 @@
 
 # Threat - Sky Islands
 
-<div class="wiki-img" file="Threat%20-%20Sky%20Islands.avif"></div>
+<div class="wiki-img" file="avif/Threat%20-%20Sky%20Islands.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Sky Islands](info:info("Threat - Sky Islands")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Threat___Sky_Islands.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Threat___Sky_Islands.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Threat___Sky_Islands.avif"></div>
+

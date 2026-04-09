@@ -7,7 +7,7 @@
 
 # cafe in 6412I731V
 
-<div class="wiki-img" file="cafe in 6412I731V.avif"></div>
+<div class="wiki-img" file="avif/cafe in 6412I731V.avif"></div>
 
 ## 曲目信息
 | 曲名 | [cafe in 6412I731V](info:info("cafe in 6412I731V")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_cafe_in_6412I731V.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_cafe_in_6412I731V.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_cafe_in_6412I731V.avif"></div>
+

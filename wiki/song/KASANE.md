@@ -7,7 +7,7 @@
 
 # KASANE
 
-<div class="wiki-img" file="KASANE.avif"></div>
+<div class="wiki-img" file="avif/KASANE.avif"></div>
 
 ## 曲目信息
 | 曲名 | [KASANE](info:info("KASANE")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_KASANE.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_KASANE.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_KASANE.avif"></div>
+

@@ -81,3 +81,18 @@
 水溜りに揺れた　雨音に消えてく
 雨上がって消えた
 ```
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Ameonna.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Ameonna.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Ameonna.avif"></div>
+
+- Clear
+<div class="wiki-img" file="chart/Clear_Ameonna.avif"></div>
+

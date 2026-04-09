@@ -7,7 +7,7 @@
 
 # Threat - Waterfront Complex
 
-<div class="wiki-img" file="Threat%20-%20Waterfront%20Complex.avif"></div>
+<div class="wiki-img" file="avif/Threat%20-%20Waterfront%20Complex.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Threat___Waterfront_Complex.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Threat___Waterfront_Complex.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Threat___Waterfront_Complex.avif"></div>
+

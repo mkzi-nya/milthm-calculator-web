@@ -7,7 +7,7 @@
 
 # IN
 
-<div class="wiki-img" file="IN.avif"></div>
+<div class="wiki-img" file="avif/IN.avif"></div>
 
 ## 曲目信息
 | 曲名 | [IN](info:info("IN")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_IN.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_IN.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_IN.avif"></div>
+

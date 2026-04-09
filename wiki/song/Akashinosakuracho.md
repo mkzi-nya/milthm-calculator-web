@@ -7,7 +7,7 @@
 
 # 灯ノ桜蝶
 
-<div class="wiki-img" file="灯ノ桜蝶.avif"></div>
+<div class="wiki-img" file="avif/灯ノ桜蝶.avif"></div>
 
 ## 曲目信息
 | 曲名 | [灯ノ桜蝶](info:info("灯ノ桜蝶")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Akashinosakuracho.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Akashinosakuracho.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Akashinosakuracho.avif"></div>
+

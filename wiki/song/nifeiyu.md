@@ -7,7 +7,7 @@
 
 # 逆飛雨
 
-<div class="wiki-img" file="%E9%80%86%E9%A3%9B%E9%9B%A8.avif"></div>
+<div class="wiki-img" file="avif/%E9%80%86%E9%A3%9B%E9%9B%A8.avif"></div>
 
 ## 曲目信息
 | 曲名 | [逆飛雨](info:info("逆飛雨")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_nifeiyu.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_nifeiyu.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_nifeiyu.avif"></div>
+

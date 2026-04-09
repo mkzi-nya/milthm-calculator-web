@@ -7,7 +7,7 @@
 
 # Bio-Engineering
 
-<div class="wiki-img" file="Bio-Engineering.avif"></div>
+<div class="wiki-img" file="avif/Bio-Engineering.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Bio-Engineering](info:info("Bio-Engineering")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Bio_Engineering.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Bio_Engineering.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Bio_Engineering.avif"></div>
+

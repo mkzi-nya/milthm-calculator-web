@@ -7,7 +7,7 @@
 
 # Melody to Heaven
 
-<div class="wiki-img" file="Melody to Heaven.avif"></div>
+<div class="wiki-img" file="avif/Melody to Heaven.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Melody to Heaven](info:info("Melody to Heaven")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Melody_to_Heaven.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Melody_to_Heaven.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Melody_to_Heaven.avif"></div>
+

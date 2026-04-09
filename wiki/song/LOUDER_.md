@@ -2,7 +2,7 @@
 
 # LOUDER!
 
-<div class="wiki-img" file="LOUDER%21.avif"></div>
+<div class="wiki-img" file="avif/LOUDER%21.avif"></div>
 
 ## 曲目信息
 | 曲名 | [LOUDER!](info:info("LOUDER!")) |
@@ -36,3 +36,15 @@
 ## 游戏相关
 
 - 该曲目在 v3.8 版本加入并取代了《[Moving On](info:info("Moving On"))》在此章节中的位置。
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_LOUDER_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_LOUDER_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_LOUDER_.avif"></div>
+

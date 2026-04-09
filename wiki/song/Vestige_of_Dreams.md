@@ -3,7 +3,7 @@
 # Vestige of Dreams
 
 
-<div class="wiki-img" file="Vestige of Dreams.avif"></div>
+<div class="wiki-img" file="avif/Vestige of Dreams.avif"></div>
 
 ## 曲目信息
 
@@ -48,3 +48,14 @@
 ## 游戏相关
 
 (待补充)
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Vestige_of_Dreams.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Vestige_of_Dreams.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Vestige_of_Dreams.avif"></div>
+

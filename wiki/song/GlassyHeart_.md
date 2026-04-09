@@ -7,9 +7,9 @@
 
 # GlassyHeart.
 
-<div class="wiki-img" file="GlassyHeart..avif"></div>
+<div class="wiki-img" file="avif/GlassyHeart..avif"></div>
 
-<div class="wiki-img" file="SquareArtwork_GlassyHeart..avif"></div>
+<div class="wiki-img" file="avif/SquareArtwork_GlassyHeart..avif"></div>
 
 ## 曲目信息
 | 曲名 | [GlassyHeart.](info:info("GlassyHeart.")) |
@@ -43,3 +43,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_GlassyHeart_.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_GlassyHeart_.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_GlassyHeart_.avif"></div>
+

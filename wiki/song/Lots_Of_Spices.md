@@ -7,7 +7,7 @@
 
 # Lots Of Spices
 
-<div class="wiki-img" file="Lots Of Spices.avif"></div>
+<div class="wiki-img" file="avif/Lots Of Spices.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Lots Of Spices](info:info("Lots Of Spices")) |

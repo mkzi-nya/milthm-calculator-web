@@ -2,7 +2,7 @@
 
 # Garden
 
-<div class="wiki-img" file="Garden.avif"></div>
+<div class="wiki-img" file="avif/Garden.avif"></div>
 
 ## 曲目信息
 
@@ -48,3 +48,14 @@
 
 - 该曲目的完整版被用作游戏开屏界面的背景音乐。
   - 该音乐自 v1.0 版本起就已实装进游戏中。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Garden.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Garden.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Garden.avif"></div>
+

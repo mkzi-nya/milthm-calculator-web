@@ -7,7 +7,7 @@
 
 # Words
 
-<div class="wiki-img" file="Words.avif"></div>
+<div class="wiki-img" file="avif/Words.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Words](info:info("Words")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Words.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Words.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Words.avif"></div>
+

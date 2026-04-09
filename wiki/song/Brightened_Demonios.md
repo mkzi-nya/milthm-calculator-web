@@ -2,7 +2,7 @@
 
 # Brightened Demonios
 
-<div class="wiki-img" file="Brightened Demonios.avif"></div>
+<div class="wiki-img" file="avif/Brightened Demonios.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Brightened Demonios](info:info("Brightened Demonios")) |
@@ -58,3 +58,14 @@
       > 真希望在没有雨的世界里还能和你们成为一家人……
   - 该游玩效果可通过梦境涟漪「噩梦」重复体验。
 - 本曲目为角色「苏珊」的角色曲，在故事模式中有对应的剧情「[苏珊](https://mkzi-nya.github.io/story/milthm/story/zh_Hans.html#%E8%8B%8F%E7%8F%8A)」。
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Brightened_Demonios.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Brightened_Demonios.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Brightened_Demonios.avif"></div>
+

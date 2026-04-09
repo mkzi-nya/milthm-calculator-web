@@ -7,7 +7,7 @@
 
 # Fantasia Sonata Surmount Vanity Aufleben
 
-<div class="wiki-img" file="Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben.avif"></div>
+<div class="wiki-img" file="avif/Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben.avif"></div>
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Surmount Vanity Aufleben](info:info("Fantasia Sonata Surmount Vanity Aufleben")) |
@@ -41,3 +41,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Fantasia_Sonata_Surmount_Vanity_Aufleben.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Fantasia_Sonata_Surmount_Vanity_Aufleben.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Fantasia_Sonata_Surmount_Vanity_Aufleben.avif"></div>
+

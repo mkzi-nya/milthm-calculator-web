@@ -7,7 +7,7 @@
 
 # 白虎蓮華
 
-<div class="wiki-img" file="白虎蓮華.avif"></div>
+<div class="wiki-img" file="avif/白虎蓮華.avif"></div>
 
 ## 曲目信息
 | 曲名 | [白虎蓮華](info:info("白虎蓮華")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Tiger_Lotus.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Tiger_Lotus.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Tiger_Lotus.avif"></div>
+

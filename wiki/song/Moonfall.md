@@ -7,7 +7,7 @@
 
 # 大月墜落狂想
 
-<div class="wiki-img" file="大月墜落狂想.avif"></div>
+<div class="wiki-img" file="avif/大月墜落狂想.avif"></div>
 
 ## 曲目信息
 | 曲名 | [大月墜落狂想](info:info("Moonfall   大月墜落狂想")) |
@@ -42,3 +42,15 @@
 ## 游戏相关
 
 (待补充)
+
+## 谱面预览
+
+- Drizzle
+<div class="wiki-img" file="chart/Drizzle_Moonfall.avif"></div>
+
+- Sprinkle
+<div class="wiki-img" file="chart/Sprinkle_Moonfall.avif"></div>
+
+- Cloudburst
+<div class="wiki-img" file="chart/Cloudburst_Moonfall.avif"></div>
+
