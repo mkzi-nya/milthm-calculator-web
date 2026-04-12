@@ -72,7 +72,7 @@ CHART_PREVIEW_TEMPLATE = textwrap.dedent(
 CHART_PREVIEW_ITEM_TEMPLATE = textwrap.dedent(
     """\
     - {difficulty}
-    <div class="wiki-img" file="chart/{difficulty}_{filename}.png"></div>
+    <div class="wiki-img" file="chart/{difficulty}_{filename}.jpg"></div>
 
     """
 )
