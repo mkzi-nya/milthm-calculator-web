@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Oniichan.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Oniichan.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Oniichan.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Oniichan.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Oniichan.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Oniichan.jpg)
 

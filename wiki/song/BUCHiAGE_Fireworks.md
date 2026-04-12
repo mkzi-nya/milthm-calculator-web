@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_BUCHiAGE_Fireworks.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_BUCHiAGE_Fireworks.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_BUCHiAGE_Fireworks.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_BUCHiAGE_Fireworks.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_BUCHiAGE_Fireworks.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_BUCHiAGE_Fireworks.jpg)
 

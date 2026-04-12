@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Imaginary_Tomorrow.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Imaginary_Tomorrow.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Imaginary_Tomorrow.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Imaginary_Tomorrow.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Imaginary_Tomorrow.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Imaginary_Tomorrow.jpg)
 

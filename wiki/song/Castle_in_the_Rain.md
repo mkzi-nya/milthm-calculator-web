@@ -49,6 +49,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Castle_in_the_Rain.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Castle_in_the_Rain.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Castle_in_the_Rain.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Castle_in_the_Rain.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Castle_in_the_Rain.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Castle_in_the_Rain.jpg)

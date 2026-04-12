@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Bio_Engineering.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Bio_Engineering.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Bio_Engineering.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Bio_Engineering.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Bio_Engineering.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Bio_Engineering.jpg)
 

@@ -83,8 +83,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ameonna.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ameonna.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ameonna.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Ameonna.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ameonna.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ameonna.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ameonna.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Ameonna.jpg)
 

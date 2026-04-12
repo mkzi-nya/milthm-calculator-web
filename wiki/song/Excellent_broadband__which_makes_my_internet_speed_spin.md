@@ -42,5 +42,5 @@
 
 ## 谱面预览
 
-- [Special](https://storage.mhtl.im/chart/Special_Excellent_broadband__which_makes_my_internet_speed_spin.png)
+- [Special](https://storage.mhtl.im/chart/Special_Excellent_broadband__which_makes_my_internet_speed_spin.jpg)
 

@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_FULi_AUTO_SHOOTER.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_FULi_AUTO_SHOOTER.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_FULi_AUTO_SHOOTER.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_FULi_AUTO_SHOOTER.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_FULi_AUTO_SHOOTER.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_FULi_AUTO_SHOOTER.jpg)
 

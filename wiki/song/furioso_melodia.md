@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_furioso_melodia.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_furioso_melodia.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_furioso_melodia.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_furioso_melodia.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_furioso_melodia.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_furioso_melodia.jpg)
 

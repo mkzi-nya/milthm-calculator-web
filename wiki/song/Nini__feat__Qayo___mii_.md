@@ -44,7 +44,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Nini__feat__Qayo___mii_.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Nini__feat__Qayo___mii_.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Nini__feat__Qayo___mii_.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Nini__feat__Qayo___mii_.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Nini__feat__Qayo___mii_.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Nini__feat__Qayo___mii_.jpg)
 

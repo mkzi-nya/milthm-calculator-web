@@ -83,6 +83,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Thick_Rain.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Thick_Rain.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Thick_Rain.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Thick_Rain.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Thick_Rain.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Thick_Rain.jpg)

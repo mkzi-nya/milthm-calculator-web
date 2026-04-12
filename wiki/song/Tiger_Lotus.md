@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Tiger_Lotus.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Tiger_Lotus.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Tiger_Lotus.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Tiger_Lotus.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Tiger_Lotus.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Tiger_Lotus.jpg)
 

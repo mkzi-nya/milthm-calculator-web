@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_INFP_mp3.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_INFP_mp3.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_INFP_mp3.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_INFP_mp3.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_INFP_mp3.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_INFP_mp3.jpg)
 

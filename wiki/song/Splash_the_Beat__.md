@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Splash_the_Beat__.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Splash_the_Beat__.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Splash_the_Beat__.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Splash_the_Beat__.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Splash_the_Beat__.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Splash_the_Beat__.jpg)
 

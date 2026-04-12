@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_nifeiyu.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_nifeiyu.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_nifeiyu.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_nifeiyu.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_nifeiyu.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_nifeiyu.jpg)
 

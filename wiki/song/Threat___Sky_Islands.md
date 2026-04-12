@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Sky_Islands.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Sky_Islands.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Sky_Islands.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Sky_Islands.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Sky_Islands.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Sky_Islands.jpg)
 

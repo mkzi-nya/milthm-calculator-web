@@ -58,8 +58,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Meinichi.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Meinichi.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Meinichi.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Meinichi.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Meinichi.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Meinichi.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Meinichi.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Meinichi.jpg)
 

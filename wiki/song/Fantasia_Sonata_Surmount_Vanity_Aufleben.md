@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Surmount_Vanity_Aufleben.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Surmount_Vanity_Aufleben.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Surmount_Vanity_Aufleben.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Surmount_Vanity_Aufleben.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Surmount_Vanity_Aufleben.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Surmount_Vanity_Aufleben.jpg)
 

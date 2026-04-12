@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Pthahnil.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Pthahnil.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Pthahnil.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Pthahnil.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Pthahnil.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Pthahnil.jpg)
 

@@ -91,7 +91,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Reminiscence_in_Starlight.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Reminiscence_in_Starlight.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Reminiscence_in_Starlight.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Reminiscence_in_Starlight.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Reminiscence_in_Starlight.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Reminiscence_in_Starlight.jpg)
 

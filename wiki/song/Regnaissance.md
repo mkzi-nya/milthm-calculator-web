@@ -69,8 +69,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Regnaissance.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Regnaissance.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Regnaissance.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Regnaissance.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Regnaissance.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Regnaissance.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Regnaissance.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Regnaissance.jpg)
 

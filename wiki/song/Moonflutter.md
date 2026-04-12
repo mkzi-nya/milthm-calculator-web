@@ -41,8 +41,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Moonflutter.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Moonflutter.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Moonflutter.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Moonflutter.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Moonflutter.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Moonflutter.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Moonflutter.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Moonflutter.jpg)
 

@@ -59,7 +59,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_HYPER_MEMORIES.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_HYPER_MEMORIES.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_HYPER_MEMORIES.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_HYPER_MEMORIES.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_HYPER_MEMORIES.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_HYPER_MEMORIES.jpg)
 

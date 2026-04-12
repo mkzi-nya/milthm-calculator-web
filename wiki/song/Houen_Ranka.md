@@ -44,7 +44,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Houen_Ranka.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Houen_Ranka.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Houen_Ranka.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Houen_Ranka.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Houen_Ranka.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Houen_Ranka.jpg)
 

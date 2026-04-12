@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Innocent_white.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Innocent_white.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Innocent_white.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Innocent_white.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Innocent_white.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Innocent_white.jpg)
 

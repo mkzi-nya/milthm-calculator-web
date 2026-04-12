@@ -61,6 +61,6 @@ Cloudburst
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Episodic_Rain.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Episodic_Rain.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Episodic_Rain.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Episodic_Rain.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Episodic_Rain.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Episodic_Rain.jpg)

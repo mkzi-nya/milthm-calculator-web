@@ -121,7 +121,7 @@ happy endingの　
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_eclat.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_eclat.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_eclat.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_eclat.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_eclat.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_eclat.jpg)
 

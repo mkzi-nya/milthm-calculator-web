@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hikari.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hikari.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hikari.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hikari.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hikari.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hikari.jpg)
 

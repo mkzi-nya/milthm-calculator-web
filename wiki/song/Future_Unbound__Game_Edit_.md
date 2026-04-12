@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Future_Unbound__Game_Edit_.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Future_Unbound__Game_Edit_.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Future_Unbound__Game_Edit_.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Future_Unbound__Game_Edit_.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Future_Unbound__Game_Edit_.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Future_Unbound__Game_Edit_.jpg)
 

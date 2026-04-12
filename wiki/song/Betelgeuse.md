@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Betelgeuse.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Betelgeuse.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Betelgeuse.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Betelgeuse.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Betelgeuse.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Betelgeuse.jpg)
 

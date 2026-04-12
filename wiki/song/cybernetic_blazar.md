@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_cybernetic_blazar.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_cybernetic_blazar.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_cybernetic_blazar.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_cybernetic_blazar.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_cybernetic_blazar.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_cybernetic_blazar.jpg)
 

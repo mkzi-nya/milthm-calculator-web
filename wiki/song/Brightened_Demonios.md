@@ -57,7 +57,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Brightened_Demonios.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Brightened_Demonios.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Brightened_Demonios.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Brightened_Demonios.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Brightened_Demonios.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Brightened_Demonios.jpg)
 

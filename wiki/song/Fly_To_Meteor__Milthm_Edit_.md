@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fly_To_Meteor__Milthm_Edit_.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fly_To_Meteor__Milthm_Edit_.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fly_To_Meteor__Milthm_Edit_.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fly_To_Meteor__Milthm_Edit_.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fly_To_Meteor__Milthm_Edit_.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fly_To_Meteor__Milthm_Edit_.jpg)
 

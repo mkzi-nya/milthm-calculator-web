@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Psyched_Fevereiro.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Psyched_Fevereiro.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Psyched_Fevereiro.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Psyched_Fevereiro.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Psyched_Fevereiro.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Psyched_Fevereiro.jpg)
 

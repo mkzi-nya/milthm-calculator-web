@@ -42,5 +42,5 @@
 
 ## 谱面预览
 
-- [Special](https://storage.mhtl.im/chart/Special_Imouto.png)
+- [Special](https://storage.mhtl.im/chart/Special_Imouto.jpg)
 

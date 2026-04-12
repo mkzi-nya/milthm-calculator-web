@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Sky_Syndrome.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Sky_Syndrome.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Sky_Syndrome.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Sky_Syndrome.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Sky_Syndrome.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Sky_Syndrome.jpg)
 

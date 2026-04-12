@@ -49,5 +49,5 @@
 
 ## 谱面预览
 
-- [Clear](https://storage.mhtl.im/chart/Clear_LiFE_Garden__Extended_Mix_.png)
+- [Clear](https://storage.mhtl.im/chart/Clear_LiFE_Garden__Extended_Mix_.jpg)
 

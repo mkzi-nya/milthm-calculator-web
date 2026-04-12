@@ -42,8 +42,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Rainbow_Flavor_.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Rainbow_Flavor_.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Rainbow_Flavor_.png)
-- [Special](https://storage.mhtl.im/chart/Special_Rainbow_Flavor_.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Rainbow_Flavor_.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Rainbow_Flavor_.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Rainbow_Flavor_.jpg)
+- [Special](https://storage.mhtl.im/chart/Special_Rainbow_Flavor_.jpg)
 

@@ -41,8 +41,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Broken_Conviction.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Broken_Conviction.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Broken_Conviction.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Broken_Conviction.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Broken_Conviction.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Broken_Conviction.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Broken_Conviction.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Broken_Conviction.jpg)
 

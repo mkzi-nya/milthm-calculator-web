@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_KASANE.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_KASANE.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_KASANE.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_KASANE.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_KASANE.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_KASANE.jpg)
 

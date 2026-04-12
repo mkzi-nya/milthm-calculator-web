@@ -41,8 +41,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Dogbite.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Dogbite.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Dogbite.png)
-- [Special](https://storage.mhtl.im/chart/Special_Dogbite.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Dogbite.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Dogbite.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Dogbite.jpg)
+- [Special](https://storage.mhtl.im/chart/Special_Dogbite.jpg)
 

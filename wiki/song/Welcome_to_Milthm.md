@@ -45,6 +45,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Welcome_to_Milthm.png)
-- [Special](https://storage.mhtl.im/chart/Special_Welcome_to_Milthm.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Welcome_to_Milthm.jpg)
+- [Special](https://storage.mhtl.im/chart/Special_Welcome_to_Milthm.jpg)
 

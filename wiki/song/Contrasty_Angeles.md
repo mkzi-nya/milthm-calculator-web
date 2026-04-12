@@ -62,8 +62,8 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Contrasty_Angeles.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Contrasty_Angeles.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Contrasty_Angeles.png)
-- [Clear](https://storage.mhtl.im/chart/Clear_Contrasty_Angeles.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Contrasty_Angeles.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Contrasty_Angeles.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Contrasty_Angeles.jpg)
+- [Clear](https://storage.mhtl.im/chart/Clear_Contrasty_Angeles.jpg)
 

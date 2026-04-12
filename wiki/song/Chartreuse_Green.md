@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Chartreuse_Green.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Chartreuse_Green.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Chartreuse_Green.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Chartreuse_Green.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Chartreuse_Green.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Chartreuse_Green.jpg)
 

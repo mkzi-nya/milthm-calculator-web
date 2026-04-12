@@ -40,7 +40,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fragment_of_Memories.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fragment_of_Memories.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fragment_of_Memories.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fragment_of_Memories.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fragment_of_Memories.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fragment_of_Memories.jpg)
 

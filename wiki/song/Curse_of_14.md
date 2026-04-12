@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Curse_of_14.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Curse_of_14.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Curse_of_14.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Curse_of_14.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Curse_of_14.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Curse_of_14.jpg)
 

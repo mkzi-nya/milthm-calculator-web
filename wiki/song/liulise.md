@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_liulise.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_liulise.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_liulise.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_liulise.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_liulise.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_liulise.jpg)
 

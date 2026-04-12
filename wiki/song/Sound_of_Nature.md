@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sound_of_Nature.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Sound_of_Nature.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Sound_of_Nature.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sound_of_Nature.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Sound_of_Nature.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Sound_of_Nature.jpg)
 

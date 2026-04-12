@@ -44,7 +44,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_GlassyHeart_.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_GlassyHeart_.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_GlassyHeart_.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_GlassyHeart_.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_GlassyHeart_.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_GlassyHeart_.jpg)
 

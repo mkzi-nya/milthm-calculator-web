@@ -47,6 +47,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Vestige_of_Dreams.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Vestige_of_Dreams.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Vestige_of_Dreams.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Vestige_of_Dreams.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Vestige_of_Dreams.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Vestige_of_Dreams.jpg)

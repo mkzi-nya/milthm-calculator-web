@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_WATER.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_WATER.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_WATER.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_WATER.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_WATER.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_WATER.jpg)
 

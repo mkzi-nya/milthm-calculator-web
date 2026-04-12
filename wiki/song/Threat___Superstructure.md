@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Superstructure.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Superstructure.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Superstructure.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Superstructure.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Superstructure.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Superstructure.jpg)
 

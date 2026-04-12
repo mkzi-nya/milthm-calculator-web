@@ -48,6 +48,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Myth_compiler.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Myth_compiler.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Myth_compiler.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Myth_compiler.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Myth_compiler.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Myth_compiler.jpg)

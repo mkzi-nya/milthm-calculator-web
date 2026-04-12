@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Melody_to_Heaven.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Melody_to_Heaven.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Melody_to_Heaven.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Melody_to_Heaven.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Melody_to_Heaven.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Melody_to_Heaven.jpg)
 

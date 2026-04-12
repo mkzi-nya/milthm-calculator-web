@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Virtual_S0da.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Virtual_S0da.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Virtual_S0da.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Virtual_S0da.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Virtual_S0da.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Virtual_S0da.jpg)
 

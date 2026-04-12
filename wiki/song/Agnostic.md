@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Agnostic.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Agnostic.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Agnostic.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Agnostic.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Agnostic.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Agnostic.jpg)
 

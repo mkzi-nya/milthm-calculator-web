@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_A_Reincarnation_of_a_Scattering_Spring.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_A_Reincarnation_of_a_Scattering_Spring.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_A_Reincarnation_of_a_Scattering_Spring.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_A_Reincarnation_of_a_Scattering_Spring.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_A_Reincarnation_of_a_Scattering_Spring.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_A_Reincarnation_of_a_Scattering_Spring.jpg)
 

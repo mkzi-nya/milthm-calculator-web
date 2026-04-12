@@ -38,7 +38,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Blueface.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Blueface.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Blueface.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Blueface.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Blueface.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Blueface.jpg)
 

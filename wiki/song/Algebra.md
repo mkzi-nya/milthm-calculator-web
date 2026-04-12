@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Algebra.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Algebra.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Algebra.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Algebra.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Algebra.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Algebra.jpg)
 

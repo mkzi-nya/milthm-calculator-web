@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_cafe_in_6412I731V.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_cafe_in_6412I731V.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_cafe_in_6412I731V.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_cafe_in_6412I731V.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_cafe_in_6412I731V.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_cafe_in_6412I731V.jpg)
 

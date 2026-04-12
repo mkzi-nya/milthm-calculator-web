@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Aleph_0.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Aleph_0.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Aleph_0.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Aleph_0.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Aleph_0.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Aleph_0.jpg)
 

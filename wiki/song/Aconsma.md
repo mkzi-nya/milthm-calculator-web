@@ -44,6 +44,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Aconsma.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Aconsma.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Aconsma.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Aconsma.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Aconsma.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Aconsma.jpg)

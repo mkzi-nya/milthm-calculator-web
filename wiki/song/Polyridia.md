@@ -39,7 +39,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Polyridia.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Polyridia.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Polyridia.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Polyridia.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Polyridia.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Polyridia.jpg)
 

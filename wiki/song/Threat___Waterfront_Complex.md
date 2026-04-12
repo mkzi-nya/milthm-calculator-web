@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Waterfront_Complex.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Waterfront_Complex.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Waterfront_Complex.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Threat___Waterfront_Complex.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Threat___Waterfront_Complex.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Threat___Waterfront_Complex.jpg)
 

@@ -40,7 +40,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Kagetsu.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Kagetsu.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Kagetsu.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Kagetsu.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Kagetsu.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Kagetsu.jpg)
 

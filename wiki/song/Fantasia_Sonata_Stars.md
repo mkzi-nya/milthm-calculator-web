@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Stars.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Stars.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Stars.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Stars.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Stars.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Stars.jpg)
 

@@ -41,10 +41,10 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sheer_Ice_Torrent.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Sheer_Ice_Torrent.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Sheer_Ice_Torrent.png)
-- [Drizzle_Story](https://storage.mhtl.im/chart/Drizzle_Story_Sheer_Ice_Torrent.png)
-- [Sprinkle_Story](https://storage.mhtl.im/chart/Sprinkle_Story_Sheer_Ice_Torrent.png)
-- [Cloudburst_Story](https://storage.mhtl.im/chart/Cloudburst_Story_Sheer_Ice_Torrent.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sheer_Ice_Torrent.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Sheer_Ice_Torrent.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Sheer_Ice_Torrent.jpg)
+- [Drizzle_Story](https://storage.mhtl.im/chart/Drizzle_Story_Sheer_Ice_Torrent.jpg)
+- [Sprinkle_Story](https://storage.mhtl.im/chart/Sprinkle_Story_Sheer_Ice_Torrent.jpg)
+- [Cloudburst_Story](https://storage.mhtl.im/chart/Cloudburst_Story_Sheer_Ice_Torrent.jpg)
 

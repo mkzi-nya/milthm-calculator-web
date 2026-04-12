@@ -41,5 +41,5 @@
 
 ## 谱面预览
 
-- [Special](https://storage.mhtl.im/chart/Special_Oiiaioooooiai.png)
+- [Special](https://storage.mhtl.im/chart/Special_Oiiaioooooiai.jpg)
 

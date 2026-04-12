@@ -42,5 +42,5 @@
 
 ## 谱面预览
 
-- [Clear](https://storage.mhtl.im/chart/Clear_Fly_To_Meteor_feat_TuQi__Milthm_Edit_.png)
+- [Clear](https://storage.mhtl.im/chart/Clear_Fly_To_Meteor_feat_TuQi__Milthm_Edit_.jpg)
 

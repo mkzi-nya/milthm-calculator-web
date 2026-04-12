@@ -39,5 +39,5 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Reflection.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Reflection.jpg)
 

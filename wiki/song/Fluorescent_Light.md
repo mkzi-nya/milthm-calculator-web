@@ -41,7 +41,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fluorescent_Light.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fluorescent_Light.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fluorescent_Light.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fluorescent_Light.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fluorescent_Light.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fluorescent_Light.jpg)
 

@@ -41,5 +41,5 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sundown.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Sundown.jpg)
 

@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Moonfall.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Moonfall.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Moonfall.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Moonfall.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Moonfall.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Moonfall.jpg)
 

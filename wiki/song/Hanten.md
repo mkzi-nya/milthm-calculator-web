@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hanten.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hanten.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hanten.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hanten.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hanten.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hanten.jpg)
 

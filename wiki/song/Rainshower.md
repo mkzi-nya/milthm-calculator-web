@@ -60,6 +60,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Rainshower.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Rainshower.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Rainshower.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Rainshower.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Rainshower.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Rainshower.jpg)

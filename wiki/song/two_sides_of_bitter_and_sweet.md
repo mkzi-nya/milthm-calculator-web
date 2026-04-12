@@ -20,6 +20,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_two_sides_of_bitter_and_sweet.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_two_sides_of_bitter_and_sweet.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_two_sides_of_bitter_and_sweet.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_two_sides_of_bitter_and_sweet.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_two_sides_of_bitter_and_sweet.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_two_sides_of_bitter_and_sweet.jpg)

@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Habitable_Zone.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Habitable_Zone.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Habitable_Zone.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Habitable_Zone.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Habitable_Zone.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Habitable_Zone.jpg)
 

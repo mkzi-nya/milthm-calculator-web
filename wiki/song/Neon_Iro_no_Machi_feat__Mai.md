@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Neon_Iro_no_Machi_feat__Mai.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Neon_Iro_no_Machi_feat__Mai.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Neon_Iro_no_Machi_feat__Mai.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Neon_Iro_no_Machi_feat__Mai.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Neon_Iro_no_Machi_feat__Mai.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Neon_Iro_no_Machi_feat__Mai.jpg)
 

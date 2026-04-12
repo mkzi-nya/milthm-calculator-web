@@ -40,7 +40,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Yokaze.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Yokaze.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Yokaze.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Yokaze.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Yokaze.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Yokaze.jpg)
 

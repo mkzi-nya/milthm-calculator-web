@@ -47,6 +47,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_LiFE_Garden.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_LiFE_Garden.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_LiFE_Garden.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_LiFE_Garden.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_LiFE_Garden.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_LiFE_Garden.jpg)

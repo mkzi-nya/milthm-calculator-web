@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hoshifuru_Yoruni.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hoshifuru_Yoruni.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hoshifuru_Yoruni.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Hoshifuru_Yoruni.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Hoshifuru_Yoruni.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Hoshifuru_Yoruni.jpg)
 

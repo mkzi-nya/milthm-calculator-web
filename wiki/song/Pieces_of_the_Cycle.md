@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Pieces_of_the_Cycle.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Pieces_of_the_Cycle.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Pieces_of_the_Cycle.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Pieces_of_the_Cycle.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Pieces_of_the_Cycle.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Pieces_of_the_Cycle.jpg)
 

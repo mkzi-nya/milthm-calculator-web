@@ -42,5 +42,5 @@
 
 ## 谱面预览
 
-- [Special](https://storage.mhtl.im/chart/Special_Lots_Of_Spices.png)
+- [Special](https://storage.mhtl.im/chart/Special_Lots_Of_Spices.jpg)
 

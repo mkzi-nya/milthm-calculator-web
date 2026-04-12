@@ -39,7 +39,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ephemeric_World.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ephemeric_World.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ephemeric_World.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Ephemeric_World.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Ephemeric_World.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Ephemeric_World.jpg)
 

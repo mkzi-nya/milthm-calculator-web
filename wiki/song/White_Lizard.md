@@ -41,5 +41,5 @@
 
 ## 谱面预览
 
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_White_Lizard.png)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_White_Lizard.jpg)
 

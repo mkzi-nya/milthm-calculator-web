@@ -44,6 +44,6 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Botanical_Garden.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Botanical_Garden.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Botanical_Garden.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Fantasia_Sonata_Botanical_Garden.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Fantasia_Sonata_Botanical_Garden.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Fantasia_Sonata_Botanical_Garden.jpg)

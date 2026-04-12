@@ -42,7 +42,7 @@
 
 ## 谱面预览
 
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_slic_hertz__GdbG.png)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_slic_hertz__GdbG.png)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_slic_hertz__GdbG.png)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_slic_hertz__GdbG.jpg)
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_slic_hertz__GdbG.jpg)
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_slic_hertz__GdbG.jpg)
 
