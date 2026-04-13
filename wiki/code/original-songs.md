@@ -1,4 +1,3 @@
-
 - [返回主页](./)
 
 ## Milthm 独占曲列表
@@ -20,41 +19,39 @@
 ### 甜与苦的一体两面
 | 序号 | 曲名 | 作者 |
 | ---- | ---- | ---- |
-| 7 | Aconsma | ILusMin |
-| 8 | OverRain | SharK |
-| 9 | Fragment of Memories | U-Ruri |
-| 10 | HYPER MEMORIES | Wooden, Salty Salt |
-| 11 | Regnaissance | AiSS vs. Abit |
-| 12 | Contrasty Angeles | HLxQ.v.M |
-| 13 | Brightened Demonios | HLxQ.v.M |
-| 14 | Myth compiler | 溝口ゆうま feat. 大瀬良あい |
-| 15 | Fantasia Sonata Arcadia | PYKAMIA |
+| 7 | OverRain | SharK |
+| 8 | Fragment of Memories | U-Ruri |
+| 9 | HYPER MEMORIES | Wooden, Salty Salt |
+| 10 | Regnaissance | AiSS vs. Abit |
+| 11 | Contrasty Angeles | HLxQ.v.M |
+| 12 | Brightened Demonios | HLxQ.v.M |
+| 13 | Myth compiler | 溝口ゆうま feat. 大瀬良あい |
+| 14 | Fantasia Sonata Arcadia | PYKAMIA |
 
 ### 花裳随雨得春迟
-| 序号 | 曲名 | 作者 | 其他 |
+| 序号 | 曲名 | 作者 |
 | ---- | ---- | ---- |
-| 16 | Vestige of Dreams | DRIVE. |
-| 17 | 靈 (Rei) | MYTK |
+| 15 | Vestige of Dreams | DRIVE. |
+| 16 | 靈 (Rei) | MYTK |
 
 ### 梦境磁带
-| 序号 | 曲名 | 作者 | 其他 |
-| ---- | ---- | ---- | ---- |
-| 18 | INFP.mp3 | TsukiP | - |
-| 19 | Oniichan | MoryueCi | - |
-| 20 | Moving On | Nastram | - |
-| 21 | サイクルの欠片 (Pieces of the Cycle) | TsukiP | - |
-| 22 | Broken Conviction | Cansol | Collaboration Original |
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 17 | INFP.mp3 | TsukiP |
+| 18 | Oniichan | MoryueCi |
+| 19 | Moving On | Nastram |
+| 20 | サイクルの欠片 (Pieces of the Cycle) | TsukiP |
+| 21 | Broken Conviction | Cansol |
 
 ### 露晓卉庭
 | 序号 | 曲名 | 作者 |
 | ---- | ---- | ---- |
-| 23 | Garden | NceS & All_Life_X & AiSS |
-| 24 | Fantasia Sonata Botanical Garden | PYKAMIA |
+| 22 | Garden | NceS & All_Life_X & AiSS |
+| 23 | Fantasia Sonata Botanical Garden | PYKAMIA |
 
 ### Notanote
-| 序号 | 曲名 | 作者 | 其他 |
-| ---- | ---- | ---- | ---- |
-| 25 | 烁雨 (Sparkrain) | ILusMin (Milthm x Notanote Original) | Collaboration Original |
-| 26 | cybernetic blazar | ああああ (Notanote x Milthm Original) | Collaboration Original |
-| 27 | Innocent white | 影虎。 (Notanote x Milthm Original) | Collaboration Original |
-
+| 序号 | 曲名 | 作者 |
+| ---- | ---- | ---- |
+| 24 | 烁雨 (Sparkrain) | ILusMin |
+| 25 | cybernetic blazar | ああああ |
+| 26 | Innocent white | 影虎。 |
