@@ -31,19 +31,19 @@
 | 15 | Fantasia Sonata Arcadia | PYKAMIA |
 
 ### 花裳随雨得春迟
-| 序号 | 曲名 | 作者 |
+| 序号 | 曲名 | 作者 | 其他 |
 | ---- | ---- | ---- |
 | 16 | Vestige of Dreams | DRIVE. |
 | 17 | 靈 (Rei) | MYTK |
 
 ### 梦境磁带
-| 序号 | 曲名 | 作者 |
-| ---- | ---- | ---- |
-| 18 | INFP.mp3 | TsukiP |
-| 19 | Oniichan | MoryueCi |
-| 20 | Moving On | Nastram |
-| 21 | サイクルの欠片 (Pieces of the Cycle) | TsukiP |
-| 22 | Broken Conviction | Cansol |
+| 序号 | 曲名 | 作者 | 其他 |
+| ---- | ---- | ---- | ---- |
+| 18 | INFP.mp3 | TsukiP | - |
+| 19 | Oniichan | MoryueCi | - |
+| 20 | Moving On | Nastram | - |
+| 21 | サイクルの欠片 (Pieces of the Cycle) | TsukiP | - |
+| 22 | Broken Conviction | Cansol | Collaboration Original |
 
 ### 露晓卉庭
 | 序号 | 曲名 | 作者 |
@@ -52,9 +52,9 @@
 | 24 | Fantasia Sonata Botanical Garden | PYKAMIA |
 
 ### Notanote
-| 序号 | 曲名 | 作者 |
-| ---- | ---- | ---- |
-| 25 | 烁雨 (Sparkrain) | ILusMin (Milthm x Notanote Original) |
-| 26 | cybernetic blazar | ああああ (Notanote x Milthm Original) |
-| 27 | Innocent white | 影虎。 (Notanote x Milthm Original) |
+| 序号 | 曲名 | 作者 | 其他 |
+| ---- | ---- | ---- | ---- |
+| 25 | 烁雨 (Sparkrain) | ILusMin (Milthm x Notanote Original) | Collaboration Original |
+| 26 | cybernetic blazar | ああああ (Notanote x Milthm Original) | Collaboration Original |
+| 27 | Innocent white | 影虎。 (Notanote x Milthm Original) | Collaboration Original |
 
