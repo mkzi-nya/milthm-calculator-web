@@ -4,6 +4,7 @@
 > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
 > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
+
 # KAEDE
 
 <div class="wiki-img" file="avif/KAEDE.avif"></div>
@@ -20,17 +21,19 @@
 | BPM | 177 |
 
 ## 谱面信息
-| 难度 | [Special](info:info("KAEDE", "Special")) |
-| - | - |
-| 等级 | 0 (0.0) |
-| 谱师 | Milthm Team |
-| Note数量 | 3208 |
+| 难度 | [Drizzle](info:info("KAEDE", "Drizzle")) | [Sprinkle](info:info("KAEDE", "Sprinkle")) | [Cloudburst](info:info("KAEDE", "Cloudburst")) | [Special](info:info("KAEDE", "Special")) |
+| - | - | - | - | - |
+| 等级 | 3 (3.0) | 8 (8.1) | 11 (11.4) | 0 (0.0) |
+| 谱师 | TCSTWTBHY | `9E8E | TCSTWTBHY | Milthm Team |
+| Note数量 | 500 | 566 | 1469 | 3208 |
 
 ## 解锁方法
 
 (待补充)
 
 ## 曲目试听
+
+(待补充)
 
 ## 曲目相关
 
@@ -42,5 +45,10 @@
 
 ## 谱面预览
 
-- [Special](https://storage.mhtl.im/chart/Special_KAEDE.jpg)
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_KAEDE.jpg)
 
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_KAEDE.jpg)
+
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_KAEDE.jpg)
+
+- [Special](https://storage.mhtl.im/chart/Special_KAEDE.jpg)
