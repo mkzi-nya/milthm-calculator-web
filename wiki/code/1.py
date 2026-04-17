@@ -59,6 +59,9 @@ def main():
     charter = os.path.join(CUR_DIR, "charter.py")
     if os.path.isfile(charter):
         subprocess.run(["python3", charter], check=False)
+    table = os.path.join(CUR_DIR, "table.py")
+    if os.path.isfile(charter):
+        subprocess.run(["python3", table], check=False)
 
 if __name__ == "__main__":
     main()
