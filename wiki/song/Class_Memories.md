@@ -45,11 +45,8 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Class_Memories.jpg"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Class_Memories.jpg)
 
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Class_Memories.jpg"></div>
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Class_Memories.jpg)
 
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Class_Memories.jpg"></div>
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Class_Memories.jpg)

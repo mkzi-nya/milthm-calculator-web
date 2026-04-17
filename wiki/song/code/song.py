@@ -71,8 +71,7 @@ CHART_PREVIEW_TEMPLATE = textwrap.dedent(
 
 CHART_PREVIEW_ITEM_TEMPLATE = textwrap.dedent(
     """\
-    - {difficulty}
-    <div class="wiki-img" file="chart/{difficulty}_{filename}.jpg"></div>
+    - [{difficulty}](https://storage.mhtl.im/chart/{difficulty}_{filename}.jpg)
 
     """
 )

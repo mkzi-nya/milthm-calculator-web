@@ -45,11 +45,8 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_Churenpoton.jpg"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_Churenpoton.jpg)
 
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_Churenpoton.jpg"></div>
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Churenpoton.jpg)
 
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_Churenpoton.jpg"></div>
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Churenpoton.jpg)

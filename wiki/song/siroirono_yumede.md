@@ -45,11 +45,8 @@
 
 ## 谱面预览
 
-- Drizzle
-<div class="wiki-img" file="chart/Drizzle_siroirono_yumede.jpg"></div>
+- [Drizzle](https://storage.mhtl.im/chart/Drizzle_siroirono_yumede.jpg)
 
-- Sprinkle
-<div class="wiki-img" file="chart/Sprinkle_siroirono_yumede.jpg"></div>
+- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_siroirono_yumede.jpg)
 
-- Cloudburst
-<div class="wiki-img" file="chart/Cloudburst_siroirono_yumede.jpg"></div>
+- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_siroirono_yumede.jpg)
