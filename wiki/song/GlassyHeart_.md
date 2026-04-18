@@ -6,9 +6,9 @@
 
 # GlassyHeart.
 
-<div class="wiki-img" file="avif/GlassyHeart..avif"></div>
+![GlassyHeart.](https://storage.mhtl.im/jpgs/GlassyHeart..jpg)
 
-<div class="wiki-img" file="avif/SquareArtwork_GlassyHeart..avif"></div>
+![SquareArtwork_GlassyHeart.](https://storage.mhtl.im/jpgs/SquareArtwork_GlassyHeart..jpg)
 
 ## 曲目信息
 | 曲名 | [GlassyHeart.](info:info("GlassyHeart.")) |

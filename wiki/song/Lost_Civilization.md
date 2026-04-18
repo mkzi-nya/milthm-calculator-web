@@ -2,7 +2,7 @@
 
 # Lost Civilization
 
-<div class="wiki-img" file="avif/Lost Civilization.avif"></div>
+![Lost Civilization](https://storage.mhtl.im/jpgs/Lost Civilization.jpg)
 
 ## 曲目信息
 

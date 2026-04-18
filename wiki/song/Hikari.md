@@ -6,7 +6,7 @@
 
 # Hikari
 
-<div class="wiki-img" file="avif/Hikari.avif"></div>
+![Hikari](https://storage.mhtl.im/jpgs/Hikari.jpg)
 
 ## 曲目信息
 | 曲名 | [Hikari](info:info("Hikari")) |

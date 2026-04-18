@@ -6,7 +6,7 @@
 
 # Kayava
 
-<div class="wiki-img" file="avif/Kayava.avif"></div>
+![Kayava](https://storage.mhtl.im/jpgs/Kayava.jpg)
 
 ## 曲目信息
 | 曲名 | [Kayava](info:info("Kayava")) |

@@ -2,7 +2,7 @@
 
 # Ephemeric World
 
-<div class="wiki-img" file="avif/Ephemeric World.avif"></div>
+![Ephemeric World](https://storage.mhtl.im/jpgs/Ephemeric World.jpg)
 
 ## 曲目信息
 | 曲名 | [Ephemeric World](info:info("Ephemeric World")) |

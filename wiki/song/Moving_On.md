@@ -6,7 +6,7 @@
 
 # Moving On
 
-<div class="wiki-img" file="avif/Moving On.avif"></div>
+![Moving On](https://storage.mhtl.im/jpgs/Moving On.jpg)
 
 ## 曲目信息
 | 曲名 | [Moving On](info:info("Moving On")) |

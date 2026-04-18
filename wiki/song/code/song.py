@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 RESOURCES_JSON = Path("../../../resources/resources.json")
-AVIF_DIR = Path("mhtlim-static-files/public/resources/avif")
+jpg_DIR = Path("mhtlim-static-files/public/resources/jpg")
 OUTPUT_DIR = Path("../")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
@@ -57,7 +57,7 @@ PAGE_TEMPLATE = textwrap.dedent(
 
 IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
     """\
-    <div class="wiki-img" file="avif/{song_key}.avif"></div>
+    ![{song_key}](https://storage.mhtl.im/jpgs/{song_key}.jpg)
     """
 )
 
@@ -172,7 +172,7 @@ def make_diff_link(song_key: str, diff_name: str):
 
 
 def make_image_src(filename: str):
-    return f"../../resources/avif/{quote(filename)}"
+    return f"../../resources/jpg/{quote(filename)}"
 
 
 def build_chart_info_table(song_key: str, diff_map: dict):
@@ -208,11 +208,11 @@ def build_main_artwork_block(song_key: str):
     return IMAGE_BLOCK_TEMPLATE.format(song_key=song_key).strip() + "\n"
 
 
-def build_square_artwork_block(song_key: str, avif_dir: Path):
-    square_path = avif_dir / f"SquareArtwork_{song_key}.avif"
+def build_square_artwork_block(song_key: str, jpg_dir: Path):
+    square_path = jpg_dir / f"SquareArtwork_{song_key}.jpg"
     if not square_path.exists():
         return ""
-    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"SquareArtwork_{song_key}.avif")).strip() + "\n\n"
+    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"SquareArtwork_{song_key}.jpg")).strip() + "\n\n"
 
 
 def build_chart_preview_section(filename_base: str, diff_map: dict):
@@ -238,13 +238,13 @@ def build_chart_preview_section(filename_base: str, diff_map: dict):
     )
 
 
-def build_markdown(song_key: str, song: dict, avif_dir: Path, filename_base: str):
+def build_markdown(song_key: str, song: dict, jpg_dir: Path, filename_base: str):
     diff_map = song.get("difficulty") or {}
     
     return PAGE_TEMPLATE.format(
         song_key=song_key,
         main_artwork_block=build_main_artwork_block(song_key),
-        square_artwork_block=build_square_artwork_block(song_key, avif_dir),
+        square_artwork_block=build_square_artwork_block(song_key, jpg_dir),
         song_link=make_song_link(song_key),
         latin_title=md_escape_table_cell(song.get("latinTitle") or "-"),
         artist=list_or_scalar_to_str(song.get("artist") or song.get("artistsList")),
@@ -296,7 +296,7 @@ def main():
             continue
         seen_output_names.add(output_path.name)
 
-        markdown = build_markdown(song_key, song, AVIF_DIR, filename_base)
+        markdown = build_markdown(song_key, song, jpg_DIR, filename_base)
         output_path.write_text(markdown, encoding="utf-8")
         created_files.append(output_path.name)
 

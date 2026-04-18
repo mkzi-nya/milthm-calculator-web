@@ -6,7 +6,7 @@
 
 # Fantasia Sonata God Dance
 
-<div class="wiki-img" file="avif/Fantasia Sonata God Dance.avif"></div>
+![Fantasia Sonata God Dance](https://storage.mhtl.im/jpgs/Fantasia Sonata God Dance.jpg)
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata God Dance](info:info("Fantasia Sonata God Dance")) |

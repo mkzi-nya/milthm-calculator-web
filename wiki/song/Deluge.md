@@ -6,7 +6,7 @@
 
 # Deluge
 
-<div class="wiki-img" file="avif/Deluge.avif"></div>
+![Deluge](https://storage.mhtl.im/jpgs/Deluge.jpg)
 
 ## 曲目信息
 | 曲名 | [Deluge](info:info("Deluge")) |

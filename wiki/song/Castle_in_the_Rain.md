@@ -2,7 +2,7 @@
 
 # 雨之城
 
-<div class="wiki-img" file="avif/雨之城.avif"></div>
+![雨之城](https://storage.mhtl.im/jpgs/雨之城.jpg)
 
 ## 曲目信息
 

@@ -2,7 +2,7 @@
 
 # OverRain
 
-<div class="wiki-img" file="avif/OverRain.avif"></div>
+![OverRain](https://storage.mhtl.im/jpgs/OverRain.jpg)
 
 ## 曲目信息
 

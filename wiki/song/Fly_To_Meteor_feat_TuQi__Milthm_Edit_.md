@@ -6,7 +6,7 @@
 
 # Fly To Meteor feat.兔柒 (Milthm Edit)
 
-<div class="wiki-img" file="avif/Fly To Meteor feat.兔柒 (Milthm Edit).avif"></div>
+![Fly To Meteor feat.兔柒 (Milthm Edit)](https://storage.mhtl.im/jpgs/Fly To Meteor feat.兔柒 (Milthm Edit).jpg)
 
 ## 曲目信息
 | 曲名 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 (Milthm Edit)")) |

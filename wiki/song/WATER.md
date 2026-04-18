@@ -6,7 +6,7 @@
 
 # WATER
 
-<div class="wiki-img" file="avif/WATER.avif"></div>
+![WATER](https://storage.mhtl.im/jpgs/WATER.jpg)
 
 ## 曲目信息
 | 曲名 | [WATER](info:info("WATER")) |

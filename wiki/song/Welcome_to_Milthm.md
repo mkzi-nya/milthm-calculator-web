@@ -2,7 +2,7 @@
 
 # Welcome to Milthm
 
-<div class="wiki-img" file="avif/Welcome to Milthm.avif"></div>
+![Welcome to Milthm](https://storage.mhtl.im/jpgs/Welcome to Milthm.jpg)
 
 ## 曲目信息
 | 曲名 | [Welcome to Milthm](info:info("Welcome to Milthm")) |

@@ -6,7 +6,7 @@
 
 # Innocent white
 
-<div class="wiki-img" file="avif/Innocent white.avif"></div>
+![Innocent white](https://storage.mhtl.im/jpgs/Innocent white.jpg)
 
 ## 曲目信息
 | 曲名 | [Innocent white](info:info("Innocent white")) |

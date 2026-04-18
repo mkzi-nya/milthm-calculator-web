@@ -6,7 +6,7 @@
 
 # Words
 
-<div class="wiki-img" file="avif/Words.avif"></div>
+![Words](https://storage.mhtl.im/jpgs/Words.jpg)
 
 ## 曲目信息
 | 曲名 | [Words](info:info("Words")) |

@@ -6,7 +6,7 @@
 
 # KASANE
 
-<div class="wiki-img" file="avif/KASANE.avif"></div>
+![KASANE](https://storage.mhtl.im/jpgs/KASANE.jpg)
 
 ## 曲目信息
 | 曲名 | [KASANE](info:info("KASANE")) |

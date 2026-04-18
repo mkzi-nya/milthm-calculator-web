@@ -6,7 +6,7 @@
 
 # Before it Ends
 
-<div class="wiki-img" file="avif/Before it Ends.avif"></div>
+![Before it Ends](https://storage.mhtl.im/jpgs/Before it Ends.jpg)
 
 ## 曲目信息
 | 曲名 | [Before it Ends](info:info("Before it Ends")) |

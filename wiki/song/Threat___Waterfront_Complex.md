@@ -6,7 +6,7 @@
 
 # Threat - Waterfront Complex
 
-<div class="wiki-img" file="avif/Threat%20-%20Waterfront%20Complex.avif"></div>
+![Threat%20-%20Waterfront%20Complex](https://storage.mhtl.im/jpgs/Threat%20-%20Waterfront%20Complex.jpg)
 
 ## 曲目信息
 | 曲名 | [Threat - Waterfront Complex](info:info("Threat - Waterfront Complex")) |

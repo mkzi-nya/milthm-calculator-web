@@ -6,7 +6,7 @@
 
 # Sundown
 
-<div class="wiki-img" file="avif/Sundown.avif"></div>
+![Sundown](https://storage.mhtl.im/jpgs/Sundown.jpg)
 
 ## 曲目信息
 | 曲名 | [Sundown](info:info("Sundown")) |

@@ -6,7 +6,7 @@
 
 # 靈
 
-<div class="wiki-img" file="avif/靈.avif"></div>
+![靈](https://storage.mhtl.im/jpgs/靈.jpg)
 
 ## 曲目信息
 | 曲名 | [靈](info:info("靈")) |

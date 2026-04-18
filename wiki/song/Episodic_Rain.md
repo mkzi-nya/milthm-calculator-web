@@ -2,7 +2,7 @@
 
 # 时落之雨
 
-<div class="wiki-img" file="avif/时落之雨.avif"></div>
+![时落之雨](https://storage.mhtl.im/jpgs/时落之雨.jpg)
 
 ## 曲目信息
 

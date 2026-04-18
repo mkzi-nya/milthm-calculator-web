@@ -2,7 +2,7 @@
 
 # Regnaissance
 
-<div class="wiki-img" file="avif/Regnaissance.avif"></div>
+![Regnaissance](https://storage.mhtl.im/jpgs/Regnaissance.jpg)
 
 ## 曲目信息
 | 曲名 | [Regnaissance](info:info("Regnaissance")) |

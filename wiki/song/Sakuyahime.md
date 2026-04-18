@@ -6,7 +6,7 @@
 
 # Sakuyahime
 
-<div class="wiki-img" file="avif/Sakuyahime.avif"></div>
+![Sakuyahime](https://storage.mhtl.im/jpgs/Sakuyahime.jpg)
 
 ## 曲目信息
 | 曲名 | [Sakuyahime](info:info("Sakuyahime")) |

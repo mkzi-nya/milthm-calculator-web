@@ -6,7 +6,7 @@
 
 # cybernetic blazar
 
-<div class="wiki-img" file="avif/cybernetic blazar.avif"></div>
+![cybernetic blazar](https://storage.mhtl.im/jpgs/cybernetic blazar.jpg)
 
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |

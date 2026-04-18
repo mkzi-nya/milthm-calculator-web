@@ -6,7 +6,7 @@
 
 # 灯ノ桜蝶
 
-<div class="wiki-img" file="avif/灯ノ桜蝶.avif"></div>
+![灯ノ桜蝶](https://storage.mhtl.im/jpgs/灯ノ桜蝶.jpg)
 
 ## 曲目信息
 | 曲名 | [灯ノ桜蝶](info:info("灯ノ桜蝶")) |

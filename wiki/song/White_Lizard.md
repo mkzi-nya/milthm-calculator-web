@@ -6,7 +6,7 @@
 
 # White Lizard
 
-<div class="wiki-img" file="avif/White Lizard.avif"></div>
+![White Lizard](https://storage.mhtl.im/jpgs/White Lizard.jpg)
 
 ## 曲目信息
 | 曲名 | [White Lizard](info:info("White Lizard")) |

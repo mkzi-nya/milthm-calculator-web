@@ -6,7 +6,7 @@
 
 # IN
 
-<div class="wiki-img" file="avif/IN.avif"></div>
+![IN](https://storage.mhtl.im/jpgs/IN.jpg)
 
 ## 曲目信息
 | 曲名 | [IN](info:info("IN")) |

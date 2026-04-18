@@ -6,7 +6,7 @@
 
 # Pthahnil
 
-<div class="wiki-img" file="avif/Pthahnil.avif"></div>
+![Pthahnil](https://storage.mhtl.im/jpgs/Pthahnil.jpg)
 
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |

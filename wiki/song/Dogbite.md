@@ -6,7 +6,7 @@
 
 # Dogbite
 
-<div class="wiki-img" file="avif/Dogbite.avif"></div>
+![Dogbite](https://storage.mhtl.im/jpgs/Dogbite.jpg)
 
 ## 曲目信息
 | 曲名 | [Dogbite](info:info("Dogbite")) |

@@ -2,7 +2,7 @@
 
 # 暮予星光
 
-<div class="wiki-img" file="avif/暮予星光.avif"></div>
+![暮予星光](https://storage.mhtl.im/jpgs/暮予星光.jpg)
 
 ## 曲目信息
 | 曲名 | [暮予星光](info:info("暮予星光")) |

@@ -6,7 +6,7 @@
 
 # Chartreuse Green
 
-<div class="wiki-img" file="avif/Chartreuse Green.avif"></div>
+![Chartreuse Green](https://storage.mhtl.im/jpgs/Chartreuse Green.jpg)
 
 ## 曲目信息
 | 曲名 | [Chartreuse Green](info:info("Chartreuse Green")) |

@@ -6,7 +6,7 @@
 
 # Threat - Sky Islands
 
-<div class="wiki-img" file="avif/Threat%20-%20Sky%20Islands.avif"></div>
+![Threat%20-%20Sky%20Islands](https://storage.mhtl.im/jpgs/Threat%20-%20Sky%20Islands.jpg)
 
 ## 曲目信息
 | 曲名 | [Threat - Sky Islands](info:info("Threat - Sky Islands")) |

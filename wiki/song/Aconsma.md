@@ -2,7 +2,7 @@
 
 # Aconsma
 
-<div class="wiki-img" file="avif/Aconsma.avif"></div>
+![Aconsma](https://storage.mhtl.im/jpgs/Aconsma.jpg)
 
 ## 曲目信息
 

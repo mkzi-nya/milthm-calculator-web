@@ -2,7 +2,7 @@
 
 # Brightened Demonios
 
-<div class="wiki-img" file="avif/Brightened Demonios.avif"></div>
+![Brightened Demonios](https://storage.mhtl.im/jpgs/Brightened Demonios.jpg)
 
 ## 曲目信息
 | 曲名 | [Brightened Demonios](info:info("Brightened Demonios")) |

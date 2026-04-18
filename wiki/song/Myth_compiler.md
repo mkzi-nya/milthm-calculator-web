@@ -2,7 +2,7 @@
 
 # Myth compiler
 
-<div class="wiki-img" file="avif/Myth compiler.avif"></div>
+![Myth compiler](https://storage.mhtl.im/jpgs/Myth compiler.jpg)
 
 ## 曲目信息
 

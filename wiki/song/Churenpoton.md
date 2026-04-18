@@ -7,7 +7,7 @@
 
 # 九蓮寶燈
 
-<div class="wiki-img" file="avif/九蓮寶燈.avif"></div>
+![九蓮寶燈](https://storage.mhtl.im/jpgs/九蓮寶燈.jpg)
 
 ## 曲目信息
 | 曲名 | [九蓮寶燈](info:info("九蓮寶燈")) |

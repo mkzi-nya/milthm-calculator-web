@@ -6,7 +6,7 @@
 
 # FULi AUTO SHOOTER
 
-<div class="wiki-img" file="avif/FULi AUTO SHOOTER.avif"></div>
+![FULi AUTO SHOOTER](https://storage.mhtl.im/jpgs/FULi AUTO SHOOTER.jpg)
 
 ## 曲目信息
 | 曲名 | [FULi AUTO SHOOTER](info:info("FULi AUTO SHOOTER")) |

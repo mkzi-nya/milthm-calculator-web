@@ -2,7 +2,7 @@
 
 # Fragment of Memories
 
-<div class="wiki-img" file="avif/Fragment of Memories.avif"></div>
+![Fragment of Memories](https://storage.mhtl.im/jpgs/Fragment of Memories.jpg)
 
 ## 曲目信息
 | 曲名 | [Fragment of Memories](info:info("Fragment of Memories")) |

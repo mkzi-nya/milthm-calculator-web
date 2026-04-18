@@ -2,7 +2,7 @@
 
 # HYPER MEMORIES
 
-<div class="wiki-img" file="avif/HYPER MEMORIES.avif"></div>
+![HYPER MEMORIES](https://storage.mhtl.im/jpgs/HYPER MEMORIES.jpg)
 
 ## 曲目信息
 | 曲名 | [HYPER MEMORIES](info:info("HYPER MEMORIES")) |

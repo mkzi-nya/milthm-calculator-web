@@ -6,7 +6,7 @@
 
 # Fluorescent Light
 
-<div class="wiki-img" file="avif/Fluorescent Light.avif"></div>
+![Fluorescent Light](https://storage.mhtl.im/jpgs/Fluorescent Light.jpg)
 
 ## 曲目信息
 | 曲名 | [Fluorescent Light](info:info("Fluorescent Light")) |

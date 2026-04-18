@@ -6,7 +6,7 @@
 
 # 选择你的宽带
 
-<div class="wiki-img" file="avif/%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6.avif"></div>
+![%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6](https://storage.mhtl.im/jpgs/%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AE%BD%E5%B8%A6.jpg)
 
 ## 曲目信息
 | 曲名 | [选择你的宽带](info:info("选择你的宽带")) |

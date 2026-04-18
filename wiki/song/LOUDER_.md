@@ -2,7 +2,7 @@
 
 # LOUDER!
 
-<div class="wiki-img" file="avif/LOUDER%21.avif"></div>
+![LOUDER%21](https://storage.mhtl.im/jpgs/LOUDER%21.jpg)
 
 ## 曲目信息
 | 曲名 | [LOUDER!](info:info("LOUDER!")) |

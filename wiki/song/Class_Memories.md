@@ -7,7 +7,7 @@
 
 # Class Memories
 
-<div class="wiki-img" file="avif/Class Memories.avif"></div>
+![Class Memories](https://storage.mhtl.im/jpgs/Class Memories.jpg)
 
 ## 曲目信息
 | 曲名 | [Class Memories](info:info("Class Memories")) |

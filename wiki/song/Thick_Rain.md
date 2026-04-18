@@ -2,7 +2,7 @@
 
 # 粗线条的雨
 
-<div class="wiki-img" file="avif/粗线条的雨.avif"></div>
+![粗线条的雨](https://storage.mhtl.im/jpgs/粗线条的雨.jpg)
 
 ## 曲目信息
 

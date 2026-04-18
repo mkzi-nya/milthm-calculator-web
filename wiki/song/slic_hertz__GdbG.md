@@ -6,7 +6,7 @@
 
 # slic.hertz #GdbG
 
-<div class="wiki-img" file="avif/slic.hertz%20%23GdbG.avif"></div>
+![slic.hertz%20%23GdbG](https://storage.mhtl.im/jpgs/slic.hertz%20%23GdbG.jpg)
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |

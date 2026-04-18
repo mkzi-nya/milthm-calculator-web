@@ -6,7 +6,7 @@
 
 # conflict
 
-<div class="wiki-img" file="avif/conflict.avif"></div>
+![conflict](https://storage.mhtl.im/jpgs/conflict.jpg)
 
 ## 曲目信息
 | 曲名 | [conflict](info:info("conflict")) |

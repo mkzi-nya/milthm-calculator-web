@@ -6,7 +6,7 @@
 
 # Threat - Metropolis
 
-<div class="wiki-img" file="avif/Threat%20-%20Metropolis.avif"></div>
+![Threat%20-%20Metropolis](https://storage.mhtl.im/jpgs/Threat%20-%20Metropolis.jpg)
 
 ## 曲目信息
 | 曲名 | [Threat - Metropolis](info:info("Threat - Metropolis")) |

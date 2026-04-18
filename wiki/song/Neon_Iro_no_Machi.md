@@ -6,7 +6,7 @@
 
 # ネオン色のまち
 
-<div class="wiki-img" file="avif/ネオン色のまち.avif"></div>
+![ネオン色のまち](https://storage.mhtl.im/jpgs/ネオン色のまち.jpg)
 
 ## 曲目信息
 | 曲名 | [ネオン色のまち](info:info("ネオン色のまち")) |

@@ -6,7 +6,7 @@
 
 # Oniichan
 
-<div class="wiki-img" file="avif/Oniichan.avif"></div>
+![Oniichan](https://storage.mhtl.im/jpgs/Oniichan.jpg)
 
 ## 曲目信息
 | 曲名 | [Oniichan](info:info("Oniichan")) |

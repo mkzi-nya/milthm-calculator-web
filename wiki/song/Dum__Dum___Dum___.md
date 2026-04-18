@@ -6,7 +6,7 @@
 
 # Dum! Dum!! Dum!!!
 
-<div class="wiki-img" file="avif/Dum%21%20Dum%21%21%20Dum%21%21%21.avif"></div>
+![Dum%21%20Dum%21%21%20Dum%21%21%21](https://storage.mhtl.im/jpgs/Dum%21%20Dum%21%21%20Dum%21%21%21.jpg)
 
 ## 曲目信息
 | 曲名 | [Dum! Dum!! Dum!!!](info:info("Dum! Dum!! Dum!!!")) |

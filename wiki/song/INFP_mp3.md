@@ -6,7 +6,7 @@
 
 # INFP.mp3
 
-<div class="wiki-img" file="avif/INFP.mp3.avif"></div>
+![INFP.mp3](https://storage.mhtl.im/jpgs/INFP.mp3.jpg)
 
 ## 曲目信息
 | 曲名 | [INFP.mp3](info:info("INFP.mp3")) |

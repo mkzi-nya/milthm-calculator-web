@@ -6,7 +6,7 @@
 
 # Algebra
 
-<div class="wiki-img" file="avif/Algebra.avif"></div>
+![Algebra](https://storage.mhtl.im/jpgs/Algebra.jpg)
 
 ## 曲目信息
 | 曲名 | [Algebra](info:info("Algebra")) |

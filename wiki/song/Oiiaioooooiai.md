@@ -6,7 +6,7 @@
 
 # Oiiaioooooiai
 
-<div class="wiki-img" file="avif/Oiiaioooooiai.avif"></div>
+![Oiiaioooooiai](https://storage.mhtl.im/jpgs/Oiiaioooooiai.jpg)
 
 ## 曲目信息
 | 曲名 | [Oiiaioooooiai](info:info("oiiaioooooiai")) |

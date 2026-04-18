@@ -6,7 +6,7 @@
 
 # Lots Of Spices
 
-<div class="wiki-img" file="avif/Lots Of Spices.avif"></div>
+![Lots Of Spices](https://storage.mhtl.im/jpgs/Lots Of Spices.jpg)
 
 ## 曲目信息
 | 曲名 | [Lots Of Spices](info:info("Lots Of Spices")) |

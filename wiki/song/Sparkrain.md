@@ -6,7 +6,7 @@
 
 # 烁雨
 
-<div class="wiki-img" file="avif/烁雨.avif"></div>
+![烁雨](https://storage.mhtl.im/jpgs/烁雨.jpg)
 
 ## 曲目信息
 | 曲名 | [烁雨](info:info("烁雨")) |

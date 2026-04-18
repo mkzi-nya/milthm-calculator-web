@@ -2,7 +2,7 @@
 
 # ☹
 
-<div class="wiki-img" file="avif/☹.avif"></div>
+![☹](https://storage.mhtl.im/jpgs/☹.jpg)
 
 ## 曲目信息
 | 曲名 | [☹](info:info("☹")) |

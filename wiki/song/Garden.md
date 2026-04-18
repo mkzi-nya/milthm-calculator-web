@@ -2,7 +2,7 @@
 
 # Garden
 
-<div class="wiki-img" file="avif/Garden.avif"></div>
+![Garden](https://storage.mhtl.im/jpgs/Garden.jpg)
 
 ## 曲目信息
 

@@ -7,7 +7,7 @@
 
 # 白色の夢で。
 
-<div class="wiki-img" file="avif/白色の夢で。.avif"></div>
+![白色の夢で。](https://storage.mhtl.im/jpgs/白色の夢で。.jpg)
 
 ## 曲目信息
 | 曲名 | [白色の夢で。](info:info("白色の夢で。")) |

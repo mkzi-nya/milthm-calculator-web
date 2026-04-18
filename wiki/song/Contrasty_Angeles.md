@@ -2,7 +2,7 @@
 
 # Contrasty Angeles
 
-<div class="wiki-img" file="avif/Contrasty Angeles.avif"></div>
+![Contrasty Angeles](https://storage.mhtl.im/jpgs/Contrasty Angeles.jpg)
 
 ## 曲目信息
 | 曲名 | [Contrasty Angeles](info:info("Contrasty Angeles")) |

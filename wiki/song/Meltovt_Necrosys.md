@@ -6,7 +6,7 @@
 
 # Meltovt Necrosys
 
-<div class="wiki-img" file="avif/Meltovt Necrosys.avif"></div>
+![Meltovt Necrosys](https://storage.mhtl.im/jpgs/Meltovt Necrosys.jpg)
 
 ## 曲目信息
 | 曲名 | [Meltovt Necrosys](info:info("Meltovt Necrosys")) |

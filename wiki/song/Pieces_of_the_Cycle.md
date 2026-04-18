@@ -6,7 +6,7 @@
 
 # サイクルの欠片
 
-<div class="wiki-img" file="avif/サイクルの欠片.avif"></div>
+![サイクルの欠片](https://storage.mhtl.im/jpgs/サイクルの欠片.jpg)
 
 ## 曲目信息
 | 曲名 | [サイクルの欠片](info:info("サイクルの欠片")) |

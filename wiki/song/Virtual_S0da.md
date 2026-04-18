@@ -6,7 +6,7 @@
 
 # Virtual S0da
 
-<div class="wiki-img" file="avif/Virtual S0da.avif"></div>
+![Virtual S0da](https://storage.mhtl.im/jpgs/Virtual S0da.jpg)
 
 ## 曲目信息
 | 曲名 | [Virtual S0da](info:info("Virtual S0da")) |

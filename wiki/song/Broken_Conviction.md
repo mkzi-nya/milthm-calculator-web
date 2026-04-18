@@ -6,7 +6,7 @@
 
 # Broken Conviction
 
-<div class="wiki-img" file="avif/Broken Conviction.avif"></div>
+![Broken Conviction](https://storage.mhtl.im/jpgs/Broken Conviction.jpg)
 
 ## 曲目信息
 | 曲名 | [Broken Conviction](info:info("Broken Conviction")) |

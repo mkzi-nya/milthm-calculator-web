@@ -6,7 +6,7 @@
 
 # 妹
 
-<div class="wiki-img" file="avif/妹.avif"></div>
+![妹](https://storage.mhtl.im/jpgs/妹.jpg)
 
 ## 曲目信息
 | 曲名 | [妹](info:info("妹")) |

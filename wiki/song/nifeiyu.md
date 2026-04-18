@@ -6,7 +6,7 @@
 
 # 逆飛雨
 
-<div class="wiki-img" file="avif/%E9%80%86%E9%A3%9B%E9%9B%A8.avif"></div>
+![%E9%80%86%E9%A3%9B%E9%9B%A8](https://storage.mhtl.im/jpgs/%E9%80%86%E9%A3%9B%E9%9B%A8.jpg)
 
 ## 曲目信息
 | 曲名 | [逆飛雨](info:info("逆飛雨")) |

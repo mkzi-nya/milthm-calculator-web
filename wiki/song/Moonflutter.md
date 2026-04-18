@@ -6,7 +6,7 @@
 
 # Moonflutter
 
-<div class="wiki-img" file="avif/Moonflutter.avif"></div>
+![Moonflutter](https://storage.mhtl.im/jpgs/Moonflutter.jpg)
 
 ## 曲目信息
 | 曲名 | [Moonflutter](info:info("Moonflutter")) |

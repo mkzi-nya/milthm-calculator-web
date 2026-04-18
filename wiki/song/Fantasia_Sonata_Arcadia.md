@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Arcadia
 
-<div class="wiki-img" file="avif/Fantasia Sonata Arcadia.avif"></div>
+![Fantasia Sonata Arcadia](https://storage.mhtl.im/jpgs/Fantasia Sonata Arcadia.jpg)
 
 ## 曲目信息
 

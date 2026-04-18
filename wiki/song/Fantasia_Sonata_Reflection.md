@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Reflection
 
-<div class="wiki-img" file="avif/Fantasia Sonata Reflection.avif"></div>
+![Fantasia Sonata Reflection](https://storage.mhtl.im/jpgs/Fantasia Sonata Reflection.jpg)
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection")) |

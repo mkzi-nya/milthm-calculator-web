@@ -6,7 +6,7 @@
 
 # Agnostic
 
-<div class="wiki-img" file="avif/Agnostic.avif"></div>
+![Agnostic](https://storage.mhtl.im/jpgs/Agnostic.jpg)
 
 ## 曲目信息
 | 曲名 | [Agnostic](info:info("Agnostic")) |

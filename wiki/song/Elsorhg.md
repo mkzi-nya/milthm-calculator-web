@@ -6,7 +6,7 @@
 
 # Elsorhg
 
-<div class="wiki-img" file="avif/Elsorhg.avif"></div>
+![Elsorhg](https://storage.mhtl.im/jpgs/Elsorhg.jpg)
 
 ## 曲目信息
 | 曲名 | [Elsorhg](info:info("Elsorhg")) |

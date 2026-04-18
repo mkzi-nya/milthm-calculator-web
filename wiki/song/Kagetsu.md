@@ -2,7 +2,7 @@
 
 # 花月
 
-<div class="wiki-img" file="avif/花月.avif"></div>
+![花月](https://storage.mhtl.im/jpgs/花月.jpg)
 
 ## 曲目信息
 | 曲名 | [花月](info:info("花月")) |

@@ -6,7 +6,7 @@
 
 # はんてん
 
-<div class="wiki-img" file="avif/はんてん.avif"></div>
+![はんてん](https://storage.mhtl.im/jpgs/はんてん.jpg)
 
 ## 曲目信息
 | 曲名 | [はんてん](info:info("はんてん")) |
