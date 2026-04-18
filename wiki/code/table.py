@@ -14,7 +14,7 @@ INPUT_CANDIDATES = [
 ]
 OUTPUT_TABLE_C_HTML = (SCRIPT_DIR / '../table_c.html').resolve()
 OUTPUT_TABLE_HTML = (SCRIPT_DIR / '../table.html').resolve()
-CURRENT_VERSION = '5.2'
+CURRENT_VERSION = '5.3'
 
 DIFFICULTY_ORDER = ['Drizzle', 'Sprinkle', 'Cloudburst', 'Clear', 'Special']
 DIFFICULTY_SHORT = {
@@ -48,6 +48,7 @@ DIRECTORY_GROUPS = [
             ('Notanote', '联动'),
             ('Electrode Core', '联动'),
             ('VoidReflection', '联动'),
+            ('BerryMelody', '联动'),
         ],
     },
     {
