@@ -206,13 +206,14 @@ function calculateScore(input) {
 结算评级分为八种：  
 未达成FC(全连)时为白色,FC为蓝色,AP为紫色  
 当前版本无法获得Milthm以下评级的AP图标  
-- <img src="../jpgs/0.png" style="height:1.5em;vertical-align:middle;">：旧版显示为<img src="../jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为满分）。
-- <img src="../jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M,即Milthm，分数达到1000000时获得；
-- <img src="../jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/20.png" style="height:1.5em;vertical-align:middle;">：分数达到925000时获得；
-- <img src="../jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/30.png" style="height:1.5em;vertical-align:middle;">：分数达到850000时获得；
-- <img src="../jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/40.png" style="height:1.5em;vertical-align:middle;">：分数达到750000时获得；
-- <img src="../jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="../jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到700000时获得；
-- <img src="../jpgs/6.png" style="height:1.5em;vertical-align:middle;">：分数小于700000时获得，未通关，没有FC/AP图标。
+- <img src="https://storage.mhtl.im/jpgs/0.png" style="height:1.5em;vertical-align:middle;">：旧版显示为<img src="https://storage.mhtl.im/jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为满分）。
+- <img src="https://storage.mhtl.im/jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M,即Milthm，分数达到1000000时获得；
+- <img src="https://storage.mhtl.im/jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/20.png" style="height:1.5em;vertical-align:middle;">：分数达到950000时获得；
+- <img src="https://storage.mhtl.im/jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/30.png" style="height:1.5em;vertical-align:middle;">：分数达到850000时获得；
+- <img src="https://storage.mhtl.im/jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/40.png" style="height:1.5em;vertical-align:middle;">：分数达到750000时获得；
+- <img src="https://storage.mhtl.im/jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到650000时获得；
+- <img src="https://storage.mhtl.im/jpgs/6.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到600000时获得；
+- <img src="https://storage.mhtl.im/jpgs/7.png" style="height:1.5em;vertical-align:middle;">：分数小于600000时获得，未通关，没有FC/AP图标。
 
 ---
 
@@ -220,19 +221,19 @@ function calculateScore(input) {
 
 游玩结束后在谱面中展示的评价包括：
 
-- <img src="../jpgs/crash.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/crash.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC < 80%
-- <img src="../jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
   - ACC > 80%，且至少存在一个 Bad/Miss 判定。
-- <img src="../jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±140ms 内击中，且至少存在一个 Great/Good 判定。
-- <img src="../jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±70ms 内击中，且至少存在一个 small perfect 判定。
-- <img src="../jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
   - 所有音符均在 ±35ms 内击中，即理论值。
-- <img src="../jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">:  
   - 使用 AutoPlay 通关。
-- <img src="../jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
+- <img src="https://storage.mhtl.im/jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
   - 分数大于 1010000（使用倾盆大雨）。
 
 ---
