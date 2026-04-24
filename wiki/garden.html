@@ -3,45 +3,60 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>花园规划器（离散作物库存版）</title>
+<title>花园规划器</title>
 <style>
   :root {
-    --bg: #0f1115; --panel: #171a21; --panel2: #1d2230; --text: #e8ecf1; --muted: #aeb8c6;
-    --green: #30d158; --red: #ff5f57; --blue: #64b5ff; --border: #2a3242; --warn: #ffcc66;
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d2230; --text:#e8ecf1; --muted:#aeb8c6;
+    --green:#30d158; --red:#ff5f57; --blue:#64b5ff; --border:#2a3242; --warn:#ffcc66;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing:border-box; }
   body {
-    margin:0; font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    color:var(--text); background:var(--bg); padding:16px;
+    margin:0; padding:18px;
+    color:var(--text); background:var(--bg);
+    font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   }
-  .wrap { max-width:1280px; margin:0 auto; }
-  h1 { font-size:22px; margin:0 0 12px; }
-  .desc { color:var(--muted); margin-bottom:14px; }
+  .wrap { max-width:1120px; margin:0 auto; }
+  h1 { font-size:22px; line-height:1.2; margin:0 0 14px; letter-spacing:.02em; }
   .panel {
-    background:var(--panel); border:1px solid var(--border); border-radius:14px;
-    padding:14px; margin-bottom:12px;
+    background:var(--panel); border:1px solid var(--border); border-radius:16px;
+    padding:16px; margin-bottom:14px;
   }
-  .row {
-    display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:10px; margin-bottom:10px;
-  }
+  .row { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+  .row:last-child { margin-bottom:0; }
   .field { grid-column:span 3; min-width:0; }
   .field.wide { grid-column:span 6; }
   .field.full { grid-column:1 / -1; }
-  label { display:block; margin-bottom:6px; color:var(--muted); }
+  label { display:block; margin:0 0 7px; color:var(--muted); font-size:13px; }
   input, select, button {
-    width:100%; background:var(--panel2); color:var(--text); border:1px solid var(--border);
-    border-radius:10px; padding:10px 12px; font:inherit;
+    width:100%; min-width:0; height:40px;
+    background:var(--panel2); color:var(--text); border:1px solid var(--border);
+    border-radius:10px; padding:8px 10px; font:inherit; outline:none;
   }
+  input:focus, select:focus { border-color:var(--blue); }
   button { cursor:pointer; background:#2457ff; border-color:#2457ff; font-weight:700; }
   .check-group {
-    display:flex; flex-wrap:wrap; gap:8px; padding:10px 12px; background:var(--panel2);
-    border:1px solid var(--border); border-radius:10px;
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
   }
   .check-group label {
-    margin:0; color:var(--text); display:inline-flex; align-items:center; gap:6px;
+    height:40px; margin:0; padding:0 10px;
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    color:var(--text); background:var(--panel2); border:1px solid var(--border); border-radius:10px;
+    white-space:nowrap;
   }
-  .small, .inline-note { color:var(--muted); font-size:12px; }
-  .result { font-size:18px; font-weight:800; color:var(--blue); }
+  .check-group input { width:auto; height:auto; }
+  .stock-grid {
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
+  }
+  .stock-card {
+    min-width:0; display:flex; flex-direction:column; gap:7px;
+    background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:9px 8px;
+  }
+  .stock-card .name {
+    width:100%; font-weight:700; font-size:13px; line-height:1.2;
+    min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:center;
+  }
+  .stock-card input { height:32px; padding:5px 6px; text-align:center; font-size:14px; }
+  .result { font-size:18px; font-weight:800; color:var(--blue); padding-top:2px; }
   .warn { color:var(--warn); }
   .log {
     min-height:360px; white-space:pre-wrap; overflow:auto;
@@ -52,40 +67,32 @@
   .minus { color:var(--red); font-weight:700; }
   .stamp { color:var(--blue); font-weight:700; }
   .act { color:#fff; font-weight:700; }
-  table { width:100%; border-collapse:collapse; margin-top:8px; font-size:12px; }
-  th, td { border:1px solid var(--border); padding:6px 8px; text-align:left; }
-  th { background:var(--panel2); }
-  .stock-grid {
-    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
-  }
-  .stock-card {
-    background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:10px;
-  }
-  .stock-card .name { font-weight:700; margin-bottom:6px; }
-  .stock-card .meta { color:var(--muted); font-size:12px; margin-bottom:8px; }
-  @media (max-width:960px){
+  .small { color:var(--muted); font-size:12px; }
+  @media (max-width:900px){
     .field,.field.wide{ grid-column:span 6; }
-    .stock-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   }
-  @media (max-width:640px){
+  @media (max-width:560px){
+    body{ padding:10px; }
+    .panel{ padding:12px; border-radius:14px; }
+    .row{ gap:10px; }
     .field,.field.wide,.field.full{ grid-column:1 / -1; }
-    .stock-grid { grid-template-columns:1fr; }
+    .stock-grid,.check-group{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+    .stock-card{ padding:8px 6px; border-radius:11px; }
+    .stock-card .name{ font-size:12px; }
+    .stock-card input{ height:30px; padding:4px 4px; }
+    .check-group label{ height:36px; padding:0 4px; font-size:13px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>花园规划器（离散作物库存版）</h1>
-  <div class="desc">
-    现在按“作物库存”计算。升级/解锁时，多 tag 作物会共享支付，不会重复扣减；最终目标库存则按“单 tag 归属”统计：同一个多 tag 作物只会计入一个目标 tag，并优先计入更稀有的 tag（功能 > 观赏 > 菌菇 > 食物），例如双孢/草菇/香菇会先计入菌菇，傅氏凤尾蕨会优先计入功能。
-  </div>
+  <h1>花园规划器</h1>
 
   <div class="panel">
     <div class="row">
       <div class="field wide">
         <label>已解锁花盆</label>
         <div class="check-group" id="potsBox"></div>
-        <div class="inline-note">1号固定已解锁；2/3/4 号在初始等级达到对应等级时默认勾选且可取消，未达到时不可勾选。</div>
       </div>
       <div class="field">
         <label>浇水次数</label>
@@ -107,7 +114,7 @@
     <div class="row">
       <div class="field"><label>目标等级</label><select id="targetLevel"></select></div>
       <div class="field full">
-        <label>目标库存（多 tag 作物只按一个 tag 计入，优先级：功能 > 观赏 > 菌菇 > 食物）</label>
+        <label>目标库存</label>
         <div id="targetBox" class="stock-grid"></div>
       </div>
     </div>
@@ -115,22 +122,12 @@
     <div class="row">
       <div class="field"><button id="calcBtn">计算</button></div>
       <div class="field wide"><label>预计完成时长</label><div id="result" class="result">预计完成时长：--h</div></div>
-      <div class="field wide small">这是关键节点分段求解：升级/解锁按真实共享库存支付，最终目标库存按单 tag 归属统计，多 tag 作物不会同时满足多个目标 tag。</div>
     </div>
   </div>
 
   <div class="panel">
-    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div><strong>过程输出</strong></div>
-      <div class="small">日志保持简洁：种植记录写成区间 `[开始h-结束h]`，升级/解锁写成时间点 `[时间h]`；不再单独拆出收获行。</div>
-    </div>
+    <div><strong>过程输出</strong></div>
     <div id="log" class="log"></div>
-  </div>
-
-  <div class="panel">
-    <strong>当前阶段可用作物信息</strong>
-    <div class="small">这里展示的是单次种植的离散参数，不再显示旧版的线性“基础净收益”。</div>
-    <div id="rateTable"></div>
   </div>
 </div>
 
@@ -140,20 +137,19 @@ const TAGS = ['菌菇','食物','观赏','功能'];
 const KEY_TO_TAG = { fungus:'菌菇', food:'食物', orn:'观赏', func:'功能' };
 const TAG_TO_KEY = { '菌菇':'fungus', '食物':'food', '观赏':'orn', '功能':'func' };
 const WATER_MULT = { 0:1, 1:0.8, 2:0.6, 3:0.5 };
-const LOW_YIELD_BANNED = new Set(['水蕨菜','水晶兰','蓝莓','大柱霉草','草莓']);
-const CROP_ORDER = ['双孢蘑菇','勿忘草','草菇','卡宴辣椒','铃兰','香菇','傅氏凤尾蕨'];
-const ALL_CROP_ORDER = ['双孢蘑菇','水蕨菜','勿忘草','水晶兰','蓝莓','草菇','卡宴辣椒','铃兰','大柱霉草','草莓','香菇','傅氏凤尾蕨'];
 const CROPS = {
   '双孢蘑菇': { tags:['菌菇','食物'], yield:8, time:60, costs:[], unlock:1 },
-  '水蕨菜': { tags:['食物'], yield:45, time:360, costs:['菌菇*5'], unlock:3 },
+  '毛头鬼伞': { tags:['菌菇','食物'], yield:5, time:60, costs:[], unlock:1, disabled:true },
+  '毛茛': { tags:['观赏','功能'], yield:1, time:60, costs:[], unlock:1, disabled:true },
+  '水蕨菜': { tags:['食物'], yield:45, time:360, costs:['菌菇*5'], unlock:3, disabled:true },
   '勿忘草': { tags:['观赏'], yield:7, time:720, costs:[], unlock:4 },
-  '水晶兰': { tags:['观赏'], yield:20, time:1920, costs:['观赏*5'], unlock:6 },
-  '蓝莓': { tags:['食物'], yield:300, time:5760, costs:['观赏*5'], unlock:8 },
+  '水晶兰': { tags:['观赏'], yield:20, time:1920, costs:['观赏*5'], unlock:6, disabled:true },
+  '蓝莓': { tags:['食物'], yield:300, time:5760, costs:['观赏*5'], unlock:8, disabled:true },
   '草菇': { tags:['菌菇','食物'], yield:18, time:60, costs:['菌菇*5'], unlock:10 },
   '卡宴辣椒': { tags:['功能'], yield:3, time:360, costs:['食物*10'], unlock:11 },
   '铃兰': { tags:['观赏'], yield:10, time:720, costs:['功能*1'], unlock:13 },
-  '大柱霉草': { tags:['观赏'], yield:23, time:1920, costs:['功能*3'], unlock:15 },
-  '草莓': { tags:['食物'], yield:400, time:5760, costs:['功能*3'], unlock:17 },
+  '大柱霉草': { tags:['观赏'], yield:23, time:1920, costs:['功能*3'], unlock:15, disabled:true },
+  '草莓': { tags:['食物'], yield:400, time:5760, costs:['功能*3'], unlock:17, disabled:true },
   '香菇': { tags:['菌菇','食物'], yield:45, time:60, costs:['食物*30'], unlock:19 },
   '傅氏凤尾蕨': { tags:['观赏','功能'], yield:5, time:360, costs:['食物*25'], unlock:21 },
 };
@@ -169,6 +165,19 @@ const LEVEL_COSTS = {
 };
 const RATE_CACHE = new Map();
 const TAG_RARITY = { food:0, fungus:1, orn:2, func:3 };
+const TAG_KEYS = Object.keys(KEY_TO_TAG);
+const CATEGORY_KEYS = ['D','F','O'];
+
+function cropNames(){ return Object.keys(CROPS); }
+function enabledCropNames(){ return cropNames().filter(name=>!CROPS[name].disabled); }
+function allPotNumbers(){ return Array.from(new Set([1, ...Object.keys(POT_UNLOCKS).map(Number)])).sort((a,b)=>a-b); }
+function maxConfiguredLevel(){
+  return Math.max(1, ...Object.keys(LEVEL_COSTS).map(Number), ...Object.values(CROPS).map(c=>Number(c.unlock||1)), ...Object.values(POT_UNLOCKS).map(p=>Number(p.level||1)));
+}
+function emptyCost(){ return Object.fromEntries(TAG_KEYS.map(k=>[k,0])); }
+function scaleCost(cost, n){ const out=emptyCost(); for(const key of TAG_KEYS) out[key]=Number((cost&&cost[key])||0)*Number(n||0); return out; }
+function addCostInto(dst, src, mult=1){ for(const key of TAG_KEYS) dst[key]=Number(dst[key]||0)+Number((src&&src[key])||0)*mult; return dst; }
+
 
 function fmtNum(v){
   const n=Math.round(v*100)/100;
@@ -183,14 +192,14 @@ function cropTimeHours(name, water){ return (CROPS[name].time * WATER_MULT[water
 function getItemDef(name){ return CROPS[name] || null; }
 function getItemTags(name){ const def=getItemDef(name); return def ? def.tags : []; }
 function parseCropCosts(costs){
-  const req = { fungus:0, food:0, orn:0, func:0 };
+  const req = emptyCost();
   for(const s of costs || []){
     const [tag,amount]=s.split('*');
     req[TAG_TO_KEY[tag]] += Number(amount||0);
   }
   return req;
 }
-function availableCrops(level){ return ALL_CROP_ORDER.filter(name=>CROPS[name].unlock<=level && !LOW_YIELD_BANNED.has(name)); }
+function availableCrops(level){ return enabledCropNames().filter(name=>Number(CROPS[name].unlock||1)<=level); }
 function primaryKeyForCrop(name){
   const tags=getItemTags(name).map(tag=>TAG_TO_KEY[tag]);
   if(!tags.length) return null;
@@ -198,11 +207,12 @@ function primaryKeyForCrop(name){
   return tags[0];
 }
 function cropCategory(name){
-  const tags=getItemTags(name).slice().sort().join('|');
-  if(tags==='菌菇|食物') return 'D';
-  if(tags==='观赏') return 'O';
-  if(tags==='功能') return 'F';
-  if(tags==='功能|观赏') return 'OF';
+  const keys=getItemTags(name).map(tag=>TAG_TO_KEY[tag]).filter(Boolean);
+  if(!keys.length) return null;
+  if(keys.includes('func') && keys.includes('orn')) return 'OF';
+  if(keys.includes('func')) return 'F';
+  if(keys.includes('orn')) return 'O';
+  if(keys.includes('fungus') || keys.includes('food')) return 'D';
   return null;
 }
 function producerCategory(name){
@@ -368,80 +378,126 @@ function payCostOnGenericState(state, cost){
   st.of=ofPaid.shared;
   return st;
 }
+
+function solveSharedPairPaymentDetailed(onlyA, onlyB, shared, needA, needB, labelA, labelB, sharedLabel){
+  const a=Math.max(0, Number(needA||0));
+  const b=Math.max(0, Number(needB||0));
+  if(a<=0 && b<=0) return { onlyA, onlyB, shared, parts:[] };
+  let useOnlyA=0, useOnlyB=0, useShared=0;
+  if(b<=0){
+    if(onlyA + shared < a) return null;
+    useOnlyA=Math.min(onlyA, a);
+    useShared=a-useOnlyA;
+  }else if(a<=0){
+    if(onlyB + shared < b) return null;
+    useOnlyB=Math.min(onlyB, b);
+    useShared=b-useOnlyB;
+  }else{
+    const maxShared=Math.min(shared, a, b);
+    const minShared=Math.max(0, a-onlyA, b-onlyB);
+    if(minShared>maxShared) return null;
+    useShared=maxShared;
+    useOnlyA=a-useShared;
+    useOnlyB=b-useShared;
+    if(useOnlyA>onlyA || useOnlyB>onlyB) return null;
+  }
+  const parts=[];
+  if(useShared>0) parts.push({ label:sharedLabel, count:useShared });
+  if(useOnlyA>0) parts.push({ label:labelA, count:useOnlyA });
+  if(useOnlyB>0) parts.push({ label:labelB, count:useOnlyB });
+  return { onlyA:onlyA-useOnlyA, onlyB:onlyB-useOnlyB, shared:shared-useShared, parts };
+}
+
+function cropNamesByCategory(category){
+  return cropNames().filter(name=>cropCategory(name)===category);
+}
+function preferredCropName(category, counts=null){
+  const names=cropNamesByCategory(category);
+  if(counts){
+    const planted=names.filter(name=>Number(counts[name]||0)>0).sort((a,b)=>Number(counts[b]||0)-Number(counts[a]||0));
+    if(planted.length) return planted[0];
+  }
+  if(category==='OF' && CROPS['毛茛']) return '毛茛';
+  if(category==='D' && CROPS['双孢蘑菇']) return '双孢蘑菇';
+  const enabled=names.filter(name=>!CROPS[name].disabled).sort((a,b)=>Number(CROPS[a].unlock||1)-Number(CROPS[b].unlock||1));
+  if(enabled.length) return enabled[0];
+  const disabled=names.filter(name=>CROPS[name].disabled).sort((a,b)=>Number(CROPS[a].unlock||1)-Number(CROPS[b].unlock||1));
+  if(disabled.length) return disabled[0];
+  return category;
+}
+function labelForSingleBucket(key){
+  if(key==='sd') return '食物';
+  if(key==='sf') return '菌菇';
+  if(key==='o') return preferredCropName('O');
+  if(key==='f') return preferredCropName('F');
+  return key;
+}
+function paymentSummaryOnGenericState(state, cost, counts=null){
+  const st=cloneGenericState(state);
+  const dfPaid=solveSharedPairPaymentDetailed(st.sd, st.sf, st.df, Number(cost.food||0), Number(cost.fungus||0), labelForSingleBucket('sd'), labelForSingleBucket('sf'), preferredCropName('D', counts));
+  if(!dfPaid) return null;
+  st.sd=dfPaid.onlyA;
+  st.sf=dfPaid.onlyB;
+  st.df=dfPaid.shared;
+  const ofPaid=solveSharedPairPaymentDetailed(st.o, st.f, st.of, Number(cost.orn||0), Number(cost.func||0), labelForSingleBucket('o'), labelForSingleBucket('f'), preferredCropName('OF', counts));
+  if(!ofPaid) return null;
+  st.o=ofPaid.onlyA;
+  st.f=ofPaid.onlyB;
+  st.of=ofPaid.shared;
+  const merged=new Map();
+  for(const part of [...dfPaid.parts, ...ofPaid.parts]) merged.set(part.label, (merged.get(part.label)||0)+part.count);
+  const order=cropNames().concat(['食物','菌菇','观赏','功能']);
+  const parts=Array.from(merged.entries()).sort((a,b)=>{
+    const ia=order.indexOf(a[0]), ib=order.indexOf(b[0]);
+    return (ia<0?999:ia)-(ib<0?999:ib);
+  });
+  return { state:st, text:parts.length ? parts.map(([label,count])=>`${label}*${fmtNum(count)}`).join('，') : '无' };
+}
+
 function canPayCostOnGenericState(state, cost){ return !!payCostOnGenericState(state, cost); }
 function seedCostOfCrop(name){ return parseCropCosts(CROPS[name].costs||[]); }
+function cropOutputBucket(name){ return cropCategory(name); }
+function addCropYieldToGenericState(state, crop, count=1){
+  const st=cloneGenericState(state);
+  const amount=Number(CROPS[crop].yield||0)*Number(count||0);
+  const cat=cropOutputBucket(crop);
+  if(cat==='D') st.df += amount;
+  else if(cat==='O') st.o += amount;
+  else if(cat==='F') st.f += amount;
+  else if(cat==='OF') st.of += amount;
+  else return null;
+  return st;
+}
+function costOverlapsCropOutput(crop, cost){
+  const outputKeys=getItemTags(crop).map(tag=>TAG_TO_KEY[tag]).filter(Boolean);
+  return outputKeys.some(key=>Number((cost&&cost[key])||0)>0);
+}
 function plantOnceOnGenericState(state, crop){
   let st=cloneGenericState(state);
-  if(crop==='双孢蘑菇') st.df += 8;
-  else if(crop==='草菇'){
-    st=payCostOnGenericState(st, { fungus:5 });
-    if(!st) return null;
-    st.df += 18;
-  }else if(crop==='香菇'){
-    st=payCostOnGenericState(st, { food:30 });
-    if(!st) return null;
-    st.df += 45;
-  }else if(crop==='勿忘草') st.o += 7;
-  else if(crop==='铃兰'){
-    st=payCostOnGenericState(st, { func:1 });
-    if(!st) return null;
-    st.o += 10;
-  }else if(crop==='卡宴辣椒'){
-    st=payCostOnGenericState(st, { food:10 });
-    if(!st) return null;
-    st.f += 3;
-  }else if(crop==='傅氏凤尾蕨'){
-    st=payCostOnGenericState(st, { food:25 });
-    if(!st) return null;
-    st.of += 5;
-  }else return null;
-  return st;
+  const seed=seedCostOfCrop(crop);
+  st=payCostOnGenericState(st, seed);
+  if(!st) return null;
+  return addCropYieldToGenericState(st, crop, 1);
 }
 function applyCropBatch(state, crop, n){
   n=Number(n||0);
   let st=cloneGenericState(state);
   if(n<=0) return st;
-  const totals=tagTotalsFromGenericState(st);
-  if(crop==='双孢蘑菇'){
-    st.df += 8*n;
-    return st;
-  }
-  if(crop==='勿忘草'){
-    st.o += 7*n;
-    return st;
-  }
-  if(crop==='草菇'){
-    if((totals.fungus||0) < 5) return null;
-    st.df += 18*n;
-    return payCostOnGenericState(st, { fungus:5*n });
-  }
-  if(crop==='香菇'){
-    if((totals.food||0) < 30) return null;
-    st.df += 45*n;
-    return payCostOnGenericState(st, { food:30*n });
-  }
-  if(crop==='卡宴辣椒'){
-    if((totals.food||0) < 10*n) return null;
-    st=payCostOnGenericState(st, { food:10*n });
+  const seed=seedCostOfCrop(crop);
+  const totalSeed=scaleCost(seed, n);
+  const needsSeed=TAG_KEYS.some(key=>Number(seed[key]||0)>0);
+  if(!needsSeed) return addCropYieldToGenericState(st, crop, n);
+  if(!canPayCostOnGenericState(st, seed)) return null;
+  if(costOverlapsCropOutput(crop, seed)){
+    st=addCropYieldToGenericState(st, crop, n);
     if(!st) return null;
-    st.f += 3*n;
-    return st;
-  }
-  if(crop==='铃兰'){
-    if((totals.func||0) < n) return null;
-    st=payCostOnGenericState(st, { func:n });
+    st=payCostOnGenericState(st, totalSeed);
     if(!st) return null;
-    st.o += 10*n;
     return st;
   }
-  if(crop==='傅氏凤尾蕨'){
-    if((totals.food||0) < 25*n) return null;
-    st=payCostOnGenericState(st, { food:25*n });
-    if(!st) return null;
-    st.of += 5*n;
-    return st;
-  }
-  return null;
+  st=payCostOnGenericState(st, totalSeed);
+  if(!st) return null;
+  return addCropYieldToGenericState(st, crop, n);
 }
 function applyPlantCountsBlock(state, counts, order){
   let st=cloneGenericState(state);
@@ -453,10 +509,8 @@ function applyPlantCountsBlock(state, counts, order){
   return st;
 }
 function totalCostFromActions(actions){
-  const total={ food:0, fungus:0, orn:0, func:0 };
-  for(const act of actions){
-    for(const key of ['food','fungus','orn','func']) total[key]+=Number(act.cost[key]||0);
-  }
+  const total=emptyCost();
+  for(const act of actions) addCostInto(total, act.cost||{});
   return total;
 }
 function categoryBestProducer(category, maxLevel, water){
@@ -471,14 +525,14 @@ function categoryBestProducer(category, maxLevel, water){
   }
   return bestName;
 }
-function buildKeyEvents(startLevel, targetLevel, desiredPots, water, finalTarget){
+function buildKeyEvents(startLevel, horizonLevel, desiredPots, water){
   const events=[];
   const prev={
     D:categoryBestProducer('D', startLevel, water),
     O:categoryBestProducer('O', startLevel, water),
     F:categoryBestProducer('F', startLevel, water),
   };
-  for(let lv=startLevel+1; lv<=targetLevel; lv++){
+  for(let lv=startLevel+1; lv<=horizonLevel; lv++){
     for(const cat of ['D','O','F']){
       const best=categoryBestProducer(cat, lv, water);
       if(best!==prev[cat] && prev[cat]!=null){
@@ -491,11 +545,24 @@ function buildKeyEvents(startLevel, targetLevel, desiredPots, water, finalTarget
       if(POT_UNLOCKS[pot] && POT_UNLOCKS[pot].level===lv) events.push({ kind:'potUnlock', level:lv, pot, text:`解锁${pot}号花盆` });
     }
   }
-  const needFinalTarget=Object.values(finalTarget||{}).some(v=>(v||0)>0);
-  const lastLevel=events.length ? events[events.length-1].level : startLevel;
-  if(targetLevel>lastLevel || needFinalTarget){
-    events.push({ kind:'final', level:targetLevel, target:{ ...(finalTarget||{}) }, text: needFinalTarget ? '达到最终目标库存' : `达到Lv.${targetLevel}` });
+  return events;
+}
+function buildPlanningEvents(startLevel, targetLevel, desiredPots, water, horizonLevel){
+  const keyEvents=buildKeyEvents(startLevel, horizonLevel, desiredPots, water);
+  const events=[];
+  let inserted=false;
+  if(targetLevel<=startLevel){
+    events.push({ kind:'checkpoint', level:startLevel, text:`达到Lv.${startLevel}` });
+    inserted=true;
   }
+  for(const event of keyEvents){
+    if(!inserted && targetLevel<=event.level){
+      events.push({ kind:'checkpoint', level:targetLevel, text:`达到Lv.${targetLevel}` });
+      inserted=true;
+    }
+    events.push(event);
+  }
+  if(!inserted) events.push({ kind:'checkpoint', level:targetLevel, text:`达到Lv.${targetLevel}` });
   return events;
 }
 function stageActions(startLevel, event){
@@ -508,35 +575,82 @@ function previousCategoryBestProducer(category, level, water){
   if(level<=0) return null;
   return categoryBestProducer(category, level, water);
 }
+
+function bestSeedFeasibleProducer(category, level, water, state, excludeName=null){
+  const names=availableCrops(level).filter(name=>producerCategory(name)===category && name!==excludeName);
+  let best=null, bestRate=-1;
+  for(const name of names){
+    const seed=seedCostOfCrop(name);
+    if(seed && !canPayCostOnGenericState(state, seed)) continue;
+    const rate=cropBestRate(level, water, name);
+    if(rate>bestRate+1e-9 || (Math.abs(rate-bestRate)<=1e-9 && (best==null || CROPS[name].unlock<CROPS[best].unlock))){
+      best=name; bestRate=rate;
+    }
+  }
+  return best;
+}
+
+function costNeedsCategory(cost, category){
+  if(category==='D') return Number(cost.food||0)>0 || Number(cost.fungus||0)>0;
+  if(category==='O') return Number(cost.orn||0)>0;
+  if(category==='F') return Number(cost.func||0)>0;
+  return false;
+}
+function ensureSeedDependencyProducers(mains, windowLevel, water){
+  let changed=true;
+  while(changed){
+    changed=false;
+    for(const crop of Object.values(mains).filter(Boolean)){
+      const seed=seedCostOfCrop(crop);
+      for(const cat of CATEGORY_KEYS){
+        if(costNeedsCategory(seed, cat) && !mains[cat]){
+          const producer=categoryBestProducer(cat, windowLevel, water);
+          if(producer){ mains[cat]=producer; changed=true; }
+        }
+      }
+    }
+  }
+}
+function costForPlantedCounts(counts){
+  const total=emptyCost();
+  for(const [crop,n] of Object.entries(counts||{})) addCostInto(total, seedCostOfCrop(crop), Number(n||0));
+  return total;
+}
+function cropNetForCategory(crop, category){
+  const seed=seedCostOfCrop(crop);
+  const yieldValue=Number(CROPS[crop].yield||0);
+  if(category==='D') return Math.max(1, yieldValue - Number(seed.food||0) - Number(seed.fungus||0));
+  if(category==='O') return Math.max(1, yieldValue - Number(seed.orn||0));
+  if(category==='F') return Math.max(1, yieldValue - Number(seed.func||0));
+  return Math.max(1, yieldValue);
+}
+
 function buildStageProducerPlan(startLevel, event, water, startState=null){
   const actions=stageActions(startLevel, event);
   const windowLevel = event.kind==='cropImprovement' ? Math.max(1, event.level-1) : event.level;
   const total=totalCostFromActions(actions);
-  const deficits=(startState && event.target) ? targetDeficitsFromGenericState(startState, event.target) : { fungus:0, food:0, orn:0, func:0 };
+  const deficits=(startState && event.target) ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
   const need={
-    D:(total.food+total.fungus+deficits.food+deficits.fungus)>0,
-    O:(total.orn+deficits.orn)>0,
-    F:(total.func+deficits.func)>0,
+    D:(Number(total.food||0)+Number(total.fungus||0)+Number(deficits.food||0)+Number(deficits.fungus||0))>0,
+    O:(Number(total.orn||0)+Number(deficits.orn||0))>0,
+    F:(Number(total.func||0)+Number(deficits.func||0))>0,
   };
   const mains={ D:null, O:null, F:null };
-  if(need.D) mains.D=categoryBestProducer('D', windowLevel, water);
-  if(need.O) mains.O=categoryBestProducer('O', windowLevel, water);
-  if(need.F) mains.F=categoryBestProducer('F', windowLevel, water);
-  if(mains.O==='铃兰' && !mains.F) mains.F=categoryBestProducer('F', windowLevel, water);
-  if((mains.F==='卡宴辣椒' || mains.F==='傅氏凤尾蕨') && !mains.D) mains.D=categoryBestProducer('D', windowLevel, water);
+  for(const cat of CATEGORY_KEYS){ if(need[cat]) mains[cat]=categoryBestProducer(cat, windowLevel, water); }
+  ensureSeedDependencyProducers(mains, windowLevel, water);
   const prevLevel=Math.max(1, startLevel-1);
   const boot={ D:null, O:null, F:null };
-  if(mains.D){
-    const prev=previousCategoryBestProducer('D', prevLevel, water);
-    if(prev && prev!==mains.D) boot.D=prev;
-  }
-  if(mains.O){
-    const prev=previousCategoryBestProducer('O', prevLevel, water);
-    if(prev && prev!==mains.O) boot.O=prev;
-  }
-  if(mains.F){
-    const prev=previousCategoryBestProducer('F', prevLevel, water);
-    if(prev && prev!==mains.F) boot.F=prev;
+  const state=startState || { df:0, sd:0, sf:0, o:0, f:0, of:0 };
+  for(const cat of CATEGORY_KEYS){
+    const main=mains[cat];
+    if(!main) continue;
+    const seed=seedCostOfCrop(main);
+    if(seed && !canPayCostOnGenericState(state, seed)){
+      boot[cat]=bestSeedFeasibleProducer(cat, windowLevel, water, state, main);
+    }else{
+      const prev=previousCategoryBestProducer(cat, prevLevel, water);
+      if(prev && prev!==main) boot[cat]=prev;
+    }
   }
   return { mains, boot, actions };
 }
@@ -544,35 +658,42 @@ function nextStageBootstrapReserve(nextStartLevel, nextEvent, water){
   if(!nextEvent) return null;
   const plan=buildStageProducerPlan(nextStartLevel, nextEvent, water, null);
   const { mains } = plan;
-  if(mains.F) return seedCostOfCrop(mains.F);
-  if(mains.O) return seedCostOfCrop(mains.O);
-  if(mains.D) return seedCostOfCrop(mains.D);
+  for(const cat of CATEGORY_KEYS){ if(mains[cat]) return seedCostOfCrop(mains[cat]); }
   return null;
 }
 function lowerBoundCounts(startState, actions, producers, reserve, event){
   const totals=totalCostFromActions(actions);
-  const targetDef=event && event.target ? targetDeficitsFromGenericState(startState, event.target) : { fungus:0, food:0, orn:0, func:0 };
+  const targetDef=event && event.target ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
   const lb={};
   if(producers.O){
-    const y=CROPS[producers.O].yield;
-    let needOrn=totals.orn + (producers.F==='傅氏凤尾蕨' ? 0 : targetDef.orn);
+    const y=cropNetForCategory(producers.O, 'O');
+    let needOrn=Number(totals.orn||0) + (producers.F && cropOutputBucket(producers.F)==='OF' ? 0 : Number(targetDef.orn||0));
     const currentOrn=(startState.o||0)+(startState.of||0);
     lb[producers.O]=Math.max(0, Math.ceil(Math.max(0, needOrn-currentOrn)/y));
   }
   if(producers.F){
-    let needFunc=totals.func + Number((reserve&&reserve.func)||0) + targetDef.func;
-    if(producers.O==='铃兰') needFunc += (lb['铃兰']||0);
+    let needFunc=Number(totals.func||0) + Number((reserve&&reserve.func)||0) + Number(targetDef.func||0);
+    if(producers.O){
+      const oSeed=seedCostOfCrop(producers.O);
+      needFunc += Number(oSeed.func||0) * Number(lb[producers.O]||0);
+    }
     const currentFunc=(startState.f||0)+(startState.of||0);
-    lb[producers.F]=Math.max(0, Math.ceil(Math.max(0, needFunc-currentFunc)/CROPS[producers.F].yield));
+    lb[producers.F]=Math.max(0, Math.ceil(Math.max(0, needFunc-currentFunc)/cropNetForCategory(producers.F, 'F')));
   }
   if(producers.D){
-    let needPay=(totals.food+totals.fungus) + Number((reserve&&reserve.food)||0) + Number((reserve&&reserve.fungus)||0);
-    if(producers.F==='卡宴辣椒') needPay += 10 * (lb['卡宴辣椒']||0);
-    if(producers.F==='傅氏凤尾蕨') needPay += 25 * (lb['傅氏凤尾蕨']||0);
+    let needPay=Number(totals.food||0)+Number(totals.fungus||0)+Number((reserve&&reserve.food)||0)+Number((reserve&&reserve.fungus)||0);
+    if(producers.F){
+      const fSeed=seedCostOfCrop(producers.F);
+      needPay += (Number(fSeed.food||0)+Number(fSeed.fungus||0)) * Number(lb[producers.F]||0);
+    }
+    if(producers.O){
+      const oSeed=seedCostOfCrop(producers.O);
+      needPay += (Number(oSeed.food||0)+Number(oSeed.fungus||0)) * Number(lb[producers.O]||0);
+    }
     const currentPay=(startState.df||0)+(startState.sd||0)+(startState.sf||0);
-    const targetNeed=targetDef.fungus + targetDef.food;
-    const net = producers.D==='双孢蘑菇' ? 8 : producers.D==='草菇' ? 13 : producers.D==='香菇' ? 15 : CROPS[producers.D].yield;
-    lb[producers.D]=Math.max(0, Math.ceil(Math.max(0, needPay-currentPay + targetNeed)/Math.max(1, net)));
+    const targetNeed=Number(targetDef.fungus||0) + Number(targetDef.food||0);
+    const net=cropNetForCategory(producers.D, 'D');
+    lb[producers.D]=Math.max(0, Math.ceil(Math.max(0, needPay-currentPay + targetNeed)/net));
   }
   return lb;
 }
@@ -584,43 +705,70 @@ function stageDurationHours(counts, producers, pots, water){
   }
   return hours;
 }
+function evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts){
+  const totalActionCost=totalCostFromActions(actions);
+  const order=[producers.D, producers.F, producers.O].filter(Boolean);
+  const afterProduction=applyPlantCountsBlock(startState, counts, order);
+  if(!afterProduction) return null;
+  const paid=paymentSummaryOnGenericState(afterProduction, totalActionCost, counts);
+  if(!paid) return null;
+  const st=paid.state;
+  if(reserve && !canPayCostOnGenericState(st, reserve)) return null;
+  if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) return null;
+  const hours=stageDurationHours(counts, producers, pots, water);
+  return { counts:{...counts}, actions, producers, reserve, hours, endState:st, payText:paid.text };
+}
 function solveStageWithForcedProducers(startState, actions, producers, reserve, event, pots, water){
   const crops=[producers.D, producers.F, producers.O].filter(Boolean);
   const totalActionCost=totalCostFromActions(actions);
   if(!crops.length){
-    let st=payCostOnGenericState(cloneGenericState(startState), totalActionCost);
-    if(!st) return null;
+    const paid=paymentSummaryOnGenericState(cloneGenericState(startState), totalActionCost, counts);
+    if(!paid) return null;
+    const st=paid.state;
     if(reserve && !canPayCostOnGenericState(st, reserve)) return null;
     if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) return null;
-    return { counts:{}, actions, producers, reserve, hours:0, endState:st };
+    return { counts:{}, actions, producers, reserve, hours:0, endState:st, payText:paid.text };
   }
   const lb=lowerBoundCounts(startState, actions, producers, reserve, event);
-  const spans={};
-  for(const crop of crops) spans[crop] = cropCategory(crop)==='D' ? 80 : 24;
   let best=null;
-  const oList=producers.O ? Array.from({length:spans[producers.O]+1}, (_,i)=>lb[producers.O]+i) : [0];
-  const fList=producers.F ? Array.from({length:spans[producers.F]+1}, (_,i)=>lb[producers.F]+i) : [0];
-  const dList=producers.D ? Array.from({length:spans[producers.D]+1}, (_,i)=>lb[producers.D]+i) : [0];
+  const oBase=producers.O ? Number(lb[producers.O]||0) : 0;
+  const fBase=producers.F ? Number(lb[producers.F]||0) : 0;
+  const dBase=producers.D ? Number(lb[producers.D]||0) : 0;
+  const oSpan=producers.O ? Math.max(24, Math.min(160, Math.ceil(oBase*0.5)+16)) : 0;
+  const fSpan=producers.F ? Math.max(24, Math.min(160, Math.ceil(fBase*0.5)+16)) : 0;
+  const oList=producers.O ? Array.from({length:oSpan+1}, (_,i)=>oBase+i) : [0];
+  const fList=producers.F ? Array.from({length:fSpan+1}, (_,i)=>fBase+i) : [0];
   for(const oCount of oList){
     for(const fCount of fList){
-      for(const dCount of dList){
-        const counts={};
-        if(producers.D) counts[producers.D]=dCount;
-        if(producers.F) counts[producers.F]=fCount;
-        if(producers.O) counts[producers.O]=oCount;
-        const afterProduction=applyPlantCountsBlock(startState, counts, [producers.D, producers.F, producers.O].filter(Boolean));
-        if(!afterProduction) continue;
-        const st=payCostOnGenericState(afterProduction, totalActionCost);
-        if(!st) continue;
-        if(reserve && !canPayCostOnGenericState(st, reserve)) continue;
-        if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) continue;
-        const hours=stageDurationHours(counts, producers, pots, water);
-        const score=[hours, (counts[producers.D]||0)+(counts[producers.F]||0)+(counts[producers.O]||0)];
-        if(!best || score[0]<best.score[0]-1e-9 || (Math.abs(score[0]-best.score[0])<=1e-9 && score[1]<best.score[1])){
-          best={ score, counts, actions, producers, reserve, hours, endState:st };
-        }
-        break;
+      const baseCounts={};
+      if(producers.O) baseCounts[producers.O]=oCount;
+      if(producers.F) baseCounts[producers.F]=fCount;
+      if(!producers.D){
+        const res=evalStageCounts(startState, actions, producers, reserve, event, pots, water, baseCounts);
+        if(!res) continue;
+        const score=[res.hours, Object.values(res.counts).reduce((a,b)=>a+b,0)];
+        if(!best || score[0]<best.score[0]-1e-9 || (Math.abs(score[0]-best.score[0])<=1e-9 && score[1]<best.score[1])) best={...res, score};
+        continue;
       }
+      const maxExtra=Math.max(160, Math.min(1200, Math.ceil(dBase*1.2)+160));
+      let lo=dBase, hi=dBase;
+      let found=null;
+      while(hi<=dBase+maxExtra){
+        const counts={...baseCounts, [producers.D]:hi};
+        const res=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+        if(res){ found={count:hi, res}; break; }
+        hi = hi===0 ? 1 : (hi<8 ? hi+1 : hi*2);
+      }
+      if(!found) continue;
+      let left=lo, right=found.count, bestRes=found.res;
+      while(left<=right){
+        const mid=Math.floor((left+right)/2);
+        const counts={...baseCounts, [producers.D]:mid};
+        const res=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+        if(res){ bestRes=res; right=mid-1; } else left=mid+1;
+      }
+      const score=[bestRes.hours, Object.values(bestRes.counts).reduce((a,b)=>a+b,0)];
+      if(!best || score[0]<best.score[0]-1e-9 || (Math.abs(score[0]-best.score[0])<=1e-9 && score[1]<best.score[1])) best={...bestRes, score};
     }
   }
   return best;
@@ -630,7 +778,7 @@ function solveStage(startLevel, event, nextEvent, startState, pots, water){
   const reserve=nextStageBootstrapReserve(event.level, nextEvent, water);
   const totalActionCost=totalCostFromActions(actions);
   const bootRanges={};
-  for(const key of ['D','F','O']){
+  for(const key of CATEGORY_KEYS){
     const crop=boot[key];
     if(!crop){ bootRanges[key]=[0]; continue; }
     const span = key==='D' ? 12 : 8;
@@ -654,51 +802,60 @@ function solveStage(startLevel, event, nextEvent, startState, pots, water){
         const hours=bootHours + mainRes.hours;
         const score=[hours, Object.values(counts).reduce((a,b)=>a+b,0)];
         if(!best || score[0]<best.score[0]-1e-9 || (Math.abs(score[0]-best.score[0])<=1e-9 && score[1]<best.score[1])){
-          best={score, counts, actions, producers:{...mains, boot}, reserve, hours, endState:mainRes.endState};
+          best={score, counts, actions, producers:{...mains, boot}, reserve, hours, endState:mainRes.endState, payText:mainRes.payText};
         }
       }
     }
   }
   return best;
 }
-function stateSummaryText(state){
-  const t=tagTotalsFromGenericState(state);
-  return `菌菇 ${fmtNum(t.fungus)}，食物 ${fmtNum(t.food)}，观赏 ${fmtNum(t.orn)}，功能 ${fmtNum(t.func)}`;
+
+function stateSummaryText(state, counts=null){
+  const items=[];
+  const add=(label, count)=>{ if(Number(count||0)>0) items.push(`${label}*${fmtNum(count)}`); };
+  add(preferredCropName('D', counts), state.df);
+  add(labelForSingleBucket('sf'), state.sf);
+  add(labelForSingleBucket('sd'), state.sd);
+  add(preferredCropName('O', counts), state.o);
+  add(labelForSingleBucket('f'), state.f);
+  add(preferredCropName('OF', counts), state.of);
+  return items.join('，') || '无';
 }
 function actionCostText(actions){
   const total=totalCostFromActions(actions);
+  const paid=paymentSummaryOnGenericState({ df:0, sd:total.food||0, sf:total.fungus||0, o:total.orn||0, f:total.func||0, of:0 }, total, null);
+  if(paid && paid.text) return paid.text;
   const items=[];
-  for(const key of ['fungus','food','orn','func']) if(total[key]>0) items.push(`${KEY_TO_TAG[key]}×${fmtNum(total[key])}`);
+  for(const key of TAG_KEYS) if(total[key]>0) items.push(`${KEY_TO_TAG[key]}*${fmtNum(total[key])}`);
   return items.join('，') || '无';
 }
 function countsText(counts){
   return Object.entries(counts).filter(([,v])=>v>0).map(([k,v])=>`${fmtNum(v)}个${k}`).join('，') || '无';
 }
 function renderStageLog(stage){
-  return `<div class="line"><span class="stamp">[${fmtDuration(stage.timeStart)}-${fmtDuration(stage.timeEnd)}]</span><br><span class="act">${stage.title}</span><br>种植：${countsText(stage.counts)}<br>支付：${actionCostText(stage.actions)}<br>结束库存：${stateSummaryText(stage.endState)}</div>`;
+  return `<div class="line"><span class="stamp">[${fmtDuration(stage.timeStart)}-${fmtDuration(stage.timeEnd)}]</span><br>等级：lv.${stage.levelStart}<br>阶段：${stage.phaseText || stage.title || ''}<br>种植：${countsText(stage.counts)}<br>支付：${stage.payText || actionCostText(stage.actions)}<br>结束库存：${stateSummaryText(stage.endState, stage.counts)}</div>`;
 }
-function solvePlan(input){
-  const targetLevel=input.targetLevel==null ? input.startLevel : input.targetLevel;
-  if(targetLevel<input.startLevel) throw new Error('目标等级不能小于初始等级。');
-  const finalTarget=input.targetInv||{ fungus:0, food:0, orn:0, func:0 };
-  const desiredPots=[1,2,3,4];
-  const events=buildKeyEvents(input.startLevel, targetLevel, desiredPots, input.water, finalTarget);
+function solvePathToEvent(input, events, endIndex){
   let level=input.startLevel;
   let pots=input.startUnlockedPots.length;
   let state=genericStateFromInventory(input.startInv);
   let totalHours=0;
   const stages=[];
-  for(let i=0;i<events.length;i++){
+  for(let i=0;i<=endIndex;i++){
     const event=events[i];
     if(event.level<level) continue;
-    const stage=solveStage(level, event, events[i+1]||null, state, pots, input.water);
+    const nextEvent=i<endIndex ? events[i+1] : null;
+    const stage=solveStage(level, event, nextEvent, state, pots, input.water);
     if(!stage) throw new Error(`阶段求解失败：Lv.${level} → ${event.text}`);
     stages.push({
       title:`阶段：Lv.${level} → ${event.text}`,
+      levelStart:level,
+      phaseText:event.text,
       timeStart:totalHours,
       timeEnd:totalHours + stage.hours,
       counts:stage.counts,
       actions:stage.actions,
+      payText:stage.payText,
       endState:stage.endState,
     });
     totalHours += stage.hours;
@@ -706,14 +863,69 @@ function solvePlan(input){
     level=event.level;
     if(event.kind==='potUnlock') pots=Math.max(pots, event.pot);
   }
-  const finalMiss=targetDeficitsFromGenericState(state, finalTarget);
-  if(sumTargetDeficits(finalMiss)>0) throw new Error('未达到目标库存。');
-  return { totalHours, stages, endState:state };
+  return { totalHours, stages, endState:state, level, pots };
+}
+function solvePlan(input){
+  const targetLevel=input.targetLevel==null ? input.startLevel : input.targetLevel;
+  if(targetLevel<input.startLevel) throw new Error('目标等级不能小于初始等级。');
+  const finalTarget=input.targetInv||{ fungus:0, food:0, orn:0, func:0 };
+  const needFinalTarget=Object.values(finalTarget).some(v=>(v||0)>0);
+  const desiredPots=allPotNumbers();
+  const maxLevel=maxConfiguredLevel();
+  const events=buildPlanningEvents(input.startLevel, targetLevel, desiredPots, input.water, maxLevel);
+  const checkpointIndex=events.findIndex(e=>e.kind==='checkpoint' && e.level===Math.max(targetLevel, input.startLevel));
+  if(checkpointIndex<0) throw new Error('内部错误：未找到等级检查点。');
+  const candidateIndexes=[];
+  if(!needFinalTarget){
+    candidateIndexes.push(checkpointIndex);
+  }else{
+    for(let i=checkpointIndex;i<events.length;i++) candidateIndexes.push(i);
+  }
+  let best=null;
+  let lastErr=null;
+  for(const idx of candidateIndexes){
+    try{
+      const pathRes=solvePathToEvent(input, events, idx);
+      let totalHours=pathRes.totalHours;
+      let stages=[...pathRes.stages];
+      let endState=pathRes.endState;
+      if(needFinalTarget){
+        const invStage=solveStage(pathRes.level, { kind:'finalInventory', level:pathRes.level, target:finalTarget, text:`在${events[idx].text}后攒最终库存` }, null, pathRes.endState, pathRes.pots, input.water);
+        if(!invStage) continue;
+        stages.push({
+          title:`库存阶段：在${events[idx].text}后攒最终库存`,
+          levelStart:pathRes.level,
+          phaseText:`在${events[idx].text}后攒最终库存`,
+          timeStart:totalHours,
+          timeEnd:totalHours + invStage.hours,
+          counts:invStage.counts,
+          actions:invStage.actions,
+          payText:invStage.payText,
+          endState:invStage.endState,
+        });
+        totalHours += invStage.hours;
+        endState=invStage.endState;
+        const finalMiss=targetDeficitsFromGenericState(endState, finalTarget);
+        if(sumTargetDeficits(finalMiss)>0) continue;
+      }
+      const score=[totalHours, stages.reduce((s,st)=>s+Object.values(st.counts||{}).reduce((a,b)=>a+b,0),0), idx];
+      if(!best || score[0]<best.score[0]-1e-9 || (Math.abs(score[0]-best.score[0])<=1e-9 && score[1]<best.score[1])){
+        best={ score, totalHours, stages, endState, chosenEvent:events[idx] };
+      }
+    }catch(err){
+      lastErr=err;
+    }
+  }
+  if(!best){
+    if(lastErr) throw lastErr;
+    throw new Error('没有可行的阶段/库存组合方案。');
+  }
+  return { totalHours:best.totalHours, stages:best.stages, endState:best.endState, chosenEvent:best.chosenEvent };
 }
 
 function syncPotsByLevel(){
   const level=Number(document.getElementById('startLevel').value);
-  for(const pot of [1,2,3,4]){
+  for(const pot of allPotNumbers()){
     const el=document.getElementById(`pot${pot}`);
     if(pot===1){ el.checked=true; el.disabled=true; continue; }
     const req=POT_UNLOCKS[pot].level;
@@ -726,17 +938,26 @@ function syncPotsByLevel(){
       delete el.dataset.touched;
     }
   }
+  renderTargetLevelOptions(level);
+}
+function renderTargetLevelOptions(startLevel){
   const targetLevelEl=document.getElementById('targetLevel');
-  for(const opt of targetLevelEl.options){
-    if(opt.value==='none') continue;
-    opt.disabled=Number(opt.value)<level;
+  const prev=targetLevelEl.value || String(maxConfiguredLevel());
+  const options=['<option value="none">不限制</option>'];
+  for(let v=startLevel; v<=maxConfiguredLevel(); v++){
+    options.push(`<option value="${v}">${v}</option>`);
   }
-  if(targetLevelEl.value!=='none' && Number(targetLevelEl.value)<level) targetLevelEl.value=String(level);
-  document.getElementById('rateTable').innerHTML=renderCropTable(level, Number(document.getElementById('water').value||3));
+  targetLevelEl.innerHTML=options.join('');
+  if(prev==='none'){
+    targetLevelEl.value='none';
+  }else{
+    const prevNum=Number(prev);
+    targetLevelEl.value=String(prevNum>=startLevel ? prevNum : startLevel);
+  }
 }
 function readInputs(){
   const inv={};
-  for(const crop of ALL_CROP_ORDER){
+  for(const crop of cropNames()){
     const el=document.getElementById(`stock_${crop}`);
     if(el){
       const v=Number(el.value)||0;
@@ -754,30 +975,25 @@ function readInputs(){
       orn:Number(document.getElementById('target_orn').value)||0,
       func:Number(document.getElementById('target_func').value)||0,
     },
-    startUnlockedPots:[1,2,3,4].filter(i=>document.getElementById(`pot${i}`).checked),
+    startUnlockedPots:allPotNumbers().filter(i=>document.getElementById(`pot${i}`).checked),
   };
 }
 function initStockInputs(){
   const box=document.getElementById('stockBox');
-  box.innerHTML=ALL_CROP_ORDER.map(name=>`<div class="stock-card"><div class="name">${name}</div><input id="stock_${name}" type="number" min="0" step="1" value="0" /></div>`).join('');
+  box.innerHTML=cropNames().map(name=>`<div class="stock-card"><div class="name">${name}</div><input id="stock_${name}" type="number" min="0" step="1" value="0" /></div>`).join('');
   const targetBox=document.getElementById('targetBox');
-  targetBox.innerHTML=[
-    ['fungus','菌菇'],
-    ['food','食物'],
-    ['orn','观赏'],
-    ['func','功能'],
-  ].map(([key,label])=>`<div class="stock-card"><div class="name">${label}</div><input id="target_${key}" type="number" min="0" step="1" value="0" /></div>`).join('');
+  targetBox.innerHTML=TAG_KEYS.map(key=>`<div class="stock-card"><div class="name">${KEY_TO_TAG[key]}</div><input id="target_${key}" type="number" min="0" step="1" value="0" /></div>`).join('');
 }
 function init(){
   const potsBox=document.getElementById('potsBox');
-  potsBox.innerHTML=[1,2,3,4].map(i=>`<label><input type="checkbox" id="pot${i}"> ${i}号</label>`).join('');
+  potsBox.innerHTML=allPotNumbers().map(i=>`<label><input type="checkbox" id="pot${i}"> ${i}号</label>`).join('');
   document.getElementById('pot1').checked=true;
   document.getElementById('pot1').disabled=true;
-  for(const i of [2,3,4]) document.getElementById(`pot${i}`).addEventListener('change', function(){ this.dataset.touched='1'; });
+  for(const i of allPotNumbers().filter(p=>p!==1)) document.getElementById(`pot${i}`).addEventListener('change', function(){ this.dataset.touched='1'; });
   document.getElementById('water').innerHTML='<option value="0">0 次（100% 时长）</option><option value="1">1 次（80% 时长）</option><option value="2">2 次（60% 时长）</option><option value="3" selected>3 次（50% 时长）</option>';
-  const levelOpts=Array.from({length:22},(_,i)=>i+1).map(v=>`<option value="${v}" ${v===1?'selected':''}>${v}</option>`).join('');
+  const levelOpts=Array.from({length:maxConfiguredLevel()},(_,i)=>i+1).map(v=>`<option value="${v}" ${v===1?'selected':''}>${v}</option>`).join('');
   document.getElementById('startLevel').innerHTML=levelOpts;
-  document.getElementById('targetLevel').innerHTML='<option value="none">不限制</option>'+Array.from({length:22},(_,i)=>i+1).map(v=>`<option value="${v}" ${v===22?'selected':''}>${v}</option>`).join('');
+  document.getElementById('targetLevel').innerHTML='';
   document.getElementById('startLevel').addEventListener('change', syncPotsByLevel);
   document.getElementById('water').addEventListener('change', syncPotsByLevel);
   initStockInputs();
@@ -791,8 +1007,8 @@ function run(){
     const input=readInputs();
     const plan=solvePlan(input);
     resEl.textContent=`预计完成时长：${fmtDuration(plan.totalHours)}`;
-    logEl.innerHTML=plan.stages.map(renderStageLog).join('') || '<div class="small">没有需要生产的内容。</div>';
-    document.getElementById('rateTable').innerHTML=renderCropTable(input.startLevel, input.water);
+    const summary=plan.chosenEvent ? `<div class="line"><span class="act">库存起算阶段：${plan.chosenEvent.text}</span></div>` : '';
+    logEl.innerHTML=summary + (plan.stages.map(renderStageLog).join('') || '<div class="small">没有需要生产的内容。</div>');
   }catch(err){
     resEl.textContent='预计完成时长：计算失败';
     logEl.innerHTML=`<div class="warn">${String(err.message||err)}</div>`;
