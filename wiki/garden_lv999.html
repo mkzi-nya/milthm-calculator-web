@@ -1,0 +1,2247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>花园规划器</title>
+<style>
+  :root {
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d2230; --text:#e8ecf1; --muted:#aeb8c6;
+    --green:#30d158; --red:#ff5f57; --blue:#64b5ff; --border:#2a3242; --warn:#ffcc66;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:18px;
+    color:var(--text); background:var(--bg);
+    font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  .wrap { max-width:1120px; margin:0 auto; }
+  h1 { font-size:22px; line-height:1.2; margin:0 0 14px; letter-spacing:.02em; }
+  .panel {
+    background:var(--panel); border:1px solid var(--border); border-radius:16px;
+    padding:16px; margin-bottom:14px;
+  }
+  .row { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+  .row:last-child { margin-bottom:0; }
+  .field { grid-column:span 3; min-width:0; }
+  .field.wide { grid-column:span 6; }
+  .field.full { grid-column:1 / -1; }
+  label { display:block; margin:0 0 7px; color:var(--muted); font-size:13px; }
+  input, select, button {
+    width:100%; min-width:0; height:40px;
+    background:var(--panel2); color:var(--text); border:1px solid var(--border);
+    border-radius:10px; padding:8px 10px; font:inherit; outline:none;
+  }
+  input:focus, select:focus { border-color:var(--blue); }
+  button { cursor:pointer; background:#2457ff; border-color:#2457ff; font-weight:700; }
+  .check-group {
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
+  }
+  .check-group label {
+    height:40px; margin:0; padding:0 10px;
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    color:var(--text); background:var(--panel2); border:1px solid var(--border); border-radius:10px;
+    white-space:nowrap;
+  }
+  .check-group input { width:auto; height:auto; }
+  .stock-grid {
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;
+  }
+  .stock-card {
+    min-width:0; display:flex; flex-direction:column; gap:7px;
+    background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:9px 8px;
+  }
+  .stock-card .name {
+    width:100%; font-weight:700; font-size:13px; line-height:1.2;
+    min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:center;
+  }
+  .stock-card input { height:32px; padding:5px 6px; text-align:center; font-size:14px; }
+  .result { font-size:18px; font-weight:800; color:var(--blue); padding-top:2px; }
+  .warn { color:var(--warn); }
+  .log {
+    min-height:360px; white-space:pre-wrap; overflow:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .line { margin:0 0 12px; }
+  .plus { color:var(--green); font-weight:700; }
+  .minus { color:var(--red); font-weight:700; }
+  .stamp { color:var(--blue); font-weight:700; }
+  .act { color:#fff; font-weight:700; }
+  .small { color:var(--muted); font-size:12px; }
+  @media (max-width:900px){
+    .field,.field.wide{ grid-column:span 6; }
+  }
+  @media (max-width:560px){
+    body{ padding:10px; }
+    .panel{ padding:12px; border-radius:14px; }
+    .row{ gap:10px; }
+    .field,.field.wide,.field.full{ grid-column:1 / -1; }
+    .stock-grid,.check-group{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+    .stock-card{ padding:8px 6px; border-radius:11px; }
+    .stock-card .name{ font-size:12px; }
+    .stock-card input{ height:30px; padding:4px 4px; }
+    .check-group label{ height:36px; padding:0 4px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>花园规划器</h1>
+
+  <div class="panel">
+    <div class="row">
+      <div class="field wide">
+        <label>已解锁花盆</label>
+        <div class="check-group" id="potsBox"></div>
+      </div>
+      <div class="field">
+        <label>浇水次数</label>
+        <select id="water"></select>
+      </div>
+      <div class="field">
+        <label>初始等级</label>
+        <select id="startLevel"></select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field full">
+        <label>初始作物库存</label>
+        <div id="stockBox" class="stock-grid"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>目标等级</label><select id="targetLevel"></select></div>
+      <div class="field full">
+        <label>目标库存</label>
+        <div id="targetBox" class="stock-grid"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field"><button id="calcBtn">计算</button></div>
+      <div class="field wide"><label>预计完成时长</label><div id="result" class="result">预计完成时长：--h</div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div><strong>过程输出</strong></div>
+    <div id="log" class="log"></div>
+  </div>
+</div>
+
+
+<script>
+const TAGS = ['菌菇','食物','观赏','功能'];
+const KEY_TO_TAG = { fungus:'菌菇', food:'食物', orn:'观赏', func:'功能' };
+const TAG_TO_KEY = { '菌菇':'fungus', '食物':'food', '观赏':'orn', '功能':'func' };
+const WATER_MULT = { 0:1, 1:0.8, 2:0.6, 3:0.5 };
+const CROPS = {
+  '双孢蘑菇': { tags:['菌菇','食物'], yield:8, time:60, costs:[], unlock:1 },
+  '水蕨菜': { tags:['食物'], yield:45, time:360, costs:['菌菇*5'], unlock:3, disabled:true },
+  '勿忘草': { tags:['观赏'], yield:7, time:720, costs:[], unlock:4 },
+  '水晶兰': { tags:['观赏'], yield:20, time:1920, costs:['观赏*5'], unlock:6, disabled:true },
+  '蓝莓': { tags:['食物'], yield:300, time:5760, costs:['观赏*5'], unlock:8, disabled:true },
+  '草菇': { tags:['菌菇','食物'], yield:18, time:60, costs:['菌菇*5'], unlock:10 },
+  '卡宴辣椒': { tags:['功能'], yield:3, time:360, costs:['食物*10'], unlock:11 },
+  '铃兰': { tags:['观赏'], yield:10, time:720, costs:['功能*1'], unlock:13 },
+  '大柱霉草': { tags:['观赏'], yield:23, time:1920, costs:['功能*3'], unlock:15, disabled:true },
+  '草莓': { tags:['食物'], yield:400, time:5760, costs:['功能*3'], unlock:17, disabled:true },
+  '香菇': { tags:['菌菇','食物'], yield:45, time:60, costs:['食物*30'], unlock:19 },
+  '傅氏凤尾蕨': { tags:['观赏','功能'], yield:5, time:360, costs:['食物*25'], unlock:21 },
+  '毛头鬼伞': { tags:['菌菇','食物'], yield:5, time:60, costs:[], unlock:1, disabled:true },
+  '毛茛': { tags:['观赏','功能'], yield:1, time:60, costs:[], unlock:1, disabled:true },
+};
+const POT_UNLOCKS = {
+  2: { level: 2, cost: { fungus: 5 } },
+  3: { level: 10, cost: { food: 80, orn: 20 } },
+  4: { level: 15, cost: { func: 40 } },
+  5: { level: 35, cost: { food: 2500, orn: 180, func: 60 } },
+  6: { level: 70, cost: { food: 9000, fungus: 1200, orn: 520, func: 160 } },
+  7: { level: 140, cost: { food: 32000, fungus: 4200, orn: 1600, func: 480 } },
+  8: { level: 260, cost: { food: 95000, fungus: 12000, orn: 5200, func: 1400 } },
+  9: { level: 480, cost: { food: 260000, fungus: 36000, orn: 16000, func: 4200 } },
+  10: { level: 750, cost: { food: 680000, fungus: 90000, orn: 45000, func: 12000 } }
+};
+
+const LEVEL_COSTS = {
+  2: { food: 5 },
+  3: { food: 40 },
+  4: { food: 80 },
+  5: { food: 100 },
+  6: { food: 150 },
+  7: { orn: 5 },
+  8: { orn: 20 },
+  9: { food: 350 },
+  10: { orn: 35 },
+  11: { food: 300, orn: 10 },
+  12: { food: 400, orn: 10 },
+  13: { food: 500, orn: 20 },
+  14: { food: 600, orn: 20 },
+  15: { orn: 100 },
+  16: { food: 800 },
+  17: { food: 800 },
+  18: { orn: 80 },
+  19: { food: 800, orn: 30 },
+  20: { food: 1200 },
+  21: { orn: 120 },
+  22: { orn: 50, func: 10 },
+  23: { food: 1175 },
+  24: { food: 1275 },
+  25: { food: 1375 },
+  26: { food: 1475 },
+  27: { food: 1600 },
+  28: { food: 1700 },
+  29: { food: 1800 },
+  30: { food: 2450, orn: 205 },
+  31: { food: 2600 },
+  32: { food: 2750 },
+  33: { food: 2900, orn: 245 },
+  34: { food: 3050 },
+  35: { food: 3250 },
+  36: { food: 3400, orn: 285 },
+  37: { food: 3550 },
+  38: { food: 3750 },
+  39: { food: 3900, orn: 330 },
+  40: { food: 4100 },
+  41: { food: 4250 },
+  42: { food: 4450, orn: 375 },
+  43: { food: 4650 },
+  44: { food: 4850 },
+  45: { food: 5000, orn: 425 },
+  46: { food: 5200 },
+  47: { food: 5400 },
+  48: { food: 5600, orn: 475 },
+  49: { food: 5800 },
+  50: { food: 6000 },
+  51: { food: 6200, orn: 525 },
+  52: { food: 6450 },
+  53: { food: 6650 },
+  54: { food: 6850, orn: 580 },
+  55: { food: 7100 },
+  56: { food: 7300 },
+  57: { food: 7550, orn: 635 },
+  58: { food: 7750 },
+  59: { food: 8000 },
+  60: { food: 10000, orn: 950 },
+  61: { food: 10300, orn: 980 },
+  62: { food: 10500, orn: 1010 },
+  63: { food: 10800, orn: 1040 },
+  64: { food: 11100, orn: 1060 },
+  65: { food: 11400, orn: 1090 },
+  66: { food: 11700, orn: 1120 },
+  67: { food: 12000, orn: 1150 },
+  68: { food: 12300, orn: 1180 },
+  69: { food: 12600, orn: 1210 },
+  70: { food: 12900, orn: 1240 },
+  71: { food: 13300, orn: 1270 },
+  72: { food: 13600, orn: 1300 },
+  73: { food: 13900, orn: 1330 },
+  74: { food: 14200, orn: 1360 },
+  75: { food: 14600, orn: 1390 },
+  76: { food: 14900, orn: 1420 },
+  77: { food: 15200, orn: 1460 },
+  78: { food: 15500, orn: 1490 },
+  79: { food: 15900, orn: 1520 },
+  80: { food: 16200, orn: 1550 },
+  81: { food: 16600, orn: 1590 },
+  82: { food: 16900, orn: 1620 },
+  83: { food: 17300, orn: 1650 },
+  84: { food: 17600, orn: 1690 },
+  85: { food: 18000, orn: 1720 },
+  86: { food: 18300, orn: 1750 },
+  87: { food: 18700, orn: 1790 },
+  88: { food: 19100, orn: 1820 },
+  89: { food: 19400, orn: 1860 },
+  90: { food: 19800, orn: 1890 },
+  91: { food: 20200, orn: 1930 },
+  92: { food: 20500, orn: 1970 },
+  93: { food: 20900, orn: 2000 },
+  94: { food: 21300, orn: 2040 },
+  95: { food: 21700, orn: 2070 },
+  96: { food: 22100, orn: 2110 },
+  97: { food: 22500, orn: 2150 },
+  98: { food: 22900, orn: 2190 },
+  99: { food: 23300, orn: 2220 },
+  100: { food: 27750, orn: 2880, fungus: 1650 },
+  101: { food: 28250, orn: 2930 },
+  102: { food: 28750, orn: 2980 },
+  103: { food: 29250, orn: 3030 },
+  104: { food: 29750, orn: 3070, fungus: 1775 },
+  105: { food: 30250, orn: 3120 },
+  106: { food: 30750, orn: 3180 },
+  107: { food: 31250, orn: 3230 },
+  108: { food: 31750, orn: 3280, fungus: 1875 },
+  109: { food: 32250, orn: 3330 },
+  110: { food: 32750, orn: 3380 },
+  111: { food: 33250, orn: 3430 },
+  112: { food: 33750, orn: 3480, fungus: 2000 },
+  113: { food: 34250, orn: 3540 },
+  114: { food: 34750, orn: 3590 },
+  115: { food: 35250, orn: 3640 },
+  116: { food: 35750, orn: 3700, fungus: 2125 },
+  117: { food: 36250, orn: 3750 },
+  118: { food: 36750, orn: 3800 },
+  119: { food: 37250, orn: 3860 },
+  120: { food: 37750, orn: 3910, fungus: 2250 },
+  121: { food: 38250, orn: 3970 },
+  122: { food: 39000, orn: 4020 },
+  123: { food: 39500, orn: 4080 },
+  124: { food: 40000, orn: 4140, fungus: 2375 },
+  125: { food: 40500, orn: 4190 },
+  126: { food: 41000, orn: 4250 },
+  127: { food: 41500, orn: 4310 },
+  128: { food: 42250, orn: 4360, fungus: 2500 },
+  129: { food: 42750, orn: 4420 },
+  130: { food: 43250, orn: 4480 },
+  131: { food: 43750, orn: 4540 },
+  132: { food: 44500, orn: 4600, fungus: 2625 },
+  133: { food: 45000, orn: 4660 },
+  134: { food: 45500, orn: 4710 },
+  135: { food: 46000, orn: 4770 },
+  136: { food: 46750, orn: 4830, fungus: 2775 },
+  137: { food: 47250, orn: 4890 },
+  138: { food: 47750, orn: 4950 },
+  139: { food: 48500, orn: 5020 },
+  140: { food: 49000, orn: 5080, fungus: 2900 },
+  141: { food: 49500, orn: 5140 },
+  142: { food: 50250, orn: 5200 },
+  143: { food: 50750, orn: 5260 },
+  144: { food: 51500, orn: 5320, fungus: 3050 },
+  145: { food: 52000, orn: 5390 },
+  146: { food: 52500, orn: 5450 },
+  147: { food: 53250, orn: 5510 },
+  148: { food: 53750, orn: 5580, fungus: 3200 },
+  149: { food: 54500, orn: 5640 },
+  150: { food: 55000, orn: 5700 },
+  151: { food: 55750, orn: 5770 },
+  152: { food: 56250, orn: 5830, fungus: 3350 },
+  153: { food: 57000, orn: 5900 },
+  154: { food: 57500, orn: 5960 },
+  155: { food: 58250, orn: 6030 },
+  156: { food: 58750, orn: 6090, fungus: 3500 },
+  157: { food: 59500, orn: 6160 },
+  158: { food: 60000, orn: 6230 },
+  159: { food: 60750, orn: 6290 },
+  160: { food: 70500, orn: 8175, func: 1135 },
+  161: { food: 71500, orn: 8275 },
+  162: { food: 72000, orn: 8350, fungus: 5600 },
+  163: { food: 73000, orn: 8450 },
+  164: { food: 73500, orn: 8525 },
+  165: { food: 74500, orn: 8625, fungus: 5750 },
+  166: { food: 75000, orn: 8700 },
+  167: { food: 76000, orn: 8800 },
+  168: { food: 76500, orn: 8875, fungus: 5950 },
+  169: { food: 77500, orn: 8975 },
+  170: { food: 78000, orn: 9075, func: 1260 },
+  171: { food: 79000, orn: 9150, fungus: 6100 },
+  172: { food: 79500, orn: 9250 },
+  173: { food: 80500, orn: 9325 },
+  174: { food: 81500, orn: 9425, fungus: 6300 },
+  175: { food: 82000, orn: 9525 },
+  176: { food: 83000, orn: 9600 },
+  177: { food: 83500, orn: 9700, fungus: 6500 },
+  178: { food: 84500, orn: 9800 },
+  179: { food: 85500, orn: 9900 },
+  180: { food: 86000, orn: 9975, fungus: 6650, func: 1385 },
+  181: { food: 87000, orn: 10075 },
+  182: { food: 87500, orn: 10175 },
+  183: { food: 88500, orn: 10275, fungus: 6850 },
+  184: { food: 89500, orn: 10350 },
+  185: { food: 90000, orn: 10450 },
+  186: { food: 91000, orn: 10550, fungus: 7050 },
+  187: { food: 92000, orn: 10650 },
+  188: { food: 92500, orn: 10750 },
+  189: { food: 93500, orn: 10850, fungus: 7250 },
+  190: { food: 94500, orn: 10925, func: 1520 },
+  191: { food: 95000, orn: 11025 },
+  192: { food: 96000, orn: 11125, fungus: 7450 },
+  193: { food: 97000, orn: 11225 },
+  194: { food: 97500, orn: 11325 },
+  195: { food: 98500, orn: 11425, fungus: 7650 },
+  196: { food: 99500, orn: 11525 },
+  197: { food: 100000, orn: 11625 },
+  198: { food: 101000, orn: 11725, fungus: 7850 },
+  199: { food: 102000, orn: 11825 },
+  200: { food: 103000, orn: 11925, func: 1655 },
+  201: { food: 103500, orn: 12025, fungus: 8050 },
+  202: { food: 104500, orn: 12125 },
+  203: { food: 105500, orn: 12225 },
+  204: { food: 106500, orn: 12325, fungus: 8250 },
+  205: { food: 107000, orn: 12425 },
+  206: { food: 108000, orn: 12525 },
+  207: { food: 109000, orn: 12650, fungus: 8450 },
+  208: { food: 110000, orn: 12750 },
+  209: { food: 111000, orn: 12850 },
+  210: { food: 111500, orn: 12950, fungus: 8650, func: 1800 },
+  211: { food: 112500, orn: 13050 },
+  212: { food: 113500, orn: 13150 },
+  213: { food: 114500, orn: 13275, fungus: 8850 },
+  214: { food: 115500, orn: 13375 },
+  215: { food: 116000, orn: 13475 },
+  216: { food: 117000, orn: 13575, fungus: 9050 },
+  217: { food: 118000, orn: 13700 },
+  218: { food: 119000, orn: 13800 },
+  219: { food: 120000, orn: 13900, fungus: 9300 },
+  220: { food: 121000, orn: 14000, func: 1945 },
+  221: { food: 121500, orn: 14125 },
+  222: { food: 122500, orn: 14225, fungus: 9500 },
+  223: { food: 123500, orn: 14325 },
+  224: { food: 124500, orn: 14450 },
+  225: { food: 125500, orn: 14550, fungus: 9700 },
+  226: { food: 126500, orn: 14650 },
+  227: { food: 127500, orn: 14775 },
+  228: { food: 128500, orn: 14875, fungus: 9950 },
+  229: { food: 129000, orn: 15000 },
+  230: { food: 130000, orn: 15100, func: 2100 },
+  231: { food: 131000, orn: 15225, fungus: 10150 },
+  232: { food: 132000, orn: 15325 },
+  233: { food: 133000, orn: 15425 },
+  234: { food: 134000, orn: 15550, fungus: 10400 },
+  235: { food: 135000, orn: 15650 },
+  236: { food: 136000, orn: 15775 },
+  237: { food: 137000, orn: 15900, fungus: 10600 },
+  238: { food: 138000, orn: 16000 },
+  239: { food: 139000, orn: 16125 },
+  240: { food: 158000, fungus: 14500, orn: 19850, func: 3160 },
+  241: { food: 159000, fungus: 14600, orn: 20000 },
+  242: { food: 160000, fungus: 14700, orn: 20150 },
+  243: { food: 162000, fungus: 14800, orn: 20250 },
+  244: { food: 163000, fungus: 14900, orn: 20400 },
+  245: { food: 164000, fungus: 15000, orn: 20550, func: 3270 },
+  246: { food: 165000, fungus: 15100, orn: 20700 },
+  247: { food: 166000, fungus: 15200, orn: 20850 },
+  248: { food: 167000, fungus: 15300, orn: 21000 },
+  249: { food: 168000, fungus: 15400, orn: 21100 },
+  250: { food: 169000, fungus: 15500, orn: 21250, func: 3380 },
+  251: { food: 171000, fungus: 15600, orn: 21400 },
+  252: { food: 172000, fungus: 15700, orn: 21550 },
+  253: { food: 173000, fungus: 15800, orn: 21700 },
+  254: { food: 174000, fungus: 15900, orn: 21850 },
+  255: { food: 175000, fungus: 16000, orn: 22000, func: 3500 },
+  256: { food: 176000, fungus: 16100, orn: 22150 },
+  257: { food: 178000, fungus: 16200, orn: 22300 },
+  258: { food: 179000, fungus: 16300, orn: 22450 },
+  259: { food: 180000, fungus: 16500, orn: 22600 },
+  260: { food: 181000, fungus: 16600, orn: 22700, func: 3620 },
+  261: { food: 182000, fungus: 16700, orn: 22850 },
+  262: { food: 183000, fungus: 16800, orn: 23000 },
+  263: { food: 185000, fungus: 16900, orn: 23150 },
+  264: { food: 186000, fungus: 17000, orn: 23300 },
+  265: { food: 187000, fungus: 17100, orn: 23450, func: 3730 },
+  266: { food: 188000, fungus: 17200, orn: 23600 },
+  267: { food: 189000, fungus: 17300, orn: 23750 },
+  268: { food: 191000, fungus: 17400, orn: 23900 },
+  269: { food: 192000, fungus: 17500, orn: 24050 },
+  270: { food: 193000, fungus: 17600, orn: 24200, func: 3850 },
+  271: { food: 194000, fungus: 17800, orn: 24350 },
+  272: { food: 195000, fungus: 17900, orn: 24550 },
+  273: { food: 197000, fungus: 18000, orn: 24700 },
+  274: { food: 198000, fungus: 18100, orn: 24850 },
+  275: { food: 199000, fungus: 18200, orn: 25000, func: 3980 },
+  276: { food: 200000, fungus: 18300, orn: 25150 },
+  277: { food: 202000, fungus: 18400, orn: 25300 },
+  278: { food: 203000, fungus: 18500, orn: 25450 },
+  279: { food: 204000, fungus: 18700, orn: 25600 },
+  280: { food: 205000, fungus: 18800, orn: 25750, func: 4100 },
+  281: { food: 206000, fungus: 18900, orn: 25900 },
+  282: { food: 208000, fungus: 19000, orn: 26050 },
+  283: { food: 209000, fungus: 19100, orn: 26250 },
+  284: { food: 210000, fungus: 19200, orn: 26400 },
+  285: { food: 211000, fungus: 19300, orn: 26550, func: 4220 },
+  286: { food: 213000, fungus: 19500, orn: 26700 },
+  287: { food: 214000, fungus: 19600, orn: 26850 },
+  288: { food: 215000, fungus: 19700, orn: 27000 },
+  289: { food: 216000, fungus: 19800, orn: 27200 },
+  290: { food: 218000, fungus: 19900, orn: 27350, func: 4350 },
+  291: { food: 219000, fungus: 20000, orn: 27500 },
+  292: { food: 220000, fungus: 20100, orn: 27650 },
+  293: { food: 222000, fungus: 20300, orn: 27800 },
+  294: { food: 223000, fungus: 20400, orn: 28000 },
+  295: { food: 224000, fungus: 20500, orn: 28150, func: 4480 },
+  296: { food: 225000, fungus: 20600, orn: 28300 },
+  297: { food: 227000, fungus: 20700, orn: 28450 },
+  298: { food: 228000, fungus: 20900, orn: 28650 },
+  299: { food: 229000, fungus: 21000, orn: 28800 },
+  300: { food: 231000, fungus: 21100, orn: 28950, func: 4610 },
+  301: { food: 232000, fungus: 21200, orn: 29100 },
+  302: { food: 233000, fungus: 21300, orn: 29300 },
+  303: { food: 235000, fungus: 21400, orn: 29450 },
+  304: { food: 236000, fungus: 21600, orn: 29600 },
+  305: { food: 237000, fungus: 21700, orn: 29800, func: 4740 },
+  306: { food: 238000, fungus: 21800, orn: 29950 },
+  307: { food: 240000, fungus: 21900, orn: 30100 },
+  308: { food: 241000, fungus: 22000, orn: 30250 },
+  309: { food: 242000, fungus: 22200, orn: 30450 },
+  310: { food: 244000, fungus: 22300, orn: 30600, func: 4870 },
+  311: { food: 245000, fungus: 22400, orn: 30800 },
+  312: { food: 246000, fungus: 22500, orn: 30950 },
+  313: { food: 248000, fungus: 22700, orn: 31100 },
+  314: { food: 249000, fungus: 22800, orn: 31300 },
+  315: { food: 250000, fungus: 22900, orn: 31450, func: 5000 },
+  316: { food: 252000, fungus: 23000, orn: 31600 },
+  317: { food: 253000, fungus: 23200, orn: 31800 },
+  318: { food: 255000, fungus: 23300, orn: 31950 },
+  319: { food: 256000, fungus: 23400, orn: 32150 },
+  320: { food: 257000, fungus: 23500, orn: 32300, func: 5140 },
+  321: { food: 259000, fungus: 23600, orn: 32450 },
+  322: { food: 260000, fungus: 23800, orn: 32650 },
+  323: { food: 261000, fungus: 23900, orn: 32800 },
+  324: { food: 263000, fungus: 24000, orn: 33000 },
+  325: { food: 264000, fungus: 24100, orn: 33150, func: 5280 },
+  326: { food: 265000, fungus: 24300, orn: 33350 },
+  327: { food: 267000, fungus: 24400, orn: 33500 },
+  328: { food: 268000, fungus: 24500, orn: 33700 },
+  329: { food: 270000, fungus: 24700, orn: 33850 },
+  330: { food: 271000, fungus: 24800, orn: 34050, func: 5410 },
+  331: { food: 272000, fungus: 24900, orn: 34200 },
+  332: { food: 274000, fungus: 25000, orn: 34400 },
+  333: { food: 275000, fungus: 25200, orn: 34550 },
+  334: { food: 277000, fungus: 25300, orn: 34750 },
+  335: { food: 278000, fungus: 25400, orn: 34900, func: 5550 },
+  336: { food: 279000, fungus: 25500, orn: 35100 },
+  337: { food: 281000, fungus: 25700, orn: 35250 },
+  338: { food: 282000, fungus: 25800, orn: 35450 },
+  339: { food: 284000, fungus: 25900, orn: 35600 },
+  340: { food: 285000, fungus: 26100, orn: 35800, func: 5700 },
+  341: { food: 286000, fungus: 26200, orn: 36000 },
+  342: { food: 288000, fungus: 26300, orn: 36150 },
+  343: { food: 289000, fungus: 26500, orn: 36350 },
+  344: { food: 291000, fungus: 26600, orn: 36500 },
+  345: { food: 292000, fungus: 26700, orn: 36700, func: 5840 },
+  346: { food: 294000, fungus: 26800, orn: 36850 },
+  347: { food: 295000, fungus: 27000, orn: 37050 },
+  348: { food: 297000, fungus: 27100, orn: 37250 },
+  349: { food: 298000, fungus: 27200, orn: 37400 },
+  350: { food: 299000, fungus: 27400, orn: 37600, func: 5980 },
+  351: { food: 301000, fungus: 27500, orn: 37800 },
+  352: { food: 302000, fungus: 27600, orn: 37950 },
+  353: { food: 304000, fungus: 27800, orn: 38150 },
+  354: { food: 305000, fungus: 27900, orn: 38350 },
+  355: { food: 307000, fungus: 28000, orn: 38500, func: 6130 },
+  356: { food: 308000, fungus: 28200, orn: 38700 },
+  357: { food: 310000, fungus: 28300, orn: 38900 },
+  358: { food: 311000, fungus: 28400, orn: 39050 },
+  359: { food: 313000, fungus: 28600, orn: 39250 },
+  360: { food: 350000, fungus: 39500, orn: 50200, func: 8960 },
+  361: { food: 352500, fungus: 39750, orn: 50500 },
+  362: { food: 355000, fungus: 40000, orn: 50700 },
+  363: { food: 355000, fungus: 40000, orn: 50900 },
+  364: { food: 357500, fungus: 40250, orn: 51200, func: 9130 },
+  365: { food: 360000, fungus: 40500, orn: 51400 },
+  366: { food: 360000, fungus: 40750, orn: 51600 },
+  367: { food: 362500, fungus: 40750, orn: 51900 },
+  368: { food: 365000, fungus: 41000, orn: 52100, func: 9300 },
+  369: { food: 365000, fungus: 41250, orn: 52400 },
+  370: { food: 367500, fungus: 41500, orn: 52600 },
+  371: { food: 370000, fungus: 41500, orn: 52800 },
+  372: { food: 370000, fungus: 41750, orn: 53100, func: 9480 },
+  373: { food: 372500, fungus: 42000, orn: 53300 },
+  374: { food: 375000, fungus: 42250, orn: 53600 },
+  375: { food: 375000, fungus: 42250, orn: 53800 },
+  376: { food: 377500, fungus: 42500, orn: 54100, func: 9650 },
+  377: { food: 380000, fungus: 42750, orn: 54300 },
+  378: { food: 380000, fungus: 43000, orn: 54500 },
+  379: { food: 382500, fungus: 43250, orn: 54800 },
+  380: { food: 385000, fungus: 43250, orn: 55000, func: 9820 },
+  381: { food: 385000, fungus: 43500, orn: 55300 },
+  382: { food: 387500, fungus: 43750, orn: 55500 },
+  383: { food: 390000, fungus: 44000, orn: 55800 },
+  384: { food: 390000, fungus: 44000, orn: 56000, func: 10000 },
+  385: { food: 392500, fungus: 44250, orn: 56300 },
+  386: { food: 395000, fungus: 44500, orn: 56500 },
+  387: { food: 397500, fungus: 44750, orn: 56800 },
+  388: { food: 397500, fungus: 45000, orn: 57000, func: 10180 },
+  389: { food: 400000, fungus: 45000, orn: 57300 },
+  390: { food: 402500, fungus: 45250, orn: 57500 },
+  391: { food: 402500, fungus: 45500, orn: 57800 },
+  392: { food: 405000, fungus: 45750, orn: 58000, func: 10360 },
+  393: { food: 407500, fungus: 45750, orn: 58300 },
+  394: { food: 407500, fungus: 46000, orn: 58500 },
+  395: { food: 410000, fungus: 46250, orn: 58800 },
+  396: { food: 412500, fungus: 46500, orn: 59000, func: 10540 },
+  397: { food: 415000, fungus: 46750, orn: 59300 },
+  398: { food: 415000, fungus: 46750, orn: 59500 },
+  399: { food: 417500, fungus: 47000, orn: 59800 },
+  400: { food: 420000, fungus: 47250, orn: 60000, func: 10720 },
+  401: { food: 420000, fungus: 47500, orn: 60300 },
+  402: { food: 422500, fungus: 47750, orn: 60600 },
+  403: { food: 425000, fungus: 47750, orn: 60800 },
+  404: { food: 425000, fungus: 48000, orn: 61100, func: 10900 },
+  405: { food: 427500, fungus: 48250, orn: 61300 },
+  406: { food: 430000, fungus: 48500, orn: 61600 },
+  407: { food: 432500, fungus: 48750, orn: 61800 },
+  408: { food: 432500, fungus: 49000, orn: 62100, func: 11090 },
+  409: { food: 435000, fungus: 49000, orn: 62400 },
+  410: { food: 437500, fungus: 49250, orn: 62600 },
+  411: { food: 440000, fungus: 49500, orn: 62900 },
+  412: { food: 440000, fungus: 49750, orn: 63100, func: 11270 },
+  413: { food: 442500, fungus: 50000, orn: 63400 },
+  414: { food: 445000, fungus: 50000, orn: 63700 },
+  415: { food: 445000, fungus: 50250, orn: 63900 },
+  416: { food: 447500, fungus: 50500, orn: 64200, func: 11460 },
+  417: { food: 450000, fungus: 50750, orn: 64400 },
+  418: { food: 452500, fungus: 51000, orn: 64700 },
+  419: { food: 452500, fungus: 51250, orn: 65000 },
+  420: { food: 455000, fungus: 51250, orn: 65200, func: 11640 },
+  421: { food: 457500, fungus: 51500, orn: 65500 },
+  422: { food: 460000, fungus: 51750, orn: 65800 },
+  423: { food: 460000, fungus: 52000, orn: 66000 },
+  424: { food: 462500, fungus: 52250, orn: 66300, func: 11830 },
+  425: { food: 465000, fungus: 52500, orn: 66600 },
+  426: { food: 467500, fungus: 52500, orn: 66800 },
+  427: { food: 467500, fungus: 52750, orn: 67100 },
+  428: { food: 470000, fungus: 53000, orn: 67400, func: 12020 },
+  429: { food: 472500, fungus: 53250, orn: 67600 },
+  430: { food: 472500, fungus: 53500, orn: 67900 },
+  431: { food: 475000, fungus: 53750, orn: 68200 },
+  432: { food: 477500, fungus: 53750, orn: 68400, func: 12220 },
+  433: { food: 480000, fungus: 54000, orn: 68700 },
+  434: { food: 480000, fungus: 54250, orn: 69000 },
+  435: { food: 482500, fungus: 54500, orn: 69200 },
+  436: { food: 485000, fungus: 54750, orn: 69500, func: 12410 },
+  437: { food: 487500, fungus: 55000, orn: 69800 },
+  438: { food: 490000, fungus: 55250, orn: 70100 },
+  439: { food: 490000, fungus: 55250, orn: 70300 },
+  440: { food: 492500, fungus: 55500, orn: 70600, func: 12600 },
+  441: { food: 495000, fungus: 55750, orn: 70900 },
+  442: { food: 497500, fungus: 56000, orn: 71100 },
+  443: { food: 497500, fungus: 56250, orn: 71400 },
+  444: { food: 500000, fungus: 56500, orn: 71700, func: 12800 },
+  445: { food: 502500, fungus: 56750, orn: 72000 },
+  446: { food: 505000, fungus: 56750, orn: 72200 },
+  447: { food: 505000, fungus: 57000, orn: 72500 },
+  448: { food: 507500, fungus: 57250, orn: 72800, func: 12990 },
+  449: { food: 510000, fungus: 57500, orn: 73100 },
+  450: { food: 512500, fungus: 57750, orn: 73300 },
+  451: { food: 512500, fungus: 58000, orn: 73600 },
+  452: { food: 515000, fungus: 58250, orn: 73900, func: 13190 },
+  453: { food: 517500, fungus: 58250, orn: 74200 },
+  454: { food: 520000, fungus: 58500, orn: 74500 },
+  455: { food: 522500, fungus: 58750, orn: 74700 },
+  456: { food: 522500, fungus: 59000, orn: 75000, func: 13390 },
+  457: { food: 525000, fungus: 59250, orn: 75300 },
+  458: { food: 527500, fungus: 59500, orn: 75600 },
+  459: { food: 530000, fungus: 59750, orn: 75900 },
+  460: { food: 530000, fungus: 60000, orn: 76100, func: 13590 },
+  461: { food: 532500, fungus: 60250, orn: 76400 },
+  462: { food: 535000, fungus: 60250, orn: 76700 },
+  463: { food: 537500, fungus: 60500, orn: 77000 },
+  464: { food: 540000, fungus: 60750, orn: 77300, func: 13790 },
+  465: { food: 540000, fungus: 61000, orn: 77500 },
+  466: { food: 542500, fungus: 61250, orn: 77800 },
+  467: { food: 545000, fungus: 61500, orn: 78100 },
+  468: { food: 547500, fungus: 61750, orn: 78400, func: 14000 },
+  469: { food: 550000, fungus: 62000, orn: 78700 },
+  470: { food: 550000, fungus: 62250, orn: 79000 },
+  471: { food: 552500, fungus: 62250, orn: 79300 },
+  472: { food: 555000, fungus: 62500, orn: 79500, func: 14200 },
+  473: { food: 557500, fungus: 62750, orn: 79800 },
+  474: { food: 560000, fungus: 63000, orn: 80100 },
+  475: { food: 560000, fungus: 63250, orn: 80400 },
+  476: { food: 562500, fungus: 63500, orn: 80700, func: 14410 },
+  477: { food: 565000, fungus: 63750, orn: 81000 },
+  478: { food: 567500, fungus: 64000, orn: 81300 },
+  479: { food: 570000, fungus: 64250, orn: 81600 },
+  480: { food: 570000, fungus: 64500, orn: 81800, func: 14610 },
+  481: { food: 572500, fungus: 64500, orn: 82100 },
+  482: { food: 575000, fungus: 64750, orn: 82400 },
+  483: { food: 577500, fungus: 65000, orn: 82700 },
+  484: { food: 580000, fungus: 65250, orn: 83000, func: 14820 },
+  485: { food: 580000, fungus: 65500, orn: 83300 },
+  486: { food: 582500, fungus: 65750, orn: 83600 },
+  487: { food: 585000, fungus: 66000, orn: 83900 },
+  488: { food: 587500, fungus: 66250, orn: 84200, func: 15030 },
+  489: { food: 590000, fungus: 66500, orn: 84500 },
+  490: { food: 590000, fungus: 66750, orn: 84800 },
+  491: { food: 592500, fungus: 67000, orn: 85100 },
+  492: { food: 595000, fungus: 67250, orn: 85400, func: 15240 },
+  493: { food: 597500, fungus: 67500, orn: 85700 },
+  494: { food: 600000, fungus: 67500, orn: 85900 },
+  495: { food: 602500, fungus: 67750, orn: 86200 },
+  496: { food: 602500, fungus: 68000, orn: 86500, func: 15450 },
+  497: { food: 605000, fungus: 68250, orn: 86800 },
+  498: { food: 607500, fungus: 68500, orn: 87100 },
+  499: { food: 610000, fungus: 68750, orn: 87400 },
+  500: { food: 612500, fungus: 69000, orn: 87700, func: 15660 },
+  501: { food: 615000, fungus: 69250, orn: 88000 },
+  502: { food: 615000, fungus: 69500, orn: 88300 },
+  503: { food: 617500, fungus: 69750, orn: 88600 },
+  504: { food: 620000, fungus: 70000, orn: 88900, func: 15880 },
+  505: { food: 622500, fungus: 70250, orn: 89200 },
+  506: { food: 625000, fungus: 70500, orn: 89500 },
+  507: { food: 627500, fungus: 70750, orn: 89800 },
+  508: { food: 627500, fungus: 71000, orn: 90100, func: 16090 },
+  509: { food: 630000, fungus: 71250, orn: 90400 },
+  510: { food: 632500, fungus: 71500, orn: 90700 },
+  511: { food: 635000, fungus: 71500, orn: 91000 },
+  512: { food: 637500, fungus: 71750, orn: 91300, func: 16310 },
+  513: { food: 640000, fungus: 72000, orn: 91600 },
+  514: { food: 642500, fungus: 72250, orn: 91900 },
+  515: { food: 642500, fungus: 72500, orn: 92300 },
+  516: { food: 645000, fungus: 72750, orn: 92600, func: 16520 },
+  517: { food: 647500, fungus: 73000, orn: 92900 },
+  518: { food: 650000, fungus: 73250, orn: 93200 },
+  519: { food: 652500, fungus: 73500, orn: 93500 },
+  520: { food: 740000, fungus: 100500, orn: 120750, func: 21775 },
+  521: { food: 740000, fungus: 101000, orn: 121000, func: 21850 },
+  522: { food: 745000, fungus: 101500, orn: 121500, func: 21925 },
+  523: { food: 745000, fungus: 101500, orn: 121750, func: 21975 },
+  524: { food: 750000, fungus: 102000, orn: 122250, func: 22050 },
+  525: { food: 750000, fungus: 102500, orn: 122500, func: 22125 },
+  526: { food: 755000, fungus: 102500, orn: 123000, func: 22200 },
+  527: { food: 755000, fungus: 103000, orn: 123500, func: 22275 },
+  528: { food: 760000, fungus: 103500, orn: 123750, func: 22350 },
+  529: { food: 760000, fungus: 103500, orn: 124250, func: 22425 },
+  530: { food: 765000, fungus: 104000, orn: 124500, func: 22500 },
+  531: { food: 765000, fungus: 104500, orn: 125000, func: 22550 },
+  532: { food: 770000, fungus: 104500, orn: 125500, func: 22625 },
+  533: { food: 770000, fungus: 105000, orn: 125750, func: 22700 },
+  534: { food: 775000, fungus: 105500, orn: 126250, func: 22775 },
+  535: { food: 775000, fungus: 105500, orn: 126500, func: 22850 },
+  536: { food: 780000, fungus: 106000, orn: 127000, func: 22925 },
+  537: { food: 780000, fungus: 106500, orn: 127500, func: 23000 },
+  538: { food: 785000, fungus: 106500, orn: 127750, func: 23075 },
+  539: { food: 785000, fungus: 107000, orn: 128250, func: 23150 },
+  540: { food: 790000, fungus: 107500, orn: 128750, func: 23225 },
+  541: { food: 790000, fungus: 107500, orn: 129000, func: 23300 },
+  542: { food: 795000, fungus: 108000, orn: 129500, func: 23350 },
+  543: { food: 795000, fungus: 108500, orn: 129750, func: 23425 },
+  544: { food: 800000, fungus: 108500, orn: 130250, func: 23500 },
+  545: { food: 800000, fungus: 109000, orn: 130750, func: 23575 },
+  546: { food: 805000, fungus: 109500, orn: 131000, func: 23650 },
+  547: { food: 805000, fungus: 109500, orn: 131500, func: 23725 },
+  548: { food: 810000, fungus: 110000, orn: 132000, func: 23800 },
+  549: { food: 810000, fungus: 110500, orn: 132250, func: 23875 },
+  550: { food: 815000, fungus: 110500, orn: 132750, func: 23950 },
+  551: { food: 815000, fungus: 111000, orn: 133000, func: 24025 },
+  552: { food: 820000, fungus: 111500, orn: 133500, func: 24100 },
+  553: { food: 820000, fungus: 112000, orn: 134000, func: 24175 },
+  554: { food: 825000, fungus: 112000, orn: 134250, func: 24250 },
+  555: { food: 825000, fungus: 112500, orn: 134750, func: 24325 },
+  556: { food: 830000, fungus: 113000, orn: 135250, func: 24400 },
+  557: { food: 830000, fungus: 113000, orn: 135500, func: 24475 },
+  558: { food: 835000, fungus: 113500, orn: 136000, func: 24550 },
+  559: { food: 835000, fungus: 114000, orn: 136500, func: 24625 },
+  560: { food: 840000, fungus: 114000, orn: 136750, func: 24700 },
+  561: { food: 840000, fungus: 114500, orn: 137250, func: 24775 },
+  562: { food: 845000, fungus: 115000, orn: 137750, func: 24850 },
+  563: { food: 845000, fungus: 115000, orn: 138000, func: 24925 },
+  564: { food: 850000, fungus: 115500, orn: 138500, func: 25000 },
+  565: { food: 850000, fungus: 116000, orn: 139000, func: 25075 },
+  566: { food: 855000, fungus: 116500, orn: 139250, func: 25150 },
+  567: { food: 855000, fungus: 116500, orn: 139750, func: 25225 },
+  568: { food: 860000, fungus: 117000, orn: 140250, func: 25300 },
+  569: { food: 860000, fungus: 117500, orn: 140500, func: 25375 },
+  570: { food: 865000, fungus: 117500, orn: 141000, func: 25450 },
+  571: { food: 865000, fungus: 118000, orn: 141500, func: 25525 },
+  572: { food: 870000, fungus: 118500, orn: 141750, func: 25600 },
+  573: { food: 870000, fungus: 118500, orn: 142250, func: 25675 },
+  574: { food: 875000, fungus: 119000, orn: 142750, func: 25750 },
+  575: { food: 875000, fungus: 119500, orn: 143250, func: 25825 },
+  576: { food: 880000, fungus: 120000, orn: 143500, func: 25900 },
+  577: { food: 880000, fungus: 120000, orn: 144000, func: 25975 },
+  578: { food: 885000, fungus: 120500, orn: 144500, func: 26075 },
+  579: { food: 885000, fungus: 121000, orn: 144750, func: 26150 },
+  580: { food: 890000, fungus: 121000, orn: 145250, func: 26225 },
+  581: { food: 890000, fungus: 121500, orn: 145750, func: 26300 },
+  582: { food: 895000, fungus: 122000, orn: 146000, func: 26375 },
+  583: { food: 895000, fungus: 122500, orn: 146500, func: 26450 },
+  584: { food: 900000, fungus: 122500, orn: 147000, func: 26525 },
+  585: { food: 900000, fungus: 123000, orn: 147500, func: 26600 },
+  586: { food: 905000, fungus: 123500, orn: 147750, func: 26675 },
+  587: { food: 910000, fungus: 123500, orn: 148250, func: 26750 },
+  588: { food: 910000, fungus: 124000, orn: 148750, func: 26825 },
+  589: { food: 915000, fungus: 124500, orn: 149000, func: 26925 },
+  590: { food: 915000, fungus: 125000, orn: 149500, func: 27000 },
+  591: { food: 920000, fungus: 125000, orn: 150000, func: 27075 },
+  592: { food: 920000, fungus: 125500, orn: 150500, func: 27150 },
+  593: { food: 925000, fungus: 126000, orn: 150750, func: 27225 },
+  594: { food: 925000, fungus: 126000, orn: 151250, func: 27300 },
+  595: { food: 930000, fungus: 126500, orn: 151750, func: 27375 },
+  596: { food: 930000, fungus: 127000, orn: 152250, func: 27450 },
+  597: { food: 935000, fungus: 127500, orn: 152500, func: 27550 },
+  598: { food: 935000, fungus: 127500, orn: 153000, func: 27625 },
+  599: { food: 940000, fungus: 128000, orn: 153500, func: 27700 },
+  600: { food: 940000, fungus: 128500, orn: 154000, func: 27775 },
+  601: { food: 945000, fungus: 128500, orn: 154250, func: 27850 },
+  602: { food: 945000, fungus: 129000, orn: 154750, func: 27925 },
+  603: { food: 950000, fungus: 129500, orn: 155250, func: 28000 },
+  604: { food: 955000, fungus: 130000, orn: 155750, func: 28100 },
+  605: { food: 955000, fungus: 130000, orn: 156000, func: 28175 },
+  606: { food: 960000, fungus: 130500, orn: 156500, func: 28250 },
+  607: { food: 960000, fungus: 131000, orn: 157000, func: 28325 },
+  608: { food: 965000, fungus: 131500, orn: 157500, func: 28400 },
+  609: { food: 965000, fungus: 131500, orn: 157750, func: 28500 },
+  610: { food: 970000, fungus: 132000, orn: 158250, func: 28575 },
+  611: { food: 970000, fungus: 132500, orn: 158750, func: 28650 },
+  612: { food: 975000, fungus: 133000, orn: 159250, func: 28725 },
+  613: { food: 975000, fungus: 133000, orn: 159500, func: 28800 },
+  614: { food: 980000, fungus: 133500, orn: 160000, func: 28875 },
+  615: { food: 985000, fungus: 134000, orn: 160500, func: 28975 },
+  616: { food: 985000, fungus: 134500, orn: 161000, func: 29050 },
+  617: { food: 990000, fungus: 134500, orn: 161500, func: 29125 },
+  618: { food: 990000, fungus: 135000, orn: 161750, func: 29200 },
+  619: { food: 995000, fungus: 135500, orn: 162250, func: 29300 },
+  620: { food: 995000, fungus: 135500, orn: 162750, func: 29375 },
+  621: { food: 1000000, fungus: 136000, orn: 163250, func: 29450 },
+  622: { food: 1000000, fungus: 136500, orn: 163500, func: 29525 },
+  623: { food: 1005000, fungus: 137000, orn: 164000, func: 29600 },
+  624: { food: 1005000, fungus: 137000, orn: 164500, func: 29700 },
+  625: { food: 1010000, fungus: 137500, orn: 165000, func: 29775 },
+  626: { food: 1015000, fungus: 138000, orn: 165500, func: 29850 },
+  627: { food: 1015000, fungus: 138500, orn: 165750, func: 29925 },
+  628: { food: 1020000, fungus: 138500, orn: 166250, func: 30025 },
+  629: { food: 1020000, fungus: 139000, orn: 166750, func: 30100 },
+  630: { food: 1025000, fungus: 139500, orn: 167250, func: 30175 },
+  631: { food: 1025000, fungus: 140000, orn: 167750, func: 30275 },
+  632: { food: 1030000, fungus: 140000, orn: 168000, func: 30350 },
+  633: { food: 1030000, fungus: 140500, orn: 168500, func: 30425 },
+  634: { food: 1035000, fungus: 141000, orn: 169000, func: 30500 },
+  635: { food: 1035000, fungus: 141500, orn: 169500, func: 30600 },
+  636: { food: 1040000, fungus: 142000, orn: 170000, func: 30675 },
+  637: { food: 1045000, fungus: 142000, orn: 170500, func: 30750 },
+  638: { food: 1045000, fungus: 142500, orn: 170750, func: 30825 },
+  639: { food: 1050000, fungus: 143000, orn: 171250, func: 30925 },
+  640: { food: 1050000, fungus: 143500, orn: 171750, func: 31000 },
+  641: { food: 1055000, fungus: 143500, orn: 172250, func: 31075 },
+  642: { food: 1055000, fungus: 144000, orn: 172750, func: 31175 },
+  643: { food: 1060000, fungus: 144500, orn: 173250, func: 31250 },
+  644: { food: 1065000, fungus: 145000, orn: 173500, func: 31325 },
+  645: { food: 1065000, fungus: 145000, orn: 174000, func: 31425 },
+  646: { food: 1070000, fungus: 145500, orn: 174500, func: 31500 },
+  647: { food: 1070000, fungus: 146000, orn: 175000, func: 31575 },
+  648: { food: 1075000, fungus: 146500, orn: 175500, func: 31675 },
+  649: { food: 1075000, fungus: 146500, orn: 176000, func: 31750 },
+  650: { food: 1080000, fungus: 147000, orn: 176250, func: 31825 },
+  651: { food: 1080000, fungus: 147500, orn: 176750, func: 31925 },
+  652: { food: 1085000, fungus: 148000, orn: 177250, func: 32000 },
+  653: { food: 1090000, fungus: 148500, orn: 177750, func: 32075 },
+  654: { food: 1090000, fungus: 148500, orn: 178250, func: 32175 },
+  655: { food: 1095000, fungus: 149000, orn: 178750, func: 32250 },
+  656: { food: 1095000, fungus: 149500, orn: 179250, func: 32325 },
+  657: { food: 1100000, fungus: 150000, orn: 179500, func: 32425 },
+  658: { food: 1100000, fungus: 150000, orn: 180000, func: 32500 },
+  659: { food: 1105000, fungus: 150500, orn: 180500, func: 32575 },
+  660: { food: 1110000, fungus: 151000, orn: 181000, func: 32675 },
+  661: { food: 1110000, fungus: 151500, orn: 181500, func: 32750 },
+  662: { food: 1115000, fungus: 152000, orn: 182000, func: 32850 },
+  663: { food: 1115000, fungus: 152000, orn: 182500, func: 32925 },
+  664: { food: 1120000, fungus: 152500, orn: 182750, func: 33000 },
+  665: { food: 1120000, fungus: 153000, orn: 183250, func: 33100 },
+  666: { food: 1125000, fungus: 153500, orn: 183750, func: 33175 },
+  667: { food: 1130000, fungus: 153500, orn: 184250, func: 33250 },
+  668: { food: 1130000, fungus: 154000, orn: 184750, func: 33350 },
+  669: { food: 1135000, fungus: 154500, orn: 185250, func: 33425 },
+  670: { food: 1135000, fungus: 155000, orn: 185750, func: 33525 },
+  671: { food: 1140000, fungus: 155500, orn: 186250, func: 33600 },
+  672: { food: 1140000, fungus: 155500, orn: 186750, func: 33700 },
+  673: { food: 1145000, fungus: 156000, orn: 187000, func: 33775 },
+  674: { food: 1150000, fungus: 156500, orn: 187500, func: 33850 },
+  675: { food: 1150000, fungus: 157000, orn: 188000, func: 33950 },
+  676: { food: 1155000, fungus: 157500, orn: 188500, func: 34025 },
+  677: { food: 1155000, fungus: 157500, orn: 189000, func: 34125 },
+  678: { food: 1160000, fungus: 158000, orn: 189500, func: 34200 },
+  679: { food: 1165000, fungus: 158500, orn: 190000, func: 34300 },
+  680: { food: 1165000, fungus: 159000, orn: 190500, func: 34375 },
+  681: { food: 1170000, fungus: 159000, orn: 191000, func: 34450 },
+  682: { food: 1170000, fungus: 159500, orn: 191500, func: 34550 },
+  683: { food: 1175000, fungus: 160000, orn: 191750, func: 34625 },
+  684: { food: 1175000, fungus: 160500, orn: 192250, func: 34725 },
+  685: { food: 1180000, fungus: 161000, orn: 192750, func: 34800 },
+  686: { food: 1185000, fungus: 161000, orn: 193250, func: 34900 },
+  687: { food: 1185000, fungus: 161500, orn: 193750, func: 34975 },
+  688: { food: 1190000, fungus: 162000, orn: 194250, func: 35075 },
+  689: { food: 1190000, fungus: 162500, orn: 194750, func: 35150 },
+  690: { food: 1195000, fungus: 163000, orn: 195250, func: 35250 },
+  691: { food: 1200000, fungus: 163000, orn: 195750, func: 35325 },
+  692: { food: 1200000, fungus: 163500, orn: 196250, func: 35425 },
+  693: { food: 1205000, fungus: 164000, orn: 196750, func: 35500 },
+  694: { food: 1205000, fungus: 164500, orn: 197250, func: 35600 },
+  695: { food: 1210000, fungus: 165000, orn: 197750, func: 35675 },
+  696: { food: 1215000, fungus: 165500, orn: 198250, func: 35775 },
+  697: { food: 1215000, fungus: 165500, orn: 198500, func: 35850 },
+  698: { food: 1220000, fungus: 166000, orn: 199000, func: 35950 },
+  699: { food: 1220000, fungus: 166500, orn: 199500, func: 36025 },
+  700: { food: 1225000, fungus: 167000, orn: 200000, func: 36125 },
+  701: { food: 1225000, fungus: 167500, orn: 200500, func: 36200 },
+  702: { food: 1230000, fungus: 167500, orn: 201000, func: 36300 },
+  703: { food: 1235000, fungus: 168000, orn: 201500, func: 36375 },
+  704: { food: 1235000, fungus: 168500, orn: 202000, func: 36475 },
+  705: { food: 1240000, fungus: 169000, orn: 202500, func: 36550 },
+  706: { food: 1240000, fungus: 169500, orn: 203000, func: 36650 },
+  707: { food: 1245000, fungus: 169500, orn: 203500, func: 36725 },
+  708: { food: 1250000, fungus: 170000, orn: 204000, func: 36825 },
+  709: { food: 1250000, fungus: 170500, orn: 204500, func: 36900 },
+  710: { food: 1255000, fungus: 171000, orn: 205000, func: 37000 },
+  711: { food: 1255000, fungus: 171500, orn: 205500, func: 37100 },
+  712: { food: 1260000, fungus: 172000, orn: 206000, func: 37175 },
+  713: { food: 1265000, fungus: 172000, orn: 206500, func: 37275 },
+  714: { food: 1265000, fungus: 172500, orn: 207000, func: 37350 },
+  715: { food: 1270000, fungus: 173000, orn: 207500, func: 37450 },
+  716: { food: 1270000, fungus: 173500, orn: 208000, func: 37525 },
+  717: { food: 1275000, fungus: 174000, orn: 208500, func: 37625 },
+  718: { food: 1280000, fungus: 174000, orn: 209000, func: 37700 },
+  719: { food: 1280000, fungus: 174500, orn: 209500, func: 37800 },
+  720: { food: 1490000, fungus: 245000, orn: 280000, func: 52450 },
+  721: { food: 1490000, fungus: 246000, orn: 280500, func: 52600 },
+  722: { food: 1500000, fungus: 246000, orn: 281500, func: 52700 },
+  723: { food: 1500000, fungus: 247000, orn: 282000, func: 52850 },
+  724: { food: 1510000, fungus: 248000, orn: 282500, func: 52950 },
+  725: { food: 1510000, fungus: 248000, orn: 283500, func: 53100 },
+  726: { food: 1510000, fungus: 249000, orn: 284000, func: 53200 },
+  727: { food: 1520000, fungus: 249000, orn: 284500, func: 53350 },
+  728: { food: 1520000, fungus: 250000, orn: 285500, func: 53450 },
+  729: { food: 1520000, fungus: 250000, orn: 286000, func: 53600 },
+  730: { food: 1530000, fungus: 251000, orn: 286500, func: 53700 },
+  731: { food: 1530000, fungus: 252000, orn: 287500, func: 53850 },
+  732: { food: 1530000, fungus: 252000, orn: 288000, func: 53950 },
+  733: { food: 1540000, fungus: 253000, orn: 288500, func: 54100 },
+  734: { food: 1540000, fungus: 253000, orn: 289500, func: 54200 },
+  735: { food: 1540000, fungus: 254000, orn: 290000, func: 54350 },
+  736: { food: 1550000, fungus: 255000, orn: 290500, func: 54500 },
+  737: { food: 1550000, fungus: 255000, orn: 291500, func: 54600 },
+  738: { food: 1550000, fungus: 256000, orn: 292000, func: 54750 },
+  739: { food: 1560000, fungus: 256000, orn: 292500, func: 54850 },
+  740: { food: 1560000, fungus: 257000, orn: 293500, func: 55000 },
+  741: { food: 1570000, fungus: 258000, orn: 294000, func: 55100 },
+  742: { food: 1570000, fungus: 258000, orn: 294500, func: 55250 },
+  743: { food: 1570000, fungus: 259000, orn: 295500, func: 55350 },
+  744: { food: 1580000, fungus: 259000, orn: 296000, func: 55500 },
+  745: { food: 1580000, fungus: 260000, orn: 296500, func: 55600 },
+  746: { food: 1580000, fungus: 261000, orn: 297500, func: 55750 },
+  747: { food: 1590000, fungus: 261000, orn: 298000, func: 55850 },
+  748: { food: 1590000, fungus: 262000, orn: 299000, func: 56000 },
+  749: { food: 1590000, fungus: 262000, orn: 299500, func: 56150 },
+  750: { food: 1600000, fungus: 263000, orn: 300000, func: 56250 },
+  751: { food: 1600000, fungus: 264000, orn: 301000, func: 56400 },
+  752: { food: 1610000, fungus: 264000, orn: 301500, func: 56500 },
+  753: { food: 1610000, fungus: 265000, orn: 302000, func: 56650 },
+  754: { food: 1610000, fungus: 265000, orn: 303000, func: 56750 },
+  755: { food: 1620000, fungus: 266000, orn: 303500, func: 56900 },
+  756: { food: 1620000, fungus: 266000, orn: 304000, func: 57000 },
+  757: { food: 1620000, fungus: 267000, orn: 305000, func: 57150 },
+  758: { food: 1630000, fungus: 268000, orn: 305500, func: 57300 },
+  759: { food: 1630000, fungus: 268000, orn: 306500, func: 57400 },
+  760: { food: 1630000, fungus: 269000, orn: 307000, func: 57550 },
+  761: { food: 1640000, fungus: 270000, orn: 307500, func: 57650 },
+  762: { food: 1640000, fungus: 270000, orn: 308500, func: 57800 },
+  763: { food: 1650000, fungus: 271000, orn: 309000, func: 57950 },
+  764: { food: 1650000, fungus: 271000, orn: 310000, func: 58050 },
+  765: { food: 1650000, fungus: 272000, orn: 310500, func: 58200 },
+  766: { food: 1660000, fungus: 273000, orn: 311000, func: 58300 },
+  767: { food: 1660000, fungus: 273000, orn: 312000, func: 58450 },
+  768: { food: 1660000, fungus: 274000, orn: 312500, func: 58600 },
+  769: { food: 1670000, fungus: 274000, orn: 313000, func: 58700 },
+  770: { food: 1670000, fungus: 275000, orn: 314000, func: 58850 },
+  771: { food: 1680000, fungus: 276000, orn: 314500, func: 58950 },
+  772: { food: 1680000, fungus: 276000, orn: 315500, func: 59100 },
+  773: { food: 1680000, fungus: 277000, orn: 316000, func: 59250 },
+  774: { food: 1690000, fungus: 277000, orn: 316500, func: 59350 },
+  775: { food: 1690000, fungus: 278000, orn: 317500, func: 59500 },
+  776: { food: 1690000, fungus: 279000, orn: 318000, func: 59600 },
+  777: { food: 1700000, fungus: 279000, orn: 319000, func: 59750 },
+  778: { food: 1700000, fungus: 280000, orn: 319500, func: 59900 },
+  779: { food: 1700000, fungus: 280000, orn: 320000, func: 60000 },
+  780: { food: 1710000, fungus: 281000, orn: 321000, func: 60150 },
+  781: { food: 1710000, fungus: 282000, orn: 321500, func: 60300 },
+  782: { food: 1720000, fungus: 282000, orn: 322500, func: 60400 },
+  783: { food: 1720000, fungus: 283000, orn: 323000, func: 60550 },
+  784: { food: 1720000, fungus: 284000, orn: 323500, func: 60650 },
+  785: { food: 1730000, fungus: 284000, orn: 324500, func: 60800 },
+  786: { food: 1730000, fungus: 285000, orn: 325000, func: 60950 },
+  787: { food: 1730000, fungus: 285000, orn: 326000, func: 61050 },
+  788: { food: 1740000, fungus: 286000, orn: 326500, func: 61200 },
+  789: { food: 1740000, fungus: 287000, orn: 327000, func: 61350 },
+  790: { food: 1750000, fungus: 287000, orn: 328000, func: 61450 },
+  791: { food: 1750000, fungus: 288000, orn: 328500, func: 61600 },
+  792: { food: 1750000, fungus: 288000, orn: 329500, func: 61750 },
+  793: { food: 1760000, fungus: 289000, orn: 330000, func: 61850 },
+  794: { food: 1760000, fungus: 290000, orn: 331000, func: 62000 },
+  795: { food: 1760000, fungus: 290000, orn: 331500, func: 62150 },
+  796: { food: 1770000, fungus: 291000, orn: 332000, func: 62250 },
+  797: { food: 1770000, fungus: 292000, orn: 333000, func: 62400 },
+  798: { food: 1780000, fungus: 292000, orn: 333500, func: 62550 },
+  799: { food: 1780000, fungus: 293000, orn: 334500, func: 62650 },
+  800: { food: 1780000, fungus: 293000, orn: 335000, func: 62800 },
+  801: { food: 1790000, fungus: 294000, orn: 336000, func: 62950 },
+  802: { food: 1790000, fungus: 295000, orn: 336500, func: 63050 },
+  803: { food: 1790000, fungus: 295000, orn: 337000, func: 63200 },
+  804: { food: 1800000, fungus: 296000, orn: 338000, func: 63350 },
+  805: { food: 1800000, fungus: 297000, orn: 338500, func: 63450 },
+  806: { food: 1810000, fungus: 297000, orn: 339500, func: 63600 },
+  807: { food: 1810000, fungus: 298000, orn: 340000, func: 63750 },
+  808: { food: 1810000, fungus: 298000, orn: 341000, func: 63850 },
+  809: { food: 1820000, fungus: 299000, orn: 341500, func: 64000 },
+  810: { food: 1820000, fungus: 300000, orn: 342000, func: 64150 },
+  811: { food: 1830000, fungus: 300000, orn: 343000, func: 64300 },
+  812: { food: 1830000, fungus: 301000, orn: 343500, func: 64400 },
+  813: { food: 1830000, fungus: 302000, orn: 344500, func: 64550 },
+  814: { food: 1840000, fungus: 302000, orn: 345000, func: 64700 },
+  815: { food: 1840000, fungus: 303000, orn: 346000, func: 64800 },
+  816: { food: 1840000, fungus: 304000, orn: 346500, func: 64950 },
+  817: { food: 1850000, fungus: 304000, orn: 347500, func: 65100 },
+  818: { food: 1850000, fungus: 305000, orn: 348000, func: 65250 },
+  819: { food: 1860000, fungus: 305000, orn: 348500, func: 65350 },
+  820: { food: 1860000, fungus: 306000, orn: 349500, func: 65500 },
+  821: { food: 1860000, fungus: 307000, orn: 350000, func: 65650 },
+  822: { food: 1870000, fungus: 307000, orn: 351000, func: 65750 },
+  823: { food: 1870000, fungus: 308000, orn: 351500, func: 65900 },
+  824: { food: 1880000, fungus: 309000, orn: 352500, func: 66050 },
+  825: { food: 1880000, fungus: 309000, orn: 353000, func: 66200 },
+  826: { food: 1880000, fungus: 310000, orn: 354000, func: 66300 },
+  827: { food: 1890000, fungus: 311000, orn: 354500, func: 66450 },
+  828: { food: 1890000, fungus: 311000, orn: 355500, func: 66600 },
+  829: { food: 1890000, fungus: 312000, orn: 356000, func: 66750 },
+  830: { food: 1900000, fungus: 312000, orn: 356500, func: 66850 },
+  831: { food: 1900000, fungus: 313000, orn: 357500, func: 67000 },
+  832: { food: 1910000, fungus: 314000, orn: 358000, func: 67150 },
+  833: { food: 1910000, fungus: 314000, orn: 359000, func: 67300 },
+  834: { food: 1910000, fungus: 315000, orn: 359500, func: 67400 },
+  835: { food: 1920000, fungus: 316000, orn: 360500, func: 67550 },
+  836: { food: 1920000, fungus: 316000, orn: 361000, func: 67700 },
+  837: { food: 1930000, fungus: 317000, orn: 362000, func: 67850 },
+  838: { food: 1930000, fungus: 318000, orn: 362500, func: 67950 },
+  839: { food: 1930000, fungus: 318000, orn: 363500, func: 68100 },
+  840: { food: 1940000, fungus: 319000, orn: 364000, func: 68250 },
+  841: { food: 1940000, fungus: 320000, orn: 365000, func: 68400 },
+  842: { food: 1950000, fungus: 320000, orn: 365500, func: 68550 },
+  843: { food: 1950000, fungus: 321000, orn: 366500, func: 68650 },
+  844: { food: 1950000, fungus: 321000, orn: 367000, func: 68800 },
+  845: { food: 1960000, fungus: 322000, orn: 368000, func: 68950 },
+  846: { food: 1960000, fungus: 323000, orn: 368500, func: 69100 },
+  847: { food: 1970000, fungus: 323000, orn: 369500, func: 69200 },
+  848: { food: 1970000, fungus: 324000, orn: 370000, func: 69350 },
+  849: { food: 1970000, fungus: 325000, orn: 371000, func: 69500 },
+  850: { food: 1980000, fungus: 325000, orn: 371500, func: 69650 },
+  851: { food: 1980000, fungus: 326000, orn: 372500, func: 69800 },
+  852: { food: 1990000, fungus: 327000, orn: 373000, func: 69900 },
+  853: { food: 1990000, fungus: 327000, orn: 374000, func: 70050 },
+  854: { food: 1990000, fungus: 328000, orn: 374500, func: 70200 },
+  855: { food: 2000000, fungus: 329000, orn: 375500, func: 70350 },
+  856: { food: 2000000, fungus: 329000, orn: 376000, func: 70500 },
+  857: { food: 2010000, fungus: 330000, orn: 377000, func: 70600 },
+  858: { food: 2010000, fungus: 331000, orn: 377500, func: 70750 },
+  859: { food: 2010000, fungus: 331000, orn: 378500, func: 70900 },
+  860: { food: 2020000, fungus: 332000, orn: 379000, func: 71050 },
+  861: { food: 2020000, fungus: 333000, orn: 380000, func: 71200 },
+  862: { food: 2030000, fungus: 333000, orn: 380500, func: 71350 },
+  863: { food: 2030000, fungus: 334000, orn: 381500, func: 71450 },
+  864: { food: 2030000, fungus: 335000, orn: 382000, func: 71600 },
+  865: { food: 2040000, fungus: 335000, orn: 383000, func: 71750 },
+  866: { food: 2040000, fungus: 336000, orn: 383500, func: 71900 },
+  867: { food: 2050000, fungus: 337000, orn: 384500, func: 72050 },
+  868: { food: 2050000, fungus: 337000, orn: 385000, func: 72150 },
+  869: { food: 2050000, fungus: 338000, orn: 386000, func: 72300 },
+  870: { food: 2060000, fungus: 339000, orn: 386500, func: 72450 },
+  871: { food: 2060000, fungus: 339000, orn: 387500, func: 72600 },
+  872: { food: 2070000, fungus: 340000, orn: 388000, func: 72750 },
+  873: { food: 2070000, fungus: 341000, orn: 389000, func: 72900 },
+  874: { food: 2070000, fungus: 341000, orn: 389500, func: 73050 },
+  875: { food: 2080000, fungus: 342000, orn: 390500, func: 73150 },
+  876: { food: 2080000, fungus: 343000, orn: 391000, func: 73300 },
+  877: { food: 2090000, fungus: 343000, orn: 392000, func: 73450 },
+  878: { food: 2090000, fungus: 344000, orn: 392500, func: 73600 },
+  879: { food: 2090000, fungus: 345000, orn: 393500, func: 73750 },
+  880: { food: 2100000, fungus: 345000, orn: 394000, func: 73900 },
+  881: { food: 2100000, fungus: 346000, orn: 395000, func: 74050 },
+  882: { food: 2110000, fungus: 347000, orn: 395500, func: 74150 },
+  883: { food: 2110000, fungus: 347000, orn: 396500, func: 74300 },
+  884: { food: 2110000, fungus: 348000, orn: 397000, func: 74450 },
+  885: { food: 2120000, fungus: 349000, orn: 398000, func: 74600 },
+  886: { food: 2120000, fungus: 349000, orn: 399000, func: 74750 },
+  887: { food: 2130000, fungus: 350000, orn: 399500, func: 74900 },
+  888: { food: 2130000, fungus: 351000, orn: 400500, func: 75050 },
+  889: { food: 2130000, fungus: 351000, orn: 401000, func: 75200 },
+  890: { food: 2140000, fungus: 352000, orn: 402000, func: 75300 },
+  891: { food: 2140000, fungus: 353000, orn: 402500, func: 75450 },
+  892: { food: 2150000, fungus: 353000, orn: 403500, func: 75600 },
+  893: { food: 2150000, fungus: 354000, orn: 404000, func: 75750 },
+  894: { food: 2150000, fungus: 355000, orn: 405000, func: 75900 },
+  895: { food: 2160000, fungus: 355000, orn: 405500, func: 76050 },
+  896: { food: 2160000, fungus: 356000, orn: 406500, func: 76200 },
+  897: { food: 2170000, fungus: 357000, orn: 407500, func: 76350 },
+  898: { food: 2170000, fungus: 357000, orn: 408000, func: 76500 },
+  899: { food: 2180000, fungus: 358000, orn: 409000, func: 76650 },
+  900: { food: 2650000, fungus: 512500, orn: 580000, func: 110900 },
+  901: { food: 2650000, fungus: 515000, orn: 581000, func: 111100 },
+  902: { food: 2675000, fungus: 515000, orn: 583000, func: 111300 },
+  903: { food: 2675000, fungus: 515000, orn: 584000, func: 111500 },
+  904: { food: 2675000, fungus: 517500, orn: 585000, func: 111800 },
+  905: { food: 2675000, fungus: 517500, orn: 586000, func: 112000 },
+  906: { food: 2675000, fungus: 517500, orn: 587000, func: 112200 },
+  907: { food: 2700000, fungus: 520000, orn: 588000, func: 112400 },
+  908: { food: 2700000, fungus: 520000, orn: 589000, func: 112600 },
+  909: { food: 2700000, fungus: 522500, orn: 590000, func: 112800 },
+  910: { food: 2700000, fungus: 522500, orn: 591000, func: 113000 },
+  911: { food: 2700000, fungus: 522500, orn: 593000, func: 113200 },
+  912: { food: 2725000, fungus: 525000, orn: 594000, func: 113400 },
+  913: { food: 2725000, fungus: 525000, orn: 595000, func: 113700 },
+  914: { food: 2725000, fungus: 527500, orn: 596000, func: 113900 },
+  915: { food: 2725000, fungus: 527500, orn: 597000, func: 114100 },
+  916: { food: 2725000, fungus: 527500, orn: 598000, func: 114300 },
+  917: { food: 2750000, fungus: 530000, orn: 599000, func: 114500 },
+  918: { food: 2750000, fungus: 530000, orn: 600000, func: 114700 },
+  919: { food: 2750000, fungus: 532500, orn: 601000, func: 114900 },
+  920: { food: 2750000, fungus: 532500, orn: 603000, func: 115100 },
+  921: { food: 2750000, fungus: 532500, orn: 604000, func: 115400 },
+  922: { food: 2775000, fungus: 535000, orn: 605000, func: 115600 },
+  923: { food: 2775000, fungus: 535000, orn: 606000, func: 115800 },
+  924: { food: 2775000, fungus: 537500, orn: 607000, func: 116000 },
+  925: { food: 2775000, fungus: 537500, orn: 608000, func: 116200 },
+  926: { food: 2800000, fungus: 537500, orn: 609000, func: 116400 },
+  927: { food: 2800000, fungus: 540000, orn: 610000, func: 116600 },
+  928: { food: 2800000, fungus: 540000, orn: 612000, func: 116900 },
+  929: { food: 2800000, fungus: 542500, orn: 613000, func: 117100 },
+  930: { food: 2800000, fungus: 542500, orn: 614000, func: 117300 },
+  931: { food: 2825000, fungus: 542500, orn: 615000, func: 117500 },
+  932: { food: 2825000, fungus: 545000, orn: 616000, func: 117700 },
+  933: { food: 2825000, fungus: 545000, orn: 617000, func: 117900 },
+  934: { food: 2825000, fungus: 547500, orn: 618000, func: 118200 },
+  935: { food: 2825000, fungus: 547500, orn: 619000, func: 118400 },
+  936: { food: 2850000, fungus: 547500, orn: 621000, func: 118600 },
+  937: { food: 2850000, fungus: 550000, orn: 622000, func: 118800 },
+  938: { food: 2850000, fungus: 550000, orn: 623000, func: 119000 },
+  939: { food: 2850000, fungus: 552500, orn: 624000, func: 119200 },
+  940: { food: 2850000, fungus: 552500, orn: 625000, func: 119500 },
+  941: { food: 2875000, fungus: 552500, orn: 626000, func: 119700 },
+  942: { food: 2875000, fungus: 555000, orn: 627000, func: 119900 },
+  943: { food: 2875000, fungus: 555000, orn: 628000, func: 120100 },
+  944: { food: 2875000, fungus: 557500, orn: 630000, func: 120300 },
+  945: { food: 2875000, fungus: 557500, orn: 631000, func: 120500 },
+  946: { food: 2900000, fungus: 557500, orn: 632000, func: 120800 },
+  947: { food: 2900000, fungus: 560000, orn: 633000, func: 121000 },
+  948: { food: 2900000, fungus: 560000, orn: 634000, func: 121200 },
+  949: { food: 2900000, fungus: 562500, orn: 635000, func: 121400 },
+  950: { food: 2900000, fungus: 562500, orn: 636000, func: 121600 },
+  951: { food: 2925000, fungus: 562500, orn: 638000, func: 121800 },
+  952: { food: 2925000, fungus: 565000, orn: 639000, func: 122100 },
+  953: { food: 2925000, fungus: 565000, orn: 640000, func: 122300 },
+  954: { food: 2925000, fungus: 567500, orn: 641000, func: 122500 },
+  955: { food: 2950000, fungus: 567500, orn: 642000, func: 122700 },
+  956: { food: 2950000, fungus: 567500, orn: 643000, func: 122900 },
+  957: { food: 2950000, fungus: 570000, orn: 644000, func: 123200 },
+  958: { food: 2950000, fungus: 570000, orn: 646000, func: 123400 },
+  959: { food: 2950000, fungus: 572500, orn: 647000, func: 123600 },
+  960: { food: 2975000, fungus: 572500, orn: 648000, func: 123800 },
+  961: { food: 2975000, fungus: 572500, orn: 649000, func: 124000 },
+  962: { food: 2975000, fungus: 575000, orn: 650000, func: 124300 },
+  963: { food: 2975000, fungus: 575000, orn: 651000, func: 124500 },
+  964: { food: 2975000, fungus: 577500, orn: 653000, func: 124700 },
+  965: { food: 3000000, fungus: 577500, orn: 654000, func: 124900 },
+  966: { food: 3000000, fungus: 577500, orn: 655000, func: 125100 },
+  967: { food: 3000000, fungus: 580000, orn: 656000, func: 125400 },
+  968: { food: 3000000, fungus: 580000, orn: 657000, func: 125600 },
+  969: { food: 3000000, fungus: 582500, orn: 658000, func: 125800 },
+  970: { food: 3025000, fungus: 582500, orn: 659000, func: 126000 },
+  971: { food: 3025000, fungus: 582500, orn: 661000, func: 126300 },
+  972: { food: 3025000, fungus: 585000, orn: 662000, func: 126500 },
+  973: { food: 3025000, fungus: 585000, orn: 663000, func: 126700 },
+  974: { food: 3050000, fungus: 587500, orn: 664000, func: 126900 },
+  975: { food: 3050000, fungus: 587500, orn: 665000, func: 127100 },
+  976: { food: 3050000, fungus: 590000, orn: 666000, func: 127400 },
+  977: { food: 3050000, fungus: 590000, orn: 668000, func: 127600 },
+  978: { food: 3050000, fungus: 590000, orn: 669000, func: 127800 },
+  979: { food: 3075000, fungus: 592500, orn: 670000, func: 128000 },
+  980: { food: 3075000, fungus: 592500, orn: 671000, func: 128300 },
+  981: { food: 3075000, fungus: 595000, orn: 672000, func: 128500 },
+  982: { food: 3075000, fungus: 595000, orn: 673000, func: 128700 },
+  983: { food: 3075000, fungus: 595000, orn: 675000, func: 128900 },
+  984: { food: 3100000, fungus: 597500, orn: 676000, func: 129200 },
+  985: { food: 3100000, fungus: 597500, orn: 677000, func: 129400 },
+  986: { food: 3100000, fungus: 600000, orn: 678000, func: 129600 },
+  987: { food: 3100000, fungus: 600000, orn: 679000, func: 129800 },
+  988: { food: 3125000, fungus: 602500, orn: 681000, func: 130100 },
+  989: { food: 3125000, fungus: 602500, orn: 682000, func: 130300 },
+  990: { food: 3125000, fungus: 602500, orn: 683000, func: 130500 },
+  991: { food: 3125000, fungus: 605000, orn: 684000, func: 130700 },
+  992: { food: 3125000, fungus: 605000, orn: 685000, func: 131000 },
+  993: { food: 3150000, fungus: 607500, orn: 686000, func: 131200 },
+  994: { food: 3150000, fungus: 607500, orn: 688000, func: 131400 },
+  995: { food: 3150000, fungus: 607500, orn: 689000, func: 131600 },
+  996: { food: 3150000, fungus: 610000, orn: 690000, func: 131900 },
+  997: { food: 3150000, fungus: 610000, orn: 691000, func: 132100 },
+  998: { food: 3175000, fungus: 612500, orn: 692000, func: 132300 },
+  999: { food: 3175000, fungus: 612500, orn: 693000, func: 132500 }
+};
+const RATE_CACHE = new Map();
+const TAG_RARITY = { food:0, fungus:1, orn:2, func:3 };
+const TAG_KEYS = Object.keys(KEY_TO_TAG);
+const CATEGORY_KEYS = ['D','F','O'];
+
+function cropNames(){ return Object.keys(CROPS); }
+function enabledCropNames(){ return cropNames().filter(name=>!CROPS[name].disabled); }
+function allPotNumbers(){ return Array.from(new Set([1, ...Object.keys(POT_UNLOCKS).map(Number)])).sort((a,b)=>a-b); }
+function maxConfiguredLevel(){
+  return Math.max(1, ...Object.keys(LEVEL_COSTS).map(Number), ...Object.values(CROPS).map(c=>Number(c.unlock||1)), ...Object.values(POT_UNLOCKS).map(p=>Number(p.level||1)));
+}
+function emptyCost(){ return Object.fromEntries(TAG_KEYS.map(k=>[k,0])); }
+function scaleCost(cost, n){ const out=emptyCost(); for(const key of TAG_KEYS) out[key]=Number((cost&&cost[key])||0)*Number(n||0); return out; }
+function addCostInto(dst, src, mult=1){ for(const key of TAG_KEYS) dst[key]=Number(dst[key]||0)+Number((src&&src[key])||0)*mult; return dst; }
+
+
+function fmtNum(v){
+  const n=Math.round(v*100)/100;
+  return Math.abs(n-Math.round(n))<1e-9 ? String(Math.round(n)) : n.toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');
+}
+function fmtHourValue(hours){
+  const h=Math.max(0, hours);
+  return h.toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');
+}
+function fmtDuration(hours){ return `${fmtHourValue(hours)}h`; }
+function cropTimeHours(name, water){ return (CROPS[name].time * WATER_MULT[water]) / 60; }
+function getItemDef(name){ return CROPS[name] || null; }
+function getItemTags(name){ const def=getItemDef(name); return def ? def.tags : []; }
+function parseCropCosts(costs){
+  const req = emptyCost();
+  for(const s of costs || []){
+    const [tag,amount]=s.split('*');
+    req[TAG_TO_KEY[tag]] += Number(amount||0);
+  }
+  return req;
+}
+function availableCrops(level){ return enabledCropNames().filter(name=>Number(CROPS[name].unlock||1)<=level); }
+function primaryKeyForCrop(name){
+  const tags=getItemTags(name).map(tag=>TAG_TO_KEY[tag]);
+  if(!tags.length) return null;
+  tags.sort((a,b)=>TAG_RARITY[b]-TAG_RARITY[a]);
+  return tags[0];
+}
+function cropCategory(name){
+  const keys=getItemTags(name).map(tag=>TAG_TO_KEY[tag]).filter(Boolean);
+  if(!keys.length) return null;
+  if(keys.includes('func') && keys.includes('orn')) return 'OF';
+  if(keys.includes('func')) return 'F';
+  if(keys.includes('orn')) return 'O';
+  if(keys.includes('fungus') || keys.includes('food')) return 'D';
+  return null;
+}
+function producerCategory(name){
+  const primary=primaryKeyForCrop(name);
+  if(primary==='func') return 'F';
+  if(primary==='orn') return 'O';
+  if(primary==='fungus' || primary==='food') return 'D';
+  return cropCategory(name);
+}
+function cropProfitRateWithCategoryRates(name, categoryRates, water){
+  const c=CROPS[name];
+  let totalHours=cropTimeHours(name, water);
+  for(const s of c.costs || []){
+    const [tag,amount]=s.split('*');
+    const rate=categoryRates[tag]||0;
+    if(rate<=1e-12) return null;
+    totalHours += Number(amount||0)/rate;
+  }
+  return c.yield/Math.max(totalHours, 1e-12);
+}
+function solveBestCategoryRates(level, water){
+  const key=`${level}|${water}`;
+  if(RATE_CACHE.has(key)) return RATE_CACHE.get(key);
+  const crops=availableCrops(level);
+  const categoryRates={};
+  for(const tag of TAGS){
+    let best=0;
+    for(const name of crops){
+      if(!CROPS[name].tags.includes(tag)) continue;
+      best=Math.max(best, CROPS[name].yield/Math.max(cropTimeHours(name, water), 1e-12));
+    }
+    categoryRates[tag]=best;
+  }
+  for(let iter=0; iter<999; iter++){
+    let changed=0;
+    const cropRates={};
+    for(const name of crops) cropRates[name]=cropProfitRateWithCategoryRates(name, categoryRates, water);
+    const nextRates={};
+    for(const tag of TAGS){
+      let best=0;
+      for(const name of crops){
+        if(!CROPS[name].tags.includes(tag)) continue;
+        best=Math.max(best, cropRates[name]||0);
+      }
+      nextRates[tag]=best;
+      changed=Math.max(changed, Math.abs((nextRates[tag]||0)-(categoryRates[tag]||0)));
+    }
+    Object.assign(categoryRates, nextRates);
+    if(changed<1e-12) break;
+  }
+  const cropRates={};
+  for(const name of crops) cropRates[name]=cropProfitRateWithCategoryRates(name, categoryRates, water) || 0;
+  const result={ categoryRates:{...categoryRates}, cropRates };
+  RATE_CACHE.set(key, result);
+  return result;
+}
+function cropBestRate(level, water, name){ return solveBestCategoryRates(level, water).cropRates[name] || 0; }
+function renderCropTable(level, water){
+  const rateInfo=solveBestCategoryRates(level, water);
+  const rows=availableCrops(level).map(name=>{
+    const c=CROPS[name];
+    return `<tr><td>${name}</td><td>${c.tags.join('/')}</td><td>${fmtNum(c.yield)}</td><td>${fmtDuration(cropTimeHours(name,water))}</td><td>${c.costs.length?c.costs.join('，'):'无'}</td><td>${fmtNum(rateInfo.cropRates[name]||0)}/h</td></tr>`;
+  }).join('');
+  return `<div class="small">当前阶段类别最高净收益：菌菇 ${fmtNum(rateInfo.categoryRates['菌菇']||0)}/h，食物 ${fmtNum(rateInfo.categoryRates['食物']||0)}/h，观赏 ${fmtNum(rateInfo.categoryRates['观赏']||0)}/h，功能 ${fmtNum(rateInfo.categoryRates['功能']||0)}/h</div><table><thead><tr><th>作物</th><th>tag</th><th>单次产量</th><th>单次时长</th><th>种植消耗</th><th>净收益</th></tr></thead><tbody>${rows || '<tr><td colspan="6">当前等级无可用作物</td></tr>'}</tbody></table>`;
+}
+
+function cloneGenericState(s){
+  const out={ df:s.df||0, sd:s.sd||0, sf:s.sf||0, o:s.o||0, f:s.f||0, of:s.of||0 };
+  out._labels={ ...(s&&s._labels ? s._labels : {}) };
+  return out;
+}
+function tagTotalsFromGenericState(s){
+  return {
+    fungus:(s.sf||0)+(s.df||0),
+    food:(s.sd||0)+(s.df||0),
+    orn:(s.o||0)+(s.of||0),
+    func:(s.f||0)+(s.of||0),
+  };
+}
+function genericStateFromInventory(inv){
+  const state={ df:0, sd:0, sf:0, o:0, f:0, of:0, _labels:{} };
+  for(const [name,countRaw] of Object.entries(inv||{})){
+    const count=Number(countRaw||0);
+    if(!count) continue;
+    const cat=cropCategory(name);
+    if(cat==='D'){ state.df += count; state._labels.df=name; }
+    else if(cat==='O'){ state.o += count; state._labels.o=name; }
+    else if(cat==='F'){ state.f += count; state._labels.f=name; }
+    else if(cat==='OF'){ state.of += count; state._labels.of=name; }
+    else {
+      const tags=getItemTags(name);
+      if(tags.length===1){
+        if(tags[0]==='食物') state.sd += count;
+        else if(tags[0]==='菌菇') state.sf += count;
+        else if(tags[0]==='观赏') state.o += count;
+        else if(tags[0]==='功能') state.f += count;
+      }
+    }
+  }
+  return state;
+}
+function targetProgressFromGenericState(state, target){
+  const tgt=target||{};
+  const progress={ fungus:0, food:0, orn:0, func:0 };
+  progress.food += Number(state.sd||0);
+  progress.fungus += Number(state.sf||0);
+  progress.orn += Number(state.o||0);
+  progress.func += Number(state.f||0);
+  const ofCount=Number(state.of||0);
+  const useFunc=Math.min(ofCount, Math.max(0, Number(tgt.func||0)-progress.func));
+  progress.func += useFunc;
+  progress.orn += ofCount - useFunc;
+  const dCount=Number(state.df||0);
+  const useFungus=Math.min(dCount, Math.max(0, Number(tgt.fungus||0)-progress.fungus));
+  progress.fungus += useFungus;
+  progress.food += dCount - useFungus;
+  return progress;
+}
+function targetExcessFromGenericState(state, target){
+  const p=targetProgressFromGenericState(state, target||{});
+  let excess=0;
+  for(const key of TAG_KEYS){
+    const need=Number((target&&target[key])||0);
+    if(need>0) excess += Math.max(0, Number(p[key]||0)-need);
+  }
+  return excess;
+}
+function targetDeficitsFromGenericState(state, target){
+  const p=targetProgressFromGenericState(state, target||{});
+  return {
+    fungus:Math.max(0, Number((target&&target.fungus)||0)-p.fungus),
+    food:Math.max(0, Number((target&&target.food)||0)-p.food),
+    orn:Math.max(0, Number((target&&target.orn)||0)-p.orn),
+    func:Math.max(0, Number((target&&target.func)||0)-p.func),
+  };
+}
+function sumTargetDeficits(miss){
+  return Number(miss.fungus||0)+Number(miss.food||0)+Number(miss.orn||0)+Number(miss.func||0);
+}
+function solveSharedPairPayment(onlyA, onlyB, shared, needA, needB){
+  const a=Math.max(0, Number(needA||0));
+  const b=Math.max(0, Number(needB||0));
+  onlyA=Number(onlyA||0); onlyB=Number(onlyB||0); shared=Number(shared||0);
+  if(a<=0 && b<=0) return { onlyA, onlyB, shared };
+  // shared 是一份多 tag 作物库存。消耗 1 个 shared 可以同时满足 A/B 两个 tag，
+  // 也可以只用于其中一个 tag；因此上限应是 max(a,b)，不能错误地限制成 min(a,b)。
+  const minShared=Math.max(0, a-onlyA, b-onlyB);
+  const maxShared=Math.min(shared, Math.max(a,b));
+  if(minShared>maxShared) return null;
+  const useShared=minShared;
+  const useA=Math.max(0, a-useShared);
+  const useB=Math.max(0, b-useShared);
+  if(useA>onlyA || useB>onlyB) return null;
+  return { onlyA:onlyA-useA, onlyB:onlyB-useB, shared:shared-useShared };
+}
+function payCostOnGenericState(state, cost){
+  const st=cloneGenericState(state);
+  const dfPaid=solveSharedPairPayment(st.sd, st.sf, st.df, Number(cost.food||0), Number(cost.fungus||0));
+  if(!dfPaid) return null;
+  st.sd=dfPaid.onlyA;
+  st.sf=dfPaid.onlyB;
+  st.df=dfPaid.shared;
+  const ofPaid=solveSharedPairPayment(st.o, st.f, st.of, Number(cost.orn||0), Number(cost.func||0));
+  if(!ofPaid) return null;
+  st.o=ofPaid.onlyA;
+  st.f=ofPaid.onlyB;
+  st.of=ofPaid.shared;
+  return st;
+}
+
+function solveSharedPairPaymentDetailed(onlyA, onlyB, shared, needA, needB, labelA, labelB, sharedLabel){
+  const a=Math.max(0, Number(needA||0));
+  const b=Math.max(0, Number(needB||0));
+  onlyA=Number(onlyA||0); onlyB=Number(onlyB||0); shared=Number(shared||0);
+  if(a<=0 && b<=0) return { onlyA, onlyB, shared, parts:[] };
+  const minShared=Math.max(0, a-onlyA, b-onlyB);
+  const maxShared=Math.min(shared, Math.max(a,b));
+  if(minShared>maxShared) return null;
+  const useShared=minShared;
+  const useOnlyA=Math.max(0, a-useShared);
+  const useOnlyB=Math.max(0, b-useShared);
+  if(useOnlyA>onlyA || useOnlyB>onlyB) return null;
+  const parts=[];
+  if(useShared>0) parts.push({ label:sharedLabel, count:useShared });
+  if(useOnlyA>0) parts.push({ label:labelA, count:useOnlyA });
+  if(useOnlyB>0) parts.push({ label:labelB, count:useOnlyB });
+  return { onlyA:onlyA-useOnlyA, onlyB:onlyB-useOnlyB, shared:shared-useShared, parts };
+}
+
+function cropNamesByCategory(category){
+  return cropNames().filter(name=>cropCategory(name)===category);
+}
+function bucketKeyForCategory(category){
+  if(category==='D') return 'df';
+  if(category==='O') return 'o';
+  if(category==='F') return 'f';
+  if(category==='OF') return 'of';
+  return null;
+}
+function preferredCropName(category, counts=null, state=null){
+  const names=cropNamesByCategory(category);
+  if(counts){
+    const planted=names.filter(name=>Number(counts[name]||0)>0).sort((a,b)=>Number(counts[b]||0)-Number(counts[a]||0));
+    if(planted.length) return planted[0];
+  }
+  const bucket=bucketKeyForCategory(category);
+  if(state && state._labels && bucket && state._labels[bucket]) return state._labels[bucket];
+  if(category==='OF' && CROPS['毛茛']) return '毛茛';
+  if(category==='D' && CROPS['双孢蘑菇']) return '双孢蘑菇';
+  const enabled=names.filter(name=>!CROPS[name].disabled).sort((a,b)=>Number(CROPS[a].unlock||1)-Number(CROPS[b].unlock||1));
+  if(enabled.length) return enabled[0];
+  const disabled=names.filter(name=>CROPS[name].disabled).sort((a,b)=>Number(CROPS[a].unlock||1)-Number(CROPS[b].unlock||1));
+  if(disabled.length) return disabled[0];
+  return category;
+}
+function labelForSingleBucket(key, counts=null, state=null){
+  if(key==='sd') return '食物';
+  if(key==='sf') return '菌菇';
+  if(key==='o') return preferredCropName('O', counts, state);
+  if(key==='f') return preferredCropName('F', counts, state);
+  return key;
+}
+function paymentSummaryOnGenericState(state, cost, counts=null){
+  const st=cloneGenericState(state);
+  const dfPaid=solveSharedPairPaymentDetailed(st.sd, st.sf, st.df, Number(cost.food||0), Number(cost.fungus||0), labelForSingleBucket('sd', counts, st), labelForSingleBucket('sf', counts, st), preferredCropName('D', counts, st));
+  if(!dfPaid) return null;
+  st.sd=dfPaid.onlyA;
+  st.sf=dfPaid.onlyB;
+  st.df=dfPaid.shared;
+  const ofPaid=solveSharedPairPaymentDetailed(st.o, st.f, st.of, Number(cost.orn||0), Number(cost.func||0), labelForSingleBucket('o', counts, st), labelForSingleBucket('f', counts, st), preferredCropName('OF', counts, st));
+  if(!ofPaid) return null;
+  st.o=ofPaid.onlyA;
+  st.f=ofPaid.onlyB;
+  st.of=ofPaid.shared;
+  const merged=new Map();
+  for(const part of [...dfPaid.parts, ...ofPaid.parts]) merged.set(part.label, (merged.get(part.label)||0)+part.count);
+  const order=cropNames().concat(['食物','菌菇','观赏','功能']);
+  const parts=Array.from(merged.entries()).sort((a,b)=>{
+    const ia=order.indexOf(a[0]), ib=order.indexOf(b[0]);
+    return (ia<0?999:ia)-(ib<0?999:ib);
+  });
+  return { state:st, text:parts.length ? parts.map(([label,count])=>`${label}*${fmtNum(count)}`).join('，') : '无' };
+}
+
+function canPayCostOnGenericState(state, cost){ return !!payCostOnGenericState(state, cost); }
+function seedCostOfCrop(name){ return parseCropCosts(CROPS[name].costs||[]); }
+function cropOutputBucket(name){ return cropCategory(name); }
+function addCropYieldToGenericState(state, crop, count=1){
+  const st=cloneGenericState(state);
+  const amount=Number(CROPS[crop].yield||0)*Number(count||0);
+  const cat=cropOutputBucket(crop);
+  if(cat==='D'){ st.df += amount; st._labels.df=crop; }
+  else if(cat==='O'){ st.o += amount; st._labels.o=crop; }
+  else if(cat==='F'){ st.f += amount; st._labels.f=crop; }
+  else if(cat==='OF'){ st.of += amount; st._labels.of=crop; }
+  else return null;
+  return st;
+}
+function costOverlapsCropOutput(crop, cost){
+  const outputKeys=getItemTags(crop).map(tag=>TAG_TO_KEY[tag]).filter(Boolean);
+  return outputKeys.some(key=>Number((cost&&cost[key])||0)>0);
+}
+function plantOnceOnGenericState(state, crop){
+  let st=cloneGenericState(state);
+  const seed=seedCostOfCrop(crop);
+  st=payCostOnGenericState(st, seed);
+  if(!st) return null;
+  return addCropYieldToGenericState(st, crop, 1);
+}
+function applyCropBatch(state, crop, n){
+  n=Number(n||0);
+  let st=cloneGenericState(state);
+  if(n<=0) return st;
+  const seed=seedCostOfCrop(crop);
+  const totalSeed=scaleCost(seed, n);
+  const needsSeed=TAG_KEYS.some(key=>Number(seed[key]||0)>0);
+  if(!needsSeed) return addCropYieldToGenericState(st, crop, n);
+  if(!canPayCostOnGenericState(st, seed)) return null;
+  if(costOverlapsCropOutput(crop, seed)){
+    st=addCropYieldToGenericState(st, crop, n);
+    if(!st) return null;
+    st=payCostOnGenericState(st, totalSeed);
+    if(!st) return null;
+    return st;
+  }
+  st=payCostOnGenericState(st, totalSeed);
+  if(!st) return null;
+  return addCropYieldToGenericState(st, crop, n);
+}
+function applyPlantCountsBlock(state, counts, order){
+  let st=cloneGenericState(state);
+  for(const crop of order){
+    const n=Number(counts[crop]||0);
+    st=applyCropBatch(st, crop, n);
+    if(!st) return null;
+  }
+  return st;
+}
+function totalCostFromActions(actions){
+  const total=emptyCost();
+  for(const act of actions) addCostInto(total, act.cost||{});
+  return total;
+}
+function categoryBestProducer(category, maxLevel, water){
+  const names=availableCrops(maxLevel).filter(name=>producerCategory(name)===category);
+  if(!names.length) return null;
+  let bestName=null, bestRate=-1;
+  for(const name of names){
+    const rate=cropBestRate(maxLevel, water, name);
+    if(rate>bestRate+1e-9 || (Math.abs(rate-bestRate)<=1e-9 && (bestName==null || CROPS[name].unlock<CROPS[bestName].unlock))){
+      bestRate=rate; bestName=name;
+    }
+  }
+  return bestName;
+}
+function buildKeyEvents(startLevel, horizonLevel, desiredPots, water){
+  const events=[];
+  const prev={
+    D:categoryBestProducer('D', startLevel, water),
+    O:categoryBestProducer('O', startLevel, water),
+    F:categoryBestProducer('F', startLevel, water),
+  };
+  for(let lv=startLevel+1; lv<=horizonLevel; lv++){
+    for(const cat of ['D','O','F']){
+      const best=categoryBestProducer(cat, lv, water);
+      if(best!==prev[cat] && prev[cat]!=null){
+        events.push({ kind:'cropImprovement', level:lv, category:cat, crop:best, text:`解锁${best}` });
+      }
+      prev[cat]=best;
+    }
+    for(const pot of desiredPots){
+      if(pot===1) continue;
+      if(POT_UNLOCKS[pot] && POT_UNLOCKS[pot].level===lv) events.push({ kind:'potUnlock', level:lv, pot, text:`解锁${pot}号花盆` });
+    }
+  }
+  return events;
+}
+function buildPlanningEvents(startLevel, targetLevel, desiredPots, water, horizonLevel){
+  const keyEvents=buildKeyEvents(startLevel, horizonLevel, desiredPots, water);
+  const events=[];
+  let inserted=false;
+  if(targetLevel<=startLevel){
+    events.push({ kind:'checkpoint', level:startLevel, text:`达到Lv.${startLevel}` });
+    inserted=true;
+  }
+  for(const event of keyEvents){
+    if(!inserted && targetLevel<=event.level){
+      events.push({ kind:'checkpoint', level:targetLevel, text:`达到Lv.${targetLevel}` });
+      inserted=true;
+    }
+    events.push(event);
+  }
+  if(!inserted) events.push({ kind:'checkpoint', level:targetLevel, text:`达到Lv.${targetLevel}` });
+  return events;
+}
+function stageActions(startLevel, event){
+  const actions=[];
+  for(let lv=startLevel+1; lv<=event.level; lv++) actions.push({ kind:'levelUp', level:lv, cost:{ ...(LEVEL_COSTS[lv]||{}) }, text:`升级到Lv.${lv}` });
+  if(event.kind==='potUnlock') actions.push({ kind:'unlockPot', level:event.level, pot:event.pot, cost:{ ...(POT_UNLOCKS[event.pot].cost||{}) }, text:`解锁${event.pot}号花盆` });
+  return actions;
+}
+function previousCategoryBestProducer(category, level, water){
+  if(level<=0) return null;
+  return categoryBestProducer(category, level, water);
+}
+
+function bestSeedFeasibleProducer(category, level, water, state, excludeName=null){
+  const names=availableCrops(level).filter(name=>producerCategory(name)===category && name!==excludeName);
+  let best=null, bestRate=-1;
+  for(const name of names){
+    const seed=seedCostOfCrop(name);
+    if(seed && !canPayCostOnGenericState(state, seed)) continue;
+    const rate=cropBestRate(level, water, name);
+    if(rate>bestRate+1e-9 || (Math.abs(rate-bestRate)<=1e-9 && (best==null || CROPS[name].unlock<CROPS[best].unlock))){
+      best=name; bestRate=rate;
+    }
+  }
+  return best;
+}
+
+function costNeedsCategory(cost, category){
+  if(category==='D') return Number(cost.food||0)>0 || Number(cost.fungus||0)>0;
+  if(category==='O') return Number(cost.orn||0)>0;
+  if(category==='F') return Number(cost.func||0)>0;
+  return false;
+}
+function ensureSeedDependencyProducers(mains, windowLevel, water){
+  let changed=true;
+  while(changed){
+    changed=false;
+    for(const crop of Object.values(mains).filter(Boolean)){
+      const seed=seedCostOfCrop(crop);
+      for(const cat of CATEGORY_KEYS){
+        if(costNeedsCategory(seed, cat) && !mains[cat]){
+          const producer=categoryBestProducer(cat, windowLevel, water);
+          if(producer){ mains[cat]=producer; changed=true; }
+        }
+      }
+    }
+  }
+}
+function costForPlantedCounts(counts){
+  const total=emptyCost();
+  for(const [crop,n] of Object.entries(counts||{})) addCostInto(total, seedCostOfCrop(crop), Number(n||0));
+  return total;
+}
+function cropNetForCategory(crop, category){
+  const seed=seedCostOfCrop(crop);
+  const yieldValue=Number(CROPS[crop].yield||0);
+  if(category==='D') return Math.max(1, yieldValue - Number(seed.food||0) - Number(seed.fungus||0));
+  if(category==='O') return Math.max(1, yieldValue - Number(seed.orn||0));
+  if(category==='F') return Math.max(1, yieldValue - Number(seed.func||0));
+  return Math.max(1, yieldValue);
+}
+
+function buildStageProducerPlan(startLevel, event, water, startState=null){
+  const actions=stageActions(startLevel, event);
+  const windowLevel = event.kind==='cropImprovement' ? Math.max(1, event.level-1) : event.level;
+  const total=totalCostFromActions(actions);
+  const deficits=(startState && event.target) ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
+  const need={
+    D:(Number(total.food||0)+Number(total.fungus||0)+Number(deficits.food||0)+Number(deficits.fungus||0))>0,
+    O:(Number(total.orn||0)+Number(deficits.orn||0))>0,
+    F:(Number(total.func||0)+Number(deficits.func||0))>0,
+  };
+  const mains={ D:null, O:null, F:null };
+  for(const cat of CATEGORY_KEYS){ if(need[cat]) mains[cat]=categoryBestProducer(cat, windowLevel, water); }
+  ensureSeedDependencyProducers(mains, windowLevel, water);
+  const prevLevel=Math.max(1, startLevel-1);
+  const boot={ D:null, O:null, F:null };
+  const state=startState || { df:0, sd:0, sf:0, o:0, f:0, of:0 };
+  for(const cat of CATEGORY_KEYS){
+    const main=mains[cat];
+    if(!main) continue;
+    const seed=seedCostOfCrop(main);
+    if(seed && !canPayCostOnGenericState(state, seed)){
+      boot[cat]=bestSeedFeasibleProducer(cat, windowLevel, water, state, main);
+    }else{
+      const prev=previousCategoryBestProducer(cat, prevLevel, water);
+      if(prev && prev!==main) boot[cat]=prev;
+    }
+  }
+  return { mains, boot, actions };
+}
+function nextStageBootstrapReserve(nextStartLevel, nextEvent, water){
+  if(!nextEvent) return null;
+
+  // 预留下一阶段主力作物的启动材料。
+  // 旧版只预留第一个主力作物的种子费；当下一阶段是最终库存阶段时，
+  // 例如 Lv.22 后要种香菇 + 铃兰，Lv.21→Lv.22 的支付可能会把食物/功能启动料全部吃掉，
+  // 导致下一阶段被迫回退种草菇/其它前驱作物。这里改为预留所有下一阶段主力及其依赖主力的种子费。
+  const seedProbeState = nextEvent.kind==='finalInventory'
+    ? { df:0, sd:0, sf:0, o:0, f:0, of:0 }
+    : null;
+  const plan=buildStageProducerPlan(nextStartLevel, nextEvent, water, seedProbeState);
+  const reserve=emptyCost();
+  let has=false;
+  for(const cat of CATEGORY_KEYS){
+    const name=plan.mains && plan.mains[cat];
+    if(!name) continue;
+    addCostInto(reserve, seedCostOfCrop(name));
+    has=true;
+  }
+  if(!has) return null;
+  return reserve;
+}
+function extendProducerPlanForReserve(startLevel, event, water, startState, mains, boot, reserve){
+  if(!reserve) return;
+  const windowLevel = event.kind==='cropImprovement' ? Math.max(1, event.level-1) : event.level;
+  for(const cat of CATEGORY_KEYS){
+    if(costNeedsCategory(reserve, cat) && !mains[cat]){
+      const producer=categoryBestProducer(cat, windowLevel, water);
+      if(producer) mains[cat]=producer;
+    }
+  }
+  ensureSeedDependencyProducers(mains, windowLevel, water);
+  const prevLevel=Math.max(1, startLevel-1);
+  const state=startState || { df:0, sd:0, sf:0, o:0, f:0, of:0 };
+  for(const cat of CATEGORY_KEYS){
+    const main=mains[cat];
+    if(!main || boot[cat]) continue;
+    const seed=seedCostOfCrop(main);
+    if(seed && !canPayCostOnGenericState(state, seed)){
+      boot[cat]=bestSeedFeasibleProducer(cat, windowLevel, water, state, main);
+    }else{
+      const prev=previousCategoryBestProducer(cat, prevLevel, water);
+      if(prev && prev!==main) boot[cat]=prev;
+    }
+  }
+}
+function lowerBoundCounts(startState, actions, producers, reserve, event){
+  const totals=totalCostFromActions(actions);
+  const targetDef=event && event.target ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
+  const lb={};
+  if(producers.O){
+    const y=cropNetForCategory(producers.O, 'O');
+    let needOrn=Number(totals.orn||0) + Number(targetDef.orn||0);
+    const currentOrn=(startState.o||0)+(startState.of||0);
+    lb[producers.O]=Math.max(0, Math.ceil(Math.max(0, needOrn-currentOrn)/y));
+  }
+  if(producers.F){
+    let needFunc=Number(totals.func||0) + Number((reserve&&reserve.func)||0) + Number(targetDef.func||0);
+    if(producers.O){
+      const oSeed=seedCostOfCrop(producers.O);
+      needFunc += Number(oSeed.func||0) * Number(lb[producers.O]||0);
+    }
+    const currentFunc=(startState.f||0)+(startState.of||0);
+    lb[producers.F]=Math.max(0, Math.ceil(Math.max(0, needFunc-currentFunc)/cropNetForCategory(producers.F, 'F')));
+  }
+  if(producers.D){
+    let needPay=Number(totals.food||0)+Number(totals.fungus||0)+Number((reserve&&reserve.food)||0)+Number((reserve&&reserve.fungus)||0);
+    if(producers.F){
+      const fSeed=seedCostOfCrop(producers.F);
+      needPay += (Number(fSeed.food||0)+Number(fSeed.fungus||0)) * Number(lb[producers.F]||0);
+    }
+    if(producers.O){
+      const oSeed=seedCostOfCrop(producers.O);
+      needPay += (Number(oSeed.food||0)+Number(oSeed.fungus||0)) * Number(lb[producers.O]||0);
+    }
+    const currentPay=(startState.df||0)+(startState.sd||0)+(startState.sf||0);
+    const targetNeed=Number(targetDef.fungus||0) + Number(targetDef.food||0);
+    const net=cropNetForCategory(producers.D, 'D');
+    lb[producers.D]=Math.max(0, Math.ceil(Math.max(0, needPay-currentPay + targetNeed)/net));
+  }
+  return lb;
+}
+function stageDurationHours(counts, producers, pots, water){
+  let hours=0;
+  for(const crop of [producers.D, producers.F, producers.O]){
+    if(!crop) continue;
+    hours += (Number(counts[crop]||0) * cropTimeHours(crop, water)) / Math.max(1, pots);
+  }
+  return hours;
+}
+function evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts){
+  const totalActionCost=totalCostFromActions(actions);
+  const order=[producers.D, producers.F, producers.O].filter(Boolean);
+  const afterProduction=applyPlantCountsBlock(startState, counts, order);
+  if(!afterProduction) return null;
+  const paid=paymentSummaryOnGenericState(afterProduction, totalActionCost, counts);
+  if(!paid) return null;
+  const st=paid.state;
+  if(reserve && !canPayCostOnGenericState(st, reserve)) return null;
+  if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) return null;
+  const hours=stageDurationHours(counts, producers, pots, water);
+  return { counts:{...counts}, actions, producers, reserve, hours, endState:st, payText:paid.text };
+}
+function uniqueSortedNumbers(values){
+  return Array.from(new Set(values.filter(v=>Number.isFinite(v)).map(v=>Math.max(0, Math.floor(v))))).sort((a,b)=>a-b);
+}
+function candidateCountsAround(base, maxBase){
+  base=Math.max(0, Math.floor(base||0));
+  const vals=[base, base+1, base+2, base+4, base+8];
+  if(base>0) vals.push(Math.max(0, base-1));
+  return uniqueSortedNumbers(vals);
+}
+
+function exactLowerForF(startState, actions, producers, reserve, event, oCount){
+  if(!producers.F) return 0;
+  const totals=totalCostFromActions(actions);
+  const targetDef=event && event.target ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
+  let needFunc=Number(totals.func||0) + Number((reserve&&reserve.func)||0) + Number(targetDef.func||0);
+  if(producers.O){
+    const oSeed=seedCostOfCrop(producers.O);
+    needFunc += Number(oSeed.func||0) * Number(oCount||0);
+  }
+  const currentFunc=(startState.f||0)+(startState.of||0);
+  return Math.max(0, Math.ceil(Math.max(0, needFunc-currentFunc)/cropNetForCategory(producers.F, 'F')));
+}
+function exactLowerForD(startState, actions, producers, reserve, event, oCount, fCount){
+  if(!producers.D) return 0;
+  const totals=totalCostFromActions(actions);
+  const targetDef=event && event.target ? targetDeficitsFromGenericState(startState, event.target) : emptyCost();
+  let needPay=Number(totals.food||0)+Number(totals.fungus||0)+Number((reserve&&reserve.food)||0)+Number((reserve&&reserve.fungus)||0);
+  if(producers.F){
+    const fSeed=seedCostOfCrop(producers.F);
+    needPay += (Number(fSeed.food||0)+Number(fSeed.fungus||0)) * Number(fCount||0);
+  }
+  if(producers.O){
+    const oSeed=seedCostOfCrop(producers.O);
+    needPay += (Number(oSeed.food||0)+Number(oSeed.fungus||0)) * Number(oCount||0);
+  }
+  const currentPay=(startState.df||0)+(startState.sd||0)+(startState.sf||0);
+  const targetNeed=Number(targetDef.fungus||0) + Number(targetDef.food||0);
+  const net=cropNetForCategory(producers.D, 'D');
+  return Math.max(0, Math.ceil(Math.max(0, needPay-currentPay + targetNeed)/net));
+}
+function findMinimalDForFixedOF(startState, actions, producers, reserve, event, pots, water, baseCounts, dBase){
+  if(!producers.D){
+    return evalStageCounts(startState, actions, producers, reserve, event, pots, water, baseCounts);
+  }
+  let lo=Math.max(0, Math.floor(dBase||0));
+  let hi=lo;
+  let res=null;
+  for(let guard=0; guard<64; guard++){
+    const counts={...baseCounts, [producers.D]:hi};
+    res=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+    if(res) break;
+    if(hi===0) hi=1;
+    else hi*=2;
+  }
+  if(!res) return null;
+  let best=res;
+  while(lo<=hi){
+    const mid=Math.floor((lo+hi)/2);
+    const counts={...baseCounts, [producers.D]:mid};
+    const r=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+    if(r){ best=r; hi=mid-1; } else lo=mid+1;
+  }
+  return best;
+}
+function stageResultScore(res, event, hoursOverride=null){
+  const hours = hoursOverride==null ? Number(res.hours||0) : Number(hoursOverride||0);
+  const planted = Object.values(res.counts||{}).reduce((a,b)=>a+Number(b||0),0);
+  if(event && event.kind==='finalInventory' && event.target){
+    const excess=targetExcessFromGenericState(res.endState, event.target);
+    return [excess, hours, planted];
+  }
+  return [hours, planted, 0];
+}
+function isBetterScore(score, bestScore){
+  if(!bestScore) return true;
+  for(let i=0;i<Math.max(score.length,bestScore.length);i++){
+    const a=Number(score[i]||0), b=Number(bestScore[i]||0);
+    if(a < b - 1e-9) return true;
+    if(a > b + 1e-9) return false;
+  }
+  return false;
+}
+function solveStageWithForcedProducers(startState, actions, producers, reserve, event, pots, water){
+  const crops=[producers.D, producers.F, producers.O].filter(Boolean);
+  const totalActionCost=totalCostFromActions(actions);
+  if(!crops.length){
+    const paid=paymentSummaryOnGenericState(cloneGenericState(startState), totalActionCost, null);
+    if(!paid) return null;
+    const st=paid.state;
+    if(reserve && !canPayCostOnGenericState(st, reserve)) return null;
+    if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) return null;
+    return { counts:{}, actions, producers, reserve, hours:0, endState:st, payText:paid.text };
+  }
+
+  const lb=lowerBoundCounts(startState, actions, producers, reserve, event);
+  const oBase=producers.O ? Number(lb[producers.O]||0) : 0;
+  const fBase=producers.F ? Number(lb[producers.F]||0) : 0;
+  const dBase=producers.D ? Number(lb[producers.D]||0) : 0;
+  let best=null;
+
+  const oCandidates=producers.O ? candidateCountsAround(oBase, oBase) : [0];
+  for(const oCount of oCandidates){
+    let fNeed=exactLowerForF(startState, actions, producers, reserve, event, oCount);
+    if(producers.F) fNeed=Math.max(fNeed, Math.max(0, fBase-16));
+    const fCandidates=producers.F ? candidateCountsAround(fNeed, fNeed<=256 ? fNeed : null) : [0];
+    for(const fCount of fCandidates){
+      const baseCounts={};
+      if(producers.O) baseCounts[producers.O]=oCount;
+      if(producers.F) baseCounts[producers.F]=fCount;
+      const dNeed=exactLowerForD(startState, actions, producers, reserve, event, oCount, fCount);
+      const dStart=producers.D ? Math.max(0, Math.min(dNeed, dBase + 32)) : 0;
+      const res=findMinimalDForFixedOF(startState, actions, producers, reserve, event, pots, water, baseCounts, dStart);
+      if(!res) continue;
+      const score=stageResultScore(res, event);
+      if(isBetterScore(score, best&&best.score)) best={...res, score};
+    }
+  }
+
+  if(best) return best;
+
+  // 兜底：从理论下界开始逐项放大，保证大阶段不会因为枚举窗口太窄而误判无解。
+  const counts={};
+  if(producers.O) counts[producers.O]=oBase;
+  if(producers.F) counts[producers.F]=fBase;
+  if(producers.D) counts[producers.D]=dBase;
+  for(let guard=0; guard<80; guard++){
+    const res=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+    if(res) return {...res, score:[res.hours, Object.values(res.counts).reduce((a,b)=>a+b,0)]};
+    if(producers.D) counts[producers.D]=Math.max(1, Math.ceil((counts[producers.D]||0)*1.25)+8);
+    if(producers.F) counts[producers.F]=Math.max(1, Math.ceil((counts[producers.F]||0)*1.15)+4);
+    if(producers.O) counts[producers.O]=Math.max(1, Math.ceil((counts[producers.O]||0)*1.10)+2);
+  }
+  return null;
+}
+
+function minimalBootCountForMainSeed(state, bootCrop, mainCrop){
+  if(!bootCrop || !mainCrop) return 0;
+  let st=cloneGenericState(state);
+  const seed=seedCostOfCrop(mainCrop);
+  if(canPayCostOnGenericState(st, seed)) return 0;
+  for(let i=1;i<=512;i++){
+    st=plantOnceOnGenericState(st, bootCrop);
+    if(!st) return 0;
+    if(canPayCostOnGenericState(st, seed)) return i;
+  }
+  return 512;
+}
+function smallBootCandidates(base){
+  base=Math.max(0, Math.floor(base||0));
+  return uniqueSortedNumbers([base, base+1, base+2]);
+}
+function solveStage(startLevel, event, nextEvent, startState, pots, water){
+  const { mains, boot, actions } = buildStageProducerPlan(startLevel, event, water, startState);
+  const reserve=nextStageBootstrapReserve(event.level, nextEvent, water);
+  extendProducerPlanForReserve(startLevel, event, water, startState, mains, boot, reserve);
+
+  const bootBase={ D:0, F:0, O:0 };
+  let probe=cloneGenericState(startState);
+  if(boot.D && mains.D){
+    bootBase.D=minimalBootCountForMainSeed(probe, boot.D, mains.D);
+    probe=applyCropBatch(probe, boot.D, bootBase.D) || probe;
+  }
+  // 主线顺序是 D → F → O。若 D 主力存在，F 的食物种子会由 D 主力解决，不需要在 boot 阶段强行枚举。
+  if(boot.F && mains.F && !mains.D){
+    bootBase.F=minimalBootCountForMainSeed(probe, boot.F, mains.F);
+    probe=applyCropBatch(probe, boot.F, bootBase.F) || probe;
+  }
+  // 若 F 主力存在，铃兰等 O 作物需要的功能种子会由 F 主力解决。
+  if(boot.O && mains.O && !mains.F){
+    bootBase.O=minimalBootCountForMainSeed(probe, boot.O, mains.O);
+  }
+
+  const bootRanges={
+    D: boot.D ? smallBootCandidates(bootBase.D) : [0],
+    F: boot.F ? smallBootCandidates(bootBase.F) : [0],
+    O: boot.O ? smallBootCandidates(bootBase.O) : [0],
+  };
+
+  let best=null;
+  for(const bD of bootRanges.D){
+    for(const bF of bootRanges.F){
+      for(const bO of bootRanges.O){
+        const bootCounts={};
+        if(boot.D) bootCounts[boot.D]=bD;
+        if(boot.F) bootCounts[boot.F]=bF;
+        if(boot.O) bootCounts[boot.O]=bO;
+        const afterBoot=applyPlantCountsBlock(startState, bootCounts, [boot.D, boot.F, boot.O].filter(Boolean));
+        if(!afterBoot) continue;
+        const mainRes=solveStageWithForcedProducers(afterBoot, actions, mains, reserve, event, pots, water);
+        if(!mainRes) continue;
+        const counts={...bootCounts};
+        for(const [name,v] of Object.entries(mainRes.counts||{})) counts[name]=(counts[name]||0)+v;
+        const bootHours=stageDurationHours(bootCounts, {D:boot.D,F:boot.F,O:boot.O}, pots, water);
+        const hours=bootHours + mainRes.hours;
+        const candidate={counts, actions, producers:{...mains, boot}, reserve, hours, endState:mainRes.endState, payText:mainRes.payText};
+        const score=stageResultScore(candidate, event, hours);
+        if(isBetterScore(score, best&&best.score)){
+          best={score, ...candidate};
+        }
+      }
+    }
+  }
+  return best;
+}
+
+
+// 稳定版阶段求解器：用理论下界起步，先找可行解，再逐项压缩，避免旧枚举窗口在部分阶段卡死。
+solveStageWithForcedProducers = function(startState, actions, producers, reserve, event, pots, water){
+  const crops=[producers.D, producers.F, producers.O].filter(Boolean);
+  const totalActionCost=totalCostFromActions(actions);
+  if(!crops.length){
+    const paid=paymentSummaryOnGenericState(cloneGenericState(startState), totalActionCost, null);
+    if(!paid) return null;
+    const st=paid.state;
+    if(reserve && !canPayCostOnGenericState(st, reserve)) return null;
+    if(event.target && sumTargetDeficits(targetDeficitsFromGenericState(st, event.target))>0) return null;
+    return { counts:{}, actions, producers, reserve, hours:0, endState:st, payText:paid.text };
+  }
+
+  const lb=lowerBoundCounts(startState, actions, producers, reserve, event);
+  const counts={};
+  for(const crop of crops) counts[crop]=Math.max(0, Math.floor(lb[crop]||0));
+
+  let feasible=null;
+  for(let guard=0; guard<256; guard++){
+    feasible=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+    if(feasible) break;
+    for(const crop of crops){
+      const cur=Number(counts[crop]||0);
+      counts[crop]=cur + Math.max(1, Math.ceil(cur*0.06));
+    }
+  }
+  if(!feasible) return null;
+
+  // 在可行解附近做单调压缩。固定其它作物，二分每个作物的最小数量；重复两轮处理相互依赖。
+  for(let pass=0; pass<2; pass++){
+    for(const crop of crops){
+      let lo=0, hi=Number(counts[crop]||0), best=hi;
+      while(lo<=hi){
+        const mid=Math.floor((lo+hi)/2);
+        const trial={...counts, [crop]:mid};
+        const r=evalStageCounts(startState, actions, producers, reserve, event, pots, water, trial);
+        if(r){ best=mid; hi=mid-1; }
+        else lo=mid+1;
+      }
+      counts[crop]=best;
+    }
+  }
+
+  const finalRes=evalStageCounts(startState, actions, producers, reserve, event, pots, water, counts);
+  if(!finalRes) return feasible;
+  return finalRes;
+};
+function stateSummaryText(state, counts=null){
+  const items=[];
+  const add=(label, count)=>{ if(Number(count||0)>0) items.push(`${label}*${fmtNum(count)}`); };
+  add(preferredCropName('D', counts, state), state.df);
+  add(labelForSingleBucket('sf', counts, state), state.sf);
+  add(labelForSingleBucket('sd', counts, state), state.sd);
+  add(preferredCropName('O', counts, state), state.o);
+  add(labelForSingleBucket('f', counts, state), state.f);
+  add(preferredCropName('OF', counts, state), state.of);
+  return items.join('，') || '无';
+}
+function actionCostText(actions){
+  const total=totalCostFromActions(actions);
+  const paid=paymentSummaryOnGenericState({ df:0, sd:total.food||0, sf:total.fungus||0, o:total.orn||0, f:total.func||0, of:0 }, total, null);
+  if(paid && paid.text) return paid.text;
+  const items=[];
+  for(const key of TAG_KEYS) if(total[key]>0) items.push(`${KEY_TO_TAG[key]}*${fmtNum(total[key])}`);
+  return items.join('，') || '无';
+}
+function countsText(counts){
+  return Object.entries(counts).filter(([,v])=>v>0).map(([k,v])=>`${fmtNum(v)}个${k}`).join('，') || '无';
+}
+function targetMapText(map){
+  const items=[];
+  for(const key of TAG_KEYS){
+    const v=Number((map&&map[key])||0);
+    if(v>0) items.push(`${KEY_TO_TAG[key]}*${fmtNum(v)}`);
+  }
+  return items.join('，') || '无';
+}
+function renderStageLog(stage){
+  const finalLine = stage.finalTarget ? `<br>目标口径库存：${targetMapText(targetProgressFromGenericState(stage.endState, stage.finalTarget))}<br>目标要求：${targetMapText(stage.finalTarget)}` : '';
+  return `<div class="line"><span class="stamp">[${fmtDuration(stage.timeStart)}-${fmtDuration(stage.timeEnd)}]</span><br>等级：lv.${stage.levelStart}<br>阶段：${stage.phaseText || stage.title || ''}<br>种植：${countsText(stage.counts)}<br>支付：${stage.payText || actionCostText(stage.actions)}<br>结束库存：${stateSummaryText(stage.endState, stage.counts)}${finalLine}</div>`;
+}
+function solvePathToEvent(input, events, endIndex, finalTargetForReserve=null){
+  let level=input.startLevel;
+  let pots=input.startUnlockedPots.length;
+  let state=genericStateFromInventory(input.startInv);
+  let totalHours=0;
+  const stages=[];
+  for(let i=0;i<=endIndex;i++){
+    const event=events[i];
+    if(event.level<level) continue;
+    let nextEvent=i<endIndex ? events[i+1] : null;
+    if(!nextEvent && finalTargetForReserve && Object.values(finalTargetForReserve).some(v=>Number(v||0)>0)){
+      nextEvent={ kind:'finalInventory', level:event.level, target:finalTargetForReserve, text:'最终库存' };
+    }
+    const stage=solveStage(level, event, nextEvent, state, pots, input.water);
+    if(!stage) throw new Error(`阶段求解失败：Lv.${level} → ${event.text}`);
+    stages.push({
+      title:`阶段：Lv.${level} → ${event.text}`,
+      levelStart:level,
+      phaseText:event.text,
+      timeStart:totalHours,
+      timeEnd:totalHours + stage.hours,
+      counts:stage.counts,
+      actions:stage.actions,
+      payText:stage.payText,
+      endState:stage.endState,
+    });
+    totalHours += stage.hours;
+    state=stage.endState;
+    level=event.level;
+    if(event.kind==='potUnlock') pots=Math.max(pots, event.pot);
+  }
+  return { totalHours, stages, endState:state, level, pots };
+}
+function solvePlan(input){
+  const targetLevel=input.targetLevel==null ? input.startLevel : input.targetLevel;
+  if(targetLevel<input.startLevel) throw new Error('目标等级不能小于初始等级。');
+  const finalTarget=input.targetInv||{ fungus:0, food:0, orn:0, func:0 };
+  const needFinalTarget=Object.values(finalTarget).some(v=>(v||0)>0);
+  const desiredPots=allPotNumbers();
+  const maxLevel=maxConfiguredLevel();
+  const horizonLevel=needFinalTarget ? maxLevel : Math.max(targetLevel, input.startLevel);
+  const events=buildPlanningEvents(input.startLevel, targetLevel, desiredPots, input.water, horizonLevel);
+  const checkpointIndex=events.findIndex(e=>e.kind==='checkpoint' && e.level===Math.max(targetLevel, input.startLevel));
+  if(checkpointIndex<0) throw new Error('内部错误：未找到等级检查点。');
+  const candidateIndexes=[];
+  if(!needFinalTarget){
+    candidateIndexes.push(checkpointIndex);
+  }else{
+    for(let i=checkpointIndex;i<events.length;i++) candidateIndexes.push(i);
+  }
+  let best=null;
+  let lastErr=null;
+  for(const idx of candidateIndexes){
+    try{
+      const pathRes=solvePathToEvent(input, events, idx, needFinalTarget ? finalTarget : null);
+      let totalHours=pathRes.totalHours;
+      let stages=[...pathRes.stages];
+      let endState=pathRes.endState;
+      if(needFinalTarget){
+        const invStage=solveStage(pathRes.level, { kind:'finalInventory', level:pathRes.level, target:finalTarget, text:`在${events[idx].text}后攒最终库存` }, null, pathRes.endState, pathRes.pots, input.water);
+        if(!invStage) continue;
+        stages.push({
+          title:`库存阶段：在${events[idx].text}后攒最终库存`,
+          levelStart:pathRes.level,
+          phaseText:`在${events[idx].text}后攒最终库存`,
+          timeStart:totalHours,
+          timeEnd:totalHours + invStage.hours,
+          counts:invStage.counts,
+          actions:invStage.actions,
+          payText:invStage.payText,
+          endState:invStage.endState,
+          finalTarget,
+        });
+        totalHours += invStage.hours;
+        endState=invStage.endState;
+        const finalMiss=targetDeficitsFromGenericState(endState, finalTarget);
+        if(sumTargetDeficits(finalMiss)>0) continue;
+      }
+      const plantedCount=stages.reduce((s,st)=>s+Object.values(st.counts||{}).reduce((a,b)=>a+Number(b||0),0),0);
+      const finalExcess=needFinalTarget ? targetExcessFromGenericState(endState, finalTarget) : 0;
+      const score=needFinalTarget ? [finalExcess, totalHours, plantedCount, idx] : [totalHours, plantedCount, idx];
+      if(isBetterScore(score, best&&best.score)){
+        best={ score, totalHours, stages, endState, chosenEvent:events[idx] };
+      }
+    }catch(err){
+      lastErr=err;
+    }
+  }
+  if(!best){
+    if(lastErr) throw lastErr;
+    throw new Error('没有可行的阶段/库存组合方案。');
+  }
+  return { totalHours:best.totalHours, stages:best.stages, endState:best.endState, chosenEvent:best.chosenEvent };
+}
+
+function syncPotsByLevel(){
+  const level=Number(document.getElementById('startLevel').value);
+  for(const pot of allPotNumbers()){
+    const el=document.getElementById(`pot${pot}`);
+    if(pot===1){ el.checked=true; el.disabled=true; continue; }
+    const req=POT_UNLOCKS[pot].level;
+    if(level>=req){
+      el.disabled=false;
+      if(!el.dataset.touched) el.checked=true;
+    }else{
+      el.checked=false;
+      el.disabled=true;
+      delete el.dataset.touched;
+    }
+  }
+  renderTargetLevelOptions(level);
+}
+function renderTargetLevelOptions(startLevel){
+  const targetLevelEl=document.getElementById('targetLevel');
+  const prev=targetLevelEl.value || String(maxConfiguredLevel());
+  const options=['<option value="none">不限制</option>'];
+  for(let v=startLevel; v<=maxConfiguredLevel(); v++){
+    options.push(`<option value="${v}">${v}</option>`);
+  }
+  targetLevelEl.innerHTML=options.join('');
+  if(prev==='none'){
+    targetLevelEl.value='none';
+  }else{
+    const prevNum=Number(prev);
+    targetLevelEl.value=String(prevNum>=startLevel ? prevNum : startLevel);
+  }
+}
+function readInputs(){
+  const inv={};
+  for(const crop of cropNames()){
+    const el=document.getElementById(`stock_${crop}`);
+    if(el){
+      const v=Number(el.value)||0;
+      if(v>0) inv[crop]=v;
+    }
+  }
+  return {
+    water:Number(document.getElementById('water').value),
+    startLevel:Number(document.getElementById('startLevel').value),
+    targetLevel:document.getElementById('targetLevel').value==='none' ? null : Number(document.getElementById('targetLevel').value),
+    startInv:inv,
+    targetInv:{
+      fungus:Number(document.getElementById('target_fungus').value)||0,
+      food:Number(document.getElementById('target_food').value)||0,
+      orn:Number(document.getElementById('target_orn').value)||0,
+      func:Number(document.getElementById('target_func').value)||0,
+    },
+    startUnlockedPots:allPotNumbers().filter(i=>document.getElementById(`pot${i}`).checked),
+  };
+}
+function initStockInputs(){
+  const box=document.getElementById('stockBox');
+  box.innerHTML=cropNames().map(name=>`<div class="stock-card"><div class="name">${name}</div><input id="stock_${name}" type="number" min="0" step="1" value="0" /></div>`).join('');
+  const targetBox=document.getElementById('targetBox');
+  targetBox.innerHTML=TAG_KEYS.map(key=>`<div class="stock-card"><div class="name">${KEY_TO_TAG[key]}</div><input id="target_${key}" type="number" min="0" step="1" value="0" /></div>`).join('');
+}
+function init(){
+  const potsBox=document.getElementById('potsBox');
+  potsBox.innerHTML=allPotNumbers().map(i=>`<label><input type="checkbox" id="pot${i}"> ${i}号</label>`).join('');
+  document.getElementById('pot1').checked=true;
+  document.getElementById('pot1').disabled=true;
+  for(const i of allPotNumbers().filter(p=>p!==1)) document.getElementById(`pot${i}`).addEventListener('change', function(){ this.dataset.touched='1'; });
+  document.getElementById('water').innerHTML='<option value="0">0 次（100% 时长）</option><option value="1">1 次（80% 时长）</option><option value="2">2 次（60% 时长）</option><option value="3" selected>3 次（50% 时长）</option>';
+  const levelOpts=Array.from({length:maxConfiguredLevel()},(_,i)=>i+1).map(v=>`<option value="${v}" ${v===1?'selected':''}>${v}</option>`).join('');
+  document.getElementById('startLevel').innerHTML=levelOpts;
+  document.getElementById('targetLevel').innerHTML='';
+  document.getElementById('startLevel').addEventListener('change', syncPotsByLevel);
+  document.getElementById('water').addEventListener('change', syncPotsByLevel);
+  initStockInputs();
+  syncPotsByLevel();
+  document.getElementById('calcBtn').addEventListener('click', run);
+}
+function run(){
+  const logEl=document.getElementById('log');
+  const resEl=document.getElementById('result');
+  try{
+    const input=readInputs();
+    const plan=solvePlan(input);
+    resEl.textContent=`预计完成时长：${fmtDuration(plan.totalHours)}`;
+    const summary=plan.chosenEvent ? `<div class="line"><span class="act">库存起算阶段：${plan.chosenEvent.text}</span></div>` : '';
+    logEl.innerHTML=summary + (plan.stages.map(renderStageLog).join('') || '<div class="small">没有需要生产的内容。</div>');
+  }catch(err){
+    resEl.textContent='预计完成时长：计算失败';
+    logEl.innerHTML=`<div class="warn">${String(err.message||err)}</div>`;
+  }
+}
+init();
+window.__gardenPlannerDebug={
+  solvePlan, buildKeyEvents, buildStageProducerPlan, nextStageBootstrapReserve,
+  solveBestCategoryRates, cropBestRate, plantOnceOnGenericState, payCostOnGenericState,
+  genericStateFromInventory, tagTotalsFromGenericState, targetDeficitsFromGenericState
+};
+</script>
+
+</body>
+</html>
