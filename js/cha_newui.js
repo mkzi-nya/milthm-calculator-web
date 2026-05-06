@@ -1467,13 +1467,14 @@ async function downloadImage() {
   // 读取要导出的卡片数量 & 过滤设置
   const cardCount = parseInt(document.getElementById('cardCount').value, 10);
   const maxItems = Math.max(0, cardCount);
-  const items = window.processedItems || [];
+  let items = window.processedItems || [];
   const excludeReality = document.getElementById('excludeReality')?.value;
   window.norlt = (excludeReality == "true") ? items.filter(item => item.constant < 1e-3) : [];
   const actualCardCount = Math.min(maxItems, items.length);
 
   // 愚人节模式
   const yrjds = document.getElementById('yrjds')?.value;
+  const apscore = document.getElementById('apscore')?.value;
   // 星标（看最高定数且PF）
   // 星星数量
   let star = 0;
@@ -1528,6 +1529,14 @@ async function downloadImage() {
     }
 
   });
+
+  if (apscore== 'true') { 
+    items = items.filter(item => 
+      item.achievedStatus.includes(5) || item.achievedStatus.includes(2)
+    );
+  };
+
+
   if (maxConstant >= 240) star = 114514;
   else if (maxConstant >= 200) star = 9;
   else if (maxConstant >= 180) star = 8;
