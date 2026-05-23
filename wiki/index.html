@@ -18,6 +18,7 @@
   - [定数表](./table.html)
   - [曲师统计](./artist-statistics.html)
   - [谱师统计](./charter-statistics.html)
+  - [画师统计](./illustrator-statistics.html)
   - [Milthm 独占曲列表](./original-songs.html)
   - [Reality对照表](./reality-table.html)
 - 其他内容
