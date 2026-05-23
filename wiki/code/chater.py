@@ -12,10 +12,11 @@ except ImportError:
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DEFAULT_RESOURCE_FILE = BASE_DIR / "../resources/resources.json"
+DEFAULT_RESOURCE_FILE = BASE_DIR / "../../resources/resources.json"
 FALLBACK_RESOURCE_FILE = BASE_DIR / "resources.json"
 ARTIST_OUTPUT_FILE = BASE_DIR / "artist-statistics.md"
 CHARTER_OUTPUT_FILE = BASE_DIR / "charter-statistics.md"
+ILLUSTRATOR_OUTPUT_FILE = BASE_DIR / "illustrator-statistics.md"
 
 
 def sanitize_latin_title(value):
@@ -69,6 +70,7 @@ def flatten_resources(resources):
         difficulties = song_data.get('difficulty', {})
         latin_title = song_data.get('latinTitle', song_title)
         artists_list = song_data.get('artistsList', [])
+        illustrators_list = song_data.get('illustratorsList', song_data.get('illustrator', []))
 
         for difficulty_name, chart_data in difficulties.items():
             flattened.append({
@@ -76,6 +78,7 @@ def flatten_resources(resources):
                 'latinTitle': latin_title,
                 'difficulty': difficulty_name,
                 'artistsList': artists_list,
+                'illustratorsList': illustrators_list,
                 'chartersList': chart_data.get('chartersList', []),
             })
 
@@ -92,6 +95,7 @@ def get_sort_key(name):
 
 def build_statistics(data):
     artists_data = defaultdict(dict)
+    illustrators_data = defaultdict(dict)
     charters_data = defaultdict(list)
 
     for item in data:
@@ -99,10 +103,16 @@ def build_statistics(data):
         latin_title = item.get('latinTitle', title)
         difficulty = item['difficulty']
         artists_list = item.get('artistsList', [])
+        illustrators_list = item.get('illustratorsList', [])
         charters_list = item.get('chartersList', [])
 
         for artist in artists_list:
             artists_data[artist][title] = latin_title
+
+        for illustrator in illustrators_list:
+            if not str(illustrator).strip():
+                continue
+            illustrators_data[illustrator][title] = latin_title
 
         for charter in charters_list:
             charters_data[charter].append({
@@ -111,7 +121,7 @@ def build_statistics(data):
                 'difficulty': difficulty,
             })
 
-    return artists_data, charters_data
+    return artists_data, illustrators_data, charters_data
 
 
 
@@ -134,6 +144,28 @@ def generate_artist_md(artists_data):
     artist_md += artist_table
     artist_md += "\n</div>\n"
     return artist_md
+
+
+
+def generate_illustrator_md(illustrators_data):
+    sorted_illustrators = sorted(illustrators_data.keys(), key=get_sort_key)
+
+    illustrator_md = "- [返回主页](./)\n\n"
+    illustrator_md += "## 画师统计\n\n"
+    illustrator_md += '<div style="font-size:10px; white-space:nowrap;">\n\n'
+
+    illustrator_table = "| illustrator | song |\n"
+    illustrator_table += "|-|-|\n"
+
+    for illustrator in sorted_illustrators:
+        songs = sorted(illustrators_data[illustrator].items(), key=lambda x: get_sort_key(x[0]))
+        song_links = [make_song_link(title, latin_title) for title, latin_title in songs]
+        songs_str = ",<br>".join(song_links)
+        illustrator_table += f"| {illustrator} | {songs_str} |\n"
+
+    illustrator_md += illustrator_table
+    illustrator_md += "\n</div>\n"
+    return illustrator_md
 
 
 
@@ -187,18 +219,22 @@ def generate_charter_md(charters_data):
 def main(resource_file=None):
     resources, resource_path = load_resources(resource_file)
     data = flatten_resources(resources)
-    artists_data, charters_data = build_statistics(data)
+    artists_data, illustrators_data, charters_data = build_statistics(data)
 
     artist_md = generate_artist_md(artists_data)
+    illustrator_md = generate_illustrator_md(illustrators_data)
     charter_md = generate_charter_md(charters_data)
 
     with open(ARTIST_OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(artist_md)
 
+    with open(ILLUSTRATOR_OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write(illustrator_md)
+
     with open(CHARTER_OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(charter_md)
 
-    print(f"已从 {resource_path} 生成 {ARTIST_OUTPUT_FILE} 和 {CHARTER_OUTPUT_FILE}")
+    print(f"已从 {resource_path} 生成 {ARTIST_OUTPUT_FILE}、{ILLUSTRATOR_OUTPUT_FILE} 和 {CHARTER_OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

@@ -12,6 +12,7 @@
 | AiSS | [Agnostic](./song/?song=Agnostic),<br>[Garden](./song/?song=Garden),<br>[Pthahnil](./song/?song=Pthahnil),<br>[Regnaissance](./song/?song=Regnaissance) |
 | All_Life_X | [Garden](./song/?song=Garden) |
 | Amberry | [参宿四\~Betelgeuse\~](./song/?song=Betelgeuse) |
+| Antistar | [Class Memories](./song/?song=Class_Memories) |
 | B.R.I | [Jump out?](./song/?song=Jump_out_) |
 | BilliumMoto | [Before it Ends](./song/?song=Before_it_Ends) |
 | Bob Hou | [GlassyHeart.](./song/?song=GlassyHeart_) |
@@ -21,6 +22,7 @@
 | Connor "12LBS" Skidmore | [Sheer Ice Torrent](./song/?song=Sheer_Ice_Torrent),<br>[Threat - Metropolis](./song/?song=Threat___Metropolis),<br>[Threat - Waterfront Complex](./song/?song=Threat___Waterfront_Complex) |
 | cranky | [conflict](./song/?song=conflict) |
 | CsLrisEto | [雨之城](./song/?song=Castle_in_the_Rain) |
+| Ctymax | [Class Memories](./song/?song=Class_Memories) |
 | Cyberspace | [Fly To Meteor (Milthm Edit)](./song/?song=Fly_To_Meteor__Milthm_Edit_),<br>[Fly To Meteor feat.兔柒 (Milthm Edit)](./song/?song=Fly_To_Meteor_feat_TuQi__Milthm_Edit_) |
 | Delos | [时落之雨](./song/?song=Episodic_Rain) |
 | Dragon_Klub | [BUCHiAGE Fireworks](./song/?song=BUCHiAGE_Fireworks) |
@@ -50,6 +52,7 @@
 | MYTK | [Sakuyahime](./song/?song=Sakuyahime),<br>[靈](./song/?song=Rei) |
 | MYUKKE. | [FULi AUTO SHOOTER](./song/?song=FULi_AUTO_SHOOTER) |
 | Nastram | [Moving On](./song/?song=Moving_On) |
+| Natunoruno | [白色の夢で。](./song/?song=siroirono_yumede) |
 | NceS | [Garden](./song/?song=Garden) |
 | Nerovix | [Virtual S0da](./song/?song=Virtual_S0da) |
 | Night Yard | [烽閻鸞錵](./song/?song=Houen_Ranka) |
@@ -58,7 +61,7 @@
 | PYKAMIA | [Fantasia Sonata Arcadia](./song/?song=Fantasia_Sonata_Arcadia),<br>[Fantasia Sonata Botanical Garden](./song/?song=Fantasia_Sonata_Botanical_Garden),<br>[Fantasia Sonata God Dance](./song/?song=Fantasia_Sonata_God_Dance),<br>[Fantasia Sonata Hope](./song/?song=Fantasia_Sonata_Hope),<br>[Fantasia Sonata Reflection](./song/?song=Fantasia_Sonata_Reflection),<br>[Fantasia Sonata Sky Syndrome](./song/?song=Fantasia_Sonata_Sky_Syndrome),<br>[Fantasia Sonata Stars](./song/?song=Fantasia_Sonata_Stars),<br>[Fantasia Sonata Surmount Vanity Aufleben](./song/?song=Fantasia_Sonata_Surmount_Vanity_Aufleben),<br>[白虎蓮華](./song/?song=Tiger_Lotus) |
 | R -TOP | [Curse of 14](./song/?song=Curse_of_14) |
 | Reku Mochizuki | [Fantasia Sonata Hope](./song/?song=Fantasia_Sonata_Hope),<br>[Moonflutter](./song/?song=Moonflutter) |
-| Reo | [ネオン色のまち](./song/?song=Neon_Iro_no_Machi) |
+| Reo | [ネオン色のまち feat. Mai](./song/?song=Neon_Iro_no_Machi_feat__Mai) |
 | Rigel Wired | [Polyridia](./song/?song=Polyridia) |
 | RyosU | [暮予星光](./song/?song=Reminiscence_in_Starlight) |
 | Salty Salt | [HYPER MEMORIES](./song/?song=HYPER_MEMORIES) |
@@ -87,8 +90,9 @@
 | ああああ | [cybernetic blazar](./song/?song=cybernetic_blazar),<br>[Splash the Beat!!](./song/?song=Splash_the_Beat__) |
 | むさぬりゆ | [cafe in 6412I731V](./song/?song=cafe_in_6412I731V) |
 | テヅカ | [ニニ (feat. Qayo & mii)](./song/?song=Nini__feat__Qayo___mii_) |
-| ヒトリ | [ネオン色のまち](./song/?song=Neon_Iro_no_Machi) |
+| ヒトリ | [ネオン色のまち feat. Mai](./song/?song=Neon_Iro_no_Machi_feat__Mai) |
 | ルゼ | [Fantasia Sonata Surmount Vanity Aufleben](./song/?song=Fantasia_Sonata_Surmount_Vanity_Aufleben) |
+| 一万年老海妖 | [九蓮寶燈](./song/?song=Churenpoton) |
 | 世界の花 | [運命](./song/?song=Unmei) |
 | 亚述 | [Rainbow Flavor!](./song/?song=Rainbow_Flavor_) |
 | 凛 | [Algebra](./song/?song=Algebra),<br>[KAEDE](./song/?song=KAEDE) |
@@ -102,7 +106,7 @@
 | 沙包P | [WATER](./song/?song=WATER) |
 | 溝口ゆうま | [Myth compiler](./song/?song=Myth_compiler) |
 | 茶茶 | [暮予星光](./song/?song=Reminiscence_in_Starlight) |
-| 霉霉杏 | [ネオン色のまち](./song/?song=Neon_Iro_no_Machi) |
+| 霉霉杏 | [ネオン色のまち feat. Mai](./song/?song=Neon_Iro_no_Machi_feat__Mai) |
 | 黑瘦的鱼头 | [Oiiaioooooiai](./song/?song=Oiiaioooooiai) |
 
 </div>
