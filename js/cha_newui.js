@@ -1627,7 +1627,8 @@ async function downloadImage() {
   if (!hasFile) {
     for (let index = 1; index <= bg_count; index++) {
       const bg = `https://storage.mhtl.im/jpgs/background/${bg_prefix}${index}.avif`;
-      bgs.push(`'${await imgToDataURL(bg)}'`);
+      // 只记录地址；切换到该背景时再请求并转换，避免生成时一次性下载全部背景。
+      bgs.push(`'${bg}'`);
     }
   } else {
     bgs.push(`'${bg_filename}'`)
@@ -2458,16 +2459,46 @@ async function downloadImage() {
                   }
               })
           let isDownloading = false;
-          let imgIndex = ${bg_index + 1};
-          function changeBackground() {
-            const bgs = [${bgs}];
-            const prefix = ${yrjds != "true" ? '""' : '"yrj-"'}
-            const bg_element = document.querySelector('.bg');
-            if (imgIndex >= bgs.length) {
-              imgIndex = 0;
+          let imgIndex = ${bg_index % bg_count};
+          let isChangingBackground = false;
+          const bgs = [${bgs}];
+
+          async function backgroundToDataURL(url) {
+            if (url.startsWith('data:')) return url;
+
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error('HTTP ' + response.status + ' while loading background');
             }
-            bg_element.style.backgroundImage = 'url(' + bgs[imgIndex] + ')';
-            imgIndex++;
+
+            const blob = await response.blob();
+            return await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(reader.result);
+              reader.onerror = () => reject(reader.error || new Error('Failed to read background image'));
+              reader.readAsDataURL(blob);
+            });
+          }
+
+          async function changeBackground() {
+            if (isChangingBackground || bgs.length === 0) return;
+
+            const bg_element = document.querySelector('.bg');
+            const button = document.querySelector('#change-background');
+            if (imgIndex >= bgs.length) imgIndex = 0;
+
+            isChangingBackground = true;
+            if (button) button.disabled = true;
+            try {
+              const bgDataURL = await backgroundToDataURL(bgs[imgIndex]);
+              bg_element.style.backgroundImage = 'url("' + bgDataURL + '")';
+              imgIndex++;
+            } catch (error) {
+              console.error('背景图片加载失败：', error);
+            } finally {
+              isChangingBackground = false;
+              if (button) button.disabled = false;
+            }
           }
           function waitForImages(selector = 'img') {
               const images = Array.from(document.querySelectorAll(selector));

@@ -185,8 +185,9 @@
     <script src="./layui/layui.js"></script>
     <script src="./new_ui.js"></script>
     <div style="position:absolute;right:20px;top:20px;z-index:9999;">
-      <button id="languageButton"
-        style="background:transparent;border:none;cursor:pointer;font-size:20px;">🌐</button>
+      <button id="languageButton" type="button"
+        style="background:transparent;border:none;cursor:pointer;font-size:20px;"
+        data-i18n-aria-label="languageButtonLabel" aria-label="切换语言">🌐</button>
       <div id="languageMenu">
         <div id="langZh">简体中文</div>
         <div id="langZhTw">繁體中文</div>
@@ -195,6 +196,7 @@
         <div id="langKo">한국어</div>
         <div id="langRu">Русский</div>
         <div id="langEs">Español</div>
+        <div id="langIt">Italiano</div>
         <div id="langVi">Tiếng Việt</div>
       </div>
     </div>
@@ -231,16 +233,15 @@
                 href="http://mhtlim.top/" target="_blank"><span
                   class="superlink">mhtlim.top</span></a></p>
             <hr>
-            <p><span>其他工具：</span><a href="./prefedit.html" target="_blank"><span
-                  class="superlink">存档解析器</span></a> <a
+            <p><span data-i18n="otherTools">其他工具：</span><a href="./prefedit.html" target="_blank"><span
+                  class="superlink" data-i18n="saveParser">存档解析器</span></a> <a
                 href="https://mkzi-nya.github.io/notanote-calculator/"
-                target="_blank"><span class="superlink">Notanote
-                  查分器</span></a></p>
+                target="_blank"><span class="superlink" data-i18n="notanoteChecker">Notanote 查分器</span></a></p>
             <hr>
             <p><span data-i18n="link">友情链接：</span><a href="http://xuziyao.com/"
                 target="_blank"><span class="superlink">Dason</span></a> & <a
                 href="https://milthm.adproqwq.top/" target="_blank"><span
-                  class="superlink">Adpro</span> Page</a></p>
+                  class="superlink">Adpro</span> <span data-i18n="pageLabel">Page</span></a></p>
           </div>
         </div>
         <div class="layui-card rccc">
@@ -250,23 +251,37 @@
                 href="javascript:void(0);" onclick="show_author_info();"
                 style="color:lightblue;text-decoration:none;"
                 data-i18n="viewAuthor">查看</a></p>
-            <p data-i18n="lastUpdate">上次更新：3.14_11:03(UTC+8)</p>
+            <p data-i18n="lastUpdate">上次更新：26.7.21</p>
             <p data-i18n="updateCombined" style="white-space:pre-line;"></p>
           </div>
         </div>
         <script>
         if (typeof accessCount !== 'undefined' && accessCount != null) { document.getElementById("accessCount").innerHTML = accessCount; } else if (document.getElementById("accessCount")) { document.getElementById("accessCount").innerHTML = "DevMode"; }
       </script>
+        <div class="layui-card rccc" id="milkloud-card">
+          <div class="layui-card-header" data-i18n="milkloudCardTitle">Milkloud 令牌</div>
+          <div class="layui-card-body">
+            <div class="milkloud-summary">
+              <div class="milkloud-meta">
+                <div><span data-i18n="currentToken">当前令牌：</span><strong id="milkloud-active-token" data-i18n="notConfigured">未配置</strong></div>
+                <div><span data-i18n="playRecordPreference">游玩记录偏好：</span><strong id="milkloud-preference-summary" data-i18n="preferenceAuto">自动</strong></div>
+              </div>
+              <button id="milkloud-manage-token" type="button"
+                class="layui-btn layui-btn-primary" data-i18n="manageToken">管理令牌</button>
+            </div>
+            <div id="milkloud-actions" class="milkloud-actions" style="display:none;">
+              <hr />
+              <button id="milkloud-get-records" type="button"
+                class="layui-btn layui-btn-primary" data-i18n="getPlayRecords">获取游玩记录</button>
+            </div>
+            <span id="milkloud-status" class="milkloud-status" aria-live="polite"></span>
+          </div>
+        </div>
         <div class="layui-card rccc">
           <div class="layui-card-header" data-i18n="dataProcessing">数据处理</div>
           <div class="layui-card-body">
             <textarea id="inputData" class="layui-textarea"
-              data-i18n-placeholder="inputDataPlaceholder">粘贴数据在此处...</textarea>
-            <hr />
-            <!--
-          <button class="layui-btn layui-btn-primary layui-btn-disabled layui-btn-sm" onclick="javascript:qqbot_ua();" disabled data-i18n="qqBotOption">QQ Bot选项 (不可用)</button>
-          <hr/>
-          -->
+              data-i18n-placeholder="inputDataPlaceholder" placeholder="粘贴数据在此处..."></textarea>
             <hr />
             <button class="layui-btn layui-btn-primary"
               onclick="javascript:processData();" data-i18n="parse">解析</button>
@@ -274,10 +289,9 @@
               onclick="javascript:upl();" data-i18n="uploadFile">上传文件</button>
             <hr />
             <button class="layui-btn layui-btn-primary"
-              onclick="javascript:loadImage_nya();"
-<button class="layui-btn layui-btn-primary" onclick="javascript:downloadImage_pr();" data-i18n="generateImage">生成图像</button>
-<!-- TODO: generateImageLegacy i18n -->
-<button class="layui-btn layui-btn-primary" onclick="javascript:achive_loadImage_nya();" data-i18n="generateImageLegacy">生成图像(旧版)</button>
+              onclick="javascript:downloadImage_pr();" data-i18n="generateImage">生成图像</button>
+            <button class="layui-btn layui-btn-primary"
+              onclick="javascript:achive_loadImage_nya();" data-i18n="generateImageLegacy">生成图像（旧版）</button>
             <button class="layui-btn layui-btn-primary"
               onclick="showSettings();" data-i18n="settings">查分图设置</button>
             <div id="picgen" style="display:none;">
@@ -318,20 +332,20 @@
       <label for="excludeReality" data-i18n="excludeRealityLabel"
         style="font-size: 18px;">绘制不记入Reality的曲目:</label>
       <select id="excludeReality" style="font-size: 16px;">
-        <option value="false">false</option>
-        <option value="true">true</option>
+        <option value="false" data-i18n="optionFalse">否</option>
+        <option value="true" data-i18n="optionTrue">是</option>
       </select><br>
       <label for="yrjds" data-i18n="yrjds"
         style="font-size: 18px;">展示愚人节定数:</label>
       <select id="yrjds" style="font-size: 16px;">
-        <option value="false">false</option>
-        <option value="true">true</option>
+        <option value="false" data-i18n="optionFalse">否</option>
+        <option value="true" data-i18n="optionTrue">是</option>
       </select><br>
       <label for="apscore" data-i18n="apscore"
         style="font-size: 18px;">只展示ap成绩:</label>
       <select id="apscore" style="font-size: 16px;">
-        <option value="false">false</option>
-        <option value="true">true</option>
+        <option value="false" data-i18n="optionFalse">否</option>
+        <option value="true" data-i18n="optionTrue">是</option>
       </select><br>
       <button onclick="closeSettings()" class="cancel-btn"
         data-i18n="cancel">取消</button>
@@ -339,7 +353,8 @@
         data-i18n="apply">应用</button>
     </div>
     <script>
-  function initUpload(){}
+    function initUpload() {}
+
     function showSettings() {
       document.getElementById('overlay').style.display = 'block';
       document.getElementById('settingsModal').style.display = 'block';
@@ -353,31 +368,93 @@
     function applySettings() {
       const cardCount = document.getElementById('cardCount').value;
       const bgImage = document.getElementById('bgImage').files[0];
-
+      void cardCount;
+      void bgImage;
       closeSettings();
     }
-    let translations = {}, currentLang = 'zh', menuVisible = false;
-    function loadTranslations() {
-      fetch('lang.json').then(response => response.json()).then(data => {
-        translations = data;
-        let detected = (navigator.language || navigator.userLanguage).toLowerCase();
-        if (detected.startsWith('zh')) { detected = detected.includes('tw') || detected.includes('hk') || detected.includes('mo') ? 'zh-tw' : 'zh'; }
-        currentLang = translations[detected] ? detected : 'en'; setLanguage(currentLang);
-      }).catch(error => { console.error('加载翻译文件失败:', error); setLanguage('en'); });
+
+    let translations = {};
+    let currentLang = 'zh';
+    let menuVisible = false;
+
+    function interpolateTranslation(template, variables = {}) {
+      return String(template).replace(/\{(\w+)\}/g, (match, key) =>
+        Object.prototype.hasOwnProperty.call(variables, key) ? String(variables[key]) : match
+      );
     }
-    function setLanguage(lang) {
-      currentLang = lang; document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) { el.innerHTML = translations[lang][key]; }
-      });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) { el.placeholder = translations[lang][key]; }
-      });
-      menuVisible = false; document.getElementById('languageMenu').style.display = 'none';
+
+    function rawTranslation(key) {
+      const table = translations[currentLang] || {};
+      const fallback = translations.zh || translations.en || {};
+      return table[key] ?? fallback[key];
     }
-    function toggleLangMenu() { menuVisible = !menuVisible; document.getElementById('languageMenu').style.display = menuVisible ? 'block' : 'none'; }
+
+    function i18nT(key, variables = {}) {
+      const value = rawTranslation(key);
+      return value == null ? key : interpolateTranslation(value, variables);
+    }
+
+    function applyI18n(root = document) {
+      const scope = root instanceof Element ? root : document;
+      const applyText = element => {
+        const key = element.getAttribute('data-i18n');
+        if (rawTranslation(key) != null) element.textContent = i18nT(key);
+      };
+      if (scope.matches?.('[data-i18n]')) applyText(scope);
+      scope.querySelectorAll('[data-i18n]').forEach(applyText);
+      scope.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (rawTranslation(key) != null) element.placeholder = i18nT(key);
+      });
+      scope.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const key = element.getAttribute('data-i18n-title');
+        if (rawTranslation(key) != null) element.title = i18nT(key);
+      });
+      scope.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-aria-label');
+        if (rawTranslation(key) != null) element.setAttribute('aria-label', i18nT(key));
+      });
+    }
+
+    function normalizeLanguage(language) {
+      const detected = String(language || '').toLowerCase();
+      if (detected.startsWith('zh')) {
+        return detected.includes('tw') || detected.includes('hk') || detected.includes('mo') ? 'zh-tw' : 'zh';
+      }
+      const short = detected.split('-')[0];
+      return translations[detected] ? detected : (translations[short] ? short : 'en');
+    }
+
+    async function loadTranslations() {
+      try {
+        const response = await fetch('lang.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        translations = await response.json();
+        setLanguage(normalizeLanguage(navigator.language || navigator.userLanguage));
+      } catch (error) {
+        console.error('Failed to load translations:', error);
+        applyI18n(document);
+      }
+    }
+
+    function setLanguage(language) {
+      currentLang = translations[language] ? language : 'en';
+      document.documentElement.lang = currentLang;
+      applyI18n(document);
+      menuVisible = false;
+      document.getElementById('languageMenu').style.display = 'none';
+      document.dispatchEvent(new CustomEvent('i18n:change', { detail: { language: currentLang } }));
+    }
+
+    function toggleLangMenu() {
+      menuVisible = !menuVisible;
+      document.getElementById('languageMenu').style.display = menuVisible ? 'block' : 'none';
+    }
+
+    globalThis.i18nT = i18nT;
+    globalThis.applyI18n = applyI18n;
+    globalThis.setLanguage = setLanguage;
+
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('languageButton').addEventListener('click', toggleLangMenu);
       document.getElementById('langZh').addEventListener('click', () => setLanguage('zh'));
@@ -387,12 +464,14 @@
       document.getElementById('langKo').addEventListener('click', () => setLanguage('ko'));
       document.getElementById('langRu').addEventListener('click', () => setLanguage('ru'));
       document.getElementById('langEs').addEventListener('click', () => setLanguage('es'));
+      document.getElementById('langIt').addEventListener('click', () => setLanguage('it'));
       document.getElementById('langVi').addEventListener('click', () => setLanguage('vi'));
       loadTranslations();
     });
   </script>
     <script src="./js/constant.js?ver=!##oiiaiooiiiai##!"></script>
     <script src="./js/cha_newui.js?ver=!##oiiaiooiiiai##!"></script>
+    <script src="./js/milkloud.js?ver=!##oiiaiooiiiai##!"></script>
 
   </body>
   <div id="img_gen_process"></div>
