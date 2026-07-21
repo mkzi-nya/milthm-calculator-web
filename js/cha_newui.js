@@ -122,7 +122,7 @@ function loadImageCSS() {
   return new Promise((resolve, reject) => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'https://storage.mhtl.im/images.css';
+    link.href = './images.css';
 
     link.onload = () => {
       console.log('CSS 加载完成！');
@@ -1556,9 +1556,9 @@ async function downloadImage() {
       const bg_filename = await readFileAsDataURL(hasFile);
       return bg_filename;
     } else if (yrjds == 'true') {
-      return `https://storage.mhtl.im/jpgs/background/yrj-${index}.avif`;
+      return `./jpgs/background/yrj-${index}.avif`;
     } else {
-      return `https://storage.mhtl.im/jpgs/background/${index}.avif`;
+      return `./jpgs/background/${index}.avif`;
     }
   }
   const bg_index = yrjds == 'true' ? Math.floor(Math.random() * BACKGROUND_COUNT_YRJ) + 1 : Math.floor(Math.random() * BACKGROUND_COUNT) + 1;
@@ -1626,7 +1626,7 @@ async function downloadImage() {
   const bgs = []
   if (!hasFile) {
     for (let index = 1; index <= bg_count; index++) {
-      const bg = `https://storage.mhtl.im/jpgs/background/${bg_prefix}${index}.avif`;
+      const bg = `./jpgs/background/${bg_prefix}${index}.avif`;
       // 只记录地址；切换到该背景时再请求并转换，避免生成时一次性下载全部背景。
       bgs.push(`'${bg}'`);
     }
@@ -1644,14 +1644,14 @@ async function downloadImage() {
         <style>
             @font-face {
                 font-family: 'Chill Round';
-                src: url('https://storage.mhtl.im/fonts/Chill Round/ChillRoundF v3.0.ttf') format('truetype');
+                src: url('./fonts/Chill Round/ChillRoundF v3.0.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
 
             @font-face {
                 font-family: 'alimamafangyuanti';
-                src: url('https://storage.mhtl.im/fonts/alimamafangyuanti/AlimamaFangYuanTiVF-Thin.ttf') format('truetype');
+                src: url('./fonts/alimamafangyuanti/AlimamaFangYuanTiVF-Thin.ttf') format('truetype');
                 font-style: normal;
             }
 
@@ -1815,7 +1815,7 @@ async function downloadImage() {
             }
 
             .reality-v3 {
-                background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/v3-bg.webp')});
+                background: url(${await imgToDataURL('./jpgs/v3-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px #6945f7;
@@ -1825,7 +1825,7 @@ async function downloadImage() {
 
             #capture {
               transition: border 0.2s, box-shadow 0.2s, filter 0.2s;
-              background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/main-btn-bg.webp')});
+              background: url(${await imgToDataURL('./jpgs/main-btn-bg.webp')});
               border: 2px solid #8378B4;
               box-shadow: 0 5px 10px #a19bdb55;
               position: relative;
@@ -1847,7 +1847,7 @@ async function downloadImage() {
             }
 
             .reality-v50 {
-                background: url(${await imgToDataURL('https://storage.mhtl.im/jpgs/v50-bg.webp')});
+                background: url(${await imgToDataURL('./jpgs/v50-bg.webp')});
                 background-size: cover;
                 text-shadow: 1px 1px 0 #00000081;
                 box-shadow: 0 0 14px rgba(255, 70, 70, 0.77);
@@ -2299,9 +2299,9 @@ async function downloadImage() {
                                 <div style="height: 100%; text-align: right;">
                                     <div class="avatar-container">
                                         <div class="avatar">
-                                            <img src="https://storage.mhtl.im/jpgs/${yrjds != 'true' ? 'avatar.webp' : 'avatar-aprilfools.webp'}"
+                                            <img src="./jpgs/${yrjds != 'true' ? 'avatar.webp' : 'avatar-aprilfools.webp'}"
                                                 class="avatar">
-                                            ${star > 0 ? '<img class="star" src="https://storage.mhtl.im/jpgs/' + star + '-star.png">' : ''}
+                                            ${star > 0 ? '<img class="star" src="./jpgs/' + star + '-star.png">' : ''}
                                         </div>
                                         <div class="name-reality">
                                             <p
@@ -2636,7 +2636,7 @@ async function downloadImage() {
     </body>
 </html>`;
   // // 绘制卡片并导出
-  const cardsHtml = await getCardHtml(items, actualCardCount, await imgToDataURL('https://storage.mhtl.im/jpgs/img-error.webp'));
+  const cardsHtml = await getCardHtml(items, actualCardCount, await imgToDataURL('./jpgs/img-error.webp'));
   // // console.log(cardsHtml);
   const htmlContent = htmlHead + cardsHtml + htmlFoot;
   // 打开一个新窗口或新标签页
@@ -3082,7 +3082,7 @@ async function getCardHtml(items, maxCount, errorImg) {
 
                   </div>
                   <div class="gradetext">
-                      <img src="https://storage.mhtl.im/jpgs/${iconImgName}" alt
+                      <img src="./jpgs/${iconImgName}" alt
                           class="grade">
                       <p class="score ${gradeClass}">${scoreStr}</p>
                   </div>
