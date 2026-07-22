@@ -777,26 +777,30 @@
 
     const score = finiteNumber(record?.score);
     if (score >= 1010000) return 0;
-    if (score >= 1005000) return 1;
+    if (score >= 1000000) return 1;
     if (score >= 950000) return 2;
-    if (score >= 900000) return 3;
-    if (score >= 850000) return 4;
-    if (score >= 800000) return 5;
-    if (score >= 700000) return 6;
+    if (score >= 850000) return 3;
+    if (score >= 750000) return 4;
+    if (score >= 650000) return 5;
+    if (score >= 600000) return 6;
     return 7;
   }
 
   function recordAchievedStatus(record) {
     const score = finiteNumber(record?.score);
+    const exact = finiteNumber(record?.score_exact_count);
+    const perfect = finiteNumber(record?.score_perfect_count);
+    const great = finiteNumber(record?.score_great_count);
     const good = finiteNumber(record?.score_good_count);
     const bad = finiteNumber(record?.score_bad_count);
     const miss = finiteNumber(record?.score_miss_count);
+    const fracture_exact = finiteNumber(record?.score_fracture_exact_count);
+    const fracture_miss = finiteNumber(record?.score_fracture_miss_count);
     const status = [3];
-
-    if (score >= 800000) status.push(0);
-    if (good + bad + miss === 0) status.push(5);
+    if (score === 1010000) status.push(2);
+    if (great + good + bad + miss === 0) status.push(5);
     if (bad + miss === 0) status.push(4);
-    if (score < 800000) status.push(6);
+    if (score >= 600000) status.push(0); else status.push(6);
     return [...new Set(status)].sort((a, b) => a - b);
   }
 
