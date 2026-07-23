@@ -2,7 +2,7 @@
 
 # Myth compiler
 
-![Myth compiler](https://storage.mhtl.im/jpgs/Myth compiler.jpg)
+![Myth compiler](../../jpgs/Myth compiler.jpg)
 
 ## 曲目信息
 

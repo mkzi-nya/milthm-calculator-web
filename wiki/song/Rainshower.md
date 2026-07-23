@@ -2,7 +2,7 @@
 
 # 驟雨の狭間
 
-![驟雨の狭間](https://storage.mhtl.im/jpgs/驟雨の狭間.jpg)
+![驟雨の狭間](../../jpgs/驟雨の狭間.jpg)
 
 ## 曲目信息
 

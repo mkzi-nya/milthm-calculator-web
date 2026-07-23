@@ -6,7 +6,7 @@
 
 # 参宿四\~Betelgeuse\~
 
-![参宿四\~Betelgeuse\~](https://storage.mhtl.im/jpgs/参宿四\~Betelgeuse\~.jpg)
+![参宿四\~Betelgeuse\~](../../jpgs/参宿四\~Betelgeuse\~.jpg)
 
 ## 曲目信息
 | 曲名 | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |

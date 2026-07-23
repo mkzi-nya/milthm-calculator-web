@@ -6,7 +6,7 @@
 
 # Dogbite
 
-![Dogbite](https://storage.mhtl.im/jpgs/Dogbite.jpg)
+![Dogbite](../../jpgs/Dogbite.jpg)
 
 ## 曲目信息
 | 曲名 | [Dogbite](info:info("Dogbite")) |

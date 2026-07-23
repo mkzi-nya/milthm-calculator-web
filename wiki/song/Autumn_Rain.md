@@ -6,7 +6,7 @@
 
 # Autumn Rain
 
-![Autumn Rain](https://storage.mhtl.im/jpgs/Autumn Rain.jpg)
+![Autumn Rain](../../jpgs/Autumn Rain.jpg)
 
 ## 曲目信息
 | 曲名 | [Autumn Rain](info:info("Autumn Rain")) |

@@ -2,7 +2,7 @@
 
 # 運命
 
-![運命](https://storage.mhtl.im/jpgs/運命.jpg)
+![運命](../../jpgs/運命.jpg)
 
 ## 曲目信息
 | 曲名 | [運命](info:info("運命")) |

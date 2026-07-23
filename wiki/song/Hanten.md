@@ -6,7 +6,7 @@
 
 # はんてん
 
-![はんてん](https://storage.mhtl.im/jpgs/はんてん.jpg)
+![はんてん](../../jpgs/はんてん.jpg)
 
 ## 曲目信息
 | 曲名 | [はんてん](info:info("はんてん")) |

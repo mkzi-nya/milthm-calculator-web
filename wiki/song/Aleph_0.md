@@ -6,7 +6,7 @@
 
 # Aleph-0
 
-![Aleph-0](https://storage.mhtl.im/jpgs/Aleph-0.jpg)
+![Aleph-0](../../jpgs/Aleph-0.jpg)
 
 ## 曲目信息
 | 曲名 | [Aleph-0](info:info("Aleph-0")) |

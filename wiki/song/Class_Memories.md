@@ -7,7 +7,7 @@
 
 # Class Memories
 
-![Class Memories](https://storage.mhtl.im/jpgs/Class Memories.jpg)
+![Class Memories](../../jpgs/Class Memories.jpg)
 
 ## 曲目信息
 | 曲名 | [Class Memories](info:info("Class Memories")) |

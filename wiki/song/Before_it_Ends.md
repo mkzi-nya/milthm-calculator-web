@@ -6,7 +6,7 @@
 
 # Before it Ends
 
-![Before it Ends](https://storage.mhtl.im/jpgs/Before it Ends.jpg)
+![Before it Ends](../../jpgs/Before it Ends.jpg)
 
 ## 曲目信息
 | 曲名 | [Before it Ends](info:info("Before it Ends")) |

@@ -6,7 +6,7 @@
 
 # Sound of Nature
 
-![Sound of Nature](https://storage.mhtl.im/jpgs/Sound of Nature.jpg)
+![Sound of Nature](../../jpgs/Sound of Nature.jpg)
 
 ## 曲目信息
 | 曲名 | [Sound of Nature](info:info("Sound of Nature")) |

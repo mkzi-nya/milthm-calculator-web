@@ -6,7 +6,7 @@
 
 # WATER
 
-![WATER](https://storage.mhtl.im/jpgs/WATER.jpg)
+![WATER](../../jpgs/WATER.jpg)
 
 ## 曲目信息
 | 曲名 | [WATER](info:info("WATER")) |

@@ -6,7 +6,7 @@
 
 # Hikari
 
-![Hikari](https://storage.mhtl.im/jpgs/Hikari.jpg)
+![Hikari](../../jpgs/Hikari.jpg)
 
 ## 曲目信息
 | 曲名 | [Hikari](info:info("Hikari")) |

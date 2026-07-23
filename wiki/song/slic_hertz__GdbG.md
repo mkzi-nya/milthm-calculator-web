@@ -6,7 +6,7 @@
 
 # slic.hertz #GdbG
 
-![slic.hertz%20%23GdbG](https://storage.mhtl.im/jpgs/slic.hertz%20%23GdbG.jpg)
+![slic.hertz%20%23GdbG](../../jpgs/slic.hertz%20%23GdbG.jpg)
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |

@@ -6,7 +6,7 @@
 
 # apOapSis(Edit)
 
-![apOapSis%28Edit%29](https://storage.mhtl.im/jpgs/apOapSis%28Edit%29.jpg)
+![apOapSis%28Edit%29](../../jpgs/apOapSis%28Edit%29.jpg)
 
 ## 曲目信息
 | 曲名 | [apOapSis(Edit)](info:info("apOapSis(Edit)")) |

@@ -6,7 +6,7 @@
 
 # Moonflutter
 
-![Moonflutter](https://storage.mhtl.im/jpgs/Moonflutter.jpg)
+![Moonflutter](../../jpgs/Moonflutter.jpg)
 
 ## 曲目信息
 | 曲名 | [Moonflutter](info:info("Moonflutter")) |

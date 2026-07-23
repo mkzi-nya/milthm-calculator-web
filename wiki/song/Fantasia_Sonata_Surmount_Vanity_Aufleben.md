@@ -6,7 +6,7 @@
 
 # Fantasia Sonata Surmount Vanity Aufleben
 
-![Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben](https://storage.mhtl.im/jpgs/Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben.jpg)
+![Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben](../../jpgs/Fantasia%20Sonata%20Surmount%20Vanity%20Aufleben.jpg)
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Surmount Vanity Aufleben](info:info("Fantasia Sonata Surmount Vanity Aufleben")) |

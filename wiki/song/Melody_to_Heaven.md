@@ -6,7 +6,7 @@
 
 # Melody to Heaven
 
-![Melody to Heaven](https://storage.mhtl.im/jpgs/Melody to Heaven.jpg)
+![Melody to Heaven](../../jpgs/Melody to Heaven.jpg)
 
 ## 曲目信息
 | 曲名 | [Melody to Heaven](info:info("Melody to Heaven")) |

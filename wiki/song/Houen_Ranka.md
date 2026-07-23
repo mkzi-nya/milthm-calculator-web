@@ -6,9 +6,9 @@
 
 # 烽閻鸞錵
 
-![%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5](https://storage.mhtl.im/jpgs/%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.jpg)
+![%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5](../../jpgs/%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.jpg)
 
-![SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5](https://storage.mhtl.im/jpgs/SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.jpg)
+![SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5](../../jpgs/SquareArtwork_%E7%83%BD%E9%96%BB%E9%B8%9E%E9%8C%B5.jpg)
 
 ## 曲目信息
 | 曲名 | [烽閻鸞錵](info:info("烽閻鸞錵")) |

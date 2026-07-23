@@ -2,7 +2,7 @@
 
 # 命日
 
-![命日](https://storage.mhtl.im/jpgs/命日.jpg)
+![命日](../../jpgs/命日.jpg)
 
 ## 曲目信息
 | 曲名 | [命日](info:info("命日")) |

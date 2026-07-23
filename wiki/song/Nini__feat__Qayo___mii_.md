@@ -6,9 +6,9 @@
 
 # ニニ (feat. Qayo & mii)
 
-![%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29](https://storage.mhtl.im/jpgs/%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.jpg)
+![%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29](../../jpgs/%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.jpg)
 
-![SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29](https://storage.mhtl.im/jpgs/SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.jpg)
+![SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29](../../jpgs/SquareArtwork_%E3%83%8B%E3%83%8B%20%28feat.%20Qayo%20%26%20mii%29.jpg)
 
 ## 曲目信息
 | 曲名 | [ニニ (feat. Qayo & mii)](info:info("ニニ (feat. Qayo & mii)")) |

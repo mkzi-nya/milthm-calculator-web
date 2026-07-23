@@ -2,7 +2,7 @@
 
 # Jump out?
 
-![Jump%20out%3F](https://storage.mhtl.im/jpgs/Jump%20out%3F.jpg)
+![Jump%20out%3F](../../jpgs/Jump%20out%3F.jpg)
 
 ## 曲目信息
 | 曲名 | [Jump out?](info:info("Jump out ")) |

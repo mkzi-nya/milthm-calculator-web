@@ -6,7 +6,7 @@
 
 # Habitable Zone
 
-![Habitable%20Zone](https://storage.mhtl.im/jpgs/Habitable%20Zone.jpg)
+![Habitable%20Zone](../../jpgs/Habitable%20Zone.jpg)
 
 ## 曲目信息
 | 曲名 | [Habitable Zone](info:info("Habitable Zone")) |

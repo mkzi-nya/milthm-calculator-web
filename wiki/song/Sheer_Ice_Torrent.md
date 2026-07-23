@@ -6,7 +6,7 @@
 
 # Sheer Ice Torrent
 
-![Sheer Ice Torrent](https://storage.mhtl.im/jpgs/Sheer Ice Torrent.jpg)
+![Sheer Ice Torrent](../../jpgs/Sheer Ice Torrent.jpg)
 
 ## 曲目信息
 | 曲名 | [Sheer Ice Torrent](info:info("Sheer Ice Torrent")) |

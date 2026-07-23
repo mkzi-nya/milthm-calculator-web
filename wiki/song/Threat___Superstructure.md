@@ -6,7 +6,7 @@
 
 # Threat - Superstructure
 
-![Threat%20-%20Superstructure](https://storage.mhtl.im/jpgs/Threat%20-%20Superstructure.jpg)
+![Threat%20-%20Superstructure](../../jpgs/Threat%20-%20Superstructure.jpg)
 
 ## 曲目信息
 | 曲名 | [Threat - Superstructure](info:info("Threat - Superstructure")) |

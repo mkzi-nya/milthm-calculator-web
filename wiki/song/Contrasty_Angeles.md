@@ -2,7 +2,7 @@
 
 # Contrasty Angeles
 
-![Contrasty Angeles](https://storage.mhtl.im/jpgs/Contrasty Angeles.jpg)
+![Contrasty Angeles](../../jpgs/Contrasty Angeles.jpg)
 
 ## 曲目信息
 | 曲名 | [Contrasty Angeles](info:info("Contrasty Angeles")) |

@@ -2,7 +2,7 @@
 
 # Aconsma
 
-![Aconsma](https://storage.mhtl.im/jpgs/Aconsma.jpg)
+![Aconsma](../../jpgs/Aconsma.jpg)
 
 ## 曲目信息
 

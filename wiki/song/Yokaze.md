@@ -2,7 +2,7 @@
 
 # 夜風
 
-![夜風](https://storage.mhtl.im/jpgs/夜風.jpg)
+![夜風](../../jpgs/夜風.jpg)
 
 ## 曲目信息
 | 曲名 | [夜風](info:info("夜風")) |

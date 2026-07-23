@@ -2,7 +2,7 @@
 
 # ☹
 
-![☹](https://storage.mhtl.im/jpgs/☹.jpg)
+![☹](../../jpgs/☹.jpg)
 
 ## 曲目信息
 | 曲名 | [☹](info:info("☹")) |

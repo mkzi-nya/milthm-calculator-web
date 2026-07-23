@@ -6,7 +6,7 @@
 
 # 樱落繁花
 
-![樱落繁花](https://storage.mhtl.im/jpgs/樱落繁花.jpg)
+![樱落繁花](../../jpgs/樱落繁花.jpg)
 
 ## 曲目信息
 | 曲名 | [樱落繁花](info:info("樱落繁花")) |

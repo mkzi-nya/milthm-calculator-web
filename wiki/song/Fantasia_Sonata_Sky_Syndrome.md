@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Sky Syndrome
 
-![Fantasia Sonata Sky Syndrome](https://storage.mhtl.im/jpgs/Fantasia Sonata Sky Syndrome.jpg)
+![Fantasia Sonata Sky Syndrome](../../jpgs/Fantasia Sonata Sky Syndrome.jpg)
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Sky Syndrome](info:info("Fantasia Sonata Sky Syndrome")) |

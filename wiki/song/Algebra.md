@@ -6,7 +6,7 @@
 
 # Algebra
 
-![Algebra](https://storage.mhtl.im/jpgs/Algebra.jpg)
+![Algebra](../../jpgs/Algebra.jpg)
 
 ## 曲目信息
 | 曲名 | [Algebra](info:info("Algebra")) |

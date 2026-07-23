@@ -6,7 +6,7 @@
 
 # Deluge
 
-![Deluge](https://storage.mhtl.im/jpgs/Deluge.jpg)
+![Deluge](../../jpgs/Deluge.jpg)
 
 ## 曲目信息
 | 曲名 | [Deluge](info:info("Deluge")) |

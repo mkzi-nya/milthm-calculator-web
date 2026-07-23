@@ -2,7 +2,7 @@
 
 # HYPER MEMORIES
 
-![HYPER MEMORIES](https://storage.mhtl.im/jpgs/HYPER MEMORIES.jpg)
+![HYPER MEMORIES](../../jpgs/HYPER MEMORIES.jpg)
 
 ## 曲目信息
 | 曲名 | [HYPER MEMORIES](info:info("HYPER MEMORIES")) |

@@ -6,7 +6,7 @@
 
 # Agnostic
 
-![Agnostic](https://storage.mhtl.im/jpgs/Agnostic.jpg)
+![Agnostic](../../jpgs/Agnostic.jpg)
 
 ## 曲目信息
 | 曲名 | [Agnostic](info:info("Agnostic")) |

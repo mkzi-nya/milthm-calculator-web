@@ -6,7 +6,7 @@
 
 # Pthahnil
 
-![Pthahnil](https://storage.mhtl.im/jpgs/Pthahnil.jpg)
+![Pthahnil](../../jpgs/Pthahnil.jpg)
 
 ## 曲目信息
 | 曲名 | [Pthahnil](info:info("Pthahnil")) |

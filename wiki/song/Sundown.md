@@ -6,7 +6,7 @@
 
 # Sundown
 
-![Sundown](https://storage.mhtl.im/jpgs/Sundown.jpg)
+![Sundown](../../jpgs/Sundown.jpg)
 
 ## 曲目信息
 | 曲名 | [Sundown](info:info("Sundown")) |

@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Arcadia
 
-![Fantasia Sonata Arcadia](https://storage.mhtl.im/jpgs/Fantasia Sonata Arcadia.jpg)
+![Fantasia Sonata Arcadia](../../jpgs/Fantasia Sonata Arcadia.jpg)
 
 ## 曲目信息
 

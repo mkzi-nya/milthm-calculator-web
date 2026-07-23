@@ -6,7 +6,7 @@
 
 # Words
 
-![Words](https://storage.mhtl.im/jpgs/Words.jpg)
+![Words](../../jpgs/Words.jpg)
 
 ## 曲目信息
 | 曲名 | [Words](info:info("Words")) |

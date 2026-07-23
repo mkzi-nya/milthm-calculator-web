@@ -2,7 +2,7 @@
 
 # Welcome to Milthm
 
-![Welcome to Milthm](https://storage.mhtl.im/jpgs/Welcome to Milthm.jpg)
+![Welcome to Milthm](../../jpgs/Welcome to Milthm.jpg)
 
 ## 曲目信息
 | 曲名 | [Welcome to Milthm](info:info("Welcome to Milthm")) |

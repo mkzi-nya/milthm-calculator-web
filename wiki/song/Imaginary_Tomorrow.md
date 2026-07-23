@@ -6,7 +6,7 @@
 
 # 仮想明日
 
-![仮想明日](https://storage.mhtl.im/jpgs/仮想明日.jpg)
+![仮想明日](../../jpgs/仮想明日.jpg)
 
 ## 曲目信息
 | 曲名 | [仮想明日](info:info("仮想明日")) |

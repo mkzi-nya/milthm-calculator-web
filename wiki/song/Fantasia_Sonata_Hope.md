@@ -6,7 +6,7 @@
 
 # Fantasia Sonata Hope
 
-![Fantasia Sonata Hope](https://storage.mhtl.im/jpgs/Fantasia Sonata Hope.jpg)
+![Fantasia Sonata Hope](../../jpgs/Fantasia Sonata Hope.jpg)
 
 ## 曲目信息
 | 曲名 | [Fantasia Sonata Hope](info:info("Fantasia Sonata Hope")) |

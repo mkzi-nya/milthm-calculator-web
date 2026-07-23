@@ -6,7 +6,7 @@
 
 # furioso melodia
 
-![furioso%20melodia](https://storage.mhtl.im/jpgs/furioso%20melodia.jpg)
+![furioso%20melodia](../../jpgs/furioso%20melodia.jpg)
 
 ## 曲目信息
 | 曲名 | [furioso melodia](info:info("furioso melodia")) |

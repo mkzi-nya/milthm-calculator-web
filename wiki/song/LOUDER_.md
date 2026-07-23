@@ -2,7 +2,7 @@
 
 # LOUDER!
 
-![LOUDER%21](https://storage.mhtl.im/jpgs/LOUDER%21.jpg)
+![LOUDER%21](../../jpgs/LOUDER%21.jpg)
 
 ## 曲目信息
 | 曲名 | [LOUDER!](info:info("LOUDER!")) |

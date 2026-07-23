@@ -2,7 +2,7 @@
 
 # Regnaissance
 
-![Regnaissance](https://storage.mhtl.im/jpgs/Regnaissance.jpg)
+![Regnaissance](../../jpgs/Regnaissance.jpg)
 
 ## 曲目信息
 | 曲名 | [Regnaissance](info:info("Regnaissance")) |

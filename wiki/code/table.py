@@ -14,7 +14,7 @@ INPUT_CANDIDATES = [
 ]
 OUTPUT_TABLE_C_HTML = (SCRIPT_DIR / '../table_c.html').resolve()
 OUTPUT_TABLE_HTML = (SCRIPT_DIR / '../table.html').resolve()
-CURRENT_VERSION = '5.3'
+CURRENT_VERSION = '6.0'
 
 DIFFICULTY_ORDER = ['Drizzle', 'Sprinkle', 'Cloudburst', 'Clear', 'Special']
 DIFFICULTY_SHORT = {
@@ -33,6 +33,7 @@ DIRECTORY_GROUPS = [
             ('Introduction', '介绍'),
             ('Chapter0', '序章'),
             ('Chapter1', '主线章节一'),
+            ('Chapter2', '主线章节二'),
         ],
     },
     {

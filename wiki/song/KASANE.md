@@ -6,7 +6,7 @@
 
 # KASANE
 
-![KASANE](https://storage.mhtl.im/jpgs/KASANE.jpg)
+![KASANE](../../jpgs/KASANE.jpg)
 
 ## 曲目信息
 | 曲名 | [KASANE](info:info("KASANE")) |

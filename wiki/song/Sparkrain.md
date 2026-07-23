@@ -6,7 +6,7 @@
 
 # 烁雨
 
-![烁雨](https://storage.mhtl.im/jpgs/烁雨.jpg)
+![烁雨](../../jpgs/烁雨.jpg)
 
 ## 曲目信息
 | 曲名 | [烁雨](info:info("烁雨")) |

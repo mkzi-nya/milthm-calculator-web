@@ -2,7 +2,7 @@
 
 # Fantasia Sonata Botanical Garden
 
-![Fantasia Sonata Botanical Garden](https://storage.mhtl.im/jpgs/Fantasia Sonata Botanical Garden.jpg)
+![Fantasia Sonata Botanical Garden](../../jpgs/Fantasia Sonata Botanical Garden.jpg)
 
 ## 曲目信息
 

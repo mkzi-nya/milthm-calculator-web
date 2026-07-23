@@ -160,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ========== Reality 计算相关 ========== */
-function reality(score, c) {
+/*
+function realityv2(score, c) {
   if (c < 0.001) return 0;
   if (score >= 1005000) return 1 + c;
   if (score >= 995000) return 1.4 / (Math.exp(363.175 - score * 0.000365) + 1) - 0.4 + c;
@@ -168,8 +169,9 @@ function reality(score, c) {
   if (score >= 700000) return score / 280000 - 4 + c;
   return 0;
 }
+*/
 
-function realityv3(score, c) {
+function reality(score, c) {
   if (c < 1e-3) return 0;
   if (score >= 1000000) return c + 1.5;
   if (score >= 850000) return c + (score - 850000) / 100000.0;
@@ -199,7 +201,6 @@ function findScore(constant, target, error_return = "Unable to deduce points") {
     return Math.ceil(850000 + (target - constant) * 100000);
   }
 
-  // 修复这里：将 c 改为 constant
   if (target >= Math.max(0, 0.5 * constant - 1.5)) {
     const denominator = constant / 300000 + 1 / 100000;
     const score = (target + constant * 11 / 6 + 8.5) / denominator;
@@ -230,45 +231,36 @@ function processData() {
   // 直接解析JSON输入
   const jsonText = extractJSON(rawInput);
   const parsed = tryParseJSON(jsonText) || {};
-  const { Username, Nickname, UserID, SongRecords, SongRecordsV3 } = extractHeaderFields(parsed);
+  const { Username, Nickname, UserID, SongRecordsV3 } = extractHeaderFields(parsed);
 
   const username = Username || parsed.UserName || "";
   const userID = UserID || "";
   window.userID = userID;
   window.Nickname = Nickname;
 
-  const itemsSR = Array.isArray(SongRecords)
-    ? SongRecords.map(rec => processSongFromOldFormat(rec, false)).filter(Boolean)
-    : [];
-  const itemsV3 = Array.isArray(SongRecordsV3)
-    ? SongRecordsV3.map(rec => processSongFromOldFormat(rec, true)).filter(Boolean)
-    : [];
-
-  const allItems = [...itemsSR, ...itemsV3];
+  // 仅解析 V3 成绩；旧版成绩字段会被完全忽略。
+  const processedItems = SongRecordsV3
+    .map(processSongRecordV3)
+    .filter(Boolean);
 
   // 保存完整的原始JSON数据，而不是只保存提取的字段
   window.extractedFields = parsed;
 
-  // 合并 v2/v3 为单条用于全局与渲染
-  const mergedItems = mergeSongVersions(allItems);
-
-  // 全局保存：只保存合并后的
-  window.processedItems = mergedItems;
+  window.processedItems = processedItems;
 
   // 清空输出区域以避免多次解析时内容堆叠
   const outputDiv = document.getElementById('output');
   outputDiv.innerHTML = '';
 
-  // 排序（按合并后的 reality）
-  mergedItems.sort((a, b) => {
+  // 按 V3 Reality 排序
+  processedItems.sort((a, b) => {
     if (b.singleRealityRaw !== a.singleRealityRaw) {
       return b.singleRealityRaw - a.singleRealityRaw
     }
     return b.bestScore - a.bestScore
   });
 
-  // 显示用户信息（基于合并后的）
-  drawUserInfo(username, mergedItems);
+  drawUserInfo(username, processedItems);
 
   // 探测卡片计算字号
   const probe = document.createElement('div');
@@ -278,8 +270,7 @@ function processData() {
   shitValue = Math.max(1, Math.min(20, probe.offsetWidth * 0.07));
   outputDiv.innerHTML = '';
 
-  // 渲染卡片（基于合并后的）
-  mergedItems.forEach(drawCard);
+  processedItems.forEach(drawCard);
 
   // 直接将完整的原始JSON放入输入框
   document.getElementById('inputData').value = JSON.stringify(window.extractedFields);
@@ -295,157 +286,8 @@ function processData() {
   }
 }
 /* ========== 工具函数 ========== */
-function processSong(songBlock) {
-  // 支持：
-  // [title,category,constant,score,accuracy,level,[a,b,c]]
-  // [title,category,constant,score,accuracy,level,[a,b,c],v3]
-  const block = String(songBlock).trim();
-  if (!block.startsWith('[')) return null;
 
-  // 是否是 V3：允许末尾 ,v3 或 , v3（不带引号）
-  let isV3 = /(,\s*v3\s*)\]$/.test(block);
-
-  // 去掉尾部 ,v3 再做字段分割
-  const normalized = isV3 ? block.replace(/,\s*v3\s*\]$/, ']') : block;
-
-  // 去掉包裹的 [ ]
-  const raw = normalized.slice(1, -1);
-
-  // 顶层安全分割（保留内层 [ ... ]）
-  const tokens = [];
-  let buf = '';
-  let depth = 0;
-  for (const ch of raw) {
-    if (ch === '[') depth++;
-    if (ch === ']') depth--;
-    if (ch === ',' && depth === 0) {
-      tokens.push(buf);
-      buf = '';
-    } else {
-      buf += ch;
-    }
-  }
-  tokens.push(buf);
-
-  if (tokens.length < 7) return null;
-
-  let [title, category, constant, score, accuracy, level, achievedStatus] = tokens;
-
-  // 清洗/解析
-  const strip = s => String(s).trim().replace(/^"(.*)"$|^'(.*)'$/, '$1$2');
-
-  achievedStatus = strip(achievedStatus)
-    .replace(/^\[|\]$/g, '')
-    .split(',')
-    .map(n => parseInt(n.trim(), 10))
-    .filter(n => Number.isFinite(n));
-
-  const constantVal = parseFloat(constant);
-  const constantv3Val = parseFloat(constant);
-  const scoreVal = parseInt(score, 10);
-  const accuracyVal = parseFloat(accuracy);
-  const levelVal = parseInt(level, 10);
-
-  // 同时计算 v2 与 v3 的 reality
-  const r_v2 = reality(scoreVal, constantVal);
-  const r_v3 = realityv3(scoreVal, constantv3Val);
-
-  // —— 关键逻辑：是否改用 v3 公式
-  const useV3 =
-    isV3 ||
-    (Number.isFinite(levelVal) && levelVal <= 1) ||
-    (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
-    (Array.isArray(achievedStatus) && (achievedStatus.includes(2) || achievedStatus.includes(5)));
-
-  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3 > 1e-5 ? constantv3 + 1.5 : 0 : r_v2;
-
-  return {
-    // 版本信息与比较用
-    isV3,
-    version: isV3 ? 'v3' : 'v2',
-    r_v2,
-    r_v3,
-
-    // 供后续显示/排序
-    singleRealityRaw,
-    singleReality: Number.isFinite(singleRealityRaw) ? singleRealityRaw.toFixed(2) : '0.00',
-
-    // 基本字段
-    constant: constantVal,
-    constantv3: constantv3Val,
-    name: strip(title),
-    category: strip(category),
-    bestScore: scoreVal,
-    bestAccuracy: Number.isFinite(accuracyVal) ? accuracyVal.toFixed(4) : '0.0000',
-    bestLevel: Number.isFinite(levelVal) ? levelVal : 0,
-    achievedStatus,
-
-    // 合并用 key（同曲同定数归并）
-    __mergeKey: `${strip(title)}@@${Number(constantVal).toFixed(4)}`
-  };
-}
-
-function mergeSongVersions(items) {
-  const map = new Map();
-
-  (items || []).forEach(it => {
-    const key = it.__mergeKey || `${it.name}@@${Number(it.constant).toFixed(4)}`;
-    const prev = map.get(key);
-
-    // 当前条目的 reality（已经在 processSong / processSongFromOldFormat 中按版本算过）
-    const curRlt = Number(it.singleRealityRaw) || 0;
-
-    if (!prev) {
-      // 初始化：克隆一份简化对象
-      map.set(key, {
-        isV3: it.isV3,                 // 仅标注来源（可选）
-        name: it.name,
-        category: it.category,
-        constant: it.constant,
-        constantv3: it.constantv3,
-        yct: it.yct,
-        bestScore: it.bestScore,
-        bestAccuracy: parseFloat(it.bestAccuracy), // 转成数值，最后再格式化
-        bestLevel: it.bestLevel,
-        achievedStatus: Array.isArray(it.achievedStatus) ? Array.from(new Set(it.achievedStatus)).sort((a, b) => a - b) : [],
-        singleRealityRaw: curRlt,
-        singleReality: (curRlt || 0).toFixed(2)
-      });
-      return;
-    }
-
-    // 合并：分数取高
-    prev.bestScore = Math.max(prev.bestScore, it.bestScore);
-
-    // acc 取高
-    const curAcc = parseFloat(it.bestAccuracy);
-    if (Number.isFinite(curAcc)) prev.bestAccuracy = Math.max(prev.bestAccuracy, curAcc);
-
-    // 等级取低
-    prev.bestLevel = Math.min(prev.bestLevel, it.bestLevel);
-
-    // 状态并集
-    const union = new Set([...(prev.achievedStatus || []), ...(it.achievedStatus || [])]);
-    prev.achievedStatus = Array.from(union).sort((a, b) => a - b);
-
-    // Reality 取高（当同曲出现 v2 与 v3 时生效）
-    prev.singleRealityRaw = Math.max(prev.singleRealityRaw, curRlt);
-    prev.singleReality = prev.singleRealityRaw.toFixed(2);
-
-    // 如果任意版本是 v3，可选地将 isV3 标注为 true（不影响渲染）
-    prev.isV3 = prev.isV3 || !!it.isV3;
-
-    map.set(key, prev);
-  });
-
-  // 把 bestAccuracy 格式化回字符串（与你原渲染逻辑一致）
-  return Array.from(map.values()).map(o => ({
-    ...o,
-    bestAccuracy: Number.isFinite(o.bestAccuracy) ? o.bestAccuracy.toFixed(4) : '0.0000'
-  }));
-}
-
-function processSongFromOldFormat(record, isV3 = false) {
+function processSongRecordV3(record) {
   const { BeatmapID, BestScore, BestAccuracy, BestLevel, AchievedStatus } = record || {};
   if (!BeatmapID) return null;
 
@@ -457,24 +299,10 @@ function processSongFromOldFormat(record, isV3 = false) {
   const accVal = Number.isFinite(BestAccuracy) ? BestAccuracy : 0;
   const levelVal = Number.isFinite(BestLevel) ? BestLevel : 0;
   const status = Array.isArray(AchievedStatus) ? AchievedStatus : [];
-
-  const r_v2 = reality(scoreVal, constant);
-  const r_v3 = realityv3(scoreVal, constantv3);
-
-  // —— 核心：和 processSong 保持一致的判定逻辑
-  const useV3 =
-    isV3 ||
-    (Number.isFinite(levelVal) && levelVal <= 1) ||
-    (Number.isFinite(scoreVal) && scoreVal >= 1005000) ||
-    (status.includes(2) || status.includes(5));
-
-  const singleRealityRaw = isV3 ? r_v3 : useV3 ? constantv3 > 1e-5 ? constantv3 + 1.5 : 0 : r_v2;
+  const singleRealityRaw = reality(scoreVal, constantv3);
 
   return {
-    isV3: !!isV3,
-    version: isV3 ? "v3" : "v2",
-    r_v2,
-    r_v3,
+    isV3: true,
     singleRealityRaw,
     singleReality: singleRealityRaw.toFixed(2),
     constant,
@@ -485,21 +313,8 @@ function processSongFromOldFormat(record, isV3 = false) {
     bestScore: scoreVal,
     bestAccuracy: accVal.toFixed(4),
     bestLevel: levelVal,
-    achievedStatus: status,
-    __mergeKey: `${name}@@${Number(constant).toFixed(4)}`
+    achievedStatus: status
   };
-}
-
-function formatInput(username, items) {
-  // items 为 processSong / processSongFromOldFormat 的统一对象
-  // 若 isV3 为 true，则在尾部追加 ,v3
-  const formattedItems = (items || []).map(item => {
-    if (item.isV3) { return `[${item.name},${item.category},${item.constantv3},${item.bestScore},${item.bestAccuracy},${item.bestLevel},[${(item.achievedStatus || []).join(',')}],v3]` }
-    else return `[${item.name},${item.category},${item.constant},${item.bestScore},${item.bestAccuracy},${item.bestLevel},[${(item.achievedStatus || []).join(',')}]]`;
-
-  }).join(',\n  ');
-
-  document.getElementById('inputData').value = `[${username || ''}],{\n  ${formattedItems}\n}`;
 }
 
 
@@ -675,11 +490,9 @@ function extractHeaderFields(parsed) {
   const UserID = (parsed && parsed.UserID) || "";
   const Nickname = (parsed && parsed.Nickname) || "";
 
-  // SongRecords / SongRecordsV3 必须是数组才返回，否则空数组
-  const SongRecords = (parsed && Array.isArray(parsed.SongRecords)) ? parsed.SongRecords : [];
   const SongRecordsV3 = (parsed && Array.isArray(parsed.SongRecordsV3)) ? parsed.SongRecordsV3 : [];
 
-  return { Username, Nickname, UserID, SongRecords, SongRecordsV3 };
+  return { Username, Nickname, UserID, SongRecordsV3 };
 }
 
 /* ========== 显示用户信息 ========== */
@@ -914,7 +727,7 @@ function processHistoryRecords(scores) {
 
     if (constantData) {
       const { constant, category, name, yct, ad, ae, af, ag } = constantData;
-      const singleReality = realityv3(score, constant);
+      const singleReality = reality(score, constant);
       scoreData.constant = constant;
       scoreData.category = category;
       scoreData.name = name;
@@ -947,7 +760,6 @@ function processHistoryRecords(scores) {
   processData();
 }
 function generateJSONFromScores(scores, username) {
-  const songRecords = [];
   const songRecordsV3 = [];
 
   // 使用Map来去重，只保留每个chart_id的最高分
@@ -962,7 +774,7 @@ function generateJSONFromScores(scores, username) {
     }
   });
 
-  // 将最佳分数转换为SongRecords格式
+  // 将最佳分数转换为 V3 成绩格式
   bestScoresMap.forEach((scoreData, chartId) => {
     const constantData = constants[chartId];
     if (!constantData) return;
@@ -993,7 +805,6 @@ function generateJSONFromScores(scores, username) {
   return {
     Username: username,
     UserID: "",
-    SongRecords: songRecords,
     SongRecordsV3: songRecordsV3
   };
 }
@@ -1160,7 +971,7 @@ function urltc(userrealityHistory, scores) {
       for (const it of sim) {
         if (it.name === track.name && Math.abs(it.constant - track.constant) < 1e-3) {
           it.bestScore = 1010000;
-          it.singleRealityRaw = realityv3(1010000, track.constantv3);
+          it.singleRealityRaw = reality(1010000, track.constantv3);
           found = true;
           break;
         }
@@ -1170,7 +981,7 @@ function urltc(userrealityHistory, scores) {
           name: track.name,
           constantv3: track.constantv3,
           bestScore: 1010000,
-          singleRealityRaw: realityv3(1010000, track.constantv3),
+          singleRealityRaw: reality(1010000, track.constantv3),
         });
       }
       const newAvg = sim
@@ -1595,7 +1406,7 @@ async function downloadImage() {
   tip = tip != '' ? 'Tip: ' + tip.replaceAll('\{Name\}', username) : '';
   // console.log("tips", lines)
 
-  const average1 = Math.round((yrjds != "true" ? window.average1 : window.average * 20) * 100) / 100;
+  const average1 = Math.floor((yrjds != "true" ? window.average1 : window.average * 20) * 100) / 100;
   const average = yrjds != "true" ? window.average : (window.average * 20);
   // console.log(average1, average)
   // 默认 2 列宽度
@@ -2310,14 +2121,14 @@ async function downloadImage() {
                                                 <p
                                                     class="reality-content ${yrjds != 'true' ? isRealityV3 ? 'reality-v3' : '' : 'reality-v50'}">${yrjds != 'true' ? 'REALITY' : 'YTILAER'}</p>
                                                 <p
-                                                    class="reality-text">${average1 ? average1.toFixed(2) : '0.00'}</p>
+                                                    class="reality-text">${average1 ? (Math.floor(average1 * 100) / 100).toFixed(2) : '0.00'}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div
                                         style="line-height: 1.7em;">
                                         <p style="margin-top: 30px;">TOP20 AVG
-                                            ${average ? average.toFixed(5) : '0.00000'}</p>
+                                            ${average ? (Math.floor(average * 100000) / 100000).toFixed(5) : '0.00000'}</p>
                                         <p></p>
                                         <p>At ${dateStr}</p>
                                     </div>
@@ -2723,7 +2534,7 @@ function archiveDownloadImage() {
     ctx.fillText(`Player: ${window.username || ''}  (${window.Nickname || ''})`, 660, 100);
     ctx.fillText(`userID: ${window.userID || ''}`, 660, 128);
     if (yrjds == "true") {
-      ctx.fillText(`Reality: ${(window.average * 20).toFixed(4)}    🐉👃👈😨`, 660, 160);
+      ctx.fillText(`Reality: ${(Math.floor(window.average * 20 * 10000) / 10000).toFixed(4)}    🐉👃👈😨`, 660, 160);
     } else {
       let text = `Reality: ${window.average1 ?? ''}`;
       if ((window.average1 || 0) >= 13.4) text += "    🐉👃👈😨";

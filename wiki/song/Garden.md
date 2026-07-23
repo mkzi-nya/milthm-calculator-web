@@ -2,7 +2,7 @@
 
 # Garden
 
-![Garden](https://storage.mhtl.im/jpgs/Garden.jpg)
+![Garden](../../jpgs/Garden.jpg)
 
 ## 曲目信息
 

@@ -6,7 +6,7 @@
 
 # Innocent white
 
-![Innocent white](https://storage.mhtl.im/jpgs/Innocent white.jpg)
+![Innocent white](../../jpgs/Innocent white.jpg)
 
 ## 曲目信息
 | 曲名 | [Innocent white](info:info("Innocent white")) |

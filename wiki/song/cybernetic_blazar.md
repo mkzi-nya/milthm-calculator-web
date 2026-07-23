@@ -6,7 +6,7 @@
 
 # cybernetic blazar
 
-![cybernetic blazar](https://storage.mhtl.im/jpgs/cybernetic blazar.jpg)
+![cybernetic blazar](../../jpgs/cybernetic blazar.jpg)
 
 ## 曲目信息
 | 曲名 | [cybernetic blazar](info:info("cybernetic blazar")) |

@@ -6,7 +6,7 @@
 
 # Bio-Engineering
 
-![Bio-Engineering](https://storage.mhtl.im/jpgs/Bio-Engineering.jpg)
+![Bio-Engineering](../../jpgs/Bio-Engineering.jpg)
 
 ## 曲目信息
 | 曲名 | [Bio-Engineering](info:info("Bio-Engineering")) |

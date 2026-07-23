@@ -57,7 +57,7 @@ PAGE_TEMPLATE = textwrap.dedent(
 
 IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
     """\
-    ![{song_key}](https://storage.mhtl.im/jpgs/{song_key}.jpg)
+    ![{song_key}](../../jpgs/{song_key}.jpg)
     """
 )
 

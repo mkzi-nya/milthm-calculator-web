@@ -2,7 +2,7 @@
 
 # 时落之雨
 
-![时落之雨](https://storage.mhtl.im/jpgs/时落之雨.jpg)
+![时落之雨](../../jpgs/时落之雨.jpg)
 
 ## 曲目信息
 

@@ -2,7 +2,7 @@
 
 # イコラト
 
-![イコラト](https://storage.mhtl.im/jpgs/イコラト.jpg)
+![イコラト](../../jpgs/イコラト.jpg)
 
 ## 曲目信息
 | 曲名 | [イコラト](info:info("イコラト")) |

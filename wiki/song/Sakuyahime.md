@@ -6,7 +6,7 @@
 
 # Sakuyahime
 
-![Sakuyahime](https://storage.mhtl.im/jpgs/Sakuyahime.jpg)
+![Sakuyahime](../../jpgs/Sakuyahime.jpg)
 
 ## 曲目信息
 | 曲名 | [Sakuyahime](info:info("Sakuyahime")) |

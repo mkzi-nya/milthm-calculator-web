@@ -6,7 +6,7 @@
 
 # Moving On
 
-![Moving On](https://storage.mhtl.im/jpgs/Moving On.jpg)
+![Moving On](../../jpgs/Moving On.jpg)
 
 ## 曲目信息
 | 曲名 | [Moving On](info:info("Moving On")) |

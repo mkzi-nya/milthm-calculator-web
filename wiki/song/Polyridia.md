@@ -2,7 +2,7 @@
 
 # Polyridia
 
-![Polyridia](https://storage.mhtl.im/jpgs/Polyridia.jpg)
+![Polyridia](../../jpgs/Polyridia.jpg)
 
 ## 曲目信息
 | 曲名 | [Polyridia](info:info("Polyridia")) |

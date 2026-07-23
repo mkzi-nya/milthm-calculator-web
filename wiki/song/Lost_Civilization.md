@@ -2,7 +2,7 @@
 
 # Lost Civilization
 
-![Lost Civilization](https://storage.mhtl.im/jpgs/Lost Civilization.jpg)
+![Lost Civilization](../../jpgs/Lost Civilization.jpg)
 
 ## 曲目信息
 

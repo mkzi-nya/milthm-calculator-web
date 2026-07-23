@@ -2,7 +2,7 @@
 
 # Vestige of Dreams
 
-![Vestige of Dreams](https://storage.mhtl.im/jpgs/Vestige of Dreams.jpg)
+![Vestige of Dreams](../../jpgs/Vestige of Dreams.jpg)
 
 ## 曲目信息
 

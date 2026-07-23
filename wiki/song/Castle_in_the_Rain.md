@@ -2,7 +2,7 @@
 
 # 雨之城
 
-![雨之城](https://storage.mhtl.im/jpgs/雨之城.jpg)
+![雨之城](../../jpgs/雨之城.jpg)
 
 ## 曲目信息
 

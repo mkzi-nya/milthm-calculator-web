@@ -6,7 +6,7 @@
 
 # Oiiaioooooiai
 
-![Oiiaioooooiai](https://storage.mhtl.im/jpgs/Oiiaioooooiai.jpg)
+![Oiiaioooooiai](../../jpgs/Oiiaioooooiai.jpg)
 
 ## 曲目信息
 | 曲名 | [Oiiaioooooiai](info:info("oiiaioooooiai")) |

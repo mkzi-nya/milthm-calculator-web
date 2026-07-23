@@ -6,7 +6,7 @@
 
 # 白虎蓮華
 
-![白虎蓮華](https://storage.mhtl.im/jpgs/白虎蓮華.jpg)
+![白虎蓮華](../../jpgs/白虎蓮華.jpg)
 
 ## 曲目信息
 | 曲名 | [白虎蓮華](info:info("白虎蓮華")) |

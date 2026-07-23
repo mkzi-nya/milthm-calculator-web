@@ -6,7 +6,7 @@
 
 # BUCHiAGE Fireworks
 
-![BUCHiAGE Fireworks](https://storage.mhtl.im/jpgs/BUCHiAGE Fireworks.jpg)
+![BUCHiAGE Fireworks](../../jpgs/BUCHiAGE Fireworks.jpg)
 
 ## 曲目信息
 | 曲名 | [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks")) |

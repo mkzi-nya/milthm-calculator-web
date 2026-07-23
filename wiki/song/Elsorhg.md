@@ -6,7 +6,7 @@
 
 # Elsorhg
 
-![Elsorhg](https://storage.mhtl.im/jpgs/Elsorhg.jpg)
+![Elsorhg](../../jpgs/Elsorhg.jpg)
 
 ## 曲目信息
 | 曲名 | [Elsorhg](info:info("Elsorhg")) |

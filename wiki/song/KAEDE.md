@@ -7,7 +7,7 @@
 
 # KAEDE
 
-![KAEDE](https://storage.mhtl.im/jpgs/KAEDE.jpg)
+![KAEDE](../../jpgs/KAEDE.jpg)
 
 ## 曲目信息
 | 曲名 | [KAEDE](info:info("KAEDE")) |

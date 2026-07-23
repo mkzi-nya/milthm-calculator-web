@@ -6,7 +6,7 @@
 
 # IN
 
-![IN](https://storage.mhtl.im/jpgs/IN.jpg)
+![IN](../../jpgs/IN.jpg)
 
 ## 曲目信息
 | 曲名 | [IN](info:info("IN")) |

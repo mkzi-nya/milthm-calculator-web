@@ -6,7 +6,7 @@
 
 # Future Unbound (Game Edit)
 
-![Future%20Unbound%20%28Game%20Edit%29](https://storage.mhtl.im/jpgs/Future%20Unbound%20%28Game%20Edit%29.jpg)
+![Future%20Unbound%20%28Game%20Edit%29](../../jpgs/Future%20Unbound%20%28Game%20Edit%29.jpg)
 
 ## 曲目信息
 | 曲名 | [Future Unbound (Game Edit)](info:info("Future Unbound (Game Edit)")) |

@@ -6,7 +6,7 @@
 
 # cafe in 6412I731V
 
-![cafe in 6412I731V](https://storage.mhtl.im/jpgs/cafe in 6412I731V.jpg)
+![cafe in 6412I731V](../../jpgs/cafe in 6412I731V.jpg)
 
 ## 曲目信息
 | 曲名 | [cafe in 6412I731V](info:info("cafe in 6412I731V")) |

@@ -2,7 +2,7 @@
 
 # OverRain
 
-![OverRain](https://storage.mhtl.im/jpgs/OverRain.jpg)
+![OverRain](../../jpgs/OverRain.jpg)
 
 ## 曲目信息
 

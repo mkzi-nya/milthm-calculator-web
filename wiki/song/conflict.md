@@ -6,7 +6,7 @@
 
 # conflict
 
-![conflict](https://storage.mhtl.im/jpgs/conflict.jpg)
+![conflict](../../jpgs/conflict.jpg)
 
 ## 曲目信息
 | 曲名 | [conflict](info:info("conflict")) |

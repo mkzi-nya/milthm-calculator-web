@@ -6,7 +6,7 @@
 
 # Curse of 14
 
-![Curse of 14](https://storage.mhtl.im/jpgs/Curse of 14.jpg)
+![Curse of 14](../../jpgs/Curse of 14.jpg)
 
 ## 曲目信息
 | 曲名 | [Curse of 14](info:info("Curse of 14")) |

@@ -2,7 +2,7 @@
 
 # 花月
 
-![花月](https://storage.mhtl.im/jpgs/花月.jpg)
+![花月](../../jpgs/花月.jpg)
 
 ## 曲目信息
 | 曲名 | [花月](info:info("花月")) |

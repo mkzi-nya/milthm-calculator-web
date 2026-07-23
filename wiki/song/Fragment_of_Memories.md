@@ -2,7 +2,7 @@
 
 # Fragment of Memories
 
-![Fragment of Memories](https://storage.mhtl.im/jpgs/Fragment of Memories.jpg)
+![Fragment of Memories](../../jpgs/Fragment of Memories.jpg)
 
 ## 曲目信息
 | 曲名 | [Fragment of Memories](info:info("Fragment of Memories")) |

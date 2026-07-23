@@ -6,7 +6,7 @@
 
 # 大月墜落狂想
 
-![大月墜落狂想](https://storage.mhtl.im/jpgs/大月墜落狂想.jpg)
+![大月墜落狂想](../../jpgs/大月墜落狂想.jpg)
 
 ## 曲目信息
 | 曲名 | [大月墜落狂想](info:info("Moonfall   大月墜落狂想")) |
