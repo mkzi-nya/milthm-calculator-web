@@ -266,3 +266,12 @@ body {
 .superlinkR:hover{
     color:rgb(223, 246, 255) !important;
 }
+
+/* Homepage Wiki entry; index.model.html is kept in sync for regeneration. */
+.wiki-entry{display:flex;align-items:center;gap:14px;margin:16px 0;padding:17px 19px;border:1px solid #62bda966;border-radius:12px;background:linear-gradient(110deg,#264c4666,#24353c44);color:inherit;text-decoration:none;transition:background .18s,border-color .18s;}
+.wiki-entry:hover{background:#3c756044;border-color:#7ce5c5;color:inherit;}
+.wiki-entry-icon{font-size:28px;color:turquoise;}
+.wiki-entry strong,.wiki-entry small{display:block;line-height:1.6;}
+.wiki-entry strong{font-size:18px;color:turquoise;}
+.wiki-entry small{font-size:12px;opacity:.8;}
+.wiki-entry-arrow{margin-left:auto;font-size:22px;color:turquoise;}

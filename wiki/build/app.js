@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var NAV = window.WIKI_NAV || { groups: [], songs: [], songSearchUrl: 'song/index.html' };
+  var NAV = window.WIKI_NAV || { groups: [], songs: [], songSearchUrl: 'index.html#/songs' };
   var ROUTES = {};
   var SONGS = [];
   var currentRoute = null;
@@ -31,6 +31,10 @@
       ROUTES[s.route] = { label: s.label, name: s.name || s.label, file: s.file, chapter: s.chapter, song: true };
       SONGS.push(s);
     });
+    Object.keys(NAV.documents || {}).forEach(function (base) {
+      if (!ROUTES['/song/' + base]) ROUTES['/song/' + base] = { label: base, file: NAV.documents[base] };
+    });
+    (NAV.archived || []).forEach(function (s) { ROUTES[s.route] = { label: s.name, file: s.file }; });
     ROUTES['/songs'] = { label: '曲目列表', songIndex: true };
     if (!ROUTES['/']) {
       ROUTES['/'] = { label: '主页', file: NAV.homeFile || 'index.md' };
@@ -38,20 +42,42 @@
   }
 
   function parseHash() {
-    var h = window.location.hash || '';
-    if (h.charAt(0) === '#') h = h.slice(1);
-    if (h.indexOf('/') === 0) {
-      var base = h.slice(1);
-      var q = base.indexOf('?');
-      var anchor = '';
-      if (q >= 0) { base = base.slice(0, q); }
-      var a = base.indexOf('#');
-      if (a >= 0) { anchor = base.slice(a + 1); base = base.slice(0, a); }
-      return { route: '/' + base, anchor: anchor };
-    }
-    // 纯锚点（如 #reality-calculation）——视为主页并滚动
-    if (h) return { route: '/', anchor: h };
-    return { route: '/', anchor: '' };
+    var hash = (location.hash || '#/').slice(1);
+    if (hash.charAt(0) !== '/') return { route: '/', anchor: decodeSafe(hash), query: '' };
+    var split = hash.indexOf('#');
+    var anchor = split < 0 ? '' : decodeSafe(hash.slice(split + 1));
+    var path = split < 0 ? hash : hash.slice(0, split);
+    var query = path.indexOf('?');
+    return { route: query < 0 ? path : path.slice(0, query), anchor: anchor,
+      query: query < 0 ? '' : new URLSearchParams(path.slice(query + 1)).get('q') || '' };
+  }
+
+  function legacySongRoute(value) {
+    var normalized = String(value || '').normalize('NFKC').trim().toLowerCase();
+    var base = Object.keys(NAV.documents || {}).find(function (b) { return b.toLowerCase() === normalized; });
+    if (base) return '/song/' + base;
+    var matches = SONGS.filter(function (s) {
+      return (s.aliases || [s.name]).some(function (v) { return String(v).normalize('NFKC').trim().toLowerCase() === normalized; });
+    });
+    var archived = (NAV.archived || []).find(function (s) { return s.name.normalize('NFKC').trim().toLowerCase() === normalized; });
+    return matches.length === 1 ? matches[0].route : archived ? archived.route : '/songs?q=' + encodeURIComponent(value);
+  }
+
+  function migrateLegacyQuery() {
+    if (!location.search) return;
+    var params = new URLSearchParams(location.search);
+    var value = params.get('song') || params.get('q');
+    if (value === null && location.search.indexOf('=') < 0) value = decodeSafe(location.search.slice(1));
+    if (value === null) return;
+    var anchor = parseHash().anchor;
+    history.replaceState(null, '', location.pathname + routeToHash(legacySongRoute(value)) + (anchor ? '#' + encodeURIComponent(anchor) : ''));
+  }
+
+  function anchorUrl(id) { return routeToHash(currentRoute) + '#' + encodeURIComponent(id); }
+  function navigateAnchor(id) {
+    var target = anchorUrl(decodeSafe(id));
+    if (location.hash === target) scrollToAnchor(decodeSafe(id));
+    else location.hash = target;
   }
 
   /* ---------------- 左侧栏（页面导航） ---------------- */
@@ -137,6 +163,7 @@
     a.addEventListener('click', function (e) {
       e.preventDefault();
       closeSidebar();
+      closeTocPanel();
       nav(route);
     });
     return a;
@@ -168,7 +195,7 @@
     document.body.classList.toggle('toc-fixed', isDesktop());
   }
 
-  function openSidebar() { $('sidebar').classList.add('on'); $('scrim').classList.add('on'); }
+  function openSidebar() { closeTocPanel(); $('sidebar').classList.add('on'); $('scrim').classList.add('on'); }
   function closeSidebar() { $('sidebar').classList.remove('on'); $('scrim').classList.remove('on'); }
 
   /* ---------------- 右侧栏（总览） ---------------- */
@@ -211,8 +238,15 @@
     document.body.appendChild(tocPanel);
   }
 
-  function openTocPanel() { if (tocPanel) tocPanel.classList.add('on'); }
-  function closeTocPanel() { if (tocPanel) tocPanel.classList.remove('on'); }
+  function openTocPanel() {
+    closeSidebar();
+    if (tocPanel) tocPanel.classList.add('on');
+    if (!isDesktop()) $('scrim').classList.add('on');
+  }
+  function closeTocPanel() {
+    if (tocPanel) tocPanel.classList.remove('on');
+    $('scrim').classList.remove('on');
+  }
 
   function setTocScope(scope) {
     tocScope = scope;
@@ -243,7 +277,7 @@
     }
     if (!mdBody) return;
     var hs = mdBody.querySelectorAll('h2,h3');
-    var maxToc = 80;
+    var maxToc = Infinity;
     var count = 0;
     hs.forEach(function (h) {
       if (count >= maxToc) return;
@@ -251,11 +285,11 @@
       var d = document.createElement('a');
       d.className = 'sb-item toc' + (h.tagName === 'H3' ? ' lv3' : '');
       d.textContent = h.textContent;
-      d.href = '#' + h.id;
+      d.href = anchorUrl(h.id);
       d.addEventListener('click', function (e) {
         e.preventDefault();
         closeTocPanel();
-        scrollToAnchor(h.id);
+        navigateAnchor(h.id);
       });
       tocList.appendChild(d);
       count++;
@@ -303,11 +337,17 @@
   function scrollToAnchor(id) {
     var el = document.getElementById(id);
     if (!el) return;
-    var y = el.getBoundingClientRect().top + window.pageYOffset - 12;
+    var head = $('pageHead');
+    var offset = head && head.offsetHeight ? head.offsetHeight + 24 : 12;
+    var y = el.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo(0, Math.max(0, y));
   }
 
+  var pageRequest = 0;
+  var renderedRoute = null;
   function renderPage(route, anchor) {
+    closeInfo();
+    var request = ++pageRequest;
     var entry = ROUTES[route] || ROUTES['/'];
     if (/^garden/.test(route)) {
       window.location.href = 'garden.html';
@@ -315,26 +355,31 @@
     }
     if (route === '/song-search') { route = '/songs'; entry = ROUTES['/songs']; }
     currentRoute = route;
+    renderedRoute = null;
+    mdBody.classList.toggle('people-page', ['/artist', '/charter', '/illustrator'].indexOf(route) >= 0);
     updateSidebarActive(route);
     updateSidebarForRoute(route);
     updateTocForRoute(route);
     if (entry.songIndex) {
       setPageTitle(entry.label);
       renderSongIndex();
+      renderedRoute = route;
+      if (anchor) scrollToAnchor(anchor); else window.scrollTo(0, 0);
       return;
     }
     setPageTitle('加载中…');
     fetchMd(entry.file)
       .then(function (md) {
-        if (currentRoute !== route) return;
+        if (request !== pageRequest) return;
         renderMarkdown(md, entry);
+        renderedRoute = route;
       })
       .then(function () {
-        if (currentRoute !== route) return;
-        if (anchor) { var el = document.getElementById(anchor); if (el && el.scrollIntoView) { el.scrollIntoView(); } }
+        if (request !== pageRequest) return;
+        if (anchor) scrollToAnchor(anchor); else window.scrollTo(0, 0);
       })
       .catch(function (err) {
-        if (currentRoute !== route) return;
+        if (request !== pageRequest) return;
         showRenderError(entry, err);
       });
   }
@@ -377,8 +422,8 @@
       var hlink = document.createElement('a');
       hlink.className = 'song-chapter-link';
       hlink.textContent = c;
-      hlink.href = '#' + h.id;
-      hlink.addEventListener('click', function (e) { e.preventDefault(); scrollToAnchor(h.id); });
+      hlink.href = anchorUrl(h.id);
+      hlink.addEventListener('click', function (e) { e.preventDefault(); navigateAnchor(h.id); });
       h.appendChild(hlink);
       sec.appendChild(h);
       var grid = document.createElement('div');
@@ -404,7 +449,7 @@
       var total = 0;
       chapterEls.forEach(function (ch) {
         var hitItems = !q ? ch.items : ch.items.filter(function (s) {
-          return (s.name || s.label).toLowerCase().indexOf(q) >= 0 || (s.chapter || '').toLowerCase().indexOf(q) >= 0;
+          return (s.name || s.label).toLowerCase().indexOf(q) >= 0 || (s.chapter || '').toLowerCase().indexOf(q) >= 0 || (s.artist || '').toLowerCase().indexOf(q) >= 0 || (s.aliases || []).join(' ').toLowerCase().indexOf(q) >= 0;
         });
         if (hitItems.length) {
           ch.el.style.display = '';
@@ -420,7 +465,8 @@
     }
 
     search.addEventListener('input', function () { apply(search.value); });
-    apply('');
+    search.value = parseHash().query;
+    apply(search.value);
 
     mdBody.innerHTML = '';
     mdBody.appendChild(wrap);
@@ -509,8 +555,12 @@
   }
 
   function postRender(contentRoot, entry) {
-    contentRoot.querySelectorAll('h2,h3,h4').forEach(function (h) {
-      h.id = h.textContent.toLowerCase().replace(/\s+/g, '-');
+    var ids = new Set();
+    contentRoot.querySelectorAll('h1,h2,h3,h4').forEach(function (h) {
+      var base = h.id || h.textContent.toLowerCase().replace(/\s+/g, '-');
+      var id = base, number = 2;
+      while (ids.has(id)) id = base + '-' + number++;
+      ids.add(id); h.id = id;
     });
     if (window.hljs) {
       try {
@@ -520,6 +570,11 @@
           b.dataset.highlighted = 'yes';
         });
       } catch (e) {}
+    }
+    if (entry && /^song\//.test(entry.file || '')) {
+      contentRoot.querySelectorAll('img[src^="../../"]').forEach(function (img) {
+        img.src = new URL(img.getAttribute('src'), new URL(entry.file, location.href)).href;
+      });
     }
     enhanceCodeBlocks(contentRoot);
     resizeKatex();
@@ -555,10 +610,28 @@
       if (a.dataset.bound) return;
       a.dataset.bound = '1';
       var href = a.getAttribute('href') || '';
+      if (/^\/song\//.test(currentRoute) && href === './') {
+        href = '#/songs';
+        a.href = href;
+      }
+      if (!href.startsWith('info:')) {
+        try {
+          var url = new URL(href, location.href);
+          var wikiPath = new URL('./', location.href).pathname;
+          if (url.origin === location.origin && url.pathname.startsWith(wikiPath)) {
+            var value = url.searchParams.get('song') || url.searchParams.get('q');
+            if (value && /(?:\/song(?:\/index\.html|\/)?|\/index\.html|\/)$/.test(url.pathname)) {
+              href = routeToHash(legacySongRoute(value));
+              a.href = href + (url.hash ? '#' + url.hash.slice(1) : '');
+            }
+          }
+        } catch (_) {}
+      }
       if (href.charAt(0) === '#' && href.indexOf('#/') !== 0) {
-        var id = href.slice(1);
-        a.addEventListener('click', function (e) { e.preventDefault(); scrollToAnchor(id); });
-      } else if (decodeURIComponent(href) === 'info:download') {
+        var id = decodeSafe(href.slice(1));
+        a.href = anchorUrl(id);
+        a.addEventListener('click', function (e) { e.preventDefault(); navigateAnchor(id); });
+      } else if (decodeSafe(href) === 'info:download') {
         a.addEventListener('click', function (e) { e.preventDefault(); downloadCurrentMarkdown(); });
       } else if (href.indexOf('info:') === 0) {
         a.addEventListener('click', function (e) { e.preventDefault(); });
@@ -587,201 +660,194 @@
     }).catch(function (err) { console.error('下载失败：', err); });
   }
 
-  /* ---- info 工具提示（读取 chartdev 数据） ---- */
-  var devLoaded = false;
-  var devNodes = [];
-  var hoverState = new Map();
-  var HIDE_DELAY_MS = 120;
-  var currentKey = null;
-  var currentEl = null;
-  var isMorphing = false;
-  var MORPH_SWAP_DELAY = 40;
-  var devFetching = null;
+  /* One reusable card; immutable resource data and a request token prevent stale hover results. */
+  var resourcePromise = null;
+  var infoCard = null;
+  var infoLink = null;
+  var infoRequest = 0;
+  var hideTimer = null;
 
-  function ensureState(key) {
-    if (!hoverState.has(key)) hoverState.set(key, { hoverLink: false, hoverDev: false, el: null, timer: null });
-    return hoverState.get(key);
-  }
-
-  function scheduleHide(key) {
-    var st = ensureState(key);
-    if (st.timer) clearTimeout(st.timer);
-    st.timer = setTimeout(function () {
-      if (!st.hoverLink && !st.hoverDev && st.el) st.el.classList.remove('visible');
-      st.timer = null;
-    }, HIDE_DELAY_MS);
-  }
-
-  function placeAndShowForLink(aaa, linkRect) {
-    if (!aaa) return;
-    aaa.classList.add('visible');
-    var topY = linkRect.bottom + scrollTop();
-    var leftX = linkRect.left + linkRect.width / 2 + (window.pageXOffset || 0) - aaa.offsetWidth / 2;
-    var sw = window.innerWidth;
-    var ew = aaa.offsetWidth;
-    if (leftX + ew > sw) leftX = sw - ew;
-    else if (leftX < 0) leftX = 0;
-    aaa.style.position = 'absolute';
-    aaa.style.top = topY + 'px';
-    aaa.style.left = leftX + 'px';
+  function decodeSafe(value) {
+    try { return decodeURIComponent(value); } catch (_) { return value; }
   }
 
   function parseInfoKeyFromAnchor(anchor) {
-    var url = decodeURIComponent(anchor.getAttribute('href') || '');
-    var m = url.match(/^info:info\((.*)\)$/);
-    if (!m) return null;
-    var params = m[1].split(',').map(function (p) { return p.trim().replace(/['"]/g, ''); });
-    var key = params.length === 2 ? params.join(',') : params[0];
-    return key || null;
+    var match = decodeSafe(anchor.getAttribute('href') || '').match(/^info:info\((.*)\)$/);
+    if (!match) return null;
+    try {
+      var args = JSON.parse('[' + match[1] + ']');
+      if (args.length < 1 || args.length > 2 || args.some(function (v) { return typeof v !== 'string'; })) return null;
+      return args;
+    } catch (_) { return null; }
   }
 
-  function aaaSelector(key) {
-    var k = (window.CSS && typeof CSS.escape === 'function') ? CSS.escape(key) : String(key).replace(/"/g, '\\"');
-    return 'div[aaa="' + k + '"]';
-  }
-
-  var devKeyMap = null;
-  function normalizeKey(k) {
-    return String(k).replace(/[()]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
-  }
-  function findDevNode(key) {
-    var el = document.querySelector(aaaSelector(key));
-    if (el) return { el: el, key: key };
-    var alt = String(key).replace(/[()]/g, '');
-    el = document.querySelector(aaaSelector(alt));
-    if (el) return { el: el, key: alt };
-    if (!devKeyMap && devLoaded) {
-      devKeyMap = {};
-      document.querySelectorAll('body > div[aaa]').forEach(function (n) {
-        devKeyMap[normalizeKey(n.getAttribute('aaa'))] = n;
-      });
+  function loadResources() {
+    if (!resourcePromise) {
+      var controller = new AbortController();
+      var timeout = setTimeout(function () { controller.abort(); }, 12000);
+      resourcePromise = fetch('../resources/resources.json', { signal: controller.signal }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      }).catch(function (error) { resourcePromise = null; throw new Error(error.name === 'AbortError' ? '加载超时，请重试' : '曲目信息加载失败，请重试'); }).finally(function () { clearTimeout(timeout); });
     }
-    var n2 = devKeyMap ? devKeyMap[normalizeKey(key)] : null;
-    return n2 ? { el: n2, key: n2.getAttribute('aaa') } : null;
+    return resourcePromise;
   }
 
-  function showByMorphOrDirect(targetKey, linkRect) {
-    var found = findDevNode(targetKey);
-    if (!found) return;
-    var targetEl = found.el;
-    targetKey = found.key;
-    if (!currentEl) {
-      currentEl = targetEl; currentKey = targetKey;
-      var st = ensureState(targetKey);
-      st.el = currentEl; st.hoverLink = true;
-      if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-      placeAndShowForLink(currentEl, linkRect);
-      return;
-    }
-    if (currentKey !== targetKey && !isMorphing) {
-      isMorphing = true;
-      var oldKey = currentKey;
-      if (oldKey) {
-        var oldSt = ensureState(oldKey);
-        if (oldSt.timer) { clearTimeout(oldSt.timer); oldSt.timer = null; }
-        oldSt.hoverLink = false; oldSt.hoverDev = false; oldSt.el = currentEl;
+  function closeInfo() {
+    ++infoRequest;
+    clearTimeout(hideTimer);
+    if (infoCard) infoCard.hidden = true;
+    if (infoLink) infoLink.setAttribute('aria-expanded', 'false');
+    infoLink = null;
+  }
+
+  function scheduleInfoHide() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () {
+      if (infoCard && (infoCard.matches(':hover') || infoCard.contains(document.activeElement))) return;
+      if (infoLink && (infoLink.matches(':hover') || infoLink === document.activeElement)) return;
+      closeInfo();
+    }, 200);
+  }
+
+  function getInfoCard() {
+    if (infoCard) return infoCard;
+    infoCard = document.createElement('aside');
+    infoCard.id = 'wiki-info-card';
+    infoCard.className = 'info-card';
+    infoCard.setAttribute('role', 'dialog');
+    infoCard.setAttribute('aria-label', '曲目与谱面信息');
+    infoCard.hidden = true;
+    infoCard.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+    infoCard.addEventListener('mouseleave', scheduleInfoHide);
+    infoCard.addEventListener('focusout', scheduleInfoHide);
+    document.body.appendChild(infoCard);
+    document.addEventListener('pointerdown', function (event) {
+      if (infoLink && !infoCard.contains(event.target) && !infoLink.contains(event.target)) closeInfo();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && infoLink) {
+        var link = infoLink;
+        link.focus();
+        closeInfo();
       }
-      currentEl.classList.add('visible');
-      placeAndShowForLink(currentEl, linkRect);
-      setTimeout(function () {
-        currentEl.innerHTML = targetEl.innerHTML;
-        currentEl.setAttribute('aaa', targetKey);
-        targetEl.classList.remove('visible');
-        targetEl.style.top = '-99999px';
-        targetEl.style.left = '-99999px';
-        currentKey = targetKey;
-        var ns = ensureState(currentKey);
-        ns.el = currentEl; ns.hoverLink = false; ns.hoverDev = false;
-        isMorphing = false;
-      }, MORPH_SWAP_DELAY);
-      return;
-    }
-    placeAndShowForLink(currentEl, linkRect);
+    });
+    window.addEventListener('resize', placeInfoCard);
+    window.addEventListener('scroll', function (event) {
+      if (!infoCard.contains(event.target)) placeInfoCard();
+    }, true);
+    return infoCard;
+  }
+
+  function placeInfoCard() {
+    if (!infoLink || !infoCard || infoCard.hidden) return;
+    var rect = infoLink.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) { closeInfo(); return; }
+    var width = infoCard.offsetWidth, height = infoCard.offsetHeight;
+    var left = Math.max(12, Math.min(rect.left, window.innerWidth - width - 12));
+    var top = rect.bottom + 8;
+    if (top + height > window.innerHeight - 12) top = rect.top - height - 8;
+    top = Math.max(12, Math.min(top, window.innerHeight - height - 12));
+    infoCard.style.left = left + 'px';
+    infoCard.style.top = top + 'px';
+  }
+
+  function infoShell(html) {
+    var card = getInfoCard();
+    card.innerHTML = '<button type="button" class="info-close" aria-label="关闭信息卡片">×</button>' + html;
+    card.querySelector('.info-close').addEventListener('click', function () {
+      var link = infoLink;
+      if (link) link.focus();
+      closeInfo();
+    });
+    card.hidden = false;
+    placeInfoCard();
+  }
+
+  function normalizeInfoTitle(value) {
+    return String(value).normalize('NFKC').replace(/[()]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+
+  function displayValue(value) {
+    if (Array.isArray(value)) return value.join('、');
+    return value == null || value === '' ? '暂无数据' : String(value);
+  }
+
+  function showInfo(a) {
+    var args = parseInfoKeyFromAnchor(a);
+    if (!args) return;
+    clearTimeout(hideTimer);
+    if (infoLink && infoLink !== a) infoLink.setAttribute('aria-expanded', 'false');
+    infoLink = a;
+    a.setAttribute('aria-expanded', 'true');
+    var request = ++infoRequest;
+    infoShell('<p class="info-eyebrow">MILTHM WIKI</p><p role="status">正在加载曲目信息…</p>');
+    loadResources().then(function (resources) {
+      if (request !== infoRequest || !a.isConnected) return;
+      var title = Object.prototype.hasOwnProperty.call(resources, args[0]) ? args[0] : Object.keys(resources).find(function (key) {
+        return normalizeInfoTitle(key) === normalizeInfoTitle(args[0]) || normalizeInfoTitle(resources[key].latinTitle) === normalizeInfoTitle(args[0]);
+      });
+      if (!title) {
+        var archived = (NAV.archived || []).find(function (s) { return normalizeInfoTitle(s.name) === normalizeInfoTitle(args[0]); });
+        if (!archived) throw new Error('未找到此曲目');
+        infoShell('<p class="info-eyebrow">历史文档</p><h2>' + esc(archived.name) + '</h2><p>当前版本数据未收录此曲目，历史信息请查看文档。</p><div class="info-actions"><a href="' + routeToHash(archived.route) + '">查看历史文档 ↗</a></div>');
+        return;
+      }
+      var song = resources[title];
+      var difficulty = args[1];
+      var chart = difficulty && (song.difficulty || {})[difficulty];
+      if (difficulty && !chart) throw new Error('未找到此难度');
+      var entry = SONGS.find(function (s) { return s.name === title; });
+      var rows = chart ? [['谱师', chart.charter || chart.chartersList], ['定数', chart.difficultyValue], ['时长', chart['谱面时长']]] :
+        [['曲师', song.artist || song.artistsList], ['画师', song.illustratorsList || song.illustrator], ['曲包', song.chapter_zh_hans || song.chapter]];
+      var charts = chart ? [chart] : Object.values(song.difficulty || {});
+      var bpms = [];
+      charts.forEach(function (c) { (c.bpmInfo || []).forEach(function (b) { if (bpms.indexOf(b.bpm) < 0) bpms.push(b.bpm); }); });
+      if (bpms.length) rows.push(['BPM', bpms.sort(function (a, b) { return a - b; }).join(' / ')]);
+      var html = '<p class="info-eyebrow">' + esc(difficulty || '曲目信息') + '</p><h2>' + esc(title) + '</h2>';
+      if (song.latinTitle && song.latinTitle !== title) html += '<p class="info-subtitle">' + esc(song.latinTitle) + '</p>';
+      html += '<dl class="info-details">' + rows.map(function (row) { return '<div><dt>' + esc(row[0]) + '</dt><dd>' + esc(displayValue(row[1])) + '</dd></div>'; }).join('') + '</dl>';
+      if (chart) {
+        html += '<div class="info-metrics">' + [['Combo', 'combo'], ['Tap', 'tap'], ['Drag', 'drag'], ['Hold', 'hold'], ['EX', 'ex'], ['有判数', '有判数']].map(function (pair) {
+          return '<div><strong>' + esc(displayValue(chart[pair[1]])) + '</strong><span>' + pair[0] + '</span></div>';
+        }).join('') + '</div>';
+        html += '<p class="info-subtitle">有判占比 ' + esc(displayValue(chart['有判占比'])) + '% · 单 note 得分 ' + esc(displayValue(chart['单note'])) + '</p>';
+        if (chart.error) html += '<p>此谱面统计可能有误。</p>';
+      }
+      var gameId = chart ? 'chartid=' + chart.chartid : song.songid;
+      html += '<div class="info-actions">';
+      if (entry) html += '<a href="' + routeToHash(entry.route) + '">曲目详情 ↗</a>';
+      if (gameId) html += '<a href="https://milt.hm/songlist/All/?q=' + encodeURIComponent(gameId) + '" target="_blank" rel="noopener noreferrer">进入游戏 ↗</a>';
+      html += '</div>';
+      var tags = chart ? chart.tags : song.tags;
+      if (tags && tags.length) html += '<details class="info-tags"><summary>标签 · ' + tags.length + '</summary><p>' + esc(tags.join(' · ')) + '</p></details>';
+      infoShell(html);
+    }).catch(function (error) {
+      if (request !== infoRequest) return;
+      infoShell('<p role="status">' + esc(error.message) + '</p><button type="button" class="info-retry">重新加载</button>');
+      infoCard.querySelector('.info-retry').addEventListener('click', function () { showInfo(a); });
+    });
   }
 
   function bindTooltip(a) {
-    a.addEventListener('mouseenter', function () {
-      var key = parseInfoKeyFromAnchor(a);
-      if (!key) return;
-      var st = ensureState(key);
-      st.hoverLink = true;
-      if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-      showByMorphOrDirect(key, a.getBoundingClientRect());
-    });
-    a.addEventListener('mouseleave', function () {
-      var key = parseInfoKeyFromAnchor(a);
-      if (!key) return;
-      var st = ensureState(key);
-      st.hoverLink = false;
-      scheduleHide(key);
-    });
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      var key = parseInfoKeyFromAnchor(a);
-      if (!key) return;
-      showByMorphOrDirect(key, a.getBoundingClientRect());
+    if (!parseInfoKeyFromAnchor(a)) return;
+    a.setAttribute('aria-haspopup', 'dialog');
+    a.setAttribute('aria-controls', 'wiki-info-card');
+    a.setAttribute('aria-expanded', 'false');
+    a.addEventListener('mouseenter', function () { showInfo(a); });
+    a.addEventListener('mouseleave', scheduleInfoHide);
+    a.addEventListener('focus', function () { showInfo(a); });
+    a.addEventListener('blur', scheduleInfoHide);
+    a.addEventListener('click', function (event) { event.preventDefault(); showInfo(a); });
+    a.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' && infoCard && !infoCard.hidden) {
+        event.preventDefault(); infoCard.querySelector('button').focus();
+      }
     });
   }
 
   function bindInfoLinks(root) {
-    var infos = root.querySelectorAll('a[href^="info:info"]');
-    if (infos.length) loadDev();
-  }
-
-  function loadDev() {
-    if (devLoaded) return Promise.resolve();
-    if (devFetching) return devFetching;
-    devFetching = fetch('./chartdev.html?' + Date.now())
-      .then(function (res) { if (!res.ok) throw new Error('加载 chartdev 失败：' + res.status); return res.text(); })
-      .then(function (html) {
-        if (devLoaded) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = html;
-        var nodes = temp.querySelectorAll('div[aaa]');
-        var existing = {};
-        document.querySelectorAll('body > div[aaa]').forEach(function (n) {
-          existing[n.getAttribute('aaa')] = true;
-        });
-        var frag = document.createDocumentFragment();
-        nodes.forEach(function (node) {
-          var key = node.getAttribute('aaa');
-          if (existing[key]) return;
-          existing[key] = true;
-          node.removeAttribute('style');
-          node.classList.add('info-card');
-          node.querySelectorAll('a').forEach(function (lk) {
-            if (lk.getAttribute('target') === '_blank') lk.setAttribute('rel', 'noopener noreferrer');
-            lk.addEventListener('click', function (e) {
-              var h = lk.getAttribute('href') || '';
-              var m = h.match(/[?&]song=([^&]+)/);
-              if (m) {
-                e.preventDefault();
-                var slug = decodeURIComponent(m[1]);
-                if (ROUTES['/song/' + slug]) nav('/song/' + slug);
-                else nav('/songs');
-              }
-            });
-          });
-          node.addEventListener('mouseenter', function () {
-            var st = ensureState(node.getAttribute('aaa'));
-            st.el = node; st.hoverDev = true;
-            node.classList.add('visible');
-            if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-          });
-          node.addEventListener('mouseleave', function () {
-            var st = ensureState(node.getAttribute('aaa'));
-            st.hoverDev = false;
-            scheduleHide(node.getAttribute('aaa'));
-          });
-          frag.appendChild(node);
-        });
-        document.body.appendChild(frag);
-        devLoaded = true;
-        devKeyMap = null;
-      })
-      .catch(function (err) { console.error(err); })
-      .finally(function () { devFetching = null; });
-    return devFetching;
+    if (root.querySelector('a[href^="info:"]')) loadResources().catch(function () {});
   }
 
   /* ---- wiki 图片占位（song 页面） ---- */
@@ -972,7 +1038,10 @@
     buildTocPanel();
 
     $('menuBtn').addEventListener('click', openSidebar);
-    $('scrim').addEventListener('click', closeSidebar);
+    $('scrim').addEventListener('click', function () { closeSidebar(); closeTocPanel(); });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeSidebar(); closeTocPanel(); }
+    });
     window.addEventListener('resize', onResize);
 
     applySidebarDefaults();
@@ -998,14 +1067,17 @@
     function start() {
       if (!content.firstChild) initContent();
       if (loading) loading.style.display = 'none';
+      migrateLegacyQuery();
       var p = parseHash();
       renderPage(p.route, p.anchor);
     }
 
     window.addEventListener('hashchange', function () {
       if (!content.firstChild) initContent();
+      closeInfo();
       var p = parseHash();
-      renderPage(p.route, p.anchor);
+      if (p.route === renderedRoute) { if (p.anchor) scrollToAnchor(p.anchor); else window.scrollTo(0, 0); }
+      else renderPage(p.route, p.anchor);
     });
 
     if (document.readyState === 'loading') {

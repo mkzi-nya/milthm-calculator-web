@@ -6,7 +6,7 @@
 
 # 参宿四\~Betelgeuse\~
 
-![参宿四\~Betelgeuse\~](../../jpgs/参宿四\~Betelgeuse\~.jpg)
+![参宿四~Betelgeuse~](../../jpgs/参宿四~Betelgeuse~.jpg)
 
 ## 曲目信息
 | 曲名 | [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~")) |
@@ -45,4 +45,3 @@
 - [Drizzle](https://storage.mhtl.im/chart/Drizzle_Betelgeuse.jpg)
 - [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Betelgeuse.jpg)
 - [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Betelgeuse.jpg)
-

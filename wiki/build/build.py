@@ -24,6 +24,9 @@ ROOT = Path(__file__).resolve().parent.parent          # wiki/
 BUILD = Path(__file__).resolve().parent                 # wiki/build/
 REPO = ROOT.parent                                     # 仓库根
 
+sys.path.insert(0, str(ROOT / "code"))
+from routes import song_base
+
 RESOURCES = REPO / "resources" / "resources.json"
 
 # 静态页面路由：route -> (title, md文件)
@@ -135,17 +138,7 @@ def build_song_list() -> list[dict[str, Any]]:
         if not isinstance(song, dict):
             continue
         latin = str(song.get("latinTitle") or "")
-        base = None
-        for cand in song_file_candidates(latin, key):
-            if cand in bases:
-                base = cand
-                break
-        if base is None:
-            for cand in song_file_candidates(latin, key):
-                matches = [b for b in bases if b.lower().startswith(cand.lower())]
-                if matches:
-                    base = sorted(matches)[0]
-                    break
+        base = song_base(key, latin)
         chapter = str(song.get("chapter_zh_hans") or song.get("chapter") or "未分组").strip() or "未分组"
         label = key
         if latin and latin != key:
@@ -154,7 +147,9 @@ def build_song_list() -> list[dict[str, Any]]:
             print("!! 未找到曲目 md 文件:", key, latin, file=sys.stderr)
             continue
         songs.append({"label": label, "name": key, "route": f"/song/{base}",
-                      "file": f"song/{base}.md", "chapter": chapter})
+                      "file": f"song/{base}.md", "chapter": chapter,
+                      "artist": song.get("artist", ""),
+                      "aliases": [key, latin, base, sanitize_latin_title(latin), song.get("songid", ""), song.get("Title_zh_Hans", "")] })
 
     # 章节按指定顺序排列，未列出的排最后；章内按曲名排序
     order = {c: i for i, c in enumerate(CHAPTER_ORDER)}
@@ -189,6 +184,16 @@ def build_nav() -> dict[str, Any]:
             ]
         nav["groups"].append(group)
     nav["songs"] = songs
+    known_files = {song["file"] for song in songs}
+    nav["archived"] = []
+    for path in sorted((ROOT / "song").glob("*.md")):
+        file = f"song/{path.name}"
+        if file in known_files:
+            continue
+        match = re.search(r"^# (.+)$", path.read_text(encoding="utf-8"), re.M)
+        title = match.group(1).strip() if match else path.stem
+        nav["archived"].append({"name": title, "file": file, "route": f"/song/{path.stem}"})
+    nav["documents"] = {p.stem: f"song/{p.name}" for p in sorted((ROOT / "song").glob("*.md"))}
     return nav
 
 
@@ -211,12 +216,17 @@ def write_redirects() -> None:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0; url={url}">
+<noscript><meta http-equiv="refresh" content="0; url={url}"></noscript>
 <title>跳转到 Milthm Wiki</title>
 <style>body{{background:#1a1a1a;color:#e5e5e5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-size:15px}}</style>
 </head>
 <body>正在跳转到 Milthm Wiki…</body>
-<script>location.replace("{url}");</script>
+<script>
+var target = new URL("{url}", location.href);
+target.search = location.search;
+if (location.hash) target.hash += '#' + location.hash.slice(1);
+location.replace(target.href);
+</script>
 </html>
 """
     for rel, url in REDIRECTS:
@@ -269,7 +279,7 @@ def sync_generated_md() -> None:
         if not s.exists():
             print("!! 缺失生成源:", s, file=sys.stderr)
             continue
-        if not d.exists() or s.stat().st_mtime > d.stat().st_mtime:
+        if not d.exists() or s.read_bytes() != d.read_bytes():
             shutil.copyfile(s, d)
             print("synced:", d)
 

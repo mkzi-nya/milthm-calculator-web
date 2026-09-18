@@ -3,6 +3,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
+from routes import song_url
 
 try:
     from pypinyin import lazy_pinyin
@@ -27,14 +28,12 @@ def sanitize_latin_title(value):
 
 def escape_markdown_title(title):
     """最小化转义，保持与原脚本一致。"""
-    return str(title).replace('~', r'\~')
-
+    return re.sub(r'([\\`*_{}\[\]()<>#|~])', r'\\\1', str(title))
 
 
 def make_song_link(title, latin_title):
-    sanitized = sanitize_latin_title(latin_title)
-    display_title = escape_markdown_title(title)
-    return f"[{display_title}](./song/?song={sanitized})"
+    return f"[{escape_markdown_title(title)}]({song_url(title, latin_title)})"
+
 
 
 
@@ -125,95 +124,38 @@ def build_statistics(data):
 
 
 
-def generate_artist_md(artists_data):
-    sorted_artists = sorted(artists_data.keys(), key=get_sort_key)
-
-    artist_md = "- [返回主页](./)\n\n"
-    artist_md += "## 曲师统计\n\n"
-    artist_md += '<div style="font-size:10px; white-space:nowrap;">\n\n'
-
-    artist_table = "| artist | song |\n"
-    artist_table += "|-|-|\n"
-
-    for artist in sorted_artists:
-        songs = sorted(artists_data[artist].items(), key=lambda x: get_sort_key(x[0]))
-        song_links = [make_song_link(title, latin_title) for title, latin_title in songs]
-        songs_str = ",<br>".join(song_links)
-        artist_table += f"| {artist} | {songs_str} |\n"
-
-    artist_md += artist_table
-    artist_md += "\n</div>\n"
-    return artist_md
+def generate_people_md(people, label):
+    lines = [f'# {label}统计', '', f'共 **{len(people)}** 位{label}。通过右侧「总览」查找姓名。', '']
+    for person in sorted(people, key=get_sort_key):
+        songs = sorted(people[person].items(), key=lambda x: get_sort_key(x[0]))
+        lines += [f'## {escape_markdown_title(person)}', '', f'{len(songs)} 首曲目', '']
+        lines += [f'- {make_song_link(title, latin)}' for title, latin in songs]
+        lines.append('')
+    return '\n'.join(lines)
 
 
-
-def generate_illustrator_md(illustrators_data):
-    sorted_illustrators = sorted(illustrators_data.keys(), key=get_sort_key)
-
-    illustrator_md = "- [返回主页](./)\n\n"
-    illustrator_md += "## 画师统计\n\n"
-    illustrator_md += '<div style="font-size:10px; white-space:nowrap;">\n\n'
-
-    illustrator_table = "| illustrator | song |\n"
-    illustrator_table += "|-|-|\n"
-
-    for illustrator in sorted_illustrators:
-        songs = sorted(illustrators_data[illustrator].items(), key=lambda x: get_sort_key(x[0]))
-        song_links = [make_song_link(title, latin_title) for title, latin_title in songs]
-        songs_str = ",<br>".join(song_links)
-        illustrator_table += f"| {illustrator} | {songs_str} |\n"
-
-    illustrator_md += illustrator_table
-    illustrator_md += "\n</div>\n"
-    return illustrator_md
+def generate_artist_md(data):
+    return generate_people_md(data, '曲师')
 
 
+def generate_illustrator_md(data):
+    return generate_people_md(data, '画师')
 
-def generate_charter_md(charters_data):
-    sorted_charters = sorted(charters_data.keys(), key=get_sort_key)
 
-    charter_md = "- [返回主页](./)\n\n"
-    charter_md += "## 谱师统计\n\n"
-    charter_md += '<div style="font-size:10px; white-space:nowrap;">\n\n'
-
-    charter_table = "| Charter | Drizzle | Sprinkle | Cloudburst | Clear | Special |\n"
-    charter_table += "|-|-|-|-|-|-|\n"
-
-    difficulty_map = {
-        "Drizzle": "DZ",
-        "Sprinkle": "SK",
-        "Cloudburst": "CB",
-        "Clear": "CL",
-        "Special": "SP"
-    }
-
-    for charter in sorted_charters:
-        all_songs = sorted(
-            charters_data[charter],
-            key=lambda x: (get_sort_key(x['title']), x['difficulty'])
-        )
-
-        difficulty_links = {key: [] for key in difficulty_map.values()}
-
-        for entry in all_songs:
-            title = entry['title']
-            latin_title = entry.get('latinTitle', title)
-            difficulty = entry['difficulty']
-            link = make_song_link(title, latin_title)
-            column = difficulty_map.get(difficulty)
-            if column:
-                difficulty_links[column].append(link)
-
-        row = f"| {charter} |"
-        for col in ["DZ", "SK", "CB", "CL", "SP"]:
-            links = ",<br>".join(difficulty_links[col])
-            row += f" {links} |"
-        charter_table += row + "\n"
-
-    charter_md += charter_table
-    charter_md += "\n</div>\n"
-    return charter_md
-
+def generate_charter_md(data):
+    lines = ['# 谱师统计', '', f'共 **{len(data)}** 位谱师。通过右侧「总览」查找姓名。', '']
+    order = ['Drizzle', 'Sprinkle', 'Cloudburst', 'Clear', 'Special']
+    for person in sorted(data, key=get_sort_key):
+        entries = sorted(data[person], key=lambda x: (get_sort_key(x['title']), x['difficulty']))
+        lines += [f'## {escape_markdown_title(person)}', '', f'{len(entries)} 张谱面 · {len({e["title"] for e in entries})} 首曲目', '']
+        for difficulty in order + sorted({e['difficulty'] for e in entries} - set(order)):
+            group = [e for e in entries if e['difficulty'] == difficulty]
+            if not group:
+                continue
+            lines += [f'### {difficulty}', '']
+            lines += [f'- {make_song_link(e["title"], e["latinTitle"])}' for e in group]
+            lines.append('')
+    return '\n'.join(lines)
 
 
 def main(resource_file=None):

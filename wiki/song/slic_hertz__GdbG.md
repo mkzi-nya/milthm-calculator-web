@@ -6,7 +6,7 @@
 
 # slic.hertz #GdbG
 
-![slic.hertz%20%23GdbG](../../jpgs/slic.hertz%20%23GdbG.jpg)
+![slic.hertz #GdbG](../../jpgs/slic.hertz%20%20GdbG.jpg)
 
 ## 曲目信息
 | 曲名 | [slic.hertz #GdbG](info:info("slic.hertz #GdbG")) |
@@ -52,4 +52,3 @@
 - [Drizzle](https://storage.mhtl.im/chart/Drizzle_slic_hertz__GdbG.jpg)
 - [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_slic_hertz__GdbG.jpg)
 - [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_slic_hertz__GdbG.jpg)
-

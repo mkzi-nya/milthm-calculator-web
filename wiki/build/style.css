@@ -101,7 +101,7 @@ a:hover{text-decoration:underline;}
 
 /* ===== 内容 ===== */
 #content{max-width:920px;margin:0 auto;padding:3.2rem 1rem 4rem;}
-#content h2,#content h3{scroll-margin-top:.8rem;}
+#content h1,#content h2,#content h3,#content h4{scroll-margin-top:5rem;}
 @media(min-width:1200px){#content{padding-left:3rem;padding-right:3rem;}}
 h1,h2,h3,h4{font-weight:650;color:#fff;margin-top:1.5em;margin-bottom:.55em;line-height:1.35;}
 h1{font-size:1.55rem;margin-top:0;}
@@ -160,26 +160,48 @@ img{max-width:100%;border-radius:8px;}
 .wiki-img .error-container{padding:14px;color:#ff9d9d;background:#311;border:1px solid #a33;border-radius:8px;font-size:.88rem;}
 .wiki-img .retry-button{margin-top:8px;padding:.35em .8em;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:#fff;cursor:pointer;}
 
-/* ===== 工具提示（chartdev info 卡片） ===== */
-div[aaa]{
-  visibility:hidden;opacity:0;
-  transition:opacity .12s ease-in-out,visibility .12s ease-in-out,top .12s ease,left .12s ease;
-}
-div[aaa].visible{visibility:visible;opacity:1;}
+/* ===== 曲目与谱面信息卡片 ===== */
 .info-card{
-  position:absolute;z-index:1000;
-  width:min(78vw,270px);max-height:70vh;overflow:auto;
-  padding:.7rem .8rem;border-radius:12px;
-  background:rgba(30,30,30,.98);border:1px solid #3a3a3a;color:#e8e8e8;
-  font:400 .78rem/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",sans-serif;
-  box-shadow:0 10px 28px rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);-webkit-overflow-scrolling:touch;
+  position:fixed;z-index:1000;width:min(380px,calc(100vw - 24px));
+  max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;
+  padding:22px;border-radius:18px;background:linear-gradient(145deg,#24342f,#1b2221 65%);
+  border:1px solid #5b8c7566;color:var(--fg);box-shadow:0 18px 60px #0009;
+  font-size:14px;line-height:1.6;overflow-wrap:anywhere;
 }
-.info-card p{margin:0 0 .35em;color:#d8d8d8;}
-.info-card p:last-child{margin-bottom:0;}
-.info-card a{color:#5db2ff;text-decoration:none;}
-.info-card a:hover{text-decoration:underline;}
-.info-card b,.info-card strong{color:#fff;font-weight:600;}
+.info-card[hidden]{display:none;}
+.info-card h2{font-size:21px;line-height:1.35;margin:4px 22px 8px 0;border:0;padding:0;}
+.info-card p{margin:8px 0;}
+.info-card .info-eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#86dcb1;margin:0;}
+.info-card .info-subtitle{color:#a6b8b0;font-size:12px;}
+.info-close{position:absolute;right:10px;top:10px;width:30px;height:30px;background:#ffffff0d;border:1px solid #ffffff18;border-radius:50%;color:#ddd;font-size:20px;cursor:pointer;}
+.info-details{margin:16px 0;}
+.info-details>div{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:5px 0;}
+.info-details dt{color:#9db4aa;}
+.info-details dd{margin:0;color:#eef7f2;}
+.info-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0;}
+.info-metrics>div{background:#ffffff06;border:1px solid #ffffff0d;border-radius:10px;padding:9px;text-align:center;}
+.info-metrics strong,.info-metrics span{display:block;}
+.info-metrics strong{font-size:19px;color:#ecfff3;}
+.info-metrics span{font-size:11px;color:#a6b8b0;}
+.info-actions{display:flex;gap:8px;margin-top:16px;}
+.info-actions a,.info-retry{border:1px solid #79c7a34d;border-radius:9px;background:#42b88315;padding:8px 12px;color:#9ae5bd;font:inherit;cursor:pointer;}
+.info-actions a:hover,.info-retry:hover{background:#42b88330;text-decoration:none;}
+.info-tags{margin-top:14px;color:#a6b8b0;font-size:12px;}
+.info-tags summary{cursor:pointer;}
+a[href^="info:"]{text-decoration:underline dotted;text-underline-offset:4px;}
+:focus-visible{outline:2px solid #83d9ae;outline-offset:3px;}
+
+/* ===== 创作者统计：姓名、数量与作品列表 ===== */
+.people-page>h1{font-size:1.8rem;letter-spacing:.02em;}
+.people-page>h1+p{color:var(--muted);margin-bottom:2.5rem;}
+.people-page>h2{margin:2.5rem 0 0;padding:1rem 1.1rem .35rem;background:#25322b;border:1px solid #42624e;border-bottom:0;border-radius:12px 12px 0 0;font-size:1.2rem;overflow-wrap:anywhere;}
+.people-page>h2+p{margin:0 0 1rem;padding:0 1.1rem .85rem;background:#25322b;border:1px solid #42624e;border-top:0;border-radius:0 0 12px 12px;color:#adc0b4;font-size:.8rem;}
+.people-page>h3{font-size:.85rem;color:#b7c8be;margin:1.25rem 0 .6rem;}
+.people-page>ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:.5rem;list-style:none;padding:0;margin:.75rem 0 1.5rem;}
+.people-page>ul>li{min-width:0;margin:0;}
+.people-page>ul a{display:block;height:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:#c9e5d5;font-size:.88rem;overflow-wrap:anywhere;}
+.people-page>ul a:hover{border-color:#579874;background:#293a30;text-decoration:none;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;}}
 
 /* ===== 加载 ===== */
 #loading{
@@ -229,8 +251,10 @@ pre,code,kbd{user-select:text;}
   body.toc-fixed{padding-right:280px;}
   /* 大屏隐藏顶部横栏 */
   body.toc-fixed .page-head{display:none !important;}
+  body.toc-fixed #content :is(h1,h2,h3,h4){scroll-margin-top:.8rem;}
   body.toc-fixed #content{padding-top:2.4rem;padding-left:2.2rem;padding-right:2.2rem;}
 }
+#mdBody img{max-width:100%;height:auto;}
 @media(max-width:1099px){
   #tocPanel{box-shadow:-6px 0 20px rgba(0,0,0,.5);}
   .toc-btn{position:relative;}

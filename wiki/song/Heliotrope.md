@@ -7,7 +7,7 @@
 
 # ヘリオトロープ (feat. NIQRO)
 
-![ヘリオトロープ (feat. NIQRO)](../../jpgs/ヘリオトロープ (feat. NIQRO).jpg)
+![ヘリオトロープ (feat. NIQRO)](../../jpgs/ヘリオトロープ%20%28feat.%20NIQRO%29.jpg)
 
 ## 曲目信息
 | 曲名 | [ヘリオトロープ (feat. NIQRO)](info:info("ヘリオトロープ (feat. NIQRO)")) |

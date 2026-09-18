@@ -11,7 +11,7 @@ OUTPUT_DIR = Path("../")
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
 # 章节/曲包页：slug 为 md 文件名，chapter 为 resources.json 中的 chapter 键。
-# 这些页面由 ?q=<slug> 加载，只列出该章节的曲目，绝不生成「谱面预览」。
+# 这些页面由 index.html#/song/<slug> 加载，只列出该章节的曲目，绝不生成「谱面预览」。
 CHAPTER_PAGES = [
     {"slug": "weather_report", "title": "介绍: 天气预报", "chapter": "Introduction"},
     {"slug": "rainfall_sounds", "title": "序章: 雨的声音", "chapter": "Chapter0"},
@@ -28,7 +28,7 @@ CHAPTER_SLUGS = {page["slug"] for page in CHAPTER_PAGES}
 
 CHAPTER_PAGE_TEMPLATE = textwrap.dedent(
     """\
-    [返回目录](./)
+    [返回目录](./index.html#/songs)
 
     # {title}
 
@@ -37,11 +37,11 @@ CHAPTER_PAGE_TEMPLATE = textwrap.dedent(
 
 PAGE_TEMPLATE = textwrap.dedent(
     """\
-    [返回目录](./)
+    [返回目录](./index.html#/songs)
 
     > 此页面正在建设中，当前为模板自动生成，部分信息可能不完整  
     > 如果您愿意参与填写，可以[点此](https://github.dev/mkzi-nya/milthm-calculator-web)进行修改并提交，或联系@mkzi_nya(qq: 2450382239)  
-    > 或[点击此处](../wiki_download.html)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
+    > 或[点击此处](info:download)下载对应文档并编辑后发送至[此群](https://qm.qq.com/q/3lwpuT3l8A)（qq：699731287）
 
 
     # {song_key}

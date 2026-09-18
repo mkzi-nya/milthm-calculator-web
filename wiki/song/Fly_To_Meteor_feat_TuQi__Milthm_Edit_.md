@@ -6,7 +6,7 @@
 
 # Fly To Meteor feat.兔柒 (Milthm Edit)
 
-![Fly To Meteor feat.兔柒 (Milthm Edit)](../../jpgs/Fly To Meteor feat.兔柒 (Milthm Edit).jpg)
+![Fly To Meteor feat.兔柒 (Milthm Edit)](../../jpgs/Fly%20To%20Meteor%20feat.兔柒%20%28Milthm%20Edit%29.jpg)
 
 ## 曲目信息
 | 曲名 | [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 (Milthm Edit)")) |
@@ -46,4 +46,3 @@
 ## 谱面预览
 
 - [Clear](https://storage.mhtl.im/chart/Clear_Fly_To_Meteor_feat_TuQi__Milthm_Edit_.jpg)
-

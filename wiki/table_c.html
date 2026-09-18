@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0; url=./index.html#/table-c">
+<noscript><meta http-equiv="refresh" content="0; url=./index.html#/table-c"></noscript>
 <title>跳转到 Milthm Wiki</title>
 <style>body{background:#1a1a1a;color:#e5e5e5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-size:15px}</style>
 </head>
 <body>正在跳转到 Milthm Wiki…</body>
-<script>location.replace("./index.html#/table-c");</script>
+<script>
+var target = new URL("./index.html#/table-c", location.href);
+target.search = location.search;
+if (location.hash) target.hash += '#' + location.hash.slice(1);
+location.replace(target.href);
+</script>
 </html>

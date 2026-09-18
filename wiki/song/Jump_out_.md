@@ -2,10 +2,10 @@
 
 # Jump out?
 
-![Jump%20out%3F](../../jpgs/Jump%20out%3F.jpg)
+![Jump out?](../../jpgs/Jump%20out_.jpg)
 
 ## 曲目信息
-| 曲名 | [Jump out?](info:info("Jump out ")) |
+| 曲名 | [Jump out?](info:info("Jump out?")) |
 | - | - |
 | 曲师 | B.R.I |
 | 曲绘 | MYOB! |
@@ -15,7 +15,7 @@
 | BPM | 174 |
 
 ## 谱面信息
-| 难度 | [Drizzle](info:info("Jump out ", "Drizzle")) | [Sprinkle](info:info("Jump out ", "Sprinkle")) | [Cloudburst](info:info("Jump out ", "Cloudburst")) |
+| 难度 | [Drizzle](info:info("Jump out?", "Drizzle")) | [Sprinkle](info:info("Jump out?", "Sprinkle")) | [Cloudburst](info:info("Jump out?", "Cloudburst")) |
 | - | - | - | - |
 | 等级 | 2 (2.0) | 7+ (7.9) | 9+ (9.7) |
 | 谱师 | TCSTWTBHY? | Kiyotsuki | [Anonymous] |
@@ -40,4 +40,3 @@
 - [Drizzle](https://storage.mhtl.im/chart/Drizzle_Jump_out_.jpg)
 - [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_Jump_out_.jpg)
 - [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_Jump_out_.jpg)
-

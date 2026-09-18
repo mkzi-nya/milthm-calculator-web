@@ -2,7 +2,7 @@
 
 ## 定数表
 
-[按章节排列的定数表](./table.html)
+[按章节排列的定数表](./index.html#/table)
 
 <div style="font-size:10px; white-space:nowrap;">
 

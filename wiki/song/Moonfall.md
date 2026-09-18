@@ -9,7 +9,7 @@
 ![大月墜落狂想](../../jpgs/大月墜落狂想.jpg)
 
 ## 曲目信息
-| 曲名 | [大月墜落狂想](info:info("Moonfall   大月墜落狂想")) |
+| 曲名 | [大月墜落狂想](info:info("大月墜落狂想")) |
 | - | - |
 | 拉丁文曲名 | Moonfall |
 | 曲师 | 10lulu |
@@ -20,7 +20,7 @@
 | BPM | 196 |
 
 ## 谱面信息
-| 难度 | [Drizzle](info:info("Moonfall   大月墜落狂想", "Drizzle")) | [Sprinkle](info:info("Moonfall   大月墜落狂想", "Sprinkle")) | [Cloudburst](info:info("Moonfall   大月墜落狂想", "Cloudburst")) |
+| 难度 | [Drizzle](info:info("大月墜落狂想", "Drizzle")) | [Sprinkle](info:info("大月墜落狂想", "Sprinkle")) | [Cloudburst](info:info("大月墜落狂想", "Cloudburst")) |
 | - | - | - | - |
 | 等级 | 2 (2.0) | 8 (8.0) | 12 (12.4) |
 | 谱师 | 十返清月 | 十返清月 | Ariayaka |

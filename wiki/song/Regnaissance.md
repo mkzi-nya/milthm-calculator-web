@@ -48,7 +48,7 @@
 ## 曲目相关
 - 本曲目为 Milthm 原创曲。
 - 曲师名义中 Abit 是 AiSS 的马甲，该曲目实际是 AiSS 的独作曲。
-  - 但同一曲师的《[Agnostic](info:info("Agnostic"))》和《[Pthanhil](info:info("Pthanhil"))》并没有使用这一名义。
+  - 但同一曲师的《[Agnostic](info:info("Agnostic"))》和《[Pthahnil](info:info("Pthahnil"))》并没有使用这一名义。
 - 本曲曲名为法语，意为「再生」。
   - 但由于与英语中「文艺复兴」(Renaissance) 过于相似，因此常被人误认。
 

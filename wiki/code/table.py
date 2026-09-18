@@ -179,7 +179,7 @@ def build_constant_markdown(rows: list[dict[str, Any]]) -> str:
         '',
         '## 定数表',
         '',
-        '[按章节排列的定数表](./table.html)',
+        '[按章节排列的定数表](./index.html#/table)',
         '',
         '<div style="font-size:10px; white-space:nowrap;">',
         '',
@@ -340,7 +340,7 @@ def build_chapter_markdown(resources: dict[str, Any], rows: list[dict[str, Any]]
         '',
         '## 定数表',
         '',
-        '[按定数排列的定数表](./table_c.html)',
+        '[按定数排列的定数表](./index.html#/table-c)',
         '',
         '- [说明](#说明)',
     ]

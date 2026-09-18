@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 # Milthm Wiki 一键构建
 # 流程：生成定数表 md -> 生成统计 md -> 组装单页 wiki + 跳转页 + 工具返回按钮
 set -e
@@ -10,6 +10,7 @@ python3 "$WIKI/code/table.py"
 
 echo "[2/4] 生成统计 markdown (code/) ..."
 python3 "$WIKI/code/chater.py"
+python3 "$WIKI/code/chartdev.py"
 
 echo "[3/4] 组装 wiki/index.html、跳转页、返回按钮 ..."
 python3 "$WIKI/build/build.py"

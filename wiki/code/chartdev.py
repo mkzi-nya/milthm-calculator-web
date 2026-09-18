@@ -2,6 +2,7 @@
 import json
 import re
 from pathlib import Path
+from routes import song_url
 
 DEFAULT_RESOURCE_FILE = Path(__file__).resolve().parent / "../../resources/resources.json"
 FALLBACK_RESOURCE_FILE = Path(__file__).resolve().parent / "resources.json"
@@ -122,7 +123,7 @@ def generate_chart_dev(data):
 <div style="position: absolute; background-color: rgba(0, 0, 0, 0.8); padding: 2px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000; font-family: Arial, sans-serif; color: #fff; font-size: 11px; line-height: 1.4; width: 250px;" aaa="{clean_title},{difficulty}">
     <p>ID: {chart_id}</p>
     <p><a href="{url}" target="_blank" style="color: #4da6ff; text-decoration: none;">点此进入游戏</a></p>
-    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './?song={sanitized_latin_title}' : './song/?song={sanitized_latin_title}'">点此查看曲目详情信息</a></p>
+    <p><a href="{song_url(data.get('title', ''), data.get('latinTitle', ''))}">点此查看曲目详情信息</a></p>
     <p>charter: {charter}</p>
     <p>chartersList: {', '.join(charters_list)}</p>
     {generate_chart_info_html_from_data(chart_info)}
@@ -171,7 +172,7 @@ def generate_info_dev(data):
 
     info_html += f'''
     <p><a href="{url}" target="_blank" style="color: #4da6ff; text-decoration: none;">点此进入游戏</a></p>
-    <p><a href="#" target="_blank" style="color: #4da6ff; text-decoration: none;" onmouseover="this.href = (window.location.pathname.includes('/song/') || window.location.pathname.endsWith('/song')) ? './?song={sanitized_latin_title}' : './song/?song={sanitized_latin_title}'">点此查看曲目详情信息</a></p>
+    <p><a href="{song_url(data.get('title', ''), data.get('latinTitle', ''))}">点此查看曲目详情信息</a></p>
     <p>artist: {item.get('artist', '')}<br><br>illustrator: {', '.join(item.get('illustrator', []))}</p>
     <p>BPM:<br><br>{bpm_text.rstrip(', ')}</p>
     <p>Tags: [{"],   [".join(item.get('songTags', []))}]</p>
