@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Milthm Wiki</title>
+<style>{{CSS}}</style>
+<link rel="stylesheet" href="./katex.min.css">
+</head>
+<body>
+<button id="menuBtn" aria-label="打开目录">&#9776;</button>
+<div id="scrim"></div>
+<aside id="sidebar">
+</aside>
+<main id="content"></main>
+<div id="loading"><div class="spinner"></div><div>Milthm Wiki</div><div class="sub">正在加载…</div></div>
+<script>
+window.WIKI_NAV = {{NAV}};
+</script>
+<script src="./marked.min.js"></script>
+<script src="./katex.min.js"></script>
+<script src="./index.umd.js"></script>
+<script src="./highlight.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

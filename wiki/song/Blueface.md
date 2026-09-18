@@ -28,9 +28,11 @@
 
 ## 曲目试听
 
+- [【Youtube】](https://www.youtube.com/watch?v=BU69_xoqfk4)
+
 ## 曲目相关
 
-(待补充)
+- 在原始语言中，该符号显示为「☹︎」。
 
 ## 游戏相关
 

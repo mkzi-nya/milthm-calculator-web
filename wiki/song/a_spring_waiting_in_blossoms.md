@@ -1,8 +1,11 @@
+[返回目录](./)
 
+# 支线章节一: 花裳随雨得春迟
 
-
-## 谱面预览
-
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_a_spring_waiting_in_blossoms.jpg)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_a_spring_waiting_in_blossoms.jpg)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_a_spring_waiting_in_blossoms.jpg)
+- [BUCHiAGE Fireworks](info:info("BUCHiAGE Fireworks"))
+- [Sakuyahime](info:info("Sakuyahime"))
+- [Vestige of Dreams](info:info("Vestige of Dreams"))
+- [ニニ (feat. Qayo & mii)](info:info("ニニ (feat. Qayo & mii)"))
+- [灯ノ桜蝶](info:info("灯ノ桜蝶"))
+- [百九十](info:info("百九十"))
+- [靈](info:info("靈"))

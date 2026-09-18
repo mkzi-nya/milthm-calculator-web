@@ -15,9 +15,9 @@
 | 拉丁文曲名 | - |
 | 曲师 | Antistar feat. Ctymax |
 | 曲绘 | Sierra NiCole Narvaeth |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 露晓卉庭 |
+| 更新版本 | v5.3 |
+| 时长 | 02:27 |
 | BPM | 145 |
 
 ## 谱面信息
@@ -33,11 +33,9 @@
 
 ## 曲目试听
 
-(待补充)
-
 ## 曲目相关
 
-(待补充)
+- 本曲目亦收录于「Dynamix」「DanceRailRefresh」「DanceRail3」「ChainBeeT」「Paradigm: Reboot」「音札」「Berry Melody」「Siglota」「Phigros」「时羁之律TauLink」。
 
 ## 游戏相关
 

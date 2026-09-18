@@ -1,8 +1,31 @@
+[返回目录](./)
 
+# 单曲: 梦境磁带
 
-
-## 谱面预览
-
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_dream_tape.jpg)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_dream_tape.jpg)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_dream_tape.jpg)
+- [Agnostic](info:info("Agnostic"))
+- [Algebra](info:info("Algebra"))
+- [Broken Conviction](info:info("Broken Conviction"))
+- [Dogbite](info:info("Dogbite"))
+- [Fly To Meteor (Milthm Edit)](info:info("Fly To Meteor (Milthm Edit)"))
+- [Fly To Meteor feat.兔柒 (Milthm Edit)](info:info("Fly To Meteor feat.兔柒 (Milthm Edit)"))
+- [Future Unbound (Game Edit)](info:info("Future Unbound (Game Edit)"))
+- [Hikari](info:info("Hikari"))
+- [IN](info:info("IN"))
+- [INFP.mp3](info:info("INFP.mp3"))
+- [Moonflutter](info:info("Moonflutter"))
+- [Moving On](info:info("Moving On"))
+- [Oiiaioooooiai](info:info("Oiiaioooooiai"))
+- [Oniichan](info:info("Oniichan"))
+- [Psyched Fevereiro](info:info("Psyched Fevereiro"))
+- [Rainbow Flavor!](info:info("Rainbow Flavor!"))
+- [slic.hertz](info:info("slic.hertz"))
+- [WATER](info:info("WATER"))
+- [Words](info:info("Words"))
+- [サイクルの欠片](info:info("サイクルの欠片"))
+- [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai"))
+- [仮想明日](info:info("仮想明日"))
+- [参宿四~Betelgeuse~](info:info("参宿四~Betelgeuse~"))
+- [樱落繁花](info:info("樱落繁花"))
+- [白虎蓮華](info:info("白虎蓮華"))
+- [选择你的宽带](info:info("选择你的宽带"))
+- [驟雨の狭間](info:info("驟雨の狭間"))

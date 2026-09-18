@@ -15,9 +15,9 @@
 | 拉丁文曲名 | - |
 | 曲师 | uma |
 | 曲绘 | 水沐汐 |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 因你而存在的理想国 |
+| 更新版本 | v6.0 |
+| 时长 | 01:57 |
 | BPM | 175 |
 
 ## 谱面信息
@@ -29,19 +29,34 @@
 
 ## 解锁方法
 
-(待补充)
+- 通过《[Fantasia Sonata Reflection](info:info("Fantasia Sonata Reflection"))》的 SK 谱面后，阅读 Section 6。
 
 ## 曲目试听
 
-(待补充)
+- [【Bilibili】](https://www.bilibili.com/video/BV16Agq6wEA9/)
+<div style="position: relative; width: 50%; aspect-ratio: 16 / 9;">
+<iframe style="position:absolute;width:100%;height:100%;left:0;top:0;"src="//www.bilibili.com/blackboard/html5mobileplayer.html?danmaku=0&fjw=0&hideCoverInfo=0&isOutside=true&bvid=BV16Agq6wEA9&p=1"rameborder="no"scrolling="no"></iframe>
+</div>
 
 ## 曲目相关
 
-(待补充)
+- BPM 为 175。
 
 ## 游戏相关
 
-(待补充)
+- 全难度共通
+  - 会出现 Lightning Note（闪电形状的 Notes）。
+  - 碰到该 Notes 虽不会断连，但会减少分数，因此尽量避开。（按照机制，稍微碰到一点不会影响分数，无需过度畏惧。）
+- DZ 谱面
+  - 定数为 1.0。
+- SK 谱面
+  - 定数为 4.5。
+- CB 谱面
+  - 定数为 11.4。
+- CL 谱面
+  - 定数为 11.8。
+  - Lightning Note 被放置在容易卷入雨露附近等位置，以及让人无法用雨滴铺毯取得的位置。与偏向地力系谱面的 CB 相反，本谱面是技术系，尤其「避开愤怒棒」要素很强。
+  - 顺带一提，Lightning Note 总共有 439 个。（是不是太多了？）
 
 ## 谱面预览
 

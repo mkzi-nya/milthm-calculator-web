@@ -1,8 +1,11 @@
+[返回目录](./)
 
+# 序章: 雨的声音
 
-
-## 谱面预览
-
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_rainfall_sounds.jpg)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_rainfall_sounds.jpg)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_rainfall_sounds.jpg)
+- [Jump out?](info:info("Jump out?"))
+- [LOUDER!](info:info("LOUDER!"))
+- [☹](info:info("☹"))
+- [イコラト](info:info("イコラト"))
+- [命日](info:info("命日"))
+- [雨之城](info:info("雨之城"))
+- [雨女](info:info("雨女"))

@@ -1,585 +1,271 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Milthm Wiki</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-dark.min.css"><script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script><style> body { margin: 0; padding: 20px; box-sizing: border-box; background: #0d1117; display: flex; flex-direction: column; align-items: center; } .container { width: 100%; max-width: 900px; } .markdown-body { width: 100%; overflow-wrap: break-word; } .katex-display { display: block !important; text-align: center; margin: 10px 0; font-size: 1em; } pre, code { user-select: text; } </style></head><body><div class="container"><article id="content" class="markdown-body"></article></div><script type="text/markdown" id="md">
-# 目录
-
-- 游戏机制
-  - [游戏基础功能介绍(官方wiki)](https://milthm.com/wiki/hans/manual/features)
-  - 算法
-    - [Reality 计算公式](#reality-calculation)
-    - [Score V3算法](#score-v3-algorithm)
-    - [音符判定](#note-judgement)
-    - [结算评级](#result-grading)
-    - [完成状态](#completion-status)
-  - 机制
-    - [绮梦](#sweet-dream)
-    - [露晓卉庭(花园)](#garden)
-    - [隐藏曲解锁方式](#hidden-song-unlock)
-- 列表条目
-  - [曲目信息](./song/)
-  - [定数表](./table.html)
-  - [曲师统计](./artist-statistics.html)
-  - [谱师统计](./charter-statistics.html)
-  - [画师统计](./illustrator-statistics.html)
-  - [Milthm 独占曲列表](./original-songs.html)
-  - [Reality对照表](./reality-table.html)
-- 其他内容
-  - [Milthm相关网站](#milthm-related-sites)
-  - [Milthm玩家交流群](#milthm-community)
-  - [关于存档文件](#save-file-info)
-  - [点击加速Milthm开发进程](#support-milthm-development)
-  - [其他](#其他)
-- [联系我们](#contact-us)
-
----
-
-### 游戏机制
-
----
-
-### Reality 计算公式 <a id="reality-calculation"></a>
-
-Reality 的计算基于游玩分数和谱面定数：
-
-$$
-rlt = \sum_{i=1}^{20} \frac{single.rlt(i)}{20}
-$$
-
-单曲 Reality 计算公式如下（其中 s 为分数，c 为定数）：
-
-$$
-\text{Realityv3}(s, c) =
-\begin{cases}
-c + 1.5, & s \in [1000000, \infty), \\[6pt]
-c + \dfrac{s - 850000}{100000}, & s \in [850000, 1000000), \\[10pt]
-\max\!\Biggl(0,\; c \Bigl(0.5 + \dfrac{s - 700000}{300000}\Bigr) + \dfrac{s - 850000}{100000}\Biggr), & s \in [700000, 850000), \\[12pt]
-\max\!\Biggl(0,\; (c - 3)\dfrac{s - 600000}{200000}\Biggr), & s \in [600000, 700000), \\[10pt]
-0, & s \in [0, 600000).
-\end{cases}
-$$
-
-在当前版本下，4.0以前的曲目将不再计算单曲reality，在旧版中计算方式如下
-
-$$
-\text{Realityv2}(s, c) =
-\begin{cases} 
-\mathbf{1 + c}, & s \in [1005000, 1010000] \\
-\displaystyle \frac{1.4}{e^{3.65 \cdot \left(99.5 - \frac{s}{10000}\right)} + 1} - 0.4 + c, 
-& s \in [995000, 1005000) \\
-\displaystyle \frac{e^{3.1 \cdot \frac{s - 980000}{15000}} - 1}{e^{3.1} - 1} \cdot 0.8 - 0.5 + c, 
-& s \in [980000, 995000) \\
-\displaystyle \frac{s}{280000} - 4 + c, & s \in [700000, 980000) \\
-0, & s \in (-\infty, 700000)
-\end{cases}
-$$
-
-
-#### 代码实现：
-
-```js
-function realityv3(score, c) {
-    if (c < 1e-3) return 0;
-    if (score >= 1000000) return c + 1.5;
-    if (score >= 850000) return c + (score - 850000) / 100000.0;
-    if (score >= 700000) return Math.max(0, c * (0.5 + (score - 700000) / 300000.0) + (score - 850000) / 100000.0);
-    if (score >= 600000) return Math.max(0, (c - 3) * (score - 600000) / 200000.0);
-    return 0;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Milthm Wiki</title>
+<style>:root{
+  --bg:#1a1a1a; --fg:#e5e5e5; --muted:#aaa; --accent:#42b883;
+  --panel:#232323; --panel2:#2b2b2b; --line:#333; --bar:#252525;
 }
-
-function realityv2(score, c) {
-  if (c < 1e-3) return 0;
-  if (score >= 1005000) return 1 + c;
-  if (score >= 995000) return 1.4 / (Math.exp(363.175 - score * 0.000365) + 1) - 0.4 + c;
-  if (score >= 980000) return ((Math.exp(3.1 * (score - 980000) / 15000) - 1) / (Math.exp(3.1) - 1)) * 0.8 - 0.5 + c;
-  if (score >= 700000) return score / 280000 - 4 + c;
-  return 0;
+*{box-sizing:border-box;}
+html{font-size:clamp(14px,1.05vw + 0.55rem,19px);}
+body{
+  margin:0;background:var(--bg);color:var(--fg);line-height:1.75;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  -webkit-text-size-adjust:100%;
 }
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-```
-
----
-
-### Score V3算法 <a id="score-v3-algorithm"></a>
-
-[官方文档](https://www.milthm.cn/wiki/hans/blog/2025-08-17)  
-[score v3网页计算器](https://mkzi-nya.github.io/mil/)  
-代码实现  
-```js
-// input为包含判定序列(epgnbm)的字符串
-function calculateScore(input) {
-  const noteAmount = input.length;
-  const bMax = Math.min(192, Math.max(Math.floor(noteAmount * 0.24), 1));
-  const params = {
-    e: { a: 2, b: bMax},
-    p: { a: 1, b: bMax},
-    g: { a: 0, b: Math.min(128, Math.max(Math.floor(noteAmount * 0.16), 1))},
-    n: { a: 0, b: Math.min(96, Math.max(Math.floor(noteAmount * 0.12), 1))},
-    b: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.1), 1))},
-    m: { a: 0, b: Math.min(64, Math.max(Math.floor(noteAmount * 0.08), 1))}
-  };
-  const scoreMap = { e: 100, p: 99, g: 60, n: 30, b: 15, m: 0 };
-  // 初始化变量
-  let totalAccScore = totalComboScore = maxCombo = currentCombo = 0;
-  let currentComboScore = bMax;
-  // 处理每个判定
-  for (let i = 0; i < noteAmount; i++) {
-    const judge = input[i];
-    const n = i + 1; // 当前判定序号
-    // 更新准度分
-    totalAccScore += scoreMap[judge];
-    // 更新连击数
-    currentCombo = (judge !== 'b' && judge !== 'm') ? currentCombo + 1 : 0;
-    maxCombo = Math.max(maxCombo, currentCombo);
-    // 更新连击分
-    const { a, b} = params[judge];
-    currentComboScore = Math.max(Math.min(currentComboScore + a, b), 0);
-    // 计入连击分累积值
-    totalComboScore += currentComboScore;
-  }
-  // 补差公式(化简)
-  if ( currentComboScore < bMax ) totalComboScore = Math.max(totalComboScore + (1 - (bMax - currentComboScore - 1)**2) / 4, 0);
-  const apBonus = /^[ep]+$/i.test(input) ? 5000 : 0;
-  const accScore = totalAccScore * 10000 / noteAmount;
-  const comboMult = totalComboScore / noteAmount / bMax;
-  const comboBonus = 5000 * maxCombo / noteAmount;
-  // 最终得分
-  return Math.floor(accScore * (0.4 + 0.6 * comboMult)) + Math.floor(comboBonus) + apBonus;
+/* ===== 菜单按钮 ===== */
+#menuBtn{
+  position:fixed;left:.7rem;bottom:.9rem;z-index:60;
+  width:2.7rem;height:2.7rem;border-radius:12px;border:1px solid var(--line);
+  background:rgba(40,40,40,.92);color:#fff;font-size:1.25rem;line-height:1;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.5);backdrop-filter:blur(4px);
 }
-```
-
-
-#### 数学性质
-根据文档，不难发现该算法有以下几个数学性质： 
-- 在存在多个Exact及Perfect以下的判定时，判定间距离最近时，扣分最小  
-- 当判定全部为Perfect时，分数恰为1000000  
-- 当未达成AllPerfect判定时，分数最高不达到1005000  
-- 当达成AllPerfect判定时，(Score mod 10^6)/10^4就是这个判定序列的Exact判定占比，俗称"大P率"  
-- 当其他所有判定都为Exact判定时：  
-  - 无论打出多少Perfect判定，在数量相同的情况下不同位置打出的分数始终相同
-  - 在出现单个Great/Good判定，或多个Great/Good间的`间隔`(通过物量决定)够大时，在数量相同的情况下不同位置打出的分数始终相同  
-  > 上述特性为`补差`算法导致的  
-
-- Bad/Miss判定在序列开头和结尾扣除的分数最少
-- 自490物量起, 可以在存在Great判定的情况下达到1000000分
-  > 当物量达到860时容错增至2Great, 自860起每增加**约**120物量容错增加1Great;  
-> - 当只存在Exact与Great判定, 最低容错(Great间间隔超过32Exact):   
->   当物量达到1480时可存在2Great容错，且每增加740物量容错增加1Great
-
-- 自1610物量起，可以在存在Good判定的情况下达到1000000分
-  > 且每增加**约**199物量容错增加1Good
-> - 当只存在Exact与Good判定, 最低容错(Good间间隔超过48Exact):   
->   每增加1610物量容错增加1Good
-
-- 自2771物量起，可以在存在Bad判定的情况下达到1000000分
-  > 且每增加**约**250物量容错增加1Bad
-
-- 自2801物量起，可以在存在Miss判定的情况下达到1000000分
-  > 且每增加**约**280物量容错增加1Miss
-
-
-- 在游玩过程中右上角的实时分数代表的是计算的过程值，如果在某一分数之后的note全部放置(为miss)，分数将急剧下降; 如果最后一个note为miss判定，也会因为补差与ap奖励分的关系使分数大量扣除
-
-
----
-
-
-
-### 音符判定 <a id="note-judgement"></a>
-
-关于判定系统，可查看官方wiki介绍：[判定系统](https://milthm.com/wiki/hans/manual/judgment/)  
-游戏中单个音符的判定共分为五种，分别为：
-
-- **Perfect**：获得 100% 分数及 100% ACC。
-- **perfect**：获得 99% 分数及 100% ACC。
-- **Great**：获得 60% 分数及 60% ACC。
-- **Good**: 获得 30% 分数及 30% ACC。
-- **Bad**：Combo 中断，获得 15% 分数及 15% ACC。
-- **Miss**：Combo 中断，不获得分数与 ACC。
-
-各区间内的分数与精准度成正比例关系，详细判定范围如下表所示：
-
-| Perfect | perfect | Great | Good | Bad | Miss |
-|-|-|-|-|-|-|
-| ±35ms | ±35-70ms | ±70-105ms | ±105-140 | ±140-155ms | >155ms |
-
----
-
-### 结算评级 <a id="result-grading"></a>
-
-结算评级分为八种：  
-未达成FC(全连)时为白色,FC为蓝色,AP为紫色  
-当前版本无法获得Milthm以下评级的AP图标  
-- <img src="https://storage.mhtl.im/jpgs/0.png" style="height:1.5em;vertical-align:middle;">：旧版显示为<img src="https://storage.mhtl.im/jpgs/0-1.png" style="height:1.5em;vertical-align:middle;">，达成理论值 1010000 分（RHYTHM of RAIN，所有音符均为满分）。
-- <img src="https://storage.mhtl.im/jpgs/1.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/11.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/10.png" style="height:1.5em;vertical-align:middle;">: M,即Milthm，分数达到1000000时获得；
-- <img src="https://storage.mhtl.im/jpgs/2.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/21.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/20.png" style="height:1.5em;vertical-align:middle;">：分数达到950000时获得；
-- <img src="https://storage.mhtl.im/jpgs/3.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/31.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/30.png" style="height:1.5em;vertical-align:middle;">：分数达到850000时获得；
-- <img src="https://storage.mhtl.im/jpgs/4.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/41.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/40.png" style="height:1.5em;vertical-align:middle;">：分数达到750000时获得；
-- <img src="https://storage.mhtl.im/jpgs/5.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到650000时获得；
-- <img src="https://storage.mhtl.im/jpgs/6.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/51.png" style="height:1.5em;vertical-align:middle;"><img src="https://storage.mhtl.im/jpgs/50.png" style="height:1.5em;vertical-align:middle;">：分数达到600000时获得；
-- <img src="https://storage.mhtl.im/jpgs/7.png" style="height:1.5em;vertical-align:middle;">：分数小于600000时获得，未通关，没有FC/AP图标。
-
----
-
-### 完成状态 <a id="completion-status"></a>
-
-游玩结束后在谱面中展示的评价包括：
-
-- <img src="https://storage.mhtl.im/jpgs/crash.png" style="height:1.5em;vertical-align:middle;">:  
-  - ACC < 80%
-- <img src="https://storage.mhtl.im/jpgs/complete.png" style="height:1.5em;vertical-align:middle;">:  
-  - ACC > 80%，且至少存在一个 Bad/Miss 判定。
-- <img src="https://storage.mhtl.im/jpgs/fullcombo.png" style="height:1.5em;vertical-align:middle;">:  
-  - 所有音符均在 ±140ms 内击中，且至少存在一个 Great/Good 判定。
-- <img src="https://storage.mhtl.im/jpgs/allprefect.png" style="height:1.5em;vertical-align:middle;">:  
-  - 所有音符均在 ±70ms 内击中，且至少存在一个 small perfect 判定。
-- <img src="https://storage.mhtl.im/jpgs/rhythmofrain.png" style="height:1.5em;vertical-align:middle;">:  
-  - 所有音符均在 ±35ms 内击中，即理论值。
-- <img src="https://storage.mhtl.im/jpgs/aotoplay.png" style="height:1.5em;vertical-align:middle;">:  
-  - 使用 AutoPlay 通关。
-- <img src="https://storage.mhtl.im/jpgs/overloaded.png" style="height:1.5em;vertical-align:middle;">:  
-  - 分数大于 1010000（使用倾盆大雨）。
-
----
-
-### 绮梦 <a id="sweet-dream"></a>
-
-关于绮梦玩法介绍，可查看官方wiki：[梦境涟漪“绮梦”介绍](https://milthm.com/wiki/hans/blog/2025-08-23)  
-  
-在开启「绮梦」玩法后在游戏中将出现「梦境纯净度」收集条。  
-「梦境纯净度」收集条的机制如下(Great归为Good)：  
-| 难度 | Good及以下判定掉血倍率 | 回血倍率 | Good保护阈值 |
-|-|-|-|-|
-| Drizzle | 30% | 500% | 90 |
-| Sprinkle | 60% | 300% | 80 |
-| Cloudburst | 100% | 100% | 60 |
-| Clear | 110% | 80% | 50 |
-| 其他 | 100% | 100% | 60 |
-
-> 洸花只提升血条上限而不提升保护阈值
-
-| 连击数 | 连击回血加成 |
-|-|-|
-| 0~3 | 0 |
-| 4~7 | 100% |
-| 8~11 | 200% |
-| 12~15 | 300% |
-| >16 | 400% |
-
-
-Ex 音符与 Drag 音符的固定恢复量仅为其他音符的 30%，且“连击回血加成”效果对它们无效。
-单个音符的基础回血值为 0.1。
-Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0。
-
-当当前连击数 > 16 时：
-
-* **Cloudburst 命中单个 Tap 或 Hold 音符并获得 Perfect 判定：**
-  最终恢复 = 0.1 × 400% × 100% × 角色 Buff（此处假设无 Buff） = 0.4
-
-* **Cloudburst 命中单个 Ex 或 Drag 音符：**
-  最终恢复 = 0.1 × 30% = 0.03
-
-* **Drizzle 命中单个 Tap 或 Hold 音符并获得 Perfect 判定：**
-  最终恢复 = 0.1 × 400% × 500% × 角色 Buff（此处假设无 Buff） = 2.0
-
-* **Drizzle 命中单个 Ex 或 Drag 音符：**
-  最终恢复 = 0.1 × 30% × 500% = 0.15
-
-当 Drizzle 出现失误时：
-
-* **单个音符出现 Good 判定：**
-  最终损失 = 12.0 × 30% × 角色 Buff（此处假设无 Buff） = 3.6
-
-* **单个音符出现 Bad 或 Miss 判定：**
-  最终损失 = 8.0 × 30% × 角色 Buff（此处假设无 Buff） = 2.4
-
-此外，当因 Good 判定导致的扣血会使血量低于保护阈值时，只会扣至保护阈值为止。
-例如，在 Drizzle 难度下，当前血量为 91 时出现 Good 判定，最终只会损失 1.0 血量，而非 3.6。
-
----
-
-### 露晓卉庭 <a id="garden"></a>
-
-关于露晓卉庭，可查看官方wiki：[“露晓卉庭”介绍](https://milthm.com/wiki/hans/blog/2025-09-12)
-
-> 下方文档具有时效性 以实际情况为准  
-
-在这里，可以点击花盆种植作物。  
-开启`绮梦`游玩曲目可以收集`露凝`，使用`露凝`浇水可以加速作物成熟。  
-每次浇水可以减少20%总时长，冷却25%总时长  
-> 故最低只需要等待一半的时长即可收割  
-
-每次收割时有小概率使产量增加 100%(丰收) 到 300%(大丰收)，浇水可以提高概率
-
-丰收和大丰收概率如下
-
-| 浇水次数 | 丰收 | 大丰收 |
-|-|-|-|
-| 0 | 5.0% | 1.0% |
-| 1 | 6.0% | 1.5% |
-| 2 | 7.0% | 2.0% |
-| 3 | 8.0% | 2.5% |
-
-
-当前版本拥有如下作物：  
-
-<div style="font-size:10px;">
-
-| 作物 | 类型 | 解锁条件 | 基础收成 | 时间 | 耗材 |
-|-|-|-|-|-|-|
-| 双孢蘑菇 | 菌菇/食物 | 无 | 8 | 1h | 无 |
-| 水蕨菜 | 食物 | 3级 | 45 | 6h | 菌菇*5 |
-| 勿忘草 | 观赏 | 4级 | 7 | 12h | 无 |
-| 水晶兰 | 观赏 | 6级 | 20 | 1d8h | 观赏\*5 |
-| 蓝莓 | 食物 | 8级 | 300 | 4d | 观赏\*5 |
-| 草菇 | 菌菇/食物 | 10级 | 18 | 1h | 菌菇\*5 |
-| 卡宴辣椒 | 功能 | 11级 | 3 | 6h | 食物\*10 |
-| 铃兰 | 观赏 | 13级 | 10 | 12h | 功能\*1 |
-| 大柱霉草 | 观赏 | 15级 | 23 | 1d8h | 功能\*3 |
-| 草莓 | 食物 | 17级 | 400 | 4d | 功能\*3 |
-| 香菇 | 菌菇/食物 | 19级 | 45 | 1h | 食物\*30 |
-| 傅氏凤尾蕨 | 观赏/食物 | 21级 | 5 | 6h | 食物\*25 |
-| 毛头鬼伞 | 菌菇/食物 | 无 | 5 | 1h | 无 |
-| 毛茛 | 观赏/功能 | 无 | 1 | - | 无 |
-
-</div>
-
-#### 毛头鬼伞
-
-空花盆中有概率在 1h 后生成一个成熟的毛头鬼伞
-
-- 收获毛头鬼伞后有概率再次生成
-
-- 在解锁新花盆时有概率生成（可能会修）
-
-- 有概率触发丰收/大丰收
-
-- 作物铲除后不会生成毛头鬼伞
-
-- 目前的 194 次统计中有 26 次收获毛头鬼伞，2次丰收，0次大丰收，概率为26/194=13.40206%
-
-
-#### 净收益
-
-净收益计算方式为`基础收成/(时间+耗材成本)`  
-最高收益是结合所有现有作物作为耗材理论最高收益  
-算上丰收概率的平均收益为`净收益+收益*(0.08+0.025*3=0.155)`  
-当以`双孢蘑菇`与`勿忘草`为`菌菇`类和`观赏`类的耗材成本时，净收益如下表  
-（括号内为算上丰收概率的平均收益）  
-<div style="font-size:10px;">
-
-| 作物 | 净收益 | 最高收益 |
-|-|-|-|
-| 双孢蘑菇 | 8(9.24)/h | 8(9.24)/h |
-| 水蕨菜 | 6.79(7.95)/h | 6.97(8.14)/h |
-| 勿忘草 | 0.58(0.67)/h | 0.58(0.67)/h |
-| 水晶兰 | 0.49(0.59)/h | 0.51(0.61)/h |
-| 蓝莓 | 2.87(3.35)/h | 2.91(3.4)/h |
-| 草菇 | 9.6(11.39)/h | 10.15(11.99)/h |
-| 卡宴辣椒 | 0.41(0.49)/h | 0.43(0.51)/h |
-| 铃兰 | 0.69(0.82)/h | 0.7(0.83)/h |
-| 大柱霉草 | 0.59(0.7)/h | 0.59(0.7)/h |
-| 草莓 | 3.87(4.52)/h | 3.89(4.54)/h |
-| 香菇 | 10.67(12.51)/h | 11(12.86)/h |
-| 傅氏凤尾蕨 | 0.43(0.5)/h | 0.45(0.52)/h |
-
-</div>
-
-花盆解锁等级及耗材：
-
-| 花盆 | 解锁等级 | 耗材 |
-|-|-|-|
-| 2号 | 2级 | 菌菇\*5 |
-| 3号 | 10级 | 食物\*80, 观赏\*20 |
-| 4号 | 15级 | 功能\*40 |
-
-
-可以点击页面左下角花费作物升级，初始为1级  
-当前版本的升级所需耗材：  
-
-<div style="font-size:10px;">
-
-| 等级 | 耗材 | 总计 |
-|-|-|-|
-| 2 | 食物\*5 | 食物\*5 |
-| 3 | 食物\*40 | 食物\*45 |
-| 4 | 食物\*80 | 食物\*125 |
-| 5 | 食物\*100 | 食物\*225 |
-| 6 | 食物\*150 | 食物\*375 |
-| 7 | 观赏\*5 | 食物\*375, 观赏\*5 |
-| 8 | 观赏\*20 | 食物\*375, 观赏\*25 |
-| 9 | 食物\*350 | 食物\*725, 观赏\*25 |
-| 10 | 观赏\*35 | 食物\*725, 观赏\*60 |
-| 11 | 食物\*300, 观赏\*10 | 食物\*1025, 观赏\*70 |
-| 12 | 食物\*400, 观赏\*10 | 食物\*1425, 观赏\*80 |
-| 13 | 食物\*500, 观赏\*20 | 食物\*1925, 观赏\*100 |
-| 14 | 食物\*600, 观赏\*20 | 食物\*2525, 观赏\*120 |
-| 15 | 观赏\*100 | 食物\*2525, 观赏\*220 |
-| 16 | 食物\*800 | 食物\*3325, 观赏\*220 |
-| 17 | 食物\*800 | 食物\*4125, 观赏\*220 |
-| 18 | 观赏\*80 | 食物\*4125, 观赏\*300 |
-| 19 | 食物\*800, 观赏\*30 | 食物\*4925, 观赏\*330 |
-| 20 | 食物\*1200 | 食物\*6125, 观赏\*330 |
-| 21 | 观赏\*120 | 食物\*6125, 观赏\*450 |
-| 22 | 观赏\*50, 功能\*10 | 食物\*6125, 观赏\*500, 功能\*10 |
-
-</div>
-
-可以使用作物兑换部分单曲  
-当前版本单曲所需耗材：
-
-<div style="font-size:10px;">
-
-| 曲目 | 耗材 |
-|-|-|
-| Garden | 菌菇\*10 |
-| Fantasia Sonata Botanical Garden | 观赏\*20 |
-| Dum! Dum!! Dum!!! | 食物\*60 |
-| Splash the Beat!! | 食物\*300 |
-| Sound of Nature | 菌菇\*30,观赏\*80 |
-| conflict | 菌菇\*20,观赏\*25 |
-| Melody to Heaven | 食物\*100 |
-| LiFE Garden | 食物\*1200 |
-| Habitable zone | 食物\*200 |
-| 烽閻鸞錵 | 观赏\*20 |
-| Fantasia Sonata Surmount Vanity Aufleben | 观赏\*20 |
-| furioso melodia | 食物\*200 |
-| Class Memories | 食物\*200 |
-| 白色の夢で。 | 观赏\*20 |
-
-</div>
-
-共计：`菌菇`\*60,`食物`\*2260,`观赏`\*185  
-当前版本将等级升至22级，需`222`小时  
-当前版本全解锁至少需 `菌菇`\*65, `食物`\*8465, `观赏`\*705, `功能`\*50  
-至少需`172.75`小时  
-当前版本满级并全解锁至少需`272.3`小时  
-[花园计算器](./garden.html)
-
----
-
-
-### 隐藏曲解锁方式 <a id="hidden-song-unlock"></a>
-
-- **Regnaissance**
-
-  解锁并游玩 HYPER MEMORIES；  
-  游玩过程中背景会出现黑白色的苏珊，此时请勿击打任何音符；  
-  之后分数变为负数，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
-  
-
-- **Contrasty Angeles**
-
-  阅读主线章节一剧情第 6 话；  
-  游玩 HYPER MEMORIES；  
-  游玩过程中背景会出现黑白色的苏珊，此时需保持全连；  
-  之后分数骤减，同时苏珊变为彩色，继续游玩并使分数 > 0，结算后即可解锁本曲。
-  
-  
-- **Dogbite**
-  游玩Dogbite CB难度并获得A以上等级
-  满足第一点后，游玩Oiiaioooooiai，并在音符变成猫时保持全连（此前的音符可打可不打），此时每击中一个音符就会发出狗的叫声
-  满足第二点后，会触发异象，之后进入Dogbite SP谱面，即成功解锁（无需通关）
-  
-  > 注: 可通过开启`倾盆大雨`异象来降低解锁难度
-  
-  
-- **靈**
-  在`绮梦`玩法下，使用**浅仪洸花**游玩`Sakuyahime`及可解锁
-
----
-
-### Milthm相关网站 <a id="milthm-related-sites"></a>
-
-#### Milthm Wiki
-
-- **[官方wiki](https://milthm.com/wiki/hans/manual/features)**
-- **[官方wiki\(English\)](https://milthm.com/wiki/en/manual/features)**
-- **[Fandom](https://milthm.fandom.com/wiki/Game_Mechanics)**
-- **[萌娘百科](https://mzh.moegirl.org.cn/Milthm)**
-- **[Wikiwiki](https://wikiwiki.jp/milthm/)**
-
----
-
-#### Milthm查分器
-
-- [k9.lv/c/](htt://k9.lv/c/)
-- [mhtlim.top](https://mhtlim.top/)
-- [mhtl.im](https://mhtl.im)
-- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/)
-> 以上网站皆可使用
-
----
-
-- [游戏剧情及二创文章](https://mkzi-nya.github.io/story/)
-- [score v3网页计算器](https://mkzi-nya.github.io/mil/)  
-- [花园计算器](./garden.html)
-
-
-### Milthm交流群 <a id="milthm-community"></a>
-
-记录于25.8.20 10:30  
-  
-| 群 | 群号 | 人数 |
-|-|-|-|
-| Milthm#1 交流群 | 372255828 | 1498 |
-| Milthm#3 交流群 | 910085472 | 1994 |
-| Milthm#5 官方交流群 | 480062123 | 88 |
-| Milthm#6 公开测试 | 915230984 | 283 |
-| Milthm#7 交流群 | 774927051 | 259 |
-| Milthm#8 交流群 | 887231011 | 1957 |
-| Milthm#9 开发交流群 | 1047814125 | 23 |
-| Milthm#10 交流群 | 454822146 | 356 |
-| Milthm#11 交流群 | 1042806409 | 81 |
-| Milthm#12 备用群 | 1048470253 | 31 |
-| Milthm#14 开发测试 | 1050419460 | 9 |
-| Milthm#15 交流群 | 569460611 | 15 |
-| Mhtlim#√-1 洨巟羣 | 375882310 | 157 |
-| milthm#二创群——雨月梦华 | 771250001 | 147 |
-| 梦见霖音高级中学 高一一部114514班 | 574275806 | 13 |
-| Milthm#Φ 交流群 | 678471942 | 40 |
-| milthm#神金 交流群 | 877854042 | 67 |
-| Milthm及各种🐉🖊交流群 | 981366419 | 54 |
-
-`1`,`3`群已不对外开放  
-`5`,`6`,`9`,`14`群为开发专用  
-存在`Milthm#2 交流群da☆ze（梦见霖音高级中学 高一一部2班）`为解散后重建  
-另有`Rain Editor 公测群`,`RCEの小群`为玩家制作的制谱器发布群
-
----
-
-### 关于存档文件 <a id="save-file-info"></a>
-
-
-在以下部分中，路径将被简写为 `MilthmDataDirectory`。
-
-#### 游戏存档  
-该文件位于 `MilthmDataDirectory/saves.db`。
-
-其中包含与玩家游戏进度及相关游戏记录相关的数据。 
-
-数据在kv表中以json格式存储（json格式与旧版本的存档数据格式一致）
-
-#### 数据存档  
-该文件位于 `MilthmDataDirectory/data.db`。
-
-它用于存储每一次成功提交的分数数据。
-
-该文件中的数据是本地排行榜的数据来源。
-
-
----
-
-### 点击加速Milthm开发进程 <a id="support-milthm-development"></a>
-
-点击链接加速 Milthm 开发进程  
-1，https://github.com/sponsors/morizerodev/  
-2，https://afdian.com/a/morizero
-
----
-
-## 联系我们 <a id="contact-us"></a>
-
-- **[QQ Milthm#-1 洨巟羣](https://qm.qq.com/q/Utb6sNDvki)**：375882310
-
-- **[QQ Milthm#Φ 交流群](https://qm.qq.com/q/fIErsKKz3a)**：678471942
-
-- **Discord**: [mkzi_nya](https://discordapp.com/users/1135097559891853435)
-</script><script> marked.use(markedKatex()); function resizeKatex() { const w = document.querySelector('.markdown-body').clientWidth; document.querySelectorAll('.katex-display').forEach(e => { e.style.fontSize = ''; const actual = e.scrollWidth; if (actual > w) { const fs = parseFloat(getComputedStyle(e).fontSize); e.style.fontSize = (fs * w / actual) + 'px'; } }); } const md = document.getElementById('md').textContent.replace(/^\n/, ''); const content = document.getElementById('content'); content.innerHTML = marked.parse(md, { headerIds: true, mangle: false }); content.querySelectorAll('h2,h3,h4').forEach(h => { h.id = h.innerText.toLowerCase().replace(/\s+/g, '-'); }); hljs.highlightAll(); resizeKatex(); addEventListener('resize', () => resizeKatex()); </script></body></html>
+#menuBtn:active{transform:scale(.95);}
+
+/* ===== 左侧栏（页面导航） ===== */
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .22s;}
+#scrim.on{opacity:1;pointer-events:auto;}
+#sidebar{
+  position:fixed;left:0;top:0;bottom:0;width:min(86vw,300px);z-index:80;
+  background:var(--panel);border-right:1px solid var(--line);
+  transform:translateX(-102%);transition:transform .24s ease;
+  display:flex;flex-direction:column;overflow:hidden;
+}
+#sidebar.on{transform:none;}
+.sb-head{
+  padding:.85rem .9rem;font-weight:700;color:#fff;font-size:1.02rem;
+  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  flex:0 0 auto;
+}
+.sb-close{
+  border:1px solid var(--line);background:var(--panel2);color:#ddd;
+  width:1.9rem;height:1.9rem;border-radius:8px;font-size:1.1rem;line-height:1;cursor:pointer;flex:0 0 auto;
+}
+.sb-close:hover{color:#fff;border-color:var(--accent);}
+
+.sb-toplinks{flex:0 0 auto;padding:.6rem .7rem;display:flex;flex-direction:column;gap:.45rem;border-bottom:1px solid var(--line);}
+.sb-home{
+  width:100%;padding:.55rem .8rem;border-radius:10px;
+  background:linear-gradient(90deg,#2e7d5b,#2b6e54);color:#fff;font-weight:600;font-size:.9rem;
+  cursor:pointer;border:1px solid #3a8c66;text-align:center;
+}
+.sb-home:hover{filter:brightness(1.08);}
+.sb-home-sub{background:var(--panel2);border-color:var(--line);color:#d7d7d7;font-weight:500;}
+.sb-home-sub:hover{color:#fff;border-color:var(--accent);filter:none;}
+
+.sb-group{display:flex;flex-direction:column;min-height:0;flex:1 1 auto;}
+.sb-ghead{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.68rem 1rem;cursor:pointer;color:#fff;font-weight:600;font-size:.93rem;
+  user-select:none;-webkit-user-select:none;flex:0 0 auto;
+}
+.sb-ghead:hover{background:var(--panel2);}
+.sb-ghead-static{cursor:default;color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.75rem 1rem .35rem;}
+.sb-ghead-static:hover{background:transparent;}
+.sb-gbody{overflow-y:auto;overscroll-behavior:contain;padding:.1rem 0 .6rem;-webkit-overflow-scrolling:touch;flex:1 1 auto;min-height:0;}
+.sb-item{
+  display:block;padding:.5rem 1rem;color:#cfcfcf;font-size:.88rem;cursor:pointer;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.5;
+}
+.sb-item:hover{background:var(--panel2);color:#fff;text-decoration:none;}
+.sb-item.cur{background:#42b88326;color:#fff;border-left:3px solid var(--accent);padding-left:.72rem;}
+.sb-item.lv3{padding-left:1.9rem;font-size:.84rem;color:#b3b3b3;}
+.sb-chapter{
+  display:block;padding:.7rem .9rem .25rem;color:var(--muted);
+  font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+  position:sticky;top:0;background:var(--panel);z-index:1;
+}
+.sb-ext{color:#cfcfcf;}
+.sb-ext:hover{color:#fff;}
+.sb-foot{padding:.6rem 1rem .75rem;color:var(--muted);font-size:.75rem;border-top:1px solid var(--line);text-align:center;flex:0 0 auto;}
+
+/* ===== 右侧栏（总览） ===== */
+#tocPanel{
+  position:fixed;right:0;top:0;bottom:0;width:min(86vw,300px);z-index:85;
+  background:var(--panel);border-left:1px solid var(--line);
+  transform:translateX(102%);transition:transform .24s ease;
+  display:flex;flex-direction:column;overflow:hidden;
+}
+#tocPanel.on{transform:none;}
+.toc-head{
+  padding:.85rem .9rem;font-weight:700;color:#fff;font-size:1.02rem;
+  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex:0 0 auto;
+}
+.toc-search{
+  margin:.6rem .7rem;padding:.5rem .7rem;border-radius:9px;border:1px solid var(--line);
+  background:var(--panel2);color:var(--fg);font-size:.86rem;outline:none;flex:0 0 auto;
+}
+.toc-search:focus{border-color:var(--accent);}
+.toc-list{overflow-y:auto;overscroll-behavior:contain;padding:.1rem 0 .8rem;flex:1 1 auto;min-height:0;-webkit-overflow-scrolling:touch;}
+.toc-empty{padding:1rem;color:var(--muted);font-size:.85rem;text-align:center;}
+
+/* ===== 内容 ===== */
+#content{max-width:920px;margin:0 auto;padding:3.2rem 1rem 4rem;}
+#content h2,#content h3{scroll-margin-top:.8rem;}
+@media(min-width:1200px){#content{padding-left:3rem;padding-right:3rem;}}
+h1,h2,h3,h4{font-weight:650;color:#fff;margin-top:1.5em;margin-bottom:.55em;line-height:1.35;}
+h1{font-size:1.55rem;margin-top:0;}
+h2{font-size:1.28rem;border-bottom:1px solid var(--line);padding-bottom:.25em;}
+h3{font-size:1.1rem;} h4{font-size:1rem;}
+p,li{color:#dcdcdc;}
+ul,ol{padding-left:1.4em;}
+table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.92rem;}
+table th,table td{border:1px solid var(--line);padding:.5em .6em;white-space:normal;text-align:left;}
+table th{background:var(--panel2);}
+table tr:nth-child(2n){background:#202020;}
+blockquote{border-left:4px solid #6b6b6b;padding:.1em 1em;margin-left:0;color:#9a9a9a;background:#222;border-radius:0 8px 8px 0;}
+blockquote p,blockquote li,blockquote code{color:#9a9a9a;}
+code{background:var(--panel2);padding:.1em .35em;border-radius:4px;font-size:.9em;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;}
+.code-wrap{position:relative;margin:1.1em 0;}
+.code-wrap pre{margin:0;padding-top:1.9em;background:var(--panel2);padding:1.9em .9em .9em;border-radius:8px;overflow-x:auto;border:1px solid var(--line);}
+pre{background:var(--panel2);padding:.9em;border-radius:8px;overflow-x:auto;border:1px solid var(--line);}
+pre code{background:transparent;padding:0;}
+.code-copy{
+  position:absolute;top:.4rem;right:.4rem;z-index:2;
+  padding:.28em .7em;border-radius:7px;border:1px solid var(--line);
+  background:rgba(45,45,45,.95);color:#d0d0d0;font-size:.72rem;line-height:1.4;cursor:pointer;
+  opacity:.9;transition:color .15s,border-color .15s,opacity .15s;
+}
+.code-copy:hover{color:#fff;border-color:var(--accent);opacity:1;}
+.code-copy.copied{color:var(--accent);border-color:var(--accent);}
+hr{border:0;border-top:1px solid var(--line);margin:1.6em 0;}
+img{max-width:100%;border-radius:8px;}
+
+.page-head{
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+  margin-bottom:1.2rem;padding:.55rem .85rem;border:1px solid var(--line);border-radius:10px;
+  background:var(--bar);font-weight:700;color:#fff;font-size:1.02rem;
+  position:sticky;top:.5rem;z-index:30;
+}
+.top-btn{
+  flex:0 0 auto;border:1px solid var(--line);background:var(--panel2);color:#fff;
+  border-radius:8px;padding:.3em .7em;cursor:pointer;font-size:.82rem;
+}
+.top-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ===== 章节块（错误等） ===== */
+.chap{margin:0 0 1.6rem;}
+.chap-bar{
+  display:flex;align-items:center;gap:.6rem;justify-content:space-between;
+  background:var(--bar);border:1px solid var(--line);border-radius:10px;
+  padding:.55rem .8rem;margin-bottom:.9rem;
+}
+.chap-title{font-weight:700;color:#fff;font-size:1rem;}
+.chap-body>*:first-child{margin-top:.2em;}
+
+/* ===== 图片占位 ===== */
+.wiki-img{margin:14px auto;text-align:center;width:100%;}
+.wiki-img img{display:block;max-width:100%;height:auto;margin:0 auto;}
+.wiki-img .loading-container{padding:16px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:8px;}
+.wiki-img .error-container{padding:14px;color:#ff9d9d;background:#311;border:1px solid #a33;border-radius:8px;font-size:.88rem;}
+.wiki-img .retry-button{margin-top:8px;padding:.35em .8em;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:#fff;cursor:pointer;}
+
+/* ===== 工具提示（chartdev info 卡片） ===== */
+div[aaa]{
+  visibility:hidden;opacity:0;
+  transition:opacity .12s ease-in-out,visibility .12s ease-in-out,top .12s ease,left .12s ease;
+}
+div[aaa].visible{visibility:visible;opacity:1;}
+.info-card{
+  position:absolute;z-index:1000;
+  width:min(78vw,270px);max-height:70vh;overflow:auto;
+  padding:.7rem .8rem;border-radius:12px;
+  background:rgba(30,30,30,.98);border:1px solid #3a3a3a;color:#e8e8e8;
+  font:400 .78rem/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",sans-serif;
+  box-shadow:0 10px 28px rgba(0,0,0,.55);
+  backdrop-filter:blur(6px);-webkit-overflow-scrolling:touch;
+}
+.info-card p{margin:0 0 .35em;color:#d8d8d8;}
+.info-card p:last-child{margin-bottom:0;}
+.info-card a{color:#5db2ff;text-decoration:none;}
+.info-card a:hover{text-decoration:underline;}
+.info-card b,.info-card strong{color:#fff;font-weight:600;}
+
+/* ===== 加载 ===== */
+#loading{
+  position:fixed;inset:0;z-index:100;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;color:#fff;
+}
+#loading .sub{color:var(--muted);font-size:.85rem;}
+.spinner{width:42px;height:42px;border-radius:50%;border:3px solid #444;border-top-color:var(--accent);animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* katex 显示居中 */
+.katex-display{display:block !important;text-align:center;margin:10px 0;}
+pre,code,kbd{user-select:text;}
+
+/* ===== 曲目列表页 ===== */
+.song-index{padding-bottom:1rem;}
+.song-search-input{
+  width:100%;padding:.7rem .9rem;border-radius:10px;border:1px solid var(--line);
+  background:var(--panel2);color:var(--fg);font-size:.95rem;outline:none;
+}
+.song-search-input:focus{border-color:var(--accent);}
+.song-index-count{margin:.7rem .2rem 1rem;color:var(--muted);font-size:.82rem;}
+.song-chapter{margin:0 0 1.5rem;}
+.song-chapter h2{
+  font-size:1.05rem;margin:0 0 .7rem;padding-bottom:.3rem;
+  border-bottom:1px solid var(--line);color:#fff;
+}
+.song-chapter-link{color:#fff;text-decoration:none;cursor:pointer;}
+.song-chapter-link:hover{color:var(--accent);text-decoration:none;}
+.song-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.song-card{
+  display:block;padding:.55rem .7rem;border:1px solid var(--line);border-radius:8px;
+  background:var(--panel);color:#dcdcdc;font-size:.87rem;line-height:1.4;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.song-card:hover{background:var(--panel2);border-color:var(--accent);color:#fff;text-decoration:none;}
+
+/* ===== 响应式 ===== */
+@media(min-width:1100px){
+  #menuBtn{display:none !important;}
+  #scrim{display:none !important;}
+  #sidebar{transform:none;width:272px;box-shadow:none;}
+  #sidebar .sb-close{display:none !important;}
+  body.sb-fixed{padding-left:272px;}
+  #tocPanel{width:280px;transform:none;border-left:1px solid var(--line);}
+  #tocPanel .toc-close{display:none !important;}
+  body.toc-fixed{padding-right:280px;}
+  /* 大屏隐藏顶部横栏 */
+  body.toc-fixed .page-head{display:none !important;}
+  body.toc-fixed #content{padding-top:2.4rem;padding-left:2.2rem;padding-right:2.2rem;}
+}
+@media(max-width:1099px){
+  #tocPanel{box-shadow:-6px 0 20px rgba(0,0,0,.5);}
+  .toc-btn{position:relative;}
+}
+@media(max-width:600px){
+  body{line-height:1.8;}
+  #content{padding:2.9rem .85rem 3rem;}
+  .sb-item{padding:.6rem 1rem;font-size:.9rem;}
+  .sb-head{padding:.8rem .85rem;font-size:1rem;}
+  .song-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+<link rel="stylesheet" href="./katex.min.css">
+</head>
+<body>
+<button id="menuBtn" aria-label="打开目录">&#9776;</button>
+<div id="scrim"></div>
+<aside id="sidebar">
+</aside>
+<main id="content"></main>
+<div id="loading"><div class="spinner"></div><div>Milthm Wiki</div><div class="sub">正在加载…</div></div>
+<script>
+window.WIKI_NAV = {"homeFile":"index.md","songSearchUrl":"index.html#/songs","groups":[{"title":"总览","items":[{"route":"/","label":"主页","file":"index.md"},{"route":"/songs","label":"曲目列表","file":null}]},{"title":"数据表","items":[{"route":"/table","label":"定数表","file":"table.md"},{"route":"/table-c","label":"按定数排序","file":"table_c.md"},{"route":"/reality","label":"Reality 对照表","file":"reality-table.md"},{"route":"/original","label":"Milthm 独占曲","file":"original-songs.md"}]},{"title":"统计","items":[{"route":"/artist","label":"曲师统计","file":"artist-statistics.md"},{"route":"/charter","label":"谱师统计","file":"charter-statistics.md"},{"route":"/illustrator","label":"画师统计","file":"illustrator-statistics.md"}]},{"title":"工具","external":[{"label":"花园规划器","href":"garden.html","target":"_self"}]}],"songs":[{"label":"Fantasia Sonata Reflection","name":"Fantasia Sonata Reflection","route":"/song/Fantasia_Sonata_Reflection","file":"song/Fantasia_Sonata_Reflection.md","chapter":"天气预报"},{"label":"Fantasia Sonata Sky Syndrome","name":"Fantasia Sonata Sky Syndrome","route":"/song/Fantasia_Sonata_Sky_Syndrome","file":"song/Fantasia_Sonata_Sky_Syndrome.md","chapter":"天气预报"},{"label":"Welcome to Milthm","name":"Welcome to Milthm","route":"/song/Welcome_to_Milthm","file":"song/Welcome_to_Milthm.md","chapter":"天气预报"},{"label":"夜風（Yokaze）","name":"夜風","route":"/song/Yokaze","file":"song/Yokaze.md","chapter":"天气预报"},{"label":"时落之雨（Episodic Rain）","name":"时落之雨","route":"/song/Episodic_Rain","file":"song/Episodic_Rain.md","chapter":"天气预报"},{"label":"暮予星光（Reminiscence in Starlight）","name":"暮予星光","route":"/song/Reminiscence_in_Starlight","file":"song/Reminiscence_in_Starlight.md","chapter":"天气预报"},{"label":"花月（Kagetsu）","name":"花月","route":"/song/Kagetsu","file":"song/Kagetsu.md","chapter":"天气预报"},{"label":"Jump out?","name":"Jump out?","route":"/song/Jump_out_","file":"song/Jump_out_.md","chapter":"雨的声音"},{"label":"LOUDER!","name":"LOUDER!","route":"/song/LOUDER_","file":"song/LOUDER_.md","chapter":"雨的声音"},{"label":"☹（Blueface）","name":"☹","route":"/song/Blueface","file":"song/Blueface.md","chapter":"雨的声音"},{"label":"イコラト（eclat）","name":"イコラト","route":"/song/eclat","file":"song/eclat.md","chapter":"雨的声音"},{"label":"命日（Meinichi）","name":"命日","route":"/song/Meinichi","file":"song/Meinichi.md","chapter":"雨的声音"},{"label":"雨之城（Castle in the Rain）","name":"雨之城","route":"/song/Castle_in_the_Rain","file":"song/Castle_in_the_Rain.md","chapter":"雨的声音"},{"label":"雨女（Ameonna）","name":"雨女","route":"/song/Ameonna","file":"song/Ameonna.md","chapter":"雨的声音"},{"label":"Aconsma","name":"Aconsma","route":"/song/Aconsma","file":"song/Aconsma.md","chapter":"甜与苦的一体两面"},{"label":"Brightened Demonios","name":"Brightened Demonios","route":"/song/Brightened_Demonios","file":"song/Brightened_Demonios.md","chapter":"甜与苦的一体两面"},{"label":"Contrasty Angeles","name":"Contrasty Angeles","route":"/song/Contrasty_Angeles","file":"song/Contrasty_Angeles.md","chapter":"甜与苦的一体两面"},{"label":"Fantasia Sonata Arcadia","name":"Fantasia Sonata Arcadia","route":"/song/Fantasia_Sonata_Arcadia","file":"song/Fantasia_Sonata_Arcadia.md","chapter":"甜与苦的一体两面"},{"label":"Fragment of Memories","name":"Fragment of Memories","route":"/song/Fragment_of_Memories","file":"song/Fragment_of_Memories.md","chapter":"甜与苦的一体两面"},{"label":"HYPER MEMORIES","name":"HYPER MEMORIES","route":"/song/HYPER_MEMORIES","file":"song/HYPER_MEMORIES.md","chapter":"甜与苦的一体两面"},{"label":"Myth compiler","name":"Myth compiler","route":"/song/Myth_compiler","file":"song/Myth_compiler.md","chapter":"甜与苦的一体两面"},{"label":"OverRain","name":"OverRain","route":"/song/OverRain","file":"song/OverRain.md","chapter":"甜与苦的一体两面"},{"label":"Regnaissance","name":"Regnaissance","route":"/song/Regnaissance","file":"song/Regnaissance.md","chapter":"甜与苦的一体两面"},{"label":"粗线条的雨（Thick Rain）","name":"粗线条的雨","route":"/song/Thick_Rain","file":"song/Thick_Rain.md","chapter":"甜与苦的一体两面"},{"label":"DEAR","name":"DEAR","route":"/song/DEAR","file":"song/DEAR.md","chapter":"因你而存在的理想国"},{"label":"La Fouldre","name":"La Fouldre","route":"/song/La_Fouldre","file":"song/La_Fouldre.md","chapter":"因你而存在的理想国"},{"label":"Recall Memories","name":"Recall Memories","route":"/song/Recall_Memories","file":"song/Recall_Memories.md","chapter":"因你而存在的理想国"},{"label":"Rustala","name":"Rustala","route":"/song/Rustala","file":"song/Rustala.md","chapter":"因你而存在的理想国"},{"label":"Tales of Misery","name":"Tales of Misery","route":"/song/Tales_of_Misery","file":"song/Tales_of_Misery.md","chapter":"因你而存在的理想国"},{"label":"Σquinoχ（Equinox）","name":"Σquinoχ","route":"/song/Equinox","file":"song/Equinox.md","chapter":"因你而存在的理想国"},{"label":"ヘリオトロープ (feat. NIQRO)（Heliotrope）","name":"ヘリオトロープ (feat. NIQRO)","route":"/song/Heliotrope","file":"song/Heliotrope.md","chapter":"因你而存在的理想国"},{"label":"BUCHiAGE Fireworks","name":"BUCHiAGE Fireworks","route":"/song/BUCHiAGE_Fireworks","file":"song/BUCHiAGE_Fireworks.md","chapter":"花裳随雨得春迟"},{"label":"Sakuyahime","name":"Sakuyahime","route":"/song/Sakuyahime","file":"song/Sakuyahime.md","chapter":"花裳随雨得春迟"},{"label":"Vestige of Dreams","name":"Vestige of Dreams","route":"/song/Vestige_of_Dreams","file":"song/Vestige_of_Dreams.md","chapter":"花裳随雨得春迟"},{"label":"ニニ (feat. Qayo & mii)（Nini (feat. Qayo & mii)）","name":"ニニ (feat. Qayo & mii)","route":"/song/Nini__feat__Qayo___mii_","file":"song/Nini__feat__Qayo___mii_.md","chapter":"花裳随雨得春迟"},{"label":"灯ノ桜蝶（Akashinosakuracho）","name":"灯ノ桜蝶","route":"/song/Akashinosakuracho","file":"song/Akashinosakuracho.md","chapter":"花裳随雨得春迟"},{"label":"百九十（190）","name":"百九十","route":"/song/190","file":"song/190.md","chapter":"花裳随雨得春迟"},{"label":"靈（Rei）","name":"靈","route":"/song/Rei","file":"song/Rei.md","chapter":"花裳随雨得春迟"},{"label":"Elsorhg","name":"Elsorhg","route":"/song/Elsorhg","file":"song/Elsorhg.md","chapter":"Notanote"},{"label":"Innocent white","name":"Innocent white","route":"/song/Innocent_white","file":"song/Innocent_white.md","chapter":"Notanote"},{"label":"Meltovt Necrosys","name":"Meltovt Necrosys","route":"/song/Meltovt_Necrosys","file":"song/Meltovt_Necrosys.md","chapter":"Notanote"},{"label":"cybernetic blazar","name":"cybernetic blazar","route":"/song/cybernetic_blazar","file":"song/cybernetic_blazar.md","chapter":"Notanote"},{"label":"烁雨（Sparkrain）","name":"烁雨","route":"/song/Sparkrain","file":"song/Sparkrain.md","chapter":"Notanote"},{"label":"Bio-Engineering","name":"Bio-Engineering","route":"/song/Bio_Engineering","file":"song/Bio_Engineering.md","chapter":"雨世界"},{"label":"Kayava","name":"Kayava","route":"/song/Kayava","file":"song/Kayava.md","chapter":"雨世界"},{"label":"Sheer Ice Torrent","name":"Sheer Ice Torrent","route":"/song/Sheer_Ice_Torrent","file":"song/Sheer_Ice_Torrent.md","chapter":"雨世界"},{"label":"Sundown","name":"Sundown","route":"/song/Sundown","file":"song/Sundown.md","chapter":"雨世界"},{"label":"Threat - Metropolis","name":"Threat - Metropolis","route":"/song/Threat___Metropolis","file":"song/Threat___Metropolis.md","chapter":"雨世界"},{"label":"Threat - Sky Islands","name":"Threat - Sky Islands","route":"/song/Threat___Sky_Islands","file":"song/Threat___Sky_Islands.md","chapter":"雨世界"},{"label":"Threat - Superstructure","name":"Threat - Superstructure","route":"/song/Threat___Superstructure","file":"song/Threat___Superstructure.md","chapter":"雨世界"},{"label":"Threat - Waterfront Complex","name":"Threat - Waterfront Complex","route":"/song/Threat___Waterfront_Complex","file":"song/Threat___Waterfront_Complex.md","chapter":"雨世界"},{"label":"White Lizard","name":"White Lizard","route":"/song/White_Lizard","file":"song/White_Lizard.md","chapter":"雨世界"},{"label":"大月墜落狂想（Moonfall）","name":"大月墜落狂想","route":"/song/Moonfall","file":"song/Moonfall.md","chapter":"雨世界"},{"label":"Curse of 14","name":"Curse of 14","route":"/song/Curse_of_14","file":"song/Curse_of_14.md","chapter":"Electrode Core"},{"label":"Virtual S0da","name":"Virtual S0da","route":"/song/Virtual_S0da","file":"song/Virtual_S0da.md","chapter":"Electrode Core"},{"label":"apOapSis(Edit)","name":"apOapSis(Edit)","route":"/song/apOapSis_Edit_","file":"song/apOapSis_Edit_.md","chapter":"Electrode Core"},{"label":"はんてん（Hanten）","name":"はんてん","route":"/song/Hanten","file":"song/Hanten.md","chapter":"Electrode Core"},{"label":"Autumn Rain","name":"Autumn Rain","route":"/song/Autumn_Rain","file":"song/Autumn_Rain.md","chapter":"解空明镜"},{"label":"Deluge","name":"Deluge","route":"/song/Deluge","file":"song/Deluge.md","chapter":"解空明镜"},{"label":"Ephemeric World","name":"Ephemeric World","route":"/song/Ephemeric_World","file":"song/Ephemeric_World.md","chapter":"解空明镜"},{"label":"Fluorescent Light","name":"Fluorescent Light","route":"/song/Fluorescent_Light","file":"song/Fluorescent_Light.md","chapter":"解空明镜"},{"label":"Polyridia","name":"Polyridia","route":"/song/Polyridia","file":"song/Polyridia.md","chapter":"解空明镜"},{"label":"Pthahnil","name":"Pthahnil","route":"/song/Pthahnil","file":"song/Pthahnil.md","chapter":"解空明镜"},{"label":"九蓮寶燈（Churenpoton）","name":"九蓮寶燈","route":"/song/Churenpoton","file":"song/Churenpoton.md","chapter":"解空明镜"},{"label":"Agnostic","name":"Agnostic","route":"/song/Agnostic","file":"song/Agnostic.md","chapter":"梦境磁带"},{"label":"Algebra","name":"Algebra","route":"/song/Algebra","file":"song/Algebra.md","chapter":"梦境磁带"},{"label":"Broken Conviction","name":"Broken Conviction","route":"/song/Broken_Conviction","file":"song/Broken_Conviction.md","chapter":"梦境磁带"},{"label":"Dogbite","name":"Dogbite","route":"/song/Dogbite","file":"song/Dogbite.md","chapter":"梦境磁带"},{"label":"Fly To Meteor (Milthm Edit)","name":"Fly To Meteor (Milthm Edit)","route":"/song/Fly_To_Meteor__Milthm_Edit_","file":"song/Fly_To_Meteor__Milthm_Edit_.md","chapter":"梦境磁带"},{"label":"Fly To Meteor feat.兔柒 (Milthm Edit)（Fly To Meteor feat.TuQi (Milthm Edit)）","name":"Fly To Meteor feat.兔柒 (Milthm Edit)","route":"/song/Fly_To_Meteor_feat_TuQi__Milthm_Edit_","file":"song/Fly_To_Meteor_feat_TuQi__Milthm_Edit_.md","chapter":"梦境磁带"},{"label":"Future Unbound (Game Edit)","name":"Future Unbound (Game Edit)","route":"/song/Future_Unbound__Game_Edit_","file":"song/Future_Unbound__Game_Edit_.md","chapter":"梦境磁带"},{"label":"Hikari","name":"Hikari","route":"/song/Hikari","file":"song/Hikari.md","chapter":"梦境磁带"},{"label":"IN","name":"IN","route":"/song/IN","file":"song/IN.md","chapter":"梦境磁带"},{"label":"INFP.mp3","name":"INFP.mp3","route":"/song/INFP_mp3","file":"song/INFP_mp3.md","chapter":"梦境磁带"},{"label":"Moonflutter","name":"Moonflutter","route":"/song/Moonflutter","file":"song/Moonflutter.md","chapter":"梦境磁带"},{"label":"Moving On","name":"Moving On","route":"/song/Moving_On","file":"song/Moving_On.md","chapter":"梦境磁带"},{"label":"Oiiaioooooiai","name":"Oiiaioooooiai","route":"/song/Oiiaioooooiai","file":"song/Oiiaioooooiai.md","chapter":"梦境磁带"},{"label":"Oniichan","name":"Oniichan","route":"/song/Oniichan","file":"song/Oniichan.md","chapter":"梦境磁带"},{"label":"Psyched Fevereiro","name":"Psyched Fevereiro","route":"/song/Psyched_Fevereiro","file":"song/Psyched_Fevereiro.md","chapter":"梦境磁带"},{"label":"Rainbow Flavor!","name":"Rainbow Flavor!","route":"/song/Rainbow_Flavor_","file":"song/Rainbow_Flavor_.md","chapter":"梦境磁带"},{"label":"WATER","name":"WATER","route":"/song/WATER","file":"song/WATER.md","chapter":"梦境磁带"},{"label":"Words","name":"Words","route":"/song/Words","file":"song/Words.md","chapter":"梦境磁带"},{"label":"slic.hertz（slic.hertz #GdbG）","name":"slic.hertz","route":"/song/slic_hertz__GdbG","file":"song/slic_hertz__GdbG.md","chapter":"梦境磁带"},{"label":"サイクルの欠片（Pieces of the Cycle）","name":"サイクルの欠片","route":"/song/Pieces_of_the_Cycle","file":"song/Pieces_of_the_Cycle.md","chapter":"梦境磁带"},{"label":"ネオン色のまち feat. Mai（Neon Iro no Machi feat. Mai）","name":"ネオン色のまち feat. Mai","route":"/song/Neon_Iro_no_Machi_feat__Mai","file":"song/Neon_Iro_no_Machi_feat__Mai.md","chapter":"梦境磁带"},{"label":"仮想明日（Imaginary Tomorrow）","name":"仮想明日","route":"/song/Imaginary_Tomorrow","file":"song/Imaginary_Tomorrow.md","chapter":"梦境磁带"},{"label":"参宿四~Betelgeuse~（Betelgeuse）","name":"参宿四~Betelgeuse~","route":"/song/Betelgeuse","file":"song/Betelgeuse.md","chapter":"梦境磁带"},{"label":"樱落繁花（A Reincarnation of a Scattering Spring）","name":"樱落繁花","route":"/song/A_Reincarnation_of_a_Scattering_Spring","file":"song/A_Reincarnation_of_a_Scattering_Spring.md","chapter":"梦境磁带"},{"label":"白虎蓮華（Tiger Lotus）","name":"白虎蓮華","route":"/song/Tiger_Lotus","file":"song/Tiger_Lotus.md","chapter":"梦境磁带"},{"label":"选择你的宽带（Excellent broadband, which makes my internet speed spin）","name":"选择你的宽带","route":"/song/Excellent_broadband__which_makes_my_internet_speed_spin","file":"song/Excellent_broadband__which_makes_my_internet_speed_spin.md","chapter":"梦境磁带"},{"label":"驟雨の狭間（Rainshower）","name":"驟雨の狭間","route":"/song/Rainshower","file":"song/Rainshower.md","chapter":"梦境磁带"},{"label":"Aleph-0","name":"Aleph-0","route":"/song/Aleph_0","file":"song/Aleph_0.md","chapter":"露晓卉庭"},{"label":"Before it Ends","name":"Before it Ends","route":"/song/Before_it_Ends","file":"song/Before_it_Ends.md","chapter":"露晓卉庭"},{"label":"Chartreuse Green","name":"Chartreuse Green","route":"/song/Chartreuse_Green","file":"song/Chartreuse_Green.md","chapter":"露晓卉庭"},{"label":"Class Memories","name":"Class Memories","route":"/song/Class_Memories","file":"song/Class_Memories.md","chapter":"露晓卉庭"},{"label":"Daisy","name":"Daisy","route":"/song/Daisy","file":"song/Daisy.md","chapter":"露晓卉庭"},{"label":"Dum! Dum!! Dum!!!","name":"Dum! Dum!! Dum!!!","route":"/song/Dum__Dum___Dum___","file":"song/Dum__Dum___Dum___.md","chapter":"露晓卉庭"},{"label":"FULi AUTO SHOOTER","name":"FULi AUTO SHOOTER","route":"/song/FULi_AUTO_SHOOTER","file":"song/FULi_AUTO_SHOOTER.md","chapter":"露晓卉庭"},{"label":"Fantasia Sonata Botanical Garden","name":"Fantasia Sonata Botanical Garden","route":"/song/Fantasia_Sonata_Botanical_Garden","file":"song/Fantasia_Sonata_Botanical_Garden.md","chapter":"露晓卉庭"},{"label":"Fantasia Sonata God Dance","name":"Fantasia Sonata God Dance","route":"/song/Fantasia_Sonata_God_Dance","file":"song/Fantasia_Sonata_God_Dance.md","chapter":"露晓卉庭"},{"label":"Fantasia Sonata Hope","name":"Fantasia Sonata Hope","route":"/song/Fantasia_Sonata_Hope","file":"song/Fantasia_Sonata_Hope.md","chapter":"露晓卉庭"},{"label":"Fantasia Sonata Stars","name":"Fantasia Sonata Stars","route":"/song/Fantasia_Sonata_Stars","file":"song/Fantasia_Sonata_Stars.md","chapter":"露晓卉庭"},{"label":"Fantasia Sonata Surmount Vanity Aufleben","name":"Fantasia Sonata Surmount Vanity Aufleben","route":"/song/Fantasia_Sonata_Surmount_Vanity_Aufleben","file":"song/Fantasia_Sonata_Surmount_Vanity_Aufleben.md","chapter":"露晓卉庭"},{"label":"Garden","name":"Garden","route":"/song/Garden","file":"song/Garden.md","chapter":"露晓卉庭"},{"label":"GlassyHeart.","name":"GlassyHeart.","route":"/song/GlassyHeart_","file":"song/GlassyHeart_.md","chapter":"露晓卉庭"},{"label":"Habitable Zone","name":"Habitable Zone","route":"/song/Habitable_Zone","file":"song/Habitable_Zone.md","chapter":"露晓卉庭"},{"label":"KAEDE","name":"KAEDE","route":"/song/KAEDE","file":"song/KAEDE.md","chapter":"露晓卉庭"},{"label":"KASANE","name":"KASANE","route":"/song/KASANE","file":"song/KASANE.md","chapter":"露晓卉庭"},{"label":"LiFE Garden","name":"LiFE Garden","route":"/song/LiFE_Garden","file":"song/LiFE_Garden.md","chapter":"露晓卉庭"},{"label":"LiFE Garden (Extended Mix)","name":"LiFE Garden (Extended Mix)","route":"/song/LiFE_Garden__Extended_Mix_","file":"song/LiFE_Garden__Extended_Mix_.md","chapter":"露晓卉庭"},{"label":"Lost Civilization","name":"Lost Civilization","route":"/song/Lost_Civilization","file":"song/Lost_Civilization.md","chapter":"露晓卉庭"},{"label":"Lots Of Spices","name":"Lots Of Spices","route":"/song/Lots_Of_Spices","file":"song/Lots_Of_Spices.md","chapter":"露晓卉庭"},{"label":"Melody to Heaven","name":"Melody to Heaven","route":"/song/Melody_to_Heaven","file":"song/Melody_to_Heaven.md","chapter":"露晓卉庭"},{"label":"Sound of Nature","name":"Sound of Nature","route":"/song/Sound_of_Nature","file":"song/Sound_of_Nature.md","chapter":"露晓卉庭"},{"label":"Splash the Beat!!","name":"Splash the Beat!!","route":"/song/Splash_the_Beat__","file":"song/Splash_the_Beat__.md","chapter":"露晓卉庭"},{"label":"Tsukuyomi","name":"Tsukuyomi","route":"/song/Tsukuyomi","file":"song/Tsukuyomi.md","chapter":"露晓卉庭"},{"label":"cafe in 6412I731V","name":"cafe in 6412I731V","route":"/song/cafe_in_6412I731V","file":"song/cafe_in_6412I731V.md","chapter":"露晓卉庭"},{"label":"conflict","name":"conflict","route":"/song/conflict","file":"song/conflict.md","chapter":"露晓卉庭"},{"label":"furioso melodia","name":"furioso melodia","route":"/song/furioso_melodia","file":"song/furioso_melodia.md","chapter":"露晓卉庭"},{"label":"いつか忘れるんだろう（Someday, I will Forget）","name":"いつか忘れるんだろう","route":"/song/Someday__I_will_Forget","file":"song/Someday__I_will_Forget.md","chapter":"露晓卉庭"},{"label":"ホシフルヨルニ（Hoshifuru Yoruni）","name":"ホシフルヨルニ","route":"/song/Hoshifuru_Yoruni","file":"song/Hoshifuru_Yoruni.md","chapter":"露晓卉庭"},{"label":"妹（Imouto）","name":"妹","route":"/song/Imouto","file":"song/Imouto.md","chapter":"露晓卉庭"},{"label":"烽閻鸞錵（Houen Ranka）","name":"烽閻鸞錵","route":"/song/Houen_Ranka","file":"song/Houen_Ranka.md","chapter":"露晓卉庭"},{"label":"白色の夢で。（siroirono yumede）","name":"白色の夢で。","route":"/song/siroirono_yumede","file":"song/siroirono_yumede.md","chapter":"露晓卉庭"},{"label":"運命（Unmei）","name":"運命","route":"/song/Unmei","file":"song/Unmei.md","chapter":"露晓卉庭"}]};
+</script>
+<script src="./marked.min.js"></script>
+<script src="./katex.min.js"></script>
+<script src="./index.umd.js"></script>
+<script src="./highlight.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

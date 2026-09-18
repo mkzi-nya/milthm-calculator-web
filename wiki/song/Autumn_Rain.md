@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | Vantasy |
 | 曲绘 | 澈子 |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 解空明镜 |
+| 更新版本 | v4.1 |
+| 时长 | 02:27 |
 | BPM | 124 |
 
 ## 谱面信息
@@ -30,6 +30,10 @@
 (待补充)
 
 ## 曲目试听
+
+- SoundCloud
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1807310433&color=%2315469a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+- [【Bandcamp】](https://eimsound.bandcamp.com/track/autumn-rain)
 
 ## 曲目相关
 

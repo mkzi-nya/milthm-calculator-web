@@ -30,7 +30,10 @@
 
 ## 曲目试听
 
-(待补充)
+- [【Youtube】](https://youtu.be/VQ7dOAkzrdI)
+- SoundCloud
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/173189467&color=15469a"></iframe>
 
 ## 曲目相关
 

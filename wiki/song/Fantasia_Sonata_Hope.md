@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | PYKAMIA vs Reku Mochizuki |
 | 曲绘 | RORU |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 露晓卉庭 |
+| 更新版本 | v4.2 |
+| 时长 | 02:31 |
 | BPM | 231 |
 
 ## 谱面信息
@@ -31,9 +31,11 @@
 
 ## 曲目试听
 
+- [【Youtube】](https://www.youtube.com/watch?v=6waZrR4MSr0)
+
 ## 曲目相关
 
-(待补充)
+- 本曲亦收录于「Orzmic」「Lanota」。
 
 ## 游戏相关
 

@@ -1,8 +1,9 @@
+[返回目录](./)
 
+# 联动: Notanote
 
-
-## 谱面预览
-
-- [Drizzle](https://storage.mhtl.im/chart/Drizzle_notanote.jpg)
-- [Sprinkle](https://storage.mhtl.im/chart/Sprinkle_notanote.jpg)
-- [Cloudburst](https://storage.mhtl.im/chart/Cloudburst_notanote.jpg)
+- [cybernetic blazar](info:info("cybernetic blazar"))
+- [Elsorhg](info:info("Elsorhg"))
+- [Innocent white](info:info("Innocent white"))
+- [Meltovt Necrosys](info:info("Meltovt Necrosys"))
+- [烁雨](info:info("烁雨"))

@@ -16,9 +16,9 @@
 | 拉丁文曲名 | Houen Ranka |
 | 曲师 | Lalot. vs Night Yard |
 | 曲绘 | しひき |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 露晓卉庭 |
+| 更新版本 | v5.0 |
+| 时长 | 02:27 |
 | BPM | 194 |
 
 ## 谱面信息
@@ -34,13 +34,25 @@
 
 ## 曲目试听
 
+- SoundCloud
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2026593676&color=%2315469a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+- [【Youtube】](https://www.youtube.com/watch?v=DhZEAnhD7T4)
+- [【niconico】](https://ext.nicovideo.jp/watch/thumb/sm44622430)
+- [【Youtube（旧音源）】](https://www.youtube.com/watch?v=DbgwIJmWBiE)
+
 ## 曲目相关
 
-(待补充)
+- 曲名读法为「ほうえんらんか」。
+- 本曲为「Cosmic Radio 2024」参加乐曲。
+- 本曲亦被收录于「WEBEAT:mania」「Linear Beat!!」「ChainBeeT」「Project : RUSHER」等作品中。
+- 谱面制作者所有难度均为Iblcya氏。
 
 ## 游戏相关
 
-(待补充)
+- DZ谱面
+- SK谱面
+- CB谱面
+  - 定数为11.9。初参战却如此狂暴，Iblcya先生。
 
 ## 谱面预览
 

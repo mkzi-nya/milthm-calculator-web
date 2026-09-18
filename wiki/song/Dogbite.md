@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | t+pazolite |
 | 曲绘 | C.H.S |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 梦境磁带 |
+| 更新版本 | v1.1 |
+| 时长 | 02:01 |
 | BPM | 97.5 |
 
 ## 谱面信息
@@ -27,17 +27,25 @@
 
 ## 解锁方法
 
-(待补充)
+- Special难度：在本曲 [[CB](info:info("Dogbite", "Cloudburst"))] 难度达到A评级（90%）以上通关后，在《[Oiiaioooooiai](info:info("Oiiaioooooiai"))》的猫Note部分以FC通过即可解锁。
+  - 有信息称部分设备需开启「更追求精度」设置才能解锁，待进一步提供信息。
 
 ## 曲目试听
 
+- [【Youtube】](https://www.youtube.com/watch?v=3s4y8B6Je-4)
+
 ## 曲目相关
 
-(待补充)
+- 本曲亦被收录于「TAKUMI³」「太鼓之达人」「陽春白雪 Lyrica」「音札」「Paradigm: Reboot」等作品中。
 
 ## 游戏相关
 
-(待补充)
+- DZ谱面
+- SK谱面
+- CB谱面
+  - slide！其余不明！
+- SP谱面
+  - 目前能说的只有一点：严禁用拇指游玩。
 
 ## 谱面预览
 

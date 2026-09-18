@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | James Primate |
 | 曲绘 | 域核 |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 雨世界 |
+| 更新版本 | v3.3 |
+| 时长 | 02:18 |
 | BPM | 120 |
 
 ## 谱面信息
@@ -27,17 +27,24 @@
 
 ## 解锁方法
 
-(待补充)
+- 阅读故事「Journey - Industrial Complex」。
+- 故事开放条件：阅读「Journey - Shoreline」。
+- 达成上述条件后，游玩《[Bio-Engineering](info:info("Bio-Engineering"))》。
+- 在《[Threat - Waterfront Complex](info:info("Threat - Waterfront Complex"))》的任意难度中取得 C 及以上评级。
 
 ## 曲目试听
 
+- [【Youtube】](https://youtu.be/jbX7R0kiPPE)
+
 ## 曲目相关
 
-(待补充)
+- 本曲目虽为「Rain World」DLC「Rain World: Downpour」的联动曲目，但本曲目是「Rain World」本体的乐曲。
 
 ## 游戏相关
 
-(待补充)
+- 与其他「Rain World」联动曲目相同，本谱面大量使用了雾雨音符的换手机制。
+- 本曲目音符数量较少，兼具开头的节奏难点与整体的瞄准难点。若没有能同时应对两者的 Milthm 实力，就很难打好。
+- 后半段频繁出现用按住雾雨音符的手去接触雨滴音符的配置，且雨滴音符分为上下两路袭来，相当棘手。建议先用难度稍降低的《[Aconsma](info:info("Aconsma"))》等进行练习。
 
 ## 谱面预览
 

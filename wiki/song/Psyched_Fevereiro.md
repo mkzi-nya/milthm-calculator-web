@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | t+pazolite |
 | 曲绘 | C.H.S |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 梦境磁带 |
+| 更新版本 | v1.11 |
+| 时长 | 02:13 |
 | BPM | 150 |
 
 ## 谱面信息
@@ -31,9 +31,12 @@
 
 ## 曲目试听
 
+- [【Youtube】](https://youtu.be/3mufQ1Tt844?feature=shared)
+
 ## 曲目相关
 
-(待补充)
+- 本曲目被收录于「Muse Dash」「TAKUMI³」「Hexa Hysteria」「ChainBeeT」「音札」「WAVEAT」「Paradigm: Reboot」「陽春白雪 Lyrica」「COXETA」「DanceRail3」「OTOGE RUSH!!」「Bleap」「RoBeats!」「Project : RUSHER」「MusicRunner」「VELUCITY」等多款音游。
+- 这是因为包含本曲目在内，t+pazolite 的专辑「without Permission」中的曲目被允许在未经许可的情况下收录进音乐游戏。
 
 ## 游戏相关
 

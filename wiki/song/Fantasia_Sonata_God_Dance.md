@@ -13,9 +13,9 @@
 | - | - |
 | 曲师 | PYKAMIA vs Sakuzyo |
 | 曲绘 | 雨野 |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 露晓卉庭 |
+| 更新版本 | v3.9 |
+| 时长 | 02:24 |
 | BPM | 177 |
 
 ## 谱面信息
@@ -31,9 +31,14 @@
 
 ## 曲目试听
 
+- [【Youtube】](https://youtu.be/wdUQs0w-7iw)
+- [【SoundCloud】](https://soundcloud.com/tracks/1773572019)
+- [【Bandcamp】](https://pykamia.bandcamp.com/track/fantasia-sonata-god-dance)
+
 ## 曲目相关
 
-(待补充)
+- 本曲目是 PYKAMIA 氏创作的「Fantasia Sonata」系列之一。
+- 亦收录于「KALPA(手机版)」「KALPA: Cosmic Symphony」「Rotaeno」「Liminality」「Lanota」「RYCEAM」「Orzmic」「Circle of Sparks」「Lily Fantasia」「Estella」。
 
 ## 游戏相关
 

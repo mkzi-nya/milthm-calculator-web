@@ -10,6 +10,31 @@ OUTPUT_DIR = Path("../")
 
 DIFF_ORDER = ["Drizzle", "Sprinkle", "Cloudburst", "Clear", "Special"]
 
+# 章节/曲包页：slug 为 md 文件名，chapter 为 resources.json 中的 chapter 键。
+# 这些页面由 ?q=<slug> 加载，只列出该章节的曲目，绝不生成「谱面预览」。
+CHAPTER_PAGES = [
+    {"slug": "weather_report", "title": "介绍: 天气预报", "chapter": "Introduction"},
+    {"slug": "rainfall_sounds", "title": "序章: 雨的声音", "chapter": "Chapter0"},
+    {"slug": "two_sides_of_bitter_and_sweet", "title": "主线章节一: 甜与苦的一体两面", "chapter": "Chapter1"},
+    {"slug": "a_spring_waiting_in_blossoms", "title": "支线章节一: 花裳随雨得春迟", "chapter": "SideStory1"},
+    {"slug": "rain_world", "title": "联动: 雨世界", "chapter": "RainWorld"},
+    {"slug": "notanote", "title": "联动: Notanote", "chapter": "Notanote"},
+    {"slug": "dream_tape", "title": "单曲: 梦境磁带", "chapter": "Single"},
+    {"slug": "gathering_blossoms_under_rain", "title": "单曲: 露晓卉庭", "chapter": "Garden"},
+]
+
+# 所有章节页 slug，用于防止误把章节页当成曲目页写入谱面预览。
+CHAPTER_SLUGS = {page["slug"] for page in CHAPTER_PAGES}
+
+CHAPTER_PAGE_TEMPLATE = textwrap.dedent(
+    """\
+    [返回目录](./)
+
+    # {title}
+
+    {song_items}"""
+)
+
 PAGE_TEMPLATE = textwrap.dedent(
     """\
     [返回目录](./)
@@ -221,7 +246,7 @@ def build_chart_preview_section(filename_base: str, diff_map: dict):
     diffs = [d for d in DIFF_ORDER if isinstance(diff_map.get(d), dict)]
     if not diffs:
         return ""
-    
+
     # 构建预览项
     preview_items = []
     for diff in diffs:
@@ -255,6 +280,17 @@ def build_markdown(song_key: str, song: dict, jpg_dir: Path, filename_base: str)
     ).rstrip() + "\n"
 
 
+def build_chapter_markdown(title: str, song_keys: list):
+    """构建章节/曲包页：只包含标题与该章节的曲目列表。"""
+    items = []
+    for song_key in sorted(song_keys, key=lambda k: str(k).lower()):
+        items.append(f'- {make_song_link(song_key)}')
+    return CHAPTER_PAGE_TEMPLATE.format(
+        title=title,
+        song_items="\n".join(items),
+    ).rstrip() + "\n"
+
+
 def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
     resources = load_resources(RESOURCES_JSON)
@@ -284,6 +320,11 @@ def main():
             print(f"跳过：{song_key}，无法生成合法文件名")
             continue
 
+        # 章节/曲包页由 CHAPTER_PAGES 单独生成，绝不当作曲目页写入谱面预览。
+        if filename_base in CHAPTER_SLUGS:
+            print(f"跳过：{song_key} -> {filename_base}.md，与章节页同名")
+            continue
+
         output_path = OUTPUT_DIR / f"{filename_base}.md"
 
         if output_path.name in existing_files:
@@ -300,8 +341,22 @@ def main():
         output_path.write_text(markdown, encoding="utf-8")
         created_files.append(output_path.name)
 
+    # 生成章节/曲包页（只列出该章节曲目，不含谱面预览）
+    created_chapters = []
+    for page in CHAPTER_PAGES:
+        chapter_key = page["chapter"]
+        song_keys = [
+            key for key, song in resources.items()
+            if isinstance(song, dict) and str(song.get("chapter") or "") == chapter_key
+        ]
+        markdown = build_chapter_markdown(page["title"], song_keys)
+        output_path = OUTPUT_DIR / f'{page["slug"]}.md'
+        output_path.write_text(markdown, encoding="utf-8")
+        created_chapters.append(output_path.name)
+
     print(
-        f"✓ 处理完成：新生成 {len(created_files)} 个，"
+        f"✓ 处理完成：新生成 {len(created_files)} 个曲目页，"
+        f"生成 {len(created_chapters)} 个章节页，"
         f"跳过已存在 {len(skipped_existing)} 个，"
         f"跳过冲突 {len(skipped_duplicate)} 个"
     )

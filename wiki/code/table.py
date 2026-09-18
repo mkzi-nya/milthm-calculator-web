@@ -12,8 +12,8 @@ INPUT_CANDIDATES = [
     (SCRIPT_DIR / 'resources.json').resolve(),
     Path('/mnt/data/work/resources.json'),
 ]
-OUTPUT_TABLE_C_HTML = (SCRIPT_DIR / '../table_c.html').resolve()
-OUTPUT_TABLE_HTML = (SCRIPT_DIR / '../table.html').resolve()
+OUTPUT_TABLE_C_MD = (SCRIPT_DIR / '../table_c.md').resolve()
+OUTPUT_TABLE_MD = (SCRIPT_DIR / '../table.md').resolve()
 CURRENT_VERSION = '6.0'
 
 DIFFICULTY_ORDER = ['Drizzle', 'Sprinkle', 'Cloudburst', 'Clear', 'Special']
@@ -61,317 +61,6 @@ DIRECTORY_GROUPS = [
     },
 ]
 
-HTML_TEMPLATE = r"""
-<!DOCTYPE html>
-<html lang="zh">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>{{title}}</title>
-
-  <link rel="stylesheet" href="./github-markdown-dark.min.css">
-  <script src="./marked.min.js"></script>
-  <script src="./katex.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script src="./index.umd.js"></script>
-  <link rel="stylesheet" href="./github-dark.min.css">
-  <script src="./highlight.min.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-      background: #0d1117;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .container { width: 100%; max-width: 900px; }
-    .markdown-body { width: 100%; overflow-wrap: break-word; }
-    .katex-display {
-      display: block !important;
-      text-align: center;
-      margin: 10px 0;
-      font-size: 1em;
-    }
-    .toc { display: none; }
-    pre, code { user-select: text; }
-
-    div[aaa] {
-      visibility: hidden;
-      opacity: 0;
-      transition:
-        opacity 0.12s ease-in-out,
-        visibility 0.12s ease-in-out,
-        top 0.12s ease,
-        left 0.12s ease;
-    }
-    div[aaa].visible {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
-
-
-<body>
-  <div class="container">
-    <article id="content" class="markdown-body"></article>
-  </div>
-
-  <script type="text/markdown" id="md">
-{markdown}
-  </script>
-
-  <script>
-
-    function loadMarkdown() {
-      let md = document.getElementById('md').textContent.replace(/^\n/, '');
-
-      md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, p1, p2) {
-        if (p2.startsWith('info:')) {
-          const [protocol, rest] = p2.split(':', 2);
-          const encodedRest = encodeURIComponent(rest);
-          return `[${p1}](${protocol}:${encodedRest})`;
-        }
-        return match;
-      });
-
-      content.innerHTML = marked.parse(md, { headerIds: true, mangle: false });
-      content.querySelectorAll('h2,h3,h4').forEach(h => {
-        h.id = h.innerText.toLowerCase().replace(/\s+/g, '-');
-      });
-      hljs.highlightAll();
-      resizeKatex();
-      runJavascriptLinks();
-      loadDev();
-    }
-
-    function runJavascriptLinks() {
-      const links = document.querySelectorAll('a[href^="info:info"], a[href^="info:info"]');
-      links.forEach(link => {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-        });
-      });
-    }
-
-    function resizeKatex() {
-      const w = document.querySelector('.markdown-body').clientWidth;
-      document.querySelectorAll('.katex-display').forEach(e => {
-        e.style.fontSize = '';
-        const actual = e.scrollWidth;
-        if (actual > w) {
-          const fs = parseFloat(getComputedStyle(e).fontSize);
-          e.style.fontSize = (fs * w / actual) + 'px';
-        }
-      });
-    }
-
-    const hoverState = new Map();
-    const HIDE_DELAY_MS = 120;
-
-    function ensureState(key) {
-      if (!hoverState.has(key)) {
-        hoverState.set(key, { hoverLink: false, hoverDev: false, el: null, timer: null });
-      }
-      return hoverState.get(key);
-    }
-
-    function scheduleHide(key) {
-      const state = ensureState(key);
-      if (state.timer) clearTimeout(state.timer);
-      state.timer = setTimeout(() => {
-        if (!state.hoverLink && !state.hoverDev && state.el) {
-          state.el.classList.remove('visible');
-        }
-        state.timer = null;
-      }, HIDE_DELAY_MS);
-    }
-
-    function placeAndShowForLink(aaaElement, linkRect) {
-      if (!aaaElement) return;
-      aaaElement.classList.add('visible');
-      const topPosition = linkRect.bottom + window.scrollY;
-      let leftPosition = linkRect.left + linkRect.width / 2 + window.scrollX - aaaElement.offsetWidth / 2;
-
-      const screenWidth = window.innerWidth;
-      const elementWidth = aaaElement.offsetWidth;
-      if (leftPosition + elementWidth > screenWidth) leftPosition = screenWidth - elementWidth;
-      else if (leftPosition < 0) leftPosition = 0;
-
-      aaaElement.style.position = 'absolute';
-      aaaElement.style.top = `${topPosition}px`;
-      aaaElement.style.left = `${leftPosition}px`;
-    }
-
-    function loadDev() {
-      fetch(`./chartdev.html?${Date.now()}`)
-        .then(res => {
-          if (!res.ok) throw new Error(`加载 chartdev.html 失败：${res.status}`);
-          return res.text();
-        })
-        .then(html => {
-          const temp = document.createElement('div');
-          temp.innerHTML = html;
-
-          const nodes = temp.querySelectorAll('div[aaa]');
-          nodes.forEach(node => {
-            const key = node.getAttribute('aaa');
-            if (!document.querySelector(`body > div[aaa="${CSS.escape(key)}"]`)) {
-              node.style.position = node.style.position || 'absolute';
-              document.body.appendChild(node);
-
-              node.addEventListener('mouseenter', () => {
-                const k = node.getAttribute('aaa');
-                const st = ensureState(k);
-                st.el = node;
-                st.hoverDev = true;
-                node.classList.add('visible');
-                if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-              });
-
-              node.addEventListener('mouseleave', () => {
-                const k = node.getAttribute('aaa');
-                const st = ensureState(k);
-                st.hoverDev = false;
-                scheduleHide(k);
-              });
-            }
-          });
-        })
-        .catch(err => console.error(err));
-    }
-
-    let currentKey = null;
-    let currentEl = null;
-    let isMorphing = false;
-    const MORPH_SWAP_DELAY = 40;
-
-    function morphToTarget(targetEl, linkRect, targetKey) {
-      if (!currentEl || !targetEl || currentEl === targetEl) return;
-
-      if (currentKey) {
-        const oldState = ensureState(currentKey);
-        if (oldState.timer) { clearTimeout(oldState.timer); oldState.timer = null; }
-        oldState.hoverLink = false;
-        oldState.hoverDev = false;
-        oldState.el = currentEl;
-      }
-      currentEl.classList.add('visible');
-
-      placeAndShowForLink(currentEl, linkRect);
-
-      setTimeout(() => {
-        currentEl.innerHTML = targetEl.innerHTML;
-        currentEl.setAttribute('aaa', targetKey);
-
-        targetEl.classList.remove('visible');
-        targetEl.style.top = '-99999px';
-        targetEl.style.left = '-99999px';
-
-        currentKey = targetKey;
-        const newState = ensureState(currentKey);
-        newState.el = currentEl;
-        newState.hoverLink = false;
-        newState.hoverDev = false;
-
-        isMorphing = false;
-      }, MORPH_SWAP_DELAY);
-    }
-
-    function showByMorphOrDirect(targetKey, linkRect) {
-      const targetEl = document.querySelector(`div[aaa="${targetKey}"]`);
-      if (!targetEl) return;
-
-      if (!currentEl) {
-        currentEl = targetEl;
-        currentKey = targetKey;
-        const st = ensureState(targetKey);
-        st.el = currentEl;
-        st.hoverLink = true;
-        if (st.timer) { clearTimeout(st.timer); st.timer = null; }
-        placeAndShowForLink(currentEl, linkRect);
-        return;
-      }
-
-      if (currentEl && currentKey !== targetKey && !isMorphing) {
-        isMorphing = true;
-        morphToTarget(targetEl, linkRect, targetKey);
-        return;
-      }
-
-      placeAndShowForLink(currentEl, linkRect);
-    }
-
-    function parseInfoKeyFromAnchor(anchor) {
-      const url = decodeURIComponent(anchor.href || '');
-      const match = url.match(/(info)\(([^)]*)\)/);
-      if (!match) return null;
-      const params = match[2].split(',').map(param => param.trim().replace(/[\'"]/g, ''));
-      const key = (params.length === 2) ? params.join(',') : params[0];
-      return key || null;
-    }
-
-    function bindLinkHoverAndClick(target) {
-      if (target.dataset.aaaBound) return;
-      target.dataset.aaaBound = '1';
-
-      target.addEventListener('mouseenter', () => {
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        const state = ensureState(key);
-        state.hoverLink = true;
-        if (state.timer) { clearTimeout(state.timer); state.timer = null; }
-        showByMorphOrDirect(key, target.getBoundingClientRect());
-      });
-
-      target.addEventListener('mouseleave', () => {
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        const state = ensureState(key);
-        state.hoverLink = false;
-        scheduleHide(key);
-      });
-
-      target.addEventListener('click', (e) => {
-        e.preventDefault();
-        const key = parseInfoKeyFromAnchor(target);
-        if (!key) return;
-        showByMorphOrDirect(key, target.getBoundingClientRect());
-      });
-    }
-
-    function checkMouseOnLink(event) {
-      const target = event.target;
-      if (target.tagName !== 'A') return;
-      const key = parseInfoKeyFromAnchor(target);
-      if (!key) return;
-
-      bindLinkHoverAndClick(target);
-
-      const aaaElement = currentEl && currentKey === key
-        ? currentEl
-        : document.querySelector(`div[aaa="${key}"]`);
-      if (!aaaElement) return;
-
-      const state = ensureState(key);
-      state.el = currentEl || aaaElement;
-      state.hoverLink = true;
-
-      placeAndShowForLink(state.el, target.getBoundingClientRect());
-    }
-
-    window.addEventListener('resize', resizeKatex);
-    window.addEventListener('load', loadMarkdown);
-    document.addEventListener('mousemove', checkMouseOnLink);
-
-  </script>
-</body>
-</html>
-"""
 
 
 def find_input_json() -> Path:
@@ -731,14 +420,6 @@ def build_chapter_markdown(resources: dict[str, Any], rows: list[dict[str, Any]]
     return '\n'.join(lines)
 
 
-def render_html(title: str, markdown: str) -> str:
-    return (
-        HTML_TEMPLATE
-        .replace('{{title}}', title)
-        .replace('{markdown}', markdown.replace('</script>', '<\\/script>'))
-    )
-
-
 def main() -> None:
     input_json = find_input_json()
     with input_json.open('r', encoding='utf-8') as file:
@@ -751,18 +432,15 @@ def main() -> None:
     constant_markdown = build_constant_markdown(rows)
     chapter_markdown = build_chapter_markdown(resources, rows)
 
-    constant_html = render_html('定数表（按定数）', constant_markdown)
-    chapter_html = render_html('定数表', chapter_markdown)
+    OUTPUT_TABLE_C_MD.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_TABLE_MD.parent.mkdir(parents=True, exist_ok=True)
 
-    OUTPUT_TABLE_C_HTML.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_TABLE_HTML.parent.mkdir(parents=True, exist_ok=True)
-
-    OUTPUT_TABLE_C_HTML.write_text(constant_html, encoding='utf-8')
-    OUTPUT_TABLE_HTML.write_text(chapter_html, encoding='utf-8')
+    OUTPUT_TABLE_C_MD.write_text(constant_markdown + '\n', encoding='utf-8')
+    OUTPUT_TABLE_MD.write_text(chapter_markdown + '\n', encoding='utf-8')
 
     print(f'Input: {input_json}')
-    print(f'Generated: {OUTPUT_TABLE_C_HTML}')
-    print(f'Generated: {OUTPUT_TABLE_HTML}')
+    print(f'Generated: {OUTPUT_TABLE_C_MD}')
+    print(f'Generated: {OUTPUT_TABLE_MD}')
 
 
 if __name__ == '__main__':

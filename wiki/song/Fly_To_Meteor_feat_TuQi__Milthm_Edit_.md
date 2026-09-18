@@ -14,9 +14,9 @@
 | 拉丁文曲名 | Fly To Meteor feat.TuQi (Milthm Edit) |
 | 曲师 | ShooTinGStaR + MoryueCi + Cyberspace |
 | 曲绘 | 注射 |
-| 所属曲包 | (待补充) |
-| 更新版本 | (待补充) |
-| 时长 | (待补充) |
+| 所属曲包 | 梦境磁带 |
+| 更新版本 | v1.5 |
+| 时长 | 02:37 |
 | BPM | 180 |
 
 ## 谱面信息
@@ -28,13 +28,16 @@
 
 ## 解锁方法
 
-(待补充)
+- Clear 谱面
+  - [[CB](info:info("Fly To Meteor (Milthm Edit)", "Cloudburst"))] 谱面达成 A 及以上评级。
 
 ## 曲目试听
 
+- [【Youtube】](https://youtu.be/Nd0LG7lHtyM)（Clear 谱面）
+
 ## 曲目相关
 
-(待补充)
+- 本曲目是 Clear 难度使用与 Drizzle、Sprinkle、Cloudburst 不同音源的版本。
 
 ## 游戏相关
 
