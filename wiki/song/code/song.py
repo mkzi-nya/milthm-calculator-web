@@ -82,7 +82,7 @@ PAGE_TEMPLATE = textwrap.dedent(
 
 IMAGE_BLOCK_TEMPLATE = textwrap.dedent(
     """\
-    ![{song_key}](../../jpgs/{song_key}.jpg)
+    ![{alt}](<{src}>)
     """
 )
 
@@ -197,7 +197,7 @@ def make_diff_link(song_key: str, diff_name: str):
 
 
 def make_image_src(filename: str):
-    return f"../../resources/jpg/{quote(filename)}"
+    return f"../../jpgs/{quote(filename)}"
 
 
 def build_chart_info_table(song_key: str, diff_map: dict):
@@ -230,14 +230,20 @@ def build_chart_info_table(song_key: str, diff_map: dict):
 
 
 def build_main_artwork_block(song_key: str):
-    return IMAGE_BLOCK_TEMPLATE.format(song_key=song_key).strip() + "\n"
+    return IMAGE_BLOCK_TEMPLATE.format(
+        alt=md_escape_link_text(song_key),
+        src=make_image_src(f"{song_key}.jpg"),
+    ).strip() + "\n"
 
 
 def build_square_artwork_block(song_key: str, jpg_dir: Path):
     square_path = jpg_dir / f"SquareArtwork_{song_key}.jpg"
     if not square_path.exists():
         return ""
-    return IMAGE_BLOCK_TEMPLATE.format(src=make_image_src(f"SquareArtwork_{song_key}.jpg")).strip() + "\n\n"
+    return IMAGE_BLOCK_TEMPLATE.format(
+        alt=md_escape_link_text(f"SquareArtwork {song_key}"),
+        src=make_image_src(f"SquareArtwork_{song_key}.jpg"),
+    ).strip() + "\n\n"
 
 
 def build_chart_preview_section(filename_base: str, diff_map: dict):

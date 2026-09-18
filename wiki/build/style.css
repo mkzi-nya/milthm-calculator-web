@@ -71,10 +71,18 @@ a:hover{text-decoration:underline;}
 .sb-item.cur{background:#42b88326;color:#fff;border-left:3px solid var(--accent);padding-left:.72rem;}
 .sb-item.lv3{padding-left:1.9rem;font-size:.84rem;color:#b3b3b3;}
 .sb-chapter{
-  display:block;padding:.7rem .9rem .25rem;color:var(--muted);
+  display:block;width:100%;padding:.7rem .9rem .25rem;color:var(--muted);
   font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
   position:sticky;top:0;background:var(--panel);z-index:1;
 }
+.toc-group{display:block;}
+.toc-group[hidden],.toc-group-items[hidden]{display:none;}
+.toc-group-toggle{border:0;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
+.toc-group-toggle:hover{color:#fff;background:var(--panel2);}
+.toc-group-icon{font-size:.9rem;color:var(--accent);line-height:1;}
+.toc-group-items{padding-bottom:.25rem;}
+.toc-group .sb-song{padding-left:1.25rem;}
+.toc-group .sb-song.cur{padding-left:1.02rem;}
 .sb-ext{color:#cfcfcf;}
 .sb-ext:hover{color:#fff;}
 .sb-foot{padding:.6rem 1rem .75rem;color:var(--muted);font-size:.75rem;border-top:1px solid var(--line);text-align:center;flex:0 0 auto;}

@@ -203,6 +203,8 @@
   var tocSearch = null;
   var tocList = null;
   var tocScope = 'headings'; // 'headings' | 'songs'
+  var tocCollapseState = { '__all__': true };
+  var tocScrollFrame = 0;
 
   function buildTocPanel() {
     tocPanel = document.createElement('aside');
@@ -262,21 +264,22 @@
     if (!tocList) return;
     tocList.innerHTML = '';
     if (tocScope === 'songs') {
-      var lastChapter = null;
-      SONGS.forEach(function (s) {
-        if (s.chapter !== lastChapter) {
-          lastChapter = s.chapter;
-          var sep = document.createElement('div');
-          sep.className = 'sb-chapter';
-          sep.textContent = s.chapter || '未分组';
-          tocList.appendChild(sep);
-        }
-        tocList.appendChild(buildListItem(s.name || s.label, s.route, 'song', 'sb-song'));
+      var chapters = [];
+      var grouped = {};
+      SONGS.forEach(function (song) {
+        var chapter = song.chapter || '未分组';
+        if (!grouped[chapter]) { grouped[chapter] = []; chapters.push(chapter); }
+        grouped[chapter].push(song);
       });
+      appendSongTocGroup('全部歌曲', '__all__', SONGS.slice().sort(compareSongNames), true);
+      chapters.forEach(function (chapter) {
+        appendSongTocGroup(chapter, chapter, grouped[chapter], false);
+      });
+      focusCurrentSongInToc(currentRoute);
       return;
     }
     if (!mdBody) return;
-    var hs = mdBody.querySelectorAll('h2,h3');
+    var hs = mdBody.querySelectorAll(currentRoute === '/charter' ? 'h2' : 'h2,h3');
     var maxToc = Infinity;
     var count = 0;
     hs.forEach(function (h) {
@@ -285,6 +288,7 @@
       var d = document.createElement('a');
       d.className = 'sb-item toc' + (h.tagName === 'H3' ? ' lv3' : '');
       d.textContent = h.textContent;
+      d.dataset.headingId = h.id;
       d.href = anchorUrl(h.id);
       d.addEventListener('click', function (e) {
         e.preventDefault();
@@ -300,25 +304,132 @@
       none.textContent = '本页无小标题';
       tocList.appendChild(none);
     }
+    updateTocHeadingFromScroll();
+  }
+
+  function compareSongNames(a, b) {
+    return String(a.name || a.label).localeCompare(String(b.name || b.label), 'zh-Hans-CN', {
+      numeric: true, sensitivity: 'base'
+    });
+  }
+
+  function appendSongTocGroup(label, key, songs, defaultCollapsed) {
+    var group = document.createElement('section');
+    group.className = 'toc-group' + (key === '__all__' ? ' toc-all' : '');
+    group.dataset.groupKey = key;
+    var collapsed = Object.prototype.hasOwnProperty.call(tocCollapseState, key)
+      ? tocCollapseState[key] : defaultCollapsed;
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'sb-chapter toc-group-toggle';
+    toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    var text = document.createElement('span');
+    text.textContent = label;
+    var icon = document.createElement('span');
+    icon.className = 'toc-group-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = collapsed ? '⌄' : '^';
+    toggle.appendChild(text);
+    toggle.appendChild(icon);
+    var body = document.createElement('div');
+    body.className = 'toc-group-items';
+    body.hidden = collapsed;
+    songs.forEach(function (song) {
+      body.appendChild(buildListItem(song.name || song.label, song.route, 'song', 'sb-song'));
+    });
+    toggle.addEventListener('click', function () {
+      var nextCollapsed = toggle.getAttribute('aria-expanded') === 'true';
+      tocCollapseState[key] = nextCollapsed;
+      toggle.setAttribute('aria-expanded', nextCollapsed ? 'false' : 'true');
+      icon.textContent = nextCollapsed ? '⌄' : '^';
+      body.hidden = nextCollapsed;
+    });
+    group.appendChild(toggle);
+    group.appendChild(body);
+    tocList.appendChild(group);
+  }
+
+  function scrollTocItemToTop(item) {
+    if (!tocList || !item) return;
+    var desired = tocList.scrollTop + item.getBoundingClientRect().top - tocList.getBoundingClientRect().top;
+    var max = Math.max(0, tocList.scrollHeight - tocList.clientHeight);
+    tocList.scrollTo({ top: Math.max(0, Math.min(desired, max)), behavior: 'auto' });
+  }
+
+  function setCurrentTocItem(item) {
+    if (!tocList || !item || item.classList.contains('cur')) return;
+    tocList.querySelectorAll('.sb-item.cur').forEach(function (node) { node.classList.remove('cur'); });
+    item.classList.add('cur');
+    scrollTocItemToTop(item);
+  }
+
+  function focusCurrentSongInToc(route) {
+    if (!tocList || !/^\/song\//.test(route || '')) return;
+    var candidates = Array.from(tocList.querySelectorAll('.sb-item[data-route]')).filter(function (item) {
+      return item.dataset.route === route && !item.closest('.toc-all');
+    });
+    var item = candidates[0] || Array.from(tocList.querySelectorAll('.sb-item[data-route]')).find(function (node) {
+      return node.dataset.route === route;
+    });
+    if (!item) return;
+    var group = item.closest('.toc-group');
+    if (group) {
+      var toggle = group.querySelector('.toc-group-toggle');
+      var body = group.querySelector('.toc-group-items');
+      tocCollapseState[group.dataset.groupKey] = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.querySelector('.toc-group-icon').textContent = '^';
+      body.hidden = false;
+    }
+    requestAnimationFrame(function () { setCurrentTocItem(item); });
+  }
+
+  function updateTocHeadingFromScroll() {
+    if (tocScope !== 'headings' || !tocList || !mdBody) return;
+    var links = Array.from(tocList.querySelectorAll('.sb-item[data-heading-id]'));
+    if (!links.length) return;
+    var head = $('pageHead');
+    var threshold = head && head.offsetHeight ? head.offsetHeight + 26 : 14;
+    var current = links[0];
+    links.forEach(function (link) {
+      var heading = document.getElementById(link.dataset.headingId);
+      if (heading && heading.getBoundingClientRect().top <= threshold) current = link;
+    });
+    setCurrentTocItem(current);
+  }
+
+  function scheduleTocScrollUpdate() {
+    if (tocScrollFrame) return;
+    tocScrollFrame = requestAnimationFrame(function () {
+      tocScrollFrame = 0;
+      updateTocHeadingFromScroll();
+    });
   }
 
   function filterToc(q) {
     if (!tocList) return;
     q = String(q || '').replace(/^\s+|\s+$/g, '').toLowerCase();
+    if (tocScope === 'songs') {
+      tocList.querySelectorAll('.toc-group').forEach(function (group) {
+        var hits = 0;
+        group.querySelectorAll('.sb-item').forEach(function (item) {
+          var hit = !q || item.textContent.toLowerCase().indexOf(q) >= 0
+            || (item.dataset.route || '').toLowerCase().indexOf(q) >= 0;
+          item.style.display = hit ? '' : 'none';
+          if (hit) hits++;
+        });
+        group.hidden = !!q && !hits;
+        var body = group.querySelector('.toc-group-items');
+        body.hidden = q ? false : !!tocCollapseState[group.dataset.groupKey];
+      });
+      return;
+    }
     var items = tocList.querySelectorAll('.sb-item');
-    var seps = tocList.querySelectorAll('.sb-chapter');
-    var showSep = {};
     items.forEach(function (a) {
       var hit = !q || a.textContent.toLowerCase().indexOf(q) >= 0
         || (a.dataset.route || '').toLowerCase().indexOf(q) >= 0;
       a.style.display = hit ? '' : 'none';
-      if (hit && a.dataset.route) {
-        var prev = a.previousElementSibling;
-        while (prev && !prev.classList.contains('sb-chapter')) prev = prev.previousElementSibling;
-        if (prev) showSep[prev.textContent] = true;
-      }
     });
-    seps.forEach(function (s) { s.style.display = showSep[s.textContent] ? '' : 'none'; });
   }
 
   function updateTocForRoute(route) {
@@ -506,8 +617,12 @@
   }
 
   function transformLinks(md) {
-    return String(md).replace(/\]\(info:(info\(.*?\))\)/g, function (m, payload) {
+    var result = String(md).replace(/\]\(info:(info\(.*?\))\)/g, function (m, payload) {
       return '](info:' + encodeInfoTarget(payload) + ')';
+    });
+    return result.replace(/^(!\[[^\]]*\]\()(\.\.\/\.\.\/jpgs\/.+)(\))\s*$/gm, function (m, open, target, close) {
+      if (target.charAt(0) === '<' && target.charAt(target.length - 1) === '>') return m;
+      return open + '<' + target + '>' + close;
     });
   }
 
@@ -1043,6 +1158,7 @@
       if (event.key === 'Escape') { closeSidebar(); closeTocPanel(); }
     });
     window.addEventListener('resize', onResize);
+    window.addEventListener('scroll', scheduleTocScrollUpdate, { passive: true });
 
     applySidebarDefaults();
     var mqHandler = function () { applySidebarDefaults(); onResize(); };
