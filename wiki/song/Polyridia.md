@@ -27,11 +27,11 @@
 
 ## 曲目试听
 
-- [【【Artcore for HARCA】](https://b23.tv/sv7hl27)
+- [【Bilibili】](https://b23.tv/sv7hl27)
 
 ## 曲目相关
 
-- 本曲目来自音乐游戏 《Harca》的歌曲
+- 本曲目来自音乐游戏《Harca》。
 
 ## 游戏相关
 

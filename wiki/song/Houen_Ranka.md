@@ -43,16 +43,16 @@
 ## 曲目相关
 
 - 曲名读法为「ほうえんらんか」。
-- 本曲为「Cosmic Radio 2024」参加乐曲。
+- 本曲为「Cosmic Radio 2024」参赛曲目。
 - 本曲亦被收录于「WEBEAT:mania」「Linear Beat!!」「ChainBeeT」「Project : RUSHER」等作品中。
-- 谱面制作者所有难度均为Iblcya氏。
+- 各难度谱面均由 Iblcya 制作。
 
 ## 游戏相关
 
-- DZ谱面
-- SK谱面
-- CB谱面
-  - 定数为11.9。初参战却如此狂暴，Iblcya先生。
+- DZ 谱面
+- SK 谱面
+- CB 谱面
+  - 定数为 11.9。初参战就如此狂暴，Iblcya 先生。
 
 ## 谱面预览
 

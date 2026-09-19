@@ -24,9 +24,9 @@
 
 ## 解锁方法
 
-- 在《[Jump out?](info:info("Jump out?"))》的任意难度中达到A及以上评级解锁。
-  在《[LOUDER!](info:info("LOUDER!"))》的任意难度中达到A及以上评级解锁。
-  在《[☹](info:info("☹"))》的任意难度中达到A及以上评级解锁。
+- 在《[Jump out?](info:info("Jump out?"))》的任意难度中达到 A 及以上评级解锁。
+- 在《[LOUDER!](info:info("LOUDER!"))》的任意难度中达到 A 及以上评级解锁。
+- 在《[☹](info:info("☹"))》的任意难度中达到 A 及以上评级解锁。
 
 ## 曲目试听
 
@@ -34,12 +34,12 @@
 
 ## 曲目相关
 
-- 专门为本作创作的曲目。
+- 为本作专门创作的曲目。
 
 ## 游戏相关
 
-- v3.8 版本前解锁条件从《[Moving On](info:info("Moving On"))》改为了《[LOUDER!](info:info("LOUDER!"))》，这导致若未游玩过《[LOUDER!](info:info("LOUDER!"))》将处于上锁状态。
-- 本曲在 v3.8 版本中追加了解锁条件，需要在《[LOUDER!](info:info("LOUDER!"))》的任意难度中达到A及以上评级。即使此前已解锁本曲，也会再次被上锁。
+- v3.8 版本前，解锁条件从《[Moving On](info:info("Moving On"))》改为《[LOUDER!](info:info("LOUDER!"))》，这导致若未游玩过《[LOUDER!](info:info("LOUDER!"))》将处于上锁状态。
+- 本曲在 v3.8 版本中追加了解锁条件，需要在《[LOUDER!](info:info("LOUDER!"))》的任意难度中达到 A 及以上评级。即使此前已解锁本曲，也会再次被上锁。
 
 ## 歌词
 ```text

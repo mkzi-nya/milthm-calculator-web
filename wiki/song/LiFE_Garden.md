@@ -29,7 +29,7 @@
 
 解锁曲包《[露晓卉庭](./?q=gathering_blossoms_under_rain)》后，在「[露晓卉庭](https://milthm.com/wiki/hans/blog/2025-09-12)」中花费 1200「食物」解锁。  
 [LiFE Garden (Extended Mix)](info:info("LiFE Garden (Extended Mix)"))[[CL](info:info("LiFE Garden (Extended Mix)", "Clear"))] 需在本曲 Cloudburst 难度取得 S 评级解锁。  
-本曲目的 Special 难度尚未实装，需等待后续版本更新后解锁。
+本曲的 Special 难度尚未实装，需等待后续版本更新后解锁。
 
 ## 曲目试听
 
@@ -41,8 +41,8 @@
 
 - 本曲目是 Milthm 第一首具有全部五个难度等级的曲目。
   - 但本曲目的 Special 难度尚未实装，目前无法游玩。
-  - Clear 难度由于具有不同的音源，故此页面不予展示。
-- 初次解锁本曲目前，将会播放一段实时渲染的 PV。
+  - 由于 Clear 难度使用了不同的音源，故本页面不予展示。
+- 首次解锁本曲前，会播放一段实时渲染的 PV。
   - 该 PV 无法通过任何方式回看。
 
 ## 谱面预览

@@ -28,10 +28,10 @@
 ## 解锁方法
 
 - 以下为 2025 年愚人节活动期间的解锁条件（含剧透）。
-  - 解锁《[KAEDE](info:info("KAEDE"))》后，再次尝试游玩时会出现弹窗，询问「KAEDE by Ocelot?」。
-  - 在此处指出「KAEDE」并非曲名，而是《[KASANE](info:info("KASANE"))》的制作者，并按选项推进。
+  - 解锁《[KAEDE](info:info("KAEDE"))》后，再次游玩时会出现弹窗，询问「KAEDE by Ocelot?」。
+  - 在这里需要指出「KAEDE」并非曲名，而是《[KASANE](info:info("KASANE"))》的制作者，并按选项推进。
   - 具体为「KAEDE by Ocelot?(Cancel)▶︎KAEDE?(Confirm)▶︎Kaede Hirayama?(Confirm)▶︎KASANE by Kaede Hirayama!(Confirm)」，确认后即可开始《[KASANE](info:info("KASANE"))》。若在弹窗中选错，会得到「......」的回复并失败。
-  - 初次游玩时会被要求游玩前一首曲目的难度，但只要立刻返回也能解锁，不必在意。
+  - 初次游玩时会要求先游玩前一首曲目的对应难度，但只要立刻返回也能解锁，不必在意。
     - 由于大多数人是在游玩《[KAEDE](info:info("KAEDE"))》之后才解锁本曲，受游戏内数据影响，初次游玩时多为 SK 难度。
 
 ## 曲目试听

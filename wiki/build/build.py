@@ -66,11 +66,14 @@ GROUPS: list[dict[str, Any]] = [
 # 「其他页面」：Milthm 相关网站中未进入目录的页面，固定显示在左侧栏底部。
 # 官方 Wiki 只保留中文地址。
 OTHER_PAGES: list[dict[str, str]] = [
+    {"label": "Milthm查分器（本站）", "href": "https://mkzi-nya.github.io/milthm-calculator-web/"},
+    {"label": "Milthm存档解析（本站）", "href": "https://mkzi-nya.github.io/milthm-calculator-web/prefedit.html"},
+    {"label": "Milthm剧情及二创文章（本站）", "href": "https://mkzi-nya.github.io/story/"},
+    {"label": "score v3网页计算器（本站）", "href": "https://mkzi-nya.github.io/mil/"},
+    {"label": "Milkloud（官方）", "href": "https://milkloud.milthm.cn/"},
     {"label": "官方 Wiki", "href": "https://milthm.com/wiki/hans/manual/features"},
     {"label": "Fandom", "href": "https://milthm.fandom.com/wiki/Game_Mechanics"},
-    {"label": "WikiWiki（日本語）", "href": "https://wikiwiki.jp/milthm/"},
-    {"label": "游戏剧情及二创文章（本站）", "href": "https://mkzi-nya.github.io/story/"},
-    {"label": "score v3网页计算器（本站）", "href": "https://mkzi-nya.github.io/mil/"},
+    {"label": "WikiWiki", "href": "https://wikiwiki.jp/milthm/"},
 ]
 
 # 章节显示顺序（未列出的章节排在最后，按名称）

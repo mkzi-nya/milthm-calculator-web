@@ -33,8 +33,8 @@
 
 ## 曲目相关
 
-- 本曲虽是与「Rain World」DLC「Rain World: downpour」的联动，但本曲实际上是「Rain World」本体的曲目。
-- 本曲由仅存在 Miss 以外的 Actual Perfect 判定的音符构成，因此只要连上连击就一定能获得「Rhythm of Rain」（理论值）。（与《[Sundown](info:info("Sundown"))》规格相同）
+- 本曲虽是与「Rain World」DLC「Rain World: downpour」的联动曲目，但实际上取自「Rain World」本体。
+- 本曲仅由判定为 Miss 以外的 Exact 的音符构成，因此只要连上连击就一定能获得「RHYTHM of RAIN」（理论值）。（与《[Sundown](info:info("Sundown"))》规格相同）
 - 截至 v3.3.2，本曲是唯一只有 SK 谱面的曲目。
 
 ## 游戏相关

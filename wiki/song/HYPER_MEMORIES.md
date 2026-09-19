@@ -21,12 +21,12 @@
 | 等级 | 3 (3.0) | 8+ (8.9) | 11+ (11.8) |
 | Note数量 | 256 | 666 | 1666 |
 | 谱师 | Eric_Lian | Eric_Lian | HYPER(AKKO. XZADUDU179) |
-- 该曲目CB难度初出定数为11.7，v4.0更新后调整为11.8。但当该谱面使用旧版成绩计算Reality时，依旧按照11.7的定数参与计算。
+- 该曲目 CB 难度初出定数为 11.7，v4.0 更新后调整为 11.8。但当该谱面使用旧版成绩计算 Reality 时，依旧按照 11.7 的定数参与计算。
 
 ## 解锁方法
 
 - 隐藏曲，解锁前不显示曲名、曲师和曲绘。
-- 在《[Fragment of Memories](info:info("Fragment of Memories"))》任意难度取得A评级后，使沉浸度达到100%，阅读故事第5节即可解锁。
+- 在《[Fragment of Memories](info:info("Fragment of Memories"))》任意难度取得 A 评级后，使沉浸度达到 100%，阅读故事第 5 节即可解锁。
 
 ## 曲目试听
 
@@ -39,23 +39,23 @@
 - [【SoundCloud】](https://on.soundcloud.com/hoYs2QFUXxra1Rqf6)
 
 ## 曲目相关
-- 本曲目为Milthm原创曲。
+- 本曲目为 Milthm 原创曲。
   - 但本曲在实装前就已发表。
-- 该曲目原曲时长为04:36，游戏版本经过剪辑。
+- 该曲目原曲时长为 04:36，游戏版本经过剪辑。
 
 ## 游戏相关
 - 本曲目是解锁《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》的前置曲。
   - 有关这两首曲目的解锁方法，请在对应曲目查看。
 - 该曲目具有游玩效果。
-  - 故事第6节解锁后，再次游玩该曲目将在某一段落显示黑白的苏珊立绘。
+  - 故事第 6 节解锁后，再次游玩该曲目将在某一段落显示黑白的苏珊立绘。
     - 触发对应隐藏曲的解锁条件时，这一立绘将变为彩色，成为曲绘的一部分。
   - 触发条件后，游戏的暂停键将被隐藏，画面出现部分抖动。
-  - 该效果可在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》均解锁后通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」再次触发体验。
+  - 该效果可在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》均解锁后通过「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」再次触发体验。
 - 该曲目具有两张曲绘。
   - 两张曲绘的区别为镜子前是否有苏珊立绘。
   - 在《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁时，将显示无立绘的曲绘；全部解锁后，将切换为另一张立绘且无法更改。
-    - 即便通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重演游玩效果时，曲绘也不会更改。
-- 当《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁前，除「精彩演奏」、「完美演奏」、「镜像」、「精益求精」外，所有 [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) 都将被禁用。
+    - 即便通过「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重演游玩效果时，曲绘也不会更改。
+- 当《[Regnaissance](info:info("Regnaissance"))》和《[Contrasty Angeles](info:info("Contrasty Angeles"))》未全部解锁前，除「精彩演奏」、「完美演奏」、「镜像」、「精益求精」外，所有 [梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) 都将被禁用。
 
 ## 谱面预览
 

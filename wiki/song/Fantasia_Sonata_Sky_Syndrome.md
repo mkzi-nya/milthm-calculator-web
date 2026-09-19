@@ -31,8 +31,8 @@
 
 ## 曲目相关
 
-- 该曲曲绘上的琴谱为《[花雨](https://milthm.com/wiki/hans/resources/petalrain)》--- Milthm 主菜单界面的主题曲。
-- 左边的女孩是 Shiroma ，她是 PYKAMIA 的代表人物。
+- 该曲曲绘上的琴谱为《[花雨](https://milthm.com/wiki/hans/resources/petalrain)》——Milthm 主菜单界面的主题曲。
+- 左边的女孩是 Shiroma，她是 PYKAMIA 的代表人物。
 - 该曲目为 Milthm 独占曲。
 
 ## 游戏相关

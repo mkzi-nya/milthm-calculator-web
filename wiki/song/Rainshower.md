@@ -52,10 +52,10 @@
 - 本曲目的 Cloudburst 难度在游戏中隐藏了谱师名义。
 - 本曲目存在游玩效果。
   - 初次游玩时将自动触发该效果。
-  - 游玩效果包含屏幕闪动等特效，还原了本曲目发布时的PV样式。
-  - 该游玩效果可通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重复体验。
+  - 游玩效果包含屏幕闪动等特效，还原了本曲目发布时的 PV 样式。
+  - 该游玩效果可通过「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重复体验。
 - 在本曲目更新初期，曾需要在线下载才能游玩。
-- [梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA)「倾盆大雨」「隐形」「乱舞」对本曲目无效。
+- [梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA)「倾盆大雨」「隐形」「乱舞」对本曲目无效。
 
 
 ## 谱面预览

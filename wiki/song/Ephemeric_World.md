@@ -35,7 +35,7 @@
 
 ## 游戏相关
 
-- 本曲目的 [Cloudburst](info:info("Ephemeric World", "Cloudburst")) 为《解空明镜》中唯一的12级曲目
+- 本曲目的 [Cloudburst](info:info("Ephemeric World", "Cloudburst")) 为《解空明镜》中唯一的 12 级曲目
 
 ## 谱面预览
 

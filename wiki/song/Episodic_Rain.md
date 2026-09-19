@@ -55,7 +55,7 @@ Cloudburst
 
 ## 游戏相关
 
-- 该曲目的 Cloudburst 难度是专为熟悉雨丝音符的「[水面反射](https://milthm.com/wiki/hans/manual/judgment/water-reflected)」机制而设计的：当你能只使用2根手指完成FC，说明你已经熟悉了这个功能。
+- 该曲目的 Cloudburst 难度是专为熟悉雨丝音符的「[水面反射](https://milthm.com/wiki/hans/manual/judgment/water-reflected)」机制而设计的：当你能仅用 2 根手指完成 FC，就说明你已经熟悉了这个功能。
   - 这一点在 [RainGPT](https://mkzi-nya.github.io/story/milthm/raingpt/hold-tricks.html) 中有提及。
 
 

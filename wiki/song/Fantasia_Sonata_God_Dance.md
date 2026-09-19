@@ -37,7 +37,7 @@
 
 ## 曲目相关
 
-- 本曲目是 PYKAMIA 氏创作的「Fantasia Sonata」系列之一。
+- 本曲目是 PYKAMIA 创作的「Fantasia Sonata」系列之一。
 - 亦收录于「KALPA(手机版)」「KALPA: Cosmic Symphony」「Rotaeno」「Liminality」「Lanota」「RYCEAM」「Orzmic」「Circle of Sparks」「Lily Fantasia」「Estella」。
 
 ## 游戏相关

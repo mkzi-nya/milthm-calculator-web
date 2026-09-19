@@ -27,8 +27,8 @@
 
 ## 解锁方法
 
-- Special难度：在本曲 [[CB](info:info("Dogbite", "Cloudburst"))] 难度达到A评级（90%）以上通关后，在《[Oiiaioooooiai](info:info("Oiiaioooooiai"))》的猫Note部分以FC通过即可解锁。
-  - 有信息称部分设备需开启「更追求精度」设置才能解锁，待进一步提供信息。
+- Special难度：在本曲 [[CB](info:info("Dogbite", "Cloudburst"))] 难度达到A评级（90%）以上通关后，在《[Oiiaioooooiai](info:info("Oiiaioooooiai"))》的猫音符部分以FC通过即可解锁。
+  - 有信息称部分设备需开启「梦境涟漪：精益求精」设置才能解锁，待进一步提供信息。
 
 ## 曲目试听
 

@@ -24,11 +24,11 @@
 
 ## 解锁方法
 
-- 在《[雨女](info:info("雨女"))》的对应难度达成A及以上评级(Clear难度除外)。
-  - 当解锁了该曲更高难度的谱面时，若未达成上述条件则无法同时解锁低难度谱面。
-- 在 Cloudburst 难度中达成S及以上评级即可解锁 Clear 难度。
-- 开启「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 倾盆大雨」后，游玩《[雨之城](info:info("雨之城"))》 的对应难度
-  - 由于解锁条件重叠，只需将《[雨女](info:info("雨女"))》达成A及以上评级饥渴连续解锁该曲目的对应难度。
+- 在《[雨女](info:info("雨女"))》的对应难度达成 A 及以上评级（Clear 难度除外）。
+  - 即使先解锁了该曲更高难度的谱面，若不满足上述条件，也无法一并解锁低难度谱面。
+- 在 Cloudburst 难度中达成 S 及以上评级即可解锁 Clear 难度。
+- 开启「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 倾盆大雨」后，游玩《[雨之城](info:info("雨之城"))》的对应难度
+  - 由于解锁条件重叠，只需将《[雨女](info:info("雨女"))》达成 A 及以上评级，即可连续解锁该曲目的对应难度。
 
 ## 曲目试听
 
@@ -53,8 +53,8 @@
 
 ## 游戏相关
 
-- 使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
-- 该曲目 Clear 难度的定数在 v4.0 版本从12.2升到了12.7。
+- 在已解锁本曲的状态下，使用「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
+- 该曲 Clear 难度的定数在 v4.0 版本从 12.2 升至 12.7。
 
 ## 谱面预览
 

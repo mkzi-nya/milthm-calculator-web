@@ -24,7 +24,7 @@
 - [サイクルの欠片](info:info("サイクルの欠片"))
 - [ネオン色のまち feat. Mai](info:info("ネオン色のまち feat. Mai"))
 - [仮想明日](info:info("仮想明日"))
-- [参宿四~Betelgeuse~](info:info("参宿四~Betelgeuse~"))
+- [参宿四\~Betelgeuse\~](info:info("参宿四~Betelgeuse~"))
 - [樱落繁花](info:info("樱落繁花"))
 - [白虎蓮華](info:info("白虎蓮華"))
 - [选择你的宽带](info:info("选择你的宽带"))

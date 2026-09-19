@@ -41,7 +41,7 @@
 ## 游戏相关
 
 - 该曲目的 Sprinkle 难度谱面是所有 Sprinkle 谱面中物量最多的。
-- 该曲目的 Cloudburst 难度谱面为 《[Algebra](info:info("Algebra", "Cloudburst"))》与《[Elsorhg](info:info("Elsorhg", "Cloudburst"))》的入门级谱面，当你无法很好的演奏他们，可尝试练习这个谱面。
+- 该曲目的 Cloudburst 难度谱面为《[Algebra](info:info("Algebra", "Cloudburst"))》与《[Elsorhg](info:info("Elsorhg", "Cloudburst"))》的入门级谱面，当您无法很好地演奏它们时，可尝试练习该谱面。
 
 ## 歌词
 

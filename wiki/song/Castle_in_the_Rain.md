@@ -41,10 +41,10 @@
 
 ## 游戏相关
 
-- 使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
-- 该曲目的 Cloudburst 难度在 v1.0 从 8 级变为了 7+
+- 使用「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁动画。
+- 该曲目的 Cloudburst 难度在 v1.0 由 8 级变为了 7+。
 - 该曲目的 Cloudburst 难度为所有 Cloudburst 难度中物量最少的谱面。
-- 除主线章节外，所有章节均需在本曲任意难度取得A评级解锁。
+- 除主线章节外，所有章节均需在本曲任意难度取得 A 评级解锁。
   - 这也是《[时落之雨](info:info("时落之雨"))》[[SK](info:info("时落之雨", "Sprinkle"))] 、《[夜風](info:info("夜風"))》、《[花月](info:info("花月"))》、《[暮予星光](info:info("暮予星光"))》、《[Jump out?](info:info("Jump out?"))》、《[LOUDER!](info:info("LOUDER!"))》、《[☹](info:info("☹"))》的解锁条件。
 
 ## 谱面预览

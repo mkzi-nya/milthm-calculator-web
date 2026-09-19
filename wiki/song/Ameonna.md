@@ -25,7 +25,7 @@
 ## 解锁方法
 
 - 在《[イコラト](info:info("イコラト"))》的任意难度中达成C及以上评级。
-- 开启「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 倾盆大雨」后，游玩《[雨之城](info:info("雨之城"))》 的对应难度即可过渡到这首歌并解锁对应难度谱面。
+- 开启「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 倾盆大雨」后，游玩《[雨之城](info:info("雨之城"))》的对应难度即可过渡到本曲并解锁对应难度谱面。
 - 如果曾解锁更高难度的谱面，低难度的谱面也将同时解锁。
 - 将 Cloudburst 难度的谱面达成 S 级评价即可解锁 Clear 难度谱面。
 
@@ -39,9 +39,9 @@
 
 ## 游戏相关
 
-- 该曲的 Sprinkle 难度在 v2.0 版本中从6改为6+
-- 该曲的 Clear 难度在 v1.1 版本中改为了10，而后在 v2.0 版本中改回了10+
-- 在解锁后使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁特效。
+- 该曲的 Sprinkle 难度在 v2.0 版本中由 6 改为 6+。
+- 该曲的 Clear 难度在 v1.1 版本中改为了 10，而后在 v2.0 版本中改回了 10+。
+- 在解锁后使用「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩可重现解锁特效。
 
 ## 歌词
 

@@ -35,7 +35,7 @@
 
 - [【Youtube】](https://youtu.be/n5lNIpzoizI)（Drizzle / Sprinkle / Cloudburst 谱面）
 - [【Youtube】](https://youtu.be/Nd0LG7lHtyM)（Clear 谱面）
-- [【Youtube】](https://youtu.be/4WEvZ0AEklA)（本家 BGA）
+- [【Youtube】](https://youtu.be/4WEvZ0AEklA)（原曲 BGA）
 
 ## 曲目相关
 

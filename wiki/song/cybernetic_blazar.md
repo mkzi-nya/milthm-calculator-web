@@ -36,7 +36,7 @@
 ## 曲目相关
 
 - 本曲目为联动章节曲目，自然收录于「Notanote」，同时也收录于「Orzmic」。
-- 本曲目的版权归 Notanote 方所有；由于「Notanote」收有 Orzmic 方移植而来的《Le Porteur d'Ombre》，似乎因此改为移植本曲作为交换。
+- 本曲目的版权归 Notanote 方所有；由于「Notanote」收录了 Orzmic 方移植而来的《Le Porteur d'Ombre》，似乎因此改以移植本曲作为交换。
 - 本曲目也从 Notanote 移植到了「KALPA」。
 
 ## 游戏相关

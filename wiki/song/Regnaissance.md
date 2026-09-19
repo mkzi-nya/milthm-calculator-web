@@ -28,13 +28,13 @@
 
 > 虚无，【失去一切】，她的命运
 
-若在解锁前使用「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩《[Aconsma](info:info("Aconsma"))》将显示具体解锁条件。  
+若在解锁前使用「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」游玩《[Aconsma](info:info("Aconsma"))》将显示具体解锁条件。  
 右侧配有黑白苏珊立绘。
 
 游玩《[HYPER MEMORIES](info:info("HYPER MEMORIES"))》，先正常击打音符，随后等待背景上出现黑白苏珊的立绘后停止游玩，漏掉全部音符。  
 当黑白立绘变红之后，实时分数将变为负数。此时继续击打音符，确保最后结算时的分数为正数即可解锁。
 
-特别地，本曲目的CL难度在CB难度取得S评级才会解锁。
+特别地，本曲目的 CL 难度需在 CB 难度取得 S 评级才会解锁。
 
 ## 曲目试听
 
@@ -57,13 +57,13 @@
   - PV开始时，用一些图形显示了一些英语单词。
     - 它们分别是「Redemption」「Nothingness」和「Rebirth」。
     - 结尾再次用这些图形显示了「Two Sides」。
-  - 在PV曲名揭晓前，播放了一段文字：
+  - 在 PV 曲名揭晓前，播放了一段文字：
   
     > 「Why are you crying?」
     - 这是从剧情中摘出来的。
-  - 曲目解锁后，该PV无法回看。
+  - 曲目解锁后，该 PV 无法回看。
 - 本曲目初次游玩时将禁用暂停键，并具有游玩效果。
-  - 该游玩效果可以通过「[梦境涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重新体验。
+  - 该游玩效果可以通过「[梦之涟漪](https://milthm.com/wiki/hans/manual/features#%E6%A2%A6%E4%B9%8B%E6%B6%9F%E6%BC%AA) - 噩梦」重新体验。
 - 初次游玩后将带回 v1.x 时期的开屏界面。
   - 该开屏界面无法重新体验。
 
