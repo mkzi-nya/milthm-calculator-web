@@ -500,16 +500,13 @@ Good 判定的基础扣血量为 12.0，Bad 与 Miss 的基础扣血量为 8.0�
 
 #### Milthm查分器
 
-- [k9.lv/c/](htt://k9.lv/c/)
-- [mhtlim.top](https://mhtlim.top/)
-- [mhtl.im](https://mhtl.im)
-- [mkzi-nya.github.io](https://mkzi-nya.github.io/milthm-calculator-web/)
+- [mkzi-nya.github.io（本站）](https://mkzi-nya.github.io/milthm-calculator-web/)
 > 以上网站皆可使用
 
 ---
 
-- [游戏剧情及二创文章](https://mkzi-nya.github.io/story/)
-- [score v3网页计算器](https://mkzi-nya.github.io/mil/)  
+- [游戏剧情及二创文章（本站）](https://mkzi-nya.github.io/story/)
+- [score v3网页计算器（本站）](https://mkzi-nya.github.io/mil/)  
 - [花园计算器](./garden.html)
 
 

@@ -27,6 +27,8 @@ REPO = ROOT.parent                                     # 仓库根
 sys.path.insert(0, str(ROOT / "code"))
 from routes import song_base
 
+from collate import song_sort_key
+
 RESOURCES = REPO / "resources" / "resources.json"
 
 # 静态页面路由：route -> (title, md文件)
@@ -59,6 +61,16 @@ GROUPS: list[dict[str, Any]] = [
             {"label": "花园规划器", "href": "garden.html"},
         ],
     },
+]
+
+# 「其他页面」：Milthm 相关网站中未进入目录的页面，固定显示在左侧栏底部。
+# 官方 Wiki 只保留中文地址。
+OTHER_PAGES: list[dict[str, str]] = [
+    {"label": "官方 Wiki", "href": "https://milthm.com/wiki/hans/manual/features"},
+    {"label": "Fandom", "href": "https://milthm.fandom.com/wiki/Game_Mechanics"},
+    {"label": "WikiWiki（日本語）", "href": "https://wikiwiki.jp/milthm/"},
+    {"label": "游戏剧情及二创文章（本站）", "href": "https://mkzi-nya.github.io/story/"},
+    {"label": "score v3网页计算器（本站）", "href": "https://mkzi-nya.github.io/mil/"},
 ]
 
 # 章节显示顺序（未列出的章节排在最后，按名称）
@@ -149,11 +161,20 @@ def build_song_list() -> list[dict[str, Any]]:
         songs.append({"label": label, "name": key, "route": f"/song/{base}",
                       "file": f"song/{base}.md", "chapter": chapter,
                       "artist": song.get("artist", ""),
+                      "latinTitle": latin,
                       "aliases": [key, latin, base, sanitize_latin_title(latin), song.get("songid", ""), song.get("Title_zh_Hans", "")] })
 
-    # 章节按指定顺序排列，未列出的排最后；章内按曲名排序
+    # 全局排序键（英文字母 -> 日文罗马音 -> 中文拼音 -> 符号），构建期算一次
+    for s in songs:
+        s["sortKey"] = list(song_sort_key(s["name"], s.get("latinTitle", "")))
+
+    # 全局排序序号：用于「全部歌曲」视图（与章节排列无关）
+    for i, s in enumerate(sorted(songs, key=lambda s: s["sortKey"])):
+        s["sortIndex"] = i
+
+    # 章节按指定顺序排列，未列出的排最后；章内按统一排序键
     order = {c: i for i, c in enumerate(CHAPTER_ORDER)}
-    songs.sort(key=lambda s: (order.get(s["chapter"], len(CHAPTER_ORDER)), s["chapter"], s["name"]))
+    songs.sort(key=lambda s: (order.get(s["chapter"], len(CHAPTER_ORDER)), s["chapter"], s["sortKey"]))
     return songs
 
 
@@ -183,6 +204,10 @@ def build_nav() -> dict[str, Any]:
                 for it in g["external"]
             ]
         nav["groups"].append(group)
+    nav["otherPages"] = [
+        {"label": it["label"], "href": it["href"], "target": "_self"}
+        for it in OTHER_PAGES
+    ]
     nav["songs"] = songs
     known_files = {song["file"] for song in songs}
     nav["archived"] = []
@@ -267,20 +292,29 @@ def inject_back_buttons() -> None:
 
 
 def sync_generated_md() -> None:
-    """由 code/ 生成脚本产出的 md 同步到 wiki 根目录。"""
+    """由 code/ 生成脚本产出的 md 同步到 wiki 根目录。
+
+    code/ 保存源文件，wiki/ 根目录保存直接供页面读取的副本；
+    index.md 源文件带一个前导空行，同步时去掉。
+    """
     syncs = [
-        ("code/artist-statistics.md", "artist-statistics.md"),
-        ("code/charter-statistics.md", "charter-statistics.md"),
-        ("code/illustrator-statistics.md", "illustrator-statistics.md"),
+        ("code/artist-statistics.md", "artist-statistics.md", False),
+        ("code/charter-statistics.md", "charter-statistics.md", False),
+        ("code/illustrator-statistics.md", "illustrator-statistics.md", False),
+        ("code/index.md", "index.md", True),
+        ("code/original-songs.md", "original-songs.md", False),
     ]
-    for src, dst in syncs:
+    for src, dst, strip_leading_newline in syncs:
         s = ROOT / src
         d = ROOT / dst
         if not s.exists():
             print("!! 缺失生成源:", s, file=sys.stderr)
             continue
-        if not d.exists() or s.read_bytes() != d.read_bytes():
-            shutil.copyfile(s, d)
+        data = s.read_bytes()
+        if strip_leading_newline:
+            data = data.lstrip(b"\n")
+        if not d.exists() or d.read_bytes() != data:
+            d.write_bytes(data)
             print("synced:", d)
 
 

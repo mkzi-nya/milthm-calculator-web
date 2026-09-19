@@ -42,6 +42,13 @@ for (const song of nav.songs) {
 }
 for (const base of Object.keys(nav.documents)) assert.equal(app.legacySongRoute(base), '/song/' + base);
 assert.equal(app.legacySongRoute('unknown song'), '/songs?q=unknown%20song');
+{
+  const sorted = nav.songs.slice().sort((a, b) => a.sortIndex - b.sortIndex);
+  assert.deepEqual(sorted.map(s => s.sortIndex), nav.songs.map((_, i) => i), 'sortIndex must be a 0..n-1 permutation');
+  for (let i = 1; i < sorted.length; i++) {
+    assert(sorted[i - 1].sortKey[0] <= sorted[i].sortKey[0], `song category order broken at ${sorted[i].name}`);
+  }
+}
 const redirect = fs.readFileSync(path.join(root, 'song/index.html'), 'utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
 for (const [query, expected] of [['?song=slic_hertz__GdbG', '/song/slic_hertz__GdbG'], ['?q=weather_report', '/song/weather_report'], ['?%E9%9B%A8%E5%A5%B3', '/song/Ameonna'], ['?song=LiFE_Garden__Extended_Mix_', '/song/LiFE_Garden__Extended_Mix_']]) {
   let legacy = new URL('https://example.test/project/wiki/song/' + query + '#%E6%9B%B2%E7%9B%AE%E4%BF%A1%E6%81%AF');

@@ -85,6 +85,9 @@ a:hover{text-decoration:underline;}
 .toc-group .sb-song.cur{padding-left:1.02rem;}
 .sb-ext{color:#cfcfcf;}
 .sb-ext:hover{color:#fff;}
+.sb-others{flex:0 0 auto;border-top:1px solid var(--line);}
+.sb-others-body{max-height:34vh;flex:0 0 auto;}
+.sb-others .sb-item{font-size:.84rem;}
 .sb-foot{padding:.6rem 1rem .75rem;color:var(--muted);font-size:.75rem;border-top:1px solid var(--line);text-align:center;flex:0 0 auto;}
 
 /* ===== 右侧栏（总览） ===== */
@@ -115,6 +118,8 @@ h1,h2,h3,h4{font-weight:650;color:#fff;margin-top:1.5em;margin-bottom:.55em;line
 h1{font-size:1.55rem;margin-top:0;}
 h2{font-size:1.28rem;border-bottom:1px solid var(--line);padding-bottom:.25em;}
 h3{font-size:1.1rem;} h4{font-size:1rem;}
+.markdown-body :is(h2,h3,h4).heading-anchor{cursor:pointer;}
+.markdown-body :is(h2,h3,h4).heading-anchor:hover{color:var(--accent);}
 p,li{color:#dcdcdc;}
 ul,ol{padding-left:1.4em;}
 table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:.92rem;}

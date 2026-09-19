@@ -148,6 +148,24 @@
     pageGroup.appendChild(pageBody);
     sb.appendChild(pageGroup);
 
+    // 「其他页面」：未进入目录的相关网站，固定显示在底部
+    if ((NAV.otherPages || []).length) {
+      var otherGroup = document.createElement('div');
+      otherGroup.className = 'sb-group sb-others';
+      var otherHead = document.createElement('div');
+      otherHead.className = 'sb-ghead sb-ghead-static';
+      otherHead.textContent = '其他页面';
+      otherGroup.appendChild(otherHead);
+      var otherBody = document.createElement('div');
+      otherBody.className = 'sb-gbody sb-others-body';
+      otherBody.id = 'otherNav';
+      NAV.otherPages.forEach(function (item) {
+        otherBody.appendChild(externalItem(item));
+      });
+      otherGroup.appendChild(otherBody);
+      sb.appendChild(otherGroup);
+    }
+
     var foot = document.createElement('div');
     foot.className = 'sb-foot';
     foot.textContent = 'Milthm Wiki' + (NAV.version ? ' · v' + NAV.version : '');
@@ -308,6 +326,8 @@
   }
 
   function compareSongNames(a, b) {
+    // build 阶段已算好全局排序键/序号，运行时直接比较，避免重复计算。
+    if (typeof a.sortIndex === 'number' && typeof b.sortIndex === 'number') return a.sortIndex - b.sortIndex;
     return String(a.name || a.label).localeCompare(String(b.name || b.label), 'zh-Hans-CN', {
       numeric: true, sensitivity: 'base'
     });
@@ -352,6 +372,9 @@
   function scrollTocItemToTop(item) {
     if (!tocList || !item) return;
     var desired = tocList.scrollTop + item.getBoundingClientRect().top - tocList.getBoundingClientRect().top;
+    var group = item.closest('.toc-group');
+    var sticky = group && group.querySelector('.toc-group-toggle');
+    if (sticky) desired -= sticky.offsetHeight;
     var max = Math.max(0, tocList.scrollHeight - tocList.clientHeight);
     tocList.scrollTo({ top: Math.max(0, Math.min(desired, max)), behavior: 'auto' });
   }
@@ -677,6 +700,7 @@
       while (ids.has(id)) id = base + '-' + number++;
       ids.add(id); h.id = id;
     });
+    bindHeadingAnchors(contentRoot);
     if (window.hljs) {
       try {
         contentRoot.querySelectorAll('pre code').forEach(function (b) {
@@ -720,6 +744,20 @@
   }
 
   /* ---- 页面内锚点 & 链接 ---- */
+  function bindHeadingAnchors(root) {
+    root.querySelectorAll('h2,h3,h4').forEach(function (h) {
+      if (h.dataset.headingBound) return;
+      h.dataset.headingBound = '1';
+      h.classList.add('heading-anchor');
+      h.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        if (window.getSelection && String(window.getSelection())) return;
+        e.preventDefault();
+        navigateAnchor(h.id);
+      });
+    });
+  }
+
   function bindLinks(root) {
     root.querySelectorAll('a').forEach(function (a) {
       if (a.dataset.bound) return;
