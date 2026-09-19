@@ -8,6 +8,7 @@
 <style>:root{
   --bg:#1a1a1a; --fg:#e5e5e5; --muted:#aaa; --accent:#42b883;
   --panel:#232323; --panel2:#2b2b2b; --line:#333; --bar:#252525;
+  --topbar-height:3.25rem; --content-gutter:1rem;
 }
 *{box-sizing:border-box;}
 html{font-size:clamp(14px,1.05vw + 0.55rem,19px);}
@@ -17,17 +18,8 @@ body{
   -webkit-text-size-adjust:100%;
 }
 a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;}
-
-/* ===== 菜单按钮 ===== */
-#menuBtn{
-  position:fixed;left:.7rem;bottom:.9rem;z-index:60;
-  width:2.7rem;height:2.7rem;border-radius:12px;border:1px solid var(--line);
-  background:rgba(40,40,40,.92);color:#fff;font-size:1.25rem;line-height:1;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.5);backdrop-filter:blur(4px);
-}
-#menuBtn:active{transform:scale(.95);}
+a:hover{color:#72d7a5;text-decoration:none;}
+a.link-needs-underline{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;}
 
 /* ===== 左侧栏（页面导航） ===== */
 #scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:70;opacity:0;pointer-events:none;transition:opacity .22s;}
@@ -36,7 +28,7 @@ a:hover{text-decoration:underline;}
   position:fixed;left:0;top:0;bottom:0;width:min(86vw,300px);z-index:80;
   background:var(--panel);border-right:1px solid var(--line);
   transform:translateX(-102%);transition:transform .24s ease;
-  display:flex;flex-direction:column;overflow:hidden;
+  display:block;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
 }
 #sidebar.on{transform:none;}
 .sb-head{
@@ -60,7 +52,7 @@ a:hover{text-decoration:underline;}
 .sb-home-sub{background:var(--panel2);border-color:var(--line);color:#d7d7d7;font-weight:500;}
 .sb-home-sub:hover{color:#fff;border-color:var(--accent);filter:none;}
 
-.sb-group{display:flex;flex-direction:column;min-height:0;flex:1 1 auto;}
+.sb-group{display:block;min-height:0;}
 .sb-ghead{
   display:flex;align-items:center;justify-content:space-between;
   padding:.68rem 1rem;cursor:pointer;color:#fff;font-weight:600;font-size:.93rem;
@@ -69,7 +61,7 @@ a:hover{text-decoration:underline;}
 .sb-ghead:hover{background:var(--panel2);}
 .sb-ghead-static{cursor:default;color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:.75rem 1rem .35rem;}
 .sb-ghead-static:hover{background:transparent;}
-.sb-gbody{overflow-y:auto;overscroll-behavior:contain;padding:.1rem 0 .6rem;-webkit-overflow-scrolling:touch;flex:1 1 auto;min-height:0;}
+.sb-gbody{overflow:visible;padding:.1rem 0 .6rem;min-height:0;}
 .sb-item{
   display:block;padding:.5rem 1rem;color:#cfcfcf;font-size:.88rem;cursor:pointer;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.5;
@@ -92,8 +84,8 @@ a:hover{text-decoration:underline;}
 .toc-group .sb-song.cur{padding-left:1.02rem;}
 .sb-ext{color:#cfcfcf;}
 .sb-ext:hover{color:#fff;}
-.sb-others{flex:0 0 auto;border-top:1px solid var(--line);}
-.sb-others-body{max-height:34vh;flex:0 0 auto;}
+.sb-others{border-top:1px solid var(--line);}
+.sb-others-body{max-height:none;}
 .sb-others .sb-item{font-size:.84rem;}
 .sb-foot{padding:.6rem 1rem .75rem;color:var(--muted);font-size:.75rem;border-top:1px solid var(--line);text-align:center;flex:0 0 auto;}
 
@@ -118,8 +110,8 @@ a:hover{text-decoration:underline;}
 .toc-empty{padding:1rem;color:var(--muted);font-size:.85rem;text-align:center;}
 
 /* ===== 内容 ===== */
-#content{max-width:920px;margin:0 auto;padding:3.2rem 1rem 4rem;}
-#content h1,#content h2,#content h3,#content h4{scroll-margin-top:5rem;}
+#content{max-width:920px;margin:0 auto;padding:0 var(--content-gutter) 4rem;}
+#content h1,#content h2,#content h3,#content h4{scroll-margin-top:calc(var(--topbar-height) + 1rem);}
 @media(min-width:1200px){#content{padding-left:3rem;padding-right:3rem;}}
 h1,h2,h3,h4{font-weight:650;color:#fff;margin-top:1.5em;margin-bottom:.55em;line-height:1.35;}
 h1{font-size:1.55rem;margin-top:0;}
@@ -141,27 +133,39 @@ code{background:var(--panel2);padding:.1em .35em;border-radius:4px;font-size:.9e
 pre{background:var(--panel2);padding:.9em;border-radius:8px;overflow-x:auto;border:1px solid var(--line);}
 pre code{background:transparent;padding:0;}
 .code-copy{
-  position:absolute;top:.4rem;right:.4rem;z-index:2;
+  display:block;position:sticky;top:calc(var(--topbar-height) + .4rem);z-index:2;
+  width:max-content;margin:.4rem .4rem -2.1rem auto;
   padding:.28em .7em;border-radius:7px;border:1px solid var(--line);
   background:rgba(45,45,45,.95);color:#d0d0d0;font-size:.72rem;line-height:1.4;cursor:pointer;
   opacity:.9;transition:color .15s,border-color .15s,opacity .15s;
 }
 .code-copy:hover{color:#fff;border-color:var(--accent);opacity:1;}
 .code-copy.copied{color:var(--accent);border-color:var(--accent);}
+.hljs-comment,.hljs-quote{color:#8b9a93;font-style:italic;}
+.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-built_in{color:#df8bd5;}
+.hljs-string,.hljs-title,.hljs-section,.hljs-attribute{color:#a9d98f;}
+.hljs-number,.hljs-symbol,.hljs-bullet,.hljs-variable,.hljs-template-variable{color:#e8b77b;}
+.hljs-type,.hljs-class .hljs-title,.hljs-tag,.hljs-name{color:#79c9e8;}
+.hljs-meta,.hljs-regexp,.hljs-link{color:#82d4bb;}
+.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:700;}
 hr{border:0;border-top:1px solid var(--line);margin:1.6em 0;}
 img{max-width:100%;border-radius:8px;}
 
 .page-head{
   display:flex;align-items:center;justify-content:space-between;gap:.8rem;
-  margin-bottom:1.2rem;padding:.55rem .85rem;border:1px solid var(--line);border-radius:10px;
-  background:var(--bar);font-weight:700;color:#fff;font-size:1.02rem;
-  position:sticky;top:.5rem;z-index:30;
+  min-height:var(--topbar-height);margin:0 calc(var(--content-gutter) * -1) 1.2rem;
+  padding:.45rem var(--content-gutter);border:0;border-bottom:1px solid var(--line);border-radius:0;
+  background:rgba(37,37,37,.96);backdrop-filter:blur(10px);
+  font-weight:700;color:#fff;font-size:1.02rem;position:sticky;top:0;z-index:30;
 }
+.page-head-left{display:flex;align-items:center;gap:.65rem;min-width:0;}
+#pageTitle{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .top-btn{
   flex:0 0 auto;border:1px solid var(--line);background:var(--panel2);color:#fff;
   border-radius:8px;padding:.3em .7em;cursor:pointer;font-size:.82rem;
 }
 .top-btn:hover{border-color:var(--accent);color:var(--accent);}
+.menu-btn{font-size:1rem;line-height:1;padding:.42em .62em;}
 
 /* ===== 章节块（错误等） ===== */
 .chap{margin:0 0 1.6rem;}
@@ -208,7 +212,6 @@ img{max-width:100%;border-radius:8px;}
 .info-actions a:hover,.info-retry:hover{background:#42b88330;text-decoration:none;}
 .info-tags{margin-top:14px;color:#a6b8b0;font-size:12px;}
 .info-tags summary{cursor:pointer;}
-a[href^="info:"]{text-decoration:underline dotted;text-underline-offset:4px;}
 :focus-visible{outline:2px solid #83d9ae;outline-offset:3px;}
 
 /* ===== 创作者统计：姓名、数量与作品列表 ===== */
@@ -217,7 +220,7 @@ a[href^="info:"]{text-decoration:underline dotted;text-underline-offset:4px;}
 .people-page>h2{margin:2.5rem 0 0;padding:1rem 1.1rem .35rem;background:#25322b;border:1px solid #42624e;border-bottom:0;border-radius:12px 12px 0 0;font-size:1.2rem;overflow-wrap:anywhere;}
 .people-page>h2+p{margin:0 0 1rem;padding:0 1.1rem .85rem;background:#25322b;border:1px solid #42624e;border-top:0;border-radius:0 0 12px 12px;color:#adc0b4;font-size:.8rem;}
 .people-page>h3{font-size:.85rem;color:#b7c8be;margin:1.25rem 0 .6rem;}
-.people-page>ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:.5rem;list-style:none;padding:0;margin:.75rem 0 1.5rem;}
+.people-page>ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;list-style:none;padding:0;margin:.75rem 0 1.5rem;}
 .people-page>ul>li{min-width:0;margin:0;}
 .people-page>ul a{display:block;height:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:#c9e5d5;font-size:.88rem;overflow-wrap:anywhere;}
 .people-page>ul a:hover{border-color:#579874;background:#293a30;text-decoration:none;}
@@ -261,7 +264,6 @@ pre,code,kbd{user-select:text;}
 
 /* ===== 响应式 ===== */
 @media(min-width:1100px){
-  #menuBtn{display:none !important;}
   #scrim{display:none !important;}
   #sidebar{transform:none;width:272px;box-shadow:none;}
   #sidebar .sb-close{display:none !important;}
@@ -273,6 +275,7 @@ pre,code,kbd{user-select:text;}
   body.toc-fixed .page-head{display:none !important;}
   body.toc-fixed #content :is(h1,h2,h3,h4){scroll-margin-top:.8rem;}
   body.toc-fixed #content{padding-top:2.4rem;padding-left:2.2rem;padding-right:2.2rem;}
+  .code-copy{top:.4rem;}
 }
 #mdBody img{max-width:100%;height:auto;}
 @media(max-width:1099px){
@@ -280,17 +283,37 @@ pre,code,kbd{user-select:text;}
   .toc-btn{position:relative;}
 }
 @media(max-width:600px){
+  :root{--topbar-height:3rem;--content-gutter:.85rem;}
   body{line-height:1.8;}
-  #content{padding:2.9rem .85rem 3rem;}
+  #content{padding-bottom:3rem;}
   .sb-item{padding:.6rem 1rem;font-size:.9rem;}
   .sb-head{padding:.8rem .85rem;font-size:1rem;}
   .song-grid{grid-template-columns:1fr 1fr;}
+  .people-page>ul{grid-template-columns:1fr 1fr;}
+  .people-page>ul a{padding:.52rem .62rem;font-size:.82rem;}
+  .info-card{
+    width:min(288px,calc(100vw - 32px));max-height:min(68dvh,480px);
+    padding:11px 12px;border-radius:12px;font-size:12px;line-height:1.42;
+  }
+  .info-card h2{font-size:16px;margin:1px 23px 3px 0;}
+  .info-card p{margin:3px 0;}
+  .info-card .info-eyebrow{font-size:9px;}
+  .info-card .info-subtitle{font-size:10px;}
+  .info-close{right:6px;top:6px;width:24px;height:24px;font-size:16px;}
+  .info-details{margin:7px 0;}
+  .info-details>div{grid-template-columns:38px 1fr;gap:6px;padding:2px 0;}
+  .info-metrics{gap:4px;margin:6px 0;}
+  .info-metrics>div{padding:4px 2px;border-radius:7px;}
+  .info-metrics strong{font-size:14px;}
+  .info-metrics span{font-size:9px;}
+  .info-actions{gap:5px;margin-top:7px;flex-wrap:wrap;}
+  .info-actions a,.info-retry{padding:4px 7px;}
+  .info-tags{margin-top:6px;font-size:10px;}
 }
 </style>
 <link rel="stylesheet" href="./katex.min.css">
 </head>
 <body>
-<button id="menuBtn" aria-label="打开目录">&#9776;</button>
 <div id="scrim"></div>
 <aside id="sidebar">
 </aside>

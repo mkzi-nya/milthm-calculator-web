@@ -411,8 +411,7 @@
     if (tocScope !== 'headings' || !tocList || !mdBody) return;
     var links = Array.from(tocList.querySelectorAll('.sb-item[data-heading-id]'));
     if (!links.length) return;
-    var head = $('pageHead');
-    var threshold = head && head.offsetHeight ? head.offsetHeight + 26 : 14;
+    var threshold = getTopbarOffset() + 14;
     var current = links[0];
     links.forEach(function (link) {
       var heading = document.getElementById(link.dataset.headingId);
@@ -471,10 +470,14 @@
   function scrollToAnchor(id) {
     var el = document.getElementById(id);
     if (!el) return;
-    var head = $('pageHead');
-    var offset = head && head.offsetHeight ? head.offsetHeight + 24 : 12;
+    var offset = getTopbarOffset() + 12;
     var y = el.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo(0, Math.max(0, y));
+  }
+
+  function getTopbarOffset() {
+    var head = $('pageHead');
+    return head && getComputedStyle(head).display !== 'none' ? head.getBoundingClientRect().height : 0;
   }
 
   var pageRequest = 0;
@@ -674,7 +677,17 @@
           fallbackCopy(text, done);
         }
       });
-      wrap.appendChild(btn);
+      wrap.insertBefore(btn, pre);
+    });
+  }
+
+  function markExceptionalLinks(root) {
+    root.querySelectorAll('a').forEach(function (link) {
+      var text = link.textContent || '';
+      var needsUnderline = /\s/.test(text.trim())
+        || /[\u200B-\u200D\u2060\uFEFF]/.test(text)
+        || /\p{Extended_Pictographic}/u.test(text);
+      link.classList.toggle('link-needs-underline', needsUnderline);
     });
   }
 
@@ -718,6 +731,7 @@
     enhanceCodeBlocks(contentRoot);
     resizeKatex();
     bindLinks(contentRoot);
+    markExceptionalLinks(contentRoot);
     bindInfoLinks(contentRoot);
     hydrateWikiMedia(contentRoot);
     wireRealityTool();
@@ -1149,10 +1163,21 @@
     var el = document.createElement('div');
     el.className = 'page-head';
     el.id = 'pageHead';
+    var left = document.createElement('div');
+    left.className = 'page-head-left';
+    var menuBtn = document.createElement('button');
+    menuBtn.type = 'button';
+    menuBtn.className = 'top-btn menu-btn';
+    menuBtn.id = 'menuBtn';
+    menuBtn.textContent = '\u2630';
+    menuBtn.setAttribute('aria-label', '打开目录');
+    menuBtn.addEventListener('click', openSidebar);
+    left.appendChild(menuBtn);
     var span = document.createElement('span');
     span.id = 'pageTitle';
     span.textContent = 'Milthm Wiki';
-    el.appendChild(span);
+    left.appendChild(span);
+    el.appendChild(left);
     var tocBtn = document.createElement('button');
     tocBtn.className = 'top-btn toc-btn';
     tocBtn.id = 'tocBtn';
@@ -1190,7 +1215,6 @@
     buildSidebar();
     buildTocPanel();
 
-    $('menuBtn').addEventListener('click', openSidebar);
     $('scrim').addEventListener('click', function () { closeSidebar(); closeTocPanel(); });
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') { closeSidebar(); closeTocPanel(); }
